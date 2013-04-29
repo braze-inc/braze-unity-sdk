@@ -1,0 +1,1 @@
+This repository contains the wrapper code and binaries for the unity plugins derived from the Appboy Android and iOS SDK's
