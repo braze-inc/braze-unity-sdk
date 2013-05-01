@@ -43,4 +43,9 @@
     [[Appboy sharedInstance] logAppEvent:eventName];
 }
 
+- (void) changeUserId:(NSString *)userId
+{
+    [[Appboy sharedInstance] changeUserId:userId];
+}
+
 @end
