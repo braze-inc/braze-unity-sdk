@@ -13,10 +13,15 @@
 
 void _showStreamView()
 {
-    [AppboyUnityManager showStreamView];
+    [[AppboyUnityManager sharedInstance] showStreamView];
 }
 
 void _showFeedbackForm()
 {
-    [AppboyUnityManager showFeedbackForm];
+    [[AppboyUnityManager sharedInstance] showFeedbackForm];
+}
+
+void _logAppEvent(const char* eventName)
+{
+	[[AppboyUnityManager sharedInstance] logAppEvent:GetStringParam(eventName)];
 }
