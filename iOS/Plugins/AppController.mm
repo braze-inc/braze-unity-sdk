@@ -409,11 +409,6 @@ void UnityInitTrampoline()
                     didReceiveRemoteNotification:userInfo];
 }
 
-+ (UIViewController *)unityVC
-{
-    return UnityGetGLViewController();
-}
-
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     UnitySendDeviceToken(deviceToken);
