@@ -10,7 +10,10 @@
 
 @interface AppboyUnityManager : NSObject
 
-+ (void) showStreamView;
-+ (void) showFeedbackForm;
++ (AppboyUnityManager *) sharedInstance;
+- (void) showStreamView;
+- (void) showFeedbackForm;
+- (void) logAppEvent:(NSString *)eventName;
+- (void) changeUserId:(NSString *)userId;
 
 @end
