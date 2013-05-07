@@ -5,81 +5,87 @@ using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-public class AppboyBinding : MonoBehaviour, IAppboyBinding {
+public class AppboyBinding : MonoBehaviour {
  
 #if UNITY_IPHONE
+  void Start() {
+    Debug.Log("Starting Appboy binding for iOS clients.");
+  }
+  
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _logAppEvent(string eventName);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _changeUserId(string userId);
 
-  public void LogCustomEvent(string eventName) {
+  public static void LogCustomEvent(string eventName) {
     _logAppEvent(eventName);
   }
   
-  public void LogPurchase(string productId, int priceInCents) {
+  public static void LogPurchase(string productId, int priceInCents) {
   }
   
-  public void ChangeUserId(string userId) {
+  public static void ChangeUser(string userId) {
     _changeUserId(userId);
   }
   
-  public void SetFirstName(string firstName) {
+  public static void SetUserFirstName(string firstName) {
   }  
   
-  public void SetLastName(string lastName) {
+  public static void SetUserLastName(string lastName) {
   }
  
-  public void SetEmail(string email) {
+  public static void SetUserEmail(string email) {
   }
 
-  public void SetBio(string bio) {
+  public static void SetUserBio(string bio) {
   }
  
-  public void SetGender(string gender) {
+  public static void SetUserGender(string gender) {
   }
  
-  public void SetDateOfBirth(int year, int month, int day) {
+  public static void SetUserDateOfBirth(int year, int month, int day) {
   }
 
-  public void SetCountry(string country) {
+  public static void SetUserCountry(string country) {
   }
 
-  public void SetHomeCity(string city) {
+  public static void SetUserHomeCity(string city) {
   }
 
-  public void SetIsSubscribedToEmails(bool isSubscribedToEmails) {
+  public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
   }
 
-  public void SetPhoneNumber(string phoneNumber) {
+  public static void SetUserPhoneNumber(string phoneNumber) {
   }
 
-  public void SetCustomUserAttribute(string key, bool value) {
+  public static void SetCustomUserAttribute(string key, bool value) {
   }
 
-  public void SetCustomUserAttribute(string key, int value) {
+  public static void SetCustomUserAttribute(string key, int value) {
   }
 
-  public void SetCustomUserAttribute(string key, float value) {
+  public static void SetCustomUserAttribute(string key, float value) {
   }
 
-  public void SetCustomUserAttribute(string key, long value) {
+  public static void SetCustomUserAttribute(string key, long value) {
   }
 
-  public void SetCustomUserAttribute(string key, string value) {
+  public static void SetCustomUserAttribute(string key, string value) {
   }
   
-  public void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
+  public static void SetCustomUserAttributeToNow(string key) {}
+  
+  public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
   }
   
-  public void UnsetCustomUserAttribute(string key) {
+  public static void UnsetCustomUserAttribute(string key) {
   }
 
 #elif UNITY_ANDROID
   private static AndroidJavaObject sAppboy = null;
   
-  private AndroidJavaObject GetAppboy() {
+  private static AndroidJavaObject GetAppboy() {
     if (sAppboy == null) {
       using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
       using (var androidActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity"))
@@ -90,11 +96,11 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
     return sAppboy;  
   }
   
-  private AndroidJavaObject GetCurrentUser() {
+  private static AndroidJavaObject GetCurrentUser() {
     return GetAppboy().Call<AndroidJavaObject>("getCurrentUser");
   }
   
-  private void OpenSession() {
+  private static void OpenSession() {
     using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
     using (var androidActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity"))
     using (var appboyClass = new AndroidJavaClass("com.appboy.Appboy")) {
@@ -102,7 +108,7 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
     }
   }
   
-  private void CloseSession() {
+  private static void CloseSession() {
     using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
     using (var androidActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity")) {
       GetAppboy().Call<bool>("closeSession", androidActivity);
@@ -129,35 +135,37 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
     CloseSession();
   }
   
-  public void LogCustomEvent(string eventName) {
+  // Static methods below here are defined individually for each platform.
+  
+  public static void LogCustomEvent(string eventName) {
     GetAppboy().Call<bool>("logCustomEvent", eventName);
   }
   
-  public void LogPurchase(string productId, int priceInCents) {
+  public static void LogPurchase(string productId, int priceInCents) {
     GetAppboy().Call<bool>("logPurchase", productId, priceInCents);
   }
   
-  public void ChangeUserId(string userId) {
-    GetAppboy();
+  public static void ChangeUser(string userId) {
+    GetAppboy().Call<AndroidJavaObject>("changeUser", userId);
   }
   
-  public void SetFirstName(string firstName) {
+  public static void SetUserFirstName(string firstName) {
     GetCurrentUser().Call<bool>("setFirstName", firstName);
   }  
   
-  public void SetLastName(string lastName) {
+  public static void SetUserLastName(string lastName) {
     GetCurrentUser().Call<bool>("setLastName", lastName);
   }
  
-  public void SetEmail(string email) {
+  public static void SetUserEmail(string email) {
     GetCurrentUser().Call<bool>("setEmail", email);
   }
 
-  public void SetBio(string bio) {
+  public static void SetUserBio(string bio) {
     GetCurrentUser().Call<bool>("setBio", bio);
   }
 
-  public void SetGender(string gender) {
+  public static void SetUserGender(string gender) {
     using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
       switch (gender.ToLowerInvariant()) {
         case "m":
@@ -175,7 +183,7 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
     }
   }
 
-  public void SetDateOfBirth(int year, int month, int day) {
+  public static void SetUserDateOfBirth(int year, int month, int day) {
     using (var monthClass = new AndroidJavaClass("com.appboy.enums.Month")) {
       AndroidJavaObject monthObject;
       switch (month) {
@@ -223,47 +231,51 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
     }
   }
 
-  public void SetCountry(string country) {
+  public static void SetUserCountry(string country) {
     GetCurrentUser().Call<bool>("setCountry", country);
   }
 
-  public void SetHomeCity(string city) {
+  public static void SetUserHomeCity(string city) {
     GetCurrentUser().Call<bool>("setHomeCity", city);
   }
 
-  public void SetIsSubscribedToEmails(bool isSubscribedToEmails) {
+  public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
     GetCurrentUser().Call<bool>("setIsSubscribedToEmails", isSubscribedToEmails);
   }
 
-  public void SetPhoneNumber(string phoneNumber) {
+  public static void SetUserPhoneNumber(string phoneNumber) {
     GetCurrentUser().Call<bool>("setPhoneNumber", phoneNumber);
   }
 
-  public void SetCustomUserAttribute(string key, bool value) {
+  public static void SetCustomUserAttribute(string key, bool value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
 
-  public void SetCustomUserAttribute(string key, int value) {
+  public static void SetCustomUserAttribute(string key, int value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
 
-  public void SetCustomUserAttribute(string key, float value) {
+  public static void SetCustomUserAttribute(string key, float value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
 
-  public void SetCustomUserAttribute(string key, long value) {
+  public static void SetCustomUserAttribute(string key, long value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
 
-  public void SetCustomUserAttribute(string key, string value) {
+  public static void SetCustomUserAttribute(string key, string value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
   
-  public void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
+  public static void SetCustomUserAttributeToNow(string key) {
+    GetCurrentUser().Call<bool>("setCustomUserAttributeToNow", key);
+  }
+  
+  public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
     GetCurrentUser().Call<bool>("setCustomUserAttributeToSecondsFromEpoch", key, secondsFromEpoch);
   }
   
-  public void UnsetCustomUserAttribute(string key) {
+  public static void UnsetCustomUserAttribute(string key) {
     GetCurrentUser().Call<bool>("unsetCustomUserAttribute", key);
   }
 
@@ -272,45 +284,47 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
   void Start() {
     Debug.Log("Starting no-op Appboy binding for non iOS/Android clients.");
   }
-  
-  public void LogCustomEvent(string eventName) {}
-  
-  public void LogPurchase(string productId, int priceInCents) {}
-  
-  public void ChangeUserId(string userId) {}
-  
-  public void SetFirstName(string firstName) {}  
-  
-  public void SetLastName(string lastName) {}
- 
-  public void SetEmail(string email) {}
 
-  public void SetBio(string bio) {}
- 
-  public void SetGender(string gender) {}
- 
-  public void SetDateOfBirth(int year, int month, int day) {}
+  public static void LogCustomEvent(string eventName) {}
 
-  public void SetCountry(string country) {}
+  public static void LogPurchase(string productId, int priceInCents) {}
 
-  public void SetHomeCity(string city) {}
+  public static void ChangeUser(string userId) {}
 
-  public void SetIsSubscribedToEmails(bool isSubscribedToEmails) {}
+  public static void SetUserFirstName(string firstName) {}  
 
-  public void SetPhoneNumber(string phoneNumber) {}
+  public static void SetUserLastName(string lastName) {}
 
-  public void SetCustomUserAttribute(string key, bool value) {}
+  public static void SetUserEmail(string email) {}
 
-  public void SetCustomUserAttribute(string key, int value) {}
+  public static void SetUserBio(string bio) {}
 
-  public void SetCustomUserAttribute(string key, float value) {}
+  public static void SetUserGender(string gender) {}
 
-  public void SetCustomUserAttribute(string key, long value) {}
+  public static void SetUserDateOfBirth(int year, int month, int day) {}
 
-  public void SetCustomUserAttribute(string key, string value) {}
-  
-  public void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
-  
-  public void UnsetCustomUserAttribute(string key) {}
+  public static void SetUserCountry(string country) {}
+
+  public static void SetUserHomeCity(string city) {}
+
+  public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {}
+
+  public static void SetUserPhoneNumber(string phoneNumber) {}
+
+  public static void SetCustomUserAttribute(string key, bool value) {}
+
+  public static void SetCustomUserAttribute(string key, int value) {}
+
+  public static void SetCustomUserAttribute(string key, float value) {}
+
+  public static void SetCustomUserAttribute(string key, long value) {}
+
+  public static void SetCustomUserAttribute(string key, string value) {}
+
+  public static void SetCustomUserAttributeToNow(string key) {}
+
+  public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
+
+  public static void UnsetCustomUserAttribute(string key) {}
 #endif
 }
