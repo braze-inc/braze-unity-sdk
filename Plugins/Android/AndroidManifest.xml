@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.iUnity.angryBots" android:versionCode="1" android:versionName="0.0">
+
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />  
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <!-- Permissions for GCM -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+  <permission android:name="com.iUnity.angryBots.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+  <uses-permission android:name="com.iUnity.angryBots.permission.C2D_MESSAGE" />
+
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name"
+      android:debuggable="true">
+    <activity android:name="com.unity3d.player.UnityPlayerProxyActivity"
+              android:label="@string/app_name"
+              android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity android:name="com.unity3d.player.UnityPlayerActivity"
+              android:label="@string/app_name"
+              android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+    </activity>
+    <activity android:name="com.unity3d.player.UnityPlayerNativeActivity"
+              android:label="@string/app_name"
+              android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+        <meta-data android:name="android.app.lib_name" android:value="unity" />
+        <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
+    </activity>
+    <activity android:name="com.unity3d.player.VideoPlayer"
+              android:label="@string/app_name"
+              android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+    </activity>
+  
+    <!-- TODO(billmag) - Update this to show how to use prod. -->
+    <!--<meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="3b182e5f-5f3e-4bca-8924-155dc18251b3" />--> <!-- PROD -->
+    <meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="0575885c-59d8-4bef-9867-b45b49618da6" /><!-- STAGING -->
+    <meta-data android:name="com.appboy.SERVER_TARGET" android:value="staging" />
+		
+    <!-- Have Appboy automatically handle your GCM registration. -->
+    <meta-data android:name="com.appboy.GCM_MESSAGING_REGISTRATION_ENABLED" android:value="true" />
+    <meta-data android:name="com.appboy.GCM_SENDER_ID" android:value="@string/gcm_sender_id" />
+
+    <receiver android:name="com.appboy.AppboyGcmReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="com.iUnity.angryBots" />
+      </intent-filter>
+    </receiver>
+
+    <receiver android:name="com.appboy.sample.NotificationActionReceiver" >
+      <intent-filter>
+        <action android:name="com.appboy.sample.intent.APPBOY_PUSH_RECEIVED" />
+        <action android:name="com.appboy.sample.intent.APPBOY_NOTIFICATION_OPENED" />
+      </intent-filter>
+    </receiver>
+</application>
+</manifest>
+
