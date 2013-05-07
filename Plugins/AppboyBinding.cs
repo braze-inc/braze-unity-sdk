@@ -146,15 +146,15 @@ public class AppboyBinding : MonoBehaviour, IAppboyBinding {
   }  
   
   public void SetLastName(string lastName) {
-    GetCurrentUser().Call<bool>("setFirstName", lastName);
+    GetCurrentUser().Call<bool>("setLastName", lastName);
   }
  
   public void SetEmail(string email) {
-    GetCurrentUser().Call<bool>("setFirstName", email);
+    GetCurrentUser().Call<bool>("setEmail", email);
   }
 
   public void SetBio(string bio) {
-    GetCurrentUser().Call<bool>("setFirstName", bio);
+    GetCurrentUser().Call<bool>("setBio", bio);
   }
 
   public void SetGender(string gender) {
