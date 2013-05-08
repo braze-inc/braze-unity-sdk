@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="gcm_sender_id">YOUR GCM ID HERE</string>
+  <string name="gcm_sender_id">REPLACE WITH YOUR GCM ID</string>
 </resources>
