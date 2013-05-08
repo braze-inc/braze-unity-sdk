@@ -22,7 +22,7 @@ Assets/Plugins/Android/res/values/strings.xml:  &lt;string name="gcm_sender_id">
 </li>
 <li> Next, you need to find your "Bundle Identifier" from Unity. This is available from the Android tab of the "Player Settings" pane (accessible by clicking the Player Settings button in File -> Build Settings). The Player Settings pane looks like this in Unity 4: 
 <br />
-<img src="Docs/Images/UnityBundleIdentifier.png" />
+<img height=500 src="Docs/Images/UnityBundleIdentifier.png" />
 </li>
 <li>
 In AndroidManifest.xml, replace all instances of <code>REPLACE WITH YOUR.BUNDLE.ID</code> with the Bundle Identifier you found in Step 2. Your Bundle Identifier is usually of the form "com.unity.appname".
@@ -34,8 +34,11 @@ Now you must configure the Android manifest with the API key for your app. If yo
 Replace <code>REPLACE WITH YOUR STAGING API KEY</code> with the API key you retrieved in Step 4. It should look something like <code>"86bae89e-bb14-4678-9f55-ef6f92d80b98</code>.
 </li>
 <li>
-Finally, you need to insert your GCM Sender ID from Google into the strings.xml resource file. If you don't have a GCM Sender ID yet, you'll need to follow the <a href="http://developer.android.com/google/gcm/gs.html">GCM setup instructions</a> from Google. Once you have the ID, change <code>REPLACE WITH YOUR GCM ID</code> to your GCM ID. Since the GCM ID is a number, you shouldn't surround the value with quotes. Your ID should look something like <code>134664038331</code>.
+For push notifications to work, you will now need to insert your GCM Sender ID from Google into the strings.xml resource file. If you don't have a GCM Sender ID yet, you'll need to follow the <a href="http://developer.android.com/google/gcm/gs.html">GCM setup instructions</a> from Google. Once you have the ID, change <code>REPLACE WITH YOUR GCM ID</code> to your GCM ID. Since the GCM ID is a number, you shouldn't surround the value with quotes. Your ID should look something like <code>134664038331</code>.
 <li>
 At this point, you should be able to run the grep command from Step 1 and have no results. If there are any additional instances of <code>REPLACE</code> remaining, repeat these steps.
+</li>
+<li>
+Finally, you should confirm that your Android app is only targeting version 2.2 (Froyo) and above. This setting is available from the same "Player Settings" pane that you found the Bundle Identifier in during Step 2. Android versions previous to 2.2 represent a vanishingly small portion of active Android devices and are not supported by Appboy.
 </li>
 </ol>
