@@ -5,6 +5,14 @@ using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
 
+/// <summary>
+/// These methods can be called by Unity applications using iOS or Android in order to report 
+/// events and set user attributes. Please see the Appboy Android JavaDocs for more 
+/// detailed guidance on usage (note that only a subset of the functions in the JavaDocs
+/// are availabe in the Unity API):
+/// http://appboy.github.io/appboy-android-sdk/javadocs/com/appboy/IAppboy.html
+/// http://appboy.github.io/appboy-android-sdk/javadocs/index.html
+/// </summary>
 public class AppboyBinding : MonoBehaviour {
  
 #if UNITY_IPHONE
@@ -85,7 +93,11 @@ public class AppboyBinding : MonoBehaviour {
 #elif UNITY_ANDROID
   private static AndroidJavaObject sAppboy = null;
   
-  private static AndroidJavaObject GetAppboy() {
+  void Start() {
+    Debug.Log("Starting Appboy binding for Android clients.");
+  }
+  
+  public static AndroidJavaObject GetAppboy() {
     if (sAppboy == null) {
       using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
       using (var androidActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity"))
@@ -99,44 +111,7 @@ public class AppboyBinding : MonoBehaviour {
   private static AndroidJavaObject GetCurrentUser() {
     return GetAppboy().Call<AndroidJavaObject>("getCurrentUser");
   }
-  
-  private static void OpenSession() {
-    using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-    using (var androidActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity"))
-    using (var appboyClass = new AndroidJavaClass("com.appboy.Appboy")) {
-      GetAppboy().Call<bool>("openSession", androidActivity);
-    }
-  }
-  
-  private static void CloseSession() {
-    using (var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-    using (var androidActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity")) {
-      GetAppboy().Call<bool>("closeSession", androidActivity);
-    }
-  }
- 
-  // Start, OnApplicationPause and OnApplicationQuit all have session open/close calls based on how they 
-  // match up with the normal Android Activity Lifecycle.
-  
-  void Start() {
-    Debug.Log("Starting Appboy binding for Android clients.");
-    OpenSession();
-  }
-  
-  void OnApplicationPause(bool pauseStatus) {
-    if (pauseStatus) {
-      CloseSession();
-    } else {
-      OpenSession();
-    }
-  }
-  
-  void OnApplicationQuit() {
-    CloseSession();
-  }
-  
-  // Static methods below here are defined individually for each platform.
-  
+
   public static void LogCustomEvent(string eventName) {
     GetAppboy().Call<bool>("logCustomEvent", eventName);
   }
@@ -164,7 +139,13 @@ public class AppboyBinding : MonoBehaviour {
   public static void SetUserBio(string bio) {
     GetCurrentUser().Call<bool>("setBio", bio);
   }
-
+ 
+  /// <summary>
+  /// Sets the gender field for the current user.
+  /// </summary>
+  /// <param name='gender'>
+  /// The gender of the user. Should be either 'M', 'F', 'MALE', or 'FEMALE'.
+  /// </param>
   public static void SetUserGender(string gender) {
     using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
       switch (gender.ToLowerInvariant()) {
@@ -183,6 +164,18 @@ public class AppboyBinding : MonoBehaviour {
     }
   }
 
+  /// <summary>
+  /// Sets the date of birth for the current user.
+  /// </summary>
+  /// <param name='year'>
+  /// Ordinal for the year of birth in the Gregorian calendar.
+  /// </param>
+  /// <param name='month'>
+  /// Ordinal for the month of the year with January = 1 and December = 12.
+  /// </param>
+  /// <param name='day'>
+  /// Ordinal for the day of the month.
+  /// </param>
   public static void SetUserDateOfBirth(int year, int month, int day) {
     using (var monthClass = new AndroidJavaClass("com.appboy.enums.Month")) {
       AndroidJavaObject monthObject;
