@@ -21,73 +21,150 @@ public class AppboyBinding : MonoBehaviour {
   }
   
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logAppEvent(string eventName);
+  private static extern void _logCustomEvent(string eventName);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _changeUserId(string userId);
+  private static extern void _changeUser(string userId);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _logPurchase(string productId, int cents);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserFirstName(string firstName);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserLastName(string lastName);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserPhoneNumber(string phoneNumber);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserBio(string bio);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserGender(string gender);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserEmail(string email);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserDateOfBirth(int year, int month, int day);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserCountry(string country);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserHomeCity(string city);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserIsSubscribedToEmails(bool isSubscribedToEmails);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeBool(string key, bool val);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeInt(string key, int val);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeFloat(string key, float val);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeLong(string key, long val);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeString(string key, string val);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeToNow(string key);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeToSecondsFromEpoch(string key, long seconds);
+	
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _unsetCustomUserAttribute(string key);
 
   public static void LogCustomEvent(string eventName) {
-    _logAppEvent(eventName);
+    _logCustomEvent(eventName);
   }
   
   public static void LogPurchase(string productId, int priceInCents) {
+	_logPurchase(productId, priceInCents);
   }
   
   public static void ChangeUser(string userId) {
-    _changeUserId(userId);
+    _changeUser(userId);
   }
   
   public static void SetUserFirstName(string firstName) {
+	_setUserFirstName(firstName);
   }  
   
   public static void SetUserLastName(string lastName) {
+	_setUserLastName(lastName);
   }
  
   public static void SetUserEmail(string email) {
+	_setUserEmail(email);
   }
 
   public static void SetUserBio(string bio) {
+	_setUserBio(bio);
   }
  
   public static void SetUserGender(string gender) {
+	_setUserGender(gender);
   }
  
   public static void SetUserDateOfBirth(int year, int month, int day) {
+	_setUserDateOfBirth(year, month, day);
   }
 
   public static void SetUserCountry(string country) {
+	_setUserCountry(country);
   }
 
   public static void SetUserHomeCity(string city) {
+	_setUserHomeCity(city);
   }
 
   public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
+	_setUserIsSubscribedToEmails(isSubscribedToEmails);
   }
 
   public static void SetUserPhoneNumber(string phoneNumber) {
+	_setUserPhoneNumber(phoneNumber);
   }
 
   public static void SetCustomUserAttribute(string key, bool value) {
+	_setCustomUserAttributeBool(key, value);
   }
 
   public static void SetCustomUserAttribute(string key, int value) {
+	_setCustomUserAttributeInt(key, value);
   }
 
   public static void SetCustomUserAttribute(string key, float value) {
+	_setCustomUserAttributeFloat(key, value);
   }
 
   public static void SetCustomUserAttribute(string key, long value) {
+	_setCustomUserAttributeLong(key, value);
   }
 
   public static void SetCustomUserAttribute(string key, string value) {
+	_setCustomUserAttributeString(key, value);
   }
   
-  public static void SetCustomUserAttributeToNow(string key) {}
+  public static void SetCustomUserAttributeToNow(string key) {
+	_setCustomUserAttributeToNow(key);
+  }
   
   public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
+	_setCustomUserAttributeToSecondsFromEpoch(key, secondsFromEpoch);
   }
   
   public static void UnsetCustomUserAttribute(string key) {
+	_unsetCustomUserAttribute(key);
   }
 
 #elif UNITY_ANDROID

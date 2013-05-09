@@ -1,6 +1,7 @@
 #import "AppController.h"
 #import "iPhone_Sensors.h"
 #import "Appboy.h"
+#import "AppboyUnityManager.h"
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
@@ -305,6 +306,20 @@ void UnityInitTrampoline()
 		SetLogEntryHandler(LogToNSLogHandler);
 }
 
+@interface SlideupDelegateProxy : NSObject <ABKSlideupControllerDelegate>
+- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message;
+@property ABKSlideupShouldDisplaySlideupReturnType shouldDisplaySlideupReturnValue;
+@end
+
+@implementation SlideupDelegateProxy
+- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message {
+    return ABKSlideupShouldIgnore;
+}
+
+- (void) slideupWasTapped {
+}
+@end
+
 
 // --- AppController --------------------------------------------------------------------
 //
@@ -410,11 +425,10 @@ void UnityInitTrampoline()
 }
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
-{
+{    
     UnitySendDeviceToken(deviceToken);
     [[Appboy sharedInstance] registerPushToken:
      [NSString stringWithFormat:@"%@", deviceToken]];
-    NSLog(@"Registering device push token %@", [NSString stringWithFormat:@"%@", deviceToken]);
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
@@ -424,6 +438,7 @@ void UnityInitTrampoline()
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    NSLog(@"Did finish luanching");
     printf_console("-> applicationDidFinishLaunching()\n");
     // get local notification
     if (&UIApplicationLaunchOptionsLocalNotificationKey != nil)
@@ -459,10 +474,11 @@ void UnityInitTrampoline()
                                          UIRemoteNotificationTypeSound |
                                          UIRemoteNotificationTypeAlert)];
     
-    [Appboy startWithApiKey:@"db5ef4d1-5b93-44d4-a932-738dfdf2c792"
+    [Appboy startWithApiKey:@"3c18186e-6552-4476-be8e-239055a02144"
               usingDelegate:nil
               inApplication:application
           withLaunchOptions:launchOptions];
+    [Appboy sharedInstance].slideupDelegate = [AppboyUnityManager sharedInstance];    
 
     return NO;
 }
