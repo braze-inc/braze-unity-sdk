@@ -69,9 +69,6 @@ public class AppboyBinding : MonoBehaviour {
   private static extern void _setCustomUserAttributeFloat(string key, float val);
 	
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _setCustomUserAttributeLong(string key, long val);
-	
-  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setCustomUserAttributeString(string key, string val);
 	
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -145,10 +142,6 @@ public class AppboyBinding : MonoBehaviour {
 
   public static void SetCustomUserAttribute(string key, float value) {
 	_setCustomUserAttributeFloat(key, value);
-  }
-
-  public static void SetCustomUserAttribute(string key, long value) {
-	_setCustomUserAttributeLong(key, value);
   }
 
   public static void SetCustomUserAttribute(string key, string value) {
@@ -329,10 +322,6 @@ public class AppboyBinding : MonoBehaviour {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
 
-  public static void SetCustomUserAttribute(string key, long value) {
-    GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
-  }
-
   public static void SetCustomUserAttribute(string key, string value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
@@ -386,8 +375,6 @@ public class AppboyBinding : MonoBehaviour {
   public static void SetCustomUserAttribute(string key, int value) {}
 
   public static void SetCustomUserAttribute(string key, float value) {}
-
-  public static void SetCustomUserAttribute(string key, long value) {}
 
   public static void SetCustomUserAttribute(string key, string value) {}
 

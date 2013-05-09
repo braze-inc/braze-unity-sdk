@@ -92,11 +92,6 @@ void _setCustomUserAttributeFloat(const char* key, float val)
     [[AppboyUnityManager sharedInstance] setUserCustomAttributeWithKey:GetStringParam(key) andDoubleValue:(double)val];
 }
 
-void _setCustomUserAttributeLong(const char* key, long val)
-{
-    [[AppboyUnityManager sharedInstance] setUserCustomAttributeWithKey:GetStringParam(key) andIntegerValue:val];
-}
-
 void _setCustomUserAttributeString(const char* key, const char* val)
 {
     [[AppboyUnityManager sharedInstance] setUserCustomAttributeWithKey:GetStringParam(key) andStringValue:GetStringParam(val)];

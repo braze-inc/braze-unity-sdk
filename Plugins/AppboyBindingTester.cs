@@ -21,7 +21,6 @@ public class AppboyBindingTester : MonoBehaviour {
     AppboyBinding.SetCustomUserAttribute("knows_ben", true);
     AppboyBinding.SetCustomUserAttribute("cats_owned", 0);
     AppboyBinding.SetCustomUserAttribute("course", 6.001f);
-    AppboyBinding.SetCustomUserAttribute("long_euclid_prime", 200560490131);
     AppboyBinding.SetCustomUserAttribute("language", "lisp");
     AppboyBinding.SetCustomUserAttributeToSecondsFromEpoch("origin", 1);
     AppboyBinding.SetCustomUserAttributeToNow("last_used");
