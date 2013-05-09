@@ -474,7 +474,7 @@ void UnityInitTrampoline()
                                          UIRemoteNotificationTypeSound |
                                          UIRemoteNotificationTypeAlert)];
     
-    [Appboy startWithApiKey:@"3c18186e-6552-4476-be8e-239055a02144"
+    [Appboy startWithApiKey:@"YOUR-API-KEY"
               usingDelegate:nil
               inApplication:application
           withLaunchOptions:launchOptions];
