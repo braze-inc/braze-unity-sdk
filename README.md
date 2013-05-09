@@ -69,14 +69,13 @@ First, we'll confirm that you've copied the plugin folder correctly and identify
 </code>
 <br />
 The output should look something like this:
-<code><pre>
-Assets/Plugins/Android/AndroidManifest.xml:  package="REPLACE WITH YOUR.BUNDLE.ID" android:versionCode="1" android:versionName="0.0"&gt;
+<pre><code>Assets/Plugins/Android/AndroidManifest.xml:  package="REPLACE WITH YOUR.BUNDLE.ID" android:versionCode="1" android:versionName="0.0"&gt;
 Assets/Plugins/Android/AndroidManifest.xml:  &lt;permission android:name="REPLACE WITH YOUR.BUNDLE.ID.permission.C2D_MESSAGE" android:protectionLevel="signature" /&gt;
 Assets/Plugins/Android/AndroidManifest.xml:  &lt;uses-permission android:name="REPLACE WITH YOUR.BUNDLE.ID.permission.C2D_MESSAGE" /&gt;
 Assets/Plugins/Android/AndroidManifest.xml:    &lt;meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="REPLACE WITH YOUR STAGING API KEY" /&gt;&lt;!-- STAGING --&gt;
 Assets/Plugins/Android/AndroidManifest.xml:        &lt;category android:name="REPLACE WITH YOUR.BUNDLE.ID" /&gt;
 Assets/Plugins/Android/res/values/strings.xml:  &lt;string name="gcm_sender_id">REPLACE WITH YOUR GCM ID&lt;/string&gt;
-</pre></code>
+</code></pre>
 </li>
 <li>Next, you need to find your "Bundle Identifier" from Unity. This is available from the Android tab of the "Player Settings" pane (accessible by clicking the Player Settings button in File -> Build Settings). The Player Settings pane looks like this in Unity 4: 
 <br />
