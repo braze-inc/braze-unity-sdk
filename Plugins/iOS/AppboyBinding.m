@@ -48,7 +48,7 @@ void _setUserEmail(const char* email)
 
 void _setUserBio(const char* bio)
 {
-	[[AppboyUnityManager sharedInstance] setUserEmail:GetStringParam(bio)];
+	[[AppboyUnityManager sharedInstance] setUserBio:GetStringParam(bio)];
 }
 
 void _setUserGender(const char* gender)
