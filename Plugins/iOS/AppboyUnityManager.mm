@@ -78,9 +78,9 @@
     [Appboy sharedInstance].user.bio = bio;
 }
 
-- (void) setUserGender:(NSString *)gender
+- (void) setUserGender:(NSInteger)gender
 {
-    [Appboy sharedInstance].user.gender = gender;
+    [Appboy sharedInstance].user.gender = (ABKUserGenderType)gender;
 }
 
 - (void) setUserDateOfBirthToYear:(NSInteger)year Month:(NSInteger)month andDay:(NSInteger)day
