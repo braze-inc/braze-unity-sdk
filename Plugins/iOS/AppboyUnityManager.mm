@@ -10,7 +10,7 @@
 #include "iPhone_View.h"
 #import "Appboy.h"
 #import "ABKFeedbackViewControllerModalContext.h"
-#import "ABKStreamViewControllerModalContext.h"
+#import "ABKFeedViewControllerModalContext.h"
 
 @implementation AppboyUnityManager
 
@@ -33,7 +33,7 @@
 
 - (void) showStreamView
 {
-    ABKStreamViewControllerModalContext *streamViewController = [[ABKStreamViewControllerModalContext alloc] init];
+    ABKFeedViewControllerModalContext *streamViewController = [[ABKFeedViewControllerModalContext alloc] init];
     [UnityGetGLViewController() presentModalViewController:streamViewController animated:YES];
     [streamViewController release];
 }
