@@ -40,7 +40,7 @@
 
 - (void) logCustomEvent:(NSString *)eventName
 {
-    [[Appboy sharedInstance] logAppEvent:eventName];
+    [[Appboy sharedInstance] logCustomEvent:eventName];
 }
 
 - (void) changeUser:(NSString *)userId
@@ -50,7 +50,7 @@
 
 - (void) logPurchase:(NSString *)productId priceCents:(NSUInteger)price
 {
-    [[Appboy sharedInstance] logAppPurchase:productId priceCents:price];
+    [[Appboy sharedInstance] logPurchase:productId priceInCents:price];
 }
 
 - (void) setUserFirstName:(NSString *)firstName
