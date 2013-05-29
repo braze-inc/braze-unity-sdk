@@ -51,9 +51,9 @@ void _setUserBio(const char* bio)
 	[[AppboyUnityManager sharedInstance] setUserBio:GetStringParam(bio)];
 }
 
-void _setUserGender(const char* gender)
+void _setUserGender(int gender)
 {
-	[[AppboyUnityManager sharedInstance] setUserGender:GetStringParam(gender)];
+	[[AppboyUnityManager sharedInstance] setUserGender:gender];
 }
 
 void _setUserDateOfBirth(int year, int month, int day)
