@@ -10,7 +10,7 @@
 #include "iPhone_View.h"
 #import "Appboy.h"
 #import "ABKFeedbackViewControllerModalContext.h"
-#import "ABKStreamViewControllerModalContext.h"
+#import "ABKFeedViewControllerModalContext.h"
 
 @implementation AppboyUnityManager
 
@@ -33,14 +33,14 @@
 
 - (void) showStreamView
 {
-    ABKStreamViewControllerModalContext *streamViewController = [[ABKStreamViewControllerModalContext alloc] init];
+    ABKFeedViewControllerModalContext *streamViewController = [[ABKFeedViewControllerModalContext alloc] init];
     [UnityGetGLViewController() presentModalViewController:streamViewController animated:YES];
     [streamViewController release];
 }
 
 - (void) logCustomEvent:(NSString *)eventName
 {
-    [[Appboy sharedInstance] logAppEvent:eventName];
+    [[Appboy sharedInstance] logCustomEvent:eventName];
 }
 
 - (void) changeUser:(NSString *)userId
@@ -50,7 +50,7 @@
 
 - (void) logPurchase:(NSString *)productId priceCents:(NSUInteger)price
 {
-    [[Appboy sharedInstance] logAppPurchase:productId priceCents:price];
+    [[Appboy sharedInstance] logPurchase:productId priceInCents:price];
 }
 
 - (void) setUserFirstName:(NSString *)firstName
@@ -78,9 +78,9 @@
     [Appboy sharedInstance].user.bio = bio;
 }
 
-- (void) setUserGender:(NSString *)gender
+- (void) setUserGender:(NSInteger)gender
 {
-    [Appboy sharedInstance].user.gender = gender;
+  [[Appboy sharedInstance].user setGender:(ABKUserGenderType)gender];
 }
 
 - (void) setUserDateOfBirthToYear:(NSInteger)year Month:(NSInteger)month andDay:(NSInteger)day

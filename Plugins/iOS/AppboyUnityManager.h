@@ -22,7 +22,7 @@
 - (void) setUserPhoneNumber:(NSString *)number;
 - (void) setUserEmail:(NSString *)email;
 - (void) setUserBio:(NSString *)bio;
-- (void) setUserGender:(NSString *)gender;
+- (void) setUserGender:(NSInteger)gender;
 - (void) setUserDateOfBirthToYear:(NSInteger)year Month:(NSInteger)month andDay:(NSInteger)day;
 - (void) setUserCountry:(NSString *)country;
 - (void) setUserHomeCity:(NSString *)city;

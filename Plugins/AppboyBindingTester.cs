@@ -12,7 +12,7 @@ public class AppboyBindingTester : MonoBehaviour {
     AppboyBinding.SetUserLastName("Hacker");
     AppboyBinding.SetUserEmail("Alyssa.P.Hacker@appboy.com");
     AppboyBinding.SetUserBio("A wielder of elegant weapons, for a more civilized age.");
-    AppboyBinding.SetUserGender("FEMALE");
+    AppboyBinding.SetUserGender(AppboyGender.Female);
     AppboyBinding.SetUserDateOfBirth(1984, 3, 14);
     AppboyBinding.SetUserCountry("United States");
     AppboyBinding.SetUserHomeCity("Cambridge, MA");

@@ -42,7 +42,7 @@ public class AppboyBinding : MonoBehaviour {
   private static extern void _setUserBio(string bio);
 	
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _setUserGender(string gender);
+  private static extern void _setUserGender(int gender);
 	
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserEmail(string email);
@@ -108,8 +108,8 @@ public class AppboyBinding : MonoBehaviour {
 	_setUserBio(bio);
   }
  
-  public static void SetUserGender(string gender) {
-	_setUserGender(gender);
+  public static void SetUserGender(AppboyGender gender) {
+	_setUserGender((int)gender);
   }
  
   public static void SetUserDateOfBirth(int year, int month, int day) {
@@ -216,15 +216,13 @@ public class AppboyBinding : MonoBehaviour {
   /// <param name='gender'>
   /// The gender of the user. Should be either 'M', 'F', 'MALE', or 'FEMALE'.
   /// </param>
-  public static void SetUserGender(string gender) {
+  public static void SetUserGender(AppboyGender gender) {
     using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
-      switch (gender.ToLowerInvariant()) {
-        case "m":
-        case "male":
+      switch (gender) {
+        case AppboyUser.Male:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("MALE"));
           break;
-        case "f":
-        case "female":
+        case AppboyUser.Female:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("FEMALE"));
           break;
         default:
@@ -358,7 +356,7 @@ public class AppboyBinding : MonoBehaviour {
 
   public static void SetUserBio(string bio) {}
 
-  public static void SetUserGender(string gender) {}
+  public static void SetUserGender(AppboyGender gender) {}
 
   public static void SetUserDateOfBirth(int year, int month, int day) {}
 
