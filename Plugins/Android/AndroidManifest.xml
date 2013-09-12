@@ -23,8 +23,7 @@
       </intent-filter>
     </activity>
   
-    <meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="REPLACE WITH YOUR STAGING API KEY" /><!-- STAGING -->
-    <meta-data android:name="com.appboy.SERVER_TARGET" android:value="staging" />
+    <meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="REPLACE WITH YOUR *PRODUCTION* API KEY" />
 		
     <!-- Have Appboy automatically handle your GCM registration. -->
     <meta-data android:name="com.appboy.GCM_MESSAGING_REGISTRATION_ENABLED" android:value="true" />
@@ -38,12 +37,7 @@
       </intent-filter>
     </receiver>
 
-    <receiver android:name="com.appboy.sample.NotificationActionReceiver" >
-      <intent-filter>
-        <action android:name="com.appboy.sample.intent.APPBOY_PUSH_RECEIVED" />
-        <action android:name="com.appboy.sample.intent.APPBOY_NOTIFICATION_OPENED" />
-      </intent-filter>
-    </receiver>
+    <!-- Register and optional notification receiver here -->
 </application>
 </manifest>
 
