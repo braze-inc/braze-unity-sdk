@@ -94,6 +94,8 @@ For push notifications to work, you will now need to insert your GCM Sender ID f
 <li>
 At this point, you should be able to run the grep command from Step 1 and have no results. If there are any additional instances of <code>REPLACE</code> remaining, repeat these steps.
 </li>
+<li>Next, you must configure push notifications on the Appboy <a href="http://dashboard.appboy.com">dashboard</a>. Navigate back to the "Settings" page by clicking the gear icon to the right of your app name. Under the Push Notifications section of the App Settings page, insert your GCM API key. This is different from your GCM Sender ID and can be found on the API Access page of your Google API project. Your Google Project API key should look something like <code>ABcdEfGHij1_klm2NOPQrwTuVWxyZ3A4bCDeF5g</code>. Please refer back to <a href="http"//developer.android.com/google/gcm/gs.html">GCM setup instructions</a> for more help.
+</li>
 <li>
 Finally, you should confirm that your Android app is only targeting version 2.2 (Froyo) and above. This setting is available from the same "Player Settings" pane that you found the Bundle Identifier in during Step 2. Android versions previous to 2.2 represent a vanishingly small portion of active Android devices and are not supported by Appboy.
 </li>
