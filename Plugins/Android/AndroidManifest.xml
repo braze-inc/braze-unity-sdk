@@ -23,7 +23,7 @@
       </intent-filter>
     </activity>
   
-    <meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="REPLACE WITH YOUR STAGING API KEY" />
+    <meta-data android:name="com.appboy.APPBOY_API_KEY" android:value="REPLACE WITH YOUR *PRODUCTION* API KEY" />
 		
     <!-- Have Appboy automatically handle your GCM registration. -->
     <meta-data android:name="com.appboy.GCM_MESSAGING_REGISTRATION_ENABLED" android:value="true" />
