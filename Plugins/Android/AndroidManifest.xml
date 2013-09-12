@@ -37,12 +37,7 @@
       </intent-filter>
     </receiver>
 
-    <receiver android:name="com.appboy.sample.NotificationActionReceiver" >
-      <intent-filter>
-        <action android:name="com.appboy.sample.intent.APPBOY_PUSH_RECEIVED" />
-        <action android:name="com.appboy.sample.intent.APPBOY_NOTIFICATION_OPENED" />
-      </intent-filter>
-    </receiver>
+    <!-- Register and optional notification receiver here -->
 </application>
 </manifest>
 
