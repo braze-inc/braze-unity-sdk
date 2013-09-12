@@ -219,10 +219,10 @@ public class AppboyBinding : MonoBehaviour {
   public static void SetUserGender(AppboyGender gender) {
     using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
       switch (gender) {
-        case AppboyUser.Male:
+        case AppboyGender.Male:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("MALE"));
           break;
-        case AppboyUser.Female:
+        case AppboyGender.Female:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("FEMALE"));
           break;
         default:
