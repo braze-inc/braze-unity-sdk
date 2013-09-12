@@ -84,7 +84,7 @@ Assets/Plugins/Android/res/values/strings.xml:  &lt;string name="gcm_sender_id">
 In AndroidManifest.xml, replace all instances of <code>REPLACE WITH YOUR.BUNDLE.ID</code> with the Bundle Identifier you found in Step 2. Your Bundle Identifier is usually of the form "com.unity.appname".
 </li>
 <li>
-Now you must configure the Android manifest with the API key for your app. If you don't have your API key, simply login to the Appboy <a href="http://sweeney.appboy.com">dashboard</a>. If you don't have an app or account yet, you'll need to create them by following the wizard. Once you've created an app, navigate to the "Settings" page by clicking the gear icon to the right of your app name in the top left of the Apps tab. You can use the default Debug API Key that will have been created for you for debugging. When you're ready to deploy your application, you should update this to use your Production key.
+Now you must configure the Android manifest with the API key for your app. If you don't have your API key, simply login to the Appboy <a href="http://dashboard.appboy.com">dashboard</a>. If you don't have an app or account yet, you'll need to create them by following the wizard. Once you've created an app, navigate to the "Settings" page by clicking the gear icon to the right of your app name in the top left of the Apps tab. You can use the default Debug API Key that will have been created for you for debugging. When you're ready to deploy your application, you should update this to use your Production key.
 </li>
 <li>
 Replace <code>REPLACE WITH YOUR STAGING API KEY</code> with the API key you retrieved in Step 4. It should look something like <code>"86bae89e-bb14-4678-9f55-ef6f92d80b98</code>.
@@ -93,6 +93,8 @@ Replace <code>REPLACE WITH YOUR STAGING API KEY</code> with the API key you retr
 For push notifications to work, you will now need to insert your GCM Sender ID from Google into the strings.xml resource file. If you don't have a GCM Sender ID yet, you'll need to follow the <a href="http://developer.android.com/google/gcm/gs.html">GCM setup instructions</a> from Google. Once you have the ID, change <code>REPLACE WITH YOUR GCM ID</code> to your GCM ID. Since the GCM ID is a number, you shouldn't surround the value with quotes. Your ID should look something like <code>134664038331</code>.
 <li>
 At this point, you should be able to run the grep command from Step 1 and have no results. If there are any additional instances of <code>REPLACE</code> remaining, repeat these steps.
+</li>
+<li>Next, you must configure push notifications on the Appboy <a href="http://dashboard.appboy.com">dashboard</a>. Navigate back to the "Settings" page by clicking the gear icon to the right of your app name. Under the Push Notifications section of the App Settings page, insert your GCM API key. This is different from your GCM Sender ID and can be found on the API Access page of your Google API project. Your Google Project API key should look something like <code>ABcdEfGHij1_klm2NOPQrwTuVWxyZ3A4bCDeF5g</code>. Please refer back to <a href="http"//developer.android.com/google/gcm/gs.html">GCM setup instructions</a> for more help.
 </li>
 <li>
 Finally, you should confirm that your Android app is only targeting version 2.2 (Froyo) and above. This setting is available from the same "Player Settings" pane that you found the Bundle Identifier in during Step 2. Android versions previous to 2.2 represent a vanishingly small portion of active Android devices and are not supported by Appboy.
