@@ -42,7 +42,7 @@
 
 - (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price
 {
-    [[Appboy sharedInstance] inCurrency:currencyCode atPrice:[NSDecimalNumber decimalNumberWithString:price]];
+    [[Appboy sharedInstance] logPurchase:productId inCurrency:currencyCode atPrice:[NSDecimalNumber decimalNumberWithString:price]];
 }
 
 - (void) setUserFirstName:(NSString *)firstName
