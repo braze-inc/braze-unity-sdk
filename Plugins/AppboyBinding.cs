@@ -187,9 +187,10 @@ public class AppboyBinding : MonoBehaviour {
   }
   
   public static void LogPurchase(string productId, string currencyCode, decimal price) {
-    GetAppboy().Call<bool>("logPurchase", productId, priceInCents);
+    var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
+    GetAppboy().Call<bool>("logPurchase", productId, currencyCode, javaPrice);
   }
-  
+ 
   public static void ChangeUser(string userId) {
     GetAppboy().Call<AndroidJavaObject>("changeUser", userId);
   }
