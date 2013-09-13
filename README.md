@@ -69,12 +69,12 @@ First, we'll confirm that you've copied the plugin folder correctly and identify
 <br />
 The output should look something like this:
 <pre><code>
-Android/AndroidManifest.xml:  package="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" android:versionCode="1" android:versionName="0.0">
-Android/AndroidManifest.xml:  <permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-Android/AndroidManifest.xml:  <uses-permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" />
-Android/AndroidManifest.xml:        <category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" />
-Android/res/values/appboy.xml:  <string name="com_appboy_api_key">REPLACE_WITH_YOUR_APPBOY_API_KEY</string>
-Android/res/values/appboy.xml:  <string name="com_appboy_push_gcm_sender_id">REPLACE_WITH_YOUR_GOOGLE_API_PROJECT_NUMBER</string>  <!-- Replace with your Google API project number -->
+Android/AndroidManifest.xml:  package="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" android:versionCode="1" android:versionName="0.0"&gt;
+Android/AndroidManifest.xml:  &lt;permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" android:protectionLevel="signature" /&gt;
+Android/AndroidManifest.xml:  &lt;uses-permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" /&gt;
+Android/AndroidManifest.xml:        &lt;category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" /&gt;
+Android/res/values/appboy.xml:  &lt;string name="com_appboy_api_key"&gt;REPLACE_WITH_YOUR_APPBOY_API_KEY&lt;/string&gt;
+Android/res/values/appboy.xml:  &lt;string name="com_appboy_push_gcm_sender_id"&gt;REPLACE_WITH_YOUR_GOOGLE_API_PROJECT_NUMBER&lt;/string&gt;  &lt;!-- Replace with your Google API project number --&gt;
 </code></pre>
 </li>
 <li>Next, you need to find your "Bundle Identifier" from Unity. This is available from the Android tab of the "Player Settings" pane (accessible by clicking the Player Settings button in File -> Build Settings). The Player Settings pane looks like this in Unity 4: 
