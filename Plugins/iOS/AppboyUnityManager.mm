@@ -1,11 +1,3 @@
-//
-//  AppboyUnityManager.mm
-//  Unity-iPhone
-//
-//  Created by Peter McKee on 5/1/13.
-//
-//
-
 #import "AppboyUnityManager.h"
 #include "iPhone_View.h"
 #import "Appboy.h"
@@ -48,9 +40,9 @@
     [[Appboy sharedInstance] changeUser:userId];
 }
 
-- (void) logPurchase:(NSString *)productId priceCents:(NSUInteger)price
+- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price
 {
-    [[Appboy sharedInstance] logPurchase:productId priceInCents:price];
+    [[Appboy sharedInstance] inCurrency:currencyCode atPrice:[NSDecimalNumber decimalNumberWithString:price]];
 }
 
 - (void) setUserFirstName:(NSString *)firstName

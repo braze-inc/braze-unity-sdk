@@ -27,7 +27,7 @@ public class AppboyBinding : MonoBehaviour {
   private static extern void _changeUser(string userId);
 	
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logPurchase(string productId, int cents);
+  private static extern void _logPurchase(string productId, string currencyCode, string price);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserFirstName(string firstName);
@@ -84,8 +84,8 @@ public class AppboyBinding : MonoBehaviour {
     _logCustomEvent(eventName);
   }
   
-  public static void LogPurchase(string productId, int priceInCents) {
-	_logPurchase(productId, priceInCents);
+  public static void LogPurchase(string productId, string currencyCode, decimal price) {
+	_logPurchase(productId, currencyCode, price.ToString());
   }
   
   public static void ChangeUser(string userId) {
@@ -186,7 +186,7 @@ public class AppboyBinding : MonoBehaviour {
     GetAppboy().Call<bool>("logCustomEvent", eventName);
   }
   
-  public static void LogPurchase(string productId, int priceInCents) {
+  public static void LogPurchase(string productId, string currencyCode, decimal price) {
     GetAppboy().Call<bool>("logPurchase", productId, priceInCents);
   }
   
@@ -344,7 +344,7 @@ public class AppboyBinding : MonoBehaviour {
 
   public static void LogCustomEvent(string eventName) {}
 
-  public static void LogPurchase(string productId, int priceInCents) {}
+  public static void LogPurchase(string productId, string currencyCode, decimal price) {}
 
   public static void ChangeUser(string userId) {}
 

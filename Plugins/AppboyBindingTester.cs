@@ -6,7 +6,7 @@ public class AppboyBindingTester : MonoBehaviour {
   // Use this for initialization
   void Start() {
     AppboyBinding.LogCustomEvent("Started Unity");
-    AppboyBinding.LogPurchase("StartToken", 25);
+    AppboyBinding.LogPurchase("StartToken", "USD", 0.99m);
     AppboyBinding.ChangeUser("Alyssa.P.Hacker@appboy.com");
     AppboyBinding.SetUserFirstName("Alyssa");
     AppboyBinding.SetUserLastName("Hacker");

@@ -1,11 +1,3 @@
-//
-//  AppboyUnityManager.h
-//  Unity-iPhone
-//
-//  Created by Peter McKee on 5/1/13.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import "Appboy.h"
 
@@ -16,7 +8,7 @@
 - (void) showFeedbackForm;
 - (void) logCustomEvent:(NSString *)eventName;
 - (void) changeUser:(NSString *)userId;
-- (void) logPurchase:(NSString *)productId priceCents:(NSUInteger)price;
+- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price;
 - (void) setUserFirstName:(NSString *)firstName;
 - (void) setUserLastName:(NSString *)lastName;
 - (void) setUserPhoneNumber:(NSString *)number;

@@ -1,11 +1,3 @@
-//
-//  AppboyBinding.m
-//  Unity-iPhone
-//
-//  Created by Peter McKee on 4/30/13.
-//
-//
-
 #import "AppboyUnityManager.h"
 
 // Converts C style string to NSString
@@ -21,9 +13,9 @@ void _changeUser(const char* userId)
 	[[AppboyUnityManager sharedInstance] changeUser:GetStringParam(userId)];
 }
 
-void _logPurchase(const char* productId, int cents)
+void _logPurchase(const char* productId, const char* currencyCode, const char* price)
 {
-    [[AppboyUnityManager sharedInstance] logPurchase:GetStringParam(productId) priceCents:cents];
+    [[AppboyUnityManager sharedInstance] logPurchase:GetStringParam(productId) inCurrency:GetStringParam(currencyCode) atPrice:GetStringParam(price)];
 }
 
 void _setUserFirstName(const char* firstName)
