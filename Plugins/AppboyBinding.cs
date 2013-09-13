@@ -27,7 +27,7 @@ public class AppboyBinding : MonoBehaviour {
   private static extern void _changeUser(string userId);
 	
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logPurchase(string productId, int cents);
+  private static extern void _logPurchase(string productId, string currencyCode, string price);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserFirstName(string firstName);
@@ -84,8 +84,7 @@ public class AppboyBinding : MonoBehaviour {
     _logCustomEvent(eventName);
   }
   
-  public static void LogPurchase(string productId, int priceInCents) {
-	_logPurchase(productId, priceInCents);
+  public static void LogPurchase(string productId, string currencyCode, decimal price) {
   }
   
   public static void ChangeUser(string userId) {
@@ -186,10 +185,11 @@ public class AppboyBinding : MonoBehaviour {
     GetAppboy().Call<bool>("logCustomEvent", eventName);
   }
   
-  public static void LogPurchase(string productId, int priceInCents) {
-    GetAppboy().Call<bool>("logPurchase", productId, priceInCents);
+  public static void LogPurchase(string productId, string currencyCode, decimal price) {
+    var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
+    GetAppboy().Call<bool>("logPurchase", productId, currencyCode, javaPrice);
   }
-  
+ 
   public static void ChangeUser(string userId) {
     GetAppboy().Call<AndroidJavaObject>("changeUser", userId);
   }
@@ -219,10 +219,10 @@ public class AppboyBinding : MonoBehaviour {
   public static void SetUserGender(AppboyGender gender) {
     using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
       switch (gender) {
-        case AppboyUser.Male:
+        case AppboyGender.Male:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("MALE"));
           break;
-        case AppboyUser.Female:
+        case AppboyGender.Female:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("FEMALE"));
           break;
         default:
@@ -344,7 +344,7 @@ public class AppboyBinding : MonoBehaviour {
 
   public static void LogCustomEvent(string eventName) {}
 
-  public static void LogPurchase(string productId, int priceInCents) {}
+  public static void LogPurchase(string productId, string currencyCode, decimal price) {}
 
   public static void ChangeUser(string userId) {}
 
