@@ -84,13 +84,10 @@ Android/res/values/appboy.xml:  &lt;string name="com_appboy_push_gcm_sender_id"&
 In AndroidManifest.xml, replace all instances of <code>REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER</code> with the Bundle Identifier you found in Step 2. Your Bundle Identifier is usually of the form "com.unity.appname".
 </li>
 <li>
-Now you must configure the Android manifest with the API key for your app. If you don't have your API key, simply login to the Appboy <a href="http://dashboard.appboy.com">dashboard</a>. If you don't have an app or account yet, you'll need to create them by following the wizard. Once you've created an app, navigate to the "Settings" page by clicking the gear icon to the right of your app name in the top left of the Apps tab. You can use the default Debug API Key that will have been created for you for debugging. When you're ready to deploy your application, you should update this to use your Production key.
+Now you must configure the plugin by replacing a few values in the Appboy configuration file (Plugins/Android/res/values/appboy.xml). Replace the text <code>REPLACE_WITH_YOUR_APPBOY_API_KEY</code> with your API key. If you don't have your API key, simply login to the Appboy dashboard. If you don't have an app or account yet, you'll need to create them by following the wizard. Once you've created an app, navigate to the "Settings" page by clicking the gear icon to the right of your app name in the top left of the Apps tab. You can use the default Debug API Key that will have been created for you for debugging. When you're ready to deploy your application, you should update this to use your Production key. 
 </li>
 <li>
-Replace <code>REPLACE_WITH_YOUR_APPBOY_API_KEY</code> with the API key you retrieved in Step 4. It should look something like <code>"86bae89e-bb14-4678-9f55-ef6f92d80b98</code>.
-</li>
-<li>
-For push notifications to work, you will now need to insert your GCM Sender ID from Google into the strings.xml resource file. If you don't have a GCM Sender ID yet, you'll need to follow the <a href="http://developer.android.com/google/gcm/gs.html">GCM setup instructions</a> from Google. Once you have the ID, change <code>REPLACE WITH YOUR GCM ID</code> to your GCM ID. Since the GCM ID is a number, you shouldn't surround the value with quotes. Your ID should look something like <code>134664038331</code>.
+For push notifications to work, you will now need to insert your GCM Sender ID from Google into the same appboy.xml configuration file. If you don't have a GCM Sender ID yet, you'll need to follow the GCM setup instructions from Google. Once you have the ID, change <code>REPLACE_WITH_YOUR_GOOGLE_API_PROJECT_NUMBER</code> to your GCM ID. Since the GCM ID is a number, you shouldn't surround the value with quotes. Your ID should look something like <code>134664038331</code>.
 <li>
 At this point, you should be able to run the grep command from Step 1 and have no results. If there are any additional instances of <code>REPLACE</code> remaining, repeat these steps.
 </li>
