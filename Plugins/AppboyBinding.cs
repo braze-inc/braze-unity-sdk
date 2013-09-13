@@ -85,6 +85,7 @@ public class AppboyBinding : MonoBehaviour {
   }
   
   public static void LogPurchase(string productId, string currencyCode, decimal price) {
+	_logPurchase(productId, currencyCode, price.ToString());
   }
   
   public static void ChangeUser(string userId) {
