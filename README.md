@@ -68,8 +68,7 @@ First, we'll confirm that you've copied the plugin folder correctly and identify
 </code>
 <br />
 The output should look something like this:
-<pre><code>
-Android/AndroidManifest.xml:  package="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" android:versionCode="1" android:versionName="0.0"&gt;
+<pre><code>Android/AndroidManifest.xml:  package="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" android:versionCode="1" android:versionName="0.0"&gt;
 Android/AndroidManifest.xml:  &lt;permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" android:protectionLevel="signature" /&gt;
 Android/AndroidManifest.xml:  &lt;uses-permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" /&gt;
 Android/AndroidManifest.xml:        &lt;category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" /&gt;
