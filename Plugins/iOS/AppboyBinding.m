@@ -104,4 +104,7 @@ void _unsetCustomUserAttribute(const char* key)
     [[AppboyUnityManager sharedInstance] unsetUserCustomAttributeWithKey:GetStringParam(key)];
 }
 
-
+void _submitFeedback(const char* replyToEmail, const char* message, bool isReportingABug)
+{
+  [[AppboyUnityManager sharedInstance] submitFeedback:GetStringParam(replyToEmail) message:GetStringParam(message) isReportingABug:isReportingABug];
+}

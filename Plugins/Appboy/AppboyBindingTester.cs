@@ -37,7 +37,7 @@ namespace Appboy {
       Slideup slideup = new Slideup(slideupJson);
       Debug.Log("Slideup message: " + slideup);
     }
-	
+		
     void PushNotificationReceivedCallback(string message) {
       JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       PushNotification pushNotification = new PushNotification(pushNotificationJson);

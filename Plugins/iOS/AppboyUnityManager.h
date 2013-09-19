@@ -26,5 +26,6 @@
 - (void) setUserCustomAttributeToNowWithKey:(NSString *)key;
 - (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds;
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key;
+- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
 @end

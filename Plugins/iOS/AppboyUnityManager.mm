@@ -4,6 +4,7 @@
 #import "ABKFeedbackViewControllerModalContext.h"
 #import "ABKFeedViewControllerModalContext.h"
 
+
 @implementation AppboyUnityManager
 
 + (AppboyUnityManager*)sharedInstance
@@ -140,9 +141,26 @@
     [[Appboy sharedInstance].user unsetCustomAttributeWithKey:key];
 }
 
+- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug
+{
+  return [[Appboy sharedInstance] submitFeedback:replyToEmail message:message isReportingABug:isReportingABug];
+}
+
 // ABKSlideUpDelegate methods
 - (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message {
-    return ABKSlideupShouldIgnore;
+  
+  NSDictionary *slideupMessageDictionary = [NSDictionary dictionaryWithObject:message forKey:@"message"];
+  if ([NSJSONSerialization isValidJSONObject:slideupMessageDictionary]) {
+    NSError *slideupParsingError = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:slideupMessageDictionary options:0 error:&slideupParsingError];
+    if (slideupParsingError == nil) {
+      NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+      UnitySendMessage("Main Camera", "SlideupReceivedCallback", [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+      [dataString release];
+    }
+  }
+  
+  return ABKSlideupShouldIgnore;
 }
 
 - (void) slideupWasTapped {
