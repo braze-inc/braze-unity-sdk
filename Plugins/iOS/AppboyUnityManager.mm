@@ -4,11 +4,9 @@
 #import "ABKFeedbackViewControllerModalContext.h"
 #import "ABKFeedViewControllerModalContext.h"
 
-
 @implementation AppboyUnityManager
 
-+ (AppboyUnityManager*)sharedInstance
-{
++ (AppboyUnityManager*)sharedInstance {
 	static AppboyUnityManager *sharedInstance = nil;
   
 	if(!sharedInstance)
@@ -17,67 +15,55 @@
 	return sharedInstance;
 }
 
-- (void) showFeedbackForm
-{
+- (void) showFeedbackForm {
   ABKFeedbackViewControllerModalContext *feedbackViewController = [[ABKFeedbackViewControllerModalContext alloc] init];
   [UnityGetGLViewController() presentModalViewController:feedbackViewController animated:YES];
   [feedbackViewController release];
 }
 
-- (void) showStreamView
-{
+- (void) showStreamView {
   ABKFeedViewControllerModalContext *streamViewController = [[ABKFeedViewControllerModalContext alloc] init];
   [UnityGetGLViewController() presentModalViewController:streamViewController animated:YES];
   [streamViewController release];
 }
 
-- (void) logCustomEvent:(NSString *)eventName
-{
+- (void) logCustomEvent:(NSString *)eventName {
   [[Appboy sharedInstance] logCustomEvent:eventName];
 }
 
-- (void) changeUser:(NSString *)userId
-{
+- (void) changeUser:(NSString *)userId {
   [[Appboy sharedInstance] changeUser:userId];
 }
 
-- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price
-{
+- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price {
   [[Appboy sharedInstance] logPurchase:productId inCurrency:currencyCode atPrice:[NSDecimalNumber decimalNumberWithString:price]];
 }
 
-- (void) setUserFirstName:(NSString *)firstName
-{
+- (void) setUserFirstName:(NSString *)firstName {
   [Appboy sharedInstance].user.firstName = firstName;
 }
 
-- (void) setUserLastName:(NSString *)lastName
-{
+- (void) setUserLastName:(NSString *)lastName {
   [Appboy sharedInstance].user.lastName = lastName;
 }
 
-- (void) setUserPhoneNumber:(NSString *)number
-{
+- (void) setUserPhoneNumber:(NSString *)number {
   [Appboy sharedInstance].user.phone = number;
 }
 
-- (void) setUserEmail:(NSString *)email
-{
+- (void) setUserEmail:(NSString *)email {
   [Appboy sharedInstance].user.email = email;
 }
 
-- (void) setUserBio:(NSString *)bio
-{
+- (void) setUserBio:(NSString *)bio {
   [Appboy sharedInstance].user.bio = bio;
 }
 
-- (void) setUserGender:(NSInteger)gender
-{
+- (void) setUserGender:(NSInteger)gender {
   [[Appboy sharedInstance].user setGender:(ABKUserGenderType)gender];
 }
 
-- (void) setUserDateOfBirthToYear:(NSInteger)year Month:(NSInteger)month andDay:(NSInteger)day
-{
+- (void) setUserDateOfBirthToYear:(NSInteger)year Month:(NSInteger)month andDay:(NSInteger)day {
   NSDateComponents *comps = [[NSDateComponents alloc] init];
   [comps setDay:day];
   [comps setMonth:month];
@@ -91,64 +77,52 @@
   [comps release];
 }
 
-- (void) setUserCountry:(NSString *)country
-{
+- (void) setUserCountry:(NSString *)country {
   [Appboy sharedInstance].user.country = country;
 }
 
-- (void) setUserHomeCity:(NSString *)city
-{
+- (void) setUserHomeCity:(NSString *)city {
   [Appboy sharedInstance].user.homeCity = city;
 }
 
-- (void) setUserIsSubscribedToEmails:(BOOL)subscribedToEmail
-{
+- (void) setUserIsSubscribedToEmails:(BOOL)subscribedToEmail {
   [[Appboy sharedInstance].user setIsSubscribedToEmails:subscribedToEmail];
 }
 
-- (void) setUserCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value
-{
+- (void) setUserCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andBOOLValue:value];
 }
 
-- (void) setUserCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value
-{
+- (void) setUserCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andIntegerValue:value];
 }
 
-- (void) setUserCustomAttributeWithKey:(NSString *)key andDoubleValue:(double)value
-{
+- (void) setUserCustomAttributeWithKey:(NSString *)key andDoubleValue:(double)value {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDoubleValue:value];
 }
 
-- (void) setUserCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value
-{
+- (void) setUserCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andStringValue:value];
 }
 
-- (void) setUserCustomAttributeToNowWithKey:(NSString *)key
-{
+- (void) setUserCustomAttributeToNowWithKey:(NSString *)key {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDateValue:[NSDate date]];
 }
 
-- (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds
-{
+- (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDateValue:[NSDate dateWithTimeIntervalSince1970:seconds]];
 }
 
-- (void) unsetUserCustomAttributeWithKey:(NSString *)key
-{
+- (void) unsetUserCustomAttributeWithKey:(NSString *)key {
   [[Appboy sharedInstance].user unsetCustomAttributeWithKey:key];
 }
 
-- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug
-{
+- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug {
   return [[Appboy sharedInstance] submitFeedback:replyToEmail message:message isReportingABug:isReportingABug];
 }
 
 // ABKSlideUpDelegate methods
-- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message
-{
+- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message {
   if (self.unitySlideupGameObjectName == nil) {
     NSLog(@"No slideup unity game object name defined. Not sending the slideup message to the Unity "
           "Player. Please defined game object name by calling [[AppboyUnityManager sharedInstance] "
@@ -182,24 +156,20 @@
   return ABKSlideupShouldIgnore;
 }
 
-- (void) slideupWasTapped
-{
+- (void) slideupWasTapped {
 }
 
-- (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod
-{
+- (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
   self.unitySlideupGameObjectName = gameObject;
   self.unitySlideupCallbackFunctionName = callbackMethod;
 }
 
-- (void) addPushListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod
-{
+- (void) addPushListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
   self.unityPushGameObjectName = gameObject;
   self.unityPushCallbackFunctionName = callbackMethod;
 }
 
-- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification
-{
+- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification];
   
   if (self.unityPushGameObjectName == nil) {
