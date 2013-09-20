@@ -3,6 +3,11 @@
 
 @interface AppboyUnityManager : NSObject <ABKSlideupControllerDelegate>
 
+@property (nonatomic, copy) NSString *unitySlideupGameObjectName;
+@property (nonatomic, copy) NSString *unitySlideupCallbackFunctionName;
+@property (nonatomic, copy) NSString *unityPushGameObjectName;
+@property (nonatomic, copy) NSString *unityPushCallbackFunctionName;
+
 + (AppboyUnityManager *) sharedInstance;
 - (void) showStreamView;
 - (void) showFeedbackForm;
@@ -27,5 +32,8 @@
 - (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds;
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key;
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
+- (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void) addPushListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
 
 @end

@@ -45,6 +45,12 @@ namespace Appboy {
       AppboyBinding.ClearPushMessage(pushNotification.AndroidNotificationId);      
     }
 		
+	void PushNotificationReceivedCallbackForiOS(string message) {
+	  JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
+      ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
+      Debug.Log("Push Notification event: " + pushNotification);      
+    }
+		
     void PushNotificationOpenedCallback(string message) {
       JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       PushNotification pushNotification = new PushNotification(pushNotificationJson);
