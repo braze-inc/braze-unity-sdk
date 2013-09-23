@@ -214,9 +214,7 @@
                        [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
       [dataString release];
     }
-    
   }
-  
 }
 
 @end
