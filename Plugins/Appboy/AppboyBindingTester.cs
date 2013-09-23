@@ -33,7 +33,7 @@ namespace Appboy {
     }
 
     void SlideupReceivedCallback(string message) {
-	  JSONClass slideupJson = (JSONClass) JSON.Parse(message);
+	    JSONClass slideupJson = (JSONClass) JSON.Parse(message);
       Slideup slideup = new Slideup(slideupJson);
       Debug.Log("Slideup message: " + slideup);
     }
@@ -46,7 +46,7 @@ namespace Appboy {
     }
 		
 	void PushNotificationReceivedCallbackForiOS(string message) {
-	  JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
+	    JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push Notification event: " + pushNotification);      
     }
