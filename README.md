@@ -30,18 +30,26 @@ In the method <code>applicationDidFinishLaunchingWithOptions</code>, add the fol
 </code></pre>
 </li>
 <li>
-If you want to use push notifications, add this line to <code>applicationDidFinishLaunchingWithOptions</code>:
+If you want to fetch the slide up message from Appboy, add this line to <code>applicationDidFinishLaunchingWithOptions</code>:
+<pre><code>
+[[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName:@"Your Unity Game Object Name" callbackMethodName:@"Your Unity Call Back Method Name"];
+</code></pre>
+Replace @"Your Unity Game Object Name" with the unity object name you want to listen to the slide up message, and also change @"Your Unity Call Back Method Name" to the call back method name that handles the slide up message. Please make sure the call back method is in the unity object you just passed in as the first parameter. 
+</li>
+<li>
+If you want to use push notifications, also add this code to <code>applicationDidFinishLaunchingWithOptions</code>:
 <pre><code>[[UIApplication sharedApplication] registerForRemoteNotificationTypes: 
           (UIRemoteNotificationTypeAlert | 
            UIRemoteNotificationTypeBadge |     
            UIRemoteNotificationTypeSound)];
+[[AppboyUnityManager sharedInstance] addPushListenerWithObjectName:@"Your Unity Game Object Name" callbackMethodName:@"Your Unity Call Back Method Name"];
 </code></pre>
 This line to <code>didRegisterForRemoteNotificationsWithDeviceToken</code>:
 <pre><code>[[Appboy sharedInstance] registerPushToken:
                 [NSString stringWithFormat:@"%@", deviceToken]];
 </code></pre>
 And this line to <code>didReceiveRemoteNotification</code>:
-<pre><code>[[Appboy sharedInstance] registerApplication:application
+<pre><code>[[AppboyUnityManager sharedInstance] registerApplication:application
                 didReceiveRemoteNotification:userInfo];
 </code></pre>
 </li>
