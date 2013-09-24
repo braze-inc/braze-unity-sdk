@@ -81,6 +81,9 @@ namespace Appboy {
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _unsetCustomUserAttribute(string key);
+		
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
 
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName);
@@ -162,7 +165,7 @@ namespace Appboy {
     }
 
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-
+      _submitFeedback(replyToEmail, message, isReportingABug);
     }
 
     public static void ClearPushMessage(int notificationId) {
