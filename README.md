@@ -10,7 +10,7 @@ If you already have a "\<your-project>/Assets/Plugins" directory (probably becau
 First, generate your Xcode project in Unity by clicking on "File" -> "Build Settings...", then selecting iOS as the platform and clicking "Build". Unity should copy the files AppboyBinding.m, AppboyUnityManager.h, and AppboyUnityManager.mm to the "Classes" directory of your generated project. If it fails to do that, you can copy those files from this repo manually. You will need to manually add AppboyUnityManager.h to your Xcode project (even though it is already in the Classes directory) by right clicking on Classes and selecting "Add Files to ..."
 </li>
 <li>
-Next, add the <a href="https://github.com/appboy/appboy-ios-sdk">Appboy iOS SDK</a> to your Xcode project by following the guidance under "Add Appboy to your Project," "Add the iOS Libraries," and "Configure the Appboy Library and Framework" in our iOS Integration Instructions at https://appboy.zendesk.com/entries/23714308-iOS-Getting-Started
+Next, go to directory "Libraries" and copy the folder "AppboyKit"(the Appboy iOS SDK) to your Xcode project by following the guidance under "Basic SDK Integration," "Add the iOS Libraries," and "Configure the Appboy Library and Framework" in our iOS Integration Instructions at http://documentation.appboy.com/ios-sdk-integration.html#cloning-the-appboy-sdk
 </li>
 <li>
 Next, we'll need to make some modifications to your generated AppController.mm in the "Classes" folder of your Xcode project:
