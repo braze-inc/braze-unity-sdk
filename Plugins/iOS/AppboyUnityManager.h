@@ -5,8 +5,10 @@
 
 @property (nonatomic, copy) NSString *unitySlideupGameObjectName;
 @property (nonatomic, copy) NSString *unitySlideupCallbackFunctionName;
-@property (nonatomic, copy) NSString *unityPushGameObjectName;
-@property (nonatomic, copy) NSString *unityPushCallbackFunctionName;
+@property (nonatomic, copy) NSString *unityPushReceivedGameObjectName;
+@property (nonatomic, copy) NSString *unityPushReceivedCallbackFunctionName;
+@property (nonatomic, copy) NSString *unityPushOpenedGameObjectName;
+@property (nonatomic, copy) NSString *unityPushOpenedCallbackFunctionName;
 
 + (AppboyUnityManager *) sharedInstance;
 - (void) showStreamView;
@@ -33,7 +35,8 @@
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key;
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 - (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
-- (void) addPushListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void) addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void) addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
 
 @end
