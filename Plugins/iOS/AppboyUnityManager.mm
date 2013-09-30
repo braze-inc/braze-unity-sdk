@@ -124,15 +124,18 @@
 // ABKSlideUpDelegate methods
 - (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message {
   if (self.unitySlideupGameObjectName == nil) {
-    NSLog(@"There is no Unity GameObject registered in AppboyUnityManager to receive slideup message. "
-          "Not sending the slideup message to the Unity Player. Please register GameObject name by "
-          "calling [[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].");
+    NSLog(@"Not sending a Unity message in response to a slideup message being received because "
+          "no message receiver was defined. To implement custom behavior in response to a slideup"
+          "message being received, you must register a GameObject and method name with Appboy "
+          "by calling [[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].");
     return ABKSlideupShouldIgnore;
   }
   if (self.unitySlideupCallbackFunctionName == nil) {
-    NSLog(@"There is no Unity callback method name registered in AppboyUnityManager. Not sending the"
-          "slideup message to the Unity Player. Please register callback method name by calling "
-          "[[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].");
+    NSLog(@"Not sending a Unity message in response to a slideup message being received because "
+          "no method name was defined for the %@. To implement custom behavior in response to a slideup "
+          "message being received, you must register a GameObject and method name with Appboy "
+          "[[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].",
+          self.unitySlideupGameObjectName);
     return ABKSlideupShouldIgnore;
   }
   NSLog(@"Sending a slideup message to %@:%@.", self.unitySlideupGameObjectName, self.unitySlideupCallbackFunctionName);
@@ -164,27 +167,18 @@
   self.unitySlideupCallbackFunctionName = callbackMethod;
 }
 
-- (void) addPushListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  self.unityPushGameObjectName = gameObject;
-  self.unityPushCallbackFunctionName = callbackMethod;
+- (void) addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  self.unityPushReceivedGameObjectName = gameObject;
+  self.unityPushReceivedCallbackFunctionName = callbackMethod;
+}
+
+- (void) addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  self.unityPushOpenedGameObjectName = gameObject;
+  self.unityPushOpenedCallbackFunctionName = callbackMethod;
 }
 
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification];
-  
-  if (self.unityPushGameObjectName == nil) {
-    NSLog(@"There is no Unity GameObject registered in AppboyUnityManager to receive notification message. "
-          "Not sending the notification message to the Unity Player. Please register GameObject name "
-          "by calling [AppboyUnityManager sharedInstance] addPushListenerWithObjectName: callbackMethodName].");
-    return;
-  }
-  if (self.unityPushCallbackFunctionName == nil) {
-    NSLog(@"There is no Unity callback method name registered in AppboyUnityManager. Not sending the "
-          "notification message to the Unity Player. Please register calling method name by calling "
-          "[AppboyUnityManager sharedInstance] addPushListenerWithObjectName: callbackMethodName].");
-    return;
-  }
-  NSLog(@"Sending a notification received message to %@:%@.", self.unityPushGameObjectName, self.unityPushCallbackFunctionName);
   
   // generate a new dictionary that rearrange the notification elements
   NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
@@ -209,12 +203,64 @@
     
     if (pushParsingError == nil) {
       NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-      UnitySendMessage([self.unityPushGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                       [self.unityPushCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                       [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+      
+      if (application.applicationState == UIApplicationStateActive) {
+        if (self.unityPushReceivedGameObjectName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being received because "
+                "no message receiver was defined. To implement custom behavior in response to a push "
+                "notification being received, you must register a GameObject and method name with Appboy "
+                "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].");
+          return;
+        }
+        if (self.unityPushReceivedCallbackFunctionName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being received because "
+                "no method name was defined for the %@. To implement custom behavior in response to a push "
+                "notification being received, you must register a GameObject and method name with Appboy "
+                "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].",
+                self.unityPushReceivedGameObjectName);
+          return;
+        }
+        NSLog(@"Sending a notification received message to %@:%@.", self.unityPushReceivedGameObjectName, self.unityPushReceivedCallbackFunctionName);
+        
+        UnitySendMessage([self.unityPushReceivedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                         [self.unityPushReceivedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                         [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+      } else {
+        if (self.unityPushOpenedGameObjectName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being opened because "
+                "no message receiver was defined. To implement custom behavior in response to a push "
+                "notification being opened, you must register a GameObject and method name with Appboy "
+                "by calling [AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].");
+          return;
+        }
+        if (self.unityPushOpenedCallbackFunctionName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being opened because "
+                "no method name was defined for the %@. To implement custom behavior in response to a push "
+                "notification being opened, you must register a GameObject and method name with Appboy "
+                "[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].",
+                self.unityPushOpenedGameObjectName);
+          return;
+        }
+        NSLog(@"Sending a notification opened message to %@:%@.", self.unityPushOpenedGameObjectName, self.unityPushOpenedCallbackFunctionName);
+        
+        UnitySendMessage([self.unityPushOpenedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                         [self.unityPushOpenedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                         [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+      }
+      
       [dataString release];
     }
   }
+}
+
+- (void) dealloc {
+  [_unitySlideupGameObjectName release];
+  [_unitySlideupCallbackFunctionName release];
+  [_unityPushReceivedGameObjectName release];
+  [_unityPushReceivedCallbackFunctionName release];
+  [_unityPushOpenedGameObjectName release];
+  [_unityPushOpenedCallbackFunctionName release];
+  [super dealloc];
 }
 
 @end

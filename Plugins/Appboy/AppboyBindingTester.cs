@@ -41,14 +41,20 @@ namespace Appboy {
     void PushNotificationReceivedCallback(string message) {
       JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       PushNotification pushNotification = new PushNotification(pushNotificationJson);
-      Debug.Log("Push Notification event: " + pushNotification);
+      Debug.Log("Push received Notification event: " + pushNotification);
       AppboyBinding.ClearPushMessage(pushNotification.AndroidNotificationId);      
     }
+
+    void PushNotificationReceivedCallbackForiOS(string message) {
+      JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
+      ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
+      Debug.Log("Push received Notification event: " + pushNotification);     
+    }
 		
-	  void PushNotificationReceivedCallbackForiOS(string message) {
+	  void PushNotificationOpenedCallbackForiOS(string message) {
 	    JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
-      Debug.Log("Push Notification event: " + pushNotification);      
+      Debug.Log("Push opened Notification event: " + pushNotification);      
     }
 		
     void PushNotificationOpenedCallback(string message) {
