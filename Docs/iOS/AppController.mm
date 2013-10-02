@@ -475,6 +475,7 @@ void UnityInitTrampoline()
                                          UIRemoteNotificationTypeAlert)];
     
     [Appboy startWithApiKey:@"YOUR-API-KEY"
+              usingDelegate:nil
               inApplication:application
           withLaunchOptions:launchOptions];
     [Appboy sharedInstance].slideupDelegate = [AppboyUnityManager sharedInstance];    

@@ -1,19 +1,27 @@
-This repository contains the wrapper code and binaries for the unity plugins derived from the Appboy Android and iOS SDK's
+This repository contains the wrapper code and binaries for the unity plugins derived from the Appboy Android and iOS SDKs.
 
-Before you can start using Appboy in your Unity scripts, you'll need to import the plugin files to your Unity project. First, clone this repo. If you're not using any other plugins, all you have to do is copy the "Plugins" directory from this repo into the "Assets" folder of your Unity project. 
+## Plugin Setup
 
-If you already have a "\<your-project>/Assets/Plugins" directory (probably because you're using another plugin already), copy "Plugins/AppboyBinding.cs" into "\<your-project>/Assets/Plugins". Then copy the contents of "Plugins/iOS" and "Plugins/Android" from this repo into "\<your-project>/Assets/Plugins/iOS" and "\<your-project>/Assets/Plugins/Android", respectively.
+Before you can start using Appboy in your Unity scripts, you'll need to import the plugin files to your Unity project. First, clone this repo. If you're not using any other plugins, all you have to do is copy the `Plugins` directory from this repo into the `Assets` folder of your Unity project. 
+
+If you already have a `/<your-project>/Assets/Plugins` directory (probably because you're using another plugin already), copy `Plugins/AppboyBinding.cs` into `/<your-project>/Assets/Plugins`. Then copy the contents of `Plugins/iOS` and `Plugins/Android` from this repo into `/<your-project>/Assets/Plugins/iOS` and `/<your-project>/Assets/Plugins/Android`, respectively.
 
 ## iOS Setup Instructions
 <ol>
 <li>
-First, generate your Xcode project in Unity by clicking on "File" -> "Build Settings...", then selecting iOS as the platform and clicking "Build". Unity should copy the files AppboyBinding.m, AppboyUnityManager.h, and AppboyUnityManager.mm to the "Classes" directory of your generated project. If it fails to do that, you can copy those files from this repo manually. You will need to manually add AppboyUnityManager.h to your Xcode project (even though it is already in the Classes directory) by right clicking on Classes and selecting "Add Files to ..."
+First, generate your Xcode project in Unity by clicking on "File" -> "Build Settings...", then selecting iOS as the platform and clicking "Build". You'll be prompted for a name/location to build the app in. Since you'll be modifying the built output, we recommend including the built app in your project's root Unity folder (the same place that you have your <code>Assets</code> directory).
 </li>
 <li>
-Next, go to directory "Libraries" and copy the folder "AppboyKit"(the Appboy iOS SDK) to your Xcode project by following the guidance under "Basic SDK Integration," "Add the iOS Libraries," and "Configure the Appboy Library and Framework" in our iOS Integration Instructions at http://documentation.appboy.com/ios-sdk-integration.html#cloning-the-appboy-sdk
+Confirm that Unity has copied the files <code>AppboyBinding.m</code>, <code>AppboyUnityManager.h</code>, and <code>AppboyUnityManager.mm</code> to the "Classes" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo.
 </li>
 <li>
-Next, we'll need to make some modifications to your generated AppController.mm in the "Classes" folder of your Xcode project:
+Include AppboyUnityManager.h in your Xcode project (even though the file itself is already in the Classes directory) by right clicking on Classes and selecting "Add Files to ..."
+</li>
+<li>
+Now, you will need to perform the first three normal integration steps for adding the Appboy SDK to an iOS project. These steps are documented under "Basic SDK Integration," "Add the iOS Libraries," and "Configure the Appboy Library and Framework" in our iOS Integration Instructions at: http://documentation.appboy.com/ios-sdk-integration.html#cloning-the-appboy-sdk
+</li>
+<li>
+Next, we'll need to make some modifications to your generated <code>Classes\AppController.mm</code>. A version of these modifications is included at the bottom of the integration directions linked to in the previous step, the followin are meant to replace those).
 <ul>
 <li>
 At the top of the file add the following import statements:
@@ -70,7 +78,7 @@ As you make updates to your app from Unity, you should choose the same location 
 ## Android Setup Instructions
 <ol>
 <li>
-First, we'll confirm that you've copied the plugin folder correctly and identify all of the locations where you'll need to insert configuration specific to your app. From the root of your unity project, you should be able to run the following and find all of the locations that must be modified to fully setup Appboy for Android:
+First, we'll confirm that you've copied the plugin folder correctly and identify all of the locations where you'll need to insert configuration specific to your app. From the root of your Unity project, you should be able to run the following and find all of the locations that must be modified to fully setup Appboy for Android:
 <br />
 <code>
         grep -r REPLACE Assets/Plugins/
@@ -81,8 +89,9 @@ The output should look something like this:
 Android/AndroidManifest.xml:  &lt;permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" android:protectionLevel="signature" /&gt;
 Android/AndroidManifest.xml:  &lt;uses-permission android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.permission.C2D_MESSAGE" /&gt;
 Android/AndroidManifest.xml:        &lt;category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" /&gt;
-Android/res/values/appboy.xml:  &lt;string name="com_appboy_api_key"&gt;REPLACE_WITH_YOUR_APPBOY_API_KEY&lt;/string&gt;
-Android/res/values/appboy.xml:  &lt;string name="com_appboy_push_gcm_sender_id"&gt;REPLACE_WITH_YOUR_GOOGLE_API_PROJECT_NUMBER&lt;/string&gt;  &lt;!-- Replace with your Google API project number --&gt;
+Android/AndroidManifest.xml:        &lt;action android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.intent.APPBOY_NOTIFICATION_OPENED" /&gt;
+Android/res/values/appboy.xml:  &lt;string name="com_appboy_api_key">REPLACE_WITH_YOUR_APPBOY_API_KEY&lt;/string&gt;
+Android/res/values/appboy.xml:  &lt;string name="com_appboy_push_gcm_sender_id">REPLACE_WITH_YOUR_GOOGLE_API_PROJECT_NUMBER&lt;/string&gt;  &lt;!-- Replace with your Google API project number --&gt;
 </code></pre>
 </li>
 <li>Next, you need to find your "Bundle Identifier" from Unity. This is available from the Android tab of the "Player Settings" pane (accessible by clicking the Player Settings button in File -> Build Settings). The Player Settings pane looks like this in Unity 4: 
@@ -100,9 +109,28 @@ For push notifications to work, you will now need to insert your GCM Sender ID f
 <li>
 At this point, you should be able to run the grep command from Step 1 and have no results. If there are any additional instances of <code>REPLACE</code> remaining, repeat these steps.
 </li>
-<li>Next, you must configure push notifications on the Appboy <a href="http://dashboard.appboy.com">dashboard</a>. Navigate back to the "Settings" page by clicking the gear icon to the right of your app name. Under the Push Notifications section of the App Settings page, insert your GCM API key. This is different from your GCM Sender ID and can be found on the API Access page of your Google API project. Your Google Project API key should look something like <code>ABcdEfGHij1_klm2NOPQrwTuVWxyZ3A4bCDeF5g</code>. Please refer back to <a href="http"//developer.android.com/google/gcm/gs.html">GCM setup instructions</a> for more help.
+<li>Next, you must configure push notifications on the Appboy <a href="http://dashboard.appboy.com">dashboard</a>. Navigate back to the "Settings" page by clicking the gear icon to the right of your app name. Under the Push Notifications section of the App Settings page, insert your GCM API key. This is different from your GCM Sender ID and can be found on the API Access page of your Google API project. Your Google Project API key should look something like <code>ABcdEfGHij1_klm2NOPQrwTuVWxyZ3A4bCDeF5g</code>. Please refer back to <a href="http://developer.android.com/google/gcm/gs.html">GCM setup instructions</a> for more help.
 </li>
 <li>
 Finally, you should confirm that your Android app is only targeting version 2.2 (Froyo) and above. This setting is available from the same "Player Settings" pane that you found the Bundle Identifier in during Step 2. Android versions previous to 2.2 represent a vanishingly small portion of active Android devices and are not supported by Appboy.
 </li>
 </ol>
+
+### Advanced Android Integration Options
+The default AndroidManifest.xml file provided has three Activity classes registered. 
+<ul>
+<li>com.appboy.unity.AppboyUnityPlayerProxyActivity</li>
+<li>com.appboy.unity.AppboyUnityPlayerActivity</li>
+<li>com.appboy.unity.AppboyUnityPlayerNativeActivity</li>
+</ul>
+These Activity classes are integrated with the Appboy SDK, calling the necessary methods to collect analytics, 
+provide support for programmatic sending of feedback, slideup message callbacks, push notification callbacks. 
+All three activities are provided in order to provide a drop-in replacement for the existing Unity activities.
+Most Unity integrations will not require you to change the Activity list, however, if you're only targeting 
+devices running Android OS Gingerbread or newer, you can remove the 
+<code>com.appboy.unity.AppboyUnityPlayerProxyActivity</code> and 
+<code>com.appboy.unity.AppboyUnityPlayerActivity</code> and set the 
+<code>com.appboy.unity.AppboyUnityPlayerNativeActivity</code> as the main Activity class.
+
+<b>Note:</b> All Activity classes registered in your AndroidManifest.xml file must be fully integrated with the Appboy 
+ndroid SDK. If you add your own Activity class, you must follow these <a href="http://documentation.appboy.com/sdk-integration-android.html#android">integration instructions</a> to ensure that analytics are being collected. 
