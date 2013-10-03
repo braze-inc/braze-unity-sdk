@@ -420,8 +420,8 @@ void UnityInitTrampoline()
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
     UnitySendRemoteNotification(userInfo);
-    [[Appboy sharedInstance] registerApplication:application
-                    didReceiveRemoteNotification:userInfo];
+    [[AppboyUnityManager sharedInstance] registerApplication:application
+                                didReceiveRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
@@ -475,10 +475,15 @@ void UnityInitTrampoline()
                                          UIRemoteNotificationTypeAlert)];
     
     [Appboy startWithApiKey:@"YOUR-API-KEY"
-              usingDelegate:nil
               inApplication:application
           withLaunchOptions:launchOptions];
-    [Appboy sharedInstance].slideupDelegate = [AppboyUnityManager sharedInstance];    
+    [Appboy sharedInstance].slideupDelegate = [AppboyUnityManager sharedInstance];
+    [[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName:@"Main Camera"
+                                                     callbackMethodName:@"SlideupReceivedCallback"];
+    [[AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName:@"Main Camera"
+                                                          callbackMethodName:@"PushNotificationReceivedCallbackForiOS"];
+    [[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName:@"Main Camera"
+                                                        callbackMethodName:@"PushNotificationOpenedCallbackForiOS"];
 
     return NO;
 }
