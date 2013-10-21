@@ -68,7 +68,7 @@ To help verify the code modifications you made, there is an example modified App
 </ul>
 </li>
 <li>
-If you're using push notifications you'll need to follow the standard setup for Apple push which you can find at https://appboy.zendesk.com/entries/23690991-iOS-Push-Notifications
+If you're using push notifications you'll need to follow the standard setup for Apple push which you can find at http://documentation.appboy.com/enabling-push-notifications-ios.html#ios
 </li>
 <li>
 As you make updates to your app from Unity, you should choose the same location to generate the Xcode project each time. Unity will prompt you to replace or append the existing folder. If you choose "Append," you shouldn't have to redo any of your Appboy setup in the future.
