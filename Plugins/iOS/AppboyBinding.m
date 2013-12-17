@@ -65,7 +65,8 @@ void _setCustomUserAttributeInt(const char* key, int val) {
 }
 
 void _setCustomUserAttributeFloat(const char* key, float val) {
-  [[AppboyUnityManager sharedInstance] setUserCustomAttributeWithKey:GetStringParam(key) andDoubleValue:(double)val];
+  NSString *floatString = [NSString stringWithFormat:@"%f", val];
+  [[AppboyUnityManager sharedInstance] setUserCustomAttributeWithKey:GetStringParam(key) andDoubleValue:[floatString doubleValue]];
 }
 
 void _setCustomUserAttributeString(const char* key, const char* val) {

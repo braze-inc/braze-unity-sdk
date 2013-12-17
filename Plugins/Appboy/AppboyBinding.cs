@@ -16,7 +16,8 @@ using System.Runtime.InteropServices;
 
 namespace Appboy {
   public class AppboyBinding : MonoBehaviour {
- 
+    private static const string Version = "1.1";
+
     #if UNITY_IPHONE
     void Start() {
       Debug.Log("Starting Appboy binding for iOS clients.");

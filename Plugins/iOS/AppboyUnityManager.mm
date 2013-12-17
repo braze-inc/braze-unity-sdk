@@ -1,6 +1,6 @@
 #import "AppboyUnityManager.h"
 #include "iPhone_View.h"
-#import "Appboy.h"
+#import "AppboyKit.h"
 #import "ABKFeedbackViewControllerModalContext.h"
 #import "ABKFeedViewControllerModalContext.h"
 
@@ -122,7 +122,7 @@
 }
 
 // ABKSlideUpDelegate methods
-- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(NSString *)message {
+- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(ABKSlideup *)slideup {
   if (self.unitySlideupGameObjectName == nil) {
     NSLog(@"Not sending a Unity message in response to a slideup message being received because "
           "no message receiver was defined. To implement custom behavior in response to a slideup"
@@ -140,7 +140,7 @@
   }
   NSLog(@"Sending a slideup message to %@:%@.", self.unitySlideupGameObjectName, self.unitySlideupCallbackFunctionName);
   
-  NSDictionary *slideupMessageDictionary = [NSDictionary dictionaryWithObject:message forKey:@"message"];
+  NSDictionary *slideupMessageDictionary = [NSDictionary dictionaryWithObject:slideup.message forKey:@"message"];
   
   if ([NSJSONSerialization isValidJSONObject:slideupMessageDictionary]) {
     NSError *slideupParsingError = nil;
@@ -159,7 +159,7 @@
   return ABKSlideupShouldIgnore;
 }
 
-- (void) slideupWasTapped {
+- (void) slideupWasTapped:(ABKSlideup *)slideup {
 }
 
 - (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {

@@ -51,8 +51,8 @@ namespace Appboy {
       Debug.Log("Push received Notification event: " + pushNotification);     
     }
 		
-	  void PushNotificationOpenedCallbackForiOS(string message) {
-	    JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
+    void PushNotificationOpenedCallbackForiOS(string message) {
+      JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push opened Notification event: " + pushNotification);      
     }

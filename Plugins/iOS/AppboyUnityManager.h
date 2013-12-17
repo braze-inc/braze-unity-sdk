@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "Appboy.h"
+#import "AppboyKit.h"
 
 @interface AppboyUnityManager : NSObject <ABKSlideupControllerDelegate>
 
