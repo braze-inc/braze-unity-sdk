@@ -15,7 +15,7 @@ namespace Appboy {
     }
 
     public override string ToString() {
-      return "PushNotfication: Title[" + Title + "], Content[" + Content + "], CollapseKey[" + CollapseKey + "], AndroidNotificationId[" + AndroidNotificationId + "]";
+      return "PushNotification: Title[" + Title + "], Content[" + Content + "], CollapseKey[" + CollapseKey + "], AndroidNotificationId[" + AndroidNotificationId + "]";
     }   
   }
 }

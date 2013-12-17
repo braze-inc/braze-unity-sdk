@@ -12,20 +12,22 @@ If you already have a `/<your-project>/Assets/Plugins` directory (probably becau
 First, generate your Xcode project in Unity by clicking on "File" -> "Build Settings...", then selecting iOS as the platform and clicking "Build". You'll be prompted for a name/location to build the app in. Since you'll be modifying the built output, we recommend including the built app in your project's root Unity folder (the same place that you have your <code>Assets</code> directory).
 </li>
 <li>
-Confirm that Unity has copied the files <code>AppboyBinding.m</code>, <code>AppboyUnityManager.h</code>, and <code>AppboyUnityManager.mm</code> to the "Classes" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo.
+Confirm that Unity has copied the files <code>AppboyBinding.m</code>, <code>AppboyUnityManager.h</code>, and <code>AppboyUnityManager.mm</code> to the "Libraries" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo.
 </li>
 <li>
-Include AppboyUnityManager.h in your Xcode project (even though the file itself is already in the Classes directory) by right clicking on Classes and selecting "Add Files to ..."
+Include AppboyUnityManager.h in your Xcode project (even though the file itself is already in the Libraries directory) by right clicking on Classes and selecting "Add Files to ..."
 </li>
 <li>
 Now, you will need to perform the first three normal integration steps for adding the Appboy SDK to an iOS project. These steps are documented under "Basic SDK Integration," "Add the iOS Libraries," and "Configure the Appboy Library and Framework" in our iOS Integration Instructions at: http://documentation.appboy.com/ios-sdk-integration.html#cloning-the-appboy-sdk
+<br><br>
+<b>Note:</b> As of version 2.3.1, the Appboy iOS SDK has split into two libraries, AppboyKit and AppboyKitWithoutFacebookSupport. More details of the split can found here (https://github.com/Appboy/appboy-ios-sdk and https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md#231). Since the Unity platform provides Facebook support and therefore the AppboyKitWithoutFacebookSupport is the correct SDK to use in your Unity application. 
 </li>
 <li>
 Next, we'll need to make some modifications to your generated <code>Classes\AppController.mm</code>. A version of these modifications is included at the bottom of the integration directions linked to in the previous step, the followin are meant to replace those).
 <ul>
 <li>
 At the top of the file add the following import statements:
-<pre><code>#import "Appboy.h"
+<pre><code>#import "AppboyKit.h"
 #import "AppboyUnityManager.h"
 </code></pre>
 </li>
@@ -68,7 +70,7 @@ To help verify the code modifications you made, there is an example modified App
 </ul>
 </li>
 <li>
-If you're using push notifications you'll need to follow the standard setup for Apple push which you can find at http://documentation.appboy.com/enabling-push-notifications-ios.html#ios
+If you're using push notifications you'll need to follow the standard setup for Apple push which you can find at https://appboy.zendesk.com/entries/23690991-iOS-Push-Notifications
 </li>
 <li>
 As you make updates to your app from Unity, you should choose the same location to generate the Xcode project each time. Unity will prompt you to replace or append the existing folder. If you choose "Append," you shouldn't have to redo any of your Appboy setup in the future.
@@ -134,3 +136,20 @@ devices running Android OS Gingerbread or newer, you can remove the
 
 <b>Note:</b> All Activity classes registered in your AndroidManifest.xml file must be fully integrated with the Appboy 
 ndroid SDK. If you add your own Activity class, you must follow these <a href="http://documentation.appboy.com/sdk-integration-android.html#android">integration instructions</a> to ensure that analytics are being collected. 
+
+### Prime 31 compatability ###
+In order to use the Appboy Unity plugin with Prime31 plugins, edit the AndroidManifest.xml to use the Prime31 compatible Activity classes and GCM receiver. Change all four references of 
+<ul>
+<li>com.appboy.unity.AppboyUnityPlayerProxyActivity</li>
+<li>com.appboy.unity.AppboyUnityPlayerActivity</li>
+<li>com.appboy.unity.AppboyUnityPlayerNativeActivity</li>
+<li>com.appboy.unity.AppboyUnityGcmReceiver</li>
+</ul>
+to 
+<ul>
+<li>com.appboy.unity.prime31compatible.AppboyUnityPlayerProxyActivity</li>
+<li>com.appboy.unity.prime31compatible.AppboyUnityPlayerActivity</li>
+<li>com.appboy.unity.prime31compatible.AppboyUnityPlayerNativeActivity</li>
+<li>com.appboy.unity.prime31compatible.AppboyUnityGcmReceiver</li>
+</ul>
+
