@@ -14,12 +14,16 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.3.1"
+#define APPBOY_SDK_VERSION @"2.8"
 #endif
 
+@class ABKSlideupController;
+@class ABKFeedController;
 @class ABKUser;
 @class ABKSlideup;
+@class ABKSlideupViewController;
 @protocol ABKSlideupControllerDelegate;
+
 
 @interface Appboy : NSObject
 
@@ -36,6 +40,7 @@
  * @param apiKey The app's API key
  * @param inApplication The current app
  * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ *
  * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
  * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
@@ -52,6 +57,7 @@
  * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
  * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
  * for more information.
+ *
  * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
  * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
@@ -82,7 +88,7 @@ extern NSString *const ABKRequestProcessingPolicyOptionKey;
 extern NSString *const ABKSocialAccountAcquisitionPolicyOptionKey;
 
 /*!
- * Sets the data flush interval (in seconds). This only has an affect when the request processing mode is set to
+ * Sets the data flush interval (in seconds). This only has an effect when the request processing mode is set to
  * ABKAutomaticRequestProcessing (which is the default). Values are converted into NSTimeIntervals and must be greater
  * than 1.0.
  */
@@ -104,7 +110,9 @@ extern NSString *const ABKFlushIntervalOptionKey;
 *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
 *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
 *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
-*        network requests except when feedback requests are made via the FeedbackController.
+*        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
+*        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
+*        the screen, for example, in response to a user click.
 *        You can direct Appboy to perform an immediate data flush as well as process any other
 *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
 *        This mode is only recommended for advanced use cases. If you're merely trying to
@@ -156,37 +164,17 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
   ABKSocialNetworkTwitter = 1 << 1
 };
 
-/*!
- * Possible values for slideup handling after a slideup is offered to an ABKSlideupControllerDelegate
- *   ABKSlideupShouldShowImmediately - Appboy immediately displays the slideup in the normal manner unless unable to
- *       render it, in which case the slideup remains in the slideup queue and can be offered later. See below for
- *       situations where the slideup might not be able to render.
- *   ABKSlideupShouldQueue - Keeps the offered slideup at the front of the queue.
- *   ABKSlideupShouldIgnore - The slideup is neither rendered, nor queued.
- *
- * The following conditions could cause a slideup to not render, even after being allowed to display:
- * - Another slideup is visible
- * - The keyboard is up
- * - A feed view is being displayed as the result of a prior slideup being tapped
- *
- * The following conditions can cause a slideup to be offered to the delegate defined by the slideupDelegate property on
- * [Appboy sharedInstance]:
- * - A brand new slideup is received from the Appboy server as a result of a refresh of the feed or slideup.
- * - After a slideup was received and placed back on the queue, a UIApplicationDidBecomeActiveNotification event occurs.
- *
- * Alternatively, you can drain a slideup from the queue manually by calling
- * [[Appboy sharedInstance] provideSlideupToDelegate].
- */
-typedef enum {
-  ABKSlideupShouldShowImmediately,
-  ABKSlideupShouldIgnore,
-  ABKSlideupShouldQueue
-} ABKSlideupShouldDisplaySlideupReturnType;
-
-
 /* ------------------------------------------------------------------------------------------------------
  * Properties
  */
+
+@property (nonatomic, retain, readonly) ABKFeedController *feedController;
+
+/*!
+ * The current slideup manager.
+ * See ABKSlideupController.h.
+ */
+@property (nonatomic, retain, readonly) ABKSlideupController *slideupController;
 
 /*!
  * The current app user. 
@@ -215,16 +203,12 @@ typedef enum {
 @property (nonatomic, assign) BOOL useNUITheming;
 
 /*!
- * Setting the slideupDelegate allows your app to control how, when, and if slideups are displayed.
- * Your app should adopt ABKSlideupControllerDelegate.  See below.
- */
-@property (nonatomic, retain) id <ABKSlideupControllerDelegate> slideupDelegate;
-
-/*!
  * The total number of currently active cards displayed in any feed view. Cards are
  * counted only once even if they appear in multiple feed views.
+ * @deprecated This property is now deprecated and will be removed in the future. Please use 
+ * [[Appboy sharedInstance].feedController cardCountForCategories:ABKCardCategoryAll] instead.
  */
-@property (readonly, nonatomic, assign) NSInteger cardCount;
+@property (readonly, nonatomic, assign) NSInteger cardCount __deprecated;
 
 /*!
  * unreadCardCount is the number of currently active cards which have not been viewed.
@@ -236,8 +220,11 @@ typedef enum {
  * back on, it's not re-counted.
  *
  * Cards are counted only once even if they appear in multiple feed views or across multiple devices.
+ *
+ * @deprecated This property is now deprecated and will be removed in the future. Please use
+ * [[Appboy sharedInstance].feedController unreadCardCountForCategories:ABKCardCategoryAll] instead.
  */
-@property (readonly, nonatomic, assign) NSInteger unreadCardCount;
+@property (readonly, nonatomic, assign) NSInteger unreadCardCount __deprecated;
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -288,6 +275,7 @@ typedef enum {
 /*!
  * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or 
  * application:didReceiveRemoteNotification in your App Delegate.
+ *
  * @discussion
  * Test a push notification to see if it came Appboy's servers.
  */
@@ -295,6 +283,7 @@ typedef enum {
 
 /*!
  * @param token The device's push token.
+ *
  * @discussion This method posts a token to Appboy's servers to associate the token with the current device.
  */
 - (void) registerPushToken:(NSString *)token;
@@ -302,6 +291,7 @@ typedef enum {
 /*!
  * @param application The app's UIApplication object
  * @param notification An NSDictionary passed in from the didReceiveRemoteNotification call
+ *
  * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
  * method of your App Delegate.
  */
@@ -309,6 +299,7 @@ typedef enum {
 
 /*!
 * @param userID The new user's ID (from the host application).
+*
 * @discussion
 * This method changes the user's ID.
 *
@@ -347,6 +338,7 @@ typedef enum {
 
 /*!
  * @param eventName The name of the event to log.
+ *
  * @discussion Adds an app specific event to event tracking log that's lazily pushed up to the server. Think of
  *   events like counters. That is, each time you log an event, we'll update a counter for that user. Events should be
  *   fairly broad like "beat level 1" or "watched video" instead of something more specific like "watched Katy
@@ -357,6 +349,13 @@ typedef enum {
  * </pre>
  */
 - (void) logCustomEvent:(NSString *)eventName;
+
+/*!
+ * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity: with a quantity of 1.
+ * Please see logPurchase:inCurrency:atPrice:withQuantity: for more information.
+ *
+ */
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
 
 /*!
  * @param productIdentifier A String indicating the product that was purchased. Usually the product identifier in the
@@ -373,19 +372,19 @@ typedef enum {
  * from StoreKit and depend on the currency. As an example, USD should be reported as Dollars.Cents, whereas JPY should
  * be reported as a whole number of Yen. All provided NSDecimalNumber values will have NSRoundPlain rounding applied
  * such that a maximum of two digits exist after their decimal point.
+ * @param quantity An unsigned number to indicate the purchase quantity. This number must be greater than 0 but no larger than 100.
  *
  * @discussion Logs a purchase made in the application.
  *
- * Note: As of this writing, the Appboy Dashboard's analytics and segmentation features do not fully leverage purchase
- * data in multiple currencies and only purchases reported in USD will be available on the user profile and in revenue
- * graphs. However, support is coming soon and will be automatically enabled in your dashboard provided that you are
- * reporting proper currencies and prices from your app. It is not recommended that you report converted amounts or
- * overload the USD currency type as it will cause data problems for you later.
+ * Note: Appboy supports purchases in multiple currencies. Purchases that you report in a currency other than USD will
+ * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
+ *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
 
 /*!
 * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
+*
 * @discussion Records that the current user shared something to social network. This is added to the event tracking log
 *   that's lazily pushed up to the server.
 */
@@ -393,6 +392,7 @@ typedef enum {
 
 /*!
 * @param socialNetworks An ABKSocialNetwork indicating the network that you wish to access.
+*
 * @discussion Use this method to prompt the user for permission to use social network data (you don't need to use it
 * if permission has has been given at another point in your app -- Appboy is already collecting data).
 *
@@ -423,6 +423,7 @@ typedef enum {
  * @param message The message input by the user. Must be non-null and non-empty.
  * @param isReportingABug Flag indicating whether or not the feedback describes a bug, or is merely a suggestion/question.
  * @return a boolean indicating whether or not the feedback item was successfully queued for delivery.
+ *
  * @discussion Submits a piece of feedback to the Appboy feedback center so that it can be handled in the Appboy dashboard.
  * The request to submit feedback is made immediately, however, this method does not block and will return as soon as the
  * feedback request is placed on the network queue.
@@ -431,93 +432,33 @@ typedef enum {
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
 /*!
- * Note: This method is now deprecated and will be removed in the future. Calling it attempts to display
- * the next available slideup without calling shouldDisplaySlideup, but it will still use the slideupWasTapped method
- * from the slideup delegate attached to Appboy.
- *
- * Please note this behavior when migrating to the new provideSlideupToDelegate method. The analagous delegate that uses
- * provideSlideupToDelegate would be something like this if you had previously defined slideupWasTapped (if you did not
- * define slideupWasTapped, simply passing in a nil delegate is equivalent).
- *
- * <pre>
- * - (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(ABKSlideup *)slideup {
- *   return ABKSlideupShouldShowImmediately;
- * }
- *
- * - (void) slideupWasTapped:(ABKSlideup *)slideup {
- *   [[Appboy sharedInstance].slideupDelegate slideupWasTapped:slideup];
- * }
- * </pre>
+ * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
+ * the news feed back to Appboy with this method so that your campaign reporting features still work in the dashboard.
  */
-- (void) displayNextAvailableSlideup __deprecated;
+- (void) logFeedDisplayed;
 
 /*!
- * @param delegate The slideup delegate that implements the ABKSlideupControllerDelegate methods. If the delegate is
- * nil, it acts as one which always returns ABKSlideupShouldShowImmediately and doesn't implement slideupWasTapped.
- *
- * @discussion If there are slideups available in the slideup queue, call and pass the slideup message to the given
- * delegate, and follow the returned value from the delegate to display, queue, or ignore the slideup. See the
- * documentation for the ABKSlideupShouldDisplaySlideupReturnType enum above for more detailed information.
- *
- * If no slideups are available in the queue, this returns immediately having taken no action.
+ * If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report
+ * impressions of the feedback page back to Appboy with this method so that your campaign reporting features still work
+ * in the dashboard.
  */
-- (void) provideSlideupToDelegate:(id<ABKSlideupControllerDelegate>)delegate;
-
-/* ------------------------------------------------------------------------------------------------------
- * Notifications
- */
+- (void) logFeedbackDisplayed;
 
 /*!
- * When the news feed is updated, Appboy will post a notification through the NSNotificationCenter.
- * The name of the notification is the string constant referred to by ABKFeedUpdatedNotification. There
- * is no userInfo associated with the notification.
+ * Enqueues a news feed request for the current user. Note that if the queue already contains another request for the
+ * current user, that the new feed request will be merged into the already existing request and only one will execute
+ * for that user.
  *
- * To listen for this notification, you would register an object as an observer of the notification
- * using something like:
- *
- * <pre>
- *   [[NSNotificationCenter defaultCenter] addObserver:self
- *                                            selector:@selector(feedUpdatedNotificationReceived:)
- *                                                name:ABKFeedUpdatedNotification
- *                                              object:nil];
- * </pre>
- *
- * where "feedUpdatedNotificationReceived:" is your callback method for handling the notification:
- *
- * <pre>
- *   - (void) feedUpdatedNotificationReceived:(NSNotification *)notification {
- *     < Do something in response to the notification >
- *   }
- * <pre>
+ * When the new cards for news feed return from Appboy server, the SDK will post an ABKFeedUpdatedNotification with an
+ * ABKFeedUpdatedIsSuccessfulKey in the notification's userInfo dictionary to indicate if the news feed request is successful
+ * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
  */
-extern NSString *const ABKFeedUpdatedNotification;
-@end
-
-
-/* ------------------------------------------------------------------------------------------------------
- * Protocols
- */
+- (void) requestFeedRefresh;
 
 /*!
- * The slideup delegate allows you to flexibly control the display and behavior of the Appboy slideup. For more detailed
- * information on slideup behavior, including when and how the delegate is used, see the documentation for the
- * ABKSlideupShouldDisplaySlideupReturnType enum above for more detailed information.
+ * Enqueues a slideup request for the current user. Note that if the queue already contains another request for the
+ * current user, that the slideup request will be merged into the already existing request and only one will execute
+ * for that user.
  */
-@protocol ABKSlideupControllerDelegate <NSObject>
-@optional
-
-/*!
- * @param slideup The slideup object being offered to teh delegate.
- *
- * See the documentation for the ABKSlideupShouldDisplaySlideupReturnType enum above for more detailed information.
- */
-- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(ABKSlideup *)slideup;
-
-/*!
- * After a slideup is successfully displayed, if it is clicked on, the Appboy SDK will display a modal news feed view by
- * default. However, if the delegate which was offered that slideup with shouldDisplaySlideup defines slideupWasTapped,
- * no action will be taken directly. Instead, slideupWasTapped will be called with the same slideup object as was
- * offered with shouldDisplaySlideup. This allows you to perform custom actions in response to slideups taps.
- */
-- (void) slideupWasTapped:(ABKSlideup *)slideup;
+- (void) requestSlideupRefresh;
 @end

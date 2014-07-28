@@ -26,6 +26,7 @@
  *      email_subscribe
  *      foursquare_access_token
  *      image_url
+ *      push_subscribe
  *
  * 2. The maximum key length is 255 characters; longer keys are truncated.
  *
@@ -79,7 +80,7 @@
  */
 @property (nonatomic, copy) NSString *foursquareAccessToken;
 
-@property (nonatomic, copy, readonly) NSString *userID;
+@property (atomic, copy, readonly) NSString *userID;
 
 /*!
  * The User's avatar image URL. This URL will be processed by the server and used in their user profile on the
@@ -94,15 +95,43 @@
  */
 @property (nonatomic, copy) NSString *twitterAccountIdentifier;
 
-+ (NSDictionary *) diffUserDictionary:(NSDictionary *)userAsDictionary againstOtherUserDictionary:(NSDictionary *)otherUserAsDictionary;
+/*!
+ * This property is for when a user's twitter account with the given identifier isn't available, should Appboy also
+ * delete the saved twitter account in the server of that user.
+ *
+ * The default value of this property is NO. If the property is set to YES, when the twitter account data with the given
+ * twitter identifier(defined in the ABKUser's twitterAccountIdentifier property) isn't available, Appboy will also delete
+ * Appboy will delete the saved twitter account data of that user in Appboy's database.
+ *
+ * This property is only used when in appboyOptions, ABKSocialAccountAcquisitionPolicyOptionKey is set to be
+ * ABKAutomaticSocialAccountAcquisitionWithIdentifierOnly, and twitterAccountIdentifier property has a valid value.
+ */
+@property (nonatomic, assign) BOOL clearTwitterDataWhenNoDataOfTwitterIdentifier;
+
+/* ------------------------------------------------------------------------------------------------------
+ * Enums
+ */
 
 /*!
  * Values representing the gender recognized by the SDK.
  */
-typedef enum {
-  ABKUserGenderMale = 1 << 0,
-  ABKUserGenderFemale = 1 << 1
-}ABKUserGenderType;
+typedef NS_ENUM(NSInteger , ABKUserGenderType) {
+  ABKUserGenderMale,
+  ABKUserGenderFemale
+};
+
+/*!
+* Convenience enum to represent notification status, for email and push notifications.
+*
+* OPTED_IN: subscribed, and explicitly opted in.
+* SUBSCRIBED: subscribed, but not explicitly opted in.
+* UNSUBSCRIBED: unsubscribed and/or explicitly opted out.
+*/
+typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
+  ABKOptedIn,
+  ABKSubscribed,
+  ABKUnsubscribed
+};
 
 /*!
  * @param gender ABKUserGender enum representing the user's gender.
@@ -112,10 +141,29 @@ typedef enum {
 
 
 /*!
+ * Deprecated: Use setEmailNotificationSubscriptionType instead.
+ *
  * @param subscribed Whether or not this user should be subscribed to emails
  * @return YES if isSubscribedToEmail is set the same as parameter subscribed
  */
-- (BOOL) setIsSubscribedToEmails:(BOOL)subscribed;
+- (BOOL) setIsSubscribedToEmails:(BOOL)subscribed __deprecated;
+
+/*!
+ * Sets whether or not the user should be sent email campaigns. Setting it to unsubscribed opts the user out of
+ * an email campaign that you create through the Appboy dashboard.
+ *
+ * @param emailNotificationSubscriptionType enum representing the user's email notifications subscription type.
+ * @return YES if the field is set successfully, else NO.
+ */
+- (BOOL) setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType;
+
+/*!
+ * Sets the push notification subscription status of the user. Used to collect information about the user.
+ *
+ * @param pushNotificationSubscriptionType enum representing the user's push notifications subscription type.
+ * @return YES if the field is set successfully, else NO.
+ */
+- (BOOL) setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType;
 
 /*!
  * @param key The String name of the custom user attribute
@@ -189,4 +237,5 @@ typedef enum {
  * @return YES if the increment for the custom attribute of given key is saved
  */
 - (BOOL) incrementCustomUserAttribute:(NSString *)key by:(NSInteger)incrementValue;
+
 @end

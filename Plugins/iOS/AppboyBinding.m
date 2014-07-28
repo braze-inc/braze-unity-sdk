@@ -88,3 +88,27 @@ void _unsetCustomUserAttribute(const char* key) {
 void _submitFeedback(const char* replyToEmail, const char* message, bool isReportingABug) {
   [[AppboyUnityManager sharedInstance] submitFeedback:GetStringParam(replyToEmail) message:GetStringParam(message) isReportingABug:isReportingABug];
 }
+
+void _logSlideupClicked(const char* slideupJSONString) {
+  [[AppboyUnityManager sharedInstance] logSlideupClicked:GetStringParam(slideupJSONString)];
+}
+
+void _logSlideupImpression(const char* slideupJSONString) {
+  [[AppboyUnityManager sharedInstance] logSlideupImpression:GetStringParam(slideupJSONString)];
+}
+
+void _logCardImpression(const char* cardJSONString) {
+  [[AppboyUnityManager sharedInstance] logCardImpression:GetStringParam(cardJSONString)];
+}
+
+void _logCardClicked(const char* cardJSONString) {
+  [[AppboyUnityManager sharedInstance] logCardClicked:GetStringParam(cardJSONString)];
+}
+
+void _requestFeedRefresh() {
+  [[AppboyUnityManager sharedInstance] requestFeedRefresh];
+}
+
+void _requestFeedRefreshFromCache() {
+  [[AppboyUnityManager sharedInstance] requestFeedFromCache:nil];
+}
