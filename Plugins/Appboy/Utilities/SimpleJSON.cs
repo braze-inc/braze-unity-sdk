@@ -45,7 +45,7 @@ using System.Collections.Generic;
 using System.Linq;
  
  
-namespace Appboy
+namespace Appboy.Utilities
 {
     public enum JSONBinaryTag
     {

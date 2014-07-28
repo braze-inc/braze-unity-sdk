@@ -1,6 +1,6 @@
 #import "AppController.h"
 #import "iPhone_Sensors.h"
-#import "Appboy.h"
+#import "AppboyKit.h"
 #import "AppboyUnityManager.h"
 
 #import <CoreGraphics/CoreGraphics.h>
@@ -485,7 +485,7 @@ void UnityInitTrampoline()
     [[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName:@"Main Camera"
                                                         callbackMethodName:@"PushNotificationOpenedCallbackForiOS"];
 
-    return NO;
+    return YES;
 }
 
 // For iOS 4

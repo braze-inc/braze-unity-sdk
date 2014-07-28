@@ -1,8 +1,12 @@
 #import "AppboyUnityManager.h"
-#include "iPhone_View.h"
 #import "AppboyKit.h"
 #import "ABKFeedbackViewControllerModalContext.h"
 #import "ABKFeedViewControllerModalContext.h"
+#import "ABKCard.h"
+
+@interface ABKCard(proxy)
+- (NSMutableDictionary *) proxyForJson;
+@end
 
 @implementation AppboyUnityManager
 
@@ -122,13 +126,13 @@
 }
 
 // ABKSlideUpDelegate methods
-- (ABKSlideupShouldDisplaySlideupReturnType) shouldDisplaySlideup:(ABKSlideup *)slideup {
+- (BOOL) onSlideupReceived:(ABKSlideup *)slideup {
   if (self.unitySlideupGameObjectName == nil) {
     NSLog(@"Not sending a Unity message in response to a slideup message being received because "
           "no message receiver was defined. To implement custom behavior in response to a slideup"
           "message being received, you must register a GameObject and method name with Appboy "
           "by calling [[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].");
-    return ABKSlideupShouldIgnore;
+    return YES;
   }
   if (self.unitySlideupCallbackFunctionName == nil) {
     NSLog(@"Not sending a Unity message in response to a slideup message being received because "
@@ -136,35 +140,28 @@
           "message being received, you must register a GameObject and method name with Appboy "
           "[[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].",
           self.unitySlideupGameObjectName);
-    return ABKSlideupShouldIgnore;
+    return YES;
   }
   NSLog(@"Sending a slideup message to %@:%@.", self.unitySlideupGameObjectName, self.unitySlideupCallbackFunctionName);
   
-  NSDictionary *slideupMessageDictionary = [NSDictionary dictionaryWithObject:slideup.message forKey:@"message"];
-  
-  if ([NSJSONSerialization isValidJSONObject:slideupMessageDictionary]) {
-    NSError *slideupParsingError = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:slideupMessageDictionary options:0 error:&slideupParsingError];
-    
-    if (slideupParsingError == nil) {
-      NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-      UnitySendMessage([self.unitySlideupGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                       [self.unitySlideupCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                       [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-      [dataString release];
-    }
-    
-  }
-  
-  return ABKSlideupShouldIgnore;
+  NSData *slideupData = [slideup serializeToData];
+  NSString *dataString = [[NSString alloc] initWithData:slideupData encoding:NSUTF8StringEncoding];
+  UnitySendMessage([self.unitySlideupGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                   [self.unitySlideupCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                   [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+  [dataString release];
+  return YES;
 }
 
-- (void) slideupWasTapped:(ABKSlideup *)slideup {
-}
-
+// Internal methods for communications between Appboy and Unity
 - (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
   self.unitySlideupGameObjectName = gameObject;
   self.unitySlideupCallbackFunctionName = callbackMethod;
+}
+
+- (void) addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  self.unityFeedGameObjectName = gameObject;
+  self.unityFeedCallbackFunctionName = callbackMethod;
 }
 
 - (void) addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
@@ -177,6 +174,7 @@
   self.unityPushOpenedCallbackFunctionName = callbackMethod;
 }
 
+// Push related  methods
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification];
   
@@ -253,6 +251,27 @@
   }
 }
 
+- (void) logSlideupClicked:(NSString *)slideupJSONString {
+  ABKSlideup *slideup = [[ABKSlideup alloc] init];
+  [self getSlideupFromString:slideupJSONString withSlideup:slideup];
+  [slideup logSlideupClicked];
+  [slideup release];
+}
+
+- (void) logSlideupImpression:(NSString *)slideupJSONString {
+  ABKSlideup *slideup = [[ABKSlideup alloc] init];
+  [self getSlideupFromString:slideupJSONString withSlideup:slideup];
+  [slideup logSlideupImpression];
+  [slideup release];
+}
+
+- (void) getSlideupFromString:(NSString *)slideupJSONString withSlideup:(ABKSlideup *)slideup {
+  NSData *slideupData = [slideupJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedSlideupDict = [NSJSONSerialization JSONObjectWithData:slideupData options:NSJSONReadingMutableContainers error:&e];
+  [slideup setValuesForKeysWithDictionary:deserializedSlideupDict];
+}
+
 - (void) dealloc {
   [_unitySlideupGameObjectName release];
   [_unitySlideupCallbackFunctionName release];
@@ -261,6 +280,85 @@
   [_unityPushOpenedGameObjectName release];
   [_unityPushOpenedCallbackFunctionName release];
   [super dealloc];
+}
+
+- (void) logCardImpression:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKCard *card = [[ABKCard deserializeCardFromDictionary:deserializedCardDict] retain];
+  [card logCardImpression];
+  [card release];
+}
+
+- (void) logCardClicked:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKCard *card = [[ABKCard deserializeCardFromDictionary:deserializedCardDict] retain];
+  [card logCardClicked];
+  [card release];
+}
+
+- (void) requestFeedRefresh {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(requestFeedFromCache:)
+                                               name:ABKFeedUpdatedNotification
+                                             object:nil];
+  [[Appboy sharedInstance] requestFeedRefresh];
+}
+
+- (void) requestFeedFromCache:(NSNotification *)notification {
+  BOOL fromOfflineStorage = YES;
+  if (notification != nil) {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ABKFeedUpdatedNotification object:nil];
+    fromOfflineStorage = NO;
+  }
+  if (self.unityFeedGameObjectName == nil) {
+    NSLog(@"Not sending a Unity message in response to a feed cards requrest because "
+          "no message receiver was defined. To implement custom behavior in response to a slideup"
+          "message being received, you must register a GameObject and method name with Appboy "
+          "by calling [[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].");
+  }
+  if (self.unityFeedCallbackFunctionName == nil) {
+    NSLog(@"Not sending a Unity message in response to a slideup message being received because "
+          "no method name was defined for the %@. To implement custom behavior in response to a slideup "
+          "message being received, you must register a GameObject and method name with Appboy "
+          "[[AppboyUnityManager sharedInstance] addSlideupListenerWithObjectName: callbackMethodName:].",
+          self.unityFeedGameObjectName);
+  }
+  NSLog(@"Sending cards to %@:%@.", self.unityFeedGameObjectName, self.unityFeedCallbackFunctionName);
+  
+  // Parse cards to
+  NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
+  NSArray *cards = [[Appboy sharedInstance].feedController getCardsInCategories:ABKCardCategoryAll];
+  for (ABKCard *card in cards) {
+
+    NSMutableDictionary *cardDictionary = [card proxyForJson];
+    [cardsDictionaryArray addObject:cardDictionary];
+  }
+  
+  NSTimeInterval timestamp = [[Appboy sharedInstance].feedController.lastUpdate timeIntervalSince1970];
+  NSDictionary *feedDictionary = @{@"mFeedCards" : cardsDictionaryArray,
+                                   @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
+                                   @"mFromOfflineStorage" : [NSNumber numberWithBool:fromOfflineStorage]};
+  NSError *error;
+  NSString *feedString;
+  NSData *feedData = [NSJSONSerialization dataWithJSONObject:feedDictionary
+                                                     options:0
+                                                       error:&error];
+  if (!feedData) {
+    NSLog(@"Got an error %@ when parsing Appboy feed to json data.", error);
+  } else {
+    feedString = [[NSString alloc] initWithData:feedData encoding:NSUTF8StringEncoding];
+  }
+  if (feedString != nil) {
+    NSLog(@"the message that's going to pass to Unity is: \n %@", feedString);
+    UnitySendMessage([self.unityFeedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                     [self.unityFeedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                     [feedString cStringUsingEncoding:NSUTF8StringEncoding]);
+    [feedString release];
+  }
 }
 
 @end

@@ -1,6 +1,7 @@
 // When developing, you can place #define UNITY_ANDROID or #define UNITY_IPHONE above this line 
 // in order to get correct syntax highlighting in the region you are working on.
 
+using Appboy.Models;
 using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
@@ -16,9 +17,9 @@ using System.Runtime.InteropServices;
 
 namespace Appboy {
   public class AppboyBinding : MonoBehaviour {
-    private static const string Version = "1.1";
+    public const string Version = "1.2";
 
-    #if UNITY_IPHONE
+#if UNITY_IPHONE
     void Start() {
       Debug.Log("Starting Appboy binding for iOS clients.");
     }
@@ -83,14 +84,33 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _unsetCustomUserAttribute(string key);
 		
-	[System.Runtime.InteropServices.DllImport("__Internal")]
+    [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logSlideupClicked(string slideupJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logSlideupImpression(string slideupJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logCardImpression(string cardJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logCardClicked(string cardJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestFeedRefresh();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestFeedRefreshFromCache();
 
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName);
     }
   
     public static void LogPurchase(string productId, string currencyCode, decimal price) {
+      _logPurchase(productId, currencyCode, price.ToString());
     }
   
     public static void ChangeUser(string userId) {
@@ -173,7 +193,30 @@ namespace Appboy {
 
     }
 
-    #elif UNITY_ANDROID
+    public static void LogSlideupClicked(string slideupJSONString) {
+      _logSlideupClicked(slideupJSONString);
+    }
+
+    public static void LogSlideupImpression(string slideupJSONString) {
+      _logSlideupImpression(slideupJSONString);
+    }
+
+    public static void LogCardImpression(string cardJSONString) {
+      _logCardImpression(cardJSONString);
+    }
+
+    public static void LogCardClicked(string cardJSONString) {
+      _logCardClicked(cardJSONString);
+    }
+
+    public static void RequestFeedRefresh() {
+      _requestFeedRefresh();
+    }
+    public static void RequestFeedRefreshFromCache() {
+      _requestFeedRefreshFromCache();
+    }
+
+#elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
     private static AndroidJavaObject appboy;
   
@@ -181,7 +224,7 @@ namespace Appboy {
       Debug.Log("Starting Appboy binding for Android clients.");
     }
 	
-	#region Properties
+    #region Properties
     public static AndroidJavaObject AppboyUnityActivity {
       get {
         if (appboyUnityActivity == null) {
@@ -372,8 +415,28 @@ namespace Appboy {
     public static void ClearPushMessage(int notificationId) {
       AppboyUnityActivity.Call("clearNotification", new object[] { notificationId });
     }
-		
-    #else
+
+    public static void RequestSlideup() {
+      Appboy.Call("requestSlideupRefresh");
+    }
+
+    public static void RequestFeedRefresh() {
+      Appboy.Call("requestFeedRefresh");
+    }
+
+    public static void RequestFeedRefreshFromCache() {
+      Appboy.Call("requestFeedRefreshFromCache");
+    }
+
+    public static void LogSlideupClicked(string slideupJSONString) {
+      AppboyUnityActivity.Call("logSlideupClicked", new object[] { slideupJSONString });
+    }
+
+    public static void LogSlideupImpression(string slideupJSONString) {
+      AppboyUnityActivity.Call("logSlideupImpression", new object[] { slideupJSONString });
+    }
+
+#else
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
     void Start() {
       Debug.Log("Starting no-op Appboy binding for non iOS/Android clients.");
@@ -418,10 +481,20 @@ namespace Appboy {
     public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
 
     public static void UnsetCustomUserAttribute(string key) {}
-	
+
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {}
 
     public static void ClearPushMessage(int notificationId) {}
+
+    public static void RequestSlideup() {}
+
+    public static void RequestFeedRefresh() {}
+
+    public static void RequestFeedRefreshFromCache() {}
+
+    public static void LogSlideupClicked(string slideupJSONString) {}
+
+    public static void LogSlideupImpression(string slideupJSONString) {}
 #endif
   }
 }

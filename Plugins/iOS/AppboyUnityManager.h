@@ -3,6 +3,8 @@
 
 @interface AppboyUnityManager : NSObject <ABKSlideupControllerDelegate>
 
+@property (nonatomic, copy) NSString *unityFeedGameObjectName;
+@property (nonatomic, copy) NSString *unityFeedCallbackFunctionName;
 @property (nonatomic, copy) NSString *unitySlideupGameObjectName;
 @property (nonatomic, copy) NSString *unitySlideupCallbackFunctionName;
 @property (nonatomic, copy) NSString *unityPushReceivedGameObjectName;
@@ -35,8 +37,14 @@
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key;
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 - (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void) addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
-
+- (void) logSlideupClicked:(NSString *)slideupJSONString;
+- (void) logSlideupImpression:(NSString *)slideupJSONString;
+- (void) logCardImpression:(NSString *)cardJSONString;
+- (void) logCardClicked:(NSString *)cardJSONString;
+- (void) requestFeedRefresh;
+- (void) requestFeedFromCache:(NSNotification *)notification;
 @end
