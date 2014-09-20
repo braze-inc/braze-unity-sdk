@@ -17,7 +17,8 @@
 - (void) showFeedbackForm;
 - (void) logCustomEvent:(NSString *)eventName;
 - (void) changeUser:(NSString *)userId;
-- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price;
+- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode
+             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity;
 - (void) setUserFirstName:(NSString *)firstName;
 - (void) setUserLastName:(NSString *)lastName;
 - (void) setUserPhoneNumber:(NSString *)number;
@@ -35,6 +36,9 @@
 - (void) setUserCustomAttributeToNowWithKey:(NSString *)key;
 - (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds;
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key;
+- (void) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;
+- (void) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
+- (void) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 - (void) addSlideupListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;

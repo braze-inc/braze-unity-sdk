@@ -39,8 +39,12 @@
   [[Appboy sharedInstance] changeUser:userId];
 }
 
-- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode atPrice:(NSString *)price {
-  [[Appboy sharedInstance] logPurchase:productId inCurrency:currencyCode atPrice:[NSDecimalNumber decimalNumberWithString:price]];
+- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode 
+             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity {
+  [[Appboy sharedInstance] logPurchase:productId 
+                            inCurrency:currencyCode 
+                               atPrice:[NSDecimalNumber decimalNumberWithString:price] 
+                          withQuantity:quantity];
 }
 
 - (void) setUserFirstName:(NSString *)firstName {
@@ -119,6 +123,18 @@
 
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key {
   [[Appboy sharedInstance].user unsetCustomAttributeWithKey:key];
+}
+
+- (void) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray {
+  [[Appboy sharedInstance].user setCustomAttributeArrayWithKey:key array:valueArray];
+}
+
+- (void) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value {
+  [[Appboy sharedInstance].user addToCustomAttributeArrayWithKey:key value:value];
+}
+
+- (void) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value {
+  [[Appboy sharedInstance].user removeFromCustomAttributeArrayWithKey:key value:value];
 }
 
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug {
