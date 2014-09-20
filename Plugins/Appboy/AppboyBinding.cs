@@ -17,7 +17,11 @@ using System.Runtime.InteropServices;
 
 namespace Appboy {
   public class AppboyBinding : MonoBehaviour {
-    public const string Version = "1.2";
+    public const string Version = "1.2.1";
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price) {
+      LogPurchase(productId, currencyCode, price, 1);
+    }
 
 #if UNITY_IPHONE
     void Start() {
@@ -31,7 +35,7 @@ namespace Appboy {
     private static extern void _changeUser(string userId);
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _logPurchase(string productId, string currencyCode, string price);
+    private static extern void _logPurchase(string productId, string currencyCode, string price, int quantity);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserFirstName(string firstName);
@@ -83,6 +87,15 @@ namespace Appboy {
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _unsetCustomUserAttribute(string key);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setCustomUserAttributeArray(string key, string[] array, int size);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _addToCustomUserAttributeArray(string key, string value);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _removeFromCustomUserAttributeArray(string key, string value);
 		
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
@@ -108,9 +121,9 @@ namespace Appboy {
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName);
     }
-  
-    public static void LogPurchase(string productId, string currencyCode, decimal price) {
-      _logPurchase(productId, currencyCode, price.ToString());
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
+      _logPurchase(productId, currencyCode, price.ToString(), quantity);
     }
   
     public static void ChangeUser(string userId) {
@@ -185,6 +198,18 @@ namespace Appboy {
       _unsetCustomUserAttribute(key);
     }
 
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
+      _setCustomUserAttributeArray(key, array.ToArray(), size);
+    }
+
+    public static void AddToCustomUserAttributeArray(string key, string value) {
+      _addToCustomUserAttributeArray(key, value);
+    }
+
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
+      _removeFromCustomUserAttributeArray(key, value);
+    }
+
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       _submitFeedback(replyToEmail, message, isReportingABug);
     }
@@ -255,10 +280,10 @@ namespace Appboy {
     public static void LogCustomEvent(string eventName) {
       Appboy.Call<bool>("logCustomEvent", eventName);
     }
-  
-    public static void LogPurchase(string productId, string currencyCode, decimal price) {
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
       var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
-      Appboy.Call<bool>("logPurchase", productId, currencyCode, javaPrice);
+      Appboy.Call<bool>("logPurchase", productId, currencyCode, javaPrice, quantity);
     }
  
     public static void ChangeUser(string userId) {
@@ -406,6 +431,18 @@ namespace Appboy {
     public static void UnsetCustomUserAttribute(string key) {
       GetCurrentUser().Call<bool>("unsetCustomUserAttribute", key);
     }
+
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
+      GetCurrentUser().Call<bool>("setCustomAttributeArray", key, array.ToArray());
+    }
+    
+    public static void AddToCustomUserAttributeArray(string key, string value) {
+      GetCurrentUser().Call<bool>("addToCustomAttributeArray", key, value);
+    }
+    
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
+      GetCurrentUser().Call<bool>("removeFromCustomAttributeArray", key, value);
+    }
 	
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       object[] args = new object[] { replyToEmail, message, isReportingABug };
@@ -446,6 +483,8 @@ namespace Appboy {
 
     public static void LogPurchase(string productId, string currencyCode, decimal price) {}
 
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {}
+
     public static void ChangeUser(string userId) {}
 
     public static void SetUserFirstName(string firstName) {}  
@@ -481,6 +520,12 @@ namespace Appboy {
     public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
 
     public static void UnsetCustomUserAttribute(string key) {}
+
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {}
+    
+    public static void AddToCustomUserAttributeArray(string key, string value) {}
+    
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {}
 
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {}
 

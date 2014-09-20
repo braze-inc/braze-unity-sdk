@@ -11,8 +11,11 @@ void _changeUser(const char* userId) {
 	[[AppboyUnityManager sharedInstance] changeUser:GetStringParam(userId)];
 }
 
-void _logPurchase(const char* productId, const char* currencyCode, const char* price) {
-    [[AppboyUnityManager sharedInstance] logPurchase:GetStringParam(productId) inCurrency:GetStringParam(currencyCode) atPrice:GetStringParam(price)];
+void _logPurchase(const char* productId, const char* currencyCode, const char* price, int quantity) {
+    [[AppboyUnityManager sharedInstance] logPurchase:GetStringParam(productId)
+                                          inCurrency:GetStringParam(currencyCode)
+                                             atPrice:GetStringParam(price)
+                                        withQuantity:quantity];
 }
 
 void _setUserFirstName(const char* firstName) {
@@ -83,6 +86,32 @@ void _setCustomUserAttributeToSecondsFromEpoch(const char* key, long seconds) {
 
 void _unsetCustomUserAttribute(const char* key) {
   [[AppboyUnityManager sharedInstance] unsetUserCustomAttributeWithKey:GetStringParam(key)];
+}
+
+void _setCustomUserAttributeArray(const char* key, const char* array[], int size) {
+  if (array == [NSNull null] || array == nil) {
+    [[AppboyUnityManager sharedInstance] setCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                  array:nil];
+  } else if (size == 0) {
+    [[AppboyUnityManager sharedInstance] setCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                  array:[NSMutableArray arrayWithCapacity:1]];
+  } else {
+    NSMutableArray *customAttributeArray = [NSMutableArray arrayWithCapacity:size];
+    for (int i = 0; i < size; i ++) {
+      NSString *value = GetStringParam(array[i]);
+      [customAttributeArray addObject:value];
+    }
+    [[AppboyUnityManager sharedInstance] setCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                  array:customAttributeArray];
+  }
+}
+
+void _addToCustomUserAttributeArray(const char* key, const char* value) {
+  [[AppboyUnityManager sharedInstance] addToCustomAttributeArrayWithKey:GetStringParam(key) value:GetStringParam(value)];
+}
+
+void _removeFromCustomUserAttributeArray(const char* key, const char* value) {
+  [[AppboyUnityManager sharedInstance] removeFromCustomAttributeArrayWithKey:GetStringParam(key) value:GetStringParam(value)];
 }
 
 void _submitFeedback(const char* replyToEmail, const char* message, bool isReportingABug) {
