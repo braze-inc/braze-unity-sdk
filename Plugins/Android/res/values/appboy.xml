@@ -4,9 +4,8 @@
   <string name="com_appboy_api_key">REPLACE_WITH_YOUR_APPBOY_API_KEY</string>
 
   <!-- Push Notification configuration (optional) -->
-  <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool>                        <!-- Whether or not Appboy should handle registering the device to receive push notifications. Default is false. -->
-  <string name="com_appboy_push_gcm_sender_id">REPLACE_WITH_YOUR_GOOGLE_API_PROJECT_NUMBER</string>  <!-- Replace with your Google API project number -->
-  <!-- drawable name="com_appboy_push_small_notification_icon">@drawable/push_icon</drawable> -->    <!-- The drawable that should be displayed whenever a push notification is received. If no icon is given, the notification will use the application icon -->
+  <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive push notifications. Default is false. -->                  
+  <string name="com_appboy_push_gcm_sender_id">REPLACE_WITH_YOUR_GCM_SENDER_ID</string> <!-- Replace with your gcm sender ID. The sender ID is your Google API project number. -->   
 
   <!-- Notification time formats -->
   <string name="com_appboy_notification_time_twenty_four_hour_format">HH:mm</string>
