@@ -30,6 +30,10 @@ void _setUserPhoneNumber(const char* phoneNumber) {
 	[[AppboyUnityManager sharedInstance] setUserPhoneNumber:GetStringParam(phoneNumber)];
 }
 
+void _setUserAvatarImageURL(const char* imageURL) {
+  [[AppboyUnityManager sharedInstance] setUserAvatarImageURL:GetStringParam(imageURL)];
+}
+
 void _setUserEmail(const char* email) {
 	[[AppboyUnityManager sharedInstance] setUserEmail:GetStringParam(email)];
 }
@@ -58,9 +62,16 @@ void _setUserIsSubscribedToEmails(bool isSubscribedToEmails) {
   [[AppboyUnityManager sharedInstance] setUserIsSubscribedToEmails:isSubscribedToEmails];
 }
 
+void _setUserEmailNotificationSubscriptionType(int emailNotificationSubscriptionType) {
+  [[AppboyUnityManager sharedInstance] setUserEmailNotificationSubscriptionType:emailNotificationSubscriptionType];
+}
+
+void _setUserPushNotificationSubscriptionType(int pushNotificationSubscriptionType) {
+  [[AppboyUnityManager sharedInstance] setUserPushNotificationSubscriptionType:pushNotificationSubscriptionType];
+}
+
 void _setCustomUserAttributeBool(const char* key, bool val) {
   [[AppboyUnityManager sharedInstance] setUserCustomAttributeWithKey:GetStringParam(key) andBOOLValue:val];
-
 }
 
 void _setCustomUserAttributeInt(const char* key, int val) {
@@ -86,6 +97,10 @@ void _setCustomUserAttributeToSecondsFromEpoch(const char* key, long seconds) {
 
 void _unsetCustomUserAttribute(const char* key) {
   [[AppboyUnityManager sharedInstance] unsetUserCustomAttributeWithKey:GetStringParam(key)];
+}
+
+void _incrementCustomUserAttribute(const char* key, int incrementValue) {
+  [[AppboyUnityManager sharedInstance] incrementCustomUserAttributeWithKey:GetStringParam(key) by:incrementValue];
 }
 
 void _setCustomUserAttributeArray(const char* key, const char* array[], int size) {
@@ -140,4 +155,12 @@ void _requestFeedRefresh() {
 
 void _requestFeedRefreshFromCache() {
   [[AppboyUnityManager sharedInstance] requestFeedFromCache:nil];
+}
+
+void _logFeedDisplayed() {
+  [[AppboyUnityManager sharedInstance] logFeedDisplayed];
+}
+
+void _logFeedbackDisplayed() {
+  [[AppboyUnityManager sharedInstance] logFeedbackDisplayed];
 }

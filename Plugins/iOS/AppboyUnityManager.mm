@@ -59,6 +59,10 @@
   [Appboy sharedInstance].user.phone = number;
 }
 
+- (void) setUserAvatarImageURL:(NSString *)imageURL {
+  [Appboy sharedInstance].user.avatarImageURL = imageURL;
+}
+
 - (void) setUserEmail:(NSString *)email {
   [Appboy sharedInstance].user.email = email;
 }
@@ -97,6 +101,14 @@
   [[Appboy sharedInstance].user setIsSubscribedToEmails:subscribedToEmail];
 }
 
+- (void) setUserEmailNotificationSubscriptionType:(NSInteger)emailNotificationSubscriptionType {
+  [[Appboy sharedInstance].user setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType];
+}
+
+- (void) setUserPushNotificationSubscriptionType:(NSInteger)pushNotificationSubscriptionType {
+  [[Appboy sharedInstance].user setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType];
+}
+
 - (void) setUserCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andBOOLValue:value];
 }
@@ -123,6 +135,10 @@
 
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key {
   [[Appboy sharedInstance].user unsetCustomAttributeWithKey:key];
+}
+
+- (void) incrementCustomUserAttributeWithKey:(NSString *)key by:(NSInteger)incrementValue {
+  [[Appboy sharedInstance].user incrementCustomUserAttribute:key by:incrementValue];
 }
 
 - (void) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray {
@@ -375,6 +391,14 @@
                      [feedString cStringUsingEncoding:NSUTF8StringEncoding]);
     [feedString release];
   }
+}
+
+- (void) logFeedDisplayed {
+  [[Appboy sharedInstance] logFeedDisplayed];
+}
+
+- (void) logFeedbackDisplayed {
+  [[Appboy sharedInstance] logFeedbackDisplayed];
 }
 
 @end

@@ -22,6 +22,7 @@
 - (void) setUserFirstName:(NSString *)firstName;
 - (void) setUserLastName:(NSString *)lastName;
 - (void) setUserPhoneNumber:(NSString *)number;
+- (void) setUserAvatarImageURL:(NSString *)imageURL;
 - (void) setUserEmail:(NSString *)email;
 - (void) setUserBio:(NSString *)bio;
 - (void) setUserGender:(NSInteger)gender;
@@ -29,6 +30,8 @@
 - (void) setUserCountry:(NSString *)country;
 - (void) setUserHomeCity:(NSString *)city;
 - (void) setUserIsSubscribedToEmails:(BOOL)subscribedToEmail;
+- (void) setUserEmailNotificationSubscriptionType:(NSInteger)emailNotificationSubscriptionType;
+- (void) setUserPushNotificationSubscriptionType:(NSInteger)pushNotificationSubscriptionType;
 - (void) setUserCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value;
 - (void) setUserCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value;
 - (void) setUserCustomAttributeWithKey:(NSString *)key andDoubleValue:(double)value;
@@ -36,6 +39,7 @@
 - (void) setUserCustomAttributeToNowWithKey:(NSString *)key;
 - (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds;
 - (void) unsetUserCustomAttributeWithKey:(NSString *)key;
+- (void) incrementCustomUserAttributeWithKey:(NSString *)key by:(NSInteger)incrementValue;
 - (void) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;
 - (void) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
 - (void) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
@@ -51,4 +55,6 @@
 - (void) logCardClicked:(NSString *)cardJSONString;
 - (void) requestFeedRefresh;
 - (void) requestFeedFromCache:(NSNotification *)notification;
+- (void) logFeedDisplayed;
+- (void) logFeedbackDisplayed;
 @end

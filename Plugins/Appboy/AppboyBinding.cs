@@ -23,6 +23,10 @@ namespace Appboy {
       LogPurchase(productId, currencyCode, price, 1);
     }
 
+    public static void IncrementCustomUserAttribute(string key) {
+      IncrementCustomUserAttribute(key, 1);
+    }
+
 #if UNITY_IPHONE
     void Start() {
       Debug.Log("Starting Appboy binding for iOS clients.");
@@ -33,7 +37,7 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _changeUser(string userId);
-	
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logPurchase(string productId, string currencyCode, string price, int quantity);
 
@@ -45,6 +49,9 @@ namespace Appboy {
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserPhoneNumber(string phoneNumber);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setUserAvatarImageURL(string imageURL);
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserBio(string bio);
@@ -66,6 +73,12 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserIsSubscribedToEmails(bool isSubscribedToEmails);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setUserEmailNotificationSubscriptionType(int emailNotificationSubscriptionType);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setUserPushNotificationSubscriptionType(int pushNotificationSubscriptionType);
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeBool(string key, bool val);
@@ -87,6 +100,9 @@ namespace Appboy {
 	
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _unsetCustomUserAttribute(string key);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _incrementCustomUserAttribute(string key, int incrementValue);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeArray(string key, string[] array, int size);
@@ -117,6 +133,12 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _requestFeedRefreshFromCache();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logFeedDisplayed();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logFeedbackDisplayed();
 
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName);
@@ -166,8 +188,20 @@ namespace Appboy {
       _setUserIsSubscribedToEmails(isSubscribedToEmails);
     }
 
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
+      _setUserEmailNotificationSubscriptionType((int)emailNotificationSubscriptionType);
+    }
+
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
+      _setUserPushNotificationSubscriptionType((int)pushNotificationSubscriptionType);
+    }
+
     public static void SetUserPhoneNumber(string phoneNumber) {
       _setUserPhoneNumber(phoneNumber);
+    }
+
+    public static void SetUserAvatarImageURL(string imageURL) {
+      _setUserAvatarImageURL(imageURL);
     }
 
     public static void SetCustomUserAttribute(string key, bool value) {
@@ -198,8 +232,16 @@ namespace Appboy {
       _unsetCustomUserAttribute(key);
     }
 
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
+      _incrementCustomUserAttribute(key, incrementValue);
+    }
+
     public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
-      _setCustomUserAttributeArray(key, array.ToArray(), size);
+      if (array == null) {
+        _setCustomUserAttributeArray(key, null, size);
+      } else {
+        _setCustomUserAttributeArray(key, array.ToArray(), size);
+      }
     }
 
     public static void AddToCustomUserAttributeArray(string key, string value) {
@@ -239,6 +281,14 @@ namespace Appboy {
     }
     public static void RequestFeedRefreshFromCache() {
       _requestFeedRefreshFromCache();
+    }
+
+    public static void LogFeedDisplayed() {
+      _logFeedDisplayed();
+    }
+
+    public static void LogFeedbackDisplayed() {
+      _logFeedbackDisplayed();
     }
 
 #elif UNITY_ANDROID
@@ -400,8 +450,50 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("setIsSubscribedToEmails", isSubscribedToEmails);
     }
 
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
+      using (var notificationTypeClass = new AndroidJavaClass("com.appboy.enums.NotificationSubscriptionType")) {
+        switch (emailNotificationSubscriptionType) {
+          case AppboyNotificationSubscriptionType.OPTED_IN:
+            GetCurrentUser().Call<bool>("setEmailNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("OPTED_IN"));
+            break;
+          case AppboyNotificationSubscriptionType.SUBSCRIBED:
+            GetCurrentUser().Call<bool>("setEmailNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("SUBSCRIBED"));
+            break;
+          case AppboyNotificationSubscriptionType.UNSUBSCRIBED:
+            GetCurrentUser().Call<bool>("setEmailNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("UNSUBSCRIBED"));
+            break;
+          default:
+            Debug.Log("Unknown notification subscription type received: " + emailNotificationSubscriptionType);
+            break;
+        }
+      }
+    }
+
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
+      using (var notificationTypeClass = new AndroidJavaClass("com.appboy.enums.NotificationSubscriptionType")) {
+        switch (pushNotificationSubscriptionType) {
+          case AppboyNotificationSubscriptionType.OPTED_IN:
+            GetCurrentUser().Call<bool>("setPushNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("OPTED_IN"));
+            break;
+          case AppboyNotificationSubscriptionType.SUBSCRIBED:
+            GetCurrentUser().Call<bool>("setPushNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("SUBSCRIBED"));
+            break;
+          case AppboyNotificationSubscriptionType.UNSUBSCRIBED:
+            GetCurrentUser().Call<bool>("setPushNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("UNSUBSCRIBED"));
+            break;
+          default:
+            Debug.Log("Unknown notification subscription type received: " + pushNotificationSubscriptionType);
+            break;
+        }
+      }
+    }
+
     public static void SetUserPhoneNumber(string phoneNumber) {
       GetCurrentUser().Call<bool>("setPhoneNumber", phoneNumber);
+    }
+
+    public static void SetUserAvatarImageURL(string imageURL) {
+      GetCurrentUser().Call<bool>("setAvatarImageUrl", imageURL);
     }
 
     public static void SetCustomUserAttribute(string key, bool value) {
@@ -432,8 +524,16 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("unsetCustomUserAttribute", key);
     }
 
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
+      GetCurrentUser().Call<bool>("incrementCustomUserAttribute", key, incrementValue);
+    }
+
     public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
-      GetCurrentUser().Call<bool>("setCustomAttributeArray", key, array.ToArray());
+      if (array == null) {
+        GetCurrentUser().Call<bool>("setCustomAttributeArray", key, null);
+      } else {
+        GetCurrentUser().Call<bool>("setCustomAttributeArray", key, array.ToArray());
+      }
     }
     
     public static void AddToCustomUserAttributeArray(string key, string value) {
@@ -473,6 +573,14 @@ namespace Appboy {
       AppboyUnityActivity.Call("logSlideupImpression", new object[] { slideupJSONString });
     }
 
+    public static void LogFeedDisplayed() {
+      Appboy.Call<bool>("logFeedDisplayed");
+    }
+
+    public static void LogFeedbackDisplayed() {
+      Appboy.Call<bool>("logFeedbackDisplayed");
+    }
+
 #else
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
     void Start() {
@@ -480,8 +588,6 @@ namespace Appboy {
     }
 
     public static void LogCustomEvent(string eventName) {}
-
-    public static void LogPurchase(string productId, string currencyCode, decimal price) {}
 
     public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {}
 
@@ -505,7 +611,13 @@ namespace Appboy {
 
     public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {}
 
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {}
+
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {}
+
     public static void SetUserPhoneNumber(string phoneNumber) {}
+
+    public static void SetUserAvatarImageURL(string imageURL) {}
 
     public static void SetCustomUserAttribute(string key, bool value) {}
 
@@ -520,6 +632,8 @@ namespace Appboy {
     public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
 
     public static void UnsetCustomUserAttribute(string key) {}
+
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {}
 
     public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {}
     
@@ -540,6 +654,10 @@ namespace Appboy {
     public static void LogSlideupClicked(string slideupJSONString) {}
 
     public static void LogSlideupImpression(string slideupJSONString) {}
+
+    public static void LogFeedDisplayed() {}
+
+    public static void LogFeedbackDisplayed() {}
 #endif
   }
 }
