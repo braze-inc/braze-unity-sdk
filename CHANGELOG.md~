@@ -1,9 +1,3 @@
-## 1.3.0
-* Adds plugins for Windows Phone 8 and Windows Universal apps.
-* Updated the Android plugin to use Appboy Android SDK v1.6.0.
-* Fixes the corrupted support-v4 jar in the Android plugin.
-* Updated the iOS plugin to use Appboy iOS SDK v2.9.3.
-
 ## 1.2.2
 * Updated the Android plugin to use Appboy Android SDK v1.5.2.
 * Added logFeedDisplayed, logFeedbackDisplayed, SetUserAvatarImageURL, IncrementCustomUserAttribute; updated email and push notification subscription types to current options supported in the Android and iOS SDKs (OPTED_IN, SUBSCRIBED, or UNSUBSCRIBED).
