@@ -43,28 +43,28 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserFirstName(string firstName);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserLastName(string lastName);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserPhoneNumber(string phoneNumber);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserAvatarImageURL(string imageURL);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserBio(string bio);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserGender(int gender);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserEmail(string email);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserDateOfBirth(int year, int month, int day);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserCountry(string country);
 
@@ -79,25 +79,25 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserPushNotificationSubscriptionType(int pushNotificationSubscriptionType);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeBool(string key, bool val);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeInt(string key, int val);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeFloat(string key, float val);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeString(string key, string val);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeToNow(string key);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeToSecondsFromEpoch(string key, long seconds);
-	
+    
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _unsetCustomUserAttribute(string key);
 
@@ -112,7 +112,7 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _removeFromCustomUserAttributeArray(string key, string value);
-		
+        
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
 
@@ -298,7 +298,7 @@ namespace Appboy {
     void Start() {
       Debug.Log("Starting Appboy binding for Android clients.");
     }
-	
+    
     #region Properties
     public static AndroidJavaObject AppboyUnityActivity {
       get {
@@ -543,12 +543,12 @@ namespace Appboy {
     public static void RemoveFromCustomUserAttributeArray(string key, string value) {
       GetCurrentUser().Call<bool>("removeFromCustomAttributeArray", key, value);
     }
-	
+    
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       object[] args = new object[] { replyToEmail, message, isReportingABug };
       Appboy.Call<bool>("submitFeedback", args);
     }
-		
+        
     public static void ClearPushMessage(int notificationId) {
       AppboyUnityActivity.Call("clearNotification", new object[] { notificationId });
     }
@@ -580,84 +580,417 @@ namespace Appboy {
     public static void LogFeedbackDisplayed() {
       Appboy.Call<bool>("logFeedbackDisplayed");
     }
+		
+#elif UNITY_METRO
+    void Start() {
+      Debug.Log("Starting Appboy binding for Windows Metro clients.");
+    }
+
+    public static void LogCustomEvent(string eventName) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.LogCustomEvent(eventName);
+    }
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.LogPurchase(productId, currencyCode, price, quantity);
+    }
+
+    public static void ChangeUser(string userId) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.ChangeUser(userId);
+    }
+
+    public static void SetUserFirstName(string firstName) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserFirstName(firstName);
+    }
+
+    public static void SetUserLastName(string lastName) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserLastName(lastName);
+    }
+
+    public static void SetUserEmail(string email) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserEmail(email);
+    }
+
+    public static void SetUserBio(string bio) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserBio(bio);
+    }
+
+    public static void SetUserGender(Gender gender) {
+      if (gender == Gender.Female) {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserGender("FEMALE");
+
+      } else {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserGender("MALE");
+      }
+    }
+
+    public static void SetUserDateOfBirth(int year, int month, int day) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserDateOfBirth(year, month, day);
+    }
+
+    public static void SetUserCountry(string country) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserCountry(country);
+    }
+
+    public static void SetUserHomeCity(string city) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserHomeCity(city);
+    }
+
+    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserIsSubscribedToEmails(isSubscribedToEmails);
+    }
+
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
+      if (emailNotificationSubscriptionType == AppboyNotificationSubscriptionType.OPTED_IN) {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("OPTED_IN");
+      } else if (emailNotificationSubscriptionType == AppboyNotificationSubscriptionType.SUBSCRIBED) {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("SUBSCRIBED");
+      } else {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("UNSUBSCRIBED");
+      }
+    }
+
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
+      if (pushNotificationSubscriptionType == AppboyNotificationSubscriptionType.OPTED_IN) {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("OPTED_IN");
+      } else if (pushNotificationSubscriptionType == AppboyNotificationSubscriptionType.SUBSCRIBED) {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("SUBSCRIBED");
+      } else {
+        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("UNSUBSCRIBED");
+      }
+    }
+
+    public static void SetUserPhoneNumber(string phoneNumber) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPhoneNumber(phoneNumber);
+    }
+
+    public static void SetUserAvatarImageURL(string imageURL) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserAvatarImageURL(imageURL);
+    }
+
+    public static void SetCustomUserAttribute(string key, bool value) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttribute(string key, int value) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttribute(string key, float value) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttribute(string key, string value) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttributeToNow(string key) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttributeToNow(key);
+    }
+
+    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttributeToSecondsFromEpoch(key, secondsFromEpoch);
+    }
+
+    public static void UnsetCustomUserAttribute(string key) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.UnsetCustomUserAttribute(key);
+    }
+
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.IncrementCustomUserAttribute(key, incrementValue);
+    }
+
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttributeArray(key, array, size);
+    }
+
+    public static void AddToCustomUserAttributeArray(string key, string value) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.AddToCustomUserAttributeArray(key, value);
+    }
+
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.RemoveFromCustomUserAttributeArray(key, value);
+    }
+
+    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.SubmitFeedback(replyToEmail, message, isReportingABug);
+    }
+
+    public static void ClearPushMessage(int notificationId) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.ClearPushMessage(notificationId);
+    }
+
+    public static void RequestSlideup() {
+      WindowsUniversalUnityAdapter.AppboyAdapter.RequestSlideup();
+    }
+
+    public static void RequestFeedRefresh() {
+      WindowsUniversalUnityAdapter.AppboyAdapter.RequestFeedRefresh();
+    }
+
+    public static void RequestFeedRefreshFromCache() {
+      WindowsUniversalUnityAdapter.AppboyAdapter.RequestFeedRefreshFromCache();
+    }
+
+    public static void LogSlideupClicked(string slideupJSONString) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.LogSlideupClicked(slideupJSONString);
+    }
+
+    public static void LogSlideupImpression(string slideupJSONString) {
+      WindowsUniversalUnityAdapter.AppboyAdapter.LogSlideupImpression(slideupJSONString);
+    }
+
+    public static void LogFeedDisplayed() {
+      WindowsUniversalUnityAdapter.AppboyAdapter.LogFeedDisplayed();
+    }
+
+    public static void LogFeedbackDisplayed() {
+      WindowsUniversalUnityAdapter.AppboyAdapter.LogFeedbackDisplayed();
+    }
+
+#elif UNITY_WP8
+    void Start() {
+      Debug.Log("Starting Appboy binding for Windows Phone8 clients.");
+    }
+
+    public static void LogCustomEvent(string eventName) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.LogCustomEvent(eventName);
+    }
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.LogPurchase(productId, currencyCode, price, quantity);
+    }
+
+    public static void ChangeUser(string userId) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.ChangeUser(userId);
+    }
+
+    public static void SetUserFirstName(string firstName) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserFirstName(firstName);
+    }
+
+    public static void SetUserLastName(string lastName) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserLastName(lastName);
+    }
+
+    public static void SetUserEmail(string email) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserEmail(email);
+    }
+
+    public static void SetUserBio(string bio) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserBio(bio);
+    }
+
+    public static void SetUserGender(Gender gender) {
+      if (gender == Gender.Female) {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserGender("FEMALE");
+      } else {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserGender("MALE");
+      }
+    }
+
+    public static void SetUserDateOfBirth(int year, int month, int day) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserDateOfBirth(year, month, day);
+    }
+
+    public static void SetUserCountry(string country) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserCountry(country);
+    }
+
+    public static void SetUserHomeCity(string city) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserHomeCity(city);
+    }
+
+    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserIsSubscribedToEmails(isSubscribedToEmails);
+    }
+
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
+      if (emailNotificationSubscriptionType == AppboyNotificationSubscriptionType.OPTED_IN) {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserEmailNotificationSubscriptionType("OPTED_IN");
+      } else if (emailNotificationSubscriptionType == AppboyNotificationSubscriptionType.SUBSCRIBED) {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserEmailNotificationSubscriptionType("SUBSCRIBED");
+      } else {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserEmailNotificationSubscriptionType("UNSUBSCRIBED");
+      }
+    }
+
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
+      if (pushNotificationSubscriptionType == AppboyNotificationSubscriptionType.OPTED_IN) {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("OPTED_IN");
+      } else if (pushNotificationSubscriptionType == AppboyNotificationSubscriptionType.SUBSCRIBED) {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("SUBSCRIBED");
+      } else {
+        WindowsPhone8UnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("UNSUBSCRIBED");
+      }
+    }
+
+    public static void SetUserPhoneNumber(string phoneNumber) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserPhoneNumber(phoneNumber);
+    }
+
+    public static void SetUserAvatarImageURL(string imageURL) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetUserAvatarImageURL(imageURL);
+    }
+
+    public static void SetCustomUserAttribute(string key, bool value) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttribute(string key, int value) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttribute(string key, float value) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttribute(string key, string value) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
+    }
+
+    public static void SetCustomUserAttributeToNow(string key) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttributeToNow(key);
+    }
+
+    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttributeToSecondsFromEpoch(key, secondsFromEpoch);
+    }
+
+    public static void UnsetCustomUserAttribute(string key) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.UnsetCustomUserAttribute(key);
+    }
+
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.IncrementCustomUserAttribute(key, incrementValue);
+    }
+
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SetCustomUserAttributeArray(key, array, size);
+    }
+
+    public static void AddToCustomUserAttributeArray(string key, string value) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.AddToCustomUserAttributeArray(key, value);
+    }
+
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.RemoveFromCustomUserAttributeArray(key, value);
+    }
+
+    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.SubmitFeedback(replyToEmail, message, isReportingABug);
+    }
+
+    public static void ClearPushMessage(int notificationId) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.ClearPushMessage(notificationId);
+    }
+
+    public static void RequestSlideup() {
+      WindowsPhone8UnityAdapter.AppboyAdapter.RequestSlideup();
+    }
+
+    public static void RequestFeedRefresh() {
+      WindowsPhone8UnityAdapter.AppboyAdapter.RequestFeedRefresh();
+    }
+
+    public static void RequestFeedRefreshFromCache() {
+      WindowsPhone8UnityAdapter.AppboyAdapter.RequestFeedRefreshFromCache();
+    }
+
+    public static void LogSlideupClicked(string slideupJSONString) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.LogSlideupClicked(slideupJSONString);
+    }
+
+    public static void LogSlideupImpression(string slideupJSONString) {
+      WindowsPhone8UnityAdapter.AppboyAdapter.LogSlideupImpression(slideupJSONString);
+    }
+
+    public static void LogFeedDisplayed() {
+      WindowsPhone8UnityAdapter.AppboyAdapter.LogFeedDisplayed();
+    }
+
+    public static void LogFeedbackDisplayed() {
+      WindowsPhone8UnityAdapter.AppboyAdapter.LogFeedbackDisplayed();
+    }
 
 #else
+
+
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
     void Start() {
       Debug.Log("Starting no-op Appboy binding for non iOS/Android clients.");
     }
 
-    public static void LogCustomEvent(string eventName) {}
+    public static void LogCustomEvent(string eventName) { }
 
-    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {}
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) { }
 
-    public static void ChangeUser(string userId) {}
+    public static void ChangeUser(string userId) { }
 
-    public static void SetUserFirstName(string firstName) {}  
+    public static void SetUserFirstName(string firstName) { }
 
-    public static void SetUserLastName(string lastName) {}
+    public static void SetUserLastName(string lastName) { }
 
-    public static void SetUserEmail(string email) {}
+    public static void SetUserEmail(string email) { }
 
-    public static void SetUserBio(string bio) {}
+    public static void SetUserBio(string bio) { }
 
-    public static void SetUserGender(Gender gender) {}
+    public static void SetUserGender(Gender gender) { }
 
-    public static void SetUserDateOfBirth(int year, int month, int day) {}
+    public static void SetUserDateOfBirth(int year, int month, int day) { }
 
-    public static void SetUserCountry(string country) {}
+    public static void SetUserCountry(string country) { }
 
-    public static void SetUserHomeCity(string city) {}
+    public static void SetUserHomeCity(string city) { }
 
-    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {}
+    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) { }
 
-    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {}
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) { }
 
-    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {}
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) { }
 
-    public static void SetUserPhoneNumber(string phoneNumber) {}
+    public static void SetUserPhoneNumber(string phoneNumber) { }
 
-    public static void SetUserAvatarImageURL(string imageURL) {}
+    public static void SetUserAvatarImageURL(string imageURL) { }
 
-    public static void SetCustomUserAttribute(string key, bool value) {}
+    public static void SetCustomUserAttribute(string key, bool value) { }
 
-    public static void SetCustomUserAttribute(string key, int value) {}
+    public static void SetCustomUserAttribute(string key, int value) { }
 
-    public static void SetCustomUserAttribute(string key, float value) {}
+    public static void SetCustomUserAttribute(string key, float value) { }
 
-    public static void SetCustomUserAttribute(string key, string value) {}
+    public static void SetCustomUserAttribute(string key, string value) { }
 
-    public static void SetCustomUserAttributeToNow(string key) {}
+    public static void SetCustomUserAttributeToNow(string key) { }
 
-    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
+    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) { }
 
-    public static void UnsetCustomUserAttribute(string key) {}
+    public static void UnsetCustomUserAttribute(string key) { }
 
-    public static void IncrementCustomUserAttribute(string key, int incrementValue) {}
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) { }
 
-    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {}
-    
-    public static void AddToCustomUserAttributeArray(string key, string value) {}
-    
-    public static void RemoveFromCustomUserAttributeArray(string key, string value) {}
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) { }
 
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {}
+    public static void AddToCustomUserAttributeArray(string key, string value) { }
 
-    public static void ClearPushMessage(int notificationId) {}
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) { }
 
-    public static void RequestSlideup() {}
+    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) { }
 
-    public static void RequestFeedRefresh() {}
+    public static void ClearPushMessage(int notificationId) { }
 
-    public static void RequestFeedRefreshFromCache() {}
+    public static void RequestSlideup() { }
 
-    public static void LogSlideupClicked(string slideupJSONString) {}
+    public static void RequestFeedRefresh() { }
 
-    public static void LogSlideupImpression(string slideupJSONString) {}
+    public static void RequestFeedRefreshFromCache() { }
 
-    public static void LogFeedDisplayed() {}
+    public static void LogSlideupClicked(string slideupJSONString) { }
 
-    public static void LogFeedbackDisplayed() {}
+    public static void LogSlideupImpression(string slideupJSONString) { }
+
+    public static void LogFeedDisplayed() { }
+
+    public static void LogFeedbackDisplayed() { }
 #endif
   }
 }

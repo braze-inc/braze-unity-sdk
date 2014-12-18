@@ -4,7 +4,7 @@ using System;
 namespace Appboy.Models.Cards {
   public class ClassicCard : Card {
     public string Description { get; private set; }
-    public string ImageUrl { get; private set; }	
+    public string ImageUrl { get; private set; }    
     // Optional
     public string Title { get; private set; }
     public string Url { get; private set; }
