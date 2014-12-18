@@ -23,7 +23,7 @@ namespace Appboy {
       slideup.LogImpression();
       slideup.LogClicked();
     }
-		
+        
     void PushNotificationReceivedCallback(string message) {
       Debug.Log("PushNotificationReceivedCallback message: " + message);
       PushNotification pushNotification = new PushNotification(message);
@@ -41,13 +41,13 @@ namespace Appboy {
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push received Notification event: " + pushNotification);     
     }
-		
+        
     void PushNotificationOpenedCallbackForiOS(string message) {
       JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push opened Notification event: " + pushNotification);      
     }
-		
+        
     void FeedReceivedCallback(string message) {
       Debug.Log("FeedReceivedCallback message: " + message);
       Feed feed = new Feed(message);

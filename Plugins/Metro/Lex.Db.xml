@@ -1,0 +1,1607 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lex.Db</name>
+    </assembly>
+    <members>
+        <member name="T:Lex.Db.Ctor`1">
+            <summary>
+            Extreme fast generic constructor. 
+            </summary>
+            <remarks>
+            About 20 times faster than "new T()", because the last one uses slow reflection-based Activator.CreateInstance internally.
+            </remarks>
+            <typeparam name="T">Type to construct</typeparam>
+        </member>
+        <member name="F:Lex.Db.Ctor`1.New">
+            <summary>
+            Generic <typeparamref name="T"/> constructor function
+            </summary>
+        </member>
+        <member name="T:Lex.Db.Ctor`2">
+            <summary>
+            Extreme fast generic constructor. Constructs <typeparamref name="T"/>, but returns <typeparamref name="R"/>. So <typeparamref name="T"/> must be direct assignable to <typeparamref name="R"/>.
+            </summary>
+            <remarks>
+            About 20 times faster than "new T()", because the last one uses slow reflection-based Activator.CreateInstance internally.
+            </remarks>
+            <typeparam name="T">Type to construct</typeparam>
+            <typeparam name="R">Type to return</typeparam>
+        </member>
+        <member name="F:Lex.Db.Ctor`2.New">
+            <summary>
+            Generic <typeparamref name="T"/> constructor function, returning <typeparamref name="T"/> as <typeparamref name="R"/> type
+            </summary>
+        </member>
+        <member name="T:Lex.Db.DbInstance">
+            <summary>
+            Database access and management
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbInstance.#ctor(System.String,System.Object)">
+            <summary>
+            Creates database instance with specified path
+            </summary>
+            <param name="path">Path to database storage folder (relative to home folder, default app storage in case home is null)</param>
+            <param name="home">Home folder (string or StorageFolder instance) (optional)</param> 
+        </member>
+        <member name="M:Lex.Db.DbInstance.Initialize">
+            <summary>
+            Initializes database
+            </summary>
+        </member>
+        <member name="P:Lex.Db.DbInstance.Path">
+            <summary>
+            Indicates path to database storage folder (relative to default app storage)
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbInstance.GetInfo">
+            <summary>
+            Gets database instance storage statistics
+            </summary>
+            <returns>Database instance storage statistics</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.HasMap(System.Type)">
+            <summary>
+            Indicates whether specified entity type is mapped in database
+            </summary>
+            <param name="type">Entity type</param>
+            <returns>True if type is mapped in database, false otherwise</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.HasMap``1">
+            <summary>
+            Indicates whether specified entity type is mapped in database
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <returns>True if type is mapped in database, false otherwise</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Map``1">
+            <summary>
+            Maps specified entity type in database and provides mapping infrastructure
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <returns>Entity T mapping configurator</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Map``1(System.Func{``0})">
+            <summary>
+            Maps specified entity type in database and provides mapping infrastructure
+            </summary>
+            <typeparam name="T">Entity prototype</typeparam>
+            <param name="ctor">Entity implementation constructor</param>
+            <returns>Entity T mapping configurator</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Map``2">
+            <summary>
+            Maps specified entity type in database and provides mapping infrastructure
+            </summary>
+            <typeparam name="T">Entity prototype</typeparam>
+            <typeparam name="TClass">Entity implementation type</typeparam>
+            <returns>Entity T mapping configurator</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Table``1">
+            <summary>
+            Provides database table infrastructure to read/write/query entities
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.AllTables">
+            <summary>
+            Provides list of known tables
+            </summary>
+        </member>
+        <member name="F:Lex.Db.DbInstance._lock">
+            <summary>
+            global db read/write lock
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbInstance.BulkRead(System.Action)">
+            <summary>
+            Performs specified action inside read transaction scope
+            </summary>
+            <param name="action">Action to execute inside read transaction scope</param>
+        </member>
+        <member name="M:Lex.Db.DbInstance.BulkWrite(System.Action)">
+            <summary>
+            Performs specified action inside write transcantion scope.
+            </summary>
+            <param name="action">Action to execute inside write transaction scope</param>
+        </member>
+        <member name="M:Lex.Db.DbInstance.LoadAll``1">
+            <summary>
+            Loads all entities of specified entity type
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <returns>Array of all entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.LoadByKey``2(``1)">
+            <summary>
+            Loads an entity of specified entity type by specified PK value
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="key">PK value</param>
+            <returns>Entity identified by the PK value, if any</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.LoadByKey``1(System.Object)">
+            <summary>
+            Loads an entity of specified entity type by specified PK value
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="key">PK value</param>
+            <returns>Entity identified by the PK value, if any</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.LoadByKeys``2(System.Collections.Generic.IEnumerable{``1},System.Boolean)">
+            <summary>
+            Bulk load specified instances by key
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="keys">Sequence of keys to load</param>
+            <param name="yieldNotFound">Specifies that missed keys will be returned as nulls</param>
+            <returns>List of corresponding instances</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.LoadByKeys``1(System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            Bulk load specified instances by key
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="keys">Sequence of keys to load</param>
+            <param name="yieldNotFound">Specifies that missed keys will be returned as nulls</param>
+            <returns>List of corresponding instances</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Count``1">
+            <summary>
+            Determines number of entities stored in specified entity table
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <returns>Number of entities stored in specified entity table</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Save``1(``0)">
+            <summary>
+            Saves specified entity, adding or updating as needed
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="item">Entity to upsert into table</param>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Save``1(``0[])">
+            <summary>
+            Saves specified entity sequence, adding or updating as needed
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="items">Entity sequence to upsert into table</param>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Save``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Saves specified entity sequence, adding or updating as needed
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="items">Entity sequence to upsert into table</param>
+        </member>
+        <member name="M:Lex.Db.DbInstance.DeleteByKeys``2(System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            Deletes entities specified by key sequence
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <param name="keys">Sequence of key values to specify entities to delete</param>
+            <returns>Returns count of the deleted entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.DeleteByKeys``1(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Deletes entities specified by key sequence
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="keys">Sequence of key values to specify entities to delete</param>
+            <returns>Returns count of the deleted entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.DeleteByKey``2(``1)">
+            <summary>
+            Deletes entity specified by PK value
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="key">Key of entity to delete</param>
+            <returns>True if entity was deleted</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.DeleteByKey``1(System.Object)">
+            <summary>
+            Deletes entity specified by PK value
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="key">Key of entity to delete</param>
+            <returns>True if entity was deleted</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Delete``1(``0)">
+            <summary>
+            Deletes specified entity
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="item">Entity to delete</param>
+            <returns>True if entity was deleted</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Refresh``1(``0)">
+            <summary>
+            Refreshes specified entity from disk
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="item">Entity to refresh</param>
+            <returns>Same entity, updated from disk</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.AllKeys``2">
+            <summary>
+            Lists all current key values for specified entity type
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <returns>Array of all current key values for specified entity type</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.AllKeys``1">
+            <summary>
+            Lists all current key values 
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <returns>Array of all current key values for specified entity type</returns>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Flush">
+            <summary>
+            Flushes underlying database storage
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Flush``1">
+            <summary>
+            Flushes the underlying table storage
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Compact">
+            <summary>
+            Compacts all data files in database
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Purge">
+            <summary>
+            Clears the database
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Purge``1">
+            <summary>
+            Clears the specified entity table
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+        </member>
+        <member name="M:Lex.Db.DbInstance.Dispose">
+            <summary>
+            Disposes database
+            </summary>
+        </member>
+        <member name="T:Lex.Db.DbTable">
+            <summary>
+            Abstract database table interface
+            </summary>
+        </member>
+        <member name="P:Lex.Db.DbTable.Type">
+            <summary>
+            Type of the table entity class
+            </summary>
+        </member>
+        <member name="P:Lex.Db.DbTable.Name">
+            <summary>
+            Name of the table
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable.Count">
+            <summary>
+            Determines count of entities stored in the table
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.Purge">
+            <summary>
+            Removes all entities from the table
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable.Compact">
+            <summary>
+            Compacts the data stream of the table
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable.Flush">
+            <summary>
+            Flushed the underlying data and index streams to disk
+            </summary>
+        </member>
+        <member name="P:Lex.Db.DbTable.Item(System.String)">
+            <summary>
+            Specifies key/values pairs of the table metadata 
+            </summary>
+            <param name="property">Metadata property name</param>
+            <returns>Value of the named metadata property</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.AllKeys``1">
+            <summary>
+            Gathers all currently used PK values from PK index
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <returns>Typed list of key values</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.AllKeys">
+            <summary>
+            Gathers all currently used PK values from PK index
+            </summary>
+            <returns>Untyped IEnumerable of key values</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.GetMinKey``1">
+            <summary>
+            Determines minimal PK value from PK index,
+            returns default(K) if table is empty
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <returns>Minimal PK value</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.GetMaxKey``1">
+            <summary>
+            Determines maximal PK value from PK index,
+            returns default(K) if table is empty
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <returns>Maximal PK value</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.DeleteByKey``1(``0)">
+            <summary>
+            Deletes single entity by PK value
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <param name="key">Entity PK value</param>
+            <returns>Returns true if record was deleted, false otherwise</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.DeleteByKey(System.Object)">
+            <summary>
+            Deletes single entity by PK value
+            </summary>
+            <param name="key">Entity PK value</param>
+            <returns>Returns true if record was deleted, false otherwise</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.DeleteByKeys``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Deletes set of entities, determined by their PK values
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <param name="keys">Enumeration of entity PK values</param>
+            <returns>Returns number of deleted by key entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.DeleteByKeys(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Deletes set of entities, determined by their PK values
+            </summary>
+            <param name="keys">Enumeration of entity PK values</param>
+            <returns>Returns number of deleted by key entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable.GetInfo">
+            <summary>
+            Returns table size information 
+            </summary>
+            <returns>DbTableInfo instance filled with size info</returns>
+        </member>
+        <member name="T:Lex.Db.DbTable`1">
+            <summary>
+            Typed database table 
+            </summary>
+            <typeparam name="T">Table entity class</typeparam>
+        </member>
+        <member name="P:Lex.Db.DbTable`1.Type">
+            <summary>
+            Type of the table entity class
+            </summary>
+        </member>
+        <member name="P:Lex.Db.DbTable`1.Name">
+            <summary>
+            Name of the table
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Query``1">
+            <summary>
+            Gets primary index query constructor
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <returns>Primary index query constructor</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.IndexQuery``1(System.String)">
+            <summary>
+            Returns new named index query constructor
+            </summary>
+            <typeparam name="I1">Type of the indexed component</typeparam>
+            <param name="name">Name of the index</param>
+            <returns>New index query constructor</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.IndexQueryByKey``1(System.String,``0)">
+            <summary>
+            Returns new named index query constructor, set to look for supplied key 
+            </summary>
+            <typeparam name="I1">Type of the indexed component</typeparam>
+            <param name="name">Name of the index</param>
+            <param name="key">Key value to filter using index</param>
+            <returns>New index query constructor, set to look for specified key</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.IndexQuery``2(System.String)">
+            <summary>
+            Returns new named index query constructor
+            </summary>
+            <typeparam name="I1">Type of the first indexed component</typeparam>
+            <typeparam name="I2">Type of the second indexed component</typeparam>
+            <param name="name">Name of the index</param>
+            <returns>New named index query constructor</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.IndexQueryByKey``2(System.String,``0,``1)">
+            <summary>
+            Returns named index query constructor, set to look for supplied key components
+            </summary>
+            <typeparam name="I1">Type of the first indexed component</typeparam>
+            <typeparam name="I2">Type of the second indexed component</typeparam>
+            <param name="name">Name of the index</param>
+            <param name="keyPart1">First part of the key to filter using index</param>
+            <param name="keyPart2">Second part of the key to filter using index</param>
+            <returns>New named index query constructor, set to look for supplied key components</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.IndexQuery``3(System.String)">
+            <summary>
+            Returns new named index query constructor
+            </summary>
+            <typeparam name="I1">Type of the first indexed component</typeparam>
+            <typeparam name="I2">Type of the second indexed component</typeparam>
+            <typeparam name="I3">Type of the third indexed component</typeparam>
+            <param name="name">Name of the index</param>
+            <returns>New named index query constructor</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.IndexQueryByKey``3(System.String,``0,``1,``2)">
+            <summary>
+            Returns named index query constructor, set to look for supplied key components
+            </summary>
+            <typeparam name="I1">Type of the first indexed component</typeparam>
+            <typeparam name="I2">Type of the second indexed component</typeparam>
+            <typeparam name="I3">Type of the third indexed component</typeparam>
+            <param name="name">Name of the index</param>
+            <param name="keyPart1">First part of the key to filter using index</param>
+            <param name="keyPart2">Second part of the key to filter using index</param>
+            <param name="keyPart3">Third part of the key to filter using index</param>
+            <returns>New named index query constructor, set to look for supplied key components</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Count">
+            <summary>
+            Determines number of entities stored in the table
+            </summary>
+            <returns>Number of entities stored in the table</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.AllKeys``1">
+            <summary>
+            Lists all current key values 
+            </summary>
+            <typeparam name="K">Type of the PK</typeparam>
+            <returns>List of all current key values</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.AllKeys">
+            <summary>
+            Lists all current keys 
+            </summary>
+            <returns>Sequence of key values</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.LoadAll">
+            <summary>
+            Loads all entities  
+            </summary>
+            <returns>Array of all entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.LoadByKey``1(``0)">
+            <summary>
+            Loads an entity by specified PK value
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <param name="key">PK value</param>
+            <returns>Entity identified by the PK value, if any</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.LoadByKeys(System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            Bulk load specified instances by key
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <param name="keys">Sequence of keys to load</param>
+            <param name="yieldNotFound">Specifies that missed keys will be returned as nulls</param>
+            <returns>List of corresponding instances</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.LoadByKeys``1(System.Collections.Generic.IEnumerable{``0},System.Boolean)">
+            <summary>
+            Bulk load specified instances by key
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <param name="keys">Sequence of keys to load</param>
+            <param name="yieldNotFound">Specifies that missed keys will be returned as nulls</param>
+            <returns>List of corresponding instances</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Refresh(`0)">
+            <summary>
+            Refreshes specified entity from disk
+            </summary>
+            <param name="item">Entity to refresh</param>
+            <returns>Same entity, updated from disk</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Save(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Saves specified entity sequence, adding or updating as needed
+            </summary>
+            <param name="items">Entity sequence to upsert into table</param>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Save(`0)">
+            <summary>
+            Saves specified entity, adding or updating as needed
+            </summary>
+            <param name="item">Entity to upsert into table</param>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.ReadIndexes(System.IO.Stream)">
+            <summary>
+            Fast check index header and reloads it when changed
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Flush">
+            <summary>
+            Flushes the underlying table storage
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.GetInfo">
+            <summary>
+            Returns size information about the table
+            </summary>
+            <returns>DbTableInfo instance filled with size info</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.DeleteByKey``1(``0)">
+            <summary>
+            Deletes entity specified by key
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <param name="key">Key of entity to delete</param>
+            <returns>True if entity was deleted</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.DeleteByKeys(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Deletes entities specified by key sequence 
+            </summary>
+            <param name="keys">Key sequence to delete</param>
+            <returns>Count of the deleted entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.DeleteByKeys``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Deletes entities specified by key sequence 
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <param name="keys">Key sequence to delete</param>
+            <returns>Count of the deleted entities</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Delete(`0)">
+            <summary>
+            Deletes specified entity
+            </summary>
+            <param name="item">Entity to delete</param>
+            <returns>True is entity was deleted</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Deletes entities specified by the sequence 
+            </summary>
+            <param name="items">Sequence of entities to delete</param>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Compact">
+            <summary>
+            Compacts data file of the table
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.Purge">
+            <summary>
+            Clears the table
+            </summary>
+        </member>
+        <member name="P:Lex.Db.DbTable`1.Item(System.String)">
+            <summary>
+            Specifies key/values pairs of the table metadata 
+            </summary>
+            <param name="property">Metadata property name</param>
+            <returns>Value of the named metadata property</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.GetMinKey``1">
+            <summary>
+            Determines minimal PK value from PK index,
+            returns default(K) if table is empty
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <returns>Minimal PK value</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.GetMaxKey``1">
+            <summary>
+            Determines maximal PK value from PK index,
+            returns default(K) if table is empty
+            </summary>
+            <typeparam name="K">Type of the key</typeparam>
+            <returns>Maximal PK value</returns>
+        </member>
+        <member name="M:Lex.Db.DbTable`1.GetEnumerator">
+            <summary>
+            Retrieves an object that can iterate through the individual entities in this table.
+            </summary>
+            <returns>An enumerator object.</returns>
+        </member>
+        <member name="T:Lex.Db.DbTableAsync">
+            <summary>
+            Asynchronous extensions for DbTable
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.LoadAllAsync``1(Lex.Db.DbTable{``0})">
+            <summary>
+            Asynchronously loads all entities from table 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <returns>Awaitable Task with array of entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.CountAsync``1(Lex.Db.DbTable{``0})">
+            <summary>
+            Asynchronously counts all entities from table 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <returns>Awaitable Task with count in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.AllKeysAsync``1(Lex.Db.DbTable)">
+            <summary>
+            Asynchronously loads all PK values from PK index 
+            </summary>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="table">Table of the entity class</param>
+            <returns>Awaitable Task with list of PK values in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.AllKeysAsync(Lex.Db.DbTable)">
+            <summary>
+            Asynchronously loads all PK values from PK index 
+            </summary>
+            <param name="table">Table of the entity class</param>
+            <returns>Awaitable Task with enumeration of untyped PK values in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.LoadByKeyAsync``2(Lex.Db.DbTable{``0},``1)">
+            <summary>
+            Asynchronously loads entity by PK value 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="key">The PK value of entity to load</param>
+            <returns>Awaitable Task with loaded entity in result, or null if not found</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.LoadByKeysAsync``2(Lex.Db.DbTable{``0},System.Collections.Generic.IEnumerable{``1},System.Boolean)">
+            <summary>
+            Asynchronously loads entities with speicified PK values 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="keys">The enumeration of PK values to load</param>
+            <param name="yieldNotFound">Specifies that missing records should be ignored or returnes as nulls</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.ToListAsync``2(Lex.Db.IIndexQuery{``0,``1})">
+            <summary>
+            Asynchronously materializes indexed query result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K">Type of the index</typeparam>
+            <param name="query">Indexed query to execute</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.ToLazyListAsync``2(Lex.Db.IIndexQuery{``0,``1})">
+            <summary>
+            Asynchronously materializes indexed query lazy result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K">Type of the index</typeparam>
+            <param name="query">Indexed query to execute</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.CountAsync``2(Lex.Db.IIndexQuery{``0,``1})">
+            <summary>
+            Asynchronously materializes indexed query result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K">Type of the index</typeparam>
+            <param name="query">Indexed query to count result</param>
+            <returns>Awaitable Task with number of entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.ToListAsync``3(Lex.Db.IIndexQuery{``0,``1,``2})">
+            <summary>
+            Asynchronously materializes indexed query result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K1">Type of the first component index</typeparam>
+            <typeparam name="K2">Type of the second component index</typeparam>
+            <param name="query">Indexed query to execute</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.ToLazyListAsync``3(Lex.Db.IIndexQuery{``0,``1,``2})">
+            <summary>
+            Asynchronously materializes indexed query lazy result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K1">Type of the first component index</typeparam>
+            <typeparam name="K2">Type of the second component index</typeparam>
+            <param name="query">Indexed query to execute</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.CountAsync``3(Lex.Db.IIndexQuery{``0,``1,``2})">
+            <summary>
+            Asynchronously materializes indexed query result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K1">Type of the first component index</typeparam>
+            <typeparam name="K2">Type of the second component index</typeparam>
+            <param name="query">Indexed query to count result</param>
+            <returns>Awaitable Task with number of entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.ToListAsync``4(Lex.Db.IIndexQuery{``0,``1,``2,``3})">
+            <summary>
+            Asynchronously materializes indexed query result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K1">Type of the first component index</typeparam>
+            <typeparam name="K2">Type of the second component index</typeparam>
+            <typeparam name="K3">Type of the third component index</typeparam>
+            <param name="query">Indexed query to execute</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.ToLazyListAsync``4(Lex.Db.IIndexQuery{``0,``1,``2,``3})">
+            <summary>
+            Asynchronously materializes indexed query lazy result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K1">Type of the first component index</typeparam>
+            <typeparam name="K2">Type of the second component index</typeparam>
+            <typeparam name="K3">Type of the third component index</typeparam>
+            <param name="query">Indexed query to execute</param>
+            <returns>Awaitable Task with enumeration of loaded entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.CountAsync``4(Lex.Db.IIndexQuery{``0,``1,``2,``3})">
+            <summary>
+            Asynchronously materializes indexed query result
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <typeparam name="K1">Type of the first component index</typeparam>
+            <typeparam name="K2">Type of the second component index</typeparam>
+            <typeparam name="K3">Type of the third component index</typeparam>
+            <param name="query">Indexed query to count result</param>
+            <returns>Awaitable Task with number of entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.RefreshAsync``1(Lex.Db.DbTable{``0},``0)">
+            <summary>
+            Asynchronously reloads specified entity by its PK 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="item">Entity to reload from table</param>
+            <returns>Awaitable Task with reloaded entity in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.SaveAsync``1(Lex.Db.DbTable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Asynchronously saves specified entities 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="items">Enumeration of entities to save</param>
+            <returns>Awaitable Task of the save operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.SaveAsync``1(Lex.Db.DbTable{``0},``0)">
+            <summary>
+            Asynchronously saves specified entity 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="item">Entity to save</param>
+            <returns>Awaitable Task of the save operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.DeleteByKeyAsync``1(Lex.Db.DbTable,``0)">
+            <summary>
+            Asynchronously deletes specified entity by PK supplied 
+            </summary>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="key">The PK value</param>
+            <returns>Awaitable Task with success flag in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.DeleteByKeyAsync``1(Lex.Db.DbTable,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Asynchronously deletes specified entities by their PKs 
+            </summary>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="keys">The enumeration of PK values</param>
+            <returns>Awaitable Task with count of successfully deleted entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.DeleteAsync``1(Lex.Db.DbTable{``0},``0)">
+            <summary>
+            Asynchronously deletes specified entity 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="item">Entity to delete</param>
+            <returns>Awaitable Task with success flag in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.DeleteAsync``1(Lex.Db.DbTable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Asynchronously deletes specified entities 
+            </summary>
+            <typeparam name="T">Type of the entity class</typeparam>
+            <param name="table">Table of the entity class</param>
+            <param name="items">Entities to delete</param>
+            <returns>Awaitable Task with count of successfully deleted entities in result</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.InitializeAsync(Lex.Db.DbInstance)">
+            <summary>
+            Asynchronously initializes database instance 
+            </summary>
+            <param name="db">Database instance to initialize</param>
+            <returns>Awaitable Task of initialize operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.BulkReadAsync(Lex.Db.DbInstance,System.Action)">
+            <summary>
+            Asynchronously executes read actions inside read transaction
+            </summary>
+            <param name="db">Database instance to read from</param>
+            <param name="reads">Read operations to perform</param>
+            <returns>Awaitable Task of read operations</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.BulkWriteAsync(Lex.Db.DbInstance,System.Action)">
+            <summary>
+            Asynchronously executes write actions inside write transaction
+            </summary>
+            <param name="db">Database instance to write to</param>
+            <param name="writes">Write operations to perform</param>
+            <returns>Awaitable Task of write operations</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.PurgeAsync(Lex.Db.DbTable)">
+            <summary>
+            Asynchronously purges specified table
+            </summary>
+            <param name="table">Table to purge</param>
+            <returns>Awaitable Task of purge operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.PurgeAsync(Lex.Db.DbInstance)">
+            <summary>
+            Asynchronously purges specified database instance
+            </summary>
+            <param name="db">Database instance to purge</param>
+            <returns>Awaitable Task of purge operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.CompactAsync(Lex.Db.DbTable)">
+            <summary>
+            Asynchronously compacts specified table
+            </summary>
+            <param name="table">Table to compact</param>
+            <returns>Awaitable Task of compact operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.CompactAsync(Lex.Db.DbInstance)">
+            <summary>
+            Asynchronously compacts specified database instance
+            </summary>
+            <param name="db">Database instance to compact</param>
+            <returns>Awaitable Task of compact operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.GetInfoAsync(Lex.Db.DbTable)">
+            <summary>
+            Asynchronously determines table sizes
+            </summary>
+            <param name="table">Table to inspect</param>
+            <returns>Awaitable Task of inspect operation</returns>
+        </member>
+        <member name="M:Lex.Db.DbTableAsync.GetInfoAsync(Lex.Db.DbInstance)">
+            <summary>
+            Asynchronously determines database sizes
+            </summary>
+            <param name="db">Database instance to inspect</param>
+            <returns>Awaitable Task of inspect operation</returns>
+        </member>
+        <member name="T:Lex.Db.ReaderWriterLockSlim">
+            <summary>
+            Portable stub
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.DataIndex`2.ReadNodeInitial(Lex.Db.Serialization.DataReader,System.Collections.Generic.Dictionary{System.Int64,Lex.Db.Indexing.IKeyNode})">
+            <summary>
+            Initial index format had dedicated nodes for duplicate keys, so we have to do one-way upgrade
+            </summary>
+        </member>
+        <member name="T:Lex.Db.Indexing.Location`1">
+            <summary>
+            Data block location info
+            </summary>
+            <typeparam name="T">Provisioned instance to load</typeparam>
+        </member>
+        <member name="T:Lex.Db.Indexing.RBTreeColor">
+            <summary>
+            Colour of the node
+            </summary>
+        </member>
+        <member name="F:Lex.Db.Indexing.RBTreeColor.Red">
+            <summary>
+            Red
+            </summary>
+        </member>
+        <member name="F:Lex.Db.Indexing.RBTreeColor.Black">
+            <summary>
+            Black
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Clear">
+            <summary>
+            Remove all items
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Add(`0)">
+            <summary>
+            Add new key into the tree
+            
+            This operation is O(logN) operation
+            </summary>
+            <exception cref="T:System.ArgumentException">In case the key is already in the tree</exception>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.AddOrGet(`0)">
+            <summary>
+            Add new key into the tree or get existing node
+            This operation is O(logN) operation
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Remove(`0)">
+            <summary>
+            Remove key from the dictionary
+            This operation is O(logN) operation
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Remove(`1)">
+            <summary>
+            Remove node from the dictionary
+            This operation is O(1) operation
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Delete(`1)">
+            <summary>
+            Delete the node z, and free up the space
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.DeleteFix(`1)">
+            <summary>
+            Restore the reb-black properties after a delete
+            </summary>
+            <param name="x"></param>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Find(`0)">
+            <summary>
+            Find key in the dictionary
+            This operation is O(logN) operation
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Traverse(`0,System.Boolean@)">
+            <summary>
+            Go trough tree and find the node by the key.
+            Might add new node if node doesn't exist.
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Balance(`1)">
+            <summary>
+            Balance tree past inserting
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Next(`1)">
+            <summary>
+            Return a pointer to the smallest key greater than x
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Prev(`1)">
+            <summary>
+            Return a pointer to the largest key smaller than x
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.First">
+            <summary>
+            Get first node
+            This operation is O(logN) operation
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.First(`1)">
+            <summary>
+            Get first node
+            This operation is O(logN) operation
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Indexing.RBTree`2.Last">
+            <summary>
+            Get last node
+            This operation is O(logN) operation
+            </summary>
+        </member>
+        <member name="T:Lex.Db.IIndexQuery">
+            <summary>
+            Query via index interface
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery.Count">
+            <summary>
+            Counts the number of the indexed entities identitified by the query
+            </summary>
+            <returns>Number of entities identitified by the query</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery.ToIdList``1">
+            <summary>
+            Returns the list of PK values for entities identitified by the query
+            </summary>
+            <typeparam name="K">Type of the primary key</typeparam>
+            <returns>List of PK values for entities identitified by the query</returns>
+        </member>
+        <member name="T:Lex.Db.IIndexQuery`1">
+            <summary>
+            Typed query via index interface
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`1.ToList">
+            <summary>
+            Loads entities returned by the query
+            </summary>
+            <returns>List of entities identitified by the query</returns>
+        </member>
+        <member name="T:Lex.Db.IIndexQuery`2">
+            <summary>
+            Typed query via index interface
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <typeparam name="I1">Type of the indexed member</typeparam>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.ToLazyList">
+            <summary>
+            Lazy loads entities returned by the query
+            </summary>
+            <returns>List of lazy-loaded entities identitified by the query</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.Take(System.Int32)">
+            <summary>
+            Returns a specified number of contiguous entities from the start of a query.
+            </summary>
+            <param name="count">The number of elements to return.</param>
+            <returns>A new query that returns the specified number of entities.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.Skip(System.Int32)">
+            <summary>
+            Bypasses a specified number of entities in a query and then returns the remaining entities.
+            </summary>
+            <param name="count">The number of entities to skip before returning the remaining entities.</param>
+            <returns>A new query that bypasses the specified number of entities.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.GreaterThan(`1,System.Boolean)">
+            <summary>
+            Returns entities with specified lower bound
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.LessThan(`1,System.Boolean)">
+            <summary>
+            Returns entities with specified upper bound
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.Key(`1)">
+            <summary>
+            Returns entities with specified key value 
+            </summary>
+            <param name="key">Key value</param>
+            <returns>A new query that returns entities with specified key value.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`2.Where(System.Func{`1,System.Boolean})">
+            <summary>
+            Returns entities with filtered key values
+            </summary>
+            <param name="predicate">Predicate function to filter entities</param>
+            <returns>A new query that returns entities with filtered key values.</returns>
+        </member>
+        <member name="T:Lex.Db.IIndexQuery`3">
+            <summary>
+            Typed query via 2-component index interface 
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <typeparam name="I1">Type of the first component indexed member</typeparam>
+            <typeparam name="I2">Type of the second component indexed member</typeparam>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.ToLazyList">
+            <summary>
+            Lazy loads entities returned by the query
+            </summary>
+            <returns>List of lazy-loaded entities identitified by the query</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.Take(System.Int32)">
+            <summary>
+            Returns a specified number of contiguous entities from the start of a query.
+            </summary>
+            <param name="count">The number of elements to return.</param>
+            <returns>A new query that returns the specified number of entities.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.Skip(System.Int32)">
+            <summary>
+            Bypasses a specified number of entities in a query and then returns the remaining entities.
+            </summary>
+            <param name="count">The number of entities to skip before returning the remaining entities.</param>
+            <returns>A new query that bypasses the specified number of entities.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.GreaterThan(`1,`2,System.Boolean)">
+            <summary>
+            Returns entities with specified 2-component lower bound
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.LessThan(`1,`2,System.Boolean)">
+            <summary>
+            Returns entities with specified 2-component upper bound
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.Key(`1,`2)">
+            <summary>
+            Returns entities with specified 2-component key value 
+            </summary>
+            <param name="key1">First component key value</param>
+            <param name="key2">Second component key value</param>
+            <returns>A new query that returns entities with specified key value.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`3.Where(System.Func{`1,`2,System.Boolean})">
+            <summary>
+            Returns entities with filtered key values
+            </summary>
+            <param name="predicate">Predicate function to filter entities</param>
+            <returns>A new query that returns entities with filtered key values.</returns>
+        </member>
+        <member name="T:Lex.Db.IIndexQuery`4">
+            <summary>
+            Typed query via 3-component index interface
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+            <typeparam name="I1">Type of the first component indexed member</typeparam>
+            <typeparam name="I2">Type of the second component indexed member</typeparam>
+            <typeparam name="I3">Type of the third component indexed member</typeparam>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.ToLazyList">
+            <summary>
+            Lazy loads entities returned by the query
+            </summary>
+            <returns>List of lazy-loaded entities identitified by the query</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.Take(System.Int32)">
+            <summary>
+            Returns a specified number of contiguous entities from the start of a query.
+            </summary>
+            <param name="count">The number of elements to return.</param>
+            <returns>A new query that returns the specified number of entities.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.Skip(System.Int32)">
+            <summary>
+            Bypasses a specified number of entities in a query and then returns the remaining entities.
+            </summary>
+            <param name="count">The number of entities to skip before returning the remaining entities.</param>
+            <returns>A new query that bypasses the specified number of entities.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.GreaterThan(`1,`2,`3,System.Boolean)">
+            <summary>
+            Returns entities with specified 3-component lower bound
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.LessThan(`1,`2,`3,System.Boolean)">
+            <summary>
+            Returns entities with specified 3-component upper bound
+            </summary>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.Key(`1,`2,`3)">
+            <summary>
+            Returns entities with specified 3-component key value 
+            </summary>
+            <param name="key1">First component key value</param>
+            <param name="key2">Second component key value</param>
+            <param name="key3">Third component key value</param>
+            <returns>A new query that returns entities with specified key value.</returns>
+        </member>
+        <member name="M:Lex.Db.IIndexQuery`4.Where(System.Func{`1,`2,`3,System.Boolean})">
+            <summary>
+            Returns entities with filtered key values
+            </summary>
+            <param name="predicate">Predicate function to filter entities</param>
+            <returns>A new query that returns entities with filtered key values.</returns>
+        </member>
+        <member name="T:Lex.Db.Lazy`1">
+            <summary>
+            Provides support for lazy initialization
+            </summary>
+            <typeparam name="T">Specifies the type of entity that is being lazily loaded</typeparam>
+        </member>
+        <member name="F:Lex.Db.Lazy`1.PK">
+            <summary>
+            Primary key used to lazy load the entity
+            </summary>  
+        </member>
+        <member name="P:Lex.Db.Lazy`1.Value">
+            <summary>
+            Gets the lazily loaded entity of the current Lazy instance.
+            </summary>
+        </member>
+        <member name="T:Lex.Db.Lazy`2">
+            <summary>
+            Provides support for lazy entity loading as well as access to index value consisting from one component
+            </summary>
+            <typeparam name="T">Specifies the type of entity that is being lazily loaded</typeparam>
+            <typeparam name="I1">Type of the index component</typeparam>
+        </member>
+        <member name="F:Lex.Db.Lazy`2.Key">
+            <summary>
+            Index component
+            </summary>
+        </member>
+        <member name="T:Lex.Db.Lazy`3">
+            <summary>
+            Provides support for lazy entity loading as well as access to index value consisting from two components
+            </summary>
+            <typeparam name="T">Specifies the type of entity that is being lazily loaded</typeparam>
+            <typeparam name="I1">Type of the first index component</typeparam>
+            <typeparam name="I2">Type of the second index component</typeparam>
+        </member>
+        <member name="F:Lex.Db.Lazy`3.Key1">
+            <summary>
+            First index component
+            </summary>
+        </member>
+        <member name="F:Lex.Db.Lazy`3.Key2">
+            <summary>
+            Second index component
+            </summary>
+        </member>
+        <member name="T:Lex.Db.Lazy`4">
+            <summary>
+            Provides support for lazy entity loading as well as access to index value consisting from three components
+            </summary>
+            <typeparam name="T">Specifies the type of entity that is being lazily loaded</typeparam>
+            <typeparam name="I1">Type of the first index component</typeparam>
+            <typeparam name="I2">Type of the second index component</typeparam>
+            <typeparam name="I3">Type of the third index component</typeparam>
+        </member>
+        <member name="F:Lex.Db.Lazy`4.Key1">
+            <summary>
+            First index component
+            </summary>
+        </member>
+        <member name="F:Lex.Db.Lazy`4.Key2">
+            <summary>
+            Second index component
+            </summary>
+        </member>
+        <member name="F:Lex.Db.Lazy`4.Key3">
+            <summary>
+            Third index component
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Mapping.Metadata`1.MakeWriteMethod">
+            <summary>
+            foreach(var property in properties) 
+              if (Interceptor.NeedSerialize(T, property.Name)
+              {
+                WritePropertyId();
+                WritePropertyValue();
+              }
+            WritePropertyId(-1);
+            </summary>
+        </member>
+        <member name="F:Lex.Db.DbFormat.Initial">
+            <summary>
+            Original DB Format, data indexes are non-unique, upgrade needed
+            </summary>
+        </member>
+        <member name="T:Lex.Db.TypeMap">
+            <summary>
+            Entity type to table mapping base
+            </summary>
+        </member>
+        <member name="P:Lex.Db.TypeMap.Name">
+            <summary>
+            Indicates name of the table
+            </summary>
+        </member>
+        <member name="T:Lex.Db.TypeMap`1">
+            <summary>
+            Entity type to table mapping
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Lex.Db.TypeMap`1.Name">
+            <summary>
+            Indicates name of the table
+            </summary>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.ToTable(System.String)">
+            <summary>
+            Defines a non-default name of the entity table
+            </summary>
+            <param name="name">Name of the table file without extension</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.Reset">
+            <summary>
+            Resets all mappings
+            </summary>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.WithInterceptor(Lex.Db.Serialization.Interceptor{`0})">
+            <summary>
+            Registers interceptor to control serialization of properties
+            </summary>
+            <param name="interceptor">Custom interceptor implementation</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.WithInterceptor(System.Func{`0,System.String,System.Nullable{System.Boolean}})">
+            <summary>
+            Registers interceptor function to control serialization of properties
+            </summary>
+            <param name="interceptor">Custom interceptor function</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.Key``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Defines primary key expression, indicating optional automatic generation of PK values
+            </summary>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="keyBuilder">Primary key expression</param>
+            <param name="autoGen">Indicates automatic generation of PK values (int, long, Guid types only)</param>
+            <param name="comparer">Optional primary key comparer</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.Automap``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Defines complete mapping for public properties and fields via reflection, 
+            with specified primary key expression and optional automatic generation
+            </summary>
+            <typeparam name="K">Type of the PK</typeparam>
+            <param name="keyBuilder">Primary key expression</param>
+            <param name="autoGen">Indicates automatic generation of PK values (int, long, Guid types only)</param>
+            <param name="comparer">Optional primary key comparer</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.MapAll">
+            <summary>
+            Defines complete mapping for public properties and fields via reflection
+            </summary>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.Unmap``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Removes mapping for specified member
+            </summary>
+            <typeparam name="K">Type of the member</typeparam>
+            <param name="property">Member access expression</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.Map``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Adds mapping for specified member
+            </summary>
+            <typeparam name="K">Type of the member</typeparam>
+            <param name="property">Members access expression (public readable/writable property or field)</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.WithIndex``1(System.String,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Adds non-unique typed index over single component
+            </summary>
+            <typeparam name="I1">Type of the index key</typeparam>
+            <param name="name">Name of the index</param>
+            <param name="indexBy">Indexing expression</param>
+            <param name="comparer">Optional comparer for indexing expression</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.WithIndex``2(System.String,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Collections.Generic.IComparer{``0},System.Collections.Generic.IComparer{``1})">
+            <summary>
+            Adds non-unique typed index over two components
+            </summary>
+            <typeparam name="I1">Type of the first index key component</typeparam>
+            <typeparam name="I2">Type of the second index key component</typeparam>
+            <param name="name">Name of the index</param>
+            <param name="indexBy">First index key component expression</param>
+            <param name="thenBy">Second index key component expression</param>
+            <param name="comparerIndexBy">Optional comparer for first index key component</param>
+            <param name="comparerThenBy">Optional comparer for second index key component</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="M:Lex.Db.TypeMap`1.WithIndex``3(System.String,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,``1}},System.Linq.Expressions.Expression{System.Func{`0,``2}},System.Collections.Generic.IComparer{``0},System.Collections.Generic.IComparer{``1},System.Collections.Generic.IComparer{``2})">
+            <summary>
+            Adds non-unique typed index over three components
+            </summary>
+            <typeparam name="I1">Type of the first index key component</typeparam>
+            <typeparam name="I2">Type of the second index key component</typeparam>
+            <typeparam name="I3">Type of the third index key component</typeparam>
+            <param name="name">Name of the index</param>
+            <param name="indexBy">First index key component expression</param>
+            <param name="thenBy">Second index key component expression</param>
+            <param name="andThenBy">Third index key component expression</param>
+            <param name="comparerIndexBy">Optional comparer for first index key component</param>
+            <param name="comparerThenBy">Optional comparer for second index key component</param>
+            <param name="comparerAndThenBy">Optional comparer for thirt index key component</param>
+            <returns>Entity type mapping to continue with</returns>
+        </member>
+        <member name="T:Lex.Db.Serialization.Interceptor`1">
+            <summary>
+            Incapsulates logic to decide which members should be serialized
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+        </member>
+        <member name="M:Lex.Db.Serialization.Interceptor`1.NeedSerialize(`0,System.String)">
+            <summary>
+            Implements deciding logic whether member should be stored in table or not
+            </summary>
+            <param name="instance">Entity instance to inspect</param>
+            <param name="member">Name of the member to serialize</param>
+            <returns>True is member should be serialized, false otherwise</returns>
+        </member>
+        <member name="T:Lex.Db.Serialization.Extender">
+            <summary>
+            Serialization extender
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Serialization.Extender.RegisterType``2(System.Int16)">
+            <summary>
+            Registers static serialization extension before any DbInstance initialization.
+            Serialization extensions is a static class with following methods pattern:
+            public static K ReadXXX(DataReader reader)
+            public static void WriteXXX(DataWriter writer, K value)
+            where K is custom type to serialize
+            XXX is type name of K without namespace
+            </summary>
+            <typeparam name="K">Type to serialize</typeparam>
+            <typeparam name="S">Serialization extension</typeparam>
+            <param name="streamId">Stable (for the lifetime of your app) id of the custom type. 
+            Must be greater than 1000 (other are already taken or reserved for future use)</param>
+        </member>
+        <member name="T:Lex.Db.Serialization.Serializers">
+            <summary>
+            Provides serialization logic and code generation
+            </summary>
+        </member>
+        <member name="T:Lex.Db.Serialization.DataReader">
+            <summary>
+            Extended binary reader 
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.#ctor(System.IO.Stream)">
+            <summary>
+            Creates DataReader with specified owned stream
+            </summary>
+            <param name="stream">Stream to read from</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.ReadTimeSpan">
+            <summary>
+            Reads TimeSpan value from stream
+            </summary>
+            <returns>TimeSpan value</returns>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.ReadDateTime">
+            <summary>
+            Reads DateTime value from stream
+            </summary>
+            <returns>DateTime value</returns>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.ReadDateTimeOffset">
+            <summary>
+            Reads DateTimeOffset value from stream
+            </summary>
+            <returns>DateTimeOffset value</returns>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.ReadGuid">
+            <summary>
+            Reads Guid value from stream
+            </summary>
+            <returns>Guid value</returns>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.ReadArray">
+            <summary>
+            Reads byte array from stream
+            </summary>
+            <returns>Byte array</returns>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataReader.ReadDecimal">
+            <summary>
+            Reads Decimal value from stream
+            </summary>
+            <returns>Decimal value</returns>
+        </member>
+        <member name="T:Lex.Db.Serialization.DataWriter">
+            <summary>
+            Extended binary writer
+            </summary>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.#ctor(System.IO.Stream)">
+            <summary>
+            Creates DataWriter with specified owned stream
+            </summary>
+            <param name="stream">Stream to write to</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.Write(System.TimeSpan)">
+            <summary>
+            Writes TimeSpan value to stream
+            </summary>
+            <param name="value">TimeSpan value to write</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.Write(System.DateTime)">
+            <summary>
+            Writes DateTime value to stream
+            </summary>
+            <param name="value">DateTime value to write</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.Write(System.DateTimeOffset)">
+            <summary>
+            Writes DateTimeOffset value to stream
+            </summary>
+            <param name="value">DateTimeOffset value to write</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.Write(System.Guid)">
+            <summary>
+            Writes Guid value to stream
+            </summary>
+            <param name="value">Guid value to write</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.WriteDecimal(System.Decimal)">
+            <summary>
+            Writes Decimal value to stream
+            </summary>
+            <param name="value">Decimal value to write</param>
+        </member>
+        <member name="M:Lex.Db.Serialization.DataWriter.WriteArray(System.Byte[])">
+            <summary>
+            Writes byte array to stream
+            </summary>
+            <param name="value">Byte array to write</param>
+        </member>
+        <member name="T:Lex.Db.DbTableInfo">
+            <summary>
+            Table size information container
+            </summary>
+        </member>
+        <member name="F:Lex.Db.DbTableInfo.IndexSize">
+            <summary>
+            Actual size of the index file
+            </summary>
+        </member>
+        <member name="F:Lex.Db.DbTableInfo.DataSize">
+            <summary>
+            Actual size of the data file (including gaps) 
+            </summary>
+        </member>
+        <member name="F:Lex.Db.DbTableInfo.EffectiveDataSize">
+            <summary>
+            Effective size of the data file  (excluding gaps)
+            </summary>
+        </member>
+        <member name="M:Lex.Db.DbTableInfo.op_Addition(Lex.Db.DbTableInfo,Lex.Db.DbTableInfo)">
+            <summary>
+            Summs all numeric properties
+            </summary>
+        </member>
+    </members>
+</doc>

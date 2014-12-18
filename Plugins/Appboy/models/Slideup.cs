@@ -29,7 +29,7 @@ namespace Appboy.Models {
         _duration = value <= 0 ? s_DefaultDuration : value;
       }
     }
-		
+        
     public Slideup(string message) {
       if (String.IsNullOrEmpty(message)) {
         throw new ArgumentException("Slideup JSON Message cannot be null or empty.", "message");
@@ -67,7 +67,7 @@ namespace Appboy.Models {
       Uri = null;
       ClickAction = ClickAction.NEWS_FEED;
     }
-		
+        
     /// <summary>
     /// Sets the ClickAction to URI and sets the Uri only if the uri is not null.
     /// </summary>
@@ -80,7 +80,7 @@ namespace Appboy.Models {
       Uri = uri;
       return true;
     }
-		
+        
     /// <summary>
     /// Sets the ClickAction to NONE and unsets the Uri.
     /// </summary>

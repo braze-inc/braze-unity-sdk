@@ -26,7 +26,7 @@ namespace Appboy {
       if (GUI.Button(new Rect(230, 10, 100, 25), "Static Slideup")) {
         Slideup slideup = new Slideup(_slideupJsonString);
         DisplaySlideup(slideup);
-      }     	
+      }         
       GUI.Label(new Rect(230, 45, 210, 80), slideupMessage);
     }
   }

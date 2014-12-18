@@ -9,7 +9,7 @@ namespace Appboy.Models {
     public Dictionary<string, string> Extras { get; private set; }
     public string CollapseKey { get; private set; }
     public int AndroidNotificationId { get; private set; }
-		
+        
     public PushNotification(string message) {
       if (String.IsNullOrEmpty(message)) {
         throw new ArgumentException("Message cannot be null or empty.", "message");

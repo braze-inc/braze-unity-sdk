@@ -40,6 +40,7 @@
  * 
  * * * * */
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -435,11 +436,13 @@ namespace Appboy.Utilities
  
         public void SaveToFile(string aFileName)
         {
+#if !UNITY_METRO
             System.IO.Directory.CreateDirectory((new System.IO.FileInfo(aFileName)).Directory.FullName);
             using(var F = System.IO.File.OpenWrite(aFileName))
             {
                 SaveToStream(F);
             }
+#endif
         }
         public string SaveToBase64()
         {
@@ -547,10 +550,15 @@ namespace Appboy.Utilities
         }
         public static JSONNode LoadFromFile(string aFileName)
         {
+#if !UNITY_METRO
+
             using(var F = System.IO.File.OpenRead(aFileName))
             {
                 return LoadFromStream(F);
             }
+#else 
+          return new JSONNode();
+#endif
         }
         public static JSONNode LoadFromBase64(string aBase64)
         {

@@ -1,0 +1,1 @@
+These DLLs are required for building a Unity project using the Appboy Unity Adapter.

@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 
 namespace Appboy.Models {
-  public class ApplePushNotificationAlert {		
+  public class ApplePushNotificationAlert {        
     public IList<string> LocationArguments { get; set; }
     public string Body { get; set; }
     public string ActionLocationKey { get; set; }
     public string LocationKey { get; set; }
     public string LaunchImage { get; set; }
-		
+        
     public ApplePushNotificationAlert(JSONClass json) {
       LocationArguments = new List<string>();
       foreach (var jsonNode in json["loc-args"].AsArray) {
@@ -20,7 +20,7 @@ namespace Appboy.Models {
       LocationKey = json["loc-key"];
       LaunchImage = json["launch-image"];
     }
-	
+    
     public override string ToString() {
       string LocationArgumentsString = "[ ";
       foreach (string N in LocationArguments) {
