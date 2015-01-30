@@ -1,3 +1,6 @@
+## 1.3.1
+* Updated the Android plugin to use Appboy Android SDK v1.6.1.
+
 ## 1.3.0
 * Adds plugins for Windows Phone 8 and Windows Universal apps.
 * Updated the Android plugin to use Appboy Android SDK v1.6.0.
