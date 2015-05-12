@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_DUCK_TYPING</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -49,153 +49,50 @@
      <Compile Include="Assets\Editor\BuildAndroid.cs" />
      <Compile Include="Assets\Editor\BuildIos.cs" />
      <Compile Include="Assets\Editor\SwitchPlatform.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\Cards\BannerCardTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\Cards\CaptionedImageCardTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\Cards\CardTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\Cards\ClassicCardTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\Cards\CrossPromotionSmallCardTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\Cards\TextAnnouncementCardTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\FeedTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageBaseTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageButtonTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageConstantsTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageFactoryTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageFullTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageModalTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Models\InAppMessage\InAppMessageSlideupTest.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Utilities\CollectionUtilsTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Utilities\ColorUtilsTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Utilities\EnumUtilsTests.cs" />
-     <Compile Include="Assets\Tests\UnitTests\Editor\Appboy\Utilities\JsonUtilsTests.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionComponentEditor.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionExplorerWindow.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionListRenderer.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionStripper.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\DropDownControl.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByComparerRenderer.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByExecutionMethodRenderer.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByGORenderer.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByNothingRenderer.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByTestsRenderer.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\PropertyPathSelector.cs" />
-     <Compile Include="Assets\UnityTestTools\Assertions\Editor\PropertyResolver.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\Icons.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\ProjectSettingsBase.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\ResultWriter\ResultSummarizer.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\ResultWriter\StackTraceFilter.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\ResultWriter\XmlResultWriter.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\Styles.cs" />
-     <Compile Include="Assets\UnityTestTools\Common\Editor\TestFilterSettings.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\Batch.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\IntegrationTestsHierarchyAnnotation.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\IntegrationTestsRunnerSettings.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\IntegrationTestsRunnerWindow.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner\NetworkResultsReceiver.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner\PlatformRunner.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner\PlatformRunnerConfiguration.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner\PlatformRunnerSettings.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner\PlatformRunnerSettingsWindow.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner\PlayerSettingConfigurator.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\Renderer\IntegrationTestGroupLine.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\Renderer\IntegrationTestLine.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\Renderer\IntegrationTestRendererBase.cs" />
-     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\TestComponentEditor.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\Batch.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\NUnit\Renderer\GroupLine.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\NUnit\Renderer\RenderingOptions.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\NUnit\Renderer\TestLine.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\NUnit\Renderer\UnitTestRendererLine.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\BackgroundRunner.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\GuiHelper.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\ITestRunnerCallback.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\IUnitTestEngine.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\NUnitExtensions.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\NUnitTestEngine.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\TestRunner.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\TestRunnerCallbackList.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\UnitTestInfo.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\UnitTestResult.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\UnitTestView.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\UnitTestsRunnerSettings.cs" />
-     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\UnityUnitTest.cs" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_inappmessage_modal_background.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Cursor.shader" />
-     <None Include="Assets\UnityTestTools\LICENSE.txt" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditiveBlend.shader" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_card_background.xml" />
-     <None Include="Assets\Plugins\Android\res\values-mdpi\dimens.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Additive.shader" />
-     <None Include="Assets\Plugins\Android\res\values\dimens.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_button.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\Fallback.shader" />
-     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
-     <None Include="Assets\Plugins\Android\res\values\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rCN\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_icon_background.xml" />
-     <None Include="Assets\Plugins\Android\res\values-ldpi\dimens.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Multiply.shader" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rHK\strings.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_read_indicator_holder.xml" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rTW\strings.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\PlanarRealtimeReflection.shader" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\ReflectiveBackgroundPlanar.shader" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditive.shader" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feedback_activity.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feedback.xml" />
-     <None Include="Assets\Plugins\Android\res\values-hdpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_notification.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_short_news_card.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_modal.xml" />
-     <None Include="Assets\UnityTestTools\changelog.txt" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rSG\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\values\appboy.xml" />
-     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\res\values-xhdpi\dimens.xml" />
-     <None Include="Assets\test-results\Assembly-CSharp-Editor.csproj-Debug-2015-04-13.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_webview_activity.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_full.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\LaserScope.shader" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
      <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_activity.xml" />
+     <None Include="Assets\test-results\Assembly-CSharp-Editor.csproj-Debug-2015-04-13.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_read_indicator_holder.xml" />
+     <None Include="Assets\Plugins\Android\res\values\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\values-ldpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\res\layout\com_appboy_text_announcement_card.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rCN\strings.xml" />
      <None Include="Assets\Plugins\Android\res\color\com_appboy_button.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_cross_promotion_small_card.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_icon_background.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_inappmessage_modal_background.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_card_background.xml" />
      <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_slideup.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_default_card.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_header.xml" />
      <None Include="Assets\Plugins\Android\res\layout\com_appboy_captioned_image_card.xml" />
-     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_banner_image_card.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_footer.xml" />
+     <None Include="Assets\Plugins\Android\res\values\strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-hdpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feedback.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rTW\strings.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_cross_promotion_small_card.xml" />
      <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_inappmessage_button_background.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_banner_image_card.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rHK\strings.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_footer.xml" />
+     <None Include="Assets\Plugins\Android\res\values-mdpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
+     <None Include="Assets\Plugins\Android\res\values-zh-rSG\strings.xml" />
+     <None Include="Assets\Plugins\Android\res\values-xhdpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\res\values\appboy.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_modal.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_short_news_card.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_full.xml" />
      <None Include="Assets\Plugins\Android\res\values\colors.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_button.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_webview_activity.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_notification.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feedback_activity.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_header.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed.xml" />
+     <None Include="Assets\Plugins\Android\res\layout\com_appboy_default_card.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="NSubstitute">
- <HintPath>/Users/Wenzhi/Desktop/unity-sdk/unity-samples/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>/Users/Wenzhi/Desktop/unity-sdk/unity-samples/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Cecil.Mdb">
- <HintPath>/Users/Wenzhi/Desktop/unity-sdk/unity-samples/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
- </Reference>
- <Reference Include="nunit.core">
- <HintPath>/Users/Wenzhi/Desktop/unity-sdk/unity-samples/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
- </Reference>
- <Reference Include="nunit.core.interfaces">
- <HintPath>/Users/Wenzhi/Desktop/unity-sdk/unity-samples/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>/Users/Wenzhi/Desktop/unity-sdk/unity-samples/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -230,8 +127,6 @@
       <Project>{25C395E3-33D6-938B-0C44-9BC0A6FCC248}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{A6EE147D-A3DB-3F70-0CB0-C70A315EADBA}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{2B15D95E-7199-1521-2689-8C8E48D7A61F}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
