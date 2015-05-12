@@ -5,18 +5,22 @@ using System.Collections.Generic;
 namespace Appboy.Models {
   public class PushNotification {
     public string Title { get; private set; }
+
     public string Content { get; private set; }
+
     public Dictionary<string, string> Extras { get; private set; }
+
     public string CollapseKey { get; private set; }
+
     public int AndroidNotificationId { get; private set; }
-        
+
     public PushNotification(string message) {
       if (String.IsNullOrEmpty(message)) {
         throw new ArgumentException("Message cannot be null or empty.", "message");
       }
       JSONClass json;
       try {
-        json = (JSONClass) JSON.Parse(message);
+        json = (JSONClass)JSON.Parse(message);
       } catch {
         throw new ArgumentException("Unable to parse json.");
       }

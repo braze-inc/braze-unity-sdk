@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppboyConfig>
+  <!-- Phone APIKey -->
+  <!-- <ApiKey>3d7d9ac3-aaff-4731-afe5-cc3b2c76e52d</ApiKey> -->
+  <!-- Store APIKey; Uncomment to test -->
+  <AppboyServer>STAGING</AppboyServer>
+  <ApiKey>b1c736cd-6798-4387-a51a-7a663813ba6e</ApiKey>
+  <DisableLocationCollection>false</DisableLocationCollection>
+</AppboyConfig>

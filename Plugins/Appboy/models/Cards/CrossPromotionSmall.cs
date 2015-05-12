@@ -4,12 +4,19 @@ using System;
 namespace Appboy.Models.Cards {
   public class CrossPromotionSmallCard : Card {
     public string Title { get; private set; }
+
     public string Subtitle { get; private set; }
+
     public string Caption { get; private set; }
+
     public string ImageUrl { get; private set; }
+
     public double Rating { get; private set; }
+
     public int ReviewCount { get; private set; }
+
     public double Price { get; private set; }
+
     public string Url { get; private set; }
 #if UNITY_ANDROID
     public string Package { get; private set; }
@@ -53,7 +60,7 @@ namespace Appboy.Models.Cards {
 
     public override string ToString() {
       string partial = String.Format("CrossPromotionSmallCard[ID={0}, Type={1}, Title={2}, Subtitle={3}, Caption={4}, " + 
-                                     "ImageUrl={5}, Rating={6}, ReviewCount={7}, Price={8}, Viewed={9}, Created={10}, Updated={11}, Categories={12}, uri={13}",
+        "ImageUrl={5}, Rating={6}, ReviewCount={7}, Price={8}, Viewed={9}, Created={10}, Updated={11}, Categories={12}, uri={13}",
                                      ID, Type, Title, Subtitle, Caption, ImageUrl, Rating, ReviewCount, Price, Viewed, Created, Updated, CategoriesToString(), Url);
       string platformSpecific = "]";
 #if UNITY_ANDROID

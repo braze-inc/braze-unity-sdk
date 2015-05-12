@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="AppboyUI.Phone.Controls.Slideup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="480" d:DesignWidth="480">
+
+  <Border Style="{StaticResource Appboy.Slideup.Border}">
+    <Grid Style="{StaticResource Appboy.Slideup.Grid}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock x:Name="Message" Grid.Column="0" Style="{StaticResource Appboy.Slideup.MessageTextBlock}"/>
+      <Image x:Name="Chevron" Grid.Column="1" Source="\Assets\Images\Chevron\chevron.png"
+             Style="{StaticResource Appboy.Slideup.ChevronImage}"/>
+    </Grid>
+  </Border>
+</UserControl>

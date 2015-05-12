@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3D45A458-862E-42DE-AE55-CCBDECEBC462</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Unity-iPhone</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A891C69626AA5121356142BFA70058B6B9B6FE46</key>
+		<string>github.com:Appboy/unity-sdk.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>unity-samples/iOS/Roll-A-Ball-Ios/Unity-iPhone.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A891C69626AA5121356142BFA70058B6B9B6FE46</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:Appboy/unity-sdk.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A891C69626AA5121356142BFA70058B6B9B6FE46</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A891C69626AA5121356142BFA70058B6B9B6FE46</string>
+			<key>IDESourceControlWCCName</key>
+			<string>unity-sdk</string>
+		</dict>
+	</array>
+</dict>
+</plist>

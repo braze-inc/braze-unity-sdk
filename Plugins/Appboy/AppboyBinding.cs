@@ -1,6 +1,5 @@
-// When developing, you can place #define UNITY_ANDROID or #define UNITY_IPHONE above this line 
+// When developing, you can place #define UNITY_ANDROID or #define UNITY_IOS above this line 
 // in order to get correct syntax highlighting in the region you are working on.
-
 using Appboy.Models;
 using UnityEngine;
 using System.Collections.Generic;
@@ -27,7 +26,7 @@ namespace Appboy {
       IncrementCustomUserAttribute(key, 1);
     }
 
-#if UNITY_IPHONE
+#if UNITY_IOS
     void Start() {
       Debug.Log("Starting Appboy binding for iOS clients.");
     }
@@ -117,10 +116,13 @@ namespace Appboy {
     private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _logSlideupClicked(string slideupJSONString);
+    private static extern void _logInAppMessageClicked(string inAppMessageJSONString);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _logSlideupImpression(string slideupJSONString);
+    private static extern void _logInAppMessageImpression(string inAppMessageJSONString);
+    
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logCardImpression(string cardJSONString);
@@ -139,6 +141,9 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logFeedbackDisplayed();
+    
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestInAppMessage();
 
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName);
@@ -259,13 +264,31 @@ namespace Appboy {
     public static void ClearPushMessage(int notificationId) {
 
     }
-
-    public static void LogSlideupClicked(string slideupJSONString) {
-      _logSlideupClicked(slideupJSONString);
+    
+    public static void RequestInAppMessage() {
+      _requestInAppMessage();
     }
 
+    [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
+    public static void LogSlideupClicked(string slideupJSONString) {
+      _logInAppMessageClicked(slideupJSONString);
+    }
+
+    [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
     public static void LogSlideupImpression(string slideupJSONString) {
-      _logSlideupImpression(slideupJSONString);
+      _logInAppMessageImpression(slideupJSONString);
+    }
+
+    public static void LogInAppMessageClicked(string inAppMessageJSONString) {
+      _logInAppMessageClicked(inAppMessageJSONString);
+    }
+
+    public static void LogInAppMessageImpression(string inAppMessageJSONString) {
+      _logInAppMessageImpression(inAppMessageJSONString);
+    }
+    
+    public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
+      _logInAppMessageButtonClicked(inAppMessageJSONString, buttonID);
     }
 
     public static void LogCardImpression(string cardJSONString) {
@@ -554,7 +577,11 @@ namespace Appboy {
     }
 
     public static void RequestSlideup() {
-      Appboy.Call("requestSlideupRefresh");
+      Appboy.Call("requestInAppMessageRefresh");
+    }
+
+    public static void RequestInAppMessage() {
+      Appboy.Call("requestInAppMessageRefresh");
     }
 
     public static void RequestFeedRefresh() {
@@ -565,12 +592,26 @@ namespace Appboy {
       Appboy.Call("requestFeedRefreshFromCache");
     }
 
-    public static void LogSlideupClicked(string slideupJSONString) {
-      AppboyUnityActivity.Call("logSlideupClicked", new object[] { slideupJSONString });
+    public static void LogInAppMessageClicked(string inAppMessageJSONString) {
+      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { inAppMessageJSONString });
     }
 
+    public static void LogInAppMessageImpression(string inAppMessageJSONString) {
+      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { inAppMessageJSONString });
+    }
+    
+    public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
+      AppboyUnityActivity.Call("logInAppMessageButtonClick", new object[] { inAppMessageJSONString, buttonID });
+    }
+
+    [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
+    public static void LogSlideupClicked(string slideupJSONString) {
+      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { slideupJSONString });
+    }
+
+    [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
     public static void LogSlideupImpression(string slideupJSONString) {
-      AppboyUnityActivity.Call("logSlideupImpression", new object[] { slideupJSONString });
+      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { slideupJSONString });
     }
 
     public static void LogFeedDisplayed() {
@@ -580,7 +621,7 @@ namespace Appboy {
     public static void LogFeedbackDisplayed() {
       Appboy.Call<bool>("logFeedbackDisplayed");
     }
-		
+    
 #elif UNITY_METRO
     void Start() {
       Debug.Log("Starting Appboy binding for Windows Metro clients.");
@@ -920,77 +961,122 @@ namespace Appboy {
       Debug.Log("Starting no-op Appboy binding for non iOS/Android clients.");
     }
 
-    public static void LogCustomEvent(string eventName) { }
+    public static void LogCustomEvent(string eventName) {
+    }
 
-    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) { }
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
+    }
 
-    public static void ChangeUser(string userId) { }
+    public static void ChangeUser(string userId) {
+    }
 
-    public static void SetUserFirstName(string firstName) { }
+    public static void SetUserFirstName(string firstName) {
+    }
 
-    public static void SetUserLastName(string lastName) { }
+    public static void SetUserLastName(string lastName) {
+    }
 
-    public static void SetUserEmail(string email) { }
+    public static void SetUserEmail(string email) {
+    }
 
-    public static void SetUserBio(string bio) { }
+    public static void SetUserBio(string bio) {
+    }
 
-    public static void SetUserGender(Gender gender) { }
+    public static void SetUserGender(Gender gender) {
+    }
 
-    public static void SetUserDateOfBirth(int year, int month, int day) { }
+    public static void SetUserDateOfBirth(int year, int month, int day) {
+    }
 
-    public static void SetUserCountry(string country) { }
+    public static void SetUserCountry(string country) {
+    }
 
-    public static void SetUserHomeCity(string city) { }
+    public static void SetUserHomeCity(string city) {
+    }
 
-    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) { }
+    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
+    }
 
-    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) { }
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
+    }
 
-    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) { }
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
+    }
 
-    public static void SetUserPhoneNumber(string phoneNumber) { }
+    public static void SetUserPhoneNumber(string phoneNumber) {
+    }
 
-    public static void SetUserAvatarImageURL(string imageURL) { }
+    public static void SetUserAvatarImageURL(string imageURL) {
+    }
 
-    public static void SetCustomUserAttribute(string key, bool value) { }
+    public static void SetCustomUserAttribute(string key, bool value) {
+    }
 
-    public static void SetCustomUserAttribute(string key, int value) { }
+    public static void SetCustomUserAttribute(string key, int value) {
+    }
 
-    public static void SetCustomUserAttribute(string key, float value) { }
+    public static void SetCustomUserAttribute(string key, float value) {
+    }
 
-    public static void SetCustomUserAttribute(string key, string value) { }
+    public static void SetCustomUserAttribute(string key, string value) {
+    }
 
-    public static void SetCustomUserAttributeToNow(string key) { }
+    public static void SetCustomUserAttributeToNow(string key) {
+    }
 
-    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) { }
+    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
+    }
 
-    public static void UnsetCustomUserAttribute(string key) { }
+    public static void UnsetCustomUserAttribute(string key) {
+    }
 
-    public static void IncrementCustomUserAttribute(string key, int incrementValue) { }
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
+    }
 
-    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) { }
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
+    }
 
-    public static void AddToCustomUserAttributeArray(string key, string value) { }
+    public static void AddToCustomUserAttributeArray(string key, string value) {
+    }
 
-    public static void RemoveFromCustomUserAttributeArray(string key, string value) { }
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
+    }
 
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) { }
+    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
+    }
 
-    public static void ClearPushMessage(int notificationId) { }
+    public static void ClearPushMessage(int notificationId) {
+    }
 
-    public static void RequestSlideup() { }
+    public static void RequestSlideup() {
+    }
+        
+    public static void RequestInAppMessage() {
+    }
 
-    public static void RequestFeedRefresh() { }
+    public static void RequestFeedRefresh() {
+    }
 
-    public static void RequestFeedRefreshFromCache() { }
+    public static void RequestFeedRefreshFromCache() {
+    }
 
-    public static void LogSlideupClicked(string slideupJSONString) { }
+    public static void LogSlideupClicked(string slideupJSONString) {
+    }
 
-    public static void LogSlideupImpression(string slideupJSONString) { }
+    public static void LogSlideupImpression(string slideupJSONString) {
+    }
 
-    public static void LogFeedDisplayed() { }
+    public static void LogInAppMessageClicked(string inAppMessageJSONString) {
+    }
 
-    public static void LogFeedbackDisplayed() { }
+    public static void LogInAppMessageImpression(string inAppMessageJSONString) {
+    }
+
+    public static void LogFeedDisplayed() {
+    }
+
+    public static void LogFeedbackDisplayed() {
+    }
 #endif
   }
 }

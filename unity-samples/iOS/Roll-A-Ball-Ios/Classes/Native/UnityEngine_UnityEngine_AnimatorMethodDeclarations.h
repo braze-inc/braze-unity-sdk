@@ -1,0 +1,25 @@
+﻿#pragma once
+#include <stdint.h>
+#include <assert.h>
+#include <exception>
+#include "codegen/il2cpp-codegen.h"
+
+// UnityEngine.Animator
+struct Animator_t638;
+// UnityEngine.RuntimeAnimatorController
+struct RuntimeAnimatorController_t768;
+// System.String
+struct String_t;
+
+// System.Void UnityEngine.Animator::SetTrigger(System.String)
+ void Animator_SetTrigger_m3812 (Animator_t638 * __this, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Animator::ResetTrigger(System.String)
+ void Animator_ResetTrigger_m3811 (Animator_t638 * __this, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.RuntimeAnimatorController UnityEngine.Animator::get_runtimeAnimatorController()
+ RuntimeAnimatorController_t768 * Animator_get_runtimeAnimatorController_m3810 (Animator_t638 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 UnityEngine.Animator::StringToHash(System.String)
+ int32_t Animator_StringToHash_m4790 (Object_t * __this/* static, unused */, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Animator::SetTriggerString(System.String)
+ void Animator_SetTriggerString_m4791 (Animator_t638 * __this, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Animator::ResetTriggerString(System.String)
+ void Animator_ResetTriggerString_m4792 (Animator_t638 * __this, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;

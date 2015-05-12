@@ -9,10 +9,13 @@ namespace Appboy.Models {
     // Note that these are actually nested inside the 'aps' key when sent from Apple, but we've
     // included them in the top level ApplePushNotification upon deserialization for convenience.
     public ApplePushNotificationAlert Alert { get; set; }
+
     public int Badge { get; set; }
+
     public string Sound { get; set; }
+
     public int ContentAvailable { get; set; }
-        
+
     // All additional properties included with the notification alongside the 'aps' dictionary at
     // the top level of the Apple Push Notification. See 
     // https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW10
@@ -27,13 +30,13 @@ namespace Appboy.Models {
       JSONNode ExtraNode = json["extra"];
       if (ExtraNode.GetType() == typeof(JSONClass)) {
         foreach (KeyValuePair<string, JSONNode> KeyValuePairNode in ExtraNode.AsObject) {
-          Extra.Add(KeyValuePairNode.Key, this.getJSONNodeValue(KeyValuePairNode.Value));        
-        }        
+          Extra.Add(KeyValuePairNode.Key, this.getJSONNodeValue(KeyValuePairNode.Value));
+        }
       } else {
         Debug.Log("Value of key Extra isn't a dictionary. Stop parsing the Extra dictionary");     
       }
     }
-        
+
     private object getJSONNodeValue(JSONNode node) {
       int intNode = 0;
       if (int.TryParse(node.Value, out intNode)) {
@@ -44,17 +47,17 @@ namespace Appboy.Models {
       if (float.TryParse(node.Value, out floatNode)) {
         return floatNode;
       }
-            
+
       double doubleNode = 0.0;
       if (double.TryParse(node.Value, out doubleNode)) {
         return doubleNode;
       }
-            
+
       bool boolNode = false;
       if (bool.TryParse(node.Value, out boolNode)) {
         return boolNode;
       }
-      
+
       if (node.GetType() == typeof(JSONArray)) {
         IList<object> nodeList = new List<object>();
         foreach (JSONNode nodeInArray in node.AsArray) {
@@ -62,19 +65,19 @@ namespace Appboy.Models {
         }
         return nodeList;
       }
-    
+
       if (node.GetType() == typeof(JSONClass)) {
         IDictionary<string, object> nodeDictionary = new Dictionary<string, object>();
         foreach (KeyValuePair<string, JSONNode> kvp in node.AsObject) {
-          nodeDictionary.Add(kvp.Key, this.getJSONNodeValue(kvp.Value));        
+          nodeDictionary.Add(kvp.Key, this.getJSONNodeValue(kvp.Value));
         }
         return nodeDictionary;
       }
-            
+
       // if the Node isn't one type of int/float/double/bool/list/dictionary, then we should save it as a string
       return node.ToString();
     }
-    
+
     public override string ToString() {
       string extraString = "{";
       foreach (KeyValuePair<string, object> N in Extra) {

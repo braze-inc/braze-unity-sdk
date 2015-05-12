@@ -7,11 +7,17 @@ using UnityEngine;
 namespace Appboy.Models.Cards {
   public class Card {
     public string ID { get; private set; }
+
     public string Type { get; private set; }
+
     public bool Viewed { get; private set; }
-    public int Created { get; private set; }
-    public int Updated { get; private set; }
+
+    public long Created { get; private set; }
+
+    public long Updated { get; private set; }
+
     public HashSet<CardCategory> Categories { get; private set; }
+
     public string JsonString { get; private set; }
 
     public Card(JSONClass json) {
@@ -36,7 +42,7 @@ namespace Appboy.Models.Cards {
           Categories.Add(CardCategory.NO_CATEGORY);
         } else {
           for (int i = 0; i < jsonArray.Count; i++) {
-            CardCategory category = (CardCategory) EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, null);
+            CardCategory category = (CardCategory)EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, null);
             if (category != null) {
               Categories.Add(category);
             }
@@ -50,7 +56,7 @@ namespace Appboy.Models.Cards {
       if (!string.IsNullOrEmpty(ID)) {
 #if UNITY_ANDROID
         AppboyBinding.Appboy.Call<bool>("logFeedCardImpression", ID);
-#elif UNITY_IPHONE
+#elif UNITY_IOS
         AppboyBinding.LogCardImpression(JsonString);
 #endif
       }
@@ -61,7 +67,7 @@ namespace Appboy.Models.Cards {
       foreach (CardCategory category in Categories) {
         categoriesString.Add(category.ToString());
       }
-      return string.Join(",",categoriesString.ToArray());
+      return string.Join(",", categoriesString.ToArray());
     }
 
     public void LogClick() {

@@ -16,8 +16,8 @@
   <!-- <string name="com_appboy_push_notification_received_listener_callback_method_name"></string> --> <!-- The callback method to be called when a push notification is received. -->
   <!-- <string name="com_appboy_push_notification_opened_listener_game_object_name"></string> --> <!-- The Unity game object to receive push notification opened messages. -->
   <!-- <string name="com_appboy_push_notification_opened_listener_callback_method_name"></string> --> <!-- The callback method to be called when a push notification is opened. -->
-  <!-- <string name="com_appboy_slideup_listener_game_object_name"></string> --> <!-- The Unity game object to receive slideups. -->
-  <!-- <string name="com_appboy_slideup_listener_callback_method_name"></string> --> <!-- The callback method to be called when a slideup is received. -->
+  <!-- <string name="com_appboy_inapp_listener_game_object_name"></string> --> <!-- The Unity game object to receive inapp messages. -->
+  <!-- <string name="com_appboy_inapp_listener_callback_method_name"></string> --> <!-- The callback method to be called when an inapp message is received. -->
   <!-- <string name="com_appboy_feed_listener_game_object_name"></string> --> <!-- The Unity game object to receive the news feed. -->
   <!-- <string name="com_appboy_feed_listener_callback_method_name"></string> --> <!-- The callback method to be called when the news feed is received. -->
 </resources>

@@ -7,10 +7,12 @@ using UnityEngine;
 namespace Appboy.Models {
   public class Feed {
     public List<Card> Cards { get; private set; }
+
     public int Count {
-     get { return Cards.Count; }
+      get { return Cards.Count; }
     }
-    public bool IsFromOfflineStorage {get; private set;}
+
+    public bool IsFromOfflineStorage { get; private set; }
 
     public Feed(string message) {
       if (String.IsNullOrEmpty(message)) {
@@ -19,7 +21,7 @@ namespace Appboy.Models {
       Cards = new List<Card>();
       JSONClass json;
       try {
-        json = (JSONClass) JSON.Parse(message);
+        json = (JSONClass)JSON.Parse(message);
         if (json["mFeedCards"] != null) {
           JSONArray jsonArray = (JSONArray)JSON.Parse(json["mFeedCards"].ToString());
           Debug.Log(String.Format("parsed cards array with {0} of cards", jsonArray.Count));

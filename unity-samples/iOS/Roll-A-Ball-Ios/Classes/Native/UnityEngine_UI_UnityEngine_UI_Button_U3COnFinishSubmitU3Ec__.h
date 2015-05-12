@@ -1,0 +1,22 @@
+﻿#pragma once
+#include <stdint.h>
+// System.Object
+struct Object_t;
+// UnityEngine.UI.Button
+struct Button_t557;
+// System.Object
+#include "mscorlib_System_Object.h"
+// UnityEngine.UI.Button/<OnFinishSubmit>c__Iterator1
+struct U3COnFinishSubmitU3Ec__Iterator1_t558  : public Object_t
+{
+	// System.Single UnityEngine.UI.Button/<OnFinishSubmit>c__Iterator1::<fadeTime>__0
+	float ___U3CfadeTimeU3E__0_0;
+	// System.Single UnityEngine.UI.Button/<OnFinishSubmit>c__Iterator1::<elapsedTime>__1
+	float ___U3CelapsedTimeU3E__1_1;
+	// System.Int32 UnityEngine.UI.Button/<OnFinishSubmit>c__Iterator1::$PC
+	int32_t ___$PC_2;
+	// System.Object UnityEngine.UI.Button/<OnFinishSubmit>c__Iterator1::$current
+	Object_t * ___$current_3;
+	// UnityEngine.UI.Button UnityEngine.UI.Button/<OnFinishSubmit>c__Iterator1::<>f__this
+	Button_t557 * ___U3CU3Ef__this_4;
+};

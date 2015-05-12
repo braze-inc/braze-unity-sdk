@@ -104,7 +104,7 @@ void _incrementCustomUserAttribute(const char* key, int incrementValue) {
 }
 
 void _setCustomUserAttributeArray(const char* key, const char* array[], int size) {
-  if (array == [NSNull null] || array == nil) {
+  if (array == NULL || array == nil) {
     [[AppboyUnityManager sharedInstance] setCustomAttributeArrayWithKey:GetStringParam(key)
                                                                   array:nil];
   } else if (size == 0) {
@@ -133,12 +133,16 @@ void _submitFeedback(const char* replyToEmail, const char* message, bool isRepor
   [[AppboyUnityManager sharedInstance] submitFeedback:GetStringParam(replyToEmail) message:GetStringParam(message) isReportingABug:isReportingABug];
 }
 
-void _logSlideupClicked(const char* slideupJSONString) {
-  [[AppboyUnityManager sharedInstance] logSlideupClicked:GetStringParam(slideupJSONString)];
+void _logInAppMessageClicked(const char* inAppMessageJSONString) {
+  [[AppboyUnityManager sharedInstance] logInAppMessageClicked:GetStringParam(inAppMessageJSONString)];
 }
 
-void _logSlideupImpression(const char* slideupJSONString) {
-  [[AppboyUnityManager sharedInstance] logSlideupImpression:GetStringParam(slideupJSONString)];
+void _logInAppMessageButtonClicked(const char* inAppMessageJSONString, int buttonID) {
+  [[AppboyUnityManager sharedInstance] logInAppMessageButtonClicked:GetStringParam(inAppMessageJSONString) withButtonID:buttonID];
+}
+
+void _logInAppMessageImpression(const char* inAppMessageJSONString) {
+  [[AppboyUnityManager sharedInstance] logInAppMessageImpression:GetStringParam(inAppMessageJSONString)];
 }
 
 void _logCardImpression(const char* cardJSONString) {
@@ -163,4 +167,8 @@ void _logFeedDisplayed() {
 
 void _logFeedbackDisplayed() {
   [[AppboyUnityManager sharedInstance] logFeedbackDisplayed];
+}
+
+void _requestInAppMessage() {
+  [[AppboyUnityManager sharedInstance] requestInAppMessageRefresh];
 }

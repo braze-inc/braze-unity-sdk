@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- General configuration -->
+  <string name="com_appboy_api_key">fce0e7a5-0497-4e9f-8ee4-5b32352c0aa9</string>
+  <string translatable="false" name="com_appboy_server_target">STAGING</string>
+
+  <!-- Push Notification configuration (optional) -->
+  <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive push notifications. Default is false. -->
+  <string name="com_appboy_push_gcm_sender_id">139792940222</string> <!-- Replace with your gcm sender ID. The sender ID is your Google API project number. --> 
+
+  <!-- Optional -->
+  <string name="com_appboy_push_notification_received_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive push notification received messages. -->
+  <string name="com_appboy_push_notification_received_listener_callback_method_name">PushNotificationReceivedCallback</string>  <!-- The callback method to be called when a push notification is received. -->
+  <string name="com_appboy_push_notification_opened_listener_game_object_name">AppboyCallback</string>  <!-- The Unity game object to receive push notification opened messages. -->
+  <string name="com_appboy_push_notification_opened_listener_callback_method_name">PushNotificationOpenedCallback</string> <!-- The callback method to be called when a push notification is opened. -->
+  <string name="com_appboy_inapp_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive in-app messages. -->
+  <string name="com_appboy_inapp_listener_callback_method_name">InAppMessageReceivedCallback</string> <!-- The callback method to be called when a slideup is received. -->
+<string name="com_appboy_feed_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive the news feed. -->
+  <string name="com_appboy_feed_listener_callback_method_name">FeedReceivedCallback</string><!-- The callback method to be called when the news feed is received. -->
+</resources>
