@@ -1,6 +1,7 @@
 namespace Appboy.Models {
   public enum DismissType {
-    AUTO_DISMISS, SWIPE
+    AUTO_DISMISS,
+    SWIPE
   }
 }
 

@@ -1,29 +1,30 @@
 using Appboy.Models;
 using Appboy.Models.Cards;
+using Appboy.Models.InAppMessage;
 using Appboy.Utilities;
 using UnityEngine;
 using System.Collections;
 
 namespace Appboy {
   public class AppboyBindingTester : MonoBehaviour {
-    public CardTester cardTester;
-    public SlideupTester slideupTester;
 
-    void Start() {}
-
-    void SlideupReceivedCallback(string message) {
-      Debug.Log("SlideupReceivedCallback message: " + message);
-      Slideup slideup = new Slideup(message);
-      Debug.Log("Slideup received: " + slideup);
-      if (slideupTester != null) {
-        slideupTester.DisplaySlideup(slideup);
-      }
-      // Here we are not really displaying  nor clicking the slideup, but just
-      // testing the slideup API end point.
-      slideup.LogImpression();
-      slideup.LogClicked();
+    void Start() {
     }
-        
+
+    void InAppMessageReceivedCallback(string message) {
+      Debug.Log("InAppMessageReceivedCallback message: " + message);
+      IInAppMessage inApp = InAppMessageFactory.BuildInAppMessage(message);
+      Debug.Log("In-app message received: " + inApp);
+      inApp.LogClicked();
+      inApp.LogImpression();
+      if (inApp is IInAppMessageImmersive) {
+        IInAppMessageImmersive inAppImmersive = inApp as IInAppMessageImmersive;
+        if (inAppImmersive.Buttons != null && inAppImmersive.Buttons.Count > 0) {
+          inAppImmersive.LogButtonClicked(inAppImmersive.Buttons[0].ButtonID);
+        }
+      }
+    }
+
     void PushNotificationReceivedCallback(string message) {
       Debug.Log("PushNotificationReceivedCallback message: " + message);
       PushNotification pushNotification = new PushNotification(message);
@@ -37,17 +38,17 @@ namespace Appboy {
     }
 
     void PushNotificationReceivedCallbackForiOS(string message) {
-      JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
+      JSONClass pushNotificationJson = (JSONClass)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push received Notification event: " + pushNotification);     
     }
-        
+
     void PushNotificationOpenedCallbackForiOS(string message) {
-      JSONClass pushNotificationJson = (JSONClass) JSON.Parse(message);
+      JSONClass pushNotificationJson = (JSONClass)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push opened Notification event: " + pushNotification);      
     }
-        
+
     void FeedReceivedCallback(string message) {
       Debug.Log("FeedReceivedCallback message: " + message);
       Feed feed = new Feed(message);
@@ -57,9 +58,6 @@ namespace Appboy {
       }
       feed.Cards[0].LogImpression();
       feed.Cards[0].LogClick();
-      if (cardTester != null) {
-        cardTester.DisplayCards(feed.Cards);
-      }
     }
   }
 }

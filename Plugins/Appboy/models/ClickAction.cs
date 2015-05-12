@@ -1,6 +1,8 @@
 namespace Appboy.Models {
   public enum ClickAction {
-    NEWS_FEED, URI, NONE
+    NEWS_FEED,
+    URI,
+    NONE
   }
 }
 

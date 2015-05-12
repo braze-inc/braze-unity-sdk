@@ -12,7 +12,7 @@ namespace Appboy.Utilities {
       if (json != null) {
         IEnumerator enumerator = json.GetEnumerator();
         while (enumerator.MoveNext()) {
-          KeyValuePair<string, JSONNode> entry = (KeyValuePair<string, JSONNode>) enumerator.Current;
+          KeyValuePair<string, JSONNode> entry = (KeyValuePair<string, JSONNode>)enumerator.Current;
           dictionary.Add(entry.Key, entry.Value);
         }
       }
