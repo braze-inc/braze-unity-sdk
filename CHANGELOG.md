@@ -1,3 +1,9 @@
+## 1.4.0
+* Adds new in-app message models for the Modal and Full screen types added in Android 1.7 and iOS 2.11.
+* Updated the iOS plugin to use Appboy iOS SDK v2.11.2.
+* Updated the Android plugin to use Appboy Android SDK v1.7.2.
+* Added a sample Unity application that uses the Appboy plugin.
+
 ## 1.3.1
 * Updated the Android plugin to use Appboy Android SDK v1.6.1.
 
