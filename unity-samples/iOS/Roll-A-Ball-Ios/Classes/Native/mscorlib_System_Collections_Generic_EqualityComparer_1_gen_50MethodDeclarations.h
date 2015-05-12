@@ -4,24 +4,20 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>
-struct EqualityComparer_1_t4606;
+// System.Collections.Generic.EqualityComparer`1<System.Boolean>
+struct EqualityComparer_1_t4650;
 // System.Object
 struct Object_t;
-// Boo.Lang.Runtime.DynamicDispatching.Dispatcher
-struct Dispatcher_t1143;
 
-// System.Void System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::.ctor()
-// System.Collections.Generic.EqualityComparer`1<System.Object>
-#include "mscorlib_System_Collections_Generic_EqualityComparer_1_genMethodDeclarations.h"
-#define EqualityComparer_1__ctor_m25175(__this, method) (void)EqualityComparer_1__ctor_m13047_gshared((EqualityComparer_1_t2776 *)__this, method)
-// System.Void System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::.cctor()
-#define EqualityComparer_1__cctor_m25176(__this/* static, unused */, method) (void)EqualityComparer_1__cctor_m13048_gshared((Object_t *)__this/* static, unused */, method)
-// System.Int32 System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::System.Collections.IEqualityComparer.GetHashCode(System.Object)
-#define EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m25177(__this, ___obj, method) (int32_t)EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m13049_gshared((EqualityComparer_1_t2776 *)__this, (Object_t *)___obj, method)
-// System.Boolean System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::System.Collections.IEqualityComparer.Equals(System.Object,System.Object)
-#define EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m25178(__this, ___x, ___y, method) (bool)EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m13050_gshared((EqualityComparer_1_t2776 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.Int32 System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::GetHashCode(T)
-// System.Boolean System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::Equals(T,T)
-// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::get_Default()
-#define EqualityComparer_1_get_Default_m25179(__this/* static, unused */, method) (EqualityComparer_1_t4606 *)EqualityComparer_1_get_Default_m13051_gshared((Object_t *)__this/* static, unused */, method)
+// System.Void System.Collections.Generic.EqualityComparer`1<System.Boolean>::.ctor()
+ void EqualityComparer_1__ctor_m25367 (EqualityComparer_1_t4650 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.EqualityComparer`1<System.Boolean>::.cctor()
+ void EqualityComparer_1__cctor_m25368 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.EqualityComparer`1<System.Boolean>::System.Collections.IEqualityComparer.GetHashCode(System.Object)
+ int32_t EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m25369 (EqualityComparer_1_t4650 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Generic.EqualityComparer`1<System.Boolean>::System.Collections.IEqualityComparer.Equals(System.Object,System.Object)
+ bool EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m25370 (EqualityComparer_1_t4650 * __this, Object_t * ___x, Object_t * ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.EqualityComparer`1<System.Boolean>::GetHashCode(T)
+// System.Boolean System.Collections.Generic.EqualityComparer`1<System.Boolean>::Equals(T,T)
+// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<System.Boolean>::get_Default()
+ EqualityComparer_1_t4650 * EqualityComparer_1_get_Default_m25371 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;

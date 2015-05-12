@@ -3,7 +3,7 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // Mono.Globalization.Unicode.CodePointIndexer/TableRange
-struct TableRange_t1788 
+struct TableRange_t1776 
 {
 	// System.Int32 Mono.Globalization.Unicode.CodePointIndexer/TableRange::Start
 	int32_t ___Start_0;

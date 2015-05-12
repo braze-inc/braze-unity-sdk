@@ -7,12 +7,12 @@
 // UnityEngine.Color
 #include "UnityEngine_UnityEngine_Color.h"
 // UnityEngine.Particle
-struct Particle_t904 
+struct Particle_t893 
 {
 	// UnityEngine.Vector3 UnityEngine.Particle::m_Position
-	Vector3_t202  ___m_Position_0;
+	Vector3_t188  ___m_Position_0;
 	// UnityEngine.Vector3 UnityEngine.Particle::m_Velocity
-	Vector3_t202  ___m_Velocity_1;
+	Vector3_t188  ___m_Velocity_1;
 	// System.Single UnityEngine.Particle::m_Size
 	float ___m_Size_2;
 	// System.Single UnityEngine.Particle::m_Rotation
@@ -24,5 +24,5 @@ struct Particle_t904
 	// System.Single UnityEngine.Particle::m_StartEnergy
 	float ___m_StartEnergy_6;
 	// UnityEngine.Color UnityEngine.Particle::m_Color
-	Color_t12  ___m_Color_7;
+	Color_t341  ___m_Color_7;
 };

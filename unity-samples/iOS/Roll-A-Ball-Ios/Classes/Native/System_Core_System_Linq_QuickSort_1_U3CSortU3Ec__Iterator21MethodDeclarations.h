@@ -5,9 +5,9 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Linq.QuickSort`1/<Sort>c__Iterator21
-struct U3CSortU3Ec__Iterator21_t1194;
+struct U3CSortU3Ec__Iterator21_t1183;
 // System.Object
 struct Object_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
+struct IEnumerator_t21;
 

@@ -1,14 +1,14 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.Comparer`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>
-struct Comparer_1_t4164;
+// System.Collections.Generic.Comparer`1<UnityEngine.GUILayoutEntry>
+struct Comparer_1_t4221;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.Comparer`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>
-struct Comparer_1_t4164  : public Object_t
+// System.Collections.Generic.Comparer`1<UnityEngine.GUILayoutEntry>
+struct Comparer_1_t4221  : public Object_t
 {
 };
-struct Comparer_1_t4164_StaticFields{
-	// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>::_default
-	Comparer_1_t4164 * ____default_0;
+struct Comparer_1_t4221_StaticFields{
+	// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<UnityEngine.GUILayoutEntry>::_default
+	Comparer_1_t4221 * ____default_0;
 };

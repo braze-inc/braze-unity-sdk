@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Security.SecuritySafeCriticalAttribute>
-struct InternalEnumerator_1_t4903;
+// System.Array/InternalEnumerator`1<System.Security.Policy.IIdentityPermissionFactory>
+struct InternalEnumerator_1_t4870;
 // System.Object
 struct Object_t;
-// System.Security.SecuritySafeCriticalAttribute
-struct SecuritySafeCriticalAttribute_t1026;
+// System.Security.Policy.IIdentityPermissionFactory
+struct IIdentityPermissionFactory_t2691;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.Security.SecuritySafeCriticalAttribute>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<System.Security.Policy.IIdentityPermissionFactory>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m26820(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Security.SecuritySafeCriticalAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26821(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Security.SecuritySafeCriticalAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m26822(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Security.SecuritySafeCriticalAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m26823(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Security.SecuritySafeCriticalAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m26824(__this, method) (SecuritySafeCriticalAttribute_t1026 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m26457(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Security.Policy.IIdentityPermissionFactory>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26458(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Security.Policy.IIdentityPermissionFactory>::Dispose()
+#define InternalEnumerator_1_Dispose_m26459(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Security.Policy.IIdentityPermissionFactory>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m26460(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Security.Policy.IIdentityPermissionFactory>::get_Current()
+#define InternalEnumerator_1_get_Current_m26461(__this, method) (Object_t *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

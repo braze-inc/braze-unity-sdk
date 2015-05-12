@@ -5,7 +5,7 @@
 // UnityTest.TestResult/ResultType
 #include "AssemblyU2DCSharp_UnityTest_TestResult_ResultType.h"
 // UnityTest.TestResult/ResultType
-struct ResultType_t262 
+struct ResultType_t249 
 {
 	// System.Int32 UnityTest.TestResult/ResultType::value__
 	int32_t ___value___1;

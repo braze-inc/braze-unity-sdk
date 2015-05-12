@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// UnityEngine.UI.GridLayoutGroup
-struct GridLayoutGroup_t667;
+struct Void_t62;
+// UnityEngine.UI.CanvasScaler
+struct CanvasScaler_t647;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<UnityEngine.UI.GridLayoutGroup>
-struct UnityAction_1_t4064  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<UnityEngine.UI.CanvasScaler>
+struct UnityAction_1_t4030  : public MulticastDelegate_t594
 {
 };

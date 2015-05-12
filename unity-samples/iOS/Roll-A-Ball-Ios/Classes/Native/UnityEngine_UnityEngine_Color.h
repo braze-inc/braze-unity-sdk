@@ -3,7 +3,7 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // UnityEngine.Color
-struct Color_t12 
+struct Color_t341 
 {
 	// System.Single UnityEngine.Color::r
 	float ___r_0;

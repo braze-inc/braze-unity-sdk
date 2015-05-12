@@ -5,7 +5,7 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Linq.OrderedEnumerable`1
-struct OrderedEnumerable_1_t1192;
+struct OrderedEnumerable_1_t1181;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
+struct IEnumerator_t21;
 

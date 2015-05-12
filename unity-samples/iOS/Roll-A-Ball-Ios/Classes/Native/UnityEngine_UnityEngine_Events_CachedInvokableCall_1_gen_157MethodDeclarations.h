@@ -4,21 +4,21 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.CachedInvokableCall`1<UnityEngine.Canvas>
-struct CachedInvokableCall_1_t4436;
+// UnityEngine.Events.CachedInvokableCall`1<UnityEngine.Terrain>
+struct CachedInvokableCall_1_t4385;
 // UnityEngine.Object
-struct Object_t151;
-struct Object_t151_marshaled;
+struct Object_t70;
+struct Object_t70_marshaled;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
-// UnityEngine.Canvas
-struct Canvas_t575;
+struct MethodInfo_t198;
+// UnityEngine.Terrain
+struct Terrain_t919;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 
-// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityEngine.Canvas>::.ctor(UnityEngine.Object,System.Reflection.MethodInfo,T)
+// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityEngine.Terrain>::.ctor(UnityEngine.Object,System.Reflection.MethodInfo,T)
 // UnityEngine.Events.CachedInvokableCall`1<System.Object>
 #include "UnityEngine_UnityEngine_Events_CachedInvokableCall_1_gen_4MethodDeclarations.h"
-#define CachedInvokableCall_1__ctor_m23973(__this, ___target, ___theFunction, ___argument, method) (void)CachedInvokableCall_1__ctor_m12827_gshared((CachedInvokableCall_1_t2757 *)__this, (Object_t151 *)___target, (MethodInfo_t211 *)___theFunction, (Object_t *)___argument, method)
-// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityEngine.Canvas>::Invoke(System.Object[])
-#define CachedInvokableCall_1_Invoke_m23974(__this, ___args, method) (void)CachedInvokableCall_1_Invoke_m12829_gshared((CachedInvokableCall_1_t2757 *)__this, (ObjectU5BU5D_t96*)___args, method)
+#define CachedInvokableCall_1__ctor_m23437(__this, ___target, ___theFunction, ___argument, method) (void)CachedInvokableCall_1__ctor_m12732_gshared((CachedInvokableCall_1_t2745 *)__this, (Object_t70 *)___target, (MethodInfo_t198 *)___theFunction, (Object_t *)___argument, method)
+// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityEngine.Terrain>::Invoke(System.Object[])
+#define CachedInvokableCall_1_Invoke_m23438(__this, ___args, method) (void)CachedInvokableCall_1_Invoke_m12734_gshared((CachedInvokableCall_1_t2745 *)__this, (ObjectU5BU5D_t112*)___args, method)

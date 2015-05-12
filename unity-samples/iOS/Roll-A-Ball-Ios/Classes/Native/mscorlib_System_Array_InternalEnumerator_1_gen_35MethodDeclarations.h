@@ -4,22 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Collections.Generic.Link>
-struct InternalEnumerator_1_t2856;
+// System.Array/InternalEnumerator`1<Appboy.SlideupTester>
+struct InternalEnumerator_1_t2820;
 // System.Object
 struct Object_t;
+// Appboy.SlideupTester
+struct SlideupTester_t7;
 // System.Array
 struct Array_t;
-// System.Collections.Generic.Link
-#include "mscorlib_System_Collections_Generic_Link.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Collections.Generic.Link>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m13672 (InternalEnumerator_1_t2856 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<System.Collections.Generic.Link>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m13673 (InternalEnumerator_1_t2856 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<System.Collections.Generic.Link>::Dispose()
- void InternalEnumerator_1_Dispose_m13674 (InternalEnumerator_1_t2856 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<System.Collections.Generic.Link>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m13675 (InternalEnumerator_1_t2856 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<System.Collections.Generic.Link>::get_Current()
- Link_t1863  InternalEnumerator_1_get_Current_m13676 (InternalEnumerator_1_t2856 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<Appboy.SlideupTester>::.ctor(System.Array)
+// System.Array/InternalEnumerator`1<System.Object>
+#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
+#define InternalEnumerator_1__ctor_m13361(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<Appboy.SlideupTester>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m13362(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<Appboy.SlideupTester>::Dispose()
+#define InternalEnumerator_1_Dispose_m13363(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<Appboy.SlideupTester>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m13364(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<Appboy.SlideupTester>::get_Current()
+#define InternalEnumerator_1_get_Current_m13365(__this, method) (SlideupTester_t7 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

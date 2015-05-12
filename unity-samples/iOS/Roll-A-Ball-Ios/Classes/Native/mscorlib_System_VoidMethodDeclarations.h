@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Void
-struct Void_t72;
+struct Void_t62;
 

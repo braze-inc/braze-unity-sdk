@@ -5,7 +5,7 @@
 // UnityEngine.SendMessageOptions
 #include "UnityEngine_UnityEngine_SendMessageOptions.h"
 // UnityEngine.SendMessageOptions
-struct SendMessageOptions_t810 
+struct SendMessageOptions_t797 
 {
 	// System.Int32 UnityEngine.SendMessageOptions::value__
 	int32_t ___value___1;

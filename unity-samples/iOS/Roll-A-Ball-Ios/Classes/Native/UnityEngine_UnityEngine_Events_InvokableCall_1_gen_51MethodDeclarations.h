@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.InvokableCall`1<SpiderAnimation>
-struct InvokableCall_1_t3422;
+// UnityEngine.Events.InvokableCall`1<MechAnimationTest>
+struct InvokableCall_1_t3393;
 // System.Object
 struct Object_t;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
-// UnityEngine.Events.UnityAction`1<SpiderAnimation>
-struct UnityAction_1_t3423;
+struct MethodInfo_t198;
+// UnityEngine.Events.UnityAction`1<MechAnimationTest>
+struct UnityAction_1_t3394;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 
-// System.Void UnityEngine.Events.InvokableCall`1<SpiderAnimation>::.ctor(System.Object,System.Reflection.MethodInfo)
+// System.Void UnityEngine.Events.InvokableCall`1<MechAnimationTest>::.ctor(System.Object,System.Reflection.MethodInfo)
 // UnityEngine.Events.InvokableCall`1<System.Object>
 #include "UnityEngine_UnityEngine_Events_InvokableCall_1_gen_0MethodDeclarations.h"
-#define InvokableCall_1__ctor_m17239(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12830_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___target, (MethodInfo_t211 *)___theFunction, method)
-// System.Void UnityEngine.Events.InvokableCall`1<SpiderAnimation>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
-#define InvokableCall_1__ctor_m17240(__this, ___callback, method) (void)InvokableCall_1__ctor_m12831_gshared((InvokableCall_1_t2758 *)__this, (UnityAction_1_t2759 *)___callback, method)
-// System.Void UnityEngine.Events.InvokableCall`1<SpiderAnimation>::Invoke(System.Object[])
-#define InvokableCall_1_Invoke_m17241(__this, ___args, method) (void)InvokableCall_1_Invoke_m12832_gshared((InvokableCall_1_t2758 *)__this, (ObjectU5BU5D_t96*)___args, method)
-// System.Boolean UnityEngine.Events.InvokableCall`1<SpiderAnimation>::Find(System.Object,System.Reflection.MethodInfo)
-#define InvokableCall_1_Find_m17242(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12833_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___targetObj, (MethodInfo_t211 *)___method, method)
+#define InvokableCall_1__ctor_m16984(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12735_gshared((InvokableCall_1_t2746 *)__this, (Object_t *)___target, (MethodInfo_t198 *)___theFunction, method)
+// System.Void UnityEngine.Events.InvokableCall`1<MechAnimationTest>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
+#define InvokableCall_1__ctor_m16985(__this, ___callback, method) (void)InvokableCall_1__ctor_m12736_gshared((InvokableCall_1_t2746 *)__this, (UnityAction_1_t2747 *)___callback, method)
+// System.Void UnityEngine.Events.InvokableCall`1<MechAnimationTest>::Invoke(System.Object[])
+#define InvokableCall_1_Invoke_m16986(__this, ___args, method) (void)InvokableCall_1_Invoke_m12737_gshared((InvokableCall_1_t2746 *)__this, (ObjectU5BU5D_t112*)___args, method)
+// System.Boolean UnityEngine.Events.InvokableCall`1<MechAnimationTest>::Find(System.Object,System.Reflection.MethodInfo)
+#define InvokableCall_1_Find_m16987(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12738_gshared((InvokableCall_1_t2746 *)__this, (Object_t *)___targetObj, (MethodInfo_t198 *)___method, method)

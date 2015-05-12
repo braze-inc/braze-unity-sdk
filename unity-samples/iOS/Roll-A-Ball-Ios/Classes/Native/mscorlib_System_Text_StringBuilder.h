@@ -5,7 +5,7 @@ struct String_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Text.StringBuilder
-struct StringBuilder_t89  : public Object_t
+struct StringBuilder_t80  : public Object_t
 {
 	// System.Int32 System.Text.StringBuilder::_length
 	int32_t ____length_1;

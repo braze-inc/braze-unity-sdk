@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityEngine.Events.UnityAction`1<HealthFlash>
-struct UnityAction_1_t3507;
+// UnityEngine.Events.UnityAction`1<AutoFire>
+struct UnityAction_1_t3478;
 // UnityEngine.Events.BaseInvokableCall
 #include "UnityEngine_UnityEngine_Events_BaseInvokableCall.h"
-// UnityEngine.Events.InvokableCall`1<HealthFlash>
-struct InvokableCall_1_t3506  : public BaseInvokableCall_t981
+// UnityEngine.Events.InvokableCall`1<AutoFire>
+struct InvokableCall_1_t3477  : public BaseInvokableCall_t970
 {
-	// UnityEngine.Events.UnityAction`1<T1> UnityEngine.Events.InvokableCall`1<HealthFlash>::Delegate
-	UnityAction_1_t3507 * ___Delegate_0;
+	// UnityEngine.Events.UnityAction`1<T1> UnityEngine.Events.InvokableCall`1<AutoFire>::Delegate
+	UnityAction_1_t3478 * ___Delegate_0;
 };

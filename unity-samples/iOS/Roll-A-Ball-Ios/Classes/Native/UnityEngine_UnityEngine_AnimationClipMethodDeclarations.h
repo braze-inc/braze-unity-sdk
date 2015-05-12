@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AnimationClip
-struct AnimationClip_t403;
+struct AnimationClip_t391;
 

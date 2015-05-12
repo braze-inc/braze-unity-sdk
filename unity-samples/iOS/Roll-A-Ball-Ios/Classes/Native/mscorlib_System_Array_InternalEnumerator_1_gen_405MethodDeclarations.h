@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.IComparable`1<System.Single>>
-struct InternalEnumerator_1_t4376;
+// System.Array/InternalEnumerator`1<UnityEngine.AudioClip>
+struct InternalEnumerator_1_t4353;
 // System.Object
 struct Object_t;
-// System.IComparable`1<System.Single>
-struct IComparable_1_t2383;
+// UnityEngine.AudioClip
+struct AudioClip_t371;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.IComparable`1<System.Single>>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.AudioClip>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m23537(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.IComparable`1<System.Single>>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23538(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.IComparable`1<System.Single>>::Dispose()
-#define InternalEnumerator_1_Dispose_m23539(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.IComparable`1<System.Single>>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m23540(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.IComparable`1<System.Single>>::get_Current()
-#define InternalEnumerator_1_get_Current_m23541(__this, method) (Object_t*)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m23307(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<UnityEngine.AudioClip>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23308(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.AudioClip>::Dispose()
+#define InternalEnumerator_1_Dispose_m23309(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.AudioClip>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m23310(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<UnityEngine.AudioClip>::get_Current()
+#define InternalEnumerator_1_get_Current_m23311(__this, method) (AudioClip_t371 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

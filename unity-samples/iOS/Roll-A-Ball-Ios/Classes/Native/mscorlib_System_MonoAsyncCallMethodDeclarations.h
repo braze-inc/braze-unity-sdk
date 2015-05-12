@@ -5,7 +5,7 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.MonoAsyncCall
-struct MonoAsyncCall_t2285;
+struct MonoAsyncCall_t2273;
 
 // System.Void System.MonoAsyncCall::.ctor()
- void MonoAsyncCall__ctor_m11809 (MonoAsyncCall_t2285 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void MonoAsyncCall__ctor_m11714 (MonoAsyncCall_t2273 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

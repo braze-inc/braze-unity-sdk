@@ -3,17 +3,17 @@
 // System.Object
 struct Object_t;
 // System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile)
-struct Int32_t73;
+struct Int32_t63;
 // System.Threading.ExecutionContext
-struct ExecutionContext_t2063;
+struct ExecutionContext_t2051;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 // System.MulticastDelegate
-struct MulticastDelegate_t608;
+struct MulticastDelegate_t594;
 // System.Security.Principal.IPrincipal
-struct IPrincipal_t2230;
+struct IPrincipal_t2218;
 // System.Collections.Hashtable
-struct Hashtable_t426;
+struct Hashtable_t414;
 // System.Runtime.ConstrainedExecution.CriticalFinalizerObject
 #include "mscorlib_System_Runtime_ConstrainedExecution_CriticalFinaliz.h"
 // System.IntPtr
@@ -23,20 +23,20 @@ struct Hashtable_t426;
 // System.UIntPtr
 #include "mscorlib_System_UIntPtr.h"
 // System.Threading.Thread
-struct Thread_t2059  : public CriticalFinalizerObject_t2020
+struct Thread_t2047  : public CriticalFinalizerObject_t2008
 {
 	// System.Int32 System.Threading.Thread::lock_thread_id
 	int32_t ___lock_thread_id_0;
 	// System.IntPtr System.Threading.Thread::system_thread_handle
-	IntPtr_t120 ___system_thread_handle_1;
+	IntPtr_t107 ___system_thread_handle_1;
 	// System.Object System.Threading.Thread::cached_culture_info
 	Object_t * ___cached_culture_info_2;
 	// System.IntPtr System.Threading.Thread::unused0
-	IntPtr_t120 ___unused0_3;
+	IntPtr_t107 ___unused0_3;
 	// System.Boolean System.Threading.Thread::threadpool_thread
 	bool ___threadpool_thread_4;
 	// System.IntPtr System.Threading.Thread::name
-	IntPtr_t120 ___name_5;
+	IntPtr_t107 ___name_5;
 	// System.Int32 System.Threading.Thread::name_len
 	int32_t ___name_len_6;
 	// System.Threading.ThreadState System.Threading.Thread::state
@@ -48,15 +48,15 @@ struct Thread_t2059  : public CriticalFinalizerObject_t2020
 	// System.Int64 System.Threading.Thread::thread_id
 	int64_t ___thread_id_10;
 	// System.IntPtr System.Threading.Thread::start_notify
-	IntPtr_t120 ___start_notify_11;
+	IntPtr_t107 ___start_notify_11;
 	// System.IntPtr System.Threading.Thread::stack_ptr
-	IntPtr_t120 ___stack_ptr_12;
+	IntPtr_t107 ___stack_ptr_12;
 	// System.UIntPtr System.Threading.Thread::static_data
-	UIntPtr_t1752  ___static_data_13;
+	UIntPtr_t1740  ___static_data_13;
 	// System.IntPtr System.Threading.Thread::jit_data
-	IntPtr_t120 ___jit_data_14;
+	IntPtr_t107 ___jit_data_14;
 	// System.IntPtr System.Threading.Thread::lock_data
-	IntPtr_t120 ___lock_data_15;
+	IntPtr_t107 ___lock_data_15;
 	// System.Object System.Threading.Thread::current_appcontext
 	Object_t * ___current_appcontext_16;
 	// System.Int32 System.Threading.Thread::stack_size
@@ -64,29 +64,29 @@ struct Thread_t2059  : public CriticalFinalizerObject_t2020
 	// System.Object System.Threading.Thread::start_obj
 	Object_t * ___start_obj_18;
 	// System.IntPtr System.Threading.Thread::appdomain_refs
-	IntPtr_t120 ___appdomain_refs_19;
+	IntPtr_t107 ___appdomain_refs_19;
 	// System.Int32 System.Threading.Thread::interruption_requested
 	int32_t ___interruption_requested_20;
 	// System.IntPtr System.Threading.Thread::suspend_event
-	IntPtr_t120 ___suspend_event_21;
+	IntPtr_t107 ___suspend_event_21;
 	// System.IntPtr System.Threading.Thread::suspended_event
-	IntPtr_t120 ___suspended_event_22;
+	IntPtr_t107 ___suspended_event_22;
 	// System.IntPtr System.Threading.Thread::resume_event
-	IntPtr_t120 ___resume_event_23;
+	IntPtr_t107 ___resume_event_23;
 	// System.IntPtr System.Threading.Thread::synch_cs
-	IntPtr_t120 ___synch_cs_24;
+	IntPtr_t107 ___synch_cs_24;
 	// System.IntPtr System.Threading.Thread::serialized_culture_info
-	IntPtr_t120 ___serialized_culture_info_25;
+	IntPtr_t107 ___serialized_culture_info_25;
 	// System.Int32 System.Threading.Thread::serialized_culture_info_len
 	int32_t ___serialized_culture_info_len_26;
 	// System.IntPtr System.Threading.Thread::serialized_ui_culture_info
-	IntPtr_t120 ___serialized_ui_culture_info_27;
+	IntPtr_t107 ___serialized_ui_culture_info_27;
 	// System.Int32 System.Threading.Thread::serialized_ui_culture_info_len
 	int32_t ___serialized_ui_culture_info_len_28;
 	// System.Boolean System.Threading.Thread::thread_dump_requested
 	bool ___thread_dump_requested_29;
 	// System.IntPtr System.Threading.Thread::end_stack
-	IntPtr_t120 ___end_stack_30;
+	IntPtr_t107 ___end_stack_30;
 	// System.Boolean System.Threading.Thread::thread_interrupt_requested
 	bool ___thread_interrupt_requested_31;
 	// System.Byte System.Threading.Thread::apartment_state
@@ -96,23 +96,23 @@ struct Thread_t2059  : public CriticalFinalizerObject_t2020
 	// System.Int32 System.Threading.Thread::small_id
 	int32_t ___small_id_34;
 	// System.IntPtr System.Threading.Thread::manage_callback
-	IntPtr_t120 ___manage_callback_35;
+	IntPtr_t107 ___manage_callback_35;
 	// System.Object System.Threading.Thread::pending_exception
 	Object_t * ___pending_exception_36;
 	// System.Threading.ExecutionContext System.Threading.Thread::ec_to_set
-	ExecutionContext_t2063 * ___ec_to_set_37;
+	ExecutionContext_t2051 * ___ec_to_set_37;
 	// System.IntPtr System.Threading.Thread::interrupt_on_stop
-	IntPtr_t120 ___interrupt_on_stop_38;
+	IntPtr_t107 ___interrupt_on_stop_38;
 	// System.IntPtr System.Threading.Thread::unused3
-	IntPtr_t120 ___unused3_39;
+	IntPtr_t107 ___unused3_39;
 	// System.IntPtr System.Threading.Thread::unused4
-	IntPtr_t120 ___unused4_40;
+	IntPtr_t107 ___unused4_40;
 	// System.IntPtr System.Threading.Thread::unused5
-	IntPtr_t120 ___unused5_41;
+	IntPtr_t107 ___unused5_41;
 	// System.IntPtr System.Threading.Thread::unused6
-	IntPtr_t120 ___unused6_42;
+	IntPtr_t107 ___unused6_42;
 	// System.MulticastDelegate System.Threading.Thread::threadstart
-	MulticastDelegate_t608 * ___threadstart_45;
+	MulticastDelegate_t594 * ___threadstart_45;
 	// System.Int32 System.Threading.Thread::managed_id
 	int32_t ___managed_id_46;
 	// System.Security.Principal.IPrincipal System.Threading.Thread::_principal
@@ -120,17 +120,17 @@ struct Thread_t2059  : public CriticalFinalizerObject_t2020
 	// System.Boolean System.Threading.Thread::in_currentculture
 	bool ___in_currentculture_50;
 };
-struct Thread_t2059_StaticFields{
+struct Thread_t2047_StaticFields{
 	// System.Collections.Hashtable System.Threading.Thread::datastorehash
-	Hashtable_t426 * ___datastorehash_48;
+	Hashtable_t414 * ___datastorehash_48;
 	// System.Object System.Threading.Thread::datastore_lock
 	Object_t * ___datastore_lock_49;
 	// System.Object System.Threading.Thread::culture_lock
 	Object_t * ___culture_lock_51;
 };
-struct Thread_t2059_ThreadStaticFields{
+struct Thread_t2047_ThreadStaticFields{
 	// System.Object[] System.Threading.Thread::local_slots
-	ObjectU5BU5D_t96* ___local_slots_43;
+	ObjectU5BU5D_t112* ___local_slots_43;
 	// System.Threading.ExecutionContext System.Threading.Thread::_ec
-	ExecutionContext_t2063 * ____ec_44;
+	ExecutionContext_t2051 * ____ec_44;
 };

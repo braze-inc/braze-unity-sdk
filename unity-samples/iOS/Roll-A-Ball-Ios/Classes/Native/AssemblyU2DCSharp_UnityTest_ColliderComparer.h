@@ -5,7 +5,7 @@
 // UnityTest.ColliderComparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_ColliderComparer_CompareType.h"
 // UnityTest.ColliderComparer
-struct ColliderComparer_t167  : public ComparerBaseGeneric_1_t168
+struct ColliderComparer_t153  : public ComparerBaseGeneric_1_t154
 {
 	// UnityTest.ColliderComparer/CompareType UnityTest.ColliderComparer::compareType
 	int32_t ___compareType_14;

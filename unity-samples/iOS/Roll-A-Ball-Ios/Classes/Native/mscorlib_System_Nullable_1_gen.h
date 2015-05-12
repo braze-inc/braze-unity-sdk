@@ -2,13 +2,13 @@
 #include <stdint.h>
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// UnityEngine.Color
-#include "UnityEngine_UnityEngine_Color.h"
-// System.Nullable`1<UnityEngine.Color>
-struct Nullable_1_t11 
+// System.TimeSpan
+#include "mscorlib_System_TimeSpan.h"
+// System.Nullable`1<System.TimeSpan>
+struct Nullable_1_t2246 
 {
-	// T System.Nullable`1<UnityEngine.Color>::value
-	Color_t12  ___value_0;
-	// System.Boolean System.Nullable`1<UnityEngine.Color>::has_value
+	// T System.Nullable`1<System.TimeSpan>::value
+	TimeSpan_t1620  ___value_0;
+	// System.Boolean System.Nullable`1<System.TimeSpan>::has_value
 	bool ___has_value_1;
 };

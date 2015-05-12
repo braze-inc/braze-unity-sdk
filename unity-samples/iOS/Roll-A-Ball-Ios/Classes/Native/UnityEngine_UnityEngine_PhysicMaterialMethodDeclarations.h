@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.PhysicMaterial
-struct PhysicMaterial_t399;
+struct PhysicMaterial_t387;
 

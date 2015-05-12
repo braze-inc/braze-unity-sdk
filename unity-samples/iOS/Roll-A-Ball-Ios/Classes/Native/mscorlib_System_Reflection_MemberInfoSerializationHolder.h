@@ -5,13 +5,13 @@ struct String_t;
 // System.Type
 struct Type_t;
 // System.Type[]
-struct TypeU5BU5D_t160;
+struct TypeU5BU5D_t146;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Reflection.MemberTypes
 #include "mscorlib_System_Reflection_MemberTypes.h"
 // System.Reflection.MemberInfoSerializationHolder
-struct MemberInfoSerializationHolder_t1986  : public Object_t
+struct MemberInfoSerializationHolder_t1974  : public Object_t
 {
 	// System.String System.Reflection.MemberInfoSerializationHolder::_memberName
 	String_t* ____memberName_0;
@@ -22,5 +22,5 @@ struct MemberInfoSerializationHolder_t1986  : public Object_t
 	// System.Type System.Reflection.MemberInfoSerializationHolder::_reflectedType
 	Type_t * ____reflectedType_3;
 	// System.Type[] System.Reflection.MemberInfoSerializationHolder::_genericArguments
-	TypeU5BU5D_t160* ____genericArguments_4;
+	TypeU5BU5D_t146* ____genericArguments_4;
 };

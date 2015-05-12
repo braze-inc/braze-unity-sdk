@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Delegate
-struct Delegate_t743;
+struct Delegate_t730;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.DelegateSerializationHolder
-struct DelegateSerializationHolder_t2261  : public Object_t
+struct DelegateSerializationHolder_t2249  : public Object_t
 {
 	// System.Delegate System.DelegateSerializationHolder::_delegate
-	Delegate_t743 * ____delegate_0;
+	Delegate_t730 * ____delegate_0;
 };

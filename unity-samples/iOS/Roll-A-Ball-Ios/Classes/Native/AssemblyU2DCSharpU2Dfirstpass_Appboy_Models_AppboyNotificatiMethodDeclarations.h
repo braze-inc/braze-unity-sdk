@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Appboy.Models.AppboyNotificationSubscriptionType
-struct AppboyNotificationSubscriptionType_t40;
+struct AppboyNotificationSubscriptionType_t42;
 

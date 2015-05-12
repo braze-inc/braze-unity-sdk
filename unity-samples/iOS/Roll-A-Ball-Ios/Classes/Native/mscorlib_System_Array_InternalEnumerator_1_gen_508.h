@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.IO.FileAccess>
-struct InternalEnumerator_1_t4648 
+// System.Array/InternalEnumerator`1<System.Net.Security.SslPolicyErrors>
+struct InternalEnumerator_1_t4628 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.IO.FileAccess>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Net.Security.SslPolicyErrors>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.IO.FileAccess>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Net.Security.SslPolicyErrors>::idx
 	int32_t ___idx_1;
 };

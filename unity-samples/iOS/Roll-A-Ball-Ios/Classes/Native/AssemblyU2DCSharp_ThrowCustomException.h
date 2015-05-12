@@ -3,6 +3,6 @@
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // ThrowCustomException
-struct ThrowCustomException_t218  : public MonoBehaviour_t2
+struct ThrowCustomException_t205  : public MonoBehaviour_t2
 {
 };

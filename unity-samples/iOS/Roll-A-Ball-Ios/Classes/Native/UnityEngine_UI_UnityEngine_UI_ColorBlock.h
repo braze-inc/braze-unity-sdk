@@ -5,16 +5,16 @@
 // UnityEngine.Color
 #include "UnityEngine_UnityEngine_Color.h"
 // UnityEngine.UI.ColorBlock
-struct ColorBlock_t566 
+struct ColorBlock_t552 
 {
 	// UnityEngine.Color UnityEngine.UI.ColorBlock::m_NormalColor
-	Color_t12  ___m_NormalColor_0;
+	Color_t341  ___m_NormalColor_0;
 	// UnityEngine.Color UnityEngine.UI.ColorBlock::m_HighlightedColor
-	Color_t12  ___m_HighlightedColor_1;
+	Color_t341  ___m_HighlightedColor_1;
 	// UnityEngine.Color UnityEngine.UI.ColorBlock::m_PressedColor
-	Color_t12  ___m_PressedColor_2;
+	Color_t341  ___m_PressedColor_2;
 	// UnityEngine.Color UnityEngine.UI.ColorBlock::m_DisabledColor
-	Color_t12  ___m_DisabledColor_3;
+	Color_t341  ___m_DisabledColor_3;
 	// System.Single UnityEngine.UI.ColorBlock::m_ColorMultiplier
 	float ___m_ColorMultiplier_4;
 	// System.Single UnityEngine.UI.ColorBlock::m_FadeDuration

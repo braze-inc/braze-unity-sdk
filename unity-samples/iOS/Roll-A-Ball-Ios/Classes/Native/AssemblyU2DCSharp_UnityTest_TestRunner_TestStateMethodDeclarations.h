@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.TestRunner/TestState
-struct TestState_t271;
+struct TestState_t258;
 

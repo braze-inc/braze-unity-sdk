@@ -3,7 +3,7 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // UnityEngine.GradientAlphaKey
-struct GradientAlphaKey_t844 
+struct GradientAlphaKey_t831 
 {
 	// System.Single UnityEngine.GradientAlphaKey::alpha
 	float ___alpha_0;

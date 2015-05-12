@@ -3,12 +3,12 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Char
-struct Char_t107 
+struct Char_t92 
 {
 	// System.Char System.Char::m_value
 	uint16_t ___m_value_2;
 };
-struct Char_t107_StaticFields{
+struct Char_t92_StaticFields{
 	// System.Char System.Char::MaxValue
 	uint16_t ___MaxValue_0;
 	// System.Char System.Char::MinValue

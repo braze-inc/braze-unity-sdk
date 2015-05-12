@@ -4,22 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Runtime.Serialization.Formatters.FormatterTypeStyle>
-struct InternalEnumerator_1_t4874;
+// System.Array/InternalEnumerator`1<System.IEquatable`1<System.TimeSpan>>
+struct InternalEnumerator_1_t4854;
 // System.Object
 struct Object_t;
+// System.IEquatable`1<System.TimeSpan>
+struct IEquatable_1_t2727;
 // System.Array
 struct Array_t;
-// System.Runtime.Serialization.Formatters.FormatterTypeStyle
-#include "mscorlib_System_Runtime_Serialization_Formatters_FormatterTy.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.Serialization.Formatters.FormatterTypeStyle>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m26597 (InternalEnumerator_1_t4874 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<System.Runtime.Serialization.Formatters.FormatterTypeStyle>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26598 (InternalEnumerator_1_t4874 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.Serialization.Formatters.FormatterTypeStyle>::Dispose()
- void InternalEnumerator_1_Dispose_m26599 (InternalEnumerator_1_t4874 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.Serialization.Formatters.FormatterTypeStyle>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m26600 (InternalEnumerator_1_t4874 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<System.Runtime.Serialization.Formatters.FormatterTypeStyle>::get_Current()
- int32_t InternalEnumerator_1_get_Current_m26601 (InternalEnumerator_1_t4874 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.IEquatable`1<System.TimeSpan>>::.ctor(System.Array)
+// System.Array/InternalEnumerator`1<System.Object>
+#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
+#define InternalEnumerator_1__ctor_m26377(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.IEquatable`1<System.TimeSpan>>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26378(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.IEquatable`1<System.TimeSpan>>::Dispose()
+#define InternalEnumerator_1_Dispose_m26379(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.IEquatable`1<System.TimeSpan>>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m26380(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.IEquatable`1<System.TimeSpan>>::get_Current()
+#define InternalEnumerator_1_get_Current_m26381(__this, method) (Object_t*)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

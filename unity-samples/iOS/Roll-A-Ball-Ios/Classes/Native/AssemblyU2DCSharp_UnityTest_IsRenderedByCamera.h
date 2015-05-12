@@ -5,7 +5,7 @@
 // UnityTest.IsRenderedByCamera/CompareType
 #include "AssemblyU2DCSharp_UnityTest_IsRenderedByCamera_CompareType.h"
 // UnityTest.IsRenderedByCamera
-struct IsRenderedByCamera_t183  : public ComparerBaseGeneric_2_t184
+struct IsRenderedByCamera_t169  : public ComparerBaseGeneric_2_t170
 {
 	// UnityTest.IsRenderedByCamera/CompareType UnityTest.IsRenderedByCamera::compareType
 	int32_t ___compareType_14;

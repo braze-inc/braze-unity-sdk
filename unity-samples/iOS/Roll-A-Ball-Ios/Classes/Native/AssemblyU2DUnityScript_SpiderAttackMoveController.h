@@ -1,30 +1,30 @@
 ﻿#pragma once
 #include <stdint.h>
 // MovementMotor
-struct MovementMotor_t389;
+struct MovementMotor_t377;
 // UnityEngine.Renderer
-struct Renderer_t185;
+struct Renderer_t171;
 // UnityEngine.AudioSource
-struct AudioSource_t390;
+struct AudioSource_t378;
 // SelfIlluminationBlink[]
-struct SelfIlluminationBlinkU5BU5D_t391;
+struct SelfIlluminationBlinkU5BU5D_t379;
 // GlowPlane
-struct GlowPlane_t392;
+struct GlowPlane_t380;
 // UnityEngine.GameObject
-struct GameObject_t154;
+struct GameObject_t140;
 // UnityEngine.MonoBehaviour
 struct MonoBehaviour_t2;
 // AI
-struct AI_t384;
+struct AI_t372;
 // UnityEngine.Transform
-struct Transform_t193;
+struct Transform_t179;
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // SpiderAttackMoveController
-struct SpiderAttackMoveController_t393  : public MonoBehaviour_t2
+struct SpiderAttackMoveController_t381  : public MonoBehaviour_t2
 {
 	// MovementMotor SpiderAttackMoveController::motor
-	MovementMotor_t389 * ___motor_2;
+	MovementMotor_t377 * ___motor_2;
 	// System.Single SpiderAttackMoveController::targetDistanceMin
 	float ___targetDistanceMin_3;
 	// System.Single SpiderAttackMoveController::targetDistanceMax
@@ -40,23 +40,23 @@ struct SpiderAttackMoveController_t393  : public MonoBehaviour_t2
 	// System.Single SpiderAttackMoveController::damageAmount
 	float ___damageAmount_9;
 	// UnityEngine.Renderer SpiderAttackMoveController::proximityRenderer
-	Renderer_t185 * ___proximityRenderer_10;
+	Renderer_t171 * ___proximityRenderer_10;
 	// UnityEngine.AudioSource SpiderAttackMoveController::audioSource
-	AudioSource_t390 * ___audioSource_11;
+	AudioSource_t378 * ___audioSource_11;
 	// SelfIlluminationBlink[] SpiderAttackMoveController::blinkComponents
-	SelfIlluminationBlinkU5BU5D_t391* ___blinkComponents_12;
+	SelfIlluminationBlinkU5BU5D_t379* ___blinkComponents_12;
 	// GlowPlane SpiderAttackMoveController::blinkPlane
-	GlowPlane_t392 * ___blinkPlane_13;
+	GlowPlane_t380 * ___blinkPlane_13;
 	// UnityEngine.GameObject SpiderAttackMoveController::intentionalExplosion
-	GameObject_t154 * ___intentionalExplosion_14;
+	GameObject_t140 * ___intentionalExplosion_14;
 	// UnityEngine.MonoBehaviour SpiderAttackMoveController::animationBehaviour
 	MonoBehaviour_t2 * ___animationBehaviour_15;
 	// AI SpiderAttackMoveController::ai
-	AI_t384 * ___ai_16;
+	AI_t372 * ___ai_16;
 	// UnityEngine.Transform SpiderAttackMoveController::character
-	Transform_t193 * ___character_17;
+	Transform_t179 * ___character_17;
 	// UnityEngine.Transform SpiderAttackMoveController::player
-	Transform_t193 * ___player_18;
+	Transform_t179 * ___player_18;
 	// System.Boolean SpiderAttackMoveController::inRange
 	bool ___inRange_19;
 	// System.Single SpiderAttackMoveController::nextRaycastTime

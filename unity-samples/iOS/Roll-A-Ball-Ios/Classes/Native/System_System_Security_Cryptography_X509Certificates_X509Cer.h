@@ -3,6 +3,6 @@
 // System.Collections.CollectionBase
 #include "mscorlib_System_Collections_CollectionBase.h"
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection
-struct X509CertificateCollection_t1453  : public CollectionBase_t1420
+struct X509CertificateCollection_t1442  : public CollectionBase_t1409
 {
 };

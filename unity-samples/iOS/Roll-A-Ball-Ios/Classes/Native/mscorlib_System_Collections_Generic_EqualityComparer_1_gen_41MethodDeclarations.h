@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>
-struct EqualityComparer_1_t4360;
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>
+struct EqualityComparer_1_t4402;
 // System.Object
 struct Object_t;
-// UnityEngine.Rigidbody2D
-struct Rigidbody2D_t910;
+// UnityEngine.UICharInfo
+#include "UnityEngine_UnityEngine_UICharInfo.h"
 
-// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::.ctor()
-// System.Collections.Generic.EqualityComparer`1<System.Object>
-#include "mscorlib_System_Collections_Generic_EqualityComparer_1_genMethodDeclarations.h"
-#define EqualityComparer_1__ctor_m23470(__this, method) (void)EqualityComparer_1__ctor_m13047_gshared((EqualityComparer_1_t2776 *)__this, method)
-// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::.cctor()
-#define EqualityComparer_1__cctor_m23471(__this/* static, unused */, method) (void)EqualityComparer_1__cctor_m13048_gshared((Object_t *)__this/* static, unused */, method)
-// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::System.Collections.IEqualityComparer.GetHashCode(System.Object)
-#define EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m23472(__this, ___obj, method) (int32_t)EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m13049_gshared((EqualityComparer_1_t2776 *)__this, (Object_t *)___obj, method)
-// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::System.Collections.IEqualityComparer.Equals(System.Object,System.Object)
-#define EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m23473(__this, ___x, ___y, method) (bool)EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m13050_gshared((EqualityComparer_1_t2776 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::GetHashCode(T)
-// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::Equals(T,T)
-// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.Rigidbody2D>::get_Default()
-#define EqualityComparer_1_get_Default_m23474(__this/* static, unused */, method) (EqualityComparer_1_t4360 *)EqualityComparer_1_get_Default_m13051_gshared((Object_t *)__this/* static, unused */, method)
+// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::.ctor()
+ void EqualityComparer_1__ctor_m23593 (EqualityComparer_1_t4402 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::.cctor()
+ void EqualityComparer_1__cctor_m23594 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::System.Collections.IEqualityComparer.GetHashCode(System.Object)
+ int32_t EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m23595 (EqualityComparer_1_t4402 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::System.Collections.IEqualityComparer.Equals(System.Object,System.Object)
+ bool EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m23596 (EqualityComparer_1_t4402 * __this, Object_t * ___x, Object_t * ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::GetHashCode(T)
+// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::Equals(T,T)
+// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.UICharInfo>::get_Default()
+ EqualityComparer_1_t4402 * EqualityComparer_1_get_Default_m23597 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;

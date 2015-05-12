@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.TestResult/ResultType
-struct ResultType_t262;
+struct ResultType_t249;
 

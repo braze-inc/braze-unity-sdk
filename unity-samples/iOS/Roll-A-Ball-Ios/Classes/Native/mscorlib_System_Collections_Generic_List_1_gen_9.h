@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityTest.AssertionComponent[]
-struct AssertionComponentU5BU5D_t155;
+// UnityTest.IntegrationTestRunner.ITestRunnerCallback[]
+struct ITestRunnerCallbackU5BU5D_t3320;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityTest.AssertionComponent>
-struct List_1_t3328  : public Object_t
+// System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>
+struct List_1_t271  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityTest.AssertionComponent>::_items
-	AssertionComponentU5BU5D_t155* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.AssertionComponent>::_size
+	// T[] System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::_items
+	ITestRunnerCallbackU5BU5D_t3320* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.AssertionComponent>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::_version
 	int32_t ____version_3;
 };
-struct List_1_t3328_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.AssertionComponent>::DefaultCapacity
+struct List_1_t271_StaticFields{
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::DefaultCapacity
 	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityTest.AssertionComponent>::EmptyArray
-	AssertionComponentU5BU5D_t155* ___EmptyArray_4;
+	// T[] System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::EmptyArray
+	ITestRunnerCallbackU5BU5D_t3320* ___EmptyArray_4;
 };

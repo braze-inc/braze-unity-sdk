@@ -5,23 +5,23 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Array/InternalEnumerator`1<IntegrationTest/ExcludePlatformAttribute>
-struct InternalEnumerator_1_t3192;
+struct InternalEnumerator_1_t3172;
 // System.Object
 struct Object_t;
 // IntegrationTest/ExcludePlatformAttribute
-struct ExcludePlatformAttribute_t225;
+struct ExcludePlatformAttribute_t212;
 // System.Array
 struct Array_t;
 
 // System.Void System.Array/InternalEnumerator`1<IntegrationTest/ExcludePlatformAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m15846(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
+#define InternalEnumerator_1__ctor_m15626(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
 // System.Object System.Array/InternalEnumerator`1<IntegrationTest/ExcludePlatformAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m15847(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m15627(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Void System.Array/InternalEnumerator`1<IntegrationTest/ExcludePlatformAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m15848(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_Dispose_m15628(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Boolean System.Array/InternalEnumerator`1<IntegrationTest/ExcludePlatformAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m15849(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_MoveNext_m15629(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // T System.Array/InternalEnumerator`1<IntegrationTest/ExcludePlatformAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m15850(__this, method) (ExcludePlatformAttribute_t225 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_get_Current_m15630(__this, method) (ExcludePlatformAttribute_t212 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

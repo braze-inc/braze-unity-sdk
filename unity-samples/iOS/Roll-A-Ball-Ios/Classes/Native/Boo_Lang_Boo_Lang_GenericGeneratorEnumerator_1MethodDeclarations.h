@@ -5,7 +5,7 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Boo.Lang.GenericGeneratorEnumerator`1
-struct GenericGeneratorEnumerator_1_t1140;
+struct GenericGeneratorEnumerator_1_t1129;
 // System.Object
 struct Object_t;
 

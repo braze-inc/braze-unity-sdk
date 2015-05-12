@@ -4,21 +4,21 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.CachedInvokableCall`1<UnityTest.VectorComparerBase`1>
-struct CachedInvokableCall_1_t3109;
+// UnityEngine.Events.CachedInvokableCall`1<UnityTest.Vector3Comparer>
+struct CachedInvokableCall_1_t3075;
 // UnityEngine.Object
-struct Object_t151;
-struct Object_t151_marshaled;
+struct Object_t70;
+struct Object_t70_marshaled;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
-// UnityTest.VectorComparerBase`1
-struct VectorComparerBase_1_t207;
+struct MethodInfo_t198;
+// UnityTest.Vector3Comparer
+struct Vector3Comparer_t186;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 
-// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityTest.VectorComparerBase`1>::.ctor(UnityEngine.Object,System.Reflection.MethodInfo,T)
+// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityTest.Vector3Comparer>::.ctor(UnityEngine.Object,System.Reflection.MethodInfo,T)
 // UnityEngine.Events.CachedInvokableCall`1<System.Object>
 #include "UnityEngine_UnityEngine_Events_CachedInvokableCall_1_gen_4MethodDeclarations.h"
-#define CachedInvokableCall_1__ctor_m15115(__this, ___target, ___theFunction, ___argument, method) (void)CachedInvokableCall_1__ctor_m12827_gshared((CachedInvokableCall_1_t2757 *)__this, (Object_t151 *)___target, (MethodInfo_t211 *)___theFunction, (Object_t *)___argument, method)
-// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityTest.VectorComparerBase`1>::Invoke(System.Object[])
-#define CachedInvokableCall_1_Invoke_m15116(__this, ___args, method) (void)CachedInvokableCall_1_Invoke_m12829_gshared((CachedInvokableCall_1_t2757 *)__this, (ObjectU5BU5D_t96*)___args, method)
+#define CachedInvokableCall_1__ctor_m14842(__this, ___target, ___theFunction, ___argument, method) (void)CachedInvokableCall_1__ctor_m12732_gshared((CachedInvokableCall_1_t2745 *)__this, (Object_t70 *)___target, (MethodInfo_t198 *)___theFunction, (Object_t *)___argument, method)
+// System.Void UnityEngine.Events.CachedInvokableCall`1<UnityTest.Vector3Comparer>::Invoke(System.Object[])
+#define CachedInvokableCall_1_Invoke_m14843(__this, ___args, method) (void)CachedInvokableCall_1_Invoke_m12734_gshared((CachedInvokableCall_1_t2745 *)__this, (ObjectU5BU5D_t112*)___args, method)

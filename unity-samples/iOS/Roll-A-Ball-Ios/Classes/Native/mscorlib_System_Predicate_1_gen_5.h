@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// Appboy.Models.InAppMessage.InAppMessageButton
-struct InAppMessageButton_t60;
+// Appboy.Models.Cards.Card
+struct Card_t11;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Predicate`1<Appboy.Models.InAppMessage.InAppMessageButton>
-struct Predicate_1_t2812  : public MulticastDelegate_t608
+// System.Predicate`1<Appboy.Models.Cards.Card>
+struct Predicate_1_t2800  : public MulticastDelegate_t594
 {
 };

@@ -1,20 +1,20 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.GameObject
-struct GameObject_t154;
+struct GameObject_t140;
 // System.String
 struct String_t;
 // UnityTest.TestComponent
-struct TestComponent_t260;
+struct TestComponent_t247;
 // System.Object
 #include "mscorlib_System_Object.h"
 // UnityTest.TestResult/ResultType
 #include "AssemblyU2DCSharp_UnityTest_TestResult_ResultType.h"
 // UnityTest.TestResult
-struct TestResult_t245  : public Object_t
+struct TestResult_t232  : public Object_t
 {
 	// UnityEngine.GameObject UnityTest.TestResult::m_Go
-	GameObject_t154 * ___m_Go_0;
+	GameObject_t140 * ___m_Go_0;
 	// System.String UnityTest.TestResult::m_Name
 	String_t* ___m_Name_1;
 	// UnityTest.TestResult/ResultType UnityTest.TestResult::resultType
@@ -30,5 +30,5 @@ struct TestResult_t245  : public Object_t
 	// System.Boolean UnityTest.TestResult::dynamicTest
 	bool ___dynamicTest_7;
 	// UnityTest.TestComponent UnityTest.TestResult::TestComponent
-	TestComponent_t260 * ___TestComponent_8;
+	TestComponent_t247 * ___TestComponent_8;
 };

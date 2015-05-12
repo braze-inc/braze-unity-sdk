@@ -1,19 +1,19 @@
 ﻿#pragma once
 #include <stdint.h>
 // Mono.Math.BigInteger
-struct BigInteger_t1811;
+struct BigInteger_t1799;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // Mono.Math.Prime.ConfidenceFactor
 #include "mscorlib_Mono_Math_Prime_ConfidenceFactor.h"
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo ConfidenceFactor_t1813_il2cpp_TypeInfo;
+extern TypeInfo ConfidenceFactor_t1801_il2cpp_TypeInfo;
 // Mono.Math.Prime.PrimalityTest
-struct PrimalityTest_t1810  : public MulticastDelegate_t608
+struct PrimalityTest_t1798  : public MulticastDelegate_t594
 {
 };

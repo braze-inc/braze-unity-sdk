@@ -3,6 +3,6 @@
 // System.Exception
 #include "mscorlib_System_Exception.h"
 // UnityEngine.MissingReferenceException
-struct MissingReferenceException_t343  : public Exception_t82
+struct MissingReferenceException_t330  : public Exception_t71
 {
 };

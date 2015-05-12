@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>
-struct InternalEnumerator_1_t4592;
+// System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>
+struct InternalEnumerator_1_t4561;
 // System.Object
 struct Object_t;
-// Boo.Lang.Runtime.DynamicDispatching.DispatcherKey
-struct DispatcherKey_t1147;
+// UnityEngineInternal.TypeInferenceRuleAttribute
+struct TypeInferenceRuleAttribute_t992;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m25075(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25076(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::Dispose()
-#define InternalEnumerator_1_Dispose_m25077(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m25078(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::get_Current()
-#define InternalEnumerator_1_get_Current_m25079(__this, method) (DispatcherKey_t1147 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m24757(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m24758(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m24759(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m24760(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m24761(__this, method) (TypeInferenceRuleAttribute_t992 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

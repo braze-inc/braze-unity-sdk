@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityTest.IntegrationTestRunner.ITestRunnerCallback
-struct ITestRunnerCallback_t285;
+// UnityEngine.EventSystems.BaseInputModule
+struct BaseInputModule_t456;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>
-struct Comparison_1_t3346  : public MulticastDelegate_t608
+// System.Comparison`1<UnityEngine.EventSystems.BaseInputModule>
+struct Comparison_1_t3508  : public MulticastDelegate_t594
 {
 };

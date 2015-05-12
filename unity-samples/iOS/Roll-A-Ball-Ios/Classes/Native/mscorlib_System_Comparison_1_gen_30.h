@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard
-struct GcLeaderboard_t834;
+// UnityEngine.GUILayoutEntry
+struct GUILayoutEntry_t845;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>
-struct Comparison_1_t4158  : public MulticastDelegate_t608
+// System.Comparison`1<UnityEngine.GUILayoutEntry>
+struct Comparison_1_t4215  : public MulticastDelegate_t594
 {
 };

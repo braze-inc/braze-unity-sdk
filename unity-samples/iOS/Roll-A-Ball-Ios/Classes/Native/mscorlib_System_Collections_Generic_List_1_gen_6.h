@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityTest.TestResult[]
-struct TestResultU5BU5D_t3163;
+// UnityTest.ITestComponent[]
+struct ITestComponentU5BU5D_t3160;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityTest.TestResult>
-struct List_1_t244  : public Object_t
+// System.Collections.Generic.List`1<UnityTest.ITestComponent>
+struct List_1_t228  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityTest.TestResult>::_items
-	TestResultU5BU5D_t3163* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.TestResult>::_size
+	// T[] System.Collections.Generic.List`1<UnityTest.ITestComponent>::_items
+	ITestComponentU5BU5D_t3160* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.ITestComponent>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.TestResult>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.ITestComponent>::_version
 	int32_t ____version_3;
 };
-struct List_1_t244_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.TestResult>::DefaultCapacity
+struct List_1_t228_StaticFields{
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.ITestComponent>::DefaultCapacity
 	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityTest.TestResult>::EmptyArray
-	TestResultU5BU5D_t3163* ___EmptyArray_4;
+	// T[] System.Collections.Generic.List`1<UnityTest.ITestComponent>::EmptyArray
+	ITestComponentU5BU5D_t3160* ___EmptyArray_4;
 };

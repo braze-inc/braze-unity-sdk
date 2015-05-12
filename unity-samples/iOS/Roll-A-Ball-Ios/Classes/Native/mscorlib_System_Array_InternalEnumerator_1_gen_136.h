@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>
-struct InternalEnumerator_1_t3202 
+struct InternalEnumerator_1_t3182 
 {
 	// System.Array System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>::array
 	Array_t * ___array_0;

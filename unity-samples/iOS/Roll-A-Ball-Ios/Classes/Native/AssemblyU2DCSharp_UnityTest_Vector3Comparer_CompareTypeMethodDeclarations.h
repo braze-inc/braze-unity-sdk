@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.Vector3Comparer/CompareType
-struct CompareType_t199;
+struct CompareType_t185;
 

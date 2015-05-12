@@ -14,200 +14,200 @@
 #include <assert.h>
 #include "stringLiterals.h"
 
-extern TypeInfo U3CModuleU3E_t133_il2cpp_TypeInfo;
-extern TypeInfo ChangeUser_t135_il2cpp_TypeInfo;
-extern TypeInfo CustomAttributesSetting_t136_il2cpp_TypeInfo;
-extern TypeInfo LogCustomEvent_t137_il2cpp_TypeInfo;
-extern TypeInfo LogPurchase_t138_il2cpp_TypeInfo;
-extern TypeInfo MainMenu_t139_il2cpp_TypeInfo;
-extern TypeInfo SetCustomAttributes_t142_il2cpp_TypeInfo;
-extern TypeInfo SetCustomAttributesArray_t143_il2cpp_TypeInfo;
-extern TypeInfo SetUserField_t144_il2cpp_TypeInfo;
-extern TypeInfo SubmitFeedback_t145_il2cpp_TypeInfo;
-extern TypeInfo UtilityMethods_t146_il2cpp_TypeInfo;
-extern TypeInfo Constants_t147_il2cpp_TypeInfo;
-extern TypeInfo U3CCheckPeriodicallyU3Ec__Iterator0_t149_il2cpp_TypeInfo;
-extern TypeInfo AssertionComponent_t148_il2cpp_TypeInfo;
-extern TypeInfo IAssertionComponentConfigurator_t297_il2cpp_TypeInfo;
-extern TypeInfo AssertionException_t152_il2cpp_TypeInfo;
-extern TypeInfo Assertions_t153_il2cpp_TypeInfo;
-extern TypeInfo CheckMethod_t156_il2cpp_TypeInfo;
-extern TypeInfo ActionBase_t150_il2cpp_TypeInfo;
-extern TypeInfo ActionBaseGeneric_1_t163_il2cpp_TypeInfo;
-extern TypeInfo BoolComparer_t164_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t166_il2cpp_TypeInfo;
-extern TypeInfo ColliderComparer_t167_il2cpp_TypeInfo;
-extern TypeInfo CompareToType_t170_il2cpp_TypeInfo;
-extern TypeInfo ComparerBase_t171_il2cpp_TypeInfo;
-extern TypeInfo ComparerBaseGeneric_1_t172_il2cpp_TypeInfo;
-extern TypeInfo ComparerBaseGeneric_2_t173_il2cpp_TypeInfo;
-extern TypeInfo CompareTypes_t174_il2cpp_TypeInfo;
-extern TypeInfo FloatComparer_t175_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t177_il2cpp_TypeInfo;
-extern TypeInfo GeneralComparer_t178_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t179_il2cpp_TypeInfo;
-extern TypeInfo IntComparer_t180_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t182_il2cpp_TypeInfo;
-extern TypeInfo IsRenderedByCamera_t183_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t187_il2cpp_TypeInfo;
-extern TypeInfo StringComparer_t188_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t190_il2cpp_TypeInfo;
-extern TypeInfo TransformComparer_t191_il2cpp_TypeInfo;
-extern TypeInfo ValueDoesNotChange_t194_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t195_il2cpp_TypeInfo;
-extern TypeInfo Vector2Comparer_t196_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t199_il2cpp_TypeInfo;
-extern TypeInfo Vector3Comparer_t200_il2cpp_TypeInfo;
-extern TypeInfo CompareType_t203_il2cpp_TypeInfo;
-extern TypeInfo Vector4Comparer_t204_il2cpp_TypeInfo;
-extern TypeInfo VectorComparerBase_1_t207_il2cpp_TypeInfo;
-extern TypeInfo InvalidPathException_t208_il2cpp_TypeInfo;
-extern TypeInfo MemberResolver_t157_il2cpp_TypeInfo;
-extern TypeInfo ITestResult_t247_il2cpp_TypeInfo;
-extern TypeInfo TestResultState_t212_il2cpp_TypeInfo;
-extern TypeInfo GameScore_t213_il2cpp_TypeInfo;
-extern TypeInfo CodeBasedAssertionExample_t214_il2cpp_TypeInfo;
-extern TypeInfo CustomComponent_t215_il2cpp_TypeInfo;
-extern TypeInfo DynamicIntegrationTest_t216_il2cpp_TypeInfo;
-extern TypeInfo CustomException_t217_il2cpp_TypeInfo;
-extern TypeInfo ThrowCustomException_t218_il2cpp_TypeInfo;
-extern TypeInfo ITransferInterface_t223_il2cpp_TypeInfo;
-extern TypeInfo Writer_t219_il2cpp_TypeInfo;
-extern TypeInfo Reader_t220_il2cpp_TypeInfo;
-extern TypeInfo DTOFormatter_t221_il2cpp_TypeInfo;
-extern TypeInfo ITestRunnerCallback_t285_il2cpp_TypeInfo;
-extern TypeInfo ExcludePlatformAttribute_t225_il2cpp_TypeInfo;
-extern TypeInfo ExpectExceptions_t229_il2cpp_TypeInfo;
-extern TypeInfo IgnoreAttribute_t230_il2cpp_TypeInfo;
-extern TypeInfo DynamicTestAttribute_t231_il2cpp_TypeInfo;
-extern TypeInfo SucceedWithAssertions_t232_il2cpp_TypeInfo;
-extern TypeInfo TimeoutAttribute_t233_il2cpp_TypeInfo;
-extern TypeInfo IntegrationTest_t234_il2cpp_TypeInfo;
-extern TypeInfo IntegrationTestAttribute_t235_il2cpp_TypeInfo;
-extern TypeInfo IntegrationTestsProvider_t240_il2cpp_TypeInfo;
-extern TypeInfo NetworkResultSender_t242_il2cpp_TypeInfo;
-extern TypeInfo MessageType_t246_il2cpp_TypeInfo;
-extern TypeInfo ResultDTO_t222_il2cpp_TypeInfo;
-extern TypeInfo SerializableTestResult_t248_il2cpp_TypeInfo;
-extern TypeInfo ITestComponent_t237_il2cpp_TypeInfo;
-extern TypeInfo IncludedPlatforms_t249_il2cpp_TypeInfo;
-extern TypeInfo NullTestComponentImpl_t250_il2cpp_TypeInfo;
-extern TypeInfo U3CGetTypesWithHelpAttributeU3Ec__Iterator1_t253_il2cpp_TypeInfo;
-extern TypeInfo U3CGetTypeByNameU3Ec__AnonStorey3_t255_il2cpp_TypeInfo;
-extern TypeInfo TestComponent_t260_il2cpp_TypeInfo;
-extern TypeInfo ResultType_t262_il2cpp_TypeInfo;
-extern TypeInfo TestResult_t245_il2cpp_TypeInfo;
-extern TypeInfo Styles_t264_il2cpp_TypeInfo;
-extern TypeInfo TestResultRenderer_t269_il2cpp_TypeInfo;
-extern TypeInfo TestState_t271_il2cpp_TypeInfo;
-extern TypeInfo U3CStateMachineU3Ec__Iterator2_t274_il2cpp_TypeInfo;
-extern TypeInfo U3CParseListForGroupsU3Ec__AnonStorey4_t275_il2cpp_TypeInfo;
-extern TypeInfo TestRunner_t272_il2cpp_TypeInfo;
-extern TypeInfo TestRunnerCallbackList_t278_il2cpp_TypeInfo;
-extern TypeInfo TestRunnerConfigurator_t277_il2cpp_TypeInfo;
-extern TypeInfo Functions_t286_il2cpp_TypeInfo;
-extern TypeInfo Method_t287_il2cpp_TypeInfo;
-extern TypeInfo CallTesting_t288_il2cpp_TypeInfo;
+extern TypeInfo U3CModuleU3E_t120_il2cpp_TypeInfo;
+extern TypeInfo ChangeUser_t122_il2cpp_TypeInfo;
+extern TypeInfo CustomAttributesSetting_t123_il2cpp_TypeInfo;
+extern TypeInfo LogCustomEvent_t124_il2cpp_TypeInfo;
+extern TypeInfo LogPurchase_t125_il2cpp_TypeInfo;
+extern TypeInfo MainMenu_t126_il2cpp_TypeInfo;
+extern TypeInfo SetCustomAttributes_t129_il2cpp_TypeInfo;
+extern TypeInfo SetCustomAttributesArray_t130_il2cpp_TypeInfo;
+extern TypeInfo SetUserField_t131_il2cpp_TypeInfo;
+extern TypeInfo SubmitFeedback_t132_il2cpp_TypeInfo;
+extern TypeInfo UtilityMethods_t133_il2cpp_TypeInfo;
+extern TypeInfo Constants_t134_il2cpp_TypeInfo;
+extern TypeInfo U3CCheckPeriodicallyU3Ec__Iterator0_t136_il2cpp_TypeInfo;
+extern TypeInfo AssertionComponent_t135_il2cpp_TypeInfo;
+extern TypeInfo IAssertionComponentConfigurator_t284_il2cpp_TypeInfo;
+extern TypeInfo AssertionException_t138_il2cpp_TypeInfo;
+extern TypeInfo Assertions_t139_il2cpp_TypeInfo;
+extern TypeInfo CheckMethod_t142_il2cpp_TypeInfo;
+extern TypeInfo ActionBase_t137_il2cpp_TypeInfo;
+extern TypeInfo ActionBaseGeneric_1_t149_il2cpp_TypeInfo;
+extern TypeInfo BoolComparer_t150_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t152_il2cpp_TypeInfo;
+extern TypeInfo ColliderComparer_t153_il2cpp_TypeInfo;
+extern TypeInfo CompareToType_t156_il2cpp_TypeInfo;
+extern TypeInfo ComparerBase_t157_il2cpp_TypeInfo;
+extern TypeInfo ComparerBaseGeneric_1_t158_il2cpp_TypeInfo;
+extern TypeInfo ComparerBaseGeneric_2_t159_il2cpp_TypeInfo;
+extern TypeInfo CompareTypes_t160_il2cpp_TypeInfo;
+extern TypeInfo FloatComparer_t161_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t163_il2cpp_TypeInfo;
+extern TypeInfo GeneralComparer_t164_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t165_il2cpp_TypeInfo;
+extern TypeInfo IntComparer_t166_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t168_il2cpp_TypeInfo;
+extern TypeInfo IsRenderedByCamera_t169_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t173_il2cpp_TypeInfo;
+extern TypeInfo StringComparer_t174_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t176_il2cpp_TypeInfo;
+extern TypeInfo TransformComparer_t177_il2cpp_TypeInfo;
+extern TypeInfo ValueDoesNotChange_t180_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t181_il2cpp_TypeInfo;
+extern TypeInfo Vector2Comparer_t182_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t185_il2cpp_TypeInfo;
+extern TypeInfo Vector3Comparer_t186_il2cpp_TypeInfo;
+extern TypeInfo CompareType_t189_il2cpp_TypeInfo;
+extern TypeInfo Vector4Comparer_t190_il2cpp_TypeInfo;
+extern TypeInfo VectorComparerBase_1_t193_il2cpp_TypeInfo;
+extern TypeInfo InvalidPathException_t194_il2cpp_TypeInfo;
+extern TypeInfo MemberResolver_t143_il2cpp_TypeInfo;
+extern TypeInfo ITestResult_t234_il2cpp_TypeInfo;
+extern TypeInfo TestResultState_t199_il2cpp_TypeInfo;
+extern TypeInfo GameScore_t200_il2cpp_TypeInfo;
+extern TypeInfo CodeBasedAssertionExample_t201_il2cpp_TypeInfo;
+extern TypeInfo CustomComponent_t202_il2cpp_TypeInfo;
+extern TypeInfo DynamicIntegrationTest_t203_il2cpp_TypeInfo;
+extern TypeInfo CustomException_t204_il2cpp_TypeInfo;
+extern TypeInfo ThrowCustomException_t205_il2cpp_TypeInfo;
+extern TypeInfo ITransferInterface_t210_il2cpp_TypeInfo;
+extern TypeInfo Writer_t206_il2cpp_TypeInfo;
+extern TypeInfo Reader_t207_il2cpp_TypeInfo;
+extern TypeInfo DTOFormatter_t208_il2cpp_TypeInfo;
+extern TypeInfo ITestRunnerCallback_t272_il2cpp_TypeInfo;
+extern TypeInfo ExcludePlatformAttribute_t212_il2cpp_TypeInfo;
+extern TypeInfo ExpectExceptions_t216_il2cpp_TypeInfo;
+extern TypeInfo IgnoreAttribute_t217_il2cpp_TypeInfo;
+extern TypeInfo DynamicTestAttribute_t218_il2cpp_TypeInfo;
+extern TypeInfo SucceedWithAssertions_t219_il2cpp_TypeInfo;
+extern TypeInfo TimeoutAttribute_t220_il2cpp_TypeInfo;
+extern TypeInfo IntegrationTest_t221_il2cpp_TypeInfo;
+extern TypeInfo IntegrationTestAttribute_t222_il2cpp_TypeInfo;
+extern TypeInfo IntegrationTestsProvider_t227_il2cpp_TypeInfo;
+extern TypeInfo NetworkResultSender_t229_il2cpp_TypeInfo;
+extern TypeInfo MessageType_t233_il2cpp_TypeInfo;
+extern TypeInfo ResultDTO_t209_il2cpp_TypeInfo;
+extern TypeInfo SerializableTestResult_t235_il2cpp_TypeInfo;
+extern TypeInfo ITestComponent_t224_il2cpp_TypeInfo;
+extern TypeInfo IncludedPlatforms_t236_il2cpp_TypeInfo;
+extern TypeInfo NullTestComponentImpl_t237_il2cpp_TypeInfo;
+extern TypeInfo U3CGetTypesWithHelpAttributeU3Ec__Iterator1_t240_il2cpp_TypeInfo;
+extern TypeInfo U3CGetTypeByNameU3Ec__AnonStorey3_t242_il2cpp_TypeInfo;
+extern TypeInfo TestComponent_t247_il2cpp_TypeInfo;
+extern TypeInfo ResultType_t249_il2cpp_TypeInfo;
+extern TypeInfo TestResult_t232_il2cpp_TypeInfo;
+extern TypeInfo Styles_t251_il2cpp_TypeInfo;
+extern TypeInfo TestResultRenderer_t256_il2cpp_TypeInfo;
+extern TypeInfo TestState_t258_il2cpp_TypeInfo;
+extern TypeInfo U3CStateMachineU3Ec__Iterator2_t261_il2cpp_TypeInfo;
+extern TypeInfo U3CParseListForGroupsU3Ec__AnonStorey4_t262_il2cpp_TypeInfo;
+extern TypeInfo TestRunner_t259_il2cpp_TypeInfo;
+extern TypeInfo TestRunnerCallbackList_t265_il2cpp_TypeInfo;
+extern TypeInfo TestRunnerConfigurator_t264_il2cpp_TypeInfo;
+extern TypeInfo Functions_t273_il2cpp_TypeInfo;
+extern TypeInfo Method_t274_il2cpp_TypeInfo;
+extern TypeInfo CallTesting_t275_il2cpp_TypeInfo;
 #include "utils/RegisterRuntimeInitializeAndCleanup.h"
 #include <map>
 struct TypeInfo;
 struct MethodInfo;
 TypeInfo* g_AssemblyU2DCSharp_Assembly_Types[95] = 
 {
-	&U3CModuleU3E_t133_il2cpp_TypeInfo,
-	&ChangeUser_t135_il2cpp_TypeInfo,
-	&CustomAttributesSetting_t136_il2cpp_TypeInfo,
-	&LogCustomEvent_t137_il2cpp_TypeInfo,
-	&LogPurchase_t138_il2cpp_TypeInfo,
-	&MainMenu_t139_il2cpp_TypeInfo,
-	&SetCustomAttributes_t142_il2cpp_TypeInfo,
-	&SetCustomAttributesArray_t143_il2cpp_TypeInfo,
-	&SetUserField_t144_il2cpp_TypeInfo,
-	&SubmitFeedback_t145_il2cpp_TypeInfo,
-	&UtilityMethods_t146_il2cpp_TypeInfo,
-	&Constants_t147_il2cpp_TypeInfo,
-	&U3CCheckPeriodicallyU3Ec__Iterator0_t149_il2cpp_TypeInfo,
-	&AssertionComponent_t148_il2cpp_TypeInfo,
-	&IAssertionComponentConfigurator_t297_il2cpp_TypeInfo,
-	&AssertionException_t152_il2cpp_TypeInfo,
-	&Assertions_t153_il2cpp_TypeInfo,
-	&CheckMethod_t156_il2cpp_TypeInfo,
-	&ActionBase_t150_il2cpp_TypeInfo,
-	&ActionBaseGeneric_1_t163_il2cpp_TypeInfo,
-	&BoolComparer_t164_il2cpp_TypeInfo,
-	&CompareType_t166_il2cpp_TypeInfo,
-	&ColliderComparer_t167_il2cpp_TypeInfo,
-	&CompareToType_t170_il2cpp_TypeInfo,
-	&ComparerBase_t171_il2cpp_TypeInfo,
-	&ComparerBaseGeneric_1_t172_il2cpp_TypeInfo,
-	&ComparerBaseGeneric_2_t173_il2cpp_TypeInfo,
-	&CompareTypes_t174_il2cpp_TypeInfo,
-	&FloatComparer_t175_il2cpp_TypeInfo,
-	&CompareType_t177_il2cpp_TypeInfo,
-	&GeneralComparer_t178_il2cpp_TypeInfo,
-	&CompareType_t179_il2cpp_TypeInfo,
-	&IntComparer_t180_il2cpp_TypeInfo,
-	&CompareType_t182_il2cpp_TypeInfo,
-	&IsRenderedByCamera_t183_il2cpp_TypeInfo,
-	&CompareType_t187_il2cpp_TypeInfo,
-	&StringComparer_t188_il2cpp_TypeInfo,
-	&CompareType_t190_il2cpp_TypeInfo,
-	&TransformComparer_t191_il2cpp_TypeInfo,
-	&ValueDoesNotChange_t194_il2cpp_TypeInfo,
-	&CompareType_t195_il2cpp_TypeInfo,
-	&Vector2Comparer_t196_il2cpp_TypeInfo,
-	&CompareType_t199_il2cpp_TypeInfo,
-	&Vector3Comparer_t200_il2cpp_TypeInfo,
-	&CompareType_t203_il2cpp_TypeInfo,
-	&Vector4Comparer_t204_il2cpp_TypeInfo,
-	&VectorComparerBase_1_t207_il2cpp_TypeInfo,
-	&InvalidPathException_t208_il2cpp_TypeInfo,
-	&MemberResolver_t157_il2cpp_TypeInfo,
-	&ITestResult_t247_il2cpp_TypeInfo,
-	&TestResultState_t212_il2cpp_TypeInfo,
-	&GameScore_t213_il2cpp_TypeInfo,
-	&CodeBasedAssertionExample_t214_il2cpp_TypeInfo,
-	&CustomComponent_t215_il2cpp_TypeInfo,
-	&DynamicIntegrationTest_t216_il2cpp_TypeInfo,
-	&CustomException_t217_il2cpp_TypeInfo,
-	&ThrowCustomException_t218_il2cpp_TypeInfo,
-	&ITransferInterface_t223_il2cpp_TypeInfo,
-	&Writer_t219_il2cpp_TypeInfo,
-	&Reader_t220_il2cpp_TypeInfo,
-	&DTOFormatter_t221_il2cpp_TypeInfo,
-	&ITestRunnerCallback_t285_il2cpp_TypeInfo,
-	&ExcludePlatformAttribute_t225_il2cpp_TypeInfo,
-	&ExpectExceptions_t229_il2cpp_TypeInfo,
-	&IgnoreAttribute_t230_il2cpp_TypeInfo,
-	&DynamicTestAttribute_t231_il2cpp_TypeInfo,
-	&SucceedWithAssertions_t232_il2cpp_TypeInfo,
-	&TimeoutAttribute_t233_il2cpp_TypeInfo,
-	&IntegrationTest_t234_il2cpp_TypeInfo,
-	&IntegrationTestAttribute_t235_il2cpp_TypeInfo,
-	&IntegrationTestsProvider_t240_il2cpp_TypeInfo,
-	&NetworkResultSender_t242_il2cpp_TypeInfo,
-	&MessageType_t246_il2cpp_TypeInfo,
-	&ResultDTO_t222_il2cpp_TypeInfo,
-	&SerializableTestResult_t248_il2cpp_TypeInfo,
-	&ITestComponent_t237_il2cpp_TypeInfo,
-	&IncludedPlatforms_t249_il2cpp_TypeInfo,
-	&NullTestComponentImpl_t250_il2cpp_TypeInfo,
-	&U3CGetTypesWithHelpAttributeU3Ec__Iterator1_t253_il2cpp_TypeInfo,
-	&U3CGetTypeByNameU3Ec__AnonStorey3_t255_il2cpp_TypeInfo,
-	&TestComponent_t260_il2cpp_TypeInfo,
-	&ResultType_t262_il2cpp_TypeInfo,
-	&TestResult_t245_il2cpp_TypeInfo,
-	&Styles_t264_il2cpp_TypeInfo,
-	&TestResultRenderer_t269_il2cpp_TypeInfo,
-	&TestState_t271_il2cpp_TypeInfo,
-	&U3CStateMachineU3Ec__Iterator2_t274_il2cpp_TypeInfo,
-	&U3CParseListForGroupsU3Ec__AnonStorey4_t275_il2cpp_TypeInfo,
-	&TestRunner_t272_il2cpp_TypeInfo,
-	&TestRunnerCallbackList_t278_il2cpp_TypeInfo,
-	&TestRunnerConfigurator_t277_il2cpp_TypeInfo,
-	&Functions_t286_il2cpp_TypeInfo,
-	&Method_t287_il2cpp_TypeInfo,
-	&CallTesting_t288_il2cpp_TypeInfo,
+	&U3CModuleU3E_t120_il2cpp_TypeInfo,
+	&ChangeUser_t122_il2cpp_TypeInfo,
+	&CustomAttributesSetting_t123_il2cpp_TypeInfo,
+	&LogCustomEvent_t124_il2cpp_TypeInfo,
+	&LogPurchase_t125_il2cpp_TypeInfo,
+	&MainMenu_t126_il2cpp_TypeInfo,
+	&SetCustomAttributes_t129_il2cpp_TypeInfo,
+	&SetCustomAttributesArray_t130_il2cpp_TypeInfo,
+	&SetUserField_t131_il2cpp_TypeInfo,
+	&SubmitFeedback_t132_il2cpp_TypeInfo,
+	&UtilityMethods_t133_il2cpp_TypeInfo,
+	&Constants_t134_il2cpp_TypeInfo,
+	&U3CCheckPeriodicallyU3Ec__Iterator0_t136_il2cpp_TypeInfo,
+	&AssertionComponent_t135_il2cpp_TypeInfo,
+	&IAssertionComponentConfigurator_t284_il2cpp_TypeInfo,
+	&AssertionException_t138_il2cpp_TypeInfo,
+	&Assertions_t139_il2cpp_TypeInfo,
+	&CheckMethod_t142_il2cpp_TypeInfo,
+	&ActionBase_t137_il2cpp_TypeInfo,
+	&ActionBaseGeneric_1_t149_il2cpp_TypeInfo,
+	&BoolComparer_t150_il2cpp_TypeInfo,
+	&CompareType_t152_il2cpp_TypeInfo,
+	&ColliderComparer_t153_il2cpp_TypeInfo,
+	&CompareToType_t156_il2cpp_TypeInfo,
+	&ComparerBase_t157_il2cpp_TypeInfo,
+	&ComparerBaseGeneric_1_t158_il2cpp_TypeInfo,
+	&ComparerBaseGeneric_2_t159_il2cpp_TypeInfo,
+	&CompareTypes_t160_il2cpp_TypeInfo,
+	&FloatComparer_t161_il2cpp_TypeInfo,
+	&CompareType_t163_il2cpp_TypeInfo,
+	&GeneralComparer_t164_il2cpp_TypeInfo,
+	&CompareType_t165_il2cpp_TypeInfo,
+	&IntComparer_t166_il2cpp_TypeInfo,
+	&CompareType_t168_il2cpp_TypeInfo,
+	&IsRenderedByCamera_t169_il2cpp_TypeInfo,
+	&CompareType_t173_il2cpp_TypeInfo,
+	&StringComparer_t174_il2cpp_TypeInfo,
+	&CompareType_t176_il2cpp_TypeInfo,
+	&TransformComparer_t177_il2cpp_TypeInfo,
+	&ValueDoesNotChange_t180_il2cpp_TypeInfo,
+	&CompareType_t181_il2cpp_TypeInfo,
+	&Vector2Comparer_t182_il2cpp_TypeInfo,
+	&CompareType_t185_il2cpp_TypeInfo,
+	&Vector3Comparer_t186_il2cpp_TypeInfo,
+	&CompareType_t189_il2cpp_TypeInfo,
+	&Vector4Comparer_t190_il2cpp_TypeInfo,
+	&VectorComparerBase_1_t193_il2cpp_TypeInfo,
+	&InvalidPathException_t194_il2cpp_TypeInfo,
+	&MemberResolver_t143_il2cpp_TypeInfo,
+	&ITestResult_t234_il2cpp_TypeInfo,
+	&TestResultState_t199_il2cpp_TypeInfo,
+	&GameScore_t200_il2cpp_TypeInfo,
+	&CodeBasedAssertionExample_t201_il2cpp_TypeInfo,
+	&CustomComponent_t202_il2cpp_TypeInfo,
+	&DynamicIntegrationTest_t203_il2cpp_TypeInfo,
+	&CustomException_t204_il2cpp_TypeInfo,
+	&ThrowCustomException_t205_il2cpp_TypeInfo,
+	&ITransferInterface_t210_il2cpp_TypeInfo,
+	&Writer_t206_il2cpp_TypeInfo,
+	&Reader_t207_il2cpp_TypeInfo,
+	&DTOFormatter_t208_il2cpp_TypeInfo,
+	&ITestRunnerCallback_t272_il2cpp_TypeInfo,
+	&ExcludePlatformAttribute_t212_il2cpp_TypeInfo,
+	&ExpectExceptions_t216_il2cpp_TypeInfo,
+	&IgnoreAttribute_t217_il2cpp_TypeInfo,
+	&DynamicTestAttribute_t218_il2cpp_TypeInfo,
+	&SucceedWithAssertions_t219_il2cpp_TypeInfo,
+	&TimeoutAttribute_t220_il2cpp_TypeInfo,
+	&IntegrationTest_t221_il2cpp_TypeInfo,
+	&IntegrationTestAttribute_t222_il2cpp_TypeInfo,
+	&IntegrationTestsProvider_t227_il2cpp_TypeInfo,
+	&NetworkResultSender_t229_il2cpp_TypeInfo,
+	&MessageType_t233_il2cpp_TypeInfo,
+	&ResultDTO_t209_il2cpp_TypeInfo,
+	&SerializableTestResult_t235_il2cpp_TypeInfo,
+	&ITestComponent_t224_il2cpp_TypeInfo,
+	&IncludedPlatforms_t236_il2cpp_TypeInfo,
+	&NullTestComponentImpl_t237_il2cpp_TypeInfo,
+	&U3CGetTypesWithHelpAttributeU3Ec__Iterator1_t240_il2cpp_TypeInfo,
+	&U3CGetTypeByNameU3Ec__AnonStorey3_t242_il2cpp_TypeInfo,
+	&TestComponent_t247_il2cpp_TypeInfo,
+	&ResultType_t249_il2cpp_TypeInfo,
+	&TestResult_t232_il2cpp_TypeInfo,
+	&Styles_t251_il2cpp_TypeInfo,
+	&TestResultRenderer_t256_il2cpp_TypeInfo,
+	&TestState_t258_il2cpp_TypeInfo,
+	&U3CStateMachineU3Ec__Iterator2_t261_il2cpp_TypeInfo,
+	&U3CParseListForGroupsU3Ec__AnonStorey4_t262_il2cpp_TypeInfo,
+	&TestRunner_t259_il2cpp_TypeInfo,
+	&TestRunnerCallbackList_t265_il2cpp_TypeInfo,
+	&TestRunnerConfigurator_t264_il2cpp_TypeInfo,
+	&Functions_t273_il2cpp_TypeInfo,
+	&Method_t274_il2cpp_TypeInfo,
+	&CallTesting_t275_il2cpp_TypeInfo,
 	NULL,
 };
 extern Il2CppImage g_AssemblyU2DCSharp_dll_Image;

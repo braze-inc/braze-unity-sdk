@@ -5,7 +5,7 @@
 // UnityTest.IntComparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_IntComparer_CompareType.h"
 // UnityTest.IntComparer
-struct IntComparer_t180  : public ComparerBaseGeneric_1_t181
+struct IntComparer_t166  : public ComparerBaseGeneric_1_t167
 {
 	// UnityTest.IntComparer/CompareType UnityTest.IntComparer::compareType
 	int32_t ___compareType_14;

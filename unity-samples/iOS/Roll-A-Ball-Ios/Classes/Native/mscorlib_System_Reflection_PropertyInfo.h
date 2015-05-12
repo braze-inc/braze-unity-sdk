@@ -3,6 +3,6 @@
 // System.Reflection.MemberInfo
 #include "mscorlib_System_Reflection_MemberInfo.h"
 // System.Reflection.PropertyInfo
-struct PropertyInfo_t210  : public MemberInfo_t131
+struct PropertyInfo_t197  : public MemberInfo_t196
 {
 };

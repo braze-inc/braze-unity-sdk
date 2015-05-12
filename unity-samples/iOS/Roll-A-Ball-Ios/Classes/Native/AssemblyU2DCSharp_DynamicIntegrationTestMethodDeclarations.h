@@ -5,9 +5,9 @@
 #include "codegen/il2cpp-codegen.h"
 
 // DynamicIntegrationTest
-struct DynamicIntegrationTest_t216;
+struct DynamicIntegrationTest_t203;
 
 // System.Void DynamicIntegrationTest::.ctor()
- void DynamicIntegrationTest__ctor_m894 (DynamicIntegrationTest_t216 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void DynamicIntegrationTest__ctor_m789 (DynamicIntegrationTest_t203 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void DynamicIntegrationTest::Start()
- void DynamicIntegrationTest_Start_m895 (DynamicIntegrationTest_t216 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void DynamicIntegrationTest_Start_m790 (DynamicIntegrationTest_t203 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

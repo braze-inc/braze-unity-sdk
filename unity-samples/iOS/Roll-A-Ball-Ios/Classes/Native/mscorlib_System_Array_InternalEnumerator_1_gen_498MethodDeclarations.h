@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509Certificate>
-struct InternalEnumerator_1_t4638;
+// System.Array/InternalEnumerator`1<Mono.Security.Protocol.Tls.SecurityCompressionType>
+struct InternalEnumerator_1_t4618;
 // System.Object
 struct Object_t;
-// System.Security.Cryptography.X509Certificates.X509Certificate
-struct X509Certificate_t1471;
 // System.Array
 struct Array_t;
+// Mono.Security.Protocol.Tls.SecurityCompressionType
+#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityCompression.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509Certificate>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m25376(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509Certificate>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25377(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509Certificate>::Dispose()
-#define InternalEnumerator_1_Dispose_m25378(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509Certificate>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m25379(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509Certificate>::get_Current()
-#define InternalEnumerator_1_get_Current_m25380(__this, method) (X509Certificate_t1471 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<Mono.Security.Protocol.Tls.SecurityCompressionType>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m25156 (InternalEnumerator_1_t4618 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<Mono.Security.Protocol.Tls.SecurityCompressionType>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25157 (InternalEnumerator_1_t4618 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<Mono.Security.Protocol.Tls.SecurityCompressionType>::Dispose()
+ void InternalEnumerator_1_Dispose_m25158 (InternalEnumerator_1_t4618 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<Mono.Security.Protocol.Tls.SecurityCompressionType>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m25159 (InternalEnumerator_1_t4618 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<Mono.Security.Protocol.Tls.SecurityCompressionType>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m25160 (InternalEnumerator_1_t4618 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

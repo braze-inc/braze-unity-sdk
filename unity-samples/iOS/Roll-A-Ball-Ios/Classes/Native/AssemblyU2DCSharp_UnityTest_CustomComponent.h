@@ -3,7 +3,7 @@
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // UnityTest.CustomComponent
-struct CustomComponent_t215  : public MonoBehaviour_t2
+struct CustomComponent_t202  : public MonoBehaviour_t2
 {
 	// System.Single UnityTest.CustomComponent::MyFloatField
 	float ___MyFloatField_2;

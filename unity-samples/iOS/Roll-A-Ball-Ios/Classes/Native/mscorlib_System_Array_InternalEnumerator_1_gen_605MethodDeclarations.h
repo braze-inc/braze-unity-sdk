@@ -4,22 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Globalization.DateTimeStyles>
-struct InternalEnumerator_1_t4769;
+// System.Array/InternalEnumerator`1<System.Globalization.Calendar>
+struct InternalEnumerator_1_t4749;
 // System.Object
 struct Object_t;
+// System.Globalization.Calendar
+struct Calendar_t1896;
 // System.Array
 struct Array_t;
-// System.Globalization.DateTimeStyles
-#include "mscorlib_System_Globalization_DateTimeStyles.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Globalization.DateTimeStyles>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m26074 (InternalEnumerator_1_t4769 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<System.Globalization.DateTimeStyles>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26075 (InternalEnumerator_1_t4769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<System.Globalization.DateTimeStyles>::Dispose()
- void InternalEnumerator_1_Dispose_m26076 (InternalEnumerator_1_t4769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<System.Globalization.DateTimeStyles>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m26077 (InternalEnumerator_1_t4769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<System.Globalization.DateTimeStyles>::get_Current()
- int32_t InternalEnumerator_1_get_Current_m26078 (InternalEnumerator_1_t4769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.Globalization.Calendar>::.ctor(System.Array)
+// System.Array/InternalEnumerator`1<System.Object>
+#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
+#define InternalEnumerator_1__ctor_m25854(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Globalization.Calendar>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25855(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Globalization.Calendar>::Dispose()
+#define InternalEnumerator_1_Dispose_m25856(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Globalization.Calendar>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m25857(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Globalization.Calendar>::get_Current()
+#define InternalEnumerator_1_get_Current_m25858(__this, method) (Calendar_t1896 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

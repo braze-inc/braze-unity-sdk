@@ -5,8 +5,8 @@
 // UnityEngine.Vector4
 #include "UnityEngine_UnityEngine_Vector4.h"
 // UnityTest.ComparerBaseGeneric`2<UnityEngine.Vector4,UnityEngine.Vector4>
-struct ComparerBaseGeneric_2_t3101  : public ComparerBase_t171
+struct ComparerBaseGeneric_2_t3081  : public ComparerBase_t157
 {
 	// T2 UnityTest.ComparerBaseGeneric`2<UnityEngine.Vector4,UnityEngine.Vector4>::constantValueGeneric
-	Vector4_t206  ___constantValueGeneric_13;
+	Vector4_t192  ___constantValueGeneric_13;
 };

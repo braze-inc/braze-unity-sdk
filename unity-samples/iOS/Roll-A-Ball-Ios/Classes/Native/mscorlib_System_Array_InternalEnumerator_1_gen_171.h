@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<SpiderReturnMoveController>
-struct InternalEnumerator_1_t3392 
+struct InternalEnumerator_1_t3372 
 {
 	// System.Array System.Array/InternalEnumerator`1<SpiderReturnMoveController>::array
 	Array_t * ___array_0;

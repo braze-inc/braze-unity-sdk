@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.SocialPlatforms.IScore
-struct IScore_t957;
+struct IScore_t946;
 // UnityEngine.SocialPlatforms.IScore[]
-struct IScoreU5BU5D_t958;
+struct IScoreU5BU5D_t947;
 // System.String
 struct String_t;
 // System.String[]
@@ -17,7 +17,7 @@ struct StringU5BU5D_t3;
 // UnityEngine.SocialPlatforms.TimeScope
 #include "UnityEngine_UnityEngine_SocialPlatforms_TimeScope.h"
 // UnityEngine.SocialPlatforms.Impl.Leaderboard
-struct Leaderboard_t833  : public Object_t
+struct Leaderboard_t820  : public Object_t
 {
 	// System.Boolean UnityEngine.SocialPlatforms.Impl.Leaderboard::m_Loading
 	bool ___m_Loading_0;
@@ -26,7 +26,7 @@ struct Leaderboard_t833  : public Object_t
 	// System.UInt32 UnityEngine.SocialPlatforms.Impl.Leaderboard::m_MaxRange
 	uint32_t ___m_MaxRange_2;
 	// UnityEngine.SocialPlatforms.IScore[] UnityEngine.SocialPlatforms.Impl.Leaderboard::m_Scores
-	IScoreU5BU5D_t958* ___m_Scores_3;
+	IScoreU5BU5D_t947* ___m_Scores_3;
 	// System.String UnityEngine.SocialPlatforms.Impl.Leaderboard::m_Title
 	String_t* ___m_Title_4;
 	// System.String[] UnityEngine.SocialPlatforms.Impl.Leaderboard::m_UserIDs
@@ -36,7 +36,7 @@ struct Leaderboard_t833  : public Object_t
 	// UnityEngine.SocialPlatforms.UserScope UnityEngine.SocialPlatforms.Impl.Leaderboard::<userScope>k__BackingField
 	int32_t ___U3CuserScopeU3Ek__BackingField_7;
 	// UnityEngine.SocialPlatforms.Range UnityEngine.SocialPlatforms.Impl.Leaderboard::<range>k__BackingField
-	Range_t959  ___U3CrangeU3Ek__BackingField_8;
+	Range_t948  ___U3CrangeU3Ek__BackingField_8;
 	// UnityEngine.SocialPlatforms.TimeScope UnityEngine.SocialPlatforms.Impl.Leaderboard::<timeScope>k__BackingField
 	int32_t ___U3CtimeScopeU3Ek__BackingField_9;
 };

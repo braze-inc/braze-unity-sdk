@@ -4,26 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Predicate`1<UnityEngine.EventSystems.IEventSystemHandler>
-struct Predicate_1_t3543;
+// System.Predicate`1<UnityEngine.EventSystems.RaycastResult>
+struct Predicate_1_t3553;
 // System.Object
 struct Object_t;
-// UnityEngine.EventSystems.IEventSystemHandler
-struct IEventSystemHandler_t697;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+// UnityEngine.EventSystems.RaycastResult
+#include "UnityEngine_UI_UnityEngine_EventSystems_RaycastResult.h"
 
-// System.Void System.Predicate`1<UnityEngine.EventSystems.IEventSystemHandler>::.ctor(System.Object,System.IntPtr)
-// System.Predicate`1<System.Object>
-#include "mscorlib_System_Predicate_1_gen_3MethodDeclarations.h"
-#define Predicate_1__ctor_m17891(__this, ___object, ___method, method) (void)Predicate_1__ctor_m13085_gshared((Predicate_1_t2771 *)__this, (Object_t *)___object, (IntPtr_t120)___method, method)
-// System.Boolean System.Predicate`1<UnityEngine.EventSystems.IEventSystemHandler>::Invoke(T)
-#define Predicate_1_Invoke_m17892(__this, ___obj, method) (bool)Predicate_1_Invoke_m13086_gshared((Predicate_1_t2771 *)__this, (Object_t *)___obj, method)
-// System.IAsyncResult System.Predicate`1<UnityEngine.EventSystems.IEventSystemHandler>::BeginInvoke(T,System.AsyncCallback,System.Object)
-#define Predicate_1_BeginInvoke_m17893(__this, ___obj, ___callback, ___object, method) (Object_t *)Predicate_1_BeginInvoke_m13087_gshared((Predicate_1_t2771 *)__this, (Object_t *)___obj, (AsyncCallback_t487 *)___callback, (Object_t *)___object, method)
-// System.Boolean System.Predicate`1<UnityEngine.EventSystems.IEventSystemHandler>::EndInvoke(System.IAsyncResult)
-#define Predicate_1_EndInvoke_m17894(__this, ___result, method) (bool)Predicate_1_EndInvoke_m13088_gshared((Predicate_1_t2771 *)__this, (Object_t *)___result, method)
+// System.Void System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::.ctor(System.Object,System.IntPtr)
+ void Predicate_1__ctor_m17993 (Predicate_1_t3553 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::Invoke(T)
+ bool Predicate_1_Invoke_m17994 (Predicate_1_t3553 * __this, RaycastResult_t463  ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.IAsyncResult System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::BeginInvoke(T,System.AsyncCallback,System.Object)
+ Object_t * Predicate_1_BeginInvoke_m17995 (Predicate_1_t3553 * __this, RaycastResult_t463  ___obj, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::EndInvoke(System.IAsyncResult)
+ bool Predicate_1_EndInvoke_m17996 (Predicate_1_t3553 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;

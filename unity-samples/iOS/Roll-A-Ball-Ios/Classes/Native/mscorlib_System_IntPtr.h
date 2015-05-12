@@ -7,12 +7,12 @@
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 // System.IntPtr
-struct IntPtr_t120 
+struct IntPtr_t107 
 {
 	// System.Void* System.IntPtr::m_value
 	void* ___m_value_0;
 };
-struct IntPtr_t120_StaticFields{
+struct IntPtr_t107_StaticFields{
 	// System.IntPtr System.IntPtr::Zero
-	IntPtr_t120 ___Zero_1;
+	IntPtr_t107 ___Zero_1;
 };

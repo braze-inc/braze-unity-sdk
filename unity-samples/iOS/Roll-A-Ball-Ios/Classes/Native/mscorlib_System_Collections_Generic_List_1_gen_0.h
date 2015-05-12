@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <stdint.h>
-// Appboy.Models.InAppMessage.InAppMessageButton[]
-struct InAppMessageButtonU5BU5D_t2807;
+// Appboy.Models.Cards.Card[]
+struct CardU5BU5D_t2795;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<Appboy.Models.InAppMessage.InAppMessageButton>
-struct List_1_t66  : public Object_t
+// System.Collections.Generic.List`1<Appboy.Models.Cards.Card>
+struct List_1_t10  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<Appboy.Models.InAppMessage.InAppMessageButton>::_items
-	InAppMessageButtonU5BU5D_t2807* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<Appboy.Models.InAppMessage.InAppMessageButton>::_size
+	// T[] System.Collections.Generic.List`1<Appboy.Models.Cards.Card>::_items
+	CardU5BU5D_t2795* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<Appboy.Models.Cards.Card>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<Appboy.Models.InAppMessage.InAppMessageButton>::_version
+	// System.Int32 System.Collections.Generic.List`1<Appboy.Models.Cards.Card>::_version
 	int32_t ____version_3;
 };
-struct List_1_t66_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<Appboy.Models.InAppMessage.InAppMessageButton>::DefaultCapacity
+struct List_1_t10_StaticFields{
+	// System.Int32 System.Collections.Generic.List`1<Appboy.Models.Cards.Card>::DefaultCapacity
 	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<Appboy.Models.InAppMessage.InAppMessageButton>::EmptyArray
-	InAppMessageButtonU5BU5D_t2807* ___EmptyArray_4;
+	// T[] System.Collections.Generic.List`1<Appboy.Models.Cards.Card>::EmptyArray
+	CardU5BU5D_t2795* ___EmptyArray_4;
 };

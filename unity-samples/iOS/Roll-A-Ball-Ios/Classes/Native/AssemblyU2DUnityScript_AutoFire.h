@@ -1,20 +1,20 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.GameObject
-struct GameObject_t154;
+struct GameObject_t140;
 // UnityEngine.Transform
-struct Transform_t193;
+struct Transform_t179;
 // PerFrameRaycast
-struct PerFrameRaycast_t420;
+struct PerFrameRaycast_t408;
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // AutoFire
-struct AutoFire_t446  : public MonoBehaviour_t2
+struct AutoFire_t433  : public MonoBehaviour_t2
 {
 	// UnityEngine.GameObject AutoFire::bulletPrefab
-	GameObject_t154 * ___bulletPrefab_2;
+	GameObject_t140 * ___bulletPrefab_2;
 	// UnityEngine.Transform AutoFire::spawnPoint
-	Transform_t193 * ___spawnPoint_3;
+	Transform_t179 * ___spawnPoint_3;
 	// System.Single AutoFire::frequency
 	float ___frequency_4;
 	// System.Single AutoFire::coneAngle
@@ -28,9 +28,9 @@ struct AutoFire_t446  : public MonoBehaviour_t2
 	// System.Single AutoFire::hitSoundVolume
 	float ___hitSoundVolume_9;
 	// UnityEngine.GameObject AutoFire::muzzleFlashFront
-	GameObject_t154 * ___muzzleFlashFront_10;
+	GameObject_t140 * ___muzzleFlashFront_10;
 	// System.Single AutoFire::lastFireTime
 	float ___lastFireTime_11;
 	// PerFrameRaycast AutoFire::raycast
-	PerFrameRaycast_t420 * ___raycast_12;
+	PerFrameRaycast_t408 * ___raycast_12;
 };

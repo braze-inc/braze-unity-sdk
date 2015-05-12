@@ -3,6 +3,6 @@
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Runtime.Remoting.Activation.ConstructionLevelActivator
-struct ConstructionLevelActivator_t2043  : public Object_t
+struct ConstructionLevelActivator_t2031  : public Object_t
 {
 };

@@ -5,7 +5,7 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Generic.List`1/Enumerator
-struct Enumerator_t1877;
+struct Enumerator_t1865;
 // System.Object
 struct Object_t;
 

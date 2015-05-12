@@ -5,7 +5,7 @@
 // System.Runtime.Serialization.Formatters.Binary.TypeTag
 #include "mscorlib_System_Runtime_Serialization_Formatters_Binary_Type.h"
 // System.Runtime.Serialization.Formatters.Binary.TypeTag
-struct TypeTag_t2115 
+struct TypeTag_t2103 
 {
 	// System.Byte System.Runtime.Serialization.Formatters.Binary.TypeTag::value__
 	uint8_t ___value___1;

@@ -5,11 +5,11 @@
 #include "codegen/il2cpp-codegen.h"
 
 // PatrolPoint
-struct PatrolPoint_t388;
+struct PatrolPoint_t376;
 
 // System.Void PatrolPoint::.ctor()
- void PatrolPoint__ctor_m1697 (PatrolPoint_t388 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void PatrolPoint__ctor_m1591 (PatrolPoint_t376 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PatrolPoint::Awake()
- void PatrolPoint_Awake_m1698 (PatrolPoint_t388 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void PatrolPoint_Awake_m1592 (PatrolPoint_t376 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PatrolPoint::Main()
- void PatrolPoint_Main_m1699 (PatrolPoint_t388 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void PatrolPoint_Main_m1593 (PatrolPoint_t376 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

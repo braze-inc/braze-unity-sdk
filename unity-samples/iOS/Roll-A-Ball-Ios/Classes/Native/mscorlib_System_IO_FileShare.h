@@ -5,7 +5,7 @@
 // System.IO.FileShare
 #include "mscorlib_System_IO_FileShare.h"
 // System.IO.FileShare
-struct FileShare_t1932 
+struct FileShare_t1920 
 {
 	// System.Int32 System.IO.FileShare::value__
 	int32_t ___value___1;

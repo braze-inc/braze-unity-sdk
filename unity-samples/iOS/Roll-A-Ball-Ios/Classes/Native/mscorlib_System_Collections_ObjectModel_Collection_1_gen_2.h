@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.IList`1<Appboy.Models.Cards.Card>
-struct IList_1_t2830;
+// System.Collections.Generic.IList`1<Appboy.Utilities.JSONNode>
+struct IList_1_t2864;
 // System.Object
 struct Object_t;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.ObjectModel.Collection`1<Appboy.Models.Cards.Card>
-struct Collection_1_t2831  : public Object_t
+// System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>
+struct Collection_1_t2865  : public Object_t
 {
-	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.Collection`1<Appboy.Models.Cards.Card>::list
+	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::list
 	Object_t* ___list_0;
-	// System.Object System.Collections.ObjectModel.Collection`1<Appboy.Models.Cards.Card>::syncRoot
+	// System.Object System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::syncRoot
 	Object_t * ___syncRoot_1;
 };

@@ -5,7 +5,7 @@
 // UnityTest.TransformComparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_TransformComparer_CompareType.h"
 // UnityTest.TransformComparer/CompareType
-struct CompareType_t190 
+struct CompareType_t176 
 {
 	// System.Int32 UnityTest.TransformComparer/CompareType::value__
 	int32_t ___value___1;

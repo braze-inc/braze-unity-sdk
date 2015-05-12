@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.Security.Policy.IBuiltInEvidence>
-struct InternalEnumerator_1_t4887 
+// System.Array/InternalEnumerator`1<System.Security.Cryptography.PaddingMode>
+struct InternalEnumerator_1_t4867 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.Security.Policy.IBuiltInEvidence>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Security.Cryptography.PaddingMode>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.Security.Policy.IBuiltInEvidence>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Security.Cryptography.PaddingMode>::idx
 	int32_t ___idx_1;
 };

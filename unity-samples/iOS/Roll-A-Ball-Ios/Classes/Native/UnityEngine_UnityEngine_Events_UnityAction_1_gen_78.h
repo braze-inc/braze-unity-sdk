@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// PerFrameRaycast
-struct PerFrameRaycast_t420;
+struct Void_t62;
+// Health
+struct Health_t434;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<PerFrameRaycast>
-struct UnityAction_1_t3511  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<Health>
+struct UnityAction_1_t3482  : public MulticastDelegate_t594
 {
 };

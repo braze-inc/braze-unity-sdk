@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Appboy.Models.CardCategory
-struct CardCategory_t45;
+struct CardCategory_t47;
 

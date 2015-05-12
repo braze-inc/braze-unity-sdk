@@ -5,10 +5,10 @@
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 // System.Reflection.MonoEvent
-struct MonoEvent_t1992  : public EventInfo_t1765
+struct MonoEvent_t1980  : public EventInfo_t1753
 {
 	// System.IntPtr System.Reflection.MonoEvent::klass
-	IntPtr_t120 ___klass_1;
+	IntPtr_t107 ___klass_1;
 	// System.IntPtr System.Reflection.MonoEvent::handle
-	IntPtr_t120 ___handle_2;
+	IntPtr_t107 ___handle_2;
 };

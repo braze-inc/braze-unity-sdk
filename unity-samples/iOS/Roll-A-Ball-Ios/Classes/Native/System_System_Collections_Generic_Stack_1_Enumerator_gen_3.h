@@ -1,14 +1,14 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Collections.Generic.Stack`1<System.Collections.Generic.List`1<UnityEngine.Canvas>>
-struct Stack_1_t4110;
+struct Stack_1_t4090;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.Canvas>>
-struct Enumerator_t4113 
+struct Enumerator_t4093 
 {
 	// System.Collections.Generic.Stack`1<T> System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.Canvas>>::parent
-	Stack_1_t4110 * ___parent_0;
+	Stack_1_t4090 * ___parent_0;
 	// System.Int32 System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.Canvas>>::idx
 	int32_t ___idx_1;
 	// System.Int32 System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.Canvas>>::_version

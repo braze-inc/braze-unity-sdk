@@ -1,17 +1,17 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Collections.Generic.IEnumerable`1<ITestResult>
-struct IEnumerable_1_t3276;
+struct IEnumerable_1_t3256;
 // System.Collections.Generic.IEnumerator`1<ITestResult>
-struct IEnumerator_1_t3277;
+struct IEnumerator_1_t3257;
 // ITestResult
-struct ITestResult_t247;
+struct ITestResult_t234;
 // System.Func`2<ITestResult,System.Boolean>
-struct Func_2_t267;
+struct Func_2_t254;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>
-struct U3CCreateWhereIteratorU3Ec__Iterator1D_1_t3303  : public Object_t
+struct U3CCreateWhereIteratorU3Ec__Iterator1D_1_t3283  : public Object_t
 {
 	// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::source
 	Object_t* ___source_0;
@@ -20,7 +20,7 @@ struct U3CCreateWhereIteratorU3Ec__Iterator1D_1_t3303  : public Object_t
 	// TSource System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::<element>__1
 	Object_t * ___U3CelementU3E__1_2;
 	// System.Func`2<TSource,System.Boolean> System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::predicate
-	Func_2_t267 * ___predicate_3;
+	Func_2_t254 * ___predicate_3;
 	// System.Int32 System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::$PC
 	int32_t ___$PC_4;
 	// TSource System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::$current
@@ -28,5 +28,5 @@ struct U3CCreateWhereIteratorU3Ec__Iterator1D_1_t3303  : public Object_t
 	// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::<$>source
 	Object_t* ___U3C$U3Esource_6;
 	// System.Func`2<TSource,System.Boolean> System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1<ITestResult>::<$>predicate
-	Func_2_t267 * ___U3C$U3Epredicate_7;
+	Func_2_t254 * ___U3C$U3Epredicate_7;
 };

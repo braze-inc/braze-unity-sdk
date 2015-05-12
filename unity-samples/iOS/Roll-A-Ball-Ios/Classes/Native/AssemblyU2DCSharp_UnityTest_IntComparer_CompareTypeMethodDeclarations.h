@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.IntComparer/CompareType
-struct CompareType_t179;
+struct CompareType_t165;
 

@@ -1,14 +1,14 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.GameObject
-struct GameObject_t154;
+struct GameObject_t140;
 // System.Object
 #include "mscorlib_System_Object.h"
 // ExplosionPart
-struct ExplosionPart_t370  : public Object_t
+struct ExplosionPart_t358  : public Object_t
 {
 	// UnityEngine.GameObject ExplosionPart::gameObject
-	GameObject_t154 * ___gameObject_0;
+	GameObject_t140 * ___gameObject_0;
 	// System.Single ExplosionPart::delay
 	float ___delay_1;
 	// System.Boolean ExplosionPart::hqOnly

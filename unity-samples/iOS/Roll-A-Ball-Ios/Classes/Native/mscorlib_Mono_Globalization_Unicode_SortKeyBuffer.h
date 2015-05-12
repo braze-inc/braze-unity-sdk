@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Byte[]
-struct ByteU5BU5D_t112;
+struct ByteU5BU5D_t97;
 // System.String
 struct String_t;
 // System.Object
@@ -9,7 +9,7 @@ struct String_t;
 // System.Globalization.CompareOptions
 #include "mscorlib_System_Globalization_CompareOptions.h"
 // Mono.Globalization.Unicode.SortKeyBuffer
-struct SortKeyBuffer_t1808  : public Object_t
+struct SortKeyBuffer_t1796  : public Object_t
 {
 	// System.Int32 Mono.Globalization.Unicode.SortKeyBuffer::l1
 	int32_t ___l1_0;
@@ -28,21 +28,21 @@ struct SortKeyBuffer_t1808  : public Object_t
 	// System.Int32 Mono.Globalization.Unicode.SortKeyBuffer::l5
 	int32_t ___l5_7;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l1b
-	ByteU5BU5D_t112* ___l1b_8;
+	ByteU5BU5D_t97* ___l1b_8;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l2b
-	ByteU5BU5D_t112* ___l2b_9;
+	ByteU5BU5D_t97* ___l2b_9;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l3b
-	ByteU5BU5D_t112* ___l3b_10;
+	ByteU5BU5D_t97* ___l3b_10;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l4sb
-	ByteU5BU5D_t112* ___l4sb_11;
+	ByteU5BU5D_t97* ___l4sb_11;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l4tb
-	ByteU5BU5D_t112* ___l4tb_12;
+	ByteU5BU5D_t97* ___l4tb_12;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l4kb
-	ByteU5BU5D_t112* ___l4kb_13;
+	ByteU5BU5D_t97* ___l4kb_13;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l4wb
-	ByteU5BU5D_t112* ___l4wb_14;
+	ByteU5BU5D_t97* ___l4wb_14;
 	// System.Byte[] Mono.Globalization.Unicode.SortKeyBuffer::l5b
-	ByteU5BU5D_t112* ___l5b_15;
+	ByteU5BU5D_t97* ___l5b_15;
 	// System.String Mono.Globalization.Unicode.SortKeyBuffer::source
 	String_t* ___source_16;
 	// System.Boolean Mono.Globalization.Unicode.SortKeyBuffer::processLevel2

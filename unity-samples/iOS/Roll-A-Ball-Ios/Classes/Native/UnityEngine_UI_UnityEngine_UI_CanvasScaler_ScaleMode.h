@@ -5,7 +5,7 @@
 // UnityEngine.UI.CanvasScaler/ScaleMode
 #include "UnityEngine_UI_UnityEngine_UI_CanvasScaler_ScaleMode.h"
 // UnityEngine.UI.CanvasScaler/ScaleMode
-struct ScaleMode_t658 
+struct ScaleMode_t644 
 {
 	// System.Int32 UnityEngine.UI.CanvasScaler/ScaleMode::value__
 	int32_t ___value___1;

@@ -3,6 +3,6 @@
 // System.Exception
 #include "mscorlib_System_Exception.h"
 // UnityTest.InvalidPathException
-struct InvalidPathException_t208  : public Exception_t82
+struct InvalidPathException_t194  : public Exception_t71
 {
 };

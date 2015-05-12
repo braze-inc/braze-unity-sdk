@@ -3,12 +3,12 @@
 // System.Object
 struct Object_t;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
 // System.Reflection.MonoProperty/Getter`2<System.Object,System.Object>
-struct Getter_2_t4819  : public MulticastDelegate_t608
+struct Getter_2_t4801  : public MulticastDelegate_t594
 {
 };

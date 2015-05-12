@@ -3,6 +3,6 @@
 // System.Exception
 #include "mscorlib_System_Exception.h"
 // System.Reflection.TargetParameterCountException
-struct TargetParameterCountException_t2011  : public Exception_t82
+struct TargetParameterCountException_t1999  : public Exception_t71
 {
 };

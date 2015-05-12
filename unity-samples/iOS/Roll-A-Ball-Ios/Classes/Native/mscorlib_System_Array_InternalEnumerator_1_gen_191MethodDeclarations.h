@@ -5,23 +5,23 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Array/InternalEnumerator`1<PlaySound>
-struct InternalEnumerator_1_t3459;
+struct InternalEnumerator_1_t3439;
 // System.Object
 struct Object_t;
 // PlaySound
-struct PlaySound_t429;
+struct PlaySound_t417;
 // System.Array
 struct Array_t;
 
 // System.Void System.Array/InternalEnumerator`1<PlaySound>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m17377(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
+#define InternalEnumerator_1__ctor_m17157(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
 // System.Object System.Array/InternalEnumerator`1<PlaySound>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m17378(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m17158(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Void System.Array/InternalEnumerator`1<PlaySound>::Dispose()
-#define InternalEnumerator_1_Dispose_m17379(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_Dispose_m17159(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Boolean System.Array/InternalEnumerator`1<PlaySound>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m17380(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_MoveNext_m17160(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // T System.Array/InternalEnumerator`1<PlaySound>::get_Current()
-#define InternalEnumerator_1_get_Current_m17381(__this, method) (PlaySound_t429 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_get_Current_m17161(__this, method) (PlaySound_t417 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

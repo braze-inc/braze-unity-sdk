@@ -5,7 +5,7 @@ struct String_t;
 // System.Attribute
 #include "mscorlib_System_Attribute.h"
 // System.Resources.NeutralResourcesLanguageAttribute
-struct NeutralResourcesLanguageAttribute_t1175  : public Attribute_t226
+struct NeutralResourcesLanguageAttribute_t1164  : public Attribute_t213
 {
 	// System.String System.Resources.NeutralResourcesLanguageAttribute::culture
 	String_t* ___culture_0;

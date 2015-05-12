@@ -1,13 +1,13 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Collections.Generic.IList`1<System.String>
-struct IList_1_t44;
+struct IList_1_t46;
 // System.String
 struct String_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // Appboy.Models.ApplePushNotificationAlert
-struct ApplePushNotificationAlert_t41  : public Object_t
+struct ApplePushNotificationAlert_t43  : public Object_t
 {
 	// System.Collections.Generic.IList`1<System.String> Appboy.Models.ApplePushNotificationAlert::<LocationArguments>k__BackingField
 	Object_t* ___U3CLocationArgumentsU3Ek__BackingField_0;

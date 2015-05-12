@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Runtime.InteropServices.TypeLibImportClassAttribute>
-struct InternalEnumerator_1_t4845;
+// System.Array/InternalEnumerator`1<System.Runtime.InteropServices.InterfaceTypeAttribute>
+struct InternalEnumerator_1_t4825;
 // System.Object
 struct Object_t;
-// System.Runtime.InteropServices.TypeLibImportClassAttribute
-struct TypeLibImportClassAttribute_t2036;
+// System.Runtime.InteropServices.InterfaceTypeAttribute
+struct InterfaceTypeAttribute_t2020;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.TypeLibImportClassAttribute>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.InterfaceTypeAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m26452(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Runtime.InteropServices.TypeLibImportClassAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26453(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.TypeLibImportClassAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m26454(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.InteropServices.TypeLibImportClassAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m26455(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Runtime.InteropServices.TypeLibImportClassAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m26456(__this, method) (TypeLibImportClassAttribute_t2036 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m26232(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Runtime.InteropServices.InterfaceTypeAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26233(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.InterfaceTypeAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m26234(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.InteropServices.InterfaceTypeAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m26235(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Runtime.InteropServices.InterfaceTypeAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m26236(__this, method) (InterfaceTypeAttribute_t2020 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Runtime.InteropServices.OptionalAttribute>
-struct InternalEnumerator_1_t4734;
+// System.Array/InternalEnumerator`1<System.Reflection.AssemblyVersionAttribute>
+struct InternalEnumerator_1_t4714;
 // System.Object
 struct Object_t;
-// System.Runtime.InteropServices.OptionalAttribute
-struct OptionalAttribute_t1773;
+// System.Reflection.AssemblyVersionAttribute
+struct AssemblyVersionAttribute_t1125;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.OptionalAttribute>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.AssemblyVersionAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m25909(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Runtime.InteropServices.OptionalAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25910(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.OptionalAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m25911(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.InteropServices.OptionalAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m25912(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Runtime.InteropServices.OptionalAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m25913(__this, method) (OptionalAttribute_t1773 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m25689(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Reflection.AssemblyVersionAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25690(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.AssemblyVersionAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m25691(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Reflection.AssemblyVersionAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m25692(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Reflection.AssemblyVersionAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m25693(__this, method) (AssemblyVersionAttribute_t1125 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

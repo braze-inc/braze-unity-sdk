@@ -5,10 +5,10 @@ struct String_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // Utilities.Constants
-struct Constants_t147  : public Object_t
+struct Constants_t134  : public Object_t
 {
 };
-struct Constants_t147_StaticFields{
+struct Constants_t134_StaticFields{
 	// System.String Utilities.Constants::MainMenuScene
 	String_t* ___MainMenuScene_0;
 	// System.String Utilities.Constants::SetCustomAttributesScene

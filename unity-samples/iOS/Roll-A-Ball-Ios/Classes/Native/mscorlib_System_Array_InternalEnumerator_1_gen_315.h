@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<UnityEngine.UI.CanvasScaler/Unit>
-struct InternalEnumerator_1_t4053 
+struct InternalEnumerator_1_t4033 
 {
 	// System.Array System.Array/InternalEnumerator`1<UnityEngine.UI.CanvasScaler/Unit>::array
 	Array_t * ___array_0;

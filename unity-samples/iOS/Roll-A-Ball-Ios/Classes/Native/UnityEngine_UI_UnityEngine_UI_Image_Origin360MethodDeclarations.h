@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.Image/Origin360
-struct Origin360_t594;
+struct Origin360_t580;
 

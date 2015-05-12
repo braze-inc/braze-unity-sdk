@@ -1,14 +1,14 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>
-struct EqualityComparer_1_t4604;
+// System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>
+struct EqualityComparer_1_t4588;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>
-struct EqualityComparer_1_t4604  : public Object_t
+// System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>
+struct EqualityComparer_1_t4588  : public Object_t
 {
 };
-struct EqualityComparer_1_t4604_StaticFields{
-	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::_default
-	EqualityComparer_1_t4604 * ____default_0;
+struct EqualityComparer_1_t4588_StaticFields{
+	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.Dispatcher>::_default
+	EqualityComparer_1_t4588 * ____default_0;
 };

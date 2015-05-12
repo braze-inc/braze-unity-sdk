@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.Void
@@ -12,8 +12,8 @@ struct Object_t;
 #include "mscorlib_System_Boolean.h"
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo Boolean_t74_il2cpp_TypeInfo;
+extern TypeInfo Boolean_t64_il2cpp_TypeInfo;
 // System.Action`1<System.Boolean>
-struct Action_1_t814  : public MulticastDelegate_t608
+struct Action_1_t801  : public MulticastDelegate_t594
 {
 };

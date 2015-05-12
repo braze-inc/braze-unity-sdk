@@ -5,15 +5,15 @@
 #include "codegen/il2cpp-codegen.h"
 
 // SetCustomAttributesArray
-struct SetCustomAttributesArray_t143;
+struct SetCustomAttributesArray_t130;
 
 // System.Void SetCustomAttributesArray::.ctor()
- void SetCustomAttributesArray__ctor_m738 (SetCustomAttributesArray_t143 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void SetCustomAttributesArray__ctor_m633 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnBackButtonClick()
- void SetCustomAttributesArray_OnBackButtonClick_m739 (SetCustomAttributesArray_t143 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void SetCustomAttributesArray_OnBackButtonClick_m634 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnSetArrayButtonClick()
- void SetCustomAttributesArray_OnSetArrayButtonClick_m740 (SetCustomAttributesArray_t143 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void SetCustomAttributesArray_OnSetArrayButtonClick_m635 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnAddStringButtonClick()
- void SetCustomAttributesArray_OnAddStringButtonClick_m741 (SetCustomAttributesArray_t143 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void SetCustomAttributesArray_OnAddStringButtonClick_m636 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnRemoveStringButtonClick()
- void SetCustomAttributesArray_OnRemoveStringButtonClick_m742 (SetCustomAttributesArray_t143 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void SetCustomAttributesArray_OnRemoveStringButtonClick_m637 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

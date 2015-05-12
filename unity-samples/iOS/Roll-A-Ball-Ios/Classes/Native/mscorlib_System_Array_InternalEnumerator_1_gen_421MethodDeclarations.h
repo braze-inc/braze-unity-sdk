@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<UnityEngine.CanvasRenderer>
-struct InternalEnumerator_1_t4442;
+// System.Array/InternalEnumerator`1<UnityEngine.VerticalWrapMode>
+struct InternalEnumerator_1_t4390;
 // System.Object
 struct Object_t;
-// UnityEngine.CanvasRenderer
-struct CanvasRenderer_t574;
 // System.Array
 struct Array_t;
+// UnityEngine.VerticalWrapMode
+#include "UnityEngine_UnityEngine_VerticalWrapMode.h"
 
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.CanvasRenderer>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m23993(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<UnityEngine.CanvasRenderer>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23994(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.CanvasRenderer>::Dispose()
-#define InternalEnumerator_1_Dispose_m23995(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.CanvasRenderer>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m23996(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<UnityEngine.CanvasRenderer>::get_Current()
-#define InternalEnumerator_1_get_Current_m23997(__this, method) (CanvasRenderer_t574 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.VerticalWrapMode>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m23457 (InternalEnumerator_1_t4390 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<UnityEngine.VerticalWrapMode>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23458 (InternalEnumerator_1_t4390 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.VerticalWrapMode>::Dispose()
+ void InternalEnumerator_1_Dispose_m23459 (InternalEnumerator_1_t4390 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.VerticalWrapMode>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m23460 (InternalEnumerator_1_t4390 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<UnityEngine.VerticalWrapMode>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m23461 (InternalEnumerator_1_t4390 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

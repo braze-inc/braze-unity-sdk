@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<Appboy.Models.CardCategory>
-struct InternalEnumerator_1_t2913 
+// System.Array/InternalEnumerator`1<Appboy.Models.AppboyNotificationSubscriptionType>
+struct InternalEnumerator_1_t2882 
 {
-	// System.Array System.Array/InternalEnumerator`1<Appboy.Models.CardCategory>::array
+	// System.Array System.Array/InternalEnumerator`1<Appboy.Models.AppboyNotificationSubscriptionType>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<Appboy.Models.CardCategory>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<Appboy.Models.AppboyNotificationSubscriptionType>::idx
 	int32_t ___idx_1;
 };

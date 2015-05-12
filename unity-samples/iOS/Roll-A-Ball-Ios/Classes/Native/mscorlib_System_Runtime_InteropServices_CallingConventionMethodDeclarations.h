@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.InteropServices.CallingConvention
-struct CallingConvention_t2023;
+struct CallingConvention_t2011;
 

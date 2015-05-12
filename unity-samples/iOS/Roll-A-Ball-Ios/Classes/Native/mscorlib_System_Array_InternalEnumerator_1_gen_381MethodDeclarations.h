@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<UnityEngine.SerializePrivateVariables>
-struct InternalEnumerator_1_t4279;
+// System.Array/InternalEnumerator`1<UnityEngine.RectTransform/Axis>
+struct InternalEnumerator_1_t4256;
 // System.Object
 struct Object_t;
-// UnityEngine.SerializePrivateVariables
-struct SerializePrivateVariables_t882;
 // System.Array
 struct Array_t;
+// UnityEngine.RectTransform/Axis
+#include "UnityEngine_UnityEngine_RectTransform_Axis.h"
 
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.SerializePrivateVariables>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m23078(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<UnityEngine.SerializePrivateVariables>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23079(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.SerializePrivateVariables>::Dispose()
-#define InternalEnumerator_1_Dispose_m23080(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.SerializePrivateVariables>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m23081(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<UnityEngine.SerializePrivateVariables>::get_Current()
-#define InternalEnumerator_1_get_Current_m23082(__this, method) (SerializePrivateVariables_t882 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.RectTransform/Axis>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m22848 (InternalEnumerator_1_t4256 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<UnityEngine.RectTransform/Axis>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m22849 (InternalEnumerator_1_t4256 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.RectTransform/Axis>::Dispose()
+ void InternalEnumerator_1_Dispose_m22850 (InternalEnumerator_1_t4256 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.RectTransform/Axis>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m22851 (InternalEnumerator_1_t4256 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<UnityEngine.RectTransform/Axis>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m22852 (InternalEnumerator_1_t4256 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

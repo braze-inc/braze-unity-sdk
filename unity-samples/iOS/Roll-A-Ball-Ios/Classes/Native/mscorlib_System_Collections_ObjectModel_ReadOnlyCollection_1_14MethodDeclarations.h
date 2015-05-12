@@ -4,82 +4,80 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>
-struct ReadOnlyCollection_1_t3559;
-// UnityEngine.Component
-struct Component_t276;
+// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>
+struct ReadOnlyCollection_1_t3552;
 // System.Object
 struct Object_t;
-// System.Collections.Generic.IList`1<UnityEngine.Component>
-struct IList_1_t3562;
+// System.Collections.Generic.IList`1<UnityEngine.EventSystems.RaycastResult>
+struct IList_1_t3556;
 // System.Array
 struct Array_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
-// UnityEngine.Component[]
-struct ComponentU5BU5D_t365;
-// System.Collections.Generic.IEnumerator`1<UnityEngine.Component>
-struct IEnumerator_1_t3318;
+struct IEnumerator_t21;
+// UnityEngine.EventSystems.RaycastResult[]
+struct RaycastResultU5BU5D_t3548;
+// System.Collections.Generic.IEnumerator`1<UnityEngine.EventSystems.RaycastResult>
+struct IEnumerator_1_t3550;
+// UnityEngine.EventSystems.RaycastResult
+#include "UnityEngine_UI_UnityEngine_EventSystems_RaycastResult.h"
 
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::.ctor(System.Collections.Generic.IList`1<T>)
-// System.Collections.ObjectModel.ReadOnlyCollection`1<System.Object>
-#include "mscorlib_System_Collections_ObjectModel_ReadOnlyCollection_1_0MethodDeclarations.h"
-#define ReadOnlyCollection_1__ctor_m17994(__this, ___list, method) (void)ReadOnlyCollection_1__ctor_m12981_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t*)___list, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.ICollection<T>.Add(T)
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m17995(__this, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m12982_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.ICollection<T>.Clear()
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m17996(__this, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m12983_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.IList<T>.Insert(System.Int32,T)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m17997(__this, ___index, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m12984_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.ICollection<T>.Remove(T)
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m17998(__this, ___item, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m12985_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m17999(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m12986_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.IList<T>.get_Item(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m18000(__this, ___index, method) (Component_t276 *)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m12987_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.IList<T>.set_Item(System.Int32,T)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m18001(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m12988_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m18002(__this, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12989_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-#define ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m18003(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m12990_gshared((ReadOnlyCollection_1_t2773 *)__this, (Array_t *)___array, (int32_t)___index, method)
-// System.Collections.IEnumerator System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IEnumerable.GetEnumerator()
-#define ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m18004(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m12991_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.Add(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Add_m18005(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_Add_m12992_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.Clear()
-#define ReadOnlyCollection_1_System_Collections_IList_Clear_m18006(__this, method) (void)ReadOnlyCollection_1_System_Collections_IList_Clear_m12993_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.Contains(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Contains_m18007(__this, ___value, method) (bool)ReadOnlyCollection_1_System_Collections_IList_Contains_m12994_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.IndexOf(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_IndexOf_m18008(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_IndexOf_m12995_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.Insert(System.Int32,System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Insert_m18009(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Insert_m12996_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.Remove(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Remove_m18010(__this, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Remove_m12997_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.RemoveAt(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m18011(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m12998_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.ICollection.get_IsSynchronized()
-#define ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m18012(__this, method) (bool)ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m12999_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.ICollection.get_SyncRoot()
-#define ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m18013(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m13000_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.get_IsFixedSize()
-#define ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m18014(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m13001_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.get_IsReadOnly()
-#define ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m18015(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m13002_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.get_Item(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_IList_get_Item_m18016(__this, ___index, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IList_get_Item_m13003_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::System.Collections.IList.set_Item(System.Int32,System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_set_Item_m18017(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_set_Item_m13004_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::Contains(T)
-#define ReadOnlyCollection_1_Contains_m18018(__this, ___value, method) (bool)ReadOnlyCollection_1_Contains_m13005_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::CopyTo(T[],System.Int32)
-#define ReadOnlyCollection_1_CopyTo_m18019(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_CopyTo_m13006_gshared((ReadOnlyCollection_1_t2773 *)__this, (ObjectU5BU5D_t96*)___array, (int32_t)___index, method)
-// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::GetEnumerator()
-#define ReadOnlyCollection_1_GetEnumerator_m18020(__this, method) (Object_t*)ReadOnlyCollection_1_GetEnumerator_m13007_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::IndexOf(T)
-#define ReadOnlyCollection_1_IndexOf_m18021(__this, ___value, method) (int32_t)ReadOnlyCollection_1_IndexOf_m13008_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::get_Count()
-#define ReadOnlyCollection_1_get_Count_m18022(__this, method) (int32_t)ReadOnlyCollection_1_get_Count_m13009_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.Component>::get_Item(System.Int32)
-#define ReadOnlyCollection_1_get_Item_m18023(__this, ___index, method) (Component_t276 *)ReadOnlyCollection_1_get_Item_m13010_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::.ctor(System.Collections.Generic.IList`1<T>)
+ void ReadOnlyCollection_1__ctor_m17919 (ReadOnlyCollection_1_t3552 * __this, Object_t* ___list, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.ICollection<T>.Add(T)
+ void ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m17920 (ReadOnlyCollection_1_t3552 * __this, RaycastResult_t463  ___item, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.ICollection<T>.Clear()
+ void ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m17921 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.IList<T>.Insert(System.Int32,T)
+ void ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m17922 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, RaycastResult_t463  ___item, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.ICollection<T>.Remove(T)
+ bool ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m17923 (ReadOnlyCollection_1_t3552 * __this, RaycastResult_t463  ___item, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
+ void ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m17924 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.IList<T>.get_Item(System.Int32)
+ RaycastResult_t463  ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m17925 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.IList<T>.set_Item(System.Int32,T)
+ void ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m17926 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, RaycastResult_t463  ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
+ bool ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m17927 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+ void ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m17928 (ReadOnlyCollection_1_t3552 * __this, Array_t * ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IEnumerable.GetEnumerator()
+ Object_t * ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m17929 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.Add(System.Object)
+ int32_t ReadOnlyCollection_1_System_Collections_IList_Add_m17930 (ReadOnlyCollection_1_t3552 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.Clear()
+ void ReadOnlyCollection_1_System_Collections_IList_Clear_m17931 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.Contains(System.Object)
+ bool ReadOnlyCollection_1_System_Collections_IList_Contains_m17932 (ReadOnlyCollection_1_t3552 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.IndexOf(System.Object)
+ int32_t ReadOnlyCollection_1_System_Collections_IList_IndexOf_m17933 (ReadOnlyCollection_1_t3552 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.Insert(System.Int32,System.Object)
+ void ReadOnlyCollection_1_System_Collections_IList_Insert_m17934 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.Remove(System.Object)
+ void ReadOnlyCollection_1_System_Collections_IList_Remove_m17935 (ReadOnlyCollection_1_t3552 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.RemoveAt(System.Int32)
+ void ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m17936 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.ICollection.get_IsSynchronized()
+ bool ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m17937 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.ICollection.get_SyncRoot()
+ Object_t * ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m17938 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.get_IsFixedSize()
+ bool ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m17939 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.get_IsReadOnly()
+ bool ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m17940 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.get_Item(System.Int32)
+ Object_t * ReadOnlyCollection_1_System_Collections_IList_get_Item_m17941 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::System.Collections.IList.set_Item(System.Int32,System.Object)
+ void ReadOnlyCollection_1_System_Collections_IList_set_Item_m17942 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::Contains(T)
+ bool ReadOnlyCollection_1_Contains_m17943 (ReadOnlyCollection_1_t3552 * __this, RaycastResult_t463  ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::CopyTo(T[],System.Int32)
+ void ReadOnlyCollection_1_CopyTo_m17944 (ReadOnlyCollection_1_t3552 * __this, RaycastResultU5BU5D_t3548* ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::GetEnumerator()
+ Object_t* ReadOnlyCollection_1_GetEnumerator_m17945 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::IndexOf(T)
+ int32_t ReadOnlyCollection_1_IndexOf_m17946 (ReadOnlyCollection_1_t3552 * __this, RaycastResult_t463  ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::get_Count()
+ int32_t ReadOnlyCollection_1_get_Count_m17947 (ReadOnlyCollection_1_t3552 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.RaycastResult>::get_Item(System.Int32)
+ RaycastResult_t463  ReadOnlyCollection_1_get_Item_m17948 (ReadOnlyCollection_1_t3552 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;

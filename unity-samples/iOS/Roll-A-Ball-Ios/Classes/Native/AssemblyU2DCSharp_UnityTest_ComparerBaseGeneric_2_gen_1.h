@@ -5,8 +5,8 @@
 // UnityEngine.Bounds
 #include "UnityEngine_UnityEngine_Bounds.h"
 // UnityTest.ComparerBaseGeneric`2<UnityEngine.Bounds,UnityEngine.Bounds>
-struct ComparerBaseGeneric_2_t3012  : public ComparerBase_t171
+struct ComparerBaseGeneric_2_t2992  : public ComparerBase_t157
 {
 	// T2 UnityTest.ComparerBaseGeneric`2<UnityEngine.Bounds,UnityEngine.Bounds>::constantValueGeneric
-	Bounds_t169  ___constantValueGeneric_13;
+	Bounds_t155  ___constantValueGeneric_13;
 };

@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Security.Cryptography.OidCollection
-struct OidCollection_t1631;
+struct OidCollection_t1619;
 // System.Security.Cryptography.X509Certificates.X509Certificate2Collection
-struct X509Certificate2Collection_t1622;
+struct X509Certificate2Collection_t1610;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Security.Cryptography.X509Certificates.X509RevocationFlag
@@ -17,22 +17,22 @@ struct X509Certificate2Collection_t1622;
 // System.DateTime
 #include "mscorlib_System_DateTime.h"
 // System.Security.Cryptography.X509Certificates.X509ChainPolicy
-struct X509ChainPolicy_t1625  : public Object_t
+struct X509ChainPolicy_t1613  : public Object_t
 {
 	// System.Security.Cryptography.OidCollection System.Security.Cryptography.X509Certificates.X509ChainPolicy::apps
-	OidCollection_t1631 * ___apps_0;
+	OidCollection_t1619 * ___apps_0;
 	// System.Security.Cryptography.OidCollection System.Security.Cryptography.X509Certificates.X509ChainPolicy::cert
-	OidCollection_t1631 * ___cert_1;
+	OidCollection_t1619 * ___cert_1;
 	// System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509ChainPolicy::store
-	X509Certificate2Collection_t1622 * ___store_2;
+	X509Certificate2Collection_t1610 * ___store_2;
 	// System.Security.Cryptography.X509Certificates.X509RevocationFlag System.Security.Cryptography.X509Certificates.X509ChainPolicy::rflag
 	int32_t ___rflag_3;
 	// System.Security.Cryptography.X509Certificates.X509RevocationMode System.Security.Cryptography.X509Certificates.X509ChainPolicy::mode
 	int32_t ___mode_4;
 	// System.TimeSpan System.Security.Cryptography.X509Certificates.X509ChainPolicy::timeout
-	TimeSpan_t1632  ___timeout_5;
+	TimeSpan_t1620  ___timeout_5;
 	// System.Security.Cryptography.X509Certificates.X509VerificationFlags System.Security.Cryptography.X509Certificates.X509ChainPolicy::vflags
 	int32_t ___vflags_6;
 	// System.DateTime System.Security.Cryptography.X509Certificates.X509ChainPolicy::vtime
-	DateTime_t850  ___vtime_7;
+	DateTime_t837  ___vtime_7;
 };

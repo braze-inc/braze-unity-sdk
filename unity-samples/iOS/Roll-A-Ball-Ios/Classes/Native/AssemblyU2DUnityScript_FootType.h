@@ -5,7 +5,7 @@
 // FootType
 #include "AssemblyU2DUnityScript_FootType.h"
 // FootType
-struct FootType_t398 
+struct FootType_t386 
 {
 	// System.Int32 FootType::value__
 	int32_t ___value___1;

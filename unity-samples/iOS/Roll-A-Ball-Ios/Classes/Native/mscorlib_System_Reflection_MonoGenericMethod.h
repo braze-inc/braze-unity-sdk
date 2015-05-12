@@ -3,6 +3,6 @@
 // System.Reflection.MonoMethod
 #include "mscorlib_System_Reflection_MonoMethod.h"
 // System.Reflection.MonoGenericMethod
-struct MonoGenericMethod_t1994  : public MonoMethod_t1995
+struct MonoGenericMethod_t1982  : public MonoMethod_t1983
 {
 };

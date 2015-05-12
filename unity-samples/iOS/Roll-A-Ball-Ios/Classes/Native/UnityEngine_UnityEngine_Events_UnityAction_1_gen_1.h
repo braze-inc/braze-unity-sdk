@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
+struct Void_t62;
 // System.Collections.Generic.List`1<UnityEngine.UIVertex>
-struct List_1_t580;
+struct List_1_t566;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
 // UnityEngine.Events.UnityAction`1<System.Collections.Generic.List`1<UnityEngine.UIVertex>>
-struct UnityAction_1_t578  : public MulticastDelegate_t608
+struct UnityAction_1_t564  : public MulticastDelegate_t594
 {
 };

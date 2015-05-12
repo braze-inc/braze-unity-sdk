@@ -5,7 +5,7 @@ struct String_t;
 // Appboy.Models.Cards.Card
 #include "AssemblyU2DCSharpU2Dfirstpass_Appboy_Models_Cards_Card.h"
 // Appboy.Models.Cards.TextAnnouncementCard
-struct TextAnnouncementCard_t52  : public Card_t47
+struct TextAnnouncementCard_t53  : public Card_t11
 {
 	// System.String Appboy.Models.Cards.TextAnnouncementCard::<Title>k__BackingField
 	String_t* ___U3CTitleU3Ek__BackingField_7;

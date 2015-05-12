@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityEngine.UI.StencilMaterial/MatEntry[]
-struct MatEntryU5BU5D_t3998;
+// UnityEngine.UI.Toggle[]
+struct ToggleU5BU5D_t4007;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityEngine.UI.StencilMaterial/MatEntry>
-struct List_1_t645  : public Object_t
+// System.Collections.Generic.List`1<UnityEngine.UI.Toggle>
+struct List_1_t638  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityEngine.UI.StencilMaterial/MatEntry>::_items
-	MatEntryU5BU5D_t3998* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.StencilMaterial/MatEntry>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::_items
+	ToggleU5BU5D_t4007* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.StencilMaterial/MatEntry>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::_version
 	int32_t ____version_3;
 };
-struct List_1_t645_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.StencilMaterial/MatEntry>::DefaultCapacity
+struct List_1_t638_StaticFields{
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::DefaultCapacity
 	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityEngine.UI.StencilMaterial/MatEntry>::EmptyArray
-	MatEntryU5BU5D_t3998* ___EmptyArray_4;
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::EmptyArray
+	ToggleU5BU5D_t4007* ___EmptyArray_4;
 };

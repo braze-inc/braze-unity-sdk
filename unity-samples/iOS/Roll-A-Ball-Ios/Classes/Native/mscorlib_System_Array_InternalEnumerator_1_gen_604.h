@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.Globalization.DateTimeFormatFlags>
-struct InternalEnumerator_1_t4768 
+// System.Array/InternalEnumerator`1<System.Globalization.CompareOptions>
+struct InternalEnumerator_1_t4748 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.Globalization.DateTimeFormatFlags>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Globalization.CompareOptions>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.Globalization.DateTimeFormatFlags>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Globalization.CompareOptions>::idx
 	int32_t ___idx_1;
 };

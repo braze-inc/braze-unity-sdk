@@ -3,7 +3,7 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // UnityEngine.Color32
-struct Color32_t696 
+struct Color32_t682 
 {
 	// System.Byte UnityEngine.Color32::r
 	uint8_t ___r_0;

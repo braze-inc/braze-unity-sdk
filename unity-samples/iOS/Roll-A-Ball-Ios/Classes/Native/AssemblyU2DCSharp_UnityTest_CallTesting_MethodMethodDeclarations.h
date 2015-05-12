@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.CallTesting/Method
-struct Method_t287;
+struct Method_t274;
 

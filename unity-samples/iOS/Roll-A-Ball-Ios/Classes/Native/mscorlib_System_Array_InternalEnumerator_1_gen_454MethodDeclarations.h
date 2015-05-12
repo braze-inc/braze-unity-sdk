@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentCall>
-struct InternalEnumerator_1_t4544;
+// System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentListenerMode>
+struct InternalEnumerator_1_t4509;
 // System.Object
 struct Object_t;
-// UnityEngine.Events.PersistentCall
-struct PersistentCall_t989;
 // System.Array
 struct Array_t;
+// UnityEngine.Events.PersistentListenerMode
+#include "UnityEngine_UnityEngine_Events_PersistentListenerMode.h"
 
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentCall>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m24671(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentCall>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m24672(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentCall>::Dispose()
-#define InternalEnumerator_1_Dispose_m24673(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentCall>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m24674(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentCall>::get_Current()
-#define InternalEnumerator_1_get_Current_m24675(__this, method) (PersistentCall_t989 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentListenerMode>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m24370 (InternalEnumerator_1_t4509 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentListenerMode>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m24371 (InternalEnumerator_1_t4509 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentListenerMode>::Dispose()
+ void InternalEnumerator_1_Dispose_m24372 (InternalEnumerator_1_t4509 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentListenerMode>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m24373 (InternalEnumerator_1_t4509 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<UnityEngine.Events.PersistentListenerMode>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m24374 (InternalEnumerator_1_t4509 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

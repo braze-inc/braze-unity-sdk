@@ -7,7 +7,7 @@
 // System.StringComparison
 #include "mscorlib_System_StringComparison.h"
 // UnityTest.StringComparer
-struct StringComparer_t188  : public ComparerBaseGeneric_1_t189
+struct StringComparer_t174  : public ComparerBaseGeneric_1_t175
 {
 	// UnityTest.StringComparer/CompareType UnityTest.StringComparer::compareType
 	int32_t ___compareType_14;

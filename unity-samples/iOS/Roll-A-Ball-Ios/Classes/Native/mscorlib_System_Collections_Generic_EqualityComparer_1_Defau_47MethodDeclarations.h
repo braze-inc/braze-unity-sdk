@@ -4,14 +4,16 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.TextEditor/TextEditOp>
-struct DefaultComparer_t4525;
-// UnityEngine.TextEditor/TextEditOp
-#include "UnityEngine_UnityEngine_TextEditor_TextEditOp.h"
+// System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Events.PersistentCall>
+struct DefaultComparer_t4530;
+// UnityEngine.Events.PersistentCall
+struct PersistentCall_t978;
 
-// System.Void System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.TextEditor/TextEditOp>::.ctor()
- void DefaultComparer__ctor_m24572 (DefaultComparer_t4525 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.TextEditor/TextEditOp>::GetHashCode(T)
- int32_t DefaultComparer_GetHashCode_m24573 (DefaultComparer_t4525 * __this, int32_t ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.TextEditor/TextEditOp>::Equals(T,T)
- bool DefaultComparer_Equals_m24574 (DefaultComparer_t4525 * __this, int32_t ___x, int32_t ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Events.PersistentCall>::.ctor()
+// System.Collections.Generic.EqualityComparer`1/DefaultComparer<System.Object>
+#include "mscorlib_System_Collections_Generic_EqualityComparer_1_Defau_0MethodDeclarations.h"
+#define DefaultComparer__ctor_m24541(__this, method) (void)DefaultComparer__ctor_m12987_gshared((DefaultComparer_t2771 *)__this, method)
+// System.Int32 System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Events.PersistentCall>::GetHashCode(T)
+#define DefaultComparer_GetHashCode_m24542(__this, ___obj, method) (int32_t)DefaultComparer_GetHashCode_m12988_gshared((DefaultComparer_t2771 *)__this, (Object_t *)___obj, method)
+// System.Boolean System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Events.PersistentCall>::Equals(T,T)
+#define DefaultComparer_Equals_m24543(__this, ___x, ___y, method) (bool)DefaultComparer_Equals_m12989_gshared((DefaultComparer_t2771 *)__this, (Object_t *)___x, (Object_t *)___y, method)

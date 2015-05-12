@@ -7,12 +7,12 @@
 // UnityEngine.Rect
 #include "UnityEngine_UnityEngine_Rect.h"
 // UnityEngine.Internal_DrawArguments
-struct Internal_DrawArguments_t869 
+struct Internal_DrawArguments_t858 
 {
 	// System.IntPtr UnityEngine.Internal_DrawArguments::target
-	IntPtr_t120 ___target_0;
+	IntPtr_t107 ___target_0;
 	// UnityEngine.Rect UnityEngine.Internal_DrawArguments::position
-	Rect_t442  ___position_1;
+	Rect_t78  ___position_1;
 	// System.Int32 UnityEngine.Internal_DrawArguments::isHover
 	int32_t ___isHover_2;
 	// System.Int32 UnityEngine.Internal_DrawArguments::isActive

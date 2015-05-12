@@ -4,26 +4,26 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.List`1/Enumerator<ITestResult>
-struct Enumerator_t3282;
+// System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>
+struct Enumerator_t3313;
 // System.Object
 struct Object_t;
-// ITestResult
-struct ITestResult_t247;
-// System.Collections.Generic.List`1<ITestResult>
-struct List_1_t354;
+// UnityTest.AssertionComponent
+struct AssertionComponent_t135;
+// System.Collections.Generic.List`1<UnityTest.AssertionComponent>
+struct List_1_t3308;
 
-// System.Void System.Collections.Generic.List`1/Enumerator<ITestResult>::.ctor(System.Collections.Generic.List`1<T>)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>::.ctor(System.Collections.Generic.List`1<T>)
 // System.Collections.Generic.List`1/Enumerator<System.Object>
-#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_2MethodDeclarations.h"
-#define Enumerator__ctor_m16376(__this, ___l, method) (void)Enumerator__ctor_m12975_gshared((Enumerator_t2774 *)__this, (List_1_t123 *)___l, method)
-// System.Object System.Collections.Generic.List`1/Enumerator<ITestResult>::System.Collections.IEnumerator.get_Current()
-#define Enumerator_System_Collections_IEnumerator_get_Current_m16377(__this, method) (Object_t *)Enumerator_System_Collections_IEnumerator_get_Current_m12976_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<ITestResult>::Dispose()
-#define Enumerator_Dispose_m16378(__this, method) (void)Enumerator_Dispose_m12977_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<ITestResult>::VerifyState()
-#define Enumerator_VerifyState_m16379(__this, method) (void)Enumerator_VerifyState_m12978_gshared((Enumerator_t2774 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1/Enumerator<ITestResult>::MoveNext()
-#define Enumerator_MoveNext_m16380(__this, method) (bool)Enumerator_MoveNext_m12979_gshared((Enumerator_t2774 *)__this, method)
-// T System.Collections.Generic.List`1/Enumerator<ITestResult>::get_Current()
-#define Enumerator_get_Current_m16381(__this, method) (Object_t *)Enumerator_get_Current_m12980_gshared((Enumerator_t2774 *)__this, method)
+#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_7MethodDeclarations.h"
+#define Enumerator__ctor_m16544(__this, ___l, method) (void)Enumerator__ctor_m12880_gshared((Enumerator_t2762 *)__this, (List_1_t110 *)___l, method)
+// System.Object System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>::System.Collections.IEnumerator.get_Current()
+#define Enumerator_System_Collections_IEnumerator_get_Current_m16545(__this, method) (Object_t *)Enumerator_System_Collections_IEnumerator_get_Current_m12881_gshared((Enumerator_t2762 *)__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>::Dispose()
+#define Enumerator_Dispose_m16546(__this, method) (void)Enumerator_Dispose_m12882_gshared((Enumerator_t2762 *)__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>::VerifyState()
+#define Enumerator_VerifyState_m16547(__this, method) (void)Enumerator_VerifyState_m12883_gshared((Enumerator_t2762 *)__this, method)
+// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>::MoveNext()
+#define Enumerator_MoveNext_m16548(__this, method) (bool)Enumerator_MoveNext_m12884_gshared((Enumerator_t2762 *)__this, method)
+// T System.Collections.Generic.List`1/Enumerator<UnityTest.AssertionComponent>::get_Current()
+#define Enumerator_get_Current_m16549(__this, method) (AssertionComponent_t135 *)Enumerator_get_Current_m12885_gshared((Enumerator_t2762 *)__this, method)

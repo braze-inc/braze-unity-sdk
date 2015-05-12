@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// UnityTest.ComparerBaseGeneric`2
-struct ComparerBaseGeneric_2_t173;
+struct Void_t62;
+// UnityTest.ComparerBase
+struct ComparerBase_t157;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<UnityTest.ComparerBaseGeneric`2>
-struct UnityAction_1_t3030  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<UnityTest.ComparerBase>
+struct UnityAction_1_t3001  : public MulticastDelegate_t594
 {
 };

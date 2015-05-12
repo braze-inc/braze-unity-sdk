@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Security.SuppressUnmanagedCodeSecurityAttribute>
-struct InternalEnumerator_1_t4904;
+// System.Array/InternalEnumerator`1<System.Security.Principal.PrincipalPolicy>
+struct InternalEnumerator_1_t4884;
 // System.Object
 struct Object_t;
-// System.Security.SuppressUnmanagedCodeSecurityAttribute
-struct SuppressUnmanagedCodeSecurityAttribute_t2196;
 // System.Array
 struct Array_t;
+// System.Security.Principal.PrincipalPolicy
+#include "mscorlib_System_Security_Principal_PrincipalPolicy.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Security.SuppressUnmanagedCodeSecurityAttribute>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m26825(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Security.SuppressUnmanagedCodeSecurityAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26826(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Security.SuppressUnmanagedCodeSecurityAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m26827(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Security.SuppressUnmanagedCodeSecurityAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m26828(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Security.SuppressUnmanagedCodeSecurityAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m26829(__this, method) (SuppressUnmanagedCodeSecurityAttribute_t2196 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Security.Principal.PrincipalPolicy>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m26605 (InternalEnumerator_1_t4884 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<System.Security.Principal.PrincipalPolicy>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26606 (InternalEnumerator_1_t4884 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.Security.Principal.PrincipalPolicy>::Dispose()
+ void InternalEnumerator_1_Dispose_m26607 (InternalEnumerator_1_t4884 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<System.Security.Principal.PrincipalPolicy>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m26608 (InternalEnumerator_1_t4884 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<System.Security.Principal.PrincipalPolicy>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m26609 (InternalEnumerator_1_t4884 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.SphereCollider
-struct SphereCollider_t386;
+struct SphereCollider_t374;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 // UnityEngine.CastHelper`1<UnityEngine.SphereCollider>
-struct CastHelper_1_t3379 
+struct CastHelper_1_t3359 
 {
 	// T UnityEngine.CastHelper`1<UnityEngine.SphereCollider>::t
-	SphereCollider_t386 * ___t_0;
+	SphereCollider_t374 * ___t_0;
 	// System.IntPtr UnityEngine.CastHelper`1<UnityEngine.SphereCollider>::onePointerFurtherThanT
-	IntPtr_t120 ___onePointerFurtherThanT_1;
+	IntPtr_t107 ___onePointerFurtherThanT_1;
 };

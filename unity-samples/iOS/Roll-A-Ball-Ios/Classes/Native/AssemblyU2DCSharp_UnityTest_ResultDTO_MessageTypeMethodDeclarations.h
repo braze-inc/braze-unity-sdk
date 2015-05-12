@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.ResultDTO/MessageType
-struct MessageType_t246;
+struct MessageType_t233;
 

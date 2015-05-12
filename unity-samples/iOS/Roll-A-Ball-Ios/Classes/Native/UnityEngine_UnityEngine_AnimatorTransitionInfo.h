@@ -3,7 +3,7 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // UnityEngine.AnimatorTransitionInfo
-struct AnimatorTransitionInfo_t926 
+struct AnimatorTransitionInfo_t915 
 {
 	// System.Int32 UnityEngine.AnimatorTransitionInfo::m_FullPath
 	int32_t ___m_FullPath_0;
@@ -19,7 +19,7 @@ struct AnimatorTransitionInfo_t926
 	int32_t ___m_TransitionType_5;
 };
 // Native definition for marshalling of: UnityEngine.AnimatorTransitionInfo
-struct AnimatorTransitionInfo_t926_marshaled
+struct AnimatorTransitionInfo_t915_marshaled
 {
 	int32_t ___m_FullPath_0;
 	int32_t ___m_UserName_1;

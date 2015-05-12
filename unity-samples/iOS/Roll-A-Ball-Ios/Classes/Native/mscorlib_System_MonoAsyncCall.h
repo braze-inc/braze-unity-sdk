@@ -7,12 +7,12 @@ struct Object_t;
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 // System.MonoAsyncCall
-struct MonoAsyncCall_t2285  : public Object_t
+struct MonoAsyncCall_t2273  : public Object_t
 {
 	// System.Object System.MonoAsyncCall::msg
 	Object_t * ___msg_0;
 	// System.IntPtr System.MonoAsyncCall::cb_method
-	IntPtr_t120 ___cb_method_1;
+	IntPtr_t107 ___cb_method_1;
 	// System.Object System.MonoAsyncCall::cb_target
 	Object_t * ___cb_target_2;
 	// System.Object System.MonoAsyncCall::state

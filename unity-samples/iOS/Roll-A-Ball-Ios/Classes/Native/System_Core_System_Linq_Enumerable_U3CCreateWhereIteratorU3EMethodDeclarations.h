@@ -5,9 +5,9 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Linq.Enumerable/<CreateWhereIterator>c__Iterator1D`1
-struct U3CCreateWhereIteratorU3Ec__Iterator1D_1_t1191;
+struct U3CCreateWhereIteratorU3Ec__Iterator1D_1_t1180;
 // System.Object
 struct Object_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
+struct IEnumerator_t21;
 

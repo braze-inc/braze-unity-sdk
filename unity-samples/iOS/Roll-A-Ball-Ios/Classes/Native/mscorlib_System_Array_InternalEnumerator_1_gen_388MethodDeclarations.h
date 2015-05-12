@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<UnityEngine.Display>
-struct InternalEnumerator_1_t4304;
+// System.Array/InternalEnumerator`1<UnityEngine.SpriteRenderer>
+struct InternalEnumerator_1_t4275;
 // System.Object
 struct Object_t;
-// UnityEngine.Display
-struct Display_t894;
+// UnityEngine.SpriteRenderer
+struct SpriteRenderer_t708;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.Display>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.SpriteRenderer>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m23173(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<UnityEngine.Display>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23174(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.Display>::Dispose()
-#define InternalEnumerator_1_Dispose_m23175(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.Display>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m23176(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<UnityEngine.Display>::get_Current()
-#define InternalEnumerator_1_get_Current_m23177(__this, method) (Display_t894 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m22923(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<UnityEngine.SpriteRenderer>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m22924(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.SpriteRenderer>::Dispose()
+#define InternalEnumerator_1_Dispose_m22925(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.SpriteRenderer>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m22926(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<UnityEngine.SpriteRenderer>::get_Current()
+#define InternalEnumerator_1_get_Current_m22927(__this, method) (SpriteRenderer_t708 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

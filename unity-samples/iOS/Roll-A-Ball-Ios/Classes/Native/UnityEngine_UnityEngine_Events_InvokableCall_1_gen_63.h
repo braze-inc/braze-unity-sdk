@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityEngine.Events.UnityAction`1<TriggerOnMouseOrJoystick>
-struct UnityAction_1_t3476;
+// UnityEngine.Events.UnityAction`1<SpawnAtCheckpoint>
+struct UnityAction_1_t3447;
 // UnityEngine.Events.BaseInvokableCall
 #include "UnityEngine_UnityEngine_Events_BaseInvokableCall.h"
-// UnityEngine.Events.InvokableCall`1<TriggerOnMouseOrJoystick>
-struct InvokableCall_1_t3475  : public BaseInvokableCall_t981
+// UnityEngine.Events.InvokableCall`1<SpawnAtCheckpoint>
+struct InvokableCall_1_t3446  : public BaseInvokableCall_t970
 {
-	// UnityEngine.Events.UnityAction`1<T1> UnityEngine.Events.InvokableCall`1<TriggerOnMouseOrJoystick>::Delegate
-	UnityAction_1_t3476 * ___Delegate_0;
+	// UnityEngine.Events.UnityAction`1<T1> UnityEngine.Events.InvokableCall`1<SpawnAtCheckpoint>::Delegate
+	UnityAction_1_t3447 * ___Delegate_0;
 };

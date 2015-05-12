@@ -7,7 +7,7 @@
 // UnityTest.CallTesting/Method
 #include "AssemblyU2DCSharp_UnityTest_CallTesting_Method.h"
 // UnityTest.CallTesting
-struct CallTesting_t288  : public MonoBehaviour_t2
+struct CallTesting_t275  : public MonoBehaviour_t2
 {
 	// System.Int32 UnityTest.CallTesting::afterFrames
 	int32_t ___afterFrames_2;

@@ -5,23 +5,23 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>
-struct InternalEnumerator_1_t3202;
+struct InternalEnumerator_1_t3182;
 // System.Object
 struct Object_t;
 // IntegrationTest/DynamicTestAttribute
-struct DynamicTestAttribute_t231;
+struct DynamicTestAttribute_t218;
 // System.Array
 struct Array_t;
 
 // System.Void System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m15902(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
+#define InternalEnumerator_1__ctor_m15682(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
 // System.Object System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m15903(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m15683(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Void System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m15904(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_Dispose_m15684(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Boolean System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m15905(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_MoveNext_m15685(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // T System.Array/InternalEnumerator`1<IntegrationTest/DynamicTestAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m15906(__this, method) (DynamicTestAttribute_t231 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_get_Current_m15686(__this, method) (DynamicTestAttribute_t218 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

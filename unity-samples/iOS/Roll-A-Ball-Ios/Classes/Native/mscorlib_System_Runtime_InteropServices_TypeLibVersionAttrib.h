@@ -3,7 +3,7 @@
 // System.Attribute
 #include "mscorlib_System_Attribute.h"
 // System.Runtime.InteropServices.TypeLibVersionAttribute
-struct TypeLibVersionAttribute_t2037  : public Attribute_t226
+struct TypeLibVersionAttribute_t2025  : public Attribute_t213
 {
 	// System.Int32 System.Runtime.InteropServices.TypeLibVersionAttribute::major
 	int32_t ___major_0;

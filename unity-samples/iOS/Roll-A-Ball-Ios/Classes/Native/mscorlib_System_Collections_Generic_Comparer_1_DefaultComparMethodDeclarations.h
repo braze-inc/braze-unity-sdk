@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Generic.Comparer`1/DefaultComparer
-struct DefaultComparer_t1860;
+struct DefaultComparer_t1848;
 

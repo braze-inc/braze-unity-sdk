@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.MonoTODOAttribute>
-struct InternalEnumerator_1_t4742;
+// System.Array/InternalEnumerator`1<System.Runtime.CompilerServices.DecimalConstantAttribute>
+struct InternalEnumerator_1_t4722;
 // System.Object
 struct Object_t;
-// System.MonoTODOAttribute
-struct MonoTODOAttribute_t1783;
+// System.Runtime.CompilerServices.DecimalConstantAttribute
+struct DecimalConstantAttribute_t1762;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.CompilerServices.DecimalConstantAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m25949(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25950(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m25951(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m25952(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m25953(__this, method) (MonoTODOAttribute_t1783 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m25729(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Runtime.CompilerServices.DecimalConstantAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25730(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.CompilerServices.DecimalConstantAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m25731(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.CompilerServices.DecimalConstantAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m25732(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Runtime.CompilerServices.DecimalConstantAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m25733(__this, method) (DecimalConstantAttribute_t1762 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

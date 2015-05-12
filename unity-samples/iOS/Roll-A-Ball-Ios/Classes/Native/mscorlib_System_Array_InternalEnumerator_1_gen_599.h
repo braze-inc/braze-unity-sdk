@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.Diagnostics.DebuggerStepThroughAttribute>
-struct InternalEnumerator_1_t4763 
+// System.Array/InternalEnumerator`1<System.Diagnostics.DebuggableAttribute/DebuggingModes>
+struct InternalEnumerator_1_t4743 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.Diagnostics.DebuggerStepThroughAttribute>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Diagnostics.DebuggableAttribute/DebuggingModes>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.Diagnostics.DebuggerStepThroughAttribute>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Diagnostics.DebuggableAttribute/DebuggingModes>::idx
 	int32_t ___idx_1;
 };

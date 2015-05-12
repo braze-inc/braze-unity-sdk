@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// AutoFire
-struct AutoFire_t446;
+struct Void_t62;
+// MovementMotor
+struct MovementMotor_t377;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<AutoFire>
-struct UnityAction_1_t3498  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<MovementMotor>
+struct UnityAction_1_t3469  : public MulticastDelegate_t594
 {
 };

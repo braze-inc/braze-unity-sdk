@@ -4,22 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Reflection.MethodAttributes>
-struct InternalEnumerator_1_t4816;
+// System.Array/InternalEnumerator`1<System.Reflection.FieldAttributes>
+struct InternalEnumerator_1_t4796;
 // System.Object
 struct Object_t;
 // System.Array
 struct Array_t;
-// System.Reflection.MethodAttributes
-#include "mscorlib_System_Reflection_MethodAttributes.h"
+// System.Reflection.FieldAttributes
+#include "mscorlib_System_Reflection_FieldAttributes.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Reflection.MethodAttributes>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m26309 (InternalEnumerator_1_t4816 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<System.Reflection.MethodAttributes>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26310 (InternalEnumerator_1_t4816 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<System.Reflection.MethodAttributes>::Dispose()
- void InternalEnumerator_1_Dispose_m26311 (InternalEnumerator_1_t4816 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<System.Reflection.MethodAttributes>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m26312 (InternalEnumerator_1_t4816 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<System.Reflection.MethodAttributes>::get_Current()
- int32_t InternalEnumerator_1_get_Current_m26313 (InternalEnumerator_1_t4816 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.FieldAttributes>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m26089 (InternalEnumerator_1_t4796 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<System.Reflection.FieldAttributes>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26090 (InternalEnumerator_1_t4796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.FieldAttributes>::Dispose()
+ void InternalEnumerator_1_Dispose_m26091 (InternalEnumerator_1_t4796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<System.Reflection.FieldAttributes>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m26092 (InternalEnumerator_1_t4796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<System.Reflection.FieldAttributes>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m26093 (InternalEnumerator_1_t4796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

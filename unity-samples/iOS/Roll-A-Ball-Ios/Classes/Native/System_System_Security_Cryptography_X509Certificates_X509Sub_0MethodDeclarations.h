@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierHashAlgorithm
-struct X509SubjectKeyIdentifierHashAlgorithm_t1643;
+struct X509SubjectKeyIdentifierHashAlgorithm_t1631;
 

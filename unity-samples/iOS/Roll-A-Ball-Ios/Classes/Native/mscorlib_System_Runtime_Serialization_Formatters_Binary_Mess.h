@@ -3,6 +3,6 @@
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Runtime.Serialization.Formatters.Binary.MessageFormatter
-struct MessageFormatter_t2120  : public Object_t
+struct MessageFormatter_t2108  : public Object_t
 {
 };

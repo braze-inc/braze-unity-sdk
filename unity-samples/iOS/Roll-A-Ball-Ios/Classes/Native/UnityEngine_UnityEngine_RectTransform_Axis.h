@@ -5,7 +5,7 @@
 // UnityEngine.RectTransform/Axis
 #include "UnityEngine_UnityEngine_RectTransform_Axis.h"
 // UnityEngine.RectTransform/Axis
-struct Axis_t879 
+struct Axis_t868 
 {
 	// System.Int32 UnityEngine.RectTransform/Axis::value__
 	int32_t ___value___1;

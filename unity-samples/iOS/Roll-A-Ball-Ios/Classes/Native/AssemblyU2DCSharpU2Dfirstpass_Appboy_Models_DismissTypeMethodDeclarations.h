@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Appboy.Models.DismissType
-struct DismissType_t54;
+struct DismissType_t55;
 

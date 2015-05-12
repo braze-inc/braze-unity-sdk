@@ -5,11 +5,11 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Events.InvokableCall`1
-struct InvokableCall_1_t983;
+struct InvokableCall_1_t972;
 // System.Object
 struct Object_t;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
+struct MethodInfo_t198;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 

@@ -4,17 +4,21 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.Comparer`1<System.Int32>
-struct Comparer_1_t4688;
+// System.Collections.Generic.Comparer`1<System.Security.Policy.StrongName>
+struct Comparer_1_t4882;
 // System.Object
 struct Object_t;
+// System.Security.Policy.StrongName
+struct StrongName_t2179;
 
-// System.Void System.Collections.Generic.Comparer`1<System.Int32>::.ctor()
- void Comparer_1__ctor_m25673 (Comparer_1_t4688 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.Comparer`1<System.Int32>::.cctor()
- void Comparer_1__cctor_m25674 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Collections.Generic.Comparer`1<System.Int32>::System.Collections.IComparer.Compare(System.Object,System.Object)
- int32_t Comparer_1_System_Collections_IComparer_Compare_m25675 (Comparer_1_t4688 * __this, Object_t * ___x, Object_t * ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Collections.Generic.Comparer`1<System.Int32>::Compare(T,T)
-// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<System.Int32>::get_Default()
- Comparer_1_t4688 * Comparer_1_get_Default_m25676 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.Comparer`1<System.Security.Policy.StrongName>::.ctor()
+// System.Collections.Generic.Comparer`1<System.Object>
+#include "mscorlib_System_Collections_Generic_Comparer_1_genMethodDeclarations.h"
+#define Comparer_1__ctor_m26595(__this, method) (void)Comparer_1__ctor_m12994_gshared((Comparer_1_t2772 *)__this, method)
+// System.Void System.Collections.Generic.Comparer`1<System.Security.Policy.StrongName>::.cctor()
+#define Comparer_1__cctor_m26596(__this/* static, unused */, method) (void)Comparer_1__cctor_m12995_gshared((Object_t *)__this/* static, unused */, method)
+// System.Int32 System.Collections.Generic.Comparer`1<System.Security.Policy.StrongName>::System.Collections.IComparer.Compare(System.Object,System.Object)
+#define Comparer_1_System_Collections_IComparer_Compare_m26597(__this, ___x, ___y, method) (int32_t)Comparer_1_System_Collections_IComparer_Compare_m12996_gshared((Comparer_1_t2772 *)__this, (Object_t *)___x, (Object_t *)___y, method)
+// System.Int32 System.Collections.Generic.Comparer`1<System.Security.Policy.StrongName>::Compare(T,T)
+// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<System.Security.Policy.StrongName>::get_Default()
+#define Comparer_1_get_Default_m26598(__this/* static, unused */, method) (Comparer_1_t4882 *)Comparer_1_get_Default_m12997_gshared((Object_t *)__this/* static, unused */, method)

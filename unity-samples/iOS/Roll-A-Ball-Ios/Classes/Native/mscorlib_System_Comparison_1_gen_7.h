@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// Appboy.Utilities.JSONNode
-struct JSONNode_t17;
+// System.Reflection.MemberInfo
+struct MemberInfo_t196;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<Appboy.Utilities.JSONNode>
-struct Comparison_1_t2882  : public MulticastDelegate_t608
+// System.Comparison`1<System.Reflection.MemberInfo>
+struct Comparison_1_t3096  : public MulticastDelegate_t594
 {
 };

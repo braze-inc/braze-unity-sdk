@@ -5,23 +5,23 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Events.InvokableCall`1<ApplePushNotificationTester>
-struct InvokableCall_1_t2838;
+struct InvokableCall_1_t2811;
 // System.Object
 struct Object_t;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
+struct MethodInfo_t198;
 // UnityEngine.Events.UnityAction`1<ApplePushNotificationTester>
-struct UnityAction_1_t2839;
+struct UnityAction_1_t2812;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 
 // System.Void UnityEngine.Events.InvokableCall`1<ApplePushNotificationTester>::.ctor(System.Object,System.Reflection.MethodInfo)
 // UnityEngine.Events.InvokableCall`1<System.Object>
 #include "UnityEngine_UnityEngine_Events_InvokableCall_1_gen_0MethodDeclarations.h"
-#define InvokableCall_1__ctor_m13558(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12830_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___target, (MethodInfo_t211 *)___theFunction, method)
+#define InvokableCall_1__ctor_m13318(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12735_gshared((InvokableCall_1_t2746 *)__this, (Object_t *)___target, (MethodInfo_t198 *)___theFunction, method)
 // System.Void UnityEngine.Events.InvokableCall`1<ApplePushNotificationTester>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
-#define InvokableCall_1__ctor_m13559(__this, ___callback, method) (void)InvokableCall_1__ctor_m12831_gshared((InvokableCall_1_t2758 *)__this, (UnityAction_1_t2759 *)___callback, method)
+#define InvokableCall_1__ctor_m13319(__this, ___callback, method) (void)InvokableCall_1__ctor_m12736_gshared((InvokableCall_1_t2746 *)__this, (UnityAction_1_t2747 *)___callback, method)
 // System.Void UnityEngine.Events.InvokableCall`1<ApplePushNotificationTester>::Invoke(System.Object[])
-#define InvokableCall_1_Invoke_m13560(__this, ___args, method) (void)InvokableCall_1_Invoke_m12832_gshared((InvokableCall_1_t2758 *)__this, (ObjectU5BU5D_t96*)___args, method)
+#define InvokableCall_1_Invoke_m13320(__this, ___args, method) (void)InvokableCall_1_Invoke_m12737_gshared((InvokableCall_1_t2746 *)__this, (ObjectU5BU5D_t112*)___args, method)
 // System.Boolean UnityEngine.Events.InvokableCall`1<ApplePushNotificationTester>::Find(System.Object,System.Reflection.MethodInfo)
-#define InvokableCall_1_Find_m13561(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12833_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___targetObj, (MethodInfo_t211 *)___method, method)
+#define InvokableCall_1_Find_m13321(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12738_gshared((InvokableCall_1_t2746 *)__this, (Object_t *)___targetObj, (MethodInfo_t198 *)___method, method)

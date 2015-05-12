@@ -4,82 +4,82 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>
-struct ReadOnlyCollection_1_t2811;
-// Appboy.Models.InAppMessage.InAppMessageButton
-struct InAppMessageButton_t60;
+// System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>
+struct ReadOnlyCollection_1_t2799;
+// Appboy.Models.Cards.Card
+struct Card_t11;
 // System.Object
 struct Object_t;
-// System.Collections.Generic.IList`1<Appboy.Models.InAppMessage.InAppMessageButton>
-struct IList_1_t2816;
+// System.Collections.Generic.IList`1<Appboy.Models.Cards.Card>
+struct IList_1_t2803;
 // System.Array
 struct Array_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
-// Appboy.Models.InAppMessage.InAppMessageButton[]
-struct InAppMessageButtonU5BU5D_t2807;
-// System.Collections.Generic.IEnumerator`1<Appboy.Models.InAppMessage.InAppMessageButton>
-struct IEnumerator_1_t2809;
+struct IEnumerator_t21;
+// Appboy.Models.Cards.Card[]
+struct CardU5BU5D_t2795;
+// System.Collections.Generic.IEnumerator`1<Appboy.Models.Cards.Card>
+struct IEnumerator_1_t2797;
 
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::.ctor(System.Collections.Generic.IList`1<T>)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::.ctor(System.Collections.Generic.IList`1<T>)
 // System.Collections.ObjectModel.ReadOnlyCollection`1<System.Object>
 #include "mscorlib_System_Collections_ObjectModel_ReadOnlyCollection_1_0MethodDeclarations.h"
-#define ReadOnlyCollection_1__ctor_m13321(__this, ___list, method) (void)ReadOnlyCollection_1__ctor_m12981_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t*)___list, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.ICollection<T>.Add(T)
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m13322(__this, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m12982_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.ICollection<T>.Clear()
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m13323(__this, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m12983_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.IList<T>.Insert(System.Int32,T)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m13324(__this, ___index, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m12984_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.ICollection<T>.Remove(T)
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m13325(__this, ___item, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m12985_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m13326(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m12986_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// T System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.IList<T>.get_Item(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m13327(__this, ___index, method) (InAppMessageButton_t60 *)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m12987_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.IList<T>.set_Item(System.Int32,T)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m13328(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m12988_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m13329(__this, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12989_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-#define ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m13330(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m12990_gshared((ReadOnlyCollection_1_t2773 *)__this, (Array_t *)___array, (int32_t)___index, method)
-// System.Collections.IEnumerator System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IEnumerable.GetEnumerator()
-#define ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m13331(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m12991_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.Add(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Add_m13332(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_Add_m12992_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.Clear()
-#define ReadOnlyCollection_1_System_Collections_IList_Clear_m13333(__this, method) (void)ReadOnlyCollection_1_System_Collections_IList_Clear_m12993_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.Contains(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Contains_m13334(__this, ___value, method) (bool)ReadOnlyCollection_1_System_Collections_IList_Contains_m12994_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.IndexOf(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_IndexOf_m13335(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_IndexOf_m12995_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.Insert(System.Int32,System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Insert_m13336(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Insert_m12996_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.Remove(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Remove_m13337(__this, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Remove_m12997_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.RemoveAt(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m13338(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m12998_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.ICollection.get_IsSynchronized()
-#define ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m13339(__this, method) (bool)ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m12999_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.ICollection.get_SyncRoot()
-#define ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m13340(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m13000_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.get_IsFixedSize()
-#define ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m13341(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m13001_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.get_IsReadOnly()
-#define ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m13342(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m13002_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.get_Item(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_IList_get_Item_m13343(__this, ___index, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IList_get_Item_m13003_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::System.Collections.IList.set_Item(System.Int32,System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_set_Item_m13344(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_set_Item_m13004_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::Contains(T)
-#define ReadOnlyCollection_1_Contains_m13345(__this, ___value, method) (bool)ReadOnlyCollection_1_Contains_m13005_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::CopyTo(T[],System.Int32)
-#define ReadOnlyCollection_1_CopyTo_m13346(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_CopyTo_m13006_gshared((ReadOnlyCollection_1_t2773 *)__this, (ObjectU5BU5D_t96*)___array, (int32_t)___index, method)
-// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::GetEnumerator()
-#define ReadOnlyCollection_1_GetEnumerator_m13347(__this, method) (Object_t*)ReadOnlyCollection_1_GetEnumerator_m13007_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::IndexOf(T)
-#define ReadOnlyCollection_1_IndexOf_m13348(__this, ___value, method) (int32_t)ReadOnlyCollection_1_IndexOf_m13008_gshared((ReadOnlyCollection_1_t2773 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::get_Count()
-#define ReadOnlyCollection_1_get_Count_m13349(__this, method) (int32_t)ReadOnlyCollection_1_get_Count_m13009_gshared((ReadOnlyCollection_1_t2773 *)__this, method)
-// T System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.InAppMessage.InAppMessageButton>::get_Item(System.Int32)
-#define ReadOnlyCollection_1_get_Item_m13350(__this, ___index, method) (InAppMessageButton_t60 *)ReadOnlyCollection_1_get_Item_m13010_gshared((ReadOnlyCollection_1_t2773 *)__this, (int32_t)___index, method)
+#define ReadOnlyCollection_1__ctor_m13223(__this, ___list, method) (void)ReadOnlyCollection_1__ctor_m12886_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t*)___list, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.ICollection<T>.Add(T)
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m13224(__this, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m12887_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___item, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.ICollection<T>.Clear()
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m13225(__this, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m12888_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.IList<T>.Insert(System.Int32,T)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m13226(__this, ___index, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m12889_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___item, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.ICollection<T>.Remove(T)
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m13227(__this, ___item, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m12890_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___item, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m13228(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m12891_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
+// T System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.IList<T>.get_Item(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m13229(__this, ___index, method) (Card_t11 *)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m12892_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.IList<T>.set_Item(System.Int32,T)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m13230(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m12893_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___value, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m13231(__this, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12894_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+#define ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m13232(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m12895_gshared((ReadOnlyCollection_1_t2761 *)__this, (Array_t *)___array, (int32_t)___index, method)
+// System.Collections.IEnumerator System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IEnumerable.GetEnumerator()
+#define ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m13233(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m12896_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.Add(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Add_m13234(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_Add_m12897_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.Clear()
+#define ReadOnlyCollection_1_System_Collections_IList_Clear_m13235(__this, method) (void)ReadOnlyCollection_1_System_Collections_IList_Clear_m12898_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.Contains(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Contains_m13236(__this, ___value, method) (bool)ReadOnlyCollection_1_System_Collections_IList_Contains_m12899_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.IndexOf(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_IndexOf_m13237(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_IndexOf_m12900_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.Insert(System.Int32,System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Insert_m13238(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Insert_m12901_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.Remove(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Remove_m13239(__this, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Remove_m12902_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.RemoveAt(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m13240(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m12903_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.ICollection.get_IsSynchronized()
+#define ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m13241(__this, method) (bool)ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m12904_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.ICollection.get_SyncRoot()
+#define ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m13242(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m12905_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.get_IsFixedSize()
+#define ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m13243(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m12906_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.get_IsReadOnly()
+#define ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m13244(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m12907_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.get_Item(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_IList_get_Item_m13245(__this, ___index, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IList_get_Item_m12908_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::System.Collections.IList.set_Item(System.Int32,System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_set_Item_m13246(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_set_Item_m12909_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___value, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::Contains(T)
+#define ReadOnlyCollection_1_Contains_m13247(__this, ___value, method) (bool)ReadOnlyCollection_1_Contains_m12910_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::CopyTo(T[],System.Int32)
+#define ReadOnlyCollection_1_CopyTo_m13248(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_CopyTo_m12911_gshared((ReadOnlyCollection_1_t2761 *)__this, (ObjectU5BU5D_t112*)___array, (int32_t)___index, method)
+// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::GetEnumerator()
+#define ReadOnlyCollection_1_GetEnumerator_m13249(__this, method) (Object_t*)ReadOnlyCollection_1_GetEnumerator_m12912_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::IndexOf(T)
+#define ReadOnlyCollection_1_IndexOf_m13250(__this, ___value, method) (int32_t)ReadOnlyCollection_1_IndexOf_m12913_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::get_Count()
+#define ReadOnlyCollection_1_get_Count_m13251(__this, method) (int32_t)ReadOnlyCollection_1_get_Count_m12914_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
+// T System.Collections.ObjectModel.ReadOnlyCollection`1<Appboy.Models.Cards.Card>::get_Item(System.Int32)
+#define ReadOnlyCollection_1_get_Item_m13252(__this, ___index, method) (Card_t11 *)ReadOnlyCollection_1_get_Item_m12915_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)

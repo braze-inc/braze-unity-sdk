@@ -5,7 +5,7 @@
 // UnityTest.Vector2Comparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_Vector2Comparer_CompareType.h"
 // UnityTest.Vector2Comparer
-struct Vector2Comparer_t196  : public VectorComparerBase_1_t197
+struct Vector2Comparer_t182  : public VectorComparerBase_1_t183
 {
 	// UnityTest.Vector2Comparer/CompareType UnityTest.Vector2Comparer::compareType
 	int32_t ___compareType_14;

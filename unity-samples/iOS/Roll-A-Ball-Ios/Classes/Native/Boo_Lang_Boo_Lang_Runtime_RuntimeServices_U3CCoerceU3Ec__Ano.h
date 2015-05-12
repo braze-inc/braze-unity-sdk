@@ -7,7 +7,7 @@ struct Type_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // Boo.Lang.Runtime.RuntimeServices/<Coerce>c__AnonStorey1D
-struct U3CCoerceU3Ec__AnonStorey1D_t1157  : public Object_t
+struct U3CCoerceU3Ec__AnonStorey1D_t1146  : public Object_t
 {
 	// System.Object Boo.Lang.Runtime.RuntimeServices/<Coerce>c__AnonStorey1D::value
 	Object_t * ___value_0;

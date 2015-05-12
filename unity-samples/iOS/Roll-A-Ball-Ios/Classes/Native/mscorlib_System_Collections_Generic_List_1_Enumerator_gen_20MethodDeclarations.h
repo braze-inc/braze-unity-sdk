@@ -4,26 +4,26 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>
-struct Enumerator_t3642;
+// System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>
+struct Enumerator_t3668;
 // System.Object
 struct Object_t;
-// UnityEngine.Transform
-struct Transform_t193;
-// System.Collections.Generic.List`1<UnityEngine.Transform>
-struct List_1_t506;
+// UnityEngine.EventSystems.PointerInputModule/ButtonState
+struct ButtonState_t521;
+// System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
+struct List_1_t522;
 
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>::.ctor(System.Collections.Generic.List`1<T>)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::.ctor(System.Collections.Generic.List`1<T>)
 // System.Collections.Generic.List`1/Enumerator<System.Object>
-#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_2MethodDeclarations.h"
-#define Enumerator__ctor_m18732(__this, ___l, method) (void)Enumerator__ctor_m12975_gshared((Enumerator_t2774 *)__this, (List_1_t123 *)___l, method)
-// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>::System.Collections.IEnumerator.get_Current()
-#define Enumerator_System_Collections_IEnumerator_get_Current_m18733(__this, method) (Object_t *)Enumerator_System_Collections_IEnumerator_get_Current_m12976_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>::Dispose()
-#define Enumerator_Dispose_m18734(__this, method) (void)Enumerator_Dispose_m12977_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>::VerifyState()
-#define Enumerator_VerifyState_m18735(__this, method) (void)Enumerator_VerifyState_m12978_gshared((Enumerator_t2774 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>::MoveNext()
-#define Enumerator_MoveNext_m18736(__this, method) (bool)Enumerator_MoveNext_m12979_gshared((Enumerator_t2774 *)__this, method)
-// T System.Collections.Generic.List`1/Enumerator<UnityEngine.Transform>::get_Current()
-#define Enumerator_get_Current_m18737(__this, method) (Transform_t193 *)Enumerator_get_Current_m12980_gshared((Enumerator_t2774 *)__this, method)
+#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_7MethodDeclarations.h"
+#define Enumerator__ctor_m18838(__this, ___l, method) (void)Enumerator__ctor_m12880_gshared((Enumerator_t2762 *)__this, (List_1_t110 *)___l, method)
+// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IEnumerator.get_Current()
+#define Enumerator_System_Collections_IEnumerator_get_Current_m18839(__this, method) (Object_t *)Enumerator_System_Collections_IEnumerator_get_Current_m12881_gshared((Enumerator_t2762 *)__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Dispose()
+#define Enumerator_Dispose_m18840(__this, method) (void)Enumerator_Dispose_m12882_gshared((Enumerator_t2762 *)__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::VerifyState()
+#define Enumerator_VerifyState_m18841(__this, method) (void)Enumerator_VerifyState_m12883_gshared((Enumerator_t2762 *)__this, method)
+// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::MoveNext()
+#define Enumerator_MoveNext_m18842(__this, method) (bool)Enumerator_MoveNext_m12884_gshared((Enumerator_t2762 *)__this, method)
+// T System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::get_Current()
+#define Enumerator_get_Current_m18843(__this, method) (ButtonState_t521 *)Enumerator_get_Current_m12885_gshared((Enumerator_t2762 *)__this, method)

@@ -4,26 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>
-struct Enumerator_t3561;
+// System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>
+struct Enumerator_t3554;
 // System.Object
 struct Object_t;
-// UnityEngine.Component
-struct Component_t276;
-// System.Collections.Generic.List`1<UnityEngine.Component>
-struct List_1_t677;
+// System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult>
+struct List_1_t462;
+// UnityEngine.EventSystems.RaycastResult
+#include "UnityEngine_UI_UnityEngine_EventSystems_RaycastResult.h"
 
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>::.ctor(System.Collections.Generic.List`1<T>)
-// System.Collections.Generic.List`1/Enumerator<System.Object>
-#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_2MethodDeclarations.h"
-#define Enumerator__ctor_m17988(__this, ___l, method) (void)Enumerator__ctor_m12975_gshared((Enumerator_t2774 *)__this, (List_1_t123 *)___l, method)
-// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>::System.Collections.IEnumerator.get_Current()
-#define Enumerator_System_Collections_IEnumerator_get_Current_m17989(__this, method) (Object_t *)Enumerator_System_Collections_IEnumerator_get_Current_m12976_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>::Dispose()
-#define Enumerator_Dispose_m17990(__this, method) (void)Enumerator_Dispose_m12977_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>::VerifyState()
-#define Enumerator_VerifyState_m17991(__this, method) (void)Enumerator_VerifyState_m12978_gshared((Enumerator_t2774 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>::MoveNext()
-#define Enumerator_MoveNext_m17992(__this, method) (bool)Enumerator_MoveNext_m12979_gshared((Enumerator_t2774 *)__this, method)
-// T System.Collections.Generic.List`1/Enumerator<UnityEngine.Component>::get_Current()
-#define Enumerator_get_Current_m17993(__this, method) (Component_t276 *)Enumerator_get_Current_m12980_gshared((Enumerator_t2774 *)__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>::.ctor(System.Collections.Generic.List`1<T>)
+ void Enumerator__ctor_m17913 (Enumerator_t3554 * __this, List_1_t462 * ___l, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>::System.Collections.IEnumerator.get_Current()
+ Object_t * Enumerator_System_Collections_IEnumerator_get_Current_m17914 (Enumerator_t3554 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>::Dispose()
+ void Enumerator_Dispose_m17915 (Enumerator_t3554 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>::VerifyState()
+ void Enumerator_VerifyState_m17916 (Enumerator_t3554 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>::MoveNext()
+ bool Enumerator_MoveNext_m17917 (Enumerator_t3554 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.RaycastResult>::get_Current()
+ RaycastResult_t463  Enumerator_get_Current_m17918 (Enumerator_t3554 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

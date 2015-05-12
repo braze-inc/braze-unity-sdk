@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.TestResultState
-struct TestResultState_t212;
+struct TestResultState_t199;
 

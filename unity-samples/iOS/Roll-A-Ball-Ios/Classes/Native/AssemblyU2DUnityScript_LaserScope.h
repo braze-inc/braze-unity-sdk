@@ -1,15 +1,15 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.GameObject
-struct GameObject_t154;
+struct GameObject_t140;
 // UnityEngine.LineRenderer
-struct LineRenderer_t419;
+struct LineRenderer_t407;
 // PerFrameRaycast
-struct PerFrameRaycast_t420;
+struct PerFrameRaycast_t408;
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // LaserScope
-struct LaserScope_t416  : public MonoBehaviour_t2
+struct LaserScope_t404  : public MonoBehaviour_t2
 {
 	// System.Single LaserScope::scrollSpeed
 	float ___scrollSpeed_2;
@@ -22,13 +22,13 @@ struct LaserScope_t416  : public MonoBehaviour_t2
 	// System.Single LaserScope::minWidth
 	float ___minWidth_6;
 	// UnityEngine.GameObject LaserScope::pointer
-	GameObject_t154 * ___pointer_7;
+	GameObject_t140 * ___pointer_7;
 	// UnityEngine.LineRenderer LaserScope::lRenderer
-	LineRenderer_t419 * ___lRenderer_8;
+	LineRenderer_t407 * ___lRenderer_8;
 	// System.Single LaserScope::aniTime
 	float ___aniTime_9;
 	// System.Single LaserScope::aniDir
 	float ___aniDir_10;
 	// PerFrameRaycast LaserScope::raycast
-	PerFrameRaycast_t420 * ___raycast_11;
+	PerFrameRaycast_t408 * ___raycast_11;
 };

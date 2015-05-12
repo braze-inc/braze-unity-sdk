@@ -1,17 +1,17 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
-// UnityEngine.UICharInfo
-#include "UnityEngine_UnityEngine_UICharInfo.h"
+// UnityEngine.UILineInfo
+#include "UnityEngine_UnityEngine_UILineInfo.h"
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo UICharInfo_t761_il2cpp_TypeInfo;
-// System.Predicate`1<UnityEngine.UICharInfo>
-struct Predicate_1_t4416  : public MulticastDelegate_t608
+extern TypeInfo UILineInfo_t746_il2cpp_TypeInfo;
+// System.Predicate`1<UnityEngine.UILineInfo>
+struct Predicate_1_t4409  : public MulticastDelegate_t594
 {
 };

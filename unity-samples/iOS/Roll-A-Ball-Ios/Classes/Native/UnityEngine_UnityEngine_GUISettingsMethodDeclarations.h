@@ -5,7 +5,7 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.GUISettings
-struct GUISettings_t865;
+struct GUISettings_t854;
 
 // System.Void UnityEngine.GUISettings::.ctor()
- void GUISettings__ctor_m4228 (GUISettings_t865 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void GUISettings__ctor_m4133 (GUISettings_t854 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

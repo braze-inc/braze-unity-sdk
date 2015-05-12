@@ -4,26 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Comparison`1<UnityEngine.UI.Text>
-struct Comparison_1_t3788;
+// System.Comparison`1<UnityEngine.UIVertex>
+struct Comparison_1_t3810;
 // System.Object
 struct Object_t;
-// UnityEngine.UI.Text
-struct Text_t141;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+// UnityEngine.UIVertex
+#include "UnityEngine_UnityEngine_UIVertex.h"
 
-// System.Void System.Comparison`1<UnityEngine.UI.Text>::.ctor(System.Object,System.IntPtr)
-// System.Comparison`1<System.Object>
-#include "mscorlib_System_Comparison_1_gen_3MethodDeclarations.h"
-#define Comparison_1__ctor_m19916(__this, ___object, ___method, method) (void)Comparison_1__ctor_m13150_gshared((Comparison_1_t2772 *)__this, (Object_t *)___object, (IntPtr_t120)___method, method)
-// System.Int32 System.Comparison`1<UnityEngine.UI.Text>::Invoke(T,T)
-#define Comparison_1_Invoke_m19917(__this, ___x, ___y, method) (int32_t)Comparison_1_Invoke_m13151_gshared((Comparison_1_t2772 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.IAsyncResult System.Comparison`1<UnityEngine.UI.Text>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
-#define Comparison_1_BeginInvoke_m19918(__this, ___x, ___y, ___callback, ___object, method) (Object_t *)Comparison_1_BeginInvoke_m13152_gshared((Comparison_1_t2772 *)__this, (Object_t *)___x, (Object_t *)___y, (AsyncCallback_t487 *)___callback, (Object_t *)___object, method)
-// System.Int32 System.Comparison`1<UnityEngine.UI.Text>::EndInvoke(System.IAsyncResult)
-#define Comparison_1_EndInvoke_m19919(__this, ___result, method) (int32_t)Comparison_1_EndInvoke_m13153_gshared((Comparison_1_t2772 *)__this, (Object_t *)___result, method)
+// System.Void System.Comparison`1<UnityEngine.UIVertex>::.ctor(System.Object,System.IntPtr)
+ void Comparison_1__ctor_m19969 (Comparison_1_t3810 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Comparison`1<UnityEngine.UIVertex>::Invoke(T,T)
+ int32_t Comparison_1_Invoke_m19970 (Comparison_1_t3810 * __this, UIVertex_t584  ___x, UIVertex_t584  ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.IAsyncResult System.Comparison`1<UnityEngine.UIVertex>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
+ Object_t * Comparison_1_BeginInvoke_m19971 (Comparison_1_t3810 * __this, UIVertex_t584  ___x, UIVertex_t584  ___y, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Comparison`1<UnityEngine.UIVertex>::EndInvoke(System.IAsyncResult)
+ int32_t Comparison_1_EndInvoke_m19972 (Comparison_1_t3810 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;

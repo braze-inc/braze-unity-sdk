@@ -11,16 +11,16 @@
 // UnityEngine.UI.GridLayoutGroup/Constraint
 #include "UnityEngine_UI_UnityEngine_UI_GridLayoutGroup_Constraint.h"
 // UnityEngine.UI.GridLayoutGroup
-struct GridLayoutGroup_t667  : public LayoutGroup_t668
+struct GridLayoutGroup_t653  : public LayoutGroup_t654
 {
 	// UnityEngine.UI.GridLayoutGroup/Corner UnityEngine.UI.GridLayoutGroup::m_StartCorner
 	int32_t ___m_StartCorner_10;
 	// UnityEngine.UI.GridLayoutGroup/Axis UnityEngine.UI.GridLayoutGroup::m_StartAxis
 	int32_t ___m_StartAxis_11;
 	// UnityEngine.Vector2 UnityEngine.UI.GridLayoutGroup::m_CellSize
-	Vector2_t198  ___m_CellSize_12;
+	Vector2_t184  ___m_CellSize_12;
 	// UnityEngine.Vector2 UnityEngine.UI.GridLayoutGroup::m_Spacing
-	Vector2_t198  ___m_Spacing_13;
+	Vector2_t184  ___m_Spacing_13;
 	// UnityEngine.UI.GridLayoutGroup/Constraint UnityEngine.UI.GridLayoutGroup::m_Constraint
 	int32_t ___m_Constraint_14;
 	// System.Int32 UnityEngine.UI.GridLayoutGroup::m_ConstraintCount

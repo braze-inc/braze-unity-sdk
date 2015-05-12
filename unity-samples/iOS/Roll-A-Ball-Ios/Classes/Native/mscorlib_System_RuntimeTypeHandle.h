@@ -5,8 +5,8 @@
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 // System.RuntimeTypeHandle
-struct RuntimeTypeHandle_t1763 
+struct RuntimeTypeHandle_t1751 
 {
 	// System.IntPtr System.RuntimeTypeHandle::value
-	IntPtr_t120 ___value_0;
+	IntPtr_t107 ___value_0;
 };

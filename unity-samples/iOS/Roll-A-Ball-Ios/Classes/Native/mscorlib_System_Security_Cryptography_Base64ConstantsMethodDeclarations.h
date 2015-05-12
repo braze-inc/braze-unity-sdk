@@ -5,7 +5,7 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.Base64Constants
-struct Base64Constants_t2148;
+struct Base64Constants_t2136;
 
 // System.Void System.Security.Cryptography.Base64Constants::.cctor()
- void Base64Constants__cctor_m10678 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void Base64Constants__cctor_m10583 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -4,26 +4,26 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.UnityAction`1<UnityTest.GeneralComparer>
-struct UnityAction_1_t3042;
+// UnityEngine.Events.UnityAction`1<UnityTest.ComparerBaseGeneric`2>
+struct UnityAction_1_t3010;
 // System.Object
 struct Object_t;
-// UnityTest.GeneralComparer
-struct GeneralComparer_t178;
+// UnityTest.ComparerBaseGeneric`2
+struct ComparerBaseGeneric_2_t159;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 
-// System.Void UnityEngine.Events.UnityAction`1<UnityTest.GeneralComparer>::.ctor(System.Object,System.IntPtr)
+// System.Void UnityEngine.Events.UnityAction`1<UnityTest.ComparerBaseGeneric`2>::.ctor(System.Object,System.IntPtr)
 // UnityEngine.Events.UnityAction`1<System.Object>
 #include "UnityEngine_UnityEngine_Events_UnityAction_1_gen_6MethodDeclarations.h"
-#define UnityAction_1__ctor_m14855(__this, ___object, ___method, method) (void)UnityAction_1__ctor_m12834_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___object, (IntPtr_t120)___method, method)
-// System.Void UnityEngine.Events.UnityAction`1<UnityTest.GeneralComparer>::Invoke(T0)
-#define UnityAction_1_Invoke_m14856(__this, ___arg0, method) (void)UnityAction_1_Invoke_m12835_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___arg0, method)
-// System.IAsyncResult UnityEngine.Events.UnityAction`1<UnityTest.GeneralComparer>::BeginInvoke(T0,System.AsyncCallback,System.Object)
-#define UnityAction_1_BeginInvoke_m14857(__this, ___arg0, ___callback, ___object, method) (Object_t *)UnityAction_1_BeginInvoke_m12836_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___arg0, (AsyncCallback_t487 *)___callback, (Object_t *)___object, method)
-// System.Void UnityEngine.Events.UnityAction`1<UnityTest.GeneralComparer>::EndInvoke(System.IAsyncResult)
-#define UnityAction_1_EndInvoke_m14858(__this, ___result, method) (void)UnityAction_1_EndInvoke_m12837_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___result, method)
+#define UnityAction_1__ctor_m14588(__this, ___object, ___method, method) (void)UnityAction_1__ctor_m12739_gshared((UnityAction_1_t2747 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
+// System.Void UnityEngine.Events.UnityAction`1<UnityTest.ComparerBaseGeneric`2>::Invoke(T0)
+#define UnityAction_1_Invoke_m14589(__this, ___arg0, method) (void)UnityAction_1_Invoke_m12740_gshared((UnityAction_1_t2747 *)__this, (Object_t *)___arg0, method)
+// System.IAsyncResult UnityEngine.Events.UnityAction`1<UnityTest.ComparerBaseGeneric`2>::BeginInvoke(T0,System.AsyncCallback,System.Object)
+#define UnityAction_1_BeginInvoke_m14590(__this, ___arg0, ___callback, ___object, method) (Object_t *)UnityAction_1_BeginInvoke_m12741_gshared((UnityAction_1_t2747 *)__this, (Object_t *)___arg0, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
+// System.Void UnityEngine.Events.UnityAction`1<UnityTest.ComparerBaseGeneric`2>::EndInvoke(System.IAsyncResult)
+#define UnityAction_1_EndInvoke_m14591(__this, ___result, method) (void)UnityAction_1_EndInvoke_m12742_gshared((UnityAction_1_t2747 *)__this, (Object_t *)___result, method)

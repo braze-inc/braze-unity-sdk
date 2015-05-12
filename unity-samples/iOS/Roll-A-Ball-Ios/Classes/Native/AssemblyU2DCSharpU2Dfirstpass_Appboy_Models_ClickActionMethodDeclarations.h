@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Appboy.Models.ClickAction
-struct ClickAction_t53;
+struct ClickAction_t54;
 

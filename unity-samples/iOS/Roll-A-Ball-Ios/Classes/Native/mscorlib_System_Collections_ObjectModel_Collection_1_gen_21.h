@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.IList`1<UnityEngine.UIVertex>
-struct IList_1_t773;
+// System.Collections.Generic.IList`1<UnityEngine.Canvas>
+struct IList_1_t3829;
 // System.Object
 struct Object_t;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.ObjectModel.Collection`1<UnityEngine.UIVertex>
-struct Collection_1_t3833  : public Object_t
+// System.Collections.ObjectModel.Collection`1<UnityEngine.Canvas>
+struct Collection_1_t3830  : public Object_t
 {
-	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.Collection`1<UnityEngine.UIVertex>::list
+	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.Collection`1<UnityEngine.Canvas>::list
 	Object_t* ___list_0;
-	// System.Object System.Collections.ObjectModel.Collection`1<UnityEngine.UIVertex>::syncRoot
+	// System.Object System.Collections.ObjectModel.Collection`1<UnityEngine.Canvas>::syncRoot
 	Object_t * ___syncRoot_1;
 };

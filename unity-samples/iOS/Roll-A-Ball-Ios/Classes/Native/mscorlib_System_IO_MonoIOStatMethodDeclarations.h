@@ -5,9 +5,9 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.IO.MonoIOStat
-struct MonoIOStat_t1936;
-struct MonoIOStat_t1936_marshaled;
+struct MonoIOStat_t1924;
+struct MonoIOStat_t1924_marshaled;
 
-void MonoIOStat_t1936_marshal(const MonoIOStat_t1936& unmarshaled, MonoIOStat_t1936_marshaled& marshaled);
-void MonoIOStat_t1936_marshal_back(const MonoIOStat_t1936_marshaled& marshaled, MonoIOStat_t1936& unmarshaled);
-void MonoIOStat_t1936_marshal_cleanup(MonoIOStat_t1936_marshaled& marshaled);
+void MonoIOStat_t1924_marshal(const MonoIOStat_t1924& unmarshaled, MonoIOStat_t1924_marshaled& marshaled);
+void MonoIOStat_t1924_marshal_back(const MonoIOStat_t1924_marshaled& marshaled, MonoIOStat_t1924& unmarshaled);
+void MonoIOStat_t1924_marshal_cleanup(MonoIOStat_t1924_marshaled& marshaled);

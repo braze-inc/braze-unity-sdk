@@ -5,9 +5,9 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Array/ArrayReadOnlyList`1
-struct ArrayReadOnlyList_1_t1758;
+struct ArrayReadOnlyList_1_t1746;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
+struct IEnumerator_t21;
 // System.Exception
-struct Exception_t82;
+struct Exception_t71;
 

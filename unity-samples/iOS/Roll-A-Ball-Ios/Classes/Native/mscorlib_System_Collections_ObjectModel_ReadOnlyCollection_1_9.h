@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.IList`1<ITestResult>
-struct IList_1_t3283;
+// System.Collections.Generic.IList`1<UnityTest.AssertionComponent>
+struct IList_1_t3314;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.ObjectModel.ReadOnlyCollection`1<ITestResult>
-struct ReadOnlyCollection_1_t3279  : public Object_t
+// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>
+struct ReadOnlyCollection_1_t3310  : public Object_t
 {
-	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<ITestResult>::list
+	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::list
 	Object_t* ___list_0;
 };

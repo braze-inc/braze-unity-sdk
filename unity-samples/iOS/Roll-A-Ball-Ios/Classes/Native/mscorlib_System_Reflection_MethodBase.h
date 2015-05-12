@@ -3,6 +3,6 @@
 // System.Reflection.MemberInfo
 #include "mscorlib_System_Reflection_MemberInfo.h"
 // System.Reflection.MethodBase
-struct MethodBase_t320  : public MemberInfo_t131
+struct MethodBase_t307  : public MemberInfo_t196
 {
 };

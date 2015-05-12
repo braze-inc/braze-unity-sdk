@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>
-struct InternalEnumerator_1_t4592 
+// System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>
+struct InternalEnumerator_1_t4561 
 {
-	// System.Array System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::array
+	// System.Array System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<UnityEngineInternal.TypeInferenceRuleAttribute>::idx
 	int32_t ___idx_1;
 };

@@ -5,7 +5,7 @@
 // UnityTest.FloatComparer/CompareTypes
 #include "AssemblyU2DCSharp_UnityTest_FloatComparer_CompareTypes.h"
 // UnityTest.FloatComparer
-struct FloatComparer_t175  : public ComparerBaseGeneric_1_t176
+struct FloatComparer_t161  : public ComparerBaseGeneric_1_t162
 {
 	// UnityTest.FloatComparer/CompareTypes UnityTest.FloatComparer::compareTypes
 	int32_t ___compareTypes_14;

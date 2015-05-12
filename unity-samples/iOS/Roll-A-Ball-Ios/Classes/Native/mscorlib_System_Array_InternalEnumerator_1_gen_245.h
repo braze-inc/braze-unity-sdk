@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<UnityEngine.EventSystems.Physics2DRaycaster>
-struct InternalEnumerator_1_t3708 
+struct InternalEnumerator_1_t3688 
 {
 	// System.Array System.Array/InternalEnumerator`1<UnityEngine.EventSystems.Physics2DRaycaster>::array
 	Array_t * ___array_0;

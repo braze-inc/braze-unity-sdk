@@ -5,7 +5,7 @@
 // System.PlatformID
 #include "mscorlib_System_PlatformID.h"
 // System.PlatformID
-struct PlatformID_t2298 
+struct PlatformID_t2286 
 {
 	// System.Int32 System.PlatformID::value__
 	int32_t ___value___1;

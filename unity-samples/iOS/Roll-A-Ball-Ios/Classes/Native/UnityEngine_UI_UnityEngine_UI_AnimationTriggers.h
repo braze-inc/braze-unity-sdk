@@ -5,7 +5,7 @@ struct String_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // UnityEngine.UI.AnimationTriggers
-struct AnimationTriggers_t554  : public Object_t
+struct AnimationTriggers_t540  : public Object_t
 {
 	// System.String UnityEngine.UI.AnimationTriggers::m_NormalTrigger
 	String_t* ___m_NormalTrigger_4;

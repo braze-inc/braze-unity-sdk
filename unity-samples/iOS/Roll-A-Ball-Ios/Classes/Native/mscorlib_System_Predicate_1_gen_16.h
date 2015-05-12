@@ -1,16 +1,17 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityEngine.EventSystems.IEventSystemHandler
-struct IEventSystemHandler_t697;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
+// UnityEngine.EventSystems.RaycastResult
+#include "UnityEngine_UI_UnityEngine_EventSystems_RaycastResult.h"
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Predicate`1<UnityEngine.EventSystems.IEventSystemHandler>
-struct Predicate_1_t3543  : public MulticastDelegate_t608
+extern TypeInfo RaycastResult_t463_il2cpp_TypeInfo;
+// System.Predicate`1<UnityEngine.EventSystems.RaycastResult>
+struct Predicate_1_t3553  : public MulticastDelegate_t594
 {
 };

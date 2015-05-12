@@ -1,25 +1,25 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityTest.ITestComponent
-struct ITestComponent_t237;
+struct ITestComponent_t224;
 // System.String
 struct String_t;
 // System.String[]
 struct StringU5BU5D_t3;
 // System.Func`2<System.String,System.Boolean>
-struct Func_2_t256;
+struct Func_2_t243;
 // System.Func`2<System.String,System.String>
-struct Func_2_t257;
+struct Func_2_t244;
 // System.Func`2<System.Reflection.Assembly,System.Collections.Generic.IEnumerable`1<System.Type>>
-struct Func_2_t258;
+struct Func_2_t245;
 // System.Func`2<UnityTest.TestComponent,System.Boolean>
-struct Func_2_t259;
+struct Func_2_t246;
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // UnityTest.TestComponent/IncludedPlatforms
 #include "AssemblyU2DCSharp_UnityTest_TestComponent_IncludedPlatforms.h"
 // UnityTest.TestComponent
-struct TestComponent_t260  : public MonoBehaviour_t2
+struct TestComponent_t247  : public MonoBehaviour_t2
 {
 	// System.Single UnityTest.TestComponent::timeout
 	float ___timeout_3;
@@ -42,17 +42,17 @@ struct TestComponent_t260  : public MonoBehaviour_t2
 	// System.String UnityTest.TestComponent::dynamicTypeName
 	String_t* ___dynamicTypeName_12;
 };
-struct TestComponent_t260_StaticFields{
+struct TestComponent_t247_StaticFields{
 	// UnityTest.ITestComponent UnityTest.TestComponent::NullTestComponent
 	Object_t * ___NullTestComponent_2;
 	// System.Func`2<System.String,System.Boolean> UnityTest.TestComponent::<>f__am$cacheB
-	Func_2_t256 * ___U3CU3Ef__am$cacheB_13;
+	Func_2_t243 * ___U3CU3Ef__am$cacheB_13;
 	// System.Func`2<System.String,System.String> UnityTest.TestComponent::<>f__am$cacheC
-	Func_2_t257 * ___U3CU3Ef__am$cacheC_14;
+	Func_2_t244 * ___U3CU3Ef__am$cacheC_14;
 	// System.Func`2<System.Reflection.Assembly,System.Collections.Generic.IEnumerable`1<System.Type>> UnityTest.TestComponent::<>f__am$cacheD
-	Func_2_t258 * ___U3CU3Ef__am$cacheD_15;
+	Func_2_t245 * ___U3CU3Ef__am$cacheD_15;
 	// System.Func`2<UnityTest.TestComponent,System.Boolean> UnityTest.TestComponent::<>f__am$cacheE
-	Func_2_t259 * ___U3CU3Ef__am$cacheE_16;
+	Func_2_t246 * ___U3CU3Ef__am$cacheE_16;
 	// System.Func`2<UnityTest.TestComponent,System.Boolean> UnityTest.TestComponent::<>f__am$cacheF
-	Func_2_t259 * ___U3CU3Ef__am$cacheF_17;
+	Func_2_t246 * ___U3CU3Ef__am$cacheF_17;
 };

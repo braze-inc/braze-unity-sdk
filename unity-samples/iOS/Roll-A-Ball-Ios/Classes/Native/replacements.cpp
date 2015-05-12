@@ -14,22 +14,22 @@
 #include <assert.h>
 #include "stringLiterals.h"
 
-extern TypeInfo U3CModuleU3E_t1127_il2cpp_TypeInfo;
-extern TypeInfo MSCompatUnicodeTable_t1128_il2cpp_TypeInfo;
-extern TypeInfo TypeBuilder_t1129_il2cpp_TypeInfo;
-extern TypeInfo SecurityElement_t1130_il2cpp_TypeInfo;
-extern TypeInfo RemotingServices_t1131_il2cpp_TypeInfo;
+extern TypeInfo U3CModuleU3E_t1116_il2cpp_TypeInfo;
+extern TypeInfo MSCompatUnicodeTable_t1117_il2cpp_TypeInfo;
+extern TypeInfo TypeBuilder_t1118_il2cpp_TypeInfo;
+extern TypeInfo SecurityElement_t1119_il2cpp_TypeInfo;
+extern TypeInfo RemotingServices_t1120_il2cpp_TypeInfo;
 #include "utils/RegisterRuntimeInitializeAndCleanup.h"
 #include <map>
 struct TypeInfo;
 struct MethodInfo;
 TypeInfo* g_replacements_Assembly_Types[6] = 
 {
-	&U3CModuleU3E_t1127_il2cpp_TypeInfo,
-	&MSCompatUnicodeTable_t1128_il2cpp_TypeInfo,
-	&TypeBuilder_t1129_il2cpp_TypeInfo,
-	&SecurityElement_t1130_il2cpp_TypeInfo,
-	&RemotingServices_t1131_il2cpp_TypeInfo,
+	&U3CModuleU3E_t1116_il2cpp_TypeInfo,
+	&MSCompatUnicodeTable_t1117_il2cpp_TypeInfo,
+	&TypeBuilder_t1118_il2cpp_TypeInfo,
+	&SecurityElement_t1119_il2cpp_TypeInfo,
+	&RemotingServices_t1120_il2cpp_TypeInfo,
 	NULL,
 };
 extern Il2CppImage g_replacements_dll_Image;

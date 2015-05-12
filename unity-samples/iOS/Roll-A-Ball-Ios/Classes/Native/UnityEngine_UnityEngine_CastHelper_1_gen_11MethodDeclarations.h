@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.CastHelper`1<Joystick>
-struct CastHelper_1_t3494;
+struct CastHelper_1_t3474;
 

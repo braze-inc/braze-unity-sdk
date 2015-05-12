@@ -5,7 +5,7 @@
 // System.Runtime.InteropServices.ComInterfaceType
 #include "mscorlib_System_Runtime_InteropServices_ComInterfaceType.h"
 // System.Runtime.InteropServices.InterfaceTypeAttribute
-struct InterfaceTypeAttribute_t2032  : public Attribute_t226
+struct InterfaceTypeAttribute_t2020  : public Attribute_t213
 {
 	// System.Runtime.InteropServices.ComInterfaceType System.Runtime.InteropServices.InterfaceTypeAttribute::intType
 	int32_t ___intType_0;

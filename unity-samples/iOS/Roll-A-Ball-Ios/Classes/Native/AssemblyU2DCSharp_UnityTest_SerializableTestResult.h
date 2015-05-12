@@ -7,7 +7,7 @@ struct String_t;
 // UnityTest.TestResultState
 #include "AssemblyU2DCSharp_UnityTest_TestResultState.h"
 // UnityTest.SerializableTestResult
-struct SerializableTestResult_t248  : public Object_t
+struct SerializableTestResult_t235  : public Object_t
 {
 	// UnityTest.TestResultState UnityTest.SerializableTestResult::resultState
 	uint8_t ___resultState_0;

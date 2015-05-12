@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// UnityEngine.Rigidbody2D
-struct Rigidbody2D_t910;
+struct Void_t62;
+// UnityEngine.SphereCollider
+struct SphereCollider_t374;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<UnityEngine.Rigidbody2D>
-struct UnityAction_1_t4366  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<UnityEngine.SphereCollider>
+struct UnityAction_1_t4325  : public MulticastDelegate_t594
 {
 };

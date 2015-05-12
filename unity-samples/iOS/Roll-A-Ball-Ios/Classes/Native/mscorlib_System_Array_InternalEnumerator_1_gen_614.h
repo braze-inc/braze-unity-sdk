@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.IO.MonoIOError>
-struct InternalEnumerator_1_t4778 
+// System.Array/InternalEnumerator`1<System.IO.FileShare>
+struct InternalEnumerator_1_t4758 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.IO.MonoIOError>::array
+	// System.Array System.Array/InternalEnumerator`1<System.IO.FileShare>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.IO.MonoIOError>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.IO.FileShare>::idx
 	int32_t ___idx_1;
 };

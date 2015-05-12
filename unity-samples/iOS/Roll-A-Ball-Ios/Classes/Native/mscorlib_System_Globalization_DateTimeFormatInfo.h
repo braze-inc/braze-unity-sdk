@@ -5,11 +5,11 @@ struct String_t;
 // System.String[]
 struct StringU5BU5D_t3;
 // System.Globalization.DateTimeFormatInfo
-struct DateTimeFormatInfo_t1912;
+struct DateTimeFormatInfo_t1900;
 // System.Globalization.Calendar
-struct Calendar_t1908;
+struct Calendar_t1896;
 // System.Int32[]
-struct Int32U5BU5D_t1196;
+struct Int32U5BU5D_t1185;
 // System.String[] modreq(System.Runtime.CompilerServices.IsVolatile)
 struct StringU5BU5D_t3;
 // System.Object
@@ -17,7 +17,7 @@ struct StringU5BU5D_t3;
 // System.Globalization.DateTimeFormatFlags
 #include "mscorlib_System_Globalization_DateTimeFormatFlags.h"
 // System.Globalization.DateTimeFormatInfo
-struct DateTimeFormatInfo_t1912  : public Object_t
+struct DateTimeFormatInfo_t1900  : public Object_t
 {
 	// System.Boolean System.Globalization.DateTimeFormatInfo::m_isReadOnly
 	bool ___m_isReadOnly_10;
@@ -52,7 +52,7 @@ struct DateTimeFormatInfo_t1912  : public Object_t
 	// System.Int32 System.Globalization.DateTimeFormatInfo::firstDayOfWeek
 	int32_t ___firstDayOfWeek_25;
 	// System.Globalization.Calendar System.Globalization.DateTimeFormatInfo::calendar
-	Calendar_t1908 * ___calendar_26;
+	Calendar_t1896 * ___calendar_26;
 	// System.Int32 System.Globalization.DateTimeFormatInfo::calendarWeekRule
 	int32_t ___calendarWeekRule_27;
 	// System.String[] System.Globalization.DateTimeFormatInfo::abbreviatedDayNames
@@ -100,7 +100,7 @@ struct DateTimeFormatInfo_t1912  : public Object_t
 	// System.String[] System.Globalization.DateTimeFormatInfo::m_dateWords
 	StringU5BU5D_t3* ___m_dateWords_49;
 	// System.Int32[] System.Globalization.DateTimeFormatInfo::optionalCalendars
-	Int32U5BU5D_t1196* ___optionalCalendars_50;
+	Int32U5BU5D_t1185* ___optionalCalendars_50;
 	// System.String[] System.Globalization.DateTimeFormatInfo::m_superShortDayNames
 	StringU5BU5D_t3* ___m_superShortDayNames_51;
 	// System.String[] System.Globalization.DateTimeFormatInfo::genitiveMonthNames
@@ -116,7 +116,7 @@ struct DateTimeFormatInfo_t1912  : public Object_t
 	// System.String[] modreq(System.Runtime.CompilerServices.IsVolatile) System.Globalization.DateTimeFormatInfo::all_date_time_patterns
 	StringU5BU5D_t3* ___all_date_time_patterns_57;
 };
-struct DateTimeFormatInfo_t1912_StaticFields{
+struct DateTimeFormatInfo_t1900_StaticFields{
 	// System.String System.Globalization.DateTimeFormatInfo::_RoundtripPattern
 	String_t* ____RoundtripPattern_0;
 	// System.String System.Globalization.DateTimeFormatInfo::MSG_READONLY
@@ -136,5 +136,5 @@ struct DateTimeFormatInfo_t1912_StaticFields{
 	// System.String[] System.Globalization.DateTimeFormatInfo::INVARIANT_SHORT_DAY_NAMES
 	StringU5BU5D_t3* ___INVARIANT_SHORT_DAY_NAMES_8;
 	// System.Globalization.DateTimeFormatInfo System.Globalization.DateTimeFormatInfo::theInvariantDateTimeFormatInfo
-	DateTimeFormatInfo_t1912 * ___theInvariantDateTimeFormatInfo_9;
+	DateTimeFormatInfo_t1900 * ___theInvariantDateTimeFormatInfo_9;
 };

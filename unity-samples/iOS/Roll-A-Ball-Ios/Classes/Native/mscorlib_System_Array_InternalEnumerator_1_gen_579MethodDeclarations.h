@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Runtime.InteropServices.FieldOffsetAttribute>
-struct InternalEnumerator_1_t4741;
+// System.Array/InternalEnumerator`1<System.Reflection.DefaultMemberAttribute>
+struct InternalEnumerator_1_t4721;
 // System.Object
 struct Object_t;
-// System.Runtime.InteropServices.FieldOffsetAttribute
-struct FieldOffsetAttribute_t1775;
+// System.Reflection.DefaultMemberAttribute
+struct DefaultMemberAttribute_t102;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.FieldOffsetAttribute>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.DefaultMemberAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m25944(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Runtime.InteropServices.FieldOffsetAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25945(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.InteropServices.FieldOffsetAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m25946(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.InteropServices.FieldOffsetAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m25947(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Runtime.InteropServices.FieldOffsetAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m25948(__this, method) (FieldOffsetAttribute_t1775 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m25724(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Reflection.DefaultMemberAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25725(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.DefaultMemberAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m25726(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Reflection.DefaultMemberAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m25727(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Reflection.DefaultMemberAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m25728(__this, method) (DefaultMemberAttribute_t102 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

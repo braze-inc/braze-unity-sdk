@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityEngine.UI.Toggle
-struct Toggle_t140;
+// UnityEngine.RectTransform
+struct RectTransform_t559;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<UnityEngine.UI.Toggle>
-struct Comparison_1_t4031  : public MulticastDelegate_t608
+// System.Comparison`1<UnityEngine.RectTransform>
+struct Comparison_1_t4051  : public MulticastDelegate_t594
 {
 };

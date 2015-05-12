@@ -5,7 +5,7 @@
 // UnityTest.GeneralComparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_GeneralComparer_CompareType.h"
 // UnityTest.GeneralComparer/CompareType
-struct CompareType_t177 
+struct CompareType_t163 
 {
 	// System.Int32 UnityTest.GeneralComparer/CompareType::value__
 	int32_t ___value___1;

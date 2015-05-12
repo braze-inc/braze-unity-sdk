@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Security.Cryptography.DSA
-struct DSA_t1401;
+struct DSA_t1390;
 // System.Security.Cryptography.AsymmetricSignatureDeformatter
 #include "mscorlib_System_Security_Cryptography_AsymmetricSignatureDef.h"
 // System.Security.Cryptography.DSASignatureDeformatter
-struct DSASignatureDeformatter_t1529  : public AsymmetricSignatureDeformatter_t1477
+struct DSASignatureDeformatter_t1518  : public AsymmetricSignatureDeformatter_t1466
 {
 	// System.Security.Cryptography.DSA System.Security.Cryptography.DSASignatureDeformatter::dsa
-	DSA_t1401 * ___dsa_0;
+	DSA_t1390 * ___dsa_0;
 };

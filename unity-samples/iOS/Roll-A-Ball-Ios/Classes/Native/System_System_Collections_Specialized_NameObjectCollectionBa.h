@@ -7,7 +7,7 @@ struct Object_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Collections.Specialized.NameObjectCollectionBase/_Item
-struct _Item_t1578  : public Object_t
+struct _Item_t1566  : public Object_t
 {
 	// System.String System.Collections.Specialized.NameObjectCollectionBase/_Item::key
 	String_t* ___key_0;

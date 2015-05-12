@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.Image/Origin180
-struct Origin180_t593;
+struct Origin180_t579;
 

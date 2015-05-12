@@ -5,8 +5,8 @@
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 // UnityEngine.TouchScreenKeyboard
-struct TouchScreenKeyboard_t611  : public Object_t
+struct TouchScreenKeyboard_t597  : public Object_t
 {
 	// System.IntPtr UnityEngine.TouchScreenKeyboard::m_Ptr
-	IntPtr_t120 ___m_Ptr_0;
+	IntPtr_t107 ___m_Ptr_0;
 };

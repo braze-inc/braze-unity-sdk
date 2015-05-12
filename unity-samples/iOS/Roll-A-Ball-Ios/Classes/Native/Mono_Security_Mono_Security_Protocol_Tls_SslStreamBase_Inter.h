@@ -3,28 +3,28 @@
 // System.Object
 struct Object_t;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Exception
-struct Exception_t82;
+struct Exception_t71;
 // System.Threading.ManualResetEvent
-struct ManualResetEvent_t1472;
+struct ManualResetEvent_t1461;
 // System.Byte[]
-struct ByteU5BU5D_t112;
+struct ByteU5BU5D_t97;
 // System.Object
 #include "mscorlib_System_Object.h"
 // Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult
-struct InternalAsyncResult_t1488  : public Object_t
+struct InternalAsyncResult_t1477  : public Object_t
 {
 	// System.Object Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::locker
 	Object_t * ___locker_0;
 	// System.AsyncCallback Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_userCallback
-	AsyncCallback_t487 * ____userCallback_1;
+	AsyncCallback_t473 * ____userCallback_1;
 	// System.Object Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_userState
 	Object_t * ____userState_2;
 	// System.Exception Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_asyncException
-	Exception_t82 * ____asyncException_3;
+	Exception_t71 * ____asyncException_3;
 	// System.Threading.ManualResetEvent Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::handle
-	ManualResetEvent_t1472 * ___handle_4;
+	ManualResetEvent_t1461 * ___handle_4;
 	// System.Boolean Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::completed
 	bool ___completed_5;
 	// System.Int32 Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_bytesRead
@@ -34,7 +34,7 @@ struct InternalAsyncResult_t1488  : public Object_t
 	// System.Boolean Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_proceedAfterHandshake
 	bool ____proceedAfterHandshake_8;
 	// System.Byte[] Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_buffer
-	ByteU5BU5D_t112* ____buffer_9;
+	ByteU5BU5D_t97* ____buffer_9;
 	// System.Int32 Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_offset
 	int32_t ____offset_10;
 	// System.Int32 Mono.Security.Protocol.Tls.SslStreamBase/InternalAsyncResult::_count

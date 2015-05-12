@@ -1,20 +1,20 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
+struct Void_t62;
 // UnityEngine.EventSystems.IUpdateSelectedHandler
-struct IUpdateSelectedHandler_t520;
+struct IUpdateSelectedHandler_t506;
 // UnityEngine.EventSystems.BaseEventData
-struct BaseEventData_t471;
+struct BaseEventData_t457;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
 // UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IUpdateSelectedHandler>
-struct EventFunction_1_t499  : public MulticastDelegate_t608
+struct EventFunction_1_t485  : public MulticastDelegate_t594
 {
 };

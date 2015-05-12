@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.InvokableCall`1<UnityEngine.UI.Graphic>
-struct InvokableCall_1_t3818;
+// UnityEngine.Events.InvokableCall`1<UnityEngine.Color>
+struct InvokableCall_1_t3699;
 // System.Object
 struct Object_t;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
-// UnityEngine.Events.UnityAction`1<UnityEngine.UI.Graphic>
-struct UnityAction_1_t3819;
+struct MethodInfo_t198;
+// UnityEngine.Events.UnityAction`1<UnityEngine.Color>
+struct UnityAction_1_t537;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 
-// System.Void UnityEngine.Events.InvokableCall`1<UnityEngine.UI.Graphic>::.ctor(System.Object,System.Reflection.MethodInfo)
-// UnityEngine.Events.InvokableCall`1<System.Object>
-#include "UnityEngine_UnityEngine_Events_InvokableCall_1_gen_0MethodDeclarations.h"
-#define InvokableCall_1__ctor_m20031(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12830_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___target, (MethodInfo_t211 *)___theFunction, method)
-// System.Void UnityEngine.Events.InvokableCall`1<UnityEngine.UI.Graphic>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
-#define InvokableCall_1__ctor_m20032(__this, ___callback, method) (void)InvokableCall_1__ctor_m12831_gshared((InvokableCall_1_t2758 *)__this, (UnityAction_1_t2759 *)___callback, method)
-// System.Void UnityEngine.Events.InvokableCall`1<UnityEngine.UI.Graphic>::Invoke(System.Object[])
-#define InvokableCall_1_Invoke_m20033(__this, ___args, method) (void)InvokableCall_1_Invoke_m12832_gshared((InvokableCall_1_t2758 *)__this, (ObjectU5BU5D_t96*)___args, method)
-// System.Boolean UnityEngine.Events.InvokableCall`1<UnityEngine.UI.Graphic>::Find(System.Object,System.Reflection.MethodInfo)
-#define InvokableCall_1_Find_m20034(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12833_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___targetObj, (MethodInfo_t211 *)___method, method)
+// System.Void UnityEngine.Events.InvokableCall`1<UnityEngine.Color>::.ctor(System.Object,System.Reflection.MethodInfo)
+ void InvokableCall_1__ctor_m19025 (InvokableCall_1_t3699 * __this, Object_t * ___target, MethodInfo_t198 * ___theFunction, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Events.InvokableCall`1<UnityEngine.Color>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
+ void InvokableCall_1__ctor_m19026 (InvokableCall_1_t3699 * __this, UnityAction_1_t537 * ___callback, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Events.InvokableCall`1<UnityEngine.Color>::Invoke(System.Object[])
+ void InvokableCall_1_Invoke_m19027 (InvokableCall_1_t3699 * __this, ObjectU5BU5D_t112* ___args, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.Events.InvokableCall`1<UnityEngine.Color>::Find(System.Object,System.Reflection.MethodInfo)
+ bool InvokableCall_1_Find_m19028 (InvokableCall_1_t3699 * __this, Object_t * ___targetObj, MethodInfo_t198 * ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;

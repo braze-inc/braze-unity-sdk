@@ -4,22 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>
-struct EqualityComparer_1_t4524;
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>
+struct EqualityComparer_1_t4529;
 // System.Object
 struct Object_t;
-// UnityEngine.TextEditor/TextEditOp
-#include "UnityEngine_UnityEngine_TextEditor_TextEditOp.h"
+// UnityEngine.Events.PersistentCall
+struct PersistentCall_t978;
 
-// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::.ctor()
- void EqualityComparer_1__ctor_m24567 (EqualityComparer_1_t4524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::.cctor()
- void EqualityComparer_1__cctor_m24568 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::System.Collections.IEqualityComparer.GetHashCode(System.Object)
- int32_t EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m24569 (EqualityComparer_1_t4524 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::System.Collections.IEqualityComparer.Equals(System.Object,System.Object)
- bool EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m24570 (EqualityComparer_1_t4524 * __this, Object_t * ___x, Object_t * ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::GetHashCode(T)
-// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::Equals(T,T)
-// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::get_Default()
- EqualityComparer_1_t4524 * EqualityComparer_1_get_Default_m24571 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::.ctor()
+// System.Collections.Generic.EqualityComparer`1<System.Object>
+#include "mscorlib_System_Collections_Generic_EqualityComparer_1_genMethodDeclarations.h"
+#define EqualityComparer_1__ctor_m24536(__this, method) (void)EqualityComparer_1__ctor_m12952_gshared((EqualityComparer_1_t2764 *)__this, method)
+// System.Void System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::.cctor()
+#define EqualityComparer_1__cctor_m24537(__this/* static, unused */, method) (void)EqualityComparer_1__cctor_m12953_gshared((Object_t *)__this/* static, unused */, method)
+// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::System.Collections.IEqualityComparer.GetHashCode(System.Object)
+#define EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m24538(__this, ___obj, method) (int32_t)EqualityComparer_1_System_Collections_IEqualityComparer_GetHashCode_m12954_gshared((EqualityComparer_1_t2764 *)__this, (Object_t *)___obj, method)
+// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::System.Collections.IEqualityComparer.Equals(System.Object,System.Object)
+#define EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m24539(__this, ___x, ___y, method) (bool)EqualityComparer_1_System_Collections_IEqualityComparer_Equals_m12955_gshared((EqualityComparer_1_t2764 *)__this, (Object_t *)___x, (Object_t *)___y, method)
+// System.Int32 System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::GetHashCode(T)
+// System.Boolean System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::Equals(T,T)
+// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.Events.PersistentCall>::get_Default()
+#define EqualityComparer_1_get_Default_m24540(__this/* static, unused */, method) (EqualityComparer_1_t4529 *)EqualityComparer_1_get_Default_m12956_gshared((Object_t *)__this/* static, unused */, method)

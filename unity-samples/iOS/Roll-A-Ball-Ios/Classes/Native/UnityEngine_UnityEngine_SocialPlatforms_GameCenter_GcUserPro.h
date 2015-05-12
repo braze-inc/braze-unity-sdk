@@ -3,11 +3,11 @@
 // System.String
 struct String_t;
 // UnityEngine.Texture2D
-struct Texture2D_t571;
+struct Texture2D_t557;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // UnityEngine.SocialPlatforms.GameCenter.GcUserProfileData
-struct GcUserProfileData_t832 
+struct GcUserProfileData_t819 
 {
 	// System.String UnityEngine.SocialPlatforms.GameCenter.GcUserProfileData::userName
 	String_t* ___userName_0;
@@ -16,5 +16,5 @@ struct GcUserProfileData_t832
 	// System.Int32 UnityEngine.SocialPlatforms.GameCenter.GcUserProfileData::isFriend
 	int32_t ___isFriend_2;
 	// UnityEngine.Texture2D UnityEngine.SocialPlatforms.GameCenter.GcUserProfileData::image
-	Texture2D_t571 * ___image_3;
+	Texture2D_t557 * ___image_3;
 };

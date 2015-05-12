@@ -5,10 +5,10 @@
 // UnityEngine.Vector2
 #include "UnityEngine_UnityEngine_Vector2.h"
 // UnityEngine.UICharInfo
-struct UICharInfo_t761 
+struct UICharInfo_t748 
 {
 	// UnityEngine.Vector2 UnityEngine.UICharInfo::cursorPos
-	Vector2_t198  ___cursorPos_0;
+	Vector2_t184  ___cursorPos_0;
 	// System.Single UnityEngine.UICharInfo::charWidth
 	float ___charWidth_1;
 };

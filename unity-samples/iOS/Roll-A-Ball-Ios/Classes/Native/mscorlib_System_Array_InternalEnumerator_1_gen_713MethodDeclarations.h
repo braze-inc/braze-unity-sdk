@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnSerializedAttribute>
-struct InternalEnumerator_1_t4879;
+// System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnDeserializedAttribute>
+struct InternalEnumerator_1_t4859;
 // System.Object
 struct Object_t;
-// System.Runtime.Serialization.OnSerializedAttribute
-struct OnSerializedAttribute_t2139;
+// System.Runtime.Serialization.OnDeserializedAttribute
+struct OnDeserializedAttribute_t2125;
 // System.Array
 struct Array_t;
 
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnSerializedAttribute>::.ctor(System.Array)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnDeserializedAttribute>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m26622(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnSerializedAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26623(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnSerializedAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m26624(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnSerializedAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m26625(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnSerializedAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m26626(__this, method) (OnSerializedAttribute_t2139 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1__ctor_m26402(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnDeserializedAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26403(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnDeserializedAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m26404(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnDeserializedAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m26405(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.Runtime.Serialization.OnDeserializedAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m26406(__this, method) (OnDeserializedAttribute_t2125 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

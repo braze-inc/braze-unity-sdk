@@ -7,7 +7,7 @@ struct Object_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Runtime.Remoting.Messaging.Header
-struct Header_t2072  : public Object_t
+struct Header_t2060  : public Object_t
 {
 	// System.String System.Runtime.Remoting.Messaging.Header::HeaderNamespace
 	String_t* ___HeaderNamespace_0;

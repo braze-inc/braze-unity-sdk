@@ -3,13 +3,13 @@
 // System.String
 struct String_t;
 // ITestResult
-struct ITestResult_t247;
+struct ITestResult_t234;
 // System.Object
 #include "mscorlib_System_Object.h"
 // UnityTest.ResultDTO/MessageType
 #include "AssemblyU2DCSharp_UnityTest_ResultDTO_MessageType.h"
 // UnityTest.ResultDTO
-struct ResultDTO_t222  : public Object_t
+struct ResultDTO_t209  : public Object_t
 {
 	// UnityTest.ResultDTO/MessageType UnityTest.ResultDTO::messageType
 	uint8_t ___messageType_0;

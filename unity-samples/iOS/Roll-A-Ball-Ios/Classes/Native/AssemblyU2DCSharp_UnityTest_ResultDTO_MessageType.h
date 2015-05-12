@@ -5,7 +5,7 @@
 // UnityTest.ResultDTO/MessageType
 #include "AssemblyU2DCSharp_UnityTest_ResultDTO_MessageType.h"
 // UnityTest.ResultDTO/MessageType
-struct MessageType_t246 
+struct MessageType_t233 
 {
 	// System.Byte UnityTest.ResultDTO/MessageType::value__
 	uint8_t ___value___1;

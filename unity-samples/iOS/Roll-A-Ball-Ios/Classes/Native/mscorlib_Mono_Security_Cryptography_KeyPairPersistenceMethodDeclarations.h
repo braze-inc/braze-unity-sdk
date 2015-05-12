@@ -5,65 +5,65 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.Cryptography.KeyPairPersistence
-struct KeyPairPersistence_t1824;
+struct KeyPairPersistence_t1812;
 // System.String
 struct String_t;
 // System.Security.Cryptography.CspParameters
-struct CspParameters_t1521;
+struct CspParameters_t1510;
 
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::.ctor(System.Security.Cryptography.CspParameters)
- void KeyPairPersistence__ctor_m8811 (KeyPairPersistence_t1824 * __this, CspParameters_t1521 * ___parameters, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence__ctor_m8716 (KeyPairPersistence_t1812 * __this, CspParameters_t1510 * ___parameters, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::.ctor(System.Security.Cryptography.CspParameters,System.String)
- void KeyPairPersistence__ctor_m8812 (KeyPairPersistence_t1824 * __this, CspParameters_t1521 * ___parameters, String_t* ___keyPair, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence__ctor_m8717 (KeyPairPersistence_t1812 * __this, CspParameters_t1510 * ___parameters, String_t* ___keyPair, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::.cctor()
- void KeyPairPersistence__cctor_m8813 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence__cctor_m8718 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.KeyPairPersistence::get_Filename()
- String_t* KeyPairPersistence_get_Filename_m8814 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ String_t* KeyPairPersistence_get_Filename_m8719 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.KeyPairPersistence::get_KeyValue()
- String_t* KeyPairPersistence_get_KeyValue_m8815 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ String_t* KeyPairPersistence_get_KeyValue_m8720 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::set_KeyValue(System.String)
- void KeyPairPersistence_set_KeyValue_m8816 (KeyPairPersistence_t1824 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence_set_KeyValue_m8721 (KeyPairPersistence_t1812 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::Load()
- bool KeyPairPersistence_Load_m8817 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_Load_m8722 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::Save()
- void KeyPairPersistence_Save_m8818 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence_Save_m8723 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::Remove()
- void KeyPairPersistence_Remove_m8819 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence_Remove_m8724 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.KeyPairPersistence::get_UserPath()
- String_t* KeyPairPersistence_get_UserPath_m8820 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ String_t* KeyPairPersistence_get_UserPath_m8725 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.KeyPairPersistence::get_MachinePath()
- String_t* KeyPairPersistence_get_MachinePath_m8821 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ String_t* KeyPairPersistence_get_MachinePath_m8726 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_CanSecure(System.String)
- bool KeyPairPersistence__CanSecure_m8822 (Object_t * __this/* static, unused */, String_t* ___root, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence__CanSecure_m8727 (Object_t * __this/* static, unused */, String_t* ___root, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_ProtectUser(System.String)
- bool KeyPairPersistence__ProtectUser_m8823 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence__ProtectUser_m8728 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_ProtectMachine(System.String)
- bool KeyPairPersistence__ProtectMachine_m8824 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence__ProtectMachine_m8729 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_IsUserProtected(System.String)
- bool KeyPairPersistence__IsUserProtected_m8825 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence__IsUserProtected_m8730 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::_IsMachineProtected(System.String)
- bool KeyPairPersistence__IsMachineProtected_m8826 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence__IsMachineProtected_m8731 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::CanSecure(System.String)
- bool KeyPairPersistence_CanSecure_m8827 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_CanSecure_m8732 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::ProtectUser(System.String)
- bool KeyPairPersistence_ProtectUser_m8828 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_ProtectUser_m8733 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::ProtectMachine(System.String)
- bool KeyPairPersistence_ProtectMachine_m8829 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_ProtectMachine_m8734 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::IsUserProtected(System.String)
- bool KeyPairPersistence_IsUserProtected_m8830 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_IsUserProtected_m8735 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::IsMachineProtected(System.String)
- bool KeyPairPersistence_IsMachineProtected_m8831 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_IsMachineProtected_m8736 (Object_t * __this/* static, unused */, String_t* ___path, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::get_CanChange()
- bool KeyPairPersistence_get_CanChange_m8832 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_get_CanChange_m8737 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::get_UseDefaultKeyContainer()
- bool KeyPairPersistence_get_UseDefaultKeyContainer_m8833 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_get_UseDefaultKeyContainer_m8738 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Cryptography.KeyPairPersistence::get_UseMachineKeyStore()
- bool KeyPairPersistence_get_UseMachineKeyStore_m8834 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ bool KeyPairPersistence_get_UseMachineKeyStore_m8739 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.KeyPairPersistence::get_ContainerName()
- String_t* KeyPairPersistence_get_ContainerName_m8835 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ String_t* KeyPairPersistence_get_ContainerName_m8740 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.CspParameters Mono.Security.Cryptography.KeyPairPersistence::Copy(System.Security.Cryptography.CspParameters)
- CspParameters_t1521 * KeyPairPersistence_Copy_m8836 (KeyPairPersistence_t1824 * __this, CspParameters_t1521 * ___p, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ CspParameters_t1510 * KeyPairPersistence_Copy_m8741 (KeyPairPersistence_t1812 * __this, CspParameters_t1510 * ___p, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Cryptography.KeyPairPersistence::FromXml(System.String)
- void KeyPairPersistence_FromXml_m8837 (KeyPairPersistence_t1824 * __this, String_t* ___xml, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void KeyPairPersistence_FromXml_m8742 (KeyPairPersistence_t1812 * __this, String_t* ___xml, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.Cryptography.KeyPairPersistence::ToXml()
- String_t* KeyPairPersistence_ToXml_m8838 (KeyPairPersistence_t1824 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ String_t* KeyPairPersistence_ToXml_m8743 (KeyPairPersistence_t1812 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

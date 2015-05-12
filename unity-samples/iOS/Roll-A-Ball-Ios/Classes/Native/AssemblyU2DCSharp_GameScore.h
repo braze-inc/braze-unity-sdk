@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <stdint.h>
 // GameScore
-struct GameScore_t213;
+struct GameScore_t200;
 // System.String
 struct String_t;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
@@ -9,7 +9,7 @@ struct Dictionary_2_t56;
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // GameScore
-struct GameScore_t213  : public MonoBehaviour_t2
+struct GameScore_t200  : public MonoBehaviour_t2
 {
 	// System.String GameScore::playerLayerName
 	String_t* ___playerLayerName_3;
@@ -22,7 +22,7 @@ struct GameScore_t213  : public MonoBehaviour_t2
 	// System.Single GameScore::m_StartTime
 	float ___m_StartTime_7;
 };
-struct GameScore_t213_StaticFields{
+struct GameScore_t200_StaticFields{
 	// GameScore GameScore::s_Instance
-	GameScore_t213 * ___s_Instance_2;
+	GameScore_t200 * ___s_Instance_2;
 };

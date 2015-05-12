@@ -3,6 +3,6 @@
 // UnityEngine.Component
 #include "UnityEngine_UnityEngine_Component.h"
 // UnityEngine.ParticleEmitter
-struct ParticleEmitter_t450  : public Component_t276
+struct ParticleEmitter_t437  : public Component_t263
 {
 };

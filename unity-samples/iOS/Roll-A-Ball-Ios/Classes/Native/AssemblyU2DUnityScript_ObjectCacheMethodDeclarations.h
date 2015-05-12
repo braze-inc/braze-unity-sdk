@@ -5,13 +5,13 @@
 #include "codegen/il2cpp-codegen.h"
 
 // ObjectCache
-struct ObjectCache_t423;
+struct ObjectCache_t411;
 // UnityEngine.GameObject
-struct GameObject_t154;
+struct GameObject_t140;
 
 // System.Void ObjectCache::.ctor()
- void ObjectCache__ctor_m1781 (ObjectCache_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void ObjectCache__ctor_m1675 (ObjectCache_t411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void ObjectCache::Initialize()
- void ObjectCache_Initialize_m1782 (ObjectCache_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ void ObjectCache_Initialize_m1676 (ObjectCache_t411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.GameObject ObjectCache::GetNextObjectInCache()
- GameObject_t154 * ObjectCache_GetNextObjectInCache_m1783 (ObjectCache_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+ GameObject_t140 * ObjectCache_GetNextObjectInCache_m1677 (ObjectCache_t411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

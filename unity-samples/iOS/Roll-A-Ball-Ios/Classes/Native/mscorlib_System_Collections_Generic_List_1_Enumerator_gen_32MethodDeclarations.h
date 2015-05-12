@@ -4,26 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>
-struct Enumerator_t4356;
+// System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>
+struct Enumerator_t4400;
 // System.Object
 struct Object_t;
-// UnityEngine.Rigidbody2D
-struct Rigidbody2D_t910;
-// System.Collections.Generic.List`1<UnityEngine.Rigidbody2D>
-struct List_1_t909;
+// System.Collections.Generic.List`1<UnityEngine.UICharInfo>
+struct List_1_t922;
+// UnityEngine.UICharInfo
+#include "UnityEngine_UnityEngine_UICharInfo.h"
 
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>::.ctor(System.Collections.Generic.List`1<T>)
-// System.Collections.Generic.List`1/Enumerator<System.Object>
-#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_2MethodDeclarations.h"
-#define Enumerator__ctor_m23398(__this, ___l, method) (void)Enumerator__ctor_m12975_gshared((Enumerator_t2774 *)__this, (List_1_t123 *)___l, method)
-// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>::System.Collections.IEnumerator.get_Current()
-#define Enumerator_System_Collections_IEnumerator_get_Current_m23399(__this, method) (Object_t *)Enumerator_System_Collections_IEnumerator_get_Current_m12976_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>::Dispose()
-#define Enumerator_Dispose_m23400(__this, method) (void)Enumerator_Dispose_m12977_gshared((Enumerator_t2774 *)__this, method)
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>::VerifyState()
-#define Enumerator_VerifyState_m23401(__this, method) (void)Enumerator_VerifyState_m12978_gshared((Enumerator_t2774 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>::MoveNext()
-#define Enumerator_MoveNext_m23402(__this, method) (bool)Enumerator_MoveNext_m12979_gshared((Enumerator_t2774 *)__this, method)
-// T System.Collections.Generic.List`1/Enumerator<UnityEngine.Rigidbody2D>::get_Current()
-#define Enumerator_get_Current_m23403(__this, method) (Rigidbody2D_t910 *)Enumerator_get_Current_m12980_gshared((Enumerator_t2774 *)__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>::.ctor(System.Collections.Generic.List`1<T>)
+ void Enumerator__ctor_m23521 (Enumerator_t4400 * __this, List_1_t922 * ___l, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>::System.Collections.IEnumerator.get_Current()
+ Object_t * Enumerator_System_Collections_IEnumerator_get_Current_m23522 (Enumerator_t4400 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>::Dispose()
+ void Enumerator_Dispose_m23523 (Enumerator_t4400 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>::VerifyState()
+ void Enumerator_VerifyState_m23524 (Enumerator_t4400 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>::MoveNext()
+ bool Enumerator_MoveNext_m23525 (Enumerator_t4400 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UICharInfo>::get_Current()
+ UICharInfo_t748  Enumerator_get_Current_m23526 (Enumerator_t4400 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityTest.ActionBase
-struct ActionBase_t150;
+struct ActionBase_t137;
 // System.String
 struct String_t;
 // UnityEngine.MonoBehaviour
@@ -9,7 +9,7 @@ struct String_t;
 // UnityTest.CheckMethod
 #include "AssemblyU2DCSharp_UnityTest_CheckMethod.h"
 // UnityTest.AssertionComponent
-struct AssertionComponent_t148  : public MonoBehaviour_t2
+struct AssertionComponent_t135  : public MonoBehaviour_t2
 {
 	// System.Single UnityTest.AssertionComponent::checkAfterTime
 	float ___checkAfterTime_2;
@@ -28,7 +28,7 @@ struct AssertionComponent_t148  : public MonoBehaviour_t2
 	// UnityTest.CheckMethod UnityTest.AssertionComponent::checkMethods
 	int32_t ___checkMethods_9;
 	// UnityTest.ActionBase UnityTest.AssertionComponent::m_ActionBase
-	ActionBase_t150 * ___m_ActionBase_10;
+	ActionBase_t137 * ___m_ActionBase_10;
 	// System.Int32 UnityTest.AssertionComponent::checksPerformed
 	int32_t ___checksPerformed_11;
 	// System.Int32 UnityTest.AssertionComponent::m_CheckOnFrame

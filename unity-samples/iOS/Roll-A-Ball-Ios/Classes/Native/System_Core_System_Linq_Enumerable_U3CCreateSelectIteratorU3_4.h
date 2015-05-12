@@ -1,19 +1,19 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Collections.Generic.IEnumerable`1<ITestResult>
-struct IEnumerable_1_t3276;
+struct IEnumerable_1_t3256;
 // System.Collections.Generic.IEnumerator`1<ITestResult>
-struct IEnumerator_1_t3277;
+struct IEnumerator_1_t3257;
 // ITestResult
-struct ITestResult_t247;
+struct ITestResult_t234;
 // System.Func`2<ITestResult,System.String>
-struct Func_2_t268;
+struct Func_2_t255;
 // System.String
 struct String_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>
-struct U3CCreateSelectIteratorU3Ec__Iterator10_2_t3304  : public Object_t
+struct U3CCreateSelectIteratorU3Ec__Iterator10_2_t3284  : public Object_t
 {
 	// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::source
 	Object_t* ___source_0;
@@ -22,7 +22,7 @@ struct U3CCreateSelectIteratorU3Ec__Iterator10_2_t3304  : public Object_t
 	// TSource System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::<element>__1
 	Object_t * ___U3CelementU3E__1_2;
 	// System.Func`2<TSource,TResult> System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::selector
-	Func_2_t268 * ___selector_3;
+	Func_2_t255 * ___selector_3;
 	// System.Int32 System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::$PC
 	int32_t ___$PC_4;
 	// TResult System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::$current
@@ -30,5 +30,5 @@ struct U3CCreateSelectIteratorU3Ec__Iterator10_2_t3304  : public Object_t
 	// System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::<$>source
 	Object_t* ___U3C$U3Esource_6;
 	// System.Func`2<TSource,TResult> System.Linq.Enumerable/<CreateSelectIterator>c__Iterator10`2<ITestResult,System.String>::<$>selector
-	Func_2_t268 * ___U3C$U3Eselector_7;
+	Func_2_t255 * ___U3C$U3Eselector_7;
 };

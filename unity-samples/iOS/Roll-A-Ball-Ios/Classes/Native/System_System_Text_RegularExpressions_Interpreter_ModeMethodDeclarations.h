@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Text.RegularExpressions.Interpreter/Mode
-struct Mode_t1675;
+struct Mode_t1663;
 

@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <stdint.h>
 // UnityEngine.Transform
-struct Transform_t193;
+struct Transform_t179;
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // SpawnAtCheckpoint
-struct SpawnAtCheckpoint_t434  : public MonoBehaviour_t2
+struct SpawnAtCheckpoint_t422  : public MonoBehaviour_t2
 {
 	// UnityEngine.Transform SpawnAtCheckpoint::checkpoint
-	Transform_t193 * ___checkpoint_2;
+	Transform_t179 * ___checkpoint_2;
 };

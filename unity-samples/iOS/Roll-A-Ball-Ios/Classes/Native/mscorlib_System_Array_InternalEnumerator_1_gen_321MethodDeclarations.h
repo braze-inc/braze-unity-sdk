@@ -5,23 +5,23 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Array/InternalEnumerator`1<UnityEngine.RectTransform>
-struct InternalEnumerator_1_t4073;
+struct InternalEnumerator_1_t4053;
 // System.Object
 struct Object_t;
 // UnityEngine.RectTransform
-struct RectTransform_t573;
+struct RectTransform_t559;
 // System.Array
 struct Array_t;
 
 // System.Void System.Array/InternalEnumerator`1<UnityEngine.RectTransform>::.ctor(System.Array)
 // System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m21839(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
+#define InternalEnumerator_1__ctor_m21619(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
 // System.Object System.Array/InternalEnumerator`1<UnityEngine.RectTransform>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m21840(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m21620(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Void System.Array/InternalEnumerator`1<UnityEngine.RectTransform>::Dispose()
-#define InternalEnumerator_1_Dispose_m21841(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_Dispose_m21621(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // System.Boolean System.Array/InternalEnumerator`1<UnityEngine.RectTransform>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m21842(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_MoveNext_m21622(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
 // T System.Array/InternalEnumerator`1<UnityEngine.RectTransform>::get_Current()
-#define InternalEnumerator_1_get_Current_m21843(__this, method) (RectTransform_t573 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+#define InternalEnumerator_1_get_Current_m21623(__this, method) (RectTransform_t559 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

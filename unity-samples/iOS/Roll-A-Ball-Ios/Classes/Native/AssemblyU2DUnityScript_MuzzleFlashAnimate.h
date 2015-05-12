@@ -3,6 +3,6 @@
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // MuzzleFlashAnimate
-struct MuzzleFlashAnimate_t382  : public MonoBehaviour_t2
+struct MuzzleFlashAnimate_t370  : public MonoBehaviour_t2
 {
 };

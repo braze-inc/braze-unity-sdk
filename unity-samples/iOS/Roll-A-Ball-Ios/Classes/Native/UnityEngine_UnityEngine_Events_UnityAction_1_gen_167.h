@@ -1,19 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
+struct Void_t62;
+// UnityEngine.CanvasRenderer
+struct CanvasRenderer_t560;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
-// System.Int32
-#include "mscorlib_System_Int32.h"
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo Int32_t73_il2cpp_TypeInfo;
-// UnityEngine.Events.UnityAction`1<System.Int32>
-struct UnityAction_1_t4536  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<UnityEngine.CanvasRenderer>
+struct UnityAction_1_t4427  : public MulticastDelegate_t594
 {
 };

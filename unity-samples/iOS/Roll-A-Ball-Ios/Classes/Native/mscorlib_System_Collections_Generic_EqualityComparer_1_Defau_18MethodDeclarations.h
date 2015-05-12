@@ -4,16 +4,14 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Component>
-struct DefaultComparer_t3565;
-// UnityEngine.Component
-struct Component_t276;
+// System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.EventSystems.RaycastResult>
+struct DefaultComparer_t3559;
+// UnityEngine.EventSystems.RaycastResult
+#include "UnityEngine_UI_UnityEngine_EventSystems_RaycastResult.h"
 
-// System.Void System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Component>::.ctor()
-// System.Collections.Generic.EqualityComparer`1/DefaultComparer<System.Object>
-#include "mscorlib_System_Collections_Generic_EqualityComparer_1_Defau_0MethodDeclarations.h"
-#define DefaultComparer__ctor_m18065(__this, method) (void)DefaultComparer__ctor_m13082_gshared((DefaultComparer_t2783 *)__this, method)
-// System.Int32 System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Component>::GetHashCode(T)
-#define DefaultComparer_GetHashCode_m18066(__this, ___obj, method) (int32_t)DefaultComparer_GetHashCode_m13083_gshared((DefaultComparer_t2783 *)__this, (Object_t *)___obj, method)
-// System.Boolean System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.Component>::Equals(T,T)
-#define DefaultComparer_Equals_m18067(__this, ___x, ___y, method) (bool)DefaultComparer_Equals_m13084_gshared((DefaultComparer_t2783 *)__this, (Object_t *)___x, (Object_t *)___y, method)
+// System.Void System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.EventSystems.RaycastResult>::.ctor()
+ void DefaultComparer__ctor_m17990 (DefaultComparer_t3559 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.EventSystems.RaycastResult>::GetHashCode(T)
+ int32_t DefaultComparer_GetHashCode_m17991 (DefaultComparer_t3559 * __this, RaycastResult_t463  ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityEngine.EventSystems.RaycastResult>::Equals(T,T)
+ bool DefaultComparer_Equals_m17992 (DefaultComparer_t3559 * __this, RaycastResult_t463  ___x, RaycastResult_t463  ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;

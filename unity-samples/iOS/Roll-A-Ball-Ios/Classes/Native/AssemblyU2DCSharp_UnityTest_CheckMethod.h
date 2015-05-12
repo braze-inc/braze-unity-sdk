@@ -5,7 +5,7 @@
 // UnityTest.CheckMethod
 #include "AssemblyU2DCSharp_UnityTest_CheckMethod.h"
 // UnityTest.CheckMethod
-struct CheckMethod_t156 
+struct CheckMethod_t142 
 {
 	// System.Int32 UnityTest.CheckMethod::value__
 	int32_t ___value___1;

@@ -3,6 +3,6 @@
 // System.Attribute
 #include "mscorlib_System_Attribute.h"
 // IntegrationTest/SucceedWithAssertions
-struct SucceedWithAssertions_t232  : public Attribute_t226
+struct SucceedWithAssertions_t219  : public Attribute_t213
 {
 };

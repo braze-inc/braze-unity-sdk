@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.X509Certificates.X509FindType
-struct X509FindType_t1636;
+struct X509FindType_t1624;
 

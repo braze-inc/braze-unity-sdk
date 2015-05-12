@@ -5,7 +5,7 @@
 // Appboy.Models.CardCategory
 #include "AssemblyU2DCSharpU2Dfirstpass_Appboy_Models_CardCategory.h"
 // Appboy.Models.CardCategory
-struct CardCategory_t45 
+struct CardCategory_t47 
 {
 	// System.Int32 Appboy.Models.CardCategory::value__
 	int32_t ___value___1;

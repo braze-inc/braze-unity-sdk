@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Generic.HashSet`1/Link<System.Object>
-struct Link_t3217;
+struct Link_t3197;
 

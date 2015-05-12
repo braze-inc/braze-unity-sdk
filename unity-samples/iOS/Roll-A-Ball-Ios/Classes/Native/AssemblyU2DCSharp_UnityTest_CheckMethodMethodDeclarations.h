@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.CheckMethod
-struct CheckMethod_t156;
+struct CheckMethod_t142;
 

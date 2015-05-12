@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Boo.Lang.Runtime.DynamicDispatching.NumericPromotions
-struct NumericPromotions_t1150;
+struct NumericPromotions_t1139;
 

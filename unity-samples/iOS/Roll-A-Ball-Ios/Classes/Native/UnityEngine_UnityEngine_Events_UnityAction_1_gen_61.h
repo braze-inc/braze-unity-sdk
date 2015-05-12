@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// GlowPlane
-struct GlowPlane_t392;
+struct Void_t62;
+// SpiderAnimationTest
+struct SpiderAnimationTest_t400;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<GlowPlane>
-struct UnityAction_1_t3435  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<SpiderAnimationTest>
+struct UnityAction_1_t3407  : public MulticastDelegate_t594
 {
 };

@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Boolean>>
-struct InternalEnumerator_1_t4660 
+// System.Array/InternalEnumerator`1<System.IEquatable`1<System.UInt16>>
+struct InternalEnumerator_1_t4633 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Boolean>>::array
+	// System.Array System.Array/InternalEnumerator`1<System.IEquatable`1<System.UInt16>>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.Collections.Generic.KeyValuePair`2<System.String,System.Boolean>>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.IEquatable`1<System.UInt16>>::idx
 	int32_t ___idx_1;
 };

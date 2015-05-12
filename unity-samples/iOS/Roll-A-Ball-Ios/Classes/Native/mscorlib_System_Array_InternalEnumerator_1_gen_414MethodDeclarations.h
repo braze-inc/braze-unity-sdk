@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<UnityEngine.Animator>
-struct InternalEnumerator_1_t4394;
+// System.Array/InternalEnumerator`1<UnityEngine.AnimationBlendMode>
+struct InternalEnumerator_1_t4371;
 // System.Object
 struct Object_t;
-// UnityEngine.Animator
-struct Animator_t638;
 // System.Array
 struct Array_t;
+// UnityEngine.AnimationBlendMode
+#include "UnityEngine_UnityEngine_AnimationBlendMode.h"
 
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.Animator>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m23612(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<UnityEngine.Animator>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23613(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.Animator>::Dispose()
-#define InternalEnumerator_1_Dispose_m23614(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.Animator>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m23615(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<UnityEngine.Animator>::get_Current()
-#define InternalEnumerator_1_get_Current_m23616(__this, method) (Animator_t638 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.AnimationBlendMode>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m23382 (InternalEnumerator_1_t4371 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<UnityEngine.AnimationBlendMode>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23383 (InternalEnumerator_1_t4371 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<UnityEngine.AnimationBlendMode>::Dispose()
+ void InternalEnumerator_1_Dispose_m23384 (InternalEnumerator_1_t4371 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.AnimationBlendMode>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m23385 (InternalEnumerator_1_t4371 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<UnityEngine.AnimationBlendMode>::get_Current()
+ int32_t InternalEnumerator_1_get_Current_m23386 (InternalEnumerator_1_t4371 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

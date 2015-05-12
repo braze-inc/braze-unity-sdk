@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509VerificationFlags>
-struct InternalEnumerator_1_t4683 
+// System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509RevocationMode>
+struct InternalEnumerator_1_t4663 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509VerificationFlags>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509RevocationMode>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509VerificationFlags>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Security.Cryptography.X509Certificates.X509RevocationMode>::idx
 	int32_t ___idx_1;
 };

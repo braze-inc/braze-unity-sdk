@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<UnityTest.IntComparer/CompareType>
-struct InternalEnumerator_1_t3051 
+struct InternalEnumerator_1_t3031 
 {
 	// System.Array System.Array/InternalEnumerator`1<UnityTest.IntComparer/CompareType>::array
 	Array_t * ___array_0;

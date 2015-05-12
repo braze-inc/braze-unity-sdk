@@ -1,20 +1,20 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.List`1<UnityEngine.Events.BaseInvokableCall>
-struct List_1_t994;
-// UnityEngine.Events.BaseInvokableCall
-struct BaseInvokableCall_t981;
+// System.Collections.Generic.List`1<System.Security.Policy.StrongName>
+struct List_1_t2688;
+// System.Security.Policy.StrongName
+struct StrongName_t2179;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.Events.BaseInvokableCall>
-struct Enumerator_t4557 
+// System.Collections.Generic.List`1/Enumerator<System.Security.Policy.StrongName>
+struct Enumerator_t4878 
 {
-	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.Events.BaseInvokableCall>::l
-	List_1_t994 * ___l_0;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.Events.BaseInvokableCall>::next
+	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<System.Security.Policy.StrongName>::l
+	List_1_t2688 * ___l_0;
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<System.Security.Policy.StrongName>::next
 	int32_t ___next_1;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.Events.BaseInvokableCall>::ver
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<System.Security.Policy.StrongName>::ver
 	int32_t ___ver_2;
-	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.Events.BaseInvokableCall>::current
-	BaseInvokableCall_t981 * ___current_3;
+	// T System.Collections.Generic.List`1/Enumerator<System.Security.Policy.StrongName>::current
+	StrongName_t2179 * ___current_3;
 };

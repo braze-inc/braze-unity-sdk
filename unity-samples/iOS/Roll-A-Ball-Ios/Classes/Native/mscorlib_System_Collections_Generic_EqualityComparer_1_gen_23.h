@@ -1,14 +1,14 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct EqualityComparer_1_t3692;
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.UI.ICanvasElement>
+struct EqualityComparer_1_t3733;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct EqualityComparer_1_t3692  : public Object_t
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.UI.ICanvasElement>
+struct EqualityComparer_1_t3733  : public Object_t
 {
 };
-struct EqualityComparer_1_t3692_StaticFields{
-	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::_default
-	EqualityComparer_1_t3692 * ____default_0;
+struct EqualityComparer_1_t3733_StaticFields{
+	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.UI.ICanvasElement>::_default
+	EqualityComparer_1_t3733 * ____default_0;
 };

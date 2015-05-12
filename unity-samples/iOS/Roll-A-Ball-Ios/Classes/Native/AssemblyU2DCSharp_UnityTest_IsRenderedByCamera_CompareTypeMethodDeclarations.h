@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.IsRenderedByCamera/CompareType
-struct CompareType_t182;
+struct CompareType_t168;
 

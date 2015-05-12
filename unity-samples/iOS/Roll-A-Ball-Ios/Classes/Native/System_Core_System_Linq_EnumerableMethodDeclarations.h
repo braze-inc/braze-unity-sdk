@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Linq.Enumerable
-struct Enumerable_t119;
+struct Enumerable_t106;
 

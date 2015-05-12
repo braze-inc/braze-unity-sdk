@@ -5,7 +5,7 @@ struct String_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Security.Cryptography.SignatureDescription
-struct SignatureDescription_t2180  : public Object_t
+struct SignatureDescription_t2168  : public Object_t
 {
 	// System.String System.Security.Cryptography.SignatureDescription::_DeformatterAlgorithm
 	String_t* ____DeformatterAlgorithm_0;

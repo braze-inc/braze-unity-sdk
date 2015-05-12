@@ -5,8 +5,8 @@
 // System.Collections.Generic.Dictionary`2/Enumerator<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>
 #include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__1.h"
 // System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>
-struct Enumerator_t3230 
+struct Enumerator_t3210 
 {
 	// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::host_enumerator
-	Enumerator_t345  ___host_enumerator_0;
+	Enumerator_t332  ___host_enumerator_0;
 };

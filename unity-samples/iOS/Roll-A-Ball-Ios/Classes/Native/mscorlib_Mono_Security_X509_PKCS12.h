@@ -1,26 +1,26 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Byte[]
-struct ByteU5BU5D_t112;
+struct ByteU5BU5D_t97;
 // System.Collections.ArrayList
-struct ArrayList_t1383;
+struct ArrayList_t1372;
 // Mono.Security.X509.X509CertificateCollection
-struct X509CertificateCollection_t1836;
+struct X509CertificateCollection_t1824;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t56;
 // System.Object
 #include "mscorlib_System_Object.h"
 // Mono.Security.X509.PKCS12
-struct PKCS12_t1837  : public Object_t
+struct PKCS12_t1825  : public Object_t
 {
 	// System.Byte[] Mono.Security.X509.PKCS12::_password
-	ByteU5BU5D_t112* ____password_1;
+	ByteU5BU5D_t97* ____password_1;
 	// System.Collections.ArrayList Mono.Security.X509.PKCS12::_keyBags
-	ArrayList_t1383 * ____keyBags_2;
+	ArrayList_t1372 * ____keyBags_2;
 	// System.Collections.ArrayList Mono.Security.X509.PKCS12::_secretBags
-	ArrayList_t1383 * ____secretBags_3;
+	ArrayList_t1372 * ____secretBags_3;
 	// Mono.Security.X509.X509CertificateCollection Mono.Security.X509.PKCS12::_certs
-	X509CertificateCollection_t1836 * ____certs_4;
+	X509CertificateCollection_t1824 * ____certs_4;
 	// System.Boolean Mono.Security.X509.PKCS12::_keyBagsChanged
 	bool ____keyBagsChanged_5;
 	// System.Boolean Mono.Security.X509.PKCS12::_secretBagsChanged
@@ -30,9 +30,9 @@ struct PKCS12_t1837  : public Object_t
 	// System.Int32 Mono.Security.X509.PKCS12::_iterations
 	int32_t ____iterations_8;
 	// System.Collections.ArrayList Mono.Security.X509.PKCS12::_safeBags
-	ArrayList_t1383 * ____safeBags_9;
+	ArrayList_t1372 * ____safeBags_9;
 };
-struct PKCS12_t1837_StaticFields{
+struct PKCS12_t1825_StaticFields{
 	// System.Int32 Mono.Security.X509.PKCS12::recommendedIterationCount
 	int32_t ___recommendedIterationCount_0;
 	// System.Int32 Mono.Security.X509.PKCS12::password_max_length

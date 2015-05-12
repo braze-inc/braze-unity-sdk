@@ -3,6 +3,6 @@
 // UnityEngine.GUIElement
 #include "UnityEngine_UnityEngine_GUIElement.h"
 // UnityEngine.GUITexture
-struct GUITexture_t440  : public GUIElement_t841
+struct GUITexture_t428  : public GUIElement_t828
 {
 };

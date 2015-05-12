@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<UnityEngine.UI.InputField/CharacterValidation>
-struct InternalEnumerator_1_t3929 
+struct InternalEnumerator_1_t3909 
 {
 	// System.Array System.Array/InternalEnumerator`1<UnityEngine.UI.InputField/CharacterValidation>::array
 	Array_t * ___array_0;

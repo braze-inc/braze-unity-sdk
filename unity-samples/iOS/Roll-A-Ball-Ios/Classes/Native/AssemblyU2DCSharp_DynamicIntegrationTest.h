@@ -3,6 +3,6 @@
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // DynamicIntegrationTest
-struct DynamicIntegrationTest_t216  : public MonoBehaviour_t2
+struct DynamicIntegrationTest_t203  : public MonoBehaviour_t2
 {
 };

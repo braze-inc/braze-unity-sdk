@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Generic.HashSet`1/Link<Appboy.Models.CardCategory>
-struct Link_t2915;
+struct Link_t2896;
 

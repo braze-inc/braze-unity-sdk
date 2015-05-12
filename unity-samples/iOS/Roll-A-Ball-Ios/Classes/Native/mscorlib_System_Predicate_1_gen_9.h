@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
-// UnityTest.TestComponent
-struct TestComponent_t260;
+// UnityTest.TestResult
+struct TestResult_t232;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Predicate`1<UnityTest.TestComponent>
-struct Predicate_1_t3152  : public MulticastDelegate_t608
+// System.Predicate`1<UnityTest.TestResult>
+struct Predicate_1_t3148  : public MulticastDelegate_t594
 {
 };

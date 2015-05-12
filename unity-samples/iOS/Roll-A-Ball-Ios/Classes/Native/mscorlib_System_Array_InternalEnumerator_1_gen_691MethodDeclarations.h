@@ -4,24 +4,22 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Runtime.Remoting.Proxies.ProxyAttribute>
-struct InternalEnumerator_1_t4857;
+// System.Array/InternalEnumerator`1<System.Runtime.Remoting.Messaging.ArgInfoType>
+struct InternalEnumerator_1_t4837;
 // System.Object
 struct Object_t;
-// System.Runtime.Remoting.Proxies.ProxyAttribute
-struct ProxyAttribute_t2088;
 // System.Array
 struct Array_t;
+// System.Runtime.Remoting.Messaging.ArgInfoType
+#include "mscorlib_System_Runtime_Remoting_Messaging_ArgInfoType.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.Remoting.Proxies.ProxyAttribute>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
-#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m26512(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12797_gshared((InternalEnumerator_1_t2750 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<System.Runtime.Remoting.Proxies.ProxyAttribute>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26513(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12799_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<System.Runtime.Remoting.Proxies.ProxyAttribute>::Dispose()
-#define InternalEnumerator_1_Dispose_m26514(__this, method) (void)InternalEnumerator_1_Dispose_m12801_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.Remoting.Proxies.ProxyAttribute>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m26515(__this, method) (bool)InternalEnumerator_1_MoveNext_m12803_gshared((InternalEnumerator_1_t2750 *)__this, method)
-// T System.Array/InternalEnumerator`1<System.Runtime.Remoting.Proxies.ProxyAttribute>::get_Current()
-#define InternalEnumerator_1_get_Current_m26516(__this, method) (ProxyAttribute_t2088 *)InternalEnumerator_1_get_Current_m12805_gshared((InternalEnumerator_1_t2750 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.Remoting.Messaging.ArgInfoType>::.ctor(System.Array)
+ void InternalEnumerator_1__ctor_m26292 (InternalEnumerator_1_t4837 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array/InternalEnumerator`1<System.Runtime.Remoting.Messaging.ArgInfoType>::System.Collections.IEnumerator.get_Current()
+ Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26293 (InternalEnumerator_1_t4837 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.Runtime.Remoting.Messaging.ArgInfoType>::Dispose()
+ void InternalEnumerator_1_Dispose_m26294 (InternalEnumerator_1_t4837 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Array/InternalEnumerator`1<System.Runtime.Remoting.Messaging.ArgInfoType>::MoveNext()
+ bool InternalEnumerator_1_MoveNext_m26295 (InternalEnumerator_1_t4837 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// T System.Array/InternalEnumerator`1<System.Runtime.Remoting.Messaging.ArgInfoType>::get_Current()
+ uint8_t InternalEnumerator_1_get_Current_m26296 (InternalEnumerator_1_t4837 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;

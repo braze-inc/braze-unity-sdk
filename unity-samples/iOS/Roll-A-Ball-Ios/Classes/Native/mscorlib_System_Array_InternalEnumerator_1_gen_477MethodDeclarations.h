@@ -4,22 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<System.Linq.SortDirection>
-struct InternalEnumerator_1_t4617;
+// System.Array/InternalEnumerator`1<System.MonoTODOAttribute>
+struct InternalEnumerator_1_t4596;
 // System.Object
 struct Object_t;
+// System.MonoTODOAttribute
+struct MonoTODOAttribute_t1169;
 // System.Array
 struct Array_t;
-// System.Linq.SortDirection
-#include "System_Core_System_Linq_SortDirection.h"
 
-// System.Void System.Array/InternalEnumerator`1<System.Linq.SortDirection>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m25271 (InternalEnumerator_1_t4617 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<System.Linq.SortDirection>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25272 (InternalEnumerator_1_t4617 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<System.Linq.SortDirection>::Dispose()
- void InternalEnumerator_1_Dispose_m25273 (InternalEnumerator_1_t4617 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<System.Linq.SortDirection>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m25274 (InternalEnumerator_1_t4617 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<System.Linq.SortDirection>::get_Current()
- int32_t InternalEnumerator_1_get_Current_m25275 (InternalEnumerator_1_t4617 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::.ctor(System.Array)
+// System.Array/InternalEnumerator`1<System.Object>
+#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
+#define InternalEnumerator_1__ctor_m25047(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
+// System.Object System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m25048(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::Dispose()
+#define InternalEnumerator_1_Dispose_m25049(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m25050(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
+// T System.Array/InternalEnumerator`1<System.MonoTODOAttribute>::get_Current()
+#define InternalEnumerator_1_get_Current_m25051(__this, method) (MonoTODOAttribute_t1169 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)

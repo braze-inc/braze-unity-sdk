@@ -3,7 +3,7 @@
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Collections.Generic.HashSet`1/Link<UnityTest.ITestComponent>
-struct Link_t3214 
+struct Link_t3194 
 {
 	// System.Int32 System.Collections.Generic.HashSet`1/Link<UnityTest.ITestComponent>::HashCode
 	int32_t ___HashCode_0;

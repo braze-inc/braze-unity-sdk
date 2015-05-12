@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.CastHelper`1<PerFrameRaycast>
-struct CastHelper_1_t3446;
+struct CastHelper_1_t3426;
 

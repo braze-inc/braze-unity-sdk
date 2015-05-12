@@ -4,21 +4,17 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.Comparer`1<UnityEngine.Events.BaseInvokableCall>
-struct Comparer_1_t4563;
+// System.Collections.Generic.Comparer`1<System.Int32>
+struct Comparer_1_t4670;
 // System.Object
 struct Object_t;
-// UnityEngine.Events.BaseInvokableCall
-struct BaseInvokableCall_t981;
 
-// System.Void System.Collections.Generic.Comparer`1<UnityEngine.Events.BaseInvokableCall>::.ctor()
-// System.Collections.Generic.Comparer`1<System.Object>
-#include "mscorlib_System_Collections_Generic_Comparer_1_genMethodDeclarations.h"
-#define Comparer_1__ctor_m24898(__this, method) (void)Comparer_1__ctor_m13089_gshared((Comparer_1_t2784 *)__this, method)
-// System.Void System.Collections.Generic.Comparer`1<UnityEngine.Events.BaseInvokableCall>::.cctor()
-#define Comparer_1__cctor_m24899(__this/* static, unused */, method) (void)Comparer_1__cctor_m13090_gshared((Object_t *)__this/* static, unused */, method)
-// System.Int32 System.Collections.Generic.Comparer`1<UnityEngine.Events.BaseInvokableCall>::System.Collections.IComparer.Compare(System.Object,System.Object)
-#define Comparer_1_System_Collections_IComparer_Compare_m24900(__this, ___x, ___y, method) (int32_t)Comparer_1_System_Collections_IComparer_Compare_m13091_gshared((Comparer_1_t2784 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.Int32 System.Collections.Generic.Comparer`1<UnityEngine.Events.BaseInvokableCall>::Compare(T,T)
-// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<UnityEngine.Events.BaseInvokableCall>::get_Default()
-#define Comparer_1_get_Default_m24901(__this/* static, unused */, method) (Comparer_1_t4563 *)Comparer_1_get_Default_m13092_gshared((Object_t *)__this/* static, unused */, method)
+// System.Void System.Collections.Generic.Comparer`1<System.Int32>::.ctor()
+ void Comparer_1__ctor_m25463 (Comparer_1_t4670 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.Comparer`1<System.Int32>::.cctor()
+ void Comparer_1__cctor_m25464 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.Comparer`1<System.Int32>::System.Collections.IComparer.Compare(System.Object,System.Object)
+ int32_t Comparer_1_System_Collections_IComparer_Compare_m25465 (Comparer_1_t4670 * __this, Object_t * ___x, Object_t * ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Generic.Comparer`1<System.Int32>::Compare(T,T)
+// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<System.Int32>::get_Default()
+ Comparer_1_t4670 * Comparer_1_get_Default_m25466 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;

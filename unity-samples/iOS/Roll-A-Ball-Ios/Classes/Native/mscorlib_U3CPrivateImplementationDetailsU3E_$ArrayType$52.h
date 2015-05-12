@@ -4,7 +4,7 @@
 #include "mscorlib_System_ValueType.h"
 // <PrivateImplementationDetails>/$ArrayType$52
 #pragma pack(push, tp, 1)
-struct $ArrayType$52_t2335 
+struct $ArrayType$52_t2323 
 {
 	union
 	{
@@ -13,7 +13,7 @@ struct $ArrayType$52_t2335
 #pragma pack(pop, tp)
 // Native definition for marshalling of: <PrivateImplementationDetails>/$ArrayType$52
 #pragma pack(push, tp, 1)
-struct $ArrayType$52_t2335_marshaled
+struct $ArrayType$52_t2323_marshaled
 {
 	union
 	{

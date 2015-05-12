@@ -4,24 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.InvokableCall`1<AI>
-struct InvokableCall_1_t3373;
+// UnityEngine.Events.InvokableCall`1<EffectSequencer>
+struct InvokableCall_1_t3342;
 // System.Object
 struct Object_t;
 // System.Reflection.MethodInfo
-struct MethodInfo_t211;
-// UnityEngine.Events.UnityAction`1<AI>
-struct UnityAction_1_t3374;
+struct MethodInfo_t198;
+// UnityEngine.Events.UnityAction`1<EffectSequencer>
+struct UnityAction_1_t3343;
 // System.Object[]
-struct ObjectU5BU5D_t96;
+struct ObjectU5BU5D_t112;
 
-// System.Void UnityEngine.Events.InvokableCall`1<AI>::.ctor(System.Object,System.Reflection.MethodInfo)
+// System.Void UnityEngine.Events.InvokableCall`1<EffectSequencer>::.ctor(System.Object,System.Reflection.MethodInfo)
 // UnityEngine.Events.InvokableCall`1<System.Object>
 #include "UnityEngine_UnityEngine_Events_InvokableCall_1_gen_0MethodDeclarations.h"
-#define InvokableCall_1__ctor_m17069(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12830_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___target, (MethodInfo_t211 *)___theFunction, method)
-// System.Void UnityEngine.Events.InvokableCall`1<AI>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
-#define InvokableCall_1__ctor_m17070(__this, ___callback, method) (void)InvokableCall_1__ctor_m12831_gshared((InvokableCall_1_t2758 *)__this, (UnityAction_1_t2759 *)___callback, method)
-// System.Void UnityEngine.Events.InvokableCall`1<AI>::Invoke(System.Object[])
-#define InvokableCall_1_Invoke_m17071(__this, ___args, method) (void)InvokableCall_1_Invoke_m12832_gshared((InvokableCall_1_t2758 *)__this, (ObjectU5BU5D_t96*)___args, method)
-// System.Boolean UnityEngine.Events.InvokableCall`1<AI>::Find(System.Object,System.Reflection.MethodInfo)
-#define InvokableCall_1_Find_m17072(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12833_gshared((InvokableCall_1_t2758 *)__this, (Object_t *)___targetObj, (MethodInfo_t211 *)___method, method)
+#define InvokableCall_1__ctor_m16813(__this, ___target, ___theFunction, method) (void)InvokableCall_1__ctor_m12735_gshared((InvokableCall_1_t2746 *)__this, (Object_t *)___target, (MethodInfo_t198 *)___theFunction, method)
+// System.Void UnityEngine.Events.InvokableCall`1<EffectSequencer>::.ctor(UnityEngine.Events.UnityAction`1<T1>)
+#define InvokableCall_1__ctor_m16814(__this, ___callback, method) (void)InvokableCall_1__ctor_m12736_gshared((InvokableCall_1_t2746 *)__this, (UnityAction_1_t2747 *)___callback, method)
+// System.Void UnityEngine.Events.InvokableCall`1<EffectSequencer>::Invoke(System.Object[])
+#define InvokableCall_1_Invoke_m16815(__this, ___args, method) (void)InvokableCall_1_Invoke_m12737_gshared((InvokableCall_1_t2746 *)__this, (ObjectU5BU5D_t112*)___args, method)
+// System.Boolean UnityEngine.Events.InvokableCall`1<EffectSequencer>::Find(System.Object,System.Reflection.MethodInfo)
+#define InvokableCall_1_Find_m16816(__this, ___targetObj, ___method, method) (bool)InvokableCall_1_Find_m12738_gshared((InvokableCall_1_t2746 *)__this, (Object_t *)___targetObj, (MethodInfo_t198 *)___method, method)

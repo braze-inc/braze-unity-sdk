@@ -1,4 +1,4 @@
-//Generated on : 5/12/2015 6:18:58 PM
+//Generated on : 4/13/2015 5:14:15 PM
 void RegisterAllStrippedInternalCalls()
 {
 	//Start Registrations for type : UnityEngine.Animation
@@ -759,6 +759,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GUI_get_changed();
 		Register_UnityEngine_GUI_get_changed();
 
+		//System.Boolean UnityEngine.GUI::get_enabled()
+		void Register_UnityEngine_GUI_get_enabled();
+		Register_UnityEngine_GUI_get_enabled();
+
 		//System.Boolean UnityEngine.GUI::get_usePageScrollbars()
 		void Register_UnityEngine_GUI_get_usePageScrollbars();
 		Register_UnityEngine_GUI_get_usePageScrollbars();
@@ -770,6 +774,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.GUI::InternalRepaintEditorWindow()
 		void Register_UnityEngine_GUI_InternalRepaintEditorWindow();
 		Register_UnityEngine_GUI_InternalRepaintEditorWindow();
+
+		//System.Void UnityEngine.GUI::Internal_SetTooltip(System.String)
+		void Register_UnityEngine_GUI_Internal_SetTooltip();
+		Register_UnityEngine_GUI_Internal_SetTooltip();
 
 		//System.Void UnityEngine.GUI::set_changed(System.Boolean)
 		void Register_UnityEngine_GUI_set_changed();
@@ -971,6 +979,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.GUIUtility
 
+		//System.Boolean UnityEngine.GUIUtility::get_mouseUsed()
+		void Register_UnityEngine_GUIUtility_get_mouseUsed();
+		Register_UnityEngine_GUIUtility_get_mouseUsed();
+
 		//System.Int32 UnityEngine.GUIUtility::GetControlID(System.Int32,UnityEngine.FocusType)
 		void Register_UnityEngine_GUIUtility_GetControlID();
 		Register_UnityEngine_GUIUtility_GetControlID();
@@ -1006,6 +1018,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.GUIUtility::set_keyboardControl(System.Int32)
 		void Register_UnityEngine_GUIUtility_set_keyboardControl();
 		Register_UnityEngine_GUIUtility_set_keyboardControl();
+
+		//System.Void UnityEngine.GUIUtility::set_mouseUsed(System.Boolean)
+		void Register_UnityEngine_GUIUtility_set_mouseUsed();
+		Register_UnityEngine_GUIUtility_set_mouseUsed();
 
 		//System.Void UnityEngine.GUIUtility::set_systemCopyBuffer(System.String)
 		void Register_UnityEngine_GUIUtility_set_systemCopyBuffer();
@@ -1136,18 +1152,6 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Material_GetTexture();
 
 	//End Registrations for type : UnityEngine.Material
-
-	//Start Registrations for type : UnityEngine.Mathf
-
-		//System.Single UnityEngine.Mathf::GammaToLinearSpace(System.Single)
-		void Register_UnityEngine_Mathf_GammaToLinearSpace();
-		Register_UnityEngine_Mathf_GammaToLinearSpace();
-
-		//System.Single UnityEngine.Mathf::LinearToGammaSpace(System.Single)
-		void Register_UnityEngine_Mathf_LinearToGammaSpace();
-		Register_UnityEngine_Mathf_LinearToGammaSpace();
-
-	//End Registrations for type : UnityEngine.Mathf
 
 	//Start Registrations for type : UnityEngine.Matrix4x4
 
@@ -1374,6 +1378,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.RectOffset::set_top(System.Int32)
 		void Register_UnityEngine_RectOffset_set_top();
 		Register_UnityEngine_RectOffset_set_top();
+
+		//UnityEngine.Rect UnityEngine.RectOffset::INTERNAL_CALL_Add(UnityEngine.RectOffset,UnityEngine.Rect&)
+		void Register_UnityEngine_RectOffset_INTERNAL_CALL_Add();
+		Register_UnityEngine_RectOffset_INTERNAL_CALL_Add();
 
 		//UnityEngine.Rect UnityEngine.RectOffset::INTERNAL_CALL_Remove(UnityEngine.RectOffset,UnityEngine.Rect&)
 		void Register_UnityEngine_RectOffset_INTERNAL_CALL_Remove();

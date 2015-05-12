@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// TriggerOnMouseOrJoystick
-struct TriggerOnMouseOrJoystick_t437;
+struct Void_t62;
+// SpawnAtCheckpoint
+struct SpawnAtCheckpoint_t422;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<TriggerOnMouseOrJoystick>
-struct UnityAction_1_t3476  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<SpawnAtCheckpoint>
+struct UnityAction_1_t3447  : public MulticastDelegate_t594
 {
 };

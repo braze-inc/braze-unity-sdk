@@ -5,8 +5,8 @@
 // UnityEngine.Vector3
 #include "UnityEngine_UnityEngine_Vector3.h"
 // PatrolPoint
-struct PatrolPoint_t388  : public MonoBehaviour_t2
+struct PatrolPoint_t376  : public MonoBehaviour_t2
 {
 	// UnityEngine.Vector3 PatrolPoint::position
-	Vector3_t202  ___position_2;
+	Vector3_t188  ___position_2;
 };

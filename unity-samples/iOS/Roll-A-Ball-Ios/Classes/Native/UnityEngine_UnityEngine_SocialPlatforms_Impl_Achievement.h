@@ -7,14 +7,14 @@ struct String_t;
 // System.DateTime
 #include "mscorlib_System_DateTime.h"
 // UnityEngine.SocialPlatforms.Impl.Achievement
-struct Achievement_t949  : public Object_t
+struct Achievement_t938  : public Object_t
 {
 	// System.Boolean UnityEngine.SocialPlatforms.Impl.Achievement::m_Completed
 	bool ___m_Completed_0;
 	// System.Boolean UnityEngine.SocialPlatforms.Impl.Achievement::m_Hidden
 	bool ___m_Hidden_1;
 	// System.DateTime UnityEngine.SocialPlatforms.Impl.Achievement::m_LastReportedDate
-	DateTime_t850  ___m_LastReportedDate_2;
+	DateTime_t837  ___m_LastReportedDate_2;
 	// System.String UnityEngine.SocialPlatforms.Impl.Achievement::<id>k__BackingField
 	String_t* ___U3CidU3Ek__BackingField_3;
 	// System.Double UnityEngine.SocialPlatforms.Impl.Achievement::<percentCompleted>k__BackingField

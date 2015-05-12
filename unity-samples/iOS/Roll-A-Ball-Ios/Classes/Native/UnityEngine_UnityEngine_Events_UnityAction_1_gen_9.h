@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
+struct Void_t62;
 // ApplePushNotificationTester
-struct ApplePushNotificationTester_t7;
+struct ApplePushNotificationTester_t9;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
 // UnityEngine.Events.UnityAction`1<ApplePushNotificationTester>
-struct UnityAction_1_t2839  : public MulticastDelegate_t608
+struct UnityAction_1_t2812  : public MulticastDelegate_t594
 {
 };

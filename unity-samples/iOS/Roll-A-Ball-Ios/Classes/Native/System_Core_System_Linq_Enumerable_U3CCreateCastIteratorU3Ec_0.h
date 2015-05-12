@@ -1,15 +1,15 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Collections.IEnumerable
-struct IEnumerable_t103;
+struct IEnumerable_t88;
 // System.Collections.IEnumerator
-struct IEnumerator_t19;
+struct IEnumerator_t21;
 // System.Object
 struct Object_t;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Linq.Enumerable/<CreateCastIterator>c__Iterator0`1<System.Object>
-struct U3CCreateCastIteratorU3Ec__Iterator0_1_t3263  : public Object_t
+struct U3CCreateCastIteratorU3Ec__Iterator0_1_t3243  : public Object_t
 {
 	// System.Collections.IEnumerable System.Linq.Enumerable/<CreateCastIterator>c__Iterator0`1<System.Object>::source
 	Object_t * ___source_0;

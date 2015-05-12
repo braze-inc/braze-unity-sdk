@@ -3,6 +3,6 @@
 // UnityEngine.Collider
 #include "UnityEngine_UnityEngine_Collider.h"
 // UnityEngine.SphereCollider
-struct SphereCollider_t386  : public Collider_t385
+struct SphereCollider_t374  : public Collider_t373
 {
 };

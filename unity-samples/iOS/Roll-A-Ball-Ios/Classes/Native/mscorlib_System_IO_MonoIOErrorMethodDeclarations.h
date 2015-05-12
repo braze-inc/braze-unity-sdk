@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.IO.MonoIOError
-struct MonoIOError_t1939;
+struct MonoIOError_t1927;
 

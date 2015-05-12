@@ -5,27 +5,27 @@
 #include "codegen/il2cpp-codegen.h"
 
 // System.Func`2<UnityTest.TestComponent,UnityTest.TestResult>
-struct Func_2_t279;
+struct Func_2_t266;
 // System.Object
 struct Object_t;
 // UnityTest.TestResult
-struct TestResult_t245;
+struct TestResult_t232;
 // UnityTest.TestComponent
-struct TestComponent_t260;
+struct TestComponent_t247;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
 
 // System.Void System.Func`2<UnityTest.TestComponent,UnityTest.TestResult>::.ctor(System.Object,System.IntPtr)
 // System.Func`2<System.Object,System.Object>
 #include "System_Core_System_Func_2_gen_5MethodDeclarations.h"
-#define Func_2__ctor_m1623(__this, ___object, ___method, method) (void)Func_2__ctor_m15876_gshared((Func_2_t339 *)__this, (Object_t *)___object, (IntPtr_t120)___method, method)
+#define Func_2__ctor_m1517(__this, ___object, ___method, method) (void)Func_2__ctor_m15656_gshared((Func_2_t326 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
 // TResult System.Func`2<UnityTest.TestComponent,UnityTest.TestResult>::Invoke(T)
-#define Func_2_Invoke_m16611(__this, ___arg1, method) (TestResult_t245 *)Func_2_Invoke_m15878_gshared((Func_2_t339 *)__this, (Object_t *)___arg1, method)
+#define Func_2_Invoke_m16391(__this, ___arg1, method) (TestResult_t232 *)Func_2_Invoke_m15658_gshared((Func_2_t326 *)__this, (Object_t *)___arg1, method)
 // System.IAsyncResult System.Func`2<UnityTest.TestComponent,UnityTest.TestResult>::BeginInvoke(T,System.AsyncCallback,System.Object)
-#define Func_2_BeginInvoke_m16612(__this, ___arg1, ___callback, ___object, method) (Object_t *)Func_2_BeginInvoke_m15880_gshared((Func_2_t339 *)__this, (Object_t *)___arg1, (AsyncCallback_t487 *)___callback, (Object_t *)___object, method)
+#define Func_2_BeginInvoke_m16392(__this, ___arg1, ___callback, ___object, method) (Object_t *)Func_2_BeginInvoke_m15660_gshared((Func_2_t326 *)__this, (Object_t *)___arg1, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
 // TResult System.Func`2<UnityTest.TestComponent,UnityTest.TestResult>::EndInvoke(System.IAsyncResult)
-#define Func_2_EndInvoke_m16613(__this, ___result, method) (TestResult_t245 *)Func_2_EndInvoke_m15882_gshared((Func_2_t339 *)__this, (Object_t *)___result, method)
+#define Func_2_EndInvoke_m16393(__this, ___result, method) (TestResult_t232 *)Func_2_EndInvoke_m15662_gshared((Func_2_t326 *)__this, (Object_t *)___result, method)

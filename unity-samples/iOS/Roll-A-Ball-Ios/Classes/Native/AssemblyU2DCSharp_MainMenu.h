@@ -3,6 +3,6 @@
 // UnityEngine.MonoBehaviour
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
 // MainMenu
-struct MainMenu_t139  : public MonoBehaviour_t2
+struct MainMenu_t126  : public MonoBehaviour_t2
 {
 };

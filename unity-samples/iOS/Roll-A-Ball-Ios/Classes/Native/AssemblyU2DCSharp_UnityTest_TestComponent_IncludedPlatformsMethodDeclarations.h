@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // UnityTest.TestComponent/IncludedPlatforms
-struct IncludedPlatforms_t249;
+struct IncludedPlatforms_t236;
 

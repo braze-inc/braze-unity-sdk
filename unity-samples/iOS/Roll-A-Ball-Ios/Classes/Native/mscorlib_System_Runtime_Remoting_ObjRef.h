@@ -1,13 +1,13 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Runtime.Remoting.IChannelInfo
-struct IChannelInfo_t2101;
+struct IChannelInfo_t2089;
 // System.String
 struct String_t;
 // System.Runtime.Remoting.IRemotingTypeInfo
-struct IRemotingTypeInfo_t2102;
+struct IRemotingTypeInfo_t2090;
 // System.Runtime.Remoting.IEnvoyInfo
-struct IEnvoyInfo_t2103;
+struct IEnvoyInfo_t2091;
 // System.Type
 struct Type_t;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
@@ -15,7 +15,7 @@ struct Dictionary_2_t56;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Runtime.Remoting.ObjRef
-struct ObjRef_t2090  : public Object_t
+struct ObjRef_t2078  : public Object_t
 {
 	// System.Runtime.Remoting.IChannelInfo System.Runtime.Remoting.ObjRef::channel_info
 	Object_t * ___channel_info_0;
@@ -30,7 +30,7 @@ struct ObjRef_t2090  : public Object_t
 	// System.Type System.Runtime.Remoting.ObjRef::_serverType
 	Type_t * ____serverType_5;
 };
-struct ObjRef_t2090_StaticFields{
+struct ObjRef_t2078_StaticFields{
 	// System.Int32 System.Runtime.Remoting.ObjRef::MarshalledObjectRef
 	int32_t ___MarshalledObjectRef_6;
 	// System.Int32 System.Runtime.Remoting.ObjRef::WellKnowObjectRef

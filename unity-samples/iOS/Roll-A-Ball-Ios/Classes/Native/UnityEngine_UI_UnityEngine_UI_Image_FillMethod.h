@@ -5,7 +5,7 @@
 // UnityEngine.UI.Image/FillMethod
 #include "UnityEngine_UI_UnityEngine_UI_Image_FillMethod.h"
 // UnityEngine.UI.Image/FillMethod
-struct FillMethod_t589 
+struct FillMethod_t575 
 {
 	// System.Int32 UnityEngine.UI.Image/FillMethod::value__
 	int32_t ___value___1;

@@ -3,6 +3,6 @@
 // UnityEngine.Component
 #include "UnityEngine_UnityEngine_Component.h"
 // UnityEngine.CanvasGroup
-struct CanvasGroup_t741  : public Component_t276
+struct CanvasGroup_t728  : public Component_t263
 {
 };

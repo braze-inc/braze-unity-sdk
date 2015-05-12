@@ -3,15 +3,15 @@
 // System.String
 struct String_t;
 // System.Uri/UriScheme[]
-struct UriSchemeU5BU5D_t1708;
+struct UriSchemeU5BU5D_t1696;
 // System.UriParser
-struct UriParser_t1705;
+struct UriParser_t1693;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t56;
 // System.Object
 #include "mscorlib_System_Object.h"
 // System.Uri
-struct Uri_t1553  : public Object_t
+struct Uri_t61  : public Object_t
 {
 	// System.Boolean System.Uri::isUnixFilePath
 	bool ___isUnixFilePath_0;
@@ -46,9 +46,9 @@ struct Uri_t1553  : public Object_t
 	// System.Int32 System.Uri::cachedHashCode
 	int32_t ___cachedHashCode_15;
 	// System.UriParser System.Uri::parser
-	UriParser_t1705 * ___parser_29;
+	UriParser_t1693 * ___parser_29;
 };
-struct Uri_t1553_StaticFields{
+struct Uri_t61_StaticFields{
 	// System.String System.Uri::hexUpperChars
 	String_t* ___hexUpperChars_16;
 	// System.String System.Uri::SchemeDelimiter
@@ -74,7 +74,7 @@ struct Uri_t1553_StaticFields{
 	// System.String System.Uri::UriSchemeNetTcp
 	String_t* ___UriSchemeNetTcp_27;
 	// System.Uri/UriScheme[] System.Uri::schemes
-	UriSchemeU5BU5D_t1708* ___schemes_28;
+	UriSchemeU5BU5D_t1696* ___schemes_28;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map14
 	Dictionary_2_t56 * ___U3CU3Ef__switch$map14_30;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> System.Uri::<>f__switch$map15

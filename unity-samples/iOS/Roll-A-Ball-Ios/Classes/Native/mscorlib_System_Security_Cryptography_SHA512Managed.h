@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Byte[]
-struct ByteU5BU5D_t112;
+struct ByteU5BU5D_t97;
 // System.UInt64[]
-struct UInt64U5BU5D_t2175;
+struct UInt64U5BU5D_t2163;
 // System.Security.Cryptography.SHA512
 #include "mscorlib_System_Security_Cryptography_SHA512.h"
 // System.Security.Cryptography.SHA512Managed
-struct SHA512Managed_t2178  : public SHA512_t2177
+struct SHA512Managed_t2166  : public SHA512_t2165
 {
 	// System.Byte[] System.Security.Cryptography.SHA512Managed::xBuf
-	ByteU5BU5D_t112* ___xBuf_4;
+	ByteU5BU5D_t97* ___xBuf_4;
 	// System.Int32 System.Security.Cryptography.SHA512Managed::xBufOff
 	int32_t ___xBufOff_5;
 	// System.UInt64 System.Security.Cryptography.SHA512Managed::byteCount1
@@ -34,7 +34,7 @@ struct SHA512Managed_t2178  : public SHA512_t2177
 	// System.UInt64 System.Security.Cryptography.SHA512Managed::H8
 	uint64_t ___H8_15;
 	// System.UInt64[] System.Security.Cryptography.SHA512Managed::W
-	UInt64U5BU5D_t2175* ___W_16;
+	UInt64U5BU5D_t2163* ___W_16;
 	// System.Int32 System.Security.Cryptography.SHA512Managed::wOff
 	int32_t ___wOff_17;
 };

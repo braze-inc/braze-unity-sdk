@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // Appboy.Utilities.JSONBinaryTag
-struct JSONBinaryTag_t16;
+struct JSONBinaryTag_t18;
 

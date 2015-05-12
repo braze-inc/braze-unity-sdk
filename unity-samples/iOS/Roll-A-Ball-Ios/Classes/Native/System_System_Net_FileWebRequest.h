@@ -1,24 +1,24 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Uri
-struct Uri_t1553;
+struct Uri_t61;
 // System.Net.WebHeaderCollection
-struct WebHeaderCollection_t1591;
+struct WebHeaderCollection_t1579;
 // System.String
 struct String_t;
 // System.Net.IWebProxy
-struct IWebProxy_t1592;
+struct IWebProxy_t1580;
 // System.Net.WebRequest
 #include "System_System_Net_WebRequest.h"
 // System.IO.FileAccess
 #include "mscorlib_System_IO_FileAccess.h"
 // System.Net.FileWebRequest
-struct FileWebRequest_t1593  : public WebRequest_t1548
+struct FileWebRequest_t1581  : public WebRequest_t1537
 {
 	// System.Uri System.Net.FileWebRequest::uri
-	Uri_t1553 * ___uri_6;
+	Uri_t61 * ___uri_6;
 	// System.Net.WebHeaderCollection System.Net.FileWebRequest::webHeaders
-	WebHeaderCollection_t1591 * ___webHeaders_7;
+	WebHeaderCollection_t1579 * ___webHeaders_7;
 	// System.String System.Net.FileWebRequest::connectionGroup
 	String_t* ___connectionGroup_8;
 	// System.Int64 System.Net.FileWebRequest::contentLength

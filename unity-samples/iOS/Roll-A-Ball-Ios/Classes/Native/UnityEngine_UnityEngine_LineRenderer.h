@@ -3,6 +3,6 @@
 // UnityEngine.Renderer
 #include "UnityEngine_UnityEngine_Renderer.h"
 // UnityEngine.LineRenderer
-struct LineRenderer_t419  : public Renderer_t185
+struct LineRenderer_t407  : public Renderer_t171
 {
 };

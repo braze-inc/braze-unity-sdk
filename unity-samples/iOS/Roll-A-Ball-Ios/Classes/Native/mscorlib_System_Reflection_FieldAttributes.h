@@ -5,7 +5,7 @@
 // System.Reflection.FieldAttributes
 #include "mscorlib_System_Reflection_FieldAttributes.h"
 // System.Reflection.FieldAttributes
-struct FieldAttributes_t1985 
+struct FieldAttributes_t1973 
 {
 	// System.Int32 System.Reflection.FieldAttributes::value__
 	int32_t ___value___1;

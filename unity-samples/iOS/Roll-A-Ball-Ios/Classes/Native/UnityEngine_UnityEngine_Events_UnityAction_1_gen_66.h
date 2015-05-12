@@ -1,18 +1,18 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Void
-struct Void_t72;
-// DestroyObject
-struct DestroyObject_t428;
+struct Void_t62;
+// SelfIlluminationBlink
+struct SelfIlluminationBlink_t409;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.Object
 struct Object_t;
 // System.MulticastDelegate
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<DestroyObject>
-struct UnityAction_1_t3458  : public MulticastDelegate_t608
+// UnityEngine.Events.UnityAction`1<SelfIlluminationBlink>
+struct UnityAction_1_t3429  : public MulticastDelegate_t594
 {
 };

@@ -1,31 +1,31 @@
 ﻿#pragma once
 #include <stdint.h>
 // System.Byte[]
-struct ByteU5BU5D_t112;
+struct ByteU5BU5D_t97;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Security.Cryptography.RSAParameters
-struct RSAParameters_t1410 
+struct RSAParameters_t1399 
 {
 	// System.Byte[] System.Security.Cryptography.RSAParameters::P
-	ByteU5BU5D_t112* ___P_0;
+	ByteU5BU5D_t97* ___P_0;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::Q
-	ByteU5BU5D_t112* ___Q_1;
+	ByteU5BU5D_t97* ___Q_1;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::D
-	ByteU5BU5D_t112* ___D_2;
+	ByteU5BU5D_t97* ___D_2;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::DP
-	ByteU5BU5D_t112* ___DP_3;
+	ByteU5BU5D_t97* ___DP_3;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::DQ
-	ByteU5BU5D_t112* ___DQ_4;
+	ByteU5BU5D_t97* ___DQ_4;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::InverseQ
-	ByteU5BU5D_t112* ___InverseQ_5;
+	ByteU5BU5D_t97* ___InverseQ_5;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::Modulus
-	ByteU5BU5D_t112* ___Modulus_6;
+	ByteU5BU5D_t97* ___Modulus_6;
 	// System.Byte[] System.Security.Cryptography.RSAParameters::Exponent
-	ByteU5BU5D_t112* ___Exponent_7;
+	ByteU5BU5D_t97* ___Exponent_7;
 };
 // Native definition for marshalling of: System.Security.Cryptography.RSAParameters
-struct RSAParameters_t1410_marshaled
+struct RSAParameters_t1399_marshaled
 {
 	uint8_t* ___P_0;
 	uint8_t* ___Q_1;

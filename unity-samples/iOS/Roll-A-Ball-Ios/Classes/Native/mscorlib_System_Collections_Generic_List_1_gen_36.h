@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <stdint.h>
-// System.Security.Policy.StrongName[]
-struct StrongNameU5BU5D_t4889;
+// UnityEngine.UI.ICanvasElement[]
+struct ICanvasElementU5BU5D_t3709;
 // System.Object
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<System.Security.Policy.StrongName>
-struct List_1_t2700  : public Object_t
+// System.Collections.Generic.List`1<UnityEngine.UI.ICanvasElement>
+struct List_1_t3707  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<System.Security.Policy.StrongName>::_items
-	StrongNameU5BU5D_t4889* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<System.Security.Policy.StrongName>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.ICanvasElement>::_items
+	ICanvasElementU5BU5D_t3709* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.ICanvasElement>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<System.Security.Policy.StrongName>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.ICanvasElement>::_version
 	int32_t ____version_3;
 };
-struct List_1_t2700_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<System.Security.Policy.StrongName>::DefaultCapacity
+struct List_1_t3707_StaticFields{
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.ICanvasElement>::DefaultCapacity
 	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<System.Security.Policy.StrongName>::EmptyArray
-	StrongNameU5BU5D_t4889* ___EmptyArray_4;
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.ICanvasElement>::EmptyArray
+	ICanvasElementU5BU5D_t3709* ___EmptyArray_4;
 };

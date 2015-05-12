@@ -4,11 +4,11 @@
 struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContributeClientContextSink>
-struct InternalEnumerator_1_t4853 
+// System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContextProperty>
+struct InternalEnumerator_1_t4833 
 {
-	// System.Array System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContributeClientContextSink>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContextProperty>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContributeClientContextSink>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContextProperty>::idx
 	int32_t ___idx_1;
 };

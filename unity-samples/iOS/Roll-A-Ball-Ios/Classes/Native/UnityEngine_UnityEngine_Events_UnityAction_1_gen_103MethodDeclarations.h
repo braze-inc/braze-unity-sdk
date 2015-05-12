@@ -4,26 +4,24 @@
 #include <exception>
 #include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.UnityAction`1<UnityEngine.UI.Slider>
-struct UnityAction_1_t3994;
+// UnityEngine.Events.UnityAction`1<UnityEngine.Vector2>
+struct UnityAction_1_t3932;
 // System.Object
 struct Object_t;
-// UnityEngine.UI.Slider
-struct Slider_t643;
 // System.IAsyncResult
-struct IAsyncResult_t486;
+struct IAsyncResult_t472;
 // System.AsyncCallback
-struct AsyncCallback_t487;
+struct AsyncCallback_t473;
 // System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+// UnityEngine.Vector2
+#include "UnityEngine_UnityEngine_Vector2.h"
 
-// System.Void UnityEngine.Events.UnityAction`1<UnityEngine.UI.Slider>::.ctor(System.Object,System.IntPtr)
-// UnityEngine.Events.UnityAction`1<System.Object>
-#include "UnityEngine_UnityEngine_Events_UnityAction_1_gen_6MethodDeclarations.h"
-#define UnityAction_1__ctor_m21329(__this, ___object, ___method, method) (void)UnityAction_1__ctor_m12834_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___object, (IntPtr_t120)___method, method)
-// System.Void UnityEngine.Events.UnityAction`1<UnityEngine.UI.Slider>::Invoke(T0)
-#define UnityAction_1_Invoke_m21330(__this, ___arg0, method) (void)UnityAction_1_Invoke_m12835_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___arg0, method)
-// System.IAsyncResult UnityEngine.Events.UnityAction`1<UnityEngine.UI.Slider>::BeginInvoke(T0,System.AsyncCallback,System.Object)
-#define UnityAction_1_BeginInvoke_m21331(__this, ___arg0, ___callback, ___object, method) (Object_t *)UnityAction_1_BeginInvoke_m12836_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___arg0, (AsyncCallback_t487 *)___callback, (Object_t *)___object, method)
-// System.Void UnityEngine.Events.UnityAction`1<UnityEngine.UI.Slider>::EndInvoke(System.IAsyncResult)
-#define UnityAction_1_EndInvoke_m21332(__this, ___result, method) (void)UnityAction_1_EndInvoke_m12837_gshared((UnityAction_1_t2759 *)__this, (Object_t *)___result, method)
+// System.Void UnityEngine.Events.UnityAction`1<UnityEngine.Vector2>::.ctor(System.Object,System.IntPtr)
+ void UnityAction_1__ctor_m20780 (UnityAction_1_t3932 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Events.UnityAction`1<UnityEngine.Vector2>::Invoke(T0)
+ void UnityAction_1_Invoke_m20781 (UnityAction_1_t3932 * __this, Vector2_t184  ___arg0, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.IAsyncResult UnityEngine.Events.UnityAction`1<UnityEngine.Vector2>::BeginInvoke(T0,System.AsyncCallback,System.Object)
+ Object_t * UnityAction_1_BeginInvoke_m20782 (UnityAction_1_t3932 * __this, Vector2_t184  ___arg0, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Events.UnityAction`1<UnityEngine.Vector2>::EndInvoke(System.IAsyncResult)
+ void UnityAction_1_EndInvoke_m20783 (UnityAction_1_t3932 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;

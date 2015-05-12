@@ -5,5 +5,5 @@
 #include "codegen/il2cpp-codegen.h"
 
 // FootType
-struct FootType_t398;
+struct FootType_t386;
 

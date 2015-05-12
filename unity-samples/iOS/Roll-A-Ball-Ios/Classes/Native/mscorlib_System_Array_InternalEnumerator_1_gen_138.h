@@ -5,7 +5,7 @@ struct Array_t;
 // System.ValueType
 #include "mscorlib_System_ValueType.h"
 // System.Array/InternalEnumerator`1<IntegrationTest/TimeoutAttribute>
-struct InternalEnumerator_1_t3204 
+struct InternalEnumerator_1_t3184 
 {
 	// System.Array System.Array/InternalEnumerator`1<IntegrationTest/TimeoutAttribute>::array
 	Array_t * ___array_0;
