@@ -1,3 +1,7 @@
+## 1.5.0
+* Removes Froyo support, which was dropped in Unity 4.3. See https://unity3d.com/unity/whats-new/unity-4.3.
+* Adds native Appboy ui capability, including in-app messages, the News Feed, and Appboy's webview.
+
 ## 1.4.0
 * Adds new in-app message models for the Modal and Full screen types added in Android 1.7 and iOS 2.11.
 * Updated the iOS plugin to use Appboy iOS SDK v2.11.2.
