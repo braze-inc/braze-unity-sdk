@@ -8,6 +8,11 @@
   <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive push notifications. Default is false. -->
   <string name="com_appboy_push_gcm_sender_id">139792940222</string> <!-- Replace with your gcm sender ID. The sender ID is your Google API project number. --> 
 
+  <!-- ADM Push Notification configuration (optional) -->
+  <bool name="com_appboy_push_adm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive ADM push notifications. Default is false. -->
+  
+  <bool name="com_appboy_inapp_show_inapp_messages_automatically">true</bool> <!-- Whether to display in-app messages from Appboy using the Appboy native UI. -->
+
   <!-- Optional -->
   <string name="com_appboy_push_notification_received_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive push notification received messages. -->
   <string name="com_appboy_push_notification_received_listener_callback_method_name">PushNotificationReceivedCallback</string>  <!-- The callback method to be called when a push notification is received. -->
@@ -15,6 +20,6 @@
   <string name="com_appboy_push_notification_opened_listener_callback_method_name">PushNotificationOpenedCallback</string> <!-- The callback method to be called when a push notification is opened. -->
   <string name="com_appboy_inapp_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive in-app messages. -->
   <string name="com_appboy_inapp_listener_callback_method_name">InAppMessageReceivedCallback</string> <!-- The callback method to be called when a slideup is received. -->
-<string name="com_appboy_feed_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive the news feed. -->
+  <string name="com_appboy_feed_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive the news feed. -->
   <string name="com_appboy_feed_listener_callback_method_name">FeedReceivedCallback</string><!-- The callback method to be called when the news feed is received. -->
 </resources>

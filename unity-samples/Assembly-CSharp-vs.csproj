@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;UNITY_IPHONE;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;UNITY_IPHONE_API;UNITY_IOS;ENABLE_TEXTUREID_MAP;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;ENABLE_IL2CPP;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -56,45 +56,33 @@
      <Compile Include="Assets\Scripts\SetUserField.cs" />
      <Compile Include="Assets\Scripts\SubmitFeedback.cs" />
      <Compile Include="Assets\Scripts\UnitySampleConstants.cs" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_activity.xml" />
-     <None Include="Assets\test-results\Assembly-CSharp-Editor.csproj-Debug-2015-04-13.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_read_indicator_holder.xml" />
-     <None Include="Assets\Plugins\Android\res\values\dimens.xml" />
-     <None Include="Assets\Plugins\Android\res\values-ldpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_text_announcement_card.xml" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rCN\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\color\com_appboy_button.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_icon_background.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_inappmessage_modal_background.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_card_background.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_slideup.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_captioned_image_card.xml" />
-     <None Include="Assets\Plugins\Android\res\values\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\values-hdpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feedback.xml" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rTW\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_cross_promotion_small_card.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_inappmessage_button_background.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_banner_image_card.xml" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rHK\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_footer.xml" />
-     <None Include="Assets\Plugins\Android\res\values-mdpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\res\values\styles.xml" />
-     <None Include="Assets\Plugins\Android\res\values-zh-rSG\strings.xml" />
-     <None Include="Assets\Plugins\Android\res\values-xhdpi\dimens.xml" />
+     <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\CheckMethod.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ActionBase.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\BoolComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ColliderComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ComparerBase.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\FloatComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\GeneralComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\IntComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\IsRenderedByCamera.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\StringComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\TransformComparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\ValueDoesNotChange.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\Vector2Comparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\Vector3Comparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\Vector4Comparer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Comparers\VectorComparerBase.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\InvalidPathException.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\MemberResolver.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\ITestResult.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\TestResultState.cs" />
+     <None Include="Assets\UnityTestTools\LICENSE.txt" />
+     <None Include="Assets\UnityTestTools\changelog.txt" />
      <None Include="Assets\Plugins\Android\res\values\appboy.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_modal.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_short_news_card.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_inappmessage_full.xml" />
-     <None Include="Assets\Plugins\Android\res\values\colors.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-nodpi\com_appboy_button.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_webview_activity.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_notification.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feedback_activity.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed_header.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_feed.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\com_appboy_default_card.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
