@@ -1,6 +1,6 @@
 ## 1.5.0
 * Removes Froyo support, which was dropped in Unity 4.3. See https://unity3d.com/unity/whats-new/unity-4.3.
-* Adds native Appboy ui capability to Android, including in-app messages, the News Feed, and Appboy's webview.
+* Adds native Appboy ui capability to Android, including in-app messages, the News Feed, and Appboy's webview. Note: As a result of this change, in-app messages will display automatically with native Appboy layouts.  To disable this functionality, set com_appboy_inapp_show_inapp_messages_automatically to false in your Unity project's appboy.xml file.
 * Updated the iOS plugin to use Appboy iOS SDK v2.12.1.
 * Updated the Android plugin to use Appboy Android SDK v1.8.0.
 
