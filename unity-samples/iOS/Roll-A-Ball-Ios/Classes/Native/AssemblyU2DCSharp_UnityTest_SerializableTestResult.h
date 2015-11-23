@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// UnityTest.TestResultState
 #include "AssemblyU2DCSharp_UnityTest_TestResultState.h"
+
 // UnityTest.SerializableTestResult
-struct SerializableTestResult_t235  : public Object_t
+struct  SerializableTestResult_t210  : public Object_t
 {
 	// UnityTest.TestResultState UnityTest.SerializableTestResult::resultState
 	uint8_t ___resultState_0;

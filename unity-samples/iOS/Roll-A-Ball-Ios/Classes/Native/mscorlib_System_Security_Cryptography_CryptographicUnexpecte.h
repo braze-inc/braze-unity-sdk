@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Cryptography.CryptographicException
+
+
 #include "mscorlib_System_Security_Cryptography_CryptographicException.h"
+
 // System.Security.Cryptography.CryptographicUnexpectedOperationException
-struct CryptographicUnexpectedOperationException_t1525  : public CryptographicException_t1509
+struct  CryptographicUnexpectedOperationException_t1222  : public CryptographicException_t1217
 {
 };

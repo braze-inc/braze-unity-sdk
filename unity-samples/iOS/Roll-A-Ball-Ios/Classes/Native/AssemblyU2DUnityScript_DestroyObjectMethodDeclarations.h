@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // DestroyObject
-struct DestroyObject_t416;
+struct DestroyObject_t383;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void DestroyObject::.ctor()
- void DestroyObject__ctor_m1683 (DestroyObject_t416 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DestroyObject__ctor_m1453 (DestroyObject_t383 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void DestroyObject::OnSignal()
- void DestroyObject_OnSignal_m1684 (DestroyObject_t416 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DestroyObject_OnSignal_m1454 (DestroyObject_t383 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void DestroyObject::Main()
- void DestroyObject_Main_m1685 (DestroyObject_t416 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DestroyObject_Main_m1455 (DestroyObject_t383 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

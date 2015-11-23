@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Uri/UriScheme
-struct UriScheme_t1695 
+struct  UriScheme_t1180 
 {
 	// System.String System.Uri/UriScheme::scheme
 	String_t* ___scheme_0;
@@ -15,7 +26,7 @@ struct UriScheme_t1695
 	int32_t ___defaultPort_2;
 };
 // Native definition for marshalling of: System.Uri/UriScheme
-struct UriScheme_t1695_marshaled
+struct UriScheme_t1180_marshaled
 {
 	char* ___scheme_0;
 	char* ___delimiter_1;

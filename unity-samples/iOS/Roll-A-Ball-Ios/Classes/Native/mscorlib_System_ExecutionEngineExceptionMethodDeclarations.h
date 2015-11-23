@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.ExecutionEngineException
-struct ExecutionEngineException_t2262;
+struct ExecutionEngineException_t1995;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.ExecutionEngineException::.ctor()
- void ExecutionEngineException__ctor_m11657 (ExecutionEngineException_t2262 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ExecutionEngineException__ctor_m11985 (ExecutionEngineException_t1995 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.ExecutionEngineException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void ExecutionEngineException__ctor_m11658 (ExecutionEngineException_t2262 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ExecutionEngineException__ctor_m11986 (ExecutionEngineException_t1995 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

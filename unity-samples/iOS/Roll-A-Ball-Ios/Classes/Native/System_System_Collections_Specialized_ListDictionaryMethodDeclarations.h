@@ -1,53 +1,65 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Specialized.ListDictionary
-struct ListDictionary_t1558;
+struct ListDictionary_t1021;
+// System.Collections.IComparer
+struct IComparer_t1024;
+// System.Collections.IEnumerator
+struct IEnumerator_t66;
+// System.Collections.Specialized.ListDictionary/DictionaryNode
+struct DictionaryNode_t1022;
 // System.Object
 struct Object_t;
-// System.Collections.IComparer
-struct IComparer_t1565;
-// System.Collections.IEnumerator
-struct IEnumerator_t21;
-// System.Collections.Specialized.ListDictionary/DictionaryNode
-struct DictionaryNode_t1562;
 // System.Array
 struct Array_t;
 // System.Collections.IDictionaryEnumerator
-struct IDictionaryEnumerator_t1561;
+struct IDictionaryEnumerator_t1192;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Collections.Specialized.ListDictionary::.ctor()
- void ListDictionary__ctor_m6687 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary__ctor_m5253 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::.ctor(System.Collections.IComparer)
- void ListDictionary__ctor_m6688 (ListDictionary_t1558 * __this, Object_t * ___comparer, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary__ctor_m5254 (ListDictionary_t1021 * __this, Object_t * ___comparer, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator System.Collections.Specialized.ListDictionary::System.Collections.IEnumerable.GetEnumerator()
- Object_t * ListDictionary_System_Collections_IEnumerable_GetEnumerator_m6689 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * ListDictionary_System_Collections_IEnumerable_GetEnumerator_m5255 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary::FindEntry(System.Object)
- DictionaryNode_t1562 * ListDictionary_FindEntry_m6690 (ListDictionary_t1558 * __this, Object_t * ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DictionaryNode_t1022 * ListDictionary_FindEntry_m5256 (ListDictionary_t1021 * __this, Object_t * ___key, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary::FindEntry(System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode&)
- DictionaryNode_t1562 * ListDictionary_FindEntry_m6691 (ListDictionary_t1558 * __this, Object_t * ___key, DictionaryNode_t1562 ** ___prev, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DictionaryNode_t1022 * ListDictionary_FindEntry_m5257 (ListDictionary_t1021 * __this, Object_t * ___key, DictionaryNode_t1022 ** ___prev, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::AddImpl(System.Object,System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode)
- void ListDictionary_AddImpl_m6692 (ListDictionary_t1558 * __this, Object_t * ___key, Object_t * ___value, DictionaryNode_t1562 * ___prev, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary_AddImpl_m5258 (ListDictionary_t1021 * __this, Object_t * ___key, Object_t * ___value, DictionaryNode_t1022 * ___prev, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.Specialized.ListDictionary::get_Count()
- int32_t ListDictionary_get_Count_m6693 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ListDictionary_get_Count_m5259 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Specialized.ListDictionary::get_IsSynchronized()
- bool ListDictionary_get_IsSynchronized_m6694 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool ListDictionary_get_IsSynchronized_m5260 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Specialized.ListDictionary::get_SyncRoot()
- Object_t * ListDictionary_get_SyncRoot_m6695 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * ListDictionary_get_SyncRoot_m5261 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::CopyTo(System.Array,System.Int32)
- void ListDictionary_CopyTo_m6696 (ListDictionary_t1558 * __this, Array_t * ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary_CopyTo_m5262 (ListDictionary_t1021 * __this, Array_t * ___array, int32_t ___index, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Specialized.ListDictionary::get_Item(System.Object)
- Object_t * ListDictionary_get_Item_m6697 (ListDictionary_t1558 * __this, Object_t * ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * ListDictionary_get_Item_m5263 (ListDictionary_t1021 * __this, Object_t * ___key, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::set_Item(System.Object,System.Object)
- void ListDictionary_set_Item_m6698 (ListDictionary_t1558 * __this, Object_t * ___key, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary_set_Item_m5264 (ListDictionary_t1021 * __this, Object_t * ___key, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::Add(System.Object,System.Object)
- void ListDictionary_Add_m6699 (ListDictionary_t1558 * __this, Object_t * ___key, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary_Add_m5265 (ListDictionary_t1021 * __this, Object_t * ___key, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::Clear()
- void ListDictionary_Clear_m6700 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary_Clear_m5266 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Specialized.ListDictionary::Contains(System.Object)
+extern "C" bool ListDictionary_Contains_m5267 (ListDictionary_t1021 * __this, Object_t * ___key, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IDictionaryEnumerator System.Collections.Specialized.ListDictionary::GetEnumerator()
- Object_t * ListDictionary_GetEnumerator_m6701 (ListDictionary_t1558 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * ListDictionary_GetEnumerator_m5268 (ListDictionary_t1021 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Specialized.ListDictionary::Remove(System.Object)
- void ListDictionary_Remove_m6702 (ListDictionary_t1558 * __this, Object_t * ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ListDictionary_Remove_m5269 (ListDictionary_t1021 * __this, Object_t * ___key, const MethodInfo* method) IL2CPP_METHOD_ATTR;

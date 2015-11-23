@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // MovementMotor
-struct MovementMotor_t377;
+struct MovementMotor_t347;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void MovementMotor::.ctor()
- void MovementMotor__ctor_m1724 (MovementMotor_t377 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MovementMotor__ctor_m1494 (MovementMotor_t347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MovementMotor::Main()
- void MovementMotor_Main_m1725 (MovementMotor_t377 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MovementMotor_Main_m1495 (MovementMotor_t347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

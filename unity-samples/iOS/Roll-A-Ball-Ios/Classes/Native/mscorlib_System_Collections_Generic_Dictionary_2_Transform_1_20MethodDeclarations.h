@@ -1,31 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_Dictionary_2_Transform_1_0MethodDeclarations.h"
 
-// System.Collections.Generic.Dictionary`2/Transform`1<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>,System.Collections.DictionaryEntry>
-struct Transform_1_t3188;
-// System.Object
-struct Object_t;
-// UnityTest.ITestComponent
-struct ITestComponent_t224;
-// System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>
-struct HashSet_1_t329;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-// System.Collections.DictionaryEntry
-#include "mscorlib_System_Collections_DictionaryEntry.h"
-
-// System.Void System.Collections.Generic.Dictionary`2/Transform`1<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>,System.Collections.DictionaryEntry>::.ctor(System.Object,System.IntPtr)
- void Transform_1__ctor_m15891 (Transform_1_t3188 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TRet System.Collections.Generic.Dictionary`2/Transform`1<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>,System.Collections.DictionaryEntry>::Invoke(TKey,TValue)
- DictionaryEntry_t1564  Transform_1_Invoke_m15892 (Transform_1_t3188 * __this, Object_t * ___key, HashSet_1_t329 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.IAsyncResult System.Collections.Generic.Dictionary`2/Transform`1<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>,System.Collections.DictionaryEntry>::BeginInvoke(TKey,TValue,System.AsyncCallback,System.Object)
- Object_t * Transform_1_BeginInvoke_m15893 (Transform_1_t3188 * __this, Object_t * ___key, HashSet_1_t329 * ___value, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TRet System.Collections.Generic.Dictionary`2/Transform`1<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>,System.Collections.DictionaryEntry>::EndInvoke(System.IAsyncResult)
- DictionaryEntry_t1564  Transform_1_EndInvoke_m15894 (Transform_1_t3188 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.Dictionary`2/Transform`1<UnityEngine.Canvas,UnityEngine.UI.Collections.IndexedSet`1<UnityEngine.UI.Graphic>,System.Collections.DictionaryEntry>::.ctor(System.Object,System.IntPtr)
+#define Transform_1__ctor_m17324(__this, ___object, ___method, method) (( void (*) (Transform_1_t2484 *, Object_t *, IntPtr_t, const MethodInfo*))Transform_1__ctor_m13078_gshared)(__this, ___object, ___method, method)
+// TRet System.Collections.Generic.Dictionary`2/Transform`1<UnityEngine.Canvas,UnityEngine.UI.Collections.IndexedSet`1<UnityEngine.UI.Graphic>,System.Collections.DictionaryEntry>::Invoke(TKey,TValue)
+#define Transform_1_Invoke_m17325(__this, ___key, ___value, method) (( DictionaryEntry_t1193  (*) (Transform_1_t2484 *, Canvas_t521 *, IndexedSet_1_t702 *, const MethodInfo*))Transform_1_Invoke_m13079_gshared)(__this, ___key, ___value, method)
+// System.IAsyncResult System.Collections.Generic.Dictionary`2/Transform`1<UnityEngine.Canvas,UnityEngine.UI.Collections.IndexedSet`1<UnityEngine.UI.Graphic>,System.Collections.DictionaryEntry>::BeginInvoke(TKey,TValue,System.AsyncCallback,System.Object)
+#define Transform_1_BeginInvoke_m17326(__this, ___key, ___value, ___callback, ___object, method) (( Object_t * (*) (Transform_1_t2484 *, Canvas_t521 *, IndexedSet_1_t702 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Transform_1_BeginInvoke_m13080_gshared)(__this, ___key, ___value, ___callback, ___object, method)
+// TRet System.Collections.Generic.Dictionary`2/Transform`1<UnityEngine.Canvas,UnityEngine.UI.Collections.IndexedSet`1<UnityEngine.UI.Graphic>,System.Collections.DictionaryEntry>::EndInvoke(System.IAsyncResult)
+#define Transform_1_EndInvoke_m17327(__this, ___result, method) (( DictionaryEntry_t1193  (*) (Transform_1_t2484 *, Object_t *, const MethodInfo*))Transform_1_EndInvoke_m13081_gshared)(__this, ___result, method)

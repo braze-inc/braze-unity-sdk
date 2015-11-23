@@ -1,40 +1,51 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.Events.UnityEvent`1<System.Object>
-struct UnityEvent_1_t3614;
-// UnityEngine.Events.UnityAction`1<System.Object>
-struct UnityAction_1_t2747;
+// UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>
+struct UnityEvent_1_t582;
+// UnityEngine.Events.UnityAction`1<UnityEngine.Vector2>
+struct UnityAction_1_t2516;
 // System.Reflection.MethodInfo
-struct MethodInfo_t198;
+struct MethodInfo_t;
 // System.String
 struct String_t;
 // System.Object
 struct Object_t;
 // UnityEngine.Events.BaseInvokableCall
-struct BaseInvokableCall_t970;
+struct BaseInvokableCall_t934;
 
-// System.Void UnityEngine.Events.UnityEvent`1<System.Object>::.ctor()
- void UnityEvent_1__ctor_m18393_gshared (UnityEvent_1_t3614 * __this, MethodInfo* method);
-#define UnityEvent_1__ctor_m18393(__this, method) (void)UnityEvent_1__ctor_m18393_gshared((UnityEvent_1_t3614 *)__this, method)
-// System.Void UnityEngine.Events.UnityEvent`1<System.Object>::AddListener(UnityEngine.Events.UnityAction`1<T0>)
- void UnityEvent_1_AddListener_m18395_gshared (UnityEvent_1_t3614 * __this, UnityAction_1_t2747 * ___call, MethodInfo* method);
-#define UnityEvent_1_AddListener_m18395(__this, ___call, method) (void)UnityEvent_1_AddListener_m18395_gshared((UnityEvent_1_t3614 *)__this, (UnityAction_1_t2747 *)___call, method)
-// System.Void UnityEngine.Events.UnityEvent`1<System.Object>::RemoveListener(UnityEngine.Events.UnityAction`1<T0>)
- void UnityEvent_1_RemoveListener_m18397_gshared (UnityEvent_1_t3614 * __this, UnityAction_1_t2747 * ___call, MethodInfo* method);
-#define UnityEvent_1_RemoveListener_m18397(__this, ___call, method) (void)UnityEvent_1_RemoveListener_m18397_gshared((UnityEvent_1_t3614 *)__this, (UnityAction_1_t2747 *)___call, method)
-// System.Reflection.MethodInfo UnityEngine.Events.UnityEvent`1<System.Object>::FindMethod_Impl(System.String,System.Object)
- MethodInfo_t198 * UnityEvent_1_FindMethod_Impl_m18398_gshared (UnityEvent_1_t3614 * __this, String_t* ___name, Object_t * ___targetObj, MethodInfo* method);
-#define UnityEvent_1_FindMethod_Impl_m18398(__this, ___name, ___targetObj, method) (MethodInfo_t198 *)UnityEvent_1_FindMethod_Impl_m18398_gshared((UnityEvent_1_t3614 *)__this, (String_t*)___name, (Object_t *)___targetObj, method)
-// UnityEngine.Events.BaseInvokableCall UnityEngine.Events.UnityEvent`1<System.Object>::GetDelegate(System.Object,System.Reflection.MethodInfo)
- BaseInvokableCall_t970 * UnityEvent_1_GetDelegate_m18399_gshared (UnityEvent_1_t3614 * __this, Object_t * ___target, MethodInfo_t198 * ___theFunction, MethodInfo* method);
-#define UnityEvent_1_GetDelegate_m18399(__this, ___target, ___theFunction, method) (BaseInvokableCall_t970 *)UnityEvent_1_GetDelegate_m18399_gshared((UnityEvent_1_t3614 *)__this, (Object_t *)___target, (MethodInfo_t198 *)___theFunction, method)
-// UnityEngine.Events.BaseInvokableCall UnityEngine.Events.UnityEvent`1<System.Object>::GetDelegate(UnityEngine.Events.UnityAction`1<T0>)
- BaseInvokableCall_t970 * UnityEvent_1_GetDelegate_m18400_gshared (Object_t * __this/* static, unused */, UnityAction_1_t2747 * ___action, MethodInfo* method);
-#define UnityEvent_1_GetDelegate_m18400(__this/* static, unused */, ___action, method) (BaseInvokableCall_t970 *)UnityEvent_1_GetDelegate_m18400_gshared((Object_t *)__this/* static, unused */, (UnityAction_1_t2747 *)___action, method)
-// System.Void UnityEngine.Events.UnityEvent`1<System.Object>::Invoke(T0)
- void UnityEvent_1_Invoke_m18401_gshared (UnityEvent_1_t3614 * __this, Object_t * ___arg0, MethodInfo* method);
-#define UnityEvent_1_Invoke_m18401(__this, ___arg0, method) (void)UnityEvent_1_Invoke_m18401_gshared((UnityEvent_1_t3614 *)__this, (Object_t *)___arg0, method)
+#include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_Vector2.h"
+
+// System.Void UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::.ctor()
+extern "C" void UnityEvent_1__ctor_m3543_gshared (UnityEvent_1_t582 * __this, const MethodInfo* method);
+#define UnityEvent_1__ctor_m3543(__this, method) (( void (*) (UnityEvent_1_t582 *, const MethodInfo*))UnityEvent_1__ctor_m3543_gshared)(__this, method)
+// System.Void UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::AddListener(UnityEngine.Events.UnityAction`1<T0>)
+extern "C" void UnityEvent_1_AddListener_m17711_gshared (UnityEvent_1_t582 * __this, UnityAction_1_t2516 * ___call, const MethodInfo* method);
+#define UnityEvent_1_AddListener_m17711(__this, ___call, method) (( void (*) (UnityEvent_1_t582 *, UnityAction_1_t2516 *, const MethodInfo*))UnityEvent_1_AddListener_m17711_gshared)(__this, ___call, method)
+// System.Void UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::RemoveListener(UnityEngine.Events.UnityAction`1<T0>)
+extern "C" void UnityEvent_1_RemoveListener_m17712_gshared (UnityEvent_1_t582 * __this, UnityAction_1_t2516 * ___call, const MethodInfo* method);
+#define UnityEvent_1_RemoveListener_m17712(__this, ___call, method) (( void (*) (UnityEvent_1_t582 *, UnityAction_1_t2516 *, const MethodInfo*))UnityEvent_1_RemoveListener_m17712_gshared)(__this, ___call, method)
+// System.Reflection.MethodInfo UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::FindMethod_Impl(System.String,System.Object)
+extern "C" MethodInfo_t * UnityEvent_1_FindMethod_Impl_m17713_gshared (UnityEvent_1_t582 * __this, String_t* ___name, Object_t * ___targetObj, const MethodInfo* method);
+#define UnityEvent_1_FindMethod_Impl_m17713(__this, ___name, ___targetObj, method) (( MethodInfo_t * (*) (UnityEvent_1_t582 *, String_t*, Object_t *, const MethodInfo*))UnityEvent_1_FindMethod_Impl_m17713_gshared)(__this, ___name, ___targetObj, method)
+// UnityEngine.Events.BaseInvokableCall UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::GetDelegate(System.Object,System.Reflection.MethodInfo)
+extern "C" BaseInvokableCall_t934 * UnityEvent_1_GetDelegate_m17714_gshared (UnityEvent_1_t582 * __this, Object_t * ___target, MethodInfo_t * ___theFunction, const MethodInfo* method);
+#define UnityEvent_1_GetDelegate_m17714(__this, ___target, ___theFunction, method) (( BaseInvokableCall_t934 * (*) (UnityEvent_1_t582 *, Object_t *, MethodInfo_t *, const MethodInfo*))UnityEvent_1_GetDelegate_m17714_gshared)(__this, ___target, ___theFunction, method)
+// UnityEngine.Events.BaseInvokableCall UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::GetDelegate(UnityEngine.Events.UnityAction`1<T0>)
+extern "C" BaseInvokableCall_t934 * UnityEvent_1_GetDelegate_m17715_gshared (Object_t * __this /* static, unused */, UnityAction_1_t2516 * ___action, const MethodInfo* method);
+#define UnityEvent_1_GetDelegate_m17715(__this /* static, unused */, ___action, method) (( BaseInvokableCall_t934 * (*) (Object_t * /* static, unused */, UnityAction_1_t2516 *, const MethodInfo*))UnityEvent_1_GetDelegate_m17715_gshared)(__this /* static, unused */, ___action, method)
+// System.Void UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>::Invoke(T0)
+extern "C" void UnityEvent_1_Invoke_m3549_gshared (UnityEvent_1_t582 * __this, Vector2_t231  ___arg0, const MethodInfo* method);
+#define UnityEvent_1_Invoke_m3549(__this, ___arg0, method) (( void (*) (UnityEvent_1_t582 *, Vector2_t231 , const MethodInfo*))UnityEvent_1_Invoke_m3549_gshared)(__this, ___arg0, method)

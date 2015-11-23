@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.EventSystems.UIBehaviour
+
+
 #include "UnityEngine_UI_UnityEngine_EventSystems_UIBehaviour.h"
+
 // UnityEngine.UI.LayoutElement
-struct LayoutElement_t657  : public UIBehaviour_t460
+struct  LayoutElement_t621  : public UIBehaviour_t425
 {
 	// System.Boolean UnityEngine.UI.LayoutElement::m_IgnoreLayout
 	bool ___m_IgnoreLayout_2;

@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.ActivationContext
-struct ActivationContext_t2224;
+struct ActivationContext_t1961;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.ActivationContext::System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void ActivationContext_System_Runtime_Serialization_ISerializable_GetObjectData_m11237 (ActivationContext_t2224 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ActivationContext_System_Runtime_Serialization_ISerializable_GetObjectData_m11557 (ActivationContext_t1961 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.ActivationContext::Finalize()
- void ActivationContext_Finalize_m11238 (ActivationContext_t2224 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ActivationContext_Finalize_m11558 (ActivationContext_t1961 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.ActivationContext::Dispose()
- void ActivationContext_Dispose_m11239 (ActivationContext_t2224 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ActivationContext_Dispose_m11559 (ActivationContext_t1961 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.ActivationContext::Dispose(System.Boolean)
- void ActivationContext_Dispose_m11240 (ActivationContext_t2224 * __this, bool ___disposing, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ActivationContext_Dispose_m11560 (ActivationContext_t1961 * __this, bool ___disposing, const MethodInfo* method) IL2CPP_METHOD_ATTR;

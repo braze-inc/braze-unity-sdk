@@ -1,6 +1,7 @@
 
 #include "UnityViewControllerBase.h"
 #include "OrientationSupport.h"
+#include "Keyboard.h"
 #include "UnityView.h"
 #include "iAD.h"
 #include "PluginBase/UnityViewControllerListener.h"
@@ -17,6 +18,12 @@ typedef id (*ViewWillTransitionToSizeSendFunc)(struct objc_super*, SEL, CGSize, 
 static void WillRotateToInterfaceOrientation_DefaultImpl(id self_, SEL _cmd, UIInterfaceOrientation toInterfaceOrientation, NSTimeInterval duration);
 static void DidRotateFromInterfaceOrientation_DefaultImpl(id self_, SEL _cmd, UIInterfaceOrientation fromInterfaceOrientation);
 static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size, id<UIViewControllerTransitionCoordinator> coordinator);
+
+
+// when returning from presenting UIViewController we might need to update app orientation to "correct" one, as we wont get rotation notification
+@interface UnityAppController()
+- (void)updateAppOrientation:(UIInterfaceOrientation)orientation;
+@end
 
 
 @implementation UnityViewControllerBase
@@ -109,11 +116,21 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 {
 	return 1 << UIInterfaceOrientationPortrait;
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+	[GetAppController() updateAppOrientation:UIInterfaceOrientationPortrait];
+	[super viewWillAppear:animated];
+}
 @end
 @implementation UnityPortraitUpsideDownOnlyViewController
 - (NSUInteger)supportedInterfaceOrientations
 {
 	return 1 << UIInterfaceOrientationPortraitUpsideDown;
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+	[GetAppController() updateAppOrientation:UIInterfaceOrientationPortraitUpsideDown];
+	[super viewWillAppear:animated];
 }
 @end
 @implementation UnityLandscapeLeftOnlyViewController
@@ -121,11 +138,21 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 {
 	return 1 << UIInterfaceOrientationLandscapeLeft;
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+	[GetAppController() updateAppOrientation:UIInterfaceOrientationLandscapeLeft];
+	[super viewWillAppear:animated];
+}
 @end
 @implementation UnityLandscapeRightOnlyViewController
 - (NSUInteger)supportedInterfaceOrientations
 {
 	return 1 << UIInterfaceOrientationLandscapeRight;
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+	[GetAppController() updateAppOrientation:UIInterfaceOrientationLandscapeRight];
+	[super viewWillAppear:animated];
 }
 @end
 
@@ -142,10 +169,11 @@ extern "C" void UnityNotifyAutoOrientationChange()
 static void WillRotateToInterfaceOrientation_DefaultImpl(id self_, SEL _cmd, UIInterfaceOrientation toInterfaceOrientation, NSTimeInterval duration)
 {
 	[UIView setAnimationsEnabled:UnityUseAnimatedAutorotation()?YES:NO];
-
 	[GetAppController() interfaceWillChangeOrientationTo:toInterfaceOrientation];
-	AppController_SendUnityViewControllerNotification(kUnityInterfaceWillChangeOrientation);
 
+	[KeyboardDelegate StartReorientation];
+
+	AppController_SendUnityViewControllerNotification(kUnityInterfaceWillChangeOrientation);
 	UNITY_OBJC_FORWARD_TO_SUPER(self_, [UIViewController class], @selector(willRotateToInterfaceOrientation:duration:), WillRotateToInterfaceOrientationSendFunc, toInterfaceOrientation, duration);
 }
 static void DidRotateFromInterfaceOrientation_DefaultImpl(id self_, SEL _cmd, UIInterfaceOrientation fromInterfaceOrientation)
@@ -154,10 +182,11 @@ static void DidRotateFromInterfaceOrientation_DefaultImpl(id self_, SEL _cmd, UI
 
 	[self.view layoutSubviews];
 	[GetAppController() interfaceDidChangeOrientationFrom:fromInterfaceOrientation];
-	AppController_SendUnityViewControllerNotification(kUnityInterfaceDidChangeOrientation);
 
+	[KeyboardDelegate FinishReorientation];
 	[UIView setAnimationsEnabled:YES];
 
+	AppController_SendUnityViewControllerNotification(kUnityInterfaceDidChangeOrientation);
 	UNITY_OBJC_FORWARD_TO_SUPER(self_, [UIViewController class], @selector(didRotateFromInterfaceOrientation:), DidRotateFromInterfaceOrientationSendFunc, fromInterfaceOrientation);
 }
 static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size, id<UIViewControllerTransitionCoordinator> coordinator)
@@ -168,7 +197,16 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 	ScreenOrientation curOrient = ConvertToUnityScreenOrientation(self.interfaceOrientation);
 	ScreenOrientation newOrient = OrientationAfterTransform(curOrient, [coordinator targetTransform]);
 
+	// in case of presentation controller it will take control over orientations
+	// so to avoid crazy-ass corner cases, make default view controller to ignore "wrong" orientations
+	// as they will come only in case of presentation view controller and will be reverted anyway
+	NSUInteger targetMask = 1 << ConvertToIosScreenOrientation(newOrient);
+	if(([self supportedInterfaceOrientations] & targetMask) == 0)
+		return;
+
 	[UIView setAnimationsEnabled:UnityUseAnimatedAutorotation()?YES:NO];
+	[KeyboardDelegate StartReorientation];
+
 	[GetAppController() interfaceWillChangeOrientationTo:ConvertToIosScreenOrientation(newOrient)];
 
 	[coordinator
@@ -179,6 +217,8 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 		{
 			[self.view layoutSubviews];
 			[GetAppController() interfaceDidChangeOrientationFrom:ConvertToIosScreenOrientation(curOrient)];
+
+			[KeyboardDelegate FinishReorientation];
 			[UIView setAnimationsEnabled:YES];
 		}
 	];

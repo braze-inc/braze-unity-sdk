@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.MemberAccessException
+
+
 #include "mscorlib_System_MemberAccessException.h"
+
 // System.FieldAccessException
-struct FieldAccessException_t2263  : public MemberAccessException_t2264
+struct  FieldAccessException_t1996  : public MemberAccessException_t1997
 {
 };

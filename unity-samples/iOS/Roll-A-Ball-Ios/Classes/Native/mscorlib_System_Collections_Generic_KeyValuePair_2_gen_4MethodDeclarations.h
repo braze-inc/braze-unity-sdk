@@ -1,25 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_2MethodDeclarations.h"
 
-// System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>
-struct KeyValuePair_2_t703;
-// UnityEngine.EventSystems.PointerEventData
-struct PointerEventData_t461;
-// System.String
-struct String_t;
-
-// System.Void System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::.ctor(TKey,TValue)
- void KeyValuePair_2__ctor_m18694 (KeyValuePair_2_t703 * __this, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TKey System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::get_Key()
- int32_t KeyValuePair_2_get_Key_m3314 (KeyValuePair_2_t703 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::set_Key(TKey)
- void KeyValuePair_2_set_Key_m18695 (KeyValuePair_2_t703 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TValue System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::get_Value()
- PointerEventData_t461 * KeyValuePair_2_get_Value_m3313 (KeyValuePair_2_t703 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::set_Value(TValue)
- void KeyValuePair_2_set_Value_m18696 (KeyValuePair_2_t703 * __this, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::ToString()
- String_t* KeyValuePair_2_ToString_m3339 (KeyValuePair_2_t703 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::.ctor(TKey,TValue)
+#define KeyValuePair_2__ctor_m14470(__this, ___key, ___value, method) (( void (*) (KeyValuePair_2_t291 *, Object_t *, HashSet_1_t288 *, const MethodInfo*))KeyValuePair_2__ctor_m12909_gshared)(__this, ___key, ___value, method)
+// TKey System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::get_Key()
+#define KeyValuePair_2_get_Key_m14471(__this, method) (( Object_t * (*) (KeyValuePair_2_t291 *, const MethodInfo*))KeyValuePair_2_get_Key_m12910_gshared)(__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::set_Key(TKey)
+#define KeyValuePair_2_set_Key_m14472(__this, ___value, method) (( void (*) (KeyValuePair_2_t291 *, Object_t *, const MethodInfo*))KeyValuePair_2_set_Key_m12912_gshared)(__this, ___value, method)
+// TValue System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::get_Value()
+#define KeyValuePair_2_get_Value_m1174(__this, method) (( HashSet_1_t288 * (*) (KeyValuePair_2_t291 *, const MethodInfo*))KeyValuePair_2_get_Value_m12913_gshared)(__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::set_Value(TValue)
+#define KeyValuePair_2_set_Value_m14473(__this, ___value, method) (( void (*) (KeyValuePair_2_t291 *, HashSet_1_t288 *, const MethodInfo*))KeyValuePair_2_set_Value_m12915_gshared)(__this, ___value, method)
+// System.String System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::ToString()
+#define KeyValuePair_2_ToString_m14474(__this, method) (( String_t* (*) (KeyValuePair_2_t291 *, const MethodInfo*))KeyValuePair_2_ToString_m12917_gshared)(__this, method)

@@ -1,23 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.RC2
-struct RC2_t1529;
+struct RC2_t1385;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Security.Cryptography.RC2::.ctor()
- void RC2__ctor_m10694 (RC2_t1529 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RC2__ctor_m10895 (RC2_t1385 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.RC2 System.Security.Cryptography.RC2::Create()
- RC2_t1529 * RC2_Create_m6542 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RC2_t1385 * RC2_Create_m7235 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.RC2 System.Security.Cryptography.RC2::Create(System.String)
- RC2_t1529 * RC2_Create_m10695 (Object_t * __this/* static, unused */, String_t* ___AlgName, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RC2_t1385 * RC2_Create_m10896 (Object_t * __this /* static, unused */, String_t* ___AlgName, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Security.Cryptography.RC2::get_EffectiveKeySize()
- int32_t RC2_get_EffectiveKeySize_m10696 (RC2_t1529 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t RC2_get_EffectiveKeySize_m10897 (RC2_t1385 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Security.Cryptography.RC2::get_KeySize()
- int32_t RC2_get_KeySize_m10697 (RC2_t1529 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t RC2_get_KeySize_m10898 (RC2_t1385 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Security.Cryptography.RC2::set_KeySize(System.Int32)
- void RC2_set_KeySize_m10698 (RC2_t1529 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RC2_set_KeySize_m10899 (RC2_t1385 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

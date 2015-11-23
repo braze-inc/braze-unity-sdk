@@ -1,23 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // MainMenu
-struct MainMenu_t126;
+struct MainMenu_t125;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void MainMenu::.ctor()
- void MainMenu__ctor_m617 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu__ctor_m596 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MainMenu::OnChangeUserButtonClick()
- void MainMenu_OnChangeUserButtonClick_m618 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu_OnChangeUserButtonClick_m597 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MainMenu::OnLogCustomEventButtonClick()
- void MainMenu_OnLogCustomEventButtonClick_m619 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu_OnLogCustomEventButtonClick_m598 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MainMenu::OnLogPurchaseButtonClick()
- void MainMenu_OnLogPurchaseButtonClick_m620 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu_OnLogPurchaseButtonClick_m599 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MainMenu::OnSetUserFieldsButtonClick()
- void MainMenu_OnSetUserFieldsButtonClick_m621 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu_OnSetUserFieldsButtonClick_m600 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MainMenu::OnSetCustomAttributeButtonClick()
- void MainMenu_OnSetCustomAttributeButtonClick_m622 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu_OnSetCustomAttributeButtonClick_m601 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MainMenu::OnSubmitFeedbackButtonClick()
- void MainMenu_OnSubmitFeedbackButtonClick_m623 (MainMenu_t126 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MainMenu_OnSubmitFeedbackButtonClick_m602 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void MainMenu::OnRequestInAppMessageButtonClick()
+extern "C" void MainMenu_OnRequestInAppMessageButtonClick_m603 (MainMenu_t125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // System.Threading.NativeEventCalls
-struct NativeEventCalls_t2216  : public Object_t
+struct  NativeEventCalls_t1949  : public Object_t
 {
 };

@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.DllNotFoundException
-struct DllNotFoundException_t2251;
+struct DllNotFoundException_t1984;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.DllNotFoundException::.ctor()
- void DllNotFoundException__ctor_m11624 (DllNotFoundException_t2251 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DllNotFoundException__ctor_m11951 (DllNotFoundException_t1984 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.DllNotFoundException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void DllNotFoundException__ctor_m11625 (DllNotFoundException_t2251 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DllNotFoundException__ctor_m11952 (DllNotFoundException_t1984 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

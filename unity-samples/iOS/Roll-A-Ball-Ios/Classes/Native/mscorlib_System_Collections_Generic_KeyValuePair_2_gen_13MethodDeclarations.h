@@ -1,27 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_6MethodDeclarations.h"
 
-// System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>
-struct KeyValuePair_2_t4233;
-// System.String
-struct String_t;
-// UnityEngine.GUIStyle
-struct GUIStyle_t250;
-
-// System.Void System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::.ctor(TKey,TValue)
-// System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>
-#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_5MethodDeclarations.h"
-#define KeyValuePair_2__ctor_m22708(__this, ___key, ___value, method) (void)KeyValuePair_2__ctor_m13327_gshared((KeyValuePair_2_t2813 *)__this, (Object_t *)___key, (Object_t *)___value, method)
-// TKey System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::get_Key()
-#define KeyValuePair_2_get_Key_m22709(__this, method) (String_t*)KeyValuePair_2_get_Key_m13328_gshared((KeyValuePair_2_t2813 *)__this, method)
-// System.Void System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::set_Key(TKey)
-#define KeyValuePair_2_set_Key_m22710(__this, ___value, method) (void)KeyValuePair_2_set_Key_m13330_gshared((KeyValuePair_2_t2813 *)__this, (Object_t *)___value, method)
-// TValue System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::get_Value()
-#define KeyValuePair_2_get_Value_m22711(__this, method) (GUIStyle_t250 *)KeyValuePair_2_get_Value_m13331_gshared((KeyValuePair_2_t2813 *)__this, method)
-// System.Void System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::set_Value(TValue)
-#define KeyValuePair_2_set_Value_m22712(__this, ___value, method) (void)KeyValuePair_2_set_Value_m13333_gshared((KeyValuePair_2_t2813 *)__this, (Object_t *)___value, method)
-// System.String System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::ToString()
-#define KeyValuePair_2_ToString_m22713(__this, method) (String_t*)KeyValuePair_2_ToString_m13335_gshared((KeyValuePair_2_t2813 *)__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.IClipper,System.Int32>::.ctor(TKey,TValue)
+#define KeyValuePair_2__ctor_m18225(__this, ___key, ___value, method) (( void (*) (KeyValuePair_2_t2547 *, Object_t *, int32_t, const MethodInfo*))KeyValuePair_2__ctor_m13624_gshared)(__this, ___key, ___value, method)
+// TKey System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.IClipper,System.Int32>::get_Key()
+#define KeyValuePair_2_get_Key_m18226(__this, method) (( Object_t * (*) (KeyValuePair_2_t2547 *, const MethodInfo*))KeyValuePair_2_get_Key_m13625_gshared)(__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.IClipper,System.Int32>::set_Key(TKey)
+#define KeyValuePair_2_set_Key_m18227(__this, ___value, method) (( void (*) (KeyValuePair_2_t2547 *, Object_t *, const MethodInfo*))KeyValuePair_2_set_Key_m13626_gshared)(__this, ___value, method)
+// TValue System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.IClipper,System.Int32>::get_Value()
+#define KeyValuePair_2_get_Value_m18228(__this, method) (( int32_t (*) (KeyValuePair_2_t2547 *, const MethodInfo*))KeyValuePair_2_get_Value_m13627_gshared)(__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.IClipper,System.Int32>::set_Value(TValue)
+#define KeyValuePair_2_set_Value_m18229(__this, ___value, method) (( void (*) (KeyValuePair_2_t2547 *, int32_t, const MethodInfo*))KeyValuePair_2_set_Value_m13628_gshared)(__this, ___value, method)
+// System.String System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.IClipper,System.Int32>::ToString()
+#define KeyValuePair_2_ToString_m18230(__this, method) (( String_t* (*) (KeyValuePair_2_t2547 *, const MethodInfo*))KeyValuePair_2_ToString_m13629_gshared)(__this, method)

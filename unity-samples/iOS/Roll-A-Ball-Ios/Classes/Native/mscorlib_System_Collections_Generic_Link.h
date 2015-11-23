@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Collections.Generic.Link
-struct Link_t1851 
+struct  Link_t1503 
 {
 	// System.Int32 System.Collections.Generic.Link::HashCode
 	int32_t ___HashCode_0;

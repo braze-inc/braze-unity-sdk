@@ -1,17 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Type
 struct Type_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// System.Reflection.MethodAttributes
 #include "mscorlib_System_Reflection_MethodAttributes.h"
-// System.Reflection.MethodImplAttributes
 #include "mscorlib_System_Reflection_MethodImplAttributes.h"
-// System.Reflection.CallingConventions
 #include "mscorlib_System_Reflection_CallingConventions.h"
+
 // System.Reflection.MonoMethodInfo
-struct MonoMethodInfo_t1986 
+struct  MonoMethodInfo_t1661 
 {
 	// System.Type System.Reflection.MonoMethodInfo::parent
 	Type_t * ___parent_0;

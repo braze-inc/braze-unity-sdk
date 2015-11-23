@@ -1,29 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
-
-// System.Comparison`1<System.Reflection.MemberInfo>
-struct Comparison_1_t3096;
-// System.Object
-struct Object_t;
-// System.Reflection.MemberInfo
-struct MemberInfo_t196;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-
-// System.Void System.Comparison`1<System.Reflection.MemberInfo>::.ctor(System.Object,System.IntPtr)
-// System.Comparison`1<System.Object>
 #include "mscorlib_System_Comparison_1_gen_3MethodDeclarations.h"
-#define Comparison_1__ctor_m15043(__this, ___object, ___method, method) (void)Comparison_1__ctor_m13055_gshared((Comparison_1_t2760 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
-// System.Int32 System.Comparison`1<System.Reflection.MemberInfo>::Invoke(T,T)
-#define Comparison_1_Invoke_m15044(__this, ___x, ___y, method) (int32_t)Comparison_1_Invoke_m13056_gshared((Comparison_1_t2760 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.IAsyncResult System.Comparison`1<System.Reflection.MemberInfo>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
-#define Comparison_1_BeginInvoke_m15045(__this, ___x, ___y, ___callback, ___object, method) (Object_t *)Comparison_1_BeginInvoke_m13057_gshared((Comparison_1_t2760 *)__this, (Object_t *)___x, (Object_t *)___y, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
-// System.Int32 System.Comparison`1<System.Reflection.MemberInfo>::EndInvoke(System.IAsyncResult)
-#define Comparison_1_EndInvoke_m15046(__this, ___result, method) (int32_t)Comparison_1_EndInvoke_m13058_gshared((Comparison_1_t2760 *)__this, (Object_t *)___result, method)
+
+// System.Void System.Comparison`1<Appboy.Utilities.JSONNode>::.ctor(System.Object,System.IntPtr)
+#define Comparison_1__ctor_m13280(__this, ___object, ___method, method) (( void (*) (Comparison_1_t2186 *, Object_t *, IntPtr_t, const MethodInfo*))Comparison_1__ctor_m12676_gshared)(__this, ___object, ___method, method)
+// System.Int32 System.Comparison`1<Appboy.Utilities.JSONNode>::Invoke(T,T)
+#define Comparison_1_Invoke_m13281(__this, ___x, ___y, method) (( int32_t (*) (Comparison_1_t2186 *, JSONNode_t11 *, JSONNode_t11 *, const MethodInfo*))Comparison_1_Invoke_m12677_gshared)(__this, ___x, ___y, method)
+// System.IAsyncResult System.Comparison`1<Appboy.Utilities.JSONNode>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
+#define Comparison_1_BeginInvoke_m13282(__this, ___x, ___y, ___callback, ___object, method) (( Object_t * (*) (Comparison_1_t2186 *, JSONNode_t11 *, JSONNode_t11 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Comparison_1_BeginInvoke_m12678_gshared)(__this, ___x, ___y, ___callback, ___object, method)
+// System.Int32 System.Comparison`1<Appboy.Utilities.JSONNode>::EndInvoke(System.IAsyncResult)
+#define Comparison_1_EndInvoke_m13283(__this, ___result, method) (( int32_t (*) (Comparison_1_t2186 *, Object_t *, const MethodInfo*))Comparison_1_EndInvoke_m12679_gshared)(__this, ___result, method)

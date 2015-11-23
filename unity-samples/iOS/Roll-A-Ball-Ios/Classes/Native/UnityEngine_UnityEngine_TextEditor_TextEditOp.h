@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// UnityEngine.TextEditor/TextEditOp
 #include "UnityEngine_UnityEngine_TextEditor_TextEditOp.h"
+
 // UnityEngine.TextEditor/TextEditOp
-struct TextEditOp_t966 
+struct  TextEditOp_t929 
 {
 	// System.Int32 UnityEngine.TextEditor/TextEditOp::value__
 	int32_t ___value___1;

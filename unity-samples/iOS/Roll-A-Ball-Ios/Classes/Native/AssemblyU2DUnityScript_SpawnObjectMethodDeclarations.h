@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // SpawnObject
-struct SpawnObject_t423;
+struct SpawnObject_t390;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void SpawnObject::.ctor()
- void SpawnObject__ctor_m1702 (SpawnObject_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SpawnObject__ctor_m1472 (SpawnObject_t390 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SpawnObject::OnSignal()
- void SpawnObject_OnSignal_m1703 (SpawnObject_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SpawnObject_OnSignal_m1473 (SpawnObject_t390 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SpawnObject::Update()
- void SpawnObject_Update_m1704 (SpawnObject_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SpawnObject_Update_m1474 (SpawnObject_t390 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SpawnObject::Main()
- void SpawnObject_Main_m1705 (SpawnObject_t423 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SpawnObject_Main_m1475 (SpawnObject_t390 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

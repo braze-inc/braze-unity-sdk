@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.MonoEnumInfo/LongComparer
-struct LongComparer_t2257;
+struct LongComparer_t1990;
 // System.Object
 struct Object_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.MonoEnumInfo/LongComparer::.ctor()
- void LongComparer__ctor_m11637 (LongComparer_t2257 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LongComparer__ctor_m11964 (LongComparer_t1990 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.MonoEnumInfo/LongComparer::Compare(System.Object,System.Object)
- int32_t LongComparer_Compare_m11638 (LongComparer_t2257 * __this, Object_t * ___x, Object_t * ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t LongComparer_Compare_m11965 (LongComparer_t1990 * __this, Object_t * ___x, Object_t * ___y, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.MonoEnumInfo/LongComparer::Compare(System.Int64,System.Int64)
- int32_t LongComparer_Compare_m11639 (LongComparer_t2257 * __this, int64_t ___ix, int64_t ___iy, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t LongComparer_Compare_m11966 (LongComparer_t1990 * __this, int64_t ___ix, int64_t ___iy, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.TouchScreenKeyboard_InternalConstructorHelperArguments
-struct TouchScreenKeyboard_InternalConstructorHelperArguments_t860 
+struct  TouchScreenKeyboard_InternalConstructorHelperArguments_t774 
 {
 	// System.UInt32 UnityEngine.TouchScreenKeyboard_InternalConstructorHelperArguments::keyboardType
 	uint32_t ___keyboardType_0;

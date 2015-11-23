@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.Dictionary`2<System.String,System.String>
-struct Dictionary_2_t14;
-// System.Object
+
+// System.Collections.Generic.Dictionary`2<System.Object,System.Int32>
+struct Dictionary_2_t2205;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.Dictionary`2/KeyCollection<System.String,System.String>
-struct KeyCollection_t2825  : public Object_t
+
+// System.Collections.Generic.Dictionary`2/KeyCollection<System.Object,System.Int32>
+struct  KeyCollection_t2209  : public Object_t
 {
-	// System.Collections.Generic.Dictionary`2<TKey,TValue> System.Collections.Generic.Dictionary`2/KeyCollection<System.String,System.String>::dictionary
-	Dictionary_2_t14 * ___dictionary_0;
+	// System.Collections.Generic.Dictionary`2<TKey,TValue> System.Collections.Generic.Dictionary`2/KeyCollection<System.Object,System.Int32>::dictionary
+	Dictionary_2_t2205 * ___dictionary_0;
 };

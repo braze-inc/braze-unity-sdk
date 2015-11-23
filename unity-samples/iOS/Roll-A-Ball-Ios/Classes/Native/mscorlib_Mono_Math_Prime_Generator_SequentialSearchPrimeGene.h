@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// Mono.Math.Prime.Generator.PrimeGeneratorBase
+
+
 #include "mscorlib_Mono_Math_Prime_Generator_PrimeGeneratorBase.h"
+
 // Mono.Math.Prime.Generator.SequentialSearchPrimeGeneratorBase
-struct SequentialSearchPrimeGeneratorBase_t1800  : public PrimeGeneratorBase_t1797
+struct  SequentialSearchPrimeGeneratorBase_t1458  : public PrimeGeneratorBase_t1457
 {
 };

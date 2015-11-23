@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.BoneWeight
-struct BoneWeight_t822 
+struct  BoneWeight_t761 
 {
 	// System.Single UnityEngine.BoneWeight::m_Weight0
 	float ___m_Weight0_0;

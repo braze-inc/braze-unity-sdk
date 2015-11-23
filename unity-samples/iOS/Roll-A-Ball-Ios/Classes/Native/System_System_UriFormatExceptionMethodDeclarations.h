@@ -1,23 +1,32 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.UriFormatException
-struct UriFormatException_t1697;
+struct UriFormatException_t1182;
 // System.String
 struct String_t;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.UriFormatException::.ctor()
- void UriFormatException__ctor_m7484 (UriFormatException_t1697 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UriFormatException__ctor_m6108 (UriFormatException_t1182 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UriFormatException::.ctor(System.String)
- void UriFormatException__ctor_m7485 (UriFormatException_t1697 * __this, String_t* ___message, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UriFormatException__ctor_m6109 (UriFormatException_t1182 * __this, String_t* ___message, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UriFormatException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void UriFormatException__ctor_m7486 (UriFormatException_t1697 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UriFormatException__ctor_m6110 (UriFormatException_t1182 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UriFormatException::System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void UriFormatException_System_Runtime_Serialization_ISerializable_GetObjectData_m7487 (UriFormatException_t1697 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UriFormatException_System_Runtime_Serialization_ISerializable_GetObjectData_m6111 (UriFormatException_t1182 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

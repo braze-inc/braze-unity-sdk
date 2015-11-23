@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Collections.SortedList
-struct SortedList_t1727;
+struct SortedList_t1211;
 // System.Object
 struct Object_t;
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Collections.SortedList/EnumeratorMode
 #include "mscorlib_System_Collections_SortedList_EnumeratorMode.h"
+
 // System.Collections.SortedList/Enumerator
-struct Enumerator_t1886  : public Object_t
+struct  Enumerator_t1523  : public Object_t
 {
 	// System.Collections.SortedList System.Collections.SortedList/Enumerator::host
-	SortedList_t1727 * ___host_0;
+	SortedList_t1211 * ___host_0;
 	// System.Int32 System.Collections.SortedList/Enumerator::stamp
 	int32_t ___stamp_1;
 	// System.Int32 System.Collections.SortedList/Enumerator::pos
@@ -30,7 +40,7 @@ struct Enumerator_t1886  : public Object_t
 	// System.Boolean System.Collections.SortedList/Enumerator::invalid
 	bool ___invalid_7;
 };
-struct Enumerator_t1886_StaticFields{
+struct Enumerator_t1523_StaticFields{
 	// System.String System.Collections.SortedList/Enumerator::xstr
 	String_t* ___xstr_8;
 };

@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.ExecuteInEditMode
-struct ExecuteInEditMode_t732;
+struct ExecuteInEditMode_t884;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.ExecuteInEditMode::.ctor()
- void ExecuteInEditMode__ctor_m3463 (ExecuteInEditMode_t732 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ExecuteInEditMode__ctor_m4780 (ExecuteInEditMode_t884 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

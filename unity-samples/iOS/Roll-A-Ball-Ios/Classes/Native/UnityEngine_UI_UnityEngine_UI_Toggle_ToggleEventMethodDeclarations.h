@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.Toggle/ToggleEvent
-struct ToggleEvent_t635;
+struct ToggleEvent_t598;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.UI.Toggle/ToggleEvent::.ctor()
- void ToggleEvent__ctor_m2924 (ToggleEvent_t635 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleEvent__ctor_m2881 (ToggleEvent_t598 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

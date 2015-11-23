@@ -1,29 +1,39 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.DES
-struct DES_t1527;
-// System.Byte[]
-struct ByteU5BU5D_t97;
+struct DES_t1384;
 // System.String
 struct String_t;
+// System.Byte[]
+struct ByteU5BU5D_t98;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Security.Cryptography.DES::.ctor()
- void DES__ctor_m10596 (DES_t1527 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DES__ctor_m10785 (DES_t1384 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Security.Cryptography.DES::.cctor()
- void DES__cctor_m10597 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DES__cctor_m10786 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.DES System.Security.Cryptography.DES::Create()
- DES_t1527 * DES_Create_m6541 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DES_t1384 * DES_Create_m7234 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.DES System.Security.Cryptography.DES::Create(System.String)
- DES_t1527 * DES_Create_m10598 (Object_t * __this/* static, unused */, String_t* ___algName, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DES_t1384 * DES_Create_m10787 (Object_t * __this /* static, unused */, String_t* ___algName, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Security.Cryptography.DES::IsWeakKey(System.Byte[])
- bool DES_IsWeakKey_m10599 (Object_t * __this/* static, unused */, ByteU5BU5D_t97* ___rgbKey, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool DES_IsWeakKey_m10788 (Object_t * __this /* static, unused */, ByteU5BU5D_t98* ___rgbKey, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Security.Cryptography.DES::IsSemiWeakKey(System.Byte[])
- bool DES_IsSemiWeakKey_m10600 (Object_t * __this/* static, unused */, ByteU5BU5D_t97* ___rgbKey, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool DES_IsSemiWeakKey_m10789 (Object_t * __this /* static, unused */, ByteU5BU5D_t98* ___rgbKey, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Byte[] System.Security.Cryptography.DES::get_Key()
- ByteU5BU5D_t97* DES_get_Key_m10601 (DES_t1527 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ByteU5BU5D_t98* DES_get_Key_m10790 (DES_t1384 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Security.Cryptography.DES::set_Key(System.Byte[])
- void DES_set_Key_m10602 (DES_t1527 * __this, ByteU5BU5D_t97* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DES_set_Key_m10791 (DES_t1384 * __this, ByteU5BU5D_t98* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

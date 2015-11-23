@@ -1,18 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // Appboy.Models.ApplePushNotificationAlert
-struct ApplePushNotificationAlert_t43;
+struct ApplePushNotificationAlert_t31;
 // System.String
 struct String_t;
 // System.Collections.Generic.IDictionary`2<System.String,System.Object>
-struct IDictionary_2_t44;
-// System.Object
+struct IDictionary_2_t32;
+
 #include "mscorlib_System_Object.h"
+
 // Appboy.Models.ApplePushNotification
-struct ApplePushNotification_t45  : public Object_t
+struct  ApplePushNotification_t30  : public Object_t
 {
 	// Appboy.Models.ApplePushNotificationAlert Appboy.Models.ApplePushNotification::<Alert>k__BackingField
-	ApplePushNotificationAlert_t43 * ___U3CAlertU3Ek__BackingField_0;
+	ApplePushNotificationAlert_t31 * ___U3CAlertU3Ek__BackingField_0;
 	// System.Int32 Appboy.Models.ApplePushNotification::<Badge>k__BackingField
 	int32_t ___U3CBadgeU3Ek__BackingField_1;
 	// System.String Appboy.Models.ApplePushNotification::<Sound>k__BackingField

@@ -1,13 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.MonoBehaviour
+
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
-// UnityTest.CallTesting/Functions
 #include "AssemblyU2DCSharp_UnityTest_CallTesting_Functions.h"
-// UnityTest.CallTesting/Method
 #include "AssemblyU2DCSharp_UnityTest_CallTesting_Method.h"
+
 // UnityTest.CallTesting
-struct CallTesting_t275  : public MonoBehaviour_t2
+struct  CallTesting_t252  : public MonoBehaviour_t2
 {
 	// System.Int32 UnityTest.CallTesting::afterFrames
 	int32_t ___afterFrames_2;

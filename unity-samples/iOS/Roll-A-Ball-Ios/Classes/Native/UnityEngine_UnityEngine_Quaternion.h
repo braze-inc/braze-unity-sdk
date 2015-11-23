@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.Quaternion
-struct Quaternion_t415 
+struct  Quaternion_t400 
 {
 	// System.Single UnityEngine.Quaternion::x
 	float ___x_1;

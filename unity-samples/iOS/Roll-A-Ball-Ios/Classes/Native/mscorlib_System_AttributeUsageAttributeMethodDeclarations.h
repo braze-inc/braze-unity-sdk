@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.AttributeUsageAttribute
-struct AttributeUsageAttribute_t324;
-// System.AttributeTargets
+struct AttributeUsageAttribute_t1394;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_AttributeTargets.h"
 
 // System.Void System.AttributeUsageAttribute::.ctor(System.AttributeTargets)
- void AttributeUsageAttribute__ctor_m1360 (AttributeUsageAttribute_t324 * __this, int32_t ___validOn, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AttributeUsageAttribute__ctor_m7310 (AttributeUsageAttribute_t1394 * __this, int32_t ___validOn, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.AttributeUsageAttribute::get_AllowMultiple()
- bool AttributeUsageAttribute_get_AllowMultiple_m7743 (AttributeUsageAttribute_t324 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool AttributeUsageAttribute_get_AllowMultiple_m7311 (AttributeUsageAttribute_t1394 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.AttributeUsageAttribute::set_AllowMultiple(System.Boolean)
- void AttributeUsageAttribute_set_AllowMultiple_m1361 (AttributeUsageAttribute_t324 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AttributeUsageAttribute_set_AllowMultiple_m7312 (AttributeUsageAttribute_t1394 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.AttributeUsageAttribute::get_Inherited()
- bool AttributeUsageAttribute_get_Inherited_m7744 (AttributeUsageAttribute_t324 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool AttributeUsageAttribute_get_Inherited_m7313 (AttributeUsageAttribute_t1394 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.AttributeUsageAttribute::set_Inherited(System.Boolean)
- void AttributeUsageAttribute_set_Inherited_m5068 (AttributeUsageAttribute_t324 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AttributeUsageAttribute_set_Inherited_m7314 (AttributeUsageAttribute_t1394 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

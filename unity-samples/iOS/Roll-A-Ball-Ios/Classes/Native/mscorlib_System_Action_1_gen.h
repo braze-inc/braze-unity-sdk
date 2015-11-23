@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.Font
-struct Font_t553;
+struct Font_t516;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.Void
-#include "mscorlib_System_Void.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
+#include "mscorlib_System_Void.h"
+
 // System.Action`1<UnityEngine.Font>
-struct Action_1_t723  : public MulticastDelegate_t594
+struct  Action_1_t693  : public MulticastDelegate_t550
 {
 };

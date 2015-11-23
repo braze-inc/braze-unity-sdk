@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Events.UnityEvent`1<UnityEngine.Color>
+
+
 #include "UnityEngine_UnityEngine_Events_UnityEvent_1_gen_0.h"
+
 // UnityEngine.UI.CoroutineTween.ColorTween/ColorTweenCallback
-struct ColorTweenCallback_t534  : public UnityEvent_1_t535
+struct  ColorTweenCallback_t482  : public UnityEvent_1_t483
 {
 };

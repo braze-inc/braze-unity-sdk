@@ -1,14 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
-// UnityEngine.Vector3
 #include "UnityEngine_UnityEngine_Vector3.h"
+
 // UnityEngine.Plane
-struct Plane_t431 
+struct  Plane_t399 
 {
 	// UnityEngine.Vector3 UnityEngine.Plane::m_Normal
-	Vector3_t188  ___m_Normal_0;
+	Vector3_t259  ___m_Normal_0;
 	// System.Single UnityEngine.Plane::m_Distance
 	float ___m_Distance_1;
 };

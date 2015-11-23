@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.BaseVertexEffect
-#include "UnityEngine_UI_UnityEngine_UI_BaseVertexEffect.h"
+
+
+#include "UnityEngine_UI_UnityEngine_UI_BaseMeshEffect.h"
+
 // UnityEngine.UI.PositionAsUV1
-struct PositionAsUV1_t681  : public BaseVertexEffect_t678
+struct  PositionAsUV1_t641  : public BaseMeshEffect_t638
 {
 };

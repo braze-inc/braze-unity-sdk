@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.SystemException
+
+
 #include "mscorlib_System_SystemException.h"
+
 // System.InvalidCastException
-struct InvalidCastException_t2266  : public SystemException_t1729
+struct  InvalidCastException_t2000  : public SystemException_t1227
 {
 };

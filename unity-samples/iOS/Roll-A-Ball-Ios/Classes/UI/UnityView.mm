@@ -78,6 +78,12 @@ extern bool _skipPresent;
 		_recreateView = YES;
 	[self onUpdateSurfaceSize:self.bounds.size];
 
+	for(UIView* subView in self.subviews)
+	{
+		if([subView respondsToSelector:@selector(onUnityUpdateViewLayout)])
+			[subView performSelector:@selector(onUnityUpdateViewLayout)];
+	}
+
 	[super layoutSubviews];
 }
 

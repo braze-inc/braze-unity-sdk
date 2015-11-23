@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // PlaySound
-struct PlaySound_t417;
+struct PlaySound_t384;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void PlaySound::.ctor()
- void PlaySound__ctor_m1686 (PlaySound_t417 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlaySound__ctor_m1456 (PlaySound_t384 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlaySound::Awake()
- void PlaySound_Awake_m1687 (PlaySound_t417 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlaySound_Awake_m1457 (PlaySound_t384 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlaySound::OnSignal()
- void PlaySound_OnSignal_m1688 (PlaySound_t417 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlaySound_OnSignal_m1458 (PlaySound_t384 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlaySound::Main()
- void PlaySound_Main_m1689 (PlaySound_t417 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlaySound_Main_m1459 (PlaySound_t384 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

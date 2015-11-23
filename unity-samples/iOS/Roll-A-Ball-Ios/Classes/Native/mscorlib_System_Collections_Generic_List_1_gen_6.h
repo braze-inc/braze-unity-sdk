@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityTest.ITestComponent[]
-struct ITestComponentU5BU5D_t3160;
-// System.Object
+
+// UnityTest.TestComponent[]
+struct TestComponentU5BU5D_t305;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityTest.ITestComponent>
-struct List_1_t228  : public Object_t
+
+// System.Collections.Generic.List`1<UnityTest.TestComponent>
+struct  List_1_t242  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityTest.ITestComponent>::_items
-	ITestComponentU5BU5D_t3160* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.ITestComponent>::_size
+	// T[] System.Collections.Generic.List`1<UnityTest.TestComponent>::_items
+	TestComponentU5BU5D_t305* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.TestComponent>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.ITestComponent>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityTest.TestComponent>::_version
 	int32_t ____version_3;
 };
-struct List_1_t228_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.ITestComponent>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityTest.ITestComponent>::EmptyArray
-	ITestComponentU5BU5D_t3160* ___EmptyArray_4;
+struct List_1_t242_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityTest.TestComponent>::EmptyArray
+	TestComponentU5BU5D_t305* ___EmptyArray_4;
 };

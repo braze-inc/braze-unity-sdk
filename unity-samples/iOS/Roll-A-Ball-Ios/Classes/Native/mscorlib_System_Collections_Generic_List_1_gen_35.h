@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Policy.StrongName[]
-struct StrongNameU5BU5D_t4871;
-// System.Object
+
+// UnityEngine.Vector4[]
+struct Vector4U5BU5D_t734;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<System.Security.Policy.StrongName>
-struct List_1_t2688  : public Object_t
+
+// System.Collections.Generic.List`1<UnityEngine.Vector4>
+struct  List_1_t635  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<System.Security.Policy.StrongName>::_items
-	StrongNameU5BU5D_t4871* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<System.Security.Policy.StrongName>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.Vector4>::_items
+	Vector4U5BU5D_t734* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Vector4>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<System.Security.Policy.StrongName>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Vector4>::_version
 	int32_t ____version_3;
 };
-struct List_1_t2688_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<System.Security.Policy.StrongName>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<System.Security.Policy.StrongName>::EmptyArray
-	StrongNameU5BU5D_t4871* ___EmptyArray_4;
+struct List_1_t635_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityEngine.Vector4>::EmptyArray
+	Vector4U5BU5D_t734* ___EmptyArray_4;
 };

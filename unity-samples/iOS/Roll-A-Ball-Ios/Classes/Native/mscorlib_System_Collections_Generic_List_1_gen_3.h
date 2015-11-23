@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Reflection.MemberInfo[]
-struct MemberInfoU5BU5D_t195;
-// System.Object
+
+// System.Object[]
+struct ObjectU5BU5D_t87;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<System.Reflection.MemberInfo>
-struct List_1_t306  : public Object_t
+
+// System.Collections.Generic.List`1<System.Object>
+struct  List_1_t106  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<System.Reflection.MemberInfo>::_items
-	MemberInfoU5BU5D_t195* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<System.Reflection.MemberInfo>::_size
+	// T[] System.Collections.Generic.List`1<System.Object>::_items
+	ObjectU5BU5D_t87* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<System.Object>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<System.Reflection.MemberInfo>::_version
+	// System.Int32 System.Collections.Generic.List`1<System.Object>::_version
 	int32_t ____version_3;
 };
-struct List_1_t306_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<System.Reflection.MemberInfo>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<System.Reflection.MemberInfo>::EmptyArray
-	MemberInfoU5BU5D_t195* ___EmptyArray_4;
+struct List_1_t106_StaticFields{
+	// T[] System.Collections.Generic.List`1<System.Object>::EmptyArray
+	ObjectU5BU5D_t87* ___EmptyArray_4;
 };

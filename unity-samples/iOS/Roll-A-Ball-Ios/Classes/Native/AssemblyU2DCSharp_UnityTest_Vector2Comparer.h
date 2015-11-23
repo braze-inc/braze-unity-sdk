@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityTest.VectorComparerBase`1<UnityEngine.Vector2>
+
+
 #include "AssemblyU2DCSharp_UnityTest_VectorComparerBase_1_gen.h"
-// UnityTest.Vector2Comparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_Vector2Comparer_CompareType.h"
+
 // UnityTest.Vector2Comparer
-struct Vector2Comparer_t182  : public VectorComparerBase_1_t183
+struct  Vector2Comparer_t170  : public VectorComparerBase_1_t171
 {
 	// UnityTest.Vector2Comparer/CompareType UnityTest.Vector2Comparer::compareType
 	int32_t ___compareType_14;

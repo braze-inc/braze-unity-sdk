@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// UnityEngine.GUILayoutOption/Type
 #include "UnityEngine_UnityEngine_GUILayoutOption_Type.h"
+
 // UnityEngine.GUILayoutOption/Type
-struct Type_t849 
+struct  Type_t863 
 {
 	// System.Int32 UnityEngine.GUILayoutOption/Type::value__
 	int32_t ___value___1;

@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Array
 struct Array_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Array/SimpleEnumerator
-struct SimpleEnumerator_t1744  : public Object_t
+struct  SimpleEnumerator_t1401  : public Object_t
 {
 	// System.Array System.Array/SimpleEnumerator::enumeratee
 	Array_t * ___enumeratee_0;

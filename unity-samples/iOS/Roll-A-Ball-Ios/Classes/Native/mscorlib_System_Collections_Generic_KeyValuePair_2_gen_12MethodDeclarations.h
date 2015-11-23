@@ -1,25 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_6MethodDeclarations.h"
 
-// System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>
-struct KeyValuePair_2_t4195;
-// UnityEngine.GUILayoutUtility/LayoutCache
-struct LayoutCache_t842;
-// System.String
-struct String_t;
-
-// System.Void System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>::.ctor(TKey,TValue)
- void KeyValuePair_2__ctor_m22399 (KeyValuePair_2_t4195 * __this, int32_t ___key, LayoutCache_t842 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TKey System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>::get_Key()
- int32_t KeyValuePair_2_get_Key_m22400 (KeyValuePair_2_t4195 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>::set_Key(TKey)
- void KeyValuePair_2_set_Key_m22401 (KeyValuePair_2_t4195 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TValue System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>::get_Value()
- LayoutCache_t842 * KeyValuePair_2_get_Value_m22402 (KeyValuePair_2_t4195 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>::set_Value(TValue)
- void KeyValuePair_2_set_Value_m22403 (KeyValuePair_2_t4195 * __this, LayoutCache_t842 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>::ToString()
- String_t* KeyValuePair_2_ToString_m22404 (KeyValuePair_2_t4195 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.ICanvasElement,System.Int32>::.ctor(TKey,TValue)
+#define KeyValuePair_2__ctor_m17448(__this, ___key, ___value, method) (( void (*) (KeyValuePair_2_t2496 *, Object_t *, int32_t, const MethodInfo*))KeyValuePair_2__ctor_m13624_gshared)(__this, ___key, ___value, method)
+// TKey System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.ICanvasElement,System.Int32>::get_Key()
+#define KeyValuePair_2_get_Key_m17449(__this, method) (( Object_t * (*) (KeyValuePair_2_t2496 *, const MethodInfo*))KeyValuePair_2_get_Key_m13625_gshared)(__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.ICanvasElement,System.Int32>::set_Key(TKey)
+#define KeyValuePair_2_set_Key_m17450(__this, ___value, method) (( void (*) (KeyValuePair_2_t2496 *, Object_t *, const MethodInfo*))KeyValuePair_2_set_Key_m13626_gshared)(__this, ___value, method)
+// TValue System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.ICanvasElement,System.Int32>::get_Value()
+#define KeyValuePair_2_get_Value_m17451(__this, method) (( int32_t (*) (KeyValuePair_2_t2496 *, const MethodInfo*))KeyValuePair_2_get_Value_m13627_gshared)(__this, method)
+// System.Void System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.ICanvasElement,System.Int32>::set_Value(TValue)
+#define KeyValuePair_2_set_Value_m17452(__this, ___value, method) (( void (*) (KeyValuePair_2_t2496 *, int32_t, const MethodInfo*))KeyValuePair_2_set_Value_m13628_gshared)(__this, ___value, method)
+// System.String System.Collections.Generic.KeyValuePair`2<UnityEngine.UI.ICanvasElement,System.Int32>::ToString()
+#define KeyValuePair_2_ToString_m17453(__this, method) (( String_t* (*) (KeyValuePair_2_t2496 *, const MethodInfo*))KeyValuePair_2_ToString_m13629_gshared)(__this, method)

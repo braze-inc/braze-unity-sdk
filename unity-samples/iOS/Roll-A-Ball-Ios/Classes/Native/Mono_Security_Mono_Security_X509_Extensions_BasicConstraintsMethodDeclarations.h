@@ -1,23 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.X509.Extensions.BasicConstraintsExtension
-struct BasicConstraintsExtension_t1419;
+struct BasicConstraintsExtension_t1292;
 // Mono.Security.X509.X509Extension
-struct X509Extension_t1414;
+struct X509Extension_t1199;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void Mono.Security.X509.Extensions.BasicConstraintsExtension::.ctor(Mono.Security.X509.X509Extension)
- void BasicConstraintsExtension__ctor_m5848 (BasicConstraintsExtension_t1419 * __this, X509Extension_t1414 * ___extension, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BasicConstraintsExtension__ctor_m6658 (BasicConstraintsExtension_t1292 * __this, X509Extension_t1199 * ___extension, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.Extensions.BasicConstraintsExtension::Decode()
- void BasicConstraintsExtension_Decode_m5849 (BasicConstraintsExtension_t1419 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BasicConstraintsExtension_Decode_m6659 (BasicConstraintsExtension_t1292 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.Extensions.BasicConstraintsExtension::Encode()
- void BasicConstraintsExtension_Encode_m5850 (BasicConstraintsExtension_t1419 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BasicConstraintsExtension_Encode_m6660 (BasicConstraintsExtension_t1292 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.X509.Extensions.BasicConstraintsExtension::get_CertificateAuthority()
- bool BasicConstraintsExtension_get_CertificateAuthority_m5851 (BasicConstraintsExtension_t1419 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool BasicConstraintsExtension_get_CertificateAuthority_m6661 (BasicConstraintsExtension_t1292 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.X509.Extensions.BasicConstraintsExtension::ToString()
- String_t* BasicConstraintsExtension_ToString_m5852 (BasicConstraintsExtension_t1419 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* BasicConstraintsExtension_ToString_m6662 (BasicConstraintsExtension_t1292 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

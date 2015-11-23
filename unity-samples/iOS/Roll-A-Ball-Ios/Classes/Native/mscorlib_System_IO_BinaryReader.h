@@ -1,30 +1,41 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.IO.Stream
-struct Stream_t27;
+struct Stream_t68;
 // System.Text.Encoding
-struct Encoding_t322;
+struct Encoding_t284;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
 // System.Text.Decoder
-struct Decoder_t1910;
+struct Decoder_t1551;
 // System.Char[]
-struct CharU5BU5D_t276;
-// System.Object
+struct CharU5BU5D_t270;
+
 #include "mscorlib_System_Object.h"
+
 // System.IO.BinaryReader
-struct BinaryReader_t28  : public Object_t
+struct  BinaryReader_t69  : public Object_t
 {
 	// System.IO.Stream System.IO.BinaryReader::m_stream
-	Stream_t27 * ___m_stream_0;
+	Stream_t68 * ___m_stream_0;
 	// System.Text.Encoding System.IO.BinaryReader::m_encoding
-	Encoding_t322 * ___m_encoding_1;
+	Encoding_t284 * ___m_encoding_1;
 	// System.Byte[] System.IO.BinaryReader::m_buffer
-	ByteU5BU5D_t97* ___m_buffer_2;
+	ByteU5BU5D_t98* ___m_buffer_2;
 	// System.Text.Decoder System.IO.BinaryReader::decoder
-	Decoder_t1910 * ___decoder_3;
+	Decoder_t1551 * ___decoder_3;
 	// System.Char[] System.IO.BinaryReader::charBuffer
-	CharU5BU5D_t276* ___charBuffer_4;
+	CharU5BU5D_t270* ___charBuffer_4;
 	// System.Boolean System.IO.BinaryReader::m_disposed
 	bool ___m_disposed_5;
 };

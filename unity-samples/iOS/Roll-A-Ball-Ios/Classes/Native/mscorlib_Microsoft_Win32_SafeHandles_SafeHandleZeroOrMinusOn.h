@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Runtime.InteropServices.SafeHandle
+
+
 #include "mscorlib_System_Runtime_InteropServices_SafeHandle.h"
+
 // Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
-struct SafeHandleZeroOrMinusOneIsInvalid_t1773  : public SafeHandle_t1774
+struct  SafeHandleZeroOrMinusOneIsInvalid_t1433  : public SafeHandle_t1434
 {
 };

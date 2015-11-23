@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.RaycastResult>
-struct EqualityComparer_1_t3558;
-// System.Object
+
+// System.Collections.Generic.EqualityComparer`1<System.TimeSpan>
+struct EqualityComparer_1_t2893;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.RaycastResult>
-struct EqualityComparer_1_t3558  : public Object_t
+
+// System.Collections.Generic.EqualityComparer`1<System.TimeSpan>
+struct  EqualityComparer_1_t2893  : public Object_t
 {
 };
-struct EqualityComparer_1_t3558_StaticFields{
-	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.RaycastResult>::_default
-	EqualityComparer_1_t3558 * ____default_0;
+struct EqualityComparer_1_t2893_StaticFields{
+	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<System.TimeSpan>::_default
+	EqualityComparer_1_t2893 * ____default_0;
 };

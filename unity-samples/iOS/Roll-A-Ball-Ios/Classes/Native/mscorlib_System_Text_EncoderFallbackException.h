@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ArgumentException
+
+
 #include "mscorlib_System_ArgumentException.h"
+
 // System.Text.EncoderFallbackException
-struct EncoderFallbackException_t2198  : public ArgumentException_t116
+struct  EncoderFallbackException_t1931  : public ArgumentException_t111
 {
 	// System.Char System.Text.EncoderFallbackException::char_unknown
 	uint16_t ___char_unknown_13;

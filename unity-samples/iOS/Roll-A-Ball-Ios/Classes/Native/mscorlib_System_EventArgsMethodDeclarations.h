@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.EventArgs
-struct EventArgs_t1396;
+struct EventArgs_t1286;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.EventArgs::.ctor()
- void EventArgs__ctor_m11655 (EventArgs_t1396 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void EventArgs__ctor_m11983 (EventArgs_t1286 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.EventArgs::.cctor()
- void EventArgs__cctor_m11656 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void EventArgs__cctor_m11984 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

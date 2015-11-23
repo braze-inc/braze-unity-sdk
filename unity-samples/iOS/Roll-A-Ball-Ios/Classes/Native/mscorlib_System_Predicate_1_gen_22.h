@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
+// UnityEngine.UI.Dropdown/OptionData
+struct OptionData_t505;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// UnityEngine.UIVertex
-#include "UnityEngine_UnityEngine_UIVertex.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo UIVertex_t584_il2cpp_TypeInfo;
-// System.Predicate`1<UnityEngine.UIVertex>
-struct Predicate_1_t3809  : public MulticastDelegate_t594
+
+// System.Predicate`1<UnityEngine.UI.Dropdown/OptionData>
+struct  Predicate_1_t2429  : public MulticastDelegate_t550
 {
 };

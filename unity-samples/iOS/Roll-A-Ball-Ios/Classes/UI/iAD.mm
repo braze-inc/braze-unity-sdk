@@ -113,7 +113,7 @@
 		UnityDropViewTouchProcessing(_view);
 
 		_view.delegate = nil;
-		[_view removeFromSuperview];
+		[_view performSelectorOnMainThread:@selector(removeFromSuperview) withObject:nil waitUntilDone:NO];
 		_view = nil;
 	}
 }
@@ -171,35 +171,48 @@
 {
 	::printf("ADBannerView error: %s\n", [[error localizedDescription] UTF8String]);
 	_showingBanner = NO;
+	UnityADBannerViewFailedToLoad();
 	[self layoutBannerImpl];
 }
 
 @end
 
-enum AdState
-{
-	kAdNone,
-	kAdWillAppear,
-	kAdVisible,
-};
-
-AdState gAdState = kAdNone;
 
 @implementation UnityInterstitialAd
+{
+	// on ios9+ interstitialAdActionDidFinish will be called from deep inside of iAD framework, when tweaking internal view controller
+	// it will arrive before showing actual ad (internal dismiss previous call)
+	// and multiple times when we actuall dismiss ad
+	// so we will use bool var to do magic ONLY when actually needed
+	BOOL	_didShowAd;
+}
 
-@synthesize view = _view;
+@synthesize interstitial = _interstitial;
+
+- (void)_unloadAD
+{
+	_interstitial.delegate = nil;
+	_interstitial = nil;
+}
+- (void)_loadAD
+{
+	_interstitial = [[ADInterstitialAd alloc] init];
+	_interstitial.delegate = self;
+}
+- (void)_handleReloadAD
+{
+	[self _unloadAD];
+	if(_autoReload)
+		[self _loadAD];
+}
 
 - (id)initWithController:(UIViewController*)presentController autoReload:(BOOL)autoReload
 {
 	if( (self = [super init]) )
 	{
-		UnityRegisterViewControllerListener((id<UnityViewControllerListener>)self);
-
-		_view = [[ADInterstitialAd alloc] init];
-		_view.delegate = self;
-
 		_presentController	= presentController;
 		_autoReload			= autoReload;
+		[self _loadAD];
 	}
 
 	return self;
@@ -207,85 +220,72 @@ AdState gAdState = kAdNone;
 - (void)dealloc
 {
 	UnityUnregisterViewControllerListener((id<UnityViewControllerListener>)self);
+
 	// dtor might be called from a separate thread by a garbage collector
-	// so we need a new autorelease pool in case threre are autoreleased objects
+	// so we need a new autorelease pool in case there are autoreleased objects
 	@autoreleasepool
 	{
-		_view.delegate = nil;
-		_view = nil;
+		[self _unloadAD];
 	}
 }
 
 - (void)show
 {
-	gAdState = kAdWillAppear;
-	[_view presentFromViewController:_presentController];
+	// we care about view controller events ONLY when we are showing ad
+	UnityRegisterViewControllerListener((id<UnityViewControllerListener>)self);
+
+	_didShowAd = YES;
+	[_interstitial presentFromViewController:_presentController];
 }
-
-- (void)unloadAD
-{
-	if(_view)
-		_view.delegate = nil;
-
-	_view = nil;
-}
-
 - (void)reloadAD
 {
-	[self unloadAD];
-
-	_view = [[ADInterstitialAd alloc] init];
-	_view.delegate = self;
+	[self _unloadAD];
+	[self _loadAD];
 }
 
 - (BOOL)interstitialAdActionShouldBegin:(ADInterstitialAd *)banner willLeaveApplication:(BOOL)willLeave
 {
 	return YES;
 }
-
 - (void)interstitialAd:(ADInterstitialAd*)interstitialAd didFailWithError:(NSError*)error
 {
 	::printf("ADInterstitialAd error: %s\n", [[error localizedDescription] UTF8String]);
 	[self reloadAD];
 }
-
-- (void)interstitialAdDidUnload:(ADInterstitialAd*)interstitialAd
-{
-
-	if(_autoReload)	[self reloadAD];
-	else			[self unloadAD];
-}
-
-- (void)interstitialAdActionDidFinish:(ADInterstitialAd*)interstitialAd
-{
-
-	if(_autoReload)	[self reloadAD];
-	else			[self unloadAD];
-}
-
 - (void)interstitialAdDidLoad:(ADInterstitialAd*)interstitialAd
 {
 	UnityADInterstitialADWasLoaded();
 }
-
-- (void)viewDidDisappear:(NSNotification*)notification
+- (void)interstitialAdDidUnload:(ADInterstitialAd*)interstitialAd
 {
-	// this view disappeared and ad view appeared
-	if(gAdState == kAdWillAppear)
+	[self _handleReloadAD];
+}
+- (void)interstitialAdActionDidFinish:(ADInterstitialAd*)interstitialAd
+{
+	// interstitialAdActionDidFinish will be called multiple times on actual ad finish, and actually before we can reload ad
+	// so we dispatch reload request to happen a bit later (and when we get back to main loop)
+	if(_didShowAd)
 	{
-		UnityPause(1);
-		gAdState = kAdVisible;
+		_didShowAd = NO;
+		[self performSelectorOnMainThread:@selector(_handleReloadAD) withObject:nil waitUntilDone:NO];
 	}
 }
 
+// viewDidDisappear/viewWillAppear will arrive when ad is shown/dismissed, OR when ad is transitioning from first screen to animated sequence
+// so it will be (exit on first screen)
+// viewDidDisappear -> viewWillAppear
+// or (user went into animated sequence)
+// viewDidDisappear -> [viewWillAppear -> viewDidDisappear] (due to transition) -> viewWillAppear (when we get back)
+// when we transition to animated sequence we will be paused automatically, so we care only about first viewDidDisappear/viewWillAppear
+
+- (void)viewDidDisappear:(NSNotification*)notification
+{
+	UnityPause(1);
+}
 - (void)viewWillAppear:(NSNotification*)notification
 {
-	// this view will appear and ad view will disappear
-	if(gAdState == kAdVisible)
-	{
-		UnityPause(0);
-		gAdState = kAdNone;
-	}
+	UnityPause(0);
+	UnityUnregisterViewControllerListener((id<UnityViewControllerListener>)self);
 }
 
 @end

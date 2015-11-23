@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.Comparer`1<System.DateTimeOffset>
-#include "mscorlib_System_Collections_Generic_Comparer_1_gen_39.h"
+
+
+#include "mscorlib_System_Collections_Generic_Comparer_1_gen_12.h"
+
 // System.Collections.Generic.GenericComparer`1<System.DateTimeOffset>
-struct GenericComparer_1_t2703  : public Comparer_1_t4897
+struct  GenericComparer_1_t2123  : public Comparer_1_t2882
 {
 };

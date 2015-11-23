@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.IO.IOException
+
+
 #include "mscorlib_System_IO_IOException.h"
+
 // System.IO.PathTooLongException
-struct PathTooLongException_t1928  : public IOException_t1543
+struct  PathTooLongException_t1569  : public IOException_t1389
 {
 };

@@ -1,29 +1,38 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // PlayerAnimation
-struct PlayerAnimation_t398;
-// UnityEngine.Vector3
+struct PlayerAnimation_t364;
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UnityEngine_Vector3.h"
 
 // System.Void PlayerAnimation::.ctor()
- void PlayerAnimation__ctor_m1622 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation__ctor_m1392 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::Awake()
- void PlayerAnimation_Awake_m1623 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_Awake_m1393 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::OnStartFire()
- void PlayerAnimation_OnStartFire_m1624 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_OnStartFire_m1394 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::OnStopFire()
- void PlayerAnimation_OnStopFire_m1625 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_OnStopFire_m1395 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::FixedUpdate()
- void PlayerAnimation_FixedUpdate_m1626 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_FixedUpdate_m1396 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::Update()
- void PlayerAnimation_Update_m1627 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_Update_m1397 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::LateUpdate()
- void PlayerAnimation_LateUpdate_m1628 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_LateUpdate_m1398 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Single PlayerAnimation::HorizontalAngle(UnityEngine.Vector3)
- float PlayerAnimation_HorizontalAngle_m1629 (Object_t * __this/* static, unused */, Vector3_t188  ___direction, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float PlayerAnimation_HorizontalAngle_m1399 (Object_t * __this /* static, unused */, Vector3_t259  ___direction, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void PlayerAnimation::Main()
- void PlayerAnimation_Main_m1630 (PlayerAnimation_t398 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PlayerAnimation_Main_m1400 (PlayerAnimation_t364 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

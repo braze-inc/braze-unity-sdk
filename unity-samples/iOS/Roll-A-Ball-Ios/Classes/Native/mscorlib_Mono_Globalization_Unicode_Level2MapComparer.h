@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // Mono.Globalization.Unicode.Level2MapComparer
-struct Level2MapComparer_t1783;
-// System.Object
+struct Level2MapComparer_t1443;
+
 #include "mscorlib_System_Object.h"
+
 // Mono.Globalization.Unicode.Level2MapComparer
-struct Level2MapComparer_t1783  : public Object_t
+struct  Level2MapComparer_t1443  : public Object_t
 {
 };
-struct Level2MapComparer_t1783_StaticFields{
+struct Level2MapComparer_t1443_StaticFields{
 	// Mono.Globalization.Unicode.Level2MapComparer Mono.Globalization.Unicode.Level2MapComparer::Instance
-	Level2MapComparer_t1783 * ___Instance_0;
+	Level2MapComparer_t1443 * ___Instance_0;
 };

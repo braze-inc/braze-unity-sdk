@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.FlagsAttribute
-struct FlagsAttribute_t294;
+struct FlagsAttribute_t1998;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.FlagsAttribute::.ctor()
- void FlagsAttribute__ctor_m1132 (FlagsAttribute_t294 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FlagsAttribute__ctor_m11990 (FlagsAttribute_t1998 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

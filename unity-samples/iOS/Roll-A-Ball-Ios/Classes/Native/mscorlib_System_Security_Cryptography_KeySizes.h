@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // System.Security.Cryptography.KeySizes
-struct KeySizes_t1512  : public Object_t
+struct  KeySizes_t1258  : public Object_t
 {
 	// System.Int32 System.Security.Cryptography.KeySizes::_maxSize
 	int32_t ____maxSize_0;

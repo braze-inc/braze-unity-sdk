@@ -1,19 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.RegularExpressions.LinkStack
-struct LinkStack_t1657;
-// System.Object
-struct Object_t;
+struct LinkStack_t1141;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Text.RegularExpressions.LinkStack::.ctor()
- void LinkStack__ctor_m7215 (LinkStack_t1657 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LinkStack__ctor_m5827 (LinkStack_t1141 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.LinkStack::Push()
- void LinkStack_Push_m7216 (LinkStack_t1657 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LinkStack_Push_m5828 (LinkStack_t1141 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.LinkStack::Pop()
- bool LinkStack_Pop_m7217 (LinkStack_t1657 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Text.RegularExpressions.LinkStack::GetCurrent()
-// System.Void System.Text.RegularExpressions.LinkStack::SetCurrent(System.Object)
+extern "C" bool LinkStack_Pop_m5829 (LinkStack_t1141 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

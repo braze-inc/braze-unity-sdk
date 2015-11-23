@@ -1,22 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.Font
-struct Font_t553;
-// System.Object
+struct Font_t516;
+
 #include "mscorlib_System_Object.h"
-// UnityEngine.FontStyle
 #include "UnityEngine_UnityEngine_FontStyle.h"
-// UnityEngine.TextAnchor
 #include "UnityEngine_UnityEngine_TextAnchor.h"
-// UnityEngine.HorizontalWrapMode
 #include "UnityEngine_UnityEngine_HorizontalWrapMode.h"
-// UnityEngine.VerticalWrapMode
 #include "UnityEngine_UnityEngine_VerticalWrapMode.h"
+
 // UnityEngine.UI.FontData
-struct FontData_t554  : public Object_t
+struct  FontData_t515  : public Object_t
 {
 	// UnityEngine.Font UnityEngine.UI.FontData::m_Font
-	Font_t553 * ___m_Font_0;
+	Font_t516 * ___m_Font_0;
 	// System.Int32 UnityEngine.UI.FontData::m_FontSize
 	int32_t ___m_FontSize_1;
 	// UnityEngine.FontStyle UnityEngine.UI.FontData::m_FontStyle

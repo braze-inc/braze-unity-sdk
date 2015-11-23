@@ -1,19 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.RegularExpressions.MatchCollection/Enumerator
-struct Enumerator_t1641;
+struct Enumerator_t1123;
+// System.Text.RegularExpressions.MatchCollection
+struct MatchCollection_t1124;
 // System.Object
 struct Object_t;
-// System.Text.RegularExpressions.MatchCollection
-struct MatchCollection_t1547;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Text.RegularExpressions.MatchCollection/Enumerator::.ctor(System.Text.RegularExpressions.MatchCollection)
- void Enumerator__ctor_m7110 (Enumerator_t1641 * __this, MatchCollection_t1547 * ___coll, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Enumerator__ctor_m5712 (Enumerator_t1123 * __this, MatchCollection_t1124 * ___coll, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.MatchCollection/Enumerator::System.Collections.IEnumerator.Reset()
+extern "C" void Enumerator_System_Collections_IEnumerator_Reset_m5713 (Enumerator_t1123 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Text.RegularExpressions.MatchCollection/Enumerator::System.Collections.IEnumerator.get_Current()
- Object_t * Enumerator_System_Collections_IEnumerator_get_Current_m7111 (Enumerator_t1641 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Enumerator_System_Collections_IEnumerator_get_Current_m5714 (Enumerator_t1123 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.MatchCollection/Enumerator::System.Collections.IEnumerator.MoveNext()
- bool Enumerator_System_Collections_IEnumerator_MoveNext_m7112 (Enumerator_t1641 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Enumerator_System_Collections_IEnumerator_MoveNext_m5715 (Enumerator_t1123 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

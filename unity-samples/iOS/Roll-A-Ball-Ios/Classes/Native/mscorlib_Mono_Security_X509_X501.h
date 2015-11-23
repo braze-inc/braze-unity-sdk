@@ -1,42 +1,53 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Byte[]
-struct ByteU5BU5D_t97;
-// System.Object
+struct ByteU5BU5D_t98;
+
 #include "mscorlib_System_Object.h"
+
 // Mono.Security.X509.X501
-struct X501_t1827  : public Object_t
+struct  X501_t1484  : public Object_t
 {
 };
-struct X501_t1827_StaticFields{
+struct X501_t1484_StaticFields{
 	// System.Byte[] Mono.Security.X509.X501::countryName
-	ByteU5BU5D_t97* ___countryName_0;
+	ByteU5BU5D_t98* ___countryName_0;
 	// System.Byte[] Mono.Security.X509.X501::organizationName
-	ByteU5BU5D_t97* ___organizationName_1;
+	ByteU5BU5D_t98* ___organizationName_1;
 	// System.Byte[] Mono.Security.X509.X501::organizationalUnitName
-	ByteU5BU5D_t97* ___organizationalUnitName_2;
+	ByteU5BU5D_t98* ___organizationalUnitName_2;
 	// System.Byte[] Mono.Security.X509.X501::commonName
-	ByteU5BU5D_t97* ___commonName_3;
+	ByteU5BU5D_t98* ___commonName_3;
 	// System.Byte[] Mono.Security.X509.X501::localityName
-	ByteU5BU5D_t97* ___localityName_4;
+	ByteU5BU5D_t98* ___localityName_4;
 	// System.Byte[] Mono.Security.X509.X501::stateOrProvinceName
-	ByteU5BU5D_t97* ___stateOrProvinceName_5;
+	ByteU5BU5D_t98* ___stateOrProvinceName_5;
 	// System.Byte[] Mono.Security.X509.X501::streetAddress
-	ByteU5BU5D_t97* ___streetAddress_6;
+	ByteU5BU5D_t98* ___streetAddress_6;
 	// System.Byte[] Mono.Security.X509.X501::domainComponent
-	ByteU5BU5D_t97* ___domainComponent_7;
+	ByteU5BU5D_t98* ___domainComponent_7;
 	// System.Byte[] Mono.Security.X509.X501::userid
-	ByteU5BU5D_t97* ___userid_8;
+	ByteU5BU5D_t98* ___userid_8;
 	// System.Byte[] Mono.Security.X509.X501::email
-	ByteU5BU5D_t97* ___email_9;
+	ByteU5BU5D_t98* ___email_9;
 	// System.Byte[] Mono.Security.X509.X501::dnQualifier
-	ByteU5BU5D_t97* ___dnQualifier_10;
+	ByteU5BU5D_t98* ___dnQualifier_10;
 	// System.Byte[] Mono.Security.X509.X501::title
-	ByteU5BU5D_t97* ___title_11;
+	ByteU5BU5D_t98* ___title_11;
 	// System.Byte[] Mono.Security.X509.X501::surname
-	ByteU5BU5D_t97* ___surname_12;
+	ByteU5BU5D_t98* ___surname_12;
 	// System.Byte[] Mono.Security.X509.X501::givenName
-	ByteU5BU5D_t97* ___givenName_13;
+	ByteU5BU5D_t98* ___givenName_13;
 	// System.Byte[] Mono.Security.X509.X501::initial
-	ByteU5BU5D_t97* ___initial_14;
+	ByteU5BU5D_t98* ___initial_14;
 };

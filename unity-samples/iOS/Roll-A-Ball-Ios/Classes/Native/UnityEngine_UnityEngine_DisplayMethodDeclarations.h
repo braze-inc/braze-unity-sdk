@@ -1,75 +1,82 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Display
-struct Display_t883;
+struct Display_t794;
 // UnityEngine.Display/DisplaysUpdatedDelegate
-struct DisplaysUpdatedDelegate_t881;
+struct DisplaysUpdatedDelegate_t793;
 // System.IntPtr[]
-struct IntPtrU5BU5D_t884;
-// UnityEngine.RenderBuffer
-#include "UnityEngine_UnityEngine_RenderBuffer.h"
-// System.IntPtr
+struct IntPtrU5BU5D_t956;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
-// UnityEngine.Vector3
+#include "UnityEngine_UnityEngine_RenderBuffer.h"
 #include "UnityEngine_UnityEngine_Vector3.h"
 
 // System.Void UnityEngine.Display::.ctor()
- void Display__ctor_m4505 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display__ctor_m4090 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::.ctor(System.IntPtr)
- void Display__ctor_m4506 (Display_t883 * __this, IntPtr_t107 ___nativeDisplay, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display__ctor_m4091 (Display_t794 * __this, IntPtr_t ___nativeDisplay, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::.cctor()
- void Display__cctor_m4507 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display__cctor_m4092 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::add_onDisplaysUpdated(UnityEngine.Display/DisplaysUpdatedDelegate)
- void Display_add_onDisplaysUpdated_m4508 (Object_t * __this/* static, unused */, DisplaysUpdatedDelegate_t881 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_add_onDisplaysUpdated_m4093 (Object_t * __this /* static, unused */, DisplaysUpdatedDelegate_t793 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::remove_onDisplaysUpdated(UnityEngine.Display/DisplaysUpdatedDelegate)
- void Display_remove_onDisplaysUpdated_m4509 (Object_t * __this/* static, unused */, DisplaysUpdatedDelegate_t881 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_remove_onDisplaysUpdated_m4094 (Object_t * __this /* static, unused */, DisplaysUpdatedDelegate_t793 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Display::get_renderingWidth()
- int32_t Display_get_renderingWidth_m4510 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Display_get_renderingWidth_m4095 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Display::get_renderingHeight()
- int32_t Display_get_renderingHeight_m4511 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Display_get_renderingHeight_m4096 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Display::get_systemWidth()
- int32_t Display_get_systemWidth_m4512 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Display_get_systemWidth_m4097 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Display::get_systemHeight()
- int32_t Display_get_systemHeight_m4513 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Display_get_systemHeight_m4098 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.RenderBuffer UnityEngine.Display::get_colorBuffer()
- RenderBuffer_t885  Display_get_colorBuffer_m4514 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RenderBuffer_t894  Display_get_colorBuffer_m4099 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.RenderBuffer UnityEngine.Display::get_depthBuffer()
- RenderBuffer_t885  Display_get_depthBuffer_m4515 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RenderBuffer_t894  Display_get_depthBuffer_m4100 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::Activate()
- void Display_Activate_m4516 (Display_t883 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_Activate_m4101 (Display_t794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::Activate(System.Int32,System.Int32,System.Int32)
- void Display_Activate_m4517 (Display_t883 * __this, int32_t ___width, int32_t ___height, int32_t ___refreshRate, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_Activate_m4102 (Display_t794 * __this, int32_t ___width, int32_t ___height, int32_t ___refreshRate, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::SetParams(System.Int32,System.Int32,System.Int32,System.Int32)
- void Display_SetParams_m4518 (Display_t883 * __this, int32_t ___width, int32_t ___height, int32_t ___x, int32_t ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_SetParams_m4103 (Display_t794 * __this, int32_t ___width, int32_t ___height, int32_t ___x, int32_t ___y, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::SetRenderingResolution(System.Int32,System.Int32)
- void Display_SetRenderingResolution_m4519 (Display_t883 * __this, int32_t ___w, int32_t ___h, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_SetRenderingResolution_m4104 (Display_t794 * __this, int32_t ___w, int32_t ___h, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Display::MultiDisplayLicense()
- bool Display_MultiDisplayLicense_m4520 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Display_MultiDisplayLicense_m4105 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Vector3 UnityEngine.Display::RelativeMouseAt(UnityEngine.Vector3)
- Vector3_t188  Display_RelativeMouseAt_m4521 (Object_t * __this/* static, unused */, Vector3_t188  ___inputMouseCoordinates, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Vector3_t259  Display_RelativeMouseAt_m4106 (Object_t * __this /* static, unused */, Vector3_t259  ___inputMouseCoordinates, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Display UnityEngine.Display::get_main()
- Display_t883 * Display_get_main_m4522 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Display_t794 * Display_get_main_m4107 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::RecreateDisplayList(System.IntPtr[])
- void Display_RecreateDisplayList_m4523 (Object_t * __this/* static, unused */, IntPtrU5BU5D_t884* ___nativeDisplay, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_RecreateDisplayList_m4108 (Object_t * __this /* static, unused */, IntPtrU5BU5D_t956* ___nativeDisplay, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::FireDisplaysUpdated()
- void Display_FireDisplaysUpdated_m4524 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_FireDisplaysUpdated_m4109 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::GetSystemExtImpl(System.IntPtr,System.Int32&,System.Int32&)
- void Display_GetSystemExtImpl_m4525 (Object_t * __this/* static, unused */, IntPtr_t107 ___nativeDisplay, int32_t* ___w, int32_t* ___h, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_GetSystemExtImpl_m4110 (Object_t * __this /* static, unused */, IntPtr_t ___nativeDisplay, int32_t* ___w, int32_t* ___h, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::GetRenderingExtImpl(System.IntPtr,System.Int32&,System.Int32&)
- void Display_GetRenderingExtImpl_m4526 (Object_t * __this/* static, unused */, IntPtr_t107 ___nativeDisplay, int32_t* ___w, int32_t* ___h, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_GetRenderingExtImpl_m4111 (Object_t * __this /* static, unused */, IntPtr_t ___nativeDisplay, int32_t* ___w, int32_t* ___h, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::GetRenderingBuffersImpl(System.IntPtr,UnityEngine.RenderBuffer&,UnityEngine.RenderBuffer&)
- void Display_GetRenderingBuffersImpl_m4527 (Object_t * __this/* static, unused */, IntPtr_t107 ___nativeDisplay, RenderBuffer_t885 * ___color, RenderBuffer_t885 * ___depth, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_GetRenderingBuffersImpl_m4112 (Object_t * __this /* static, unused */, IntPtr_t ___nativeDisplay, RenderBuffer_t894 * ___color, RenderBuffer_t894 * ___depth, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::SetRenderingResolutionImpl(System.IntPtr,System.Int32,System.Int32)
- void Display_SetRenderingResolutionImpl_m4528 (Object_t * __this/* static, unused */, IntPtr_t107 ___nativeDisplay, int32_t ___w, int32_t ___h, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_SetRenderingResolutionImpl_m4113 (Object_t * __this /* static, unused */, IntPtr_t ___nativeDisplay, int32_t ___w, int32_t ___h, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::ActivateDisplayImpl(System.IntPtr,System.Int32,System.Int32,System.Int32)
- void Display_ActivateDisplayImpl_m4529 (Object_t * __this/* static, unused */, IntPtr_t107 ___nativeDisplay, int32_t ___width, int32_t ___height, int32_t ___refreshRate, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_ActivateDisplayImpl_m4114 (Object_t * __this /* static, unused */, IntPtr_t ___nativeDisplay, int32_t ___width, int32_t ___height, int32_t ___refreshRate, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Display::SetParamsImpl(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32)
- void Display_SetParamsImpl_m4530 (Object_t * __this/* static, unused */, IntPtr_t107 ___nativeDisplay, int32_t ___width, int32_t ___height, int32_t ___x, int32_t ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Display_SetParamsImpl_m4115 (Object_t * __this /* static, unused */, IntPtr_t ___nativeDisplay, int32_t ___width, int32_t ___height, int32_t ___x, int32_t ___y, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Display::MultiDisplayLicenseImpl()
- bool Display_MultiDisplayLicenseImpl_m4531 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Display_MultiDisplayLicenseImpl_m4116 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Display::RelativeMouseAtImpl(System.Int32,System.Int32,System.Int32&,System.Int32&)
- int32_t Display_RelativeMouseAtImpl_m4532 (Object_t * __this/* static, unused */, int32_t ___x, int32_t ___y, int32_t* ___rx, int32_t* ___ry, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Display_RelativeMouseAtImpl_m4117 (Object_t * __this /* static, unused */, int32_t ___x, int32_t ___y, int32_t* ___rx, int32_t* ___ry, const MethodInfo* method) IL2CPP_METHOD_ATTR;

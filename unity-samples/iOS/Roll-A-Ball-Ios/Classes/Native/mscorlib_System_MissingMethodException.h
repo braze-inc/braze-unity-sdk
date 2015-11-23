@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.MissingMemberException
+
+
 #include "mscorlib_System_MissingMemberException.h"
+
 // System.MissingMethodException
-struct MissingMethodException_t2272  : public MissingMemberException_t2271
+struct  MissingMethodException_t2007  : public MissingMemberException_t2006
 {
 };

@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.SocialPlatforms.Range
-struct Range_t948 
+struct  Range_t906 
 {
 	// System.Int32 UnityEngine.SocialPlatforms.Range::from
 	int32_t ___from_0;

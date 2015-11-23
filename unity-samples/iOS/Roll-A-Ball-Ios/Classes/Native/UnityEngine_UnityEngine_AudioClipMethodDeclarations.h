@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AudioClip
-struct AudioClip_t371;
+struct AudioClip_t342;
 // System.Single[]
-struct SingleU5BU5D_t900;
+struct SingleU5BU5D_t821;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Single UnityEngine.AudioClip::get_length()
- float AudioClip_get_length_m1775 (AudioClip_t371 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float AudioClip_get_length_m1544 (AudioClip_t342 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AudioClip::InvokePCMReaderCallback_Internal(System.Single[])
- void AudioClip_InvokePCMReaderCallback_Internal_m4636 (AudioClip_t371 * __this, SingleU5BU5D_t900* ___data, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AudioClip_InvokePCMReaderCallback_Internal_m4261 (AudioClip_t342 * __this, SingleU5BU5D_t821* ___data, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AudioClip::InvokePCMSetPositionCallback_Internal(System.Int32)
- void AudioClip_InvokePCMSetPositionCallback_Internal_m4637 (AudioClip_t371 * __this, int32_t ___position, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AudioClip_InvokePCMSetPositionCallback_Internal_m4262 (AudioClip_t342 * __this, int32_t ___position, const MethodInfo* method) IL2CPP_METHOD_ATTR;

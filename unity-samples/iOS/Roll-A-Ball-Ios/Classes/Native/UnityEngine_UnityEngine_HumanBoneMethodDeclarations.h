@@ -1,23 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.HumanBone
-struct HumanBone_t918;
-struct HumanBone_t918_marshaled;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_HumanBone.h"
+
 // System.String UnityEngine.HumanBone::get_boneName()
- String_t* HumanBone_get_boneName_m4698 (HumanBone_t918 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* HumanBone_get_boneName_m4327 (HumanBone_t837 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.HumanBone::set_boneName(System.String)
- void HumanBone_set_boneName_m4699 (HumanBone_t918 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void HumanBone_set_boneName_m4328 (HumanBone_t837 * __this, String_t* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String UnityEngine.HumanBone::get_humanName()
- String_t* HumanBone_get_humanName_m4700 (HumanBone_t918 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* HumanBone_get_humanName_m4329 (HumanBone_t837 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.HumanBone::set_humanName(System.String)
- void HumanBone_set_humanName_m4701 (HumanBone_t918 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void HumanBone_t918_marshal(const HumanBone_t918& unmarshaled, HumanBone_t918_marshaled& marshaled);
-void HumanBone_t918_marshal_back(const HumanBone_t918_marshaled& marshaled, HumanBone_t918& unmarshaled);
-void HumanBone_t918_marshal_cleanup(HumanBone_t918_marshaled& marshaled);
+extern "C" void HumanBone_set_humanName_m4330 (HumanBone_t837 * __this, String_t* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void HumanBone_t837_marshal(const HumanBone_t837& unmarshaled, HumanBone_t837_marshaled& marshaled);
+extern "C" void HumanBone_t837_marshal_back(const HumanBone_t837_marshaled& marshaled, HumanBone_t837& unmarshaled);
+extern "C" void HumanBone_t837_marshal_cleanup(HumanBone_t837_marshaled& marshaled);

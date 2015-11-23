@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.MonoBehaviour
+
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
+
 // MainMenu
-struct MainMenu_t126  : public MonoBehaviour_t2
+struct  MainMenu_t125  : public MonoBehaviour_t2
 {
 };

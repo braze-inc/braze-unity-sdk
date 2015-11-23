@@ -1,33 +1,39 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Console
-struct Console_t1732;
-// System.IO.TextWriter
-struct TextWriter_t1733;
 // System.Text.Encoding
-struct Encoding_t322;
+struct Encoding_t284;
+// System.IO.TextWriter
+struct TextWriter_t1229;
 // System.IO.Stream
-struct Stream_t27;
-// System.IntPtr
+struct Stream_t68;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
-// System.IO.FileAccess
 #include "mscorlib_System_IO_FileAccess.h"
 
 // System.Void System.Console::.cctor()
- void Console__cctor_m11297 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Console__cctor_m11622 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Console::SetEncodings(System.Text.Encoding,System.Text.Encoding)
- void Console_SetEncodings_m11298 (Object_t * __this/* static, unused */, Encoding_t322 * ___inputEncoding, Encoding_t322 * ___outputEncoding, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Console_SetEncodings_m11623 (Object_t * __this /* static, unused */, Encoding_t284 * ___inputEncoding, Encoding_t284 * ___outputEncoding, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IO.TextWriter System.Console::get_Error()
- TextWriter_t1733 * Console_get_Error_m7685 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" TextWriter_t1229 * Console_get_Error_m6280 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IO.Stream System.Console::Open(System.IntPtr,System.IO.FileAccess,System.Int32)
- Stream_t27 * Console_Open_m11299 (Object_t * __this/* static, unused */, IntPtr_t107 ___handle, int32_t ___access, int32_t ___bufferSize, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Stream_t68 * Console_Open_m11624 (Object_t * __this /* static, unused */, IntPtr_t ___handle, int32_t ___access, int32_t ___bufferSize, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IO.Stream System.Console::OpenStandardError(System.Int32)
- Stream_t27 * Console_OpenStandardError_m11300 (Object_t * __this/* static, unused */, int32_t ___bufferSize, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Stream_t68 * Console_OpenStandardError_m11625 (Object_t * __this /* static, unused */, int32_t ___bufferSize, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IO.Stream System.Console::OpenStandardInput(System.Int32)
- Stream_t27 * Console_OpenStandardInput_m11301 (Object_t * __this/* static, unused */, int32_t ___bufferSize, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Stream_t68 * Console_OpenStandardInput_m11626 (Object_t * __this /* static, unused */, int32_t ___bufferSize, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IO.Stream System.Console::OpenStandardOutput(System.Int32)
- Stream_t27 * Console_OpenStandardOutput_m11302 (Object_t * __this/* static, unused */, int32_t ___bufferSize, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Stream_t68 * Console_OpenStandardOutput_m11627 (Object_t * __this /* static, unused */, int32_t ___bufferSize, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyKeyNameAttribute
-struct AssemblyKeyNameAttribute_t1165;
+struct AssemblyKeyNameAttribute_t1634;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Reflection.AssemblyKeyNameAttribute::.ctor(System.String)
- void AssemblyKeyNameAttribute__ctor_m5330 (AssemblyKeyNameAttribute_t1165 * __this, String_t* ___keyName, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyKeyNameAttribute__ctor_m9808 (AssemblyKeyNameAttribute_t1634 * __this, String_t* ___keyName, const MethodInfo* method) IL2CPP_METHOD_ATTR;

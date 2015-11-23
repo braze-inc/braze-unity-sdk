@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Text.RegularExpressions.Syntax.Reference
+
 #include "System_System_Text_RegularExpressions_Syntax_Reference.h"
+
 // System.Text.RegularExpressions.Syntax.BackslashNumber
-struct BackslashNumber_t1690  : public Reference_t1689
+struct  BackslashNumber_t1173  : public Reference_t1172
 {
 	// System.String System.Text.RegularExpressions.Syntax.BackslashNumber::literal
 	String_t* ___literal_2;

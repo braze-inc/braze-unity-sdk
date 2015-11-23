@@ -1,12 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
-#include "mscorlib_System_Enum.h"
-// System.Runtime.CompilerServices.CompilationRelaxations
-#include "mscorlib_System_Runtime_CompilerServices_CompilationRelaxati_0.h"
-// System.Runtime.CompilerServices.CompilationRelaxations
-struct CompilationRelaxations_t2001 
+
+
+#include "mscorlib_System_Attribute.h"
+
+// System.Runtime.CompilerServices.CompilationRelaxationsAttribute
+struct  CompilationRelaxationsAttribute_t1689  : public Attribute_t191
 {
-	// System.Int32 System.Runtime.CompilerServices.CompilationRelaxations::value__
-	int32_t ___value___1;
+	// System.Int32 System.Runtime.CompilerServices.CompilationRelaxationsAttribute::relax
+	int32_t ___relax_0;
 };

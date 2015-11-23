@@ -1,56 +1,64 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.TouchScreenKeyboard
-struct TouchScreenKeyboard_t597;
+struct TouchScreenKeyboard_t555;
 // UnityEngine.GUIContent
-struct GUIContent_t744;
+struct GUIContent_t853;
 // UnityEngine.GUIStyle
-struct GUIStyle_t250;
+struct GUIStyle_t228;
 // System.String
 struct String_t;
 // System.Collections.Generic.Dictionary`2<UnityEngine.Event,UnityEngine.TextEditor/TextEditOp>
-struct Dictionary_2_t967;
-// System.Object
+struct Dictionary_2_t931;
+
 #include "mscorlib_System_Object.h"
-// UnityEngine.Rect
-#include "UnityEngine_UnityEngine_Rect.h"
-// UnityEngine.Vector2
 #include "UnityEngine_UnityEngine_Vector2.h"
-// UnityEngine.TextEditor/DblClickSnapping
+#include "UnityEngine_UnityEngine_Rect.h"
 #include "UnityEngine_UnityEngine_TextEditor_DblClickSnapping.h"
+
 // UnityEngine.TextEditor
-struct TextEditor_t743  : public Object_t
+struct  TextEditor_t930  : public Object_t
 {
 	// UnityEngine.TouchScreenKeyboard UnityEngine.TextEditor::keyboardOnScreen
-	TouchScreenKeyboard_t597 * ___keyboardOnScreen_0;
-	// System.Int32 UnityEngine.TextEditor::pos
-	int32_t ___pos_1;
-	// System.Int32 UnityEngine.TextEditor::selectPos
-	int32_t ___selectPos_2;
+	TouchScreenKeyboard_t555 * ___keyboardOnScreen_0;
 	// System.Int32 UnityEngine.TextEditor::controlID
-	int32_t ___controlID_3;
+	int32_t ___controlID_1;
 	// UnityEngine.GUIContent UnityEngine.TextEditor::content
-	GUIContent_t744 * ___content_4;
+	GUIContent_t853 * ___content_2;
 	// UnityEngine.GUIStyle UnityEngine.TextEditor::style
-	GUIStyle_t250 * ___style_5;
-	// UnityEngine.Rect UnityEngine.TextEditor::position
-	Rect_t78  ___position_6;
+	GUIStyle_t228 * ___style_3;
 	// System.Boolean UnityEngine.TextEditor::multiline
-	bool ___multiline_7;
+	bool ___multiline_4;
 	// System.Boolean UnityEngine.TextEditor::hasHorizontalCursorPos
-	bool ___hasHorizontalCursorPos_8;
+	bool ___hasHorizontalCursorPos_5;
 	// System.Boolean UnityEngine.TextEditor::isPasswordField
-	bool ___isPasswordField_9;
+	bool ___isPasswordField_6;
 	// System.Boolean UnityEngine.TextEditor::m_HasFocus
-	bool ___m_HasFocus_10;
+	bool ___m_HasFocus_7;
 	// UnityEngine.Vector2 UnityEngine.TextEditor::scrollOffset
-	Vector2_t184  ___scrollOffset_11;
-	// System.Boolean UnityEngine.TextEditor::m_TextHeightPotentiallyChanged
-	bool ___m_TextHeightPotentiallyChanged_12;
+	Vector2_t231  ___scrollOffset_8;
+	// UnityEngine.Rect UnityEngine.TextEditor::m_Position
+	Rect_t396  ___m_Position_9;
+	// System.Int32 UnityEngine.TextEditor::m_CursorIndex
+	int32_t ___m_CursorIndex_10;
+	// System.Int32 UnityEngine.TextEditor::m_SelectIndex
+	int32_t ___m_SelectIndex_11;
+	// System.Boolean UnityEngine.TextEditor::m_RevealCursor
+	bool ___m_RevealCursor_12;
 	// UnityEngine.Vector2 UnityEngine.TextEditor::graphicalCursorPos
-	Vector2_t184  ___graphicalCursorPos_13;
+	Vector2_t231  ___graphicalCursorPos_13;
 	// UnityEngine.Vector2 UnityEngine.TextEditor::graphicalSelectCursorPos
-	Vector2_t184  ___graphicalSelectCursorPos_14;
+	Vector2_t231  ___graphicalSelectCursorPos_14;
 	// System.Boolean UnityEngine.TextEditor::m_MouseDragSelectsWholeWords
 	bool ___m_MouseDragSelectsWholeWords_15;
 	// System.Int32 UnityEngine.TextEditor::m_DblClickInitPos
@@ -68,7 +76,7 @@ struct TextEditor_t743  : public Object_t
 	// System.Int32 UnityEngine.TextEditor::oldSelectPos
 	int32_t ___oldSelectPos_22;
 };
-struct TextEditor_t743_StaticFields{
+struct TextEditor_t930_StaticFields{
 	// System.Collections.Generic.Dictionary`2<UnityEngine.Event,UnityEngine.TextEditor/TextEditOp> UnityEngine.TextEditor::s_Keyactions
-	Dictionary_2_t967 * ___s_Keyactions_23;
+	Dictionary_2_t931 * ___s_Keyactions_23;
 };

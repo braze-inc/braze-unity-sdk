@@ -1,83 +1,103 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.RegularExpressions.Regex
-struct Regex_t309;
-// System.Int32[]
-struct Int32U5BU5D_t1185;
+struct Regex_t280;
 // System.String
 struct String_t;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
+struct SerializationInfo_t962;
 // System.Text.RegularExpressions.IMachineFactory
-struct IMachineFactory_t1643;
+struct IMachineFactory_t1126;
 // System.Text.RegularExpressions.Match
-struct Match_t1548;
+struct Match_t1114;
 // System.Text.RegularExpressions.MatchCollection
-struct MatchCollection_t1547;
+struct MatchCollection_t1124;
 // System.Text.RegularExpressions.IMachine
-struct IMachine_t1640;
+struct IMachine_t1122;
 // System.String[]
-struct StringU5BU5D_t3;
+struct StringU5BU5D_t63;
 // System.Collections.IDictionary
-struct IDictionary_t1560;
-// System.Text.RegularExpressions.RegexOptions
+struct IDictionary_t1127;
+// System.Int32[]
+struct Int32U5BU5D_t735;
+
+#include "codegen/il2cpp-codegen.h"
 #include "System_System_Text_RegularExpressions_RegexOptions.h"
-// System.Runtime.Serialization.StreamingContext
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.Text.RegularExpressions.Regex::.ctor()
- void Regex__ctor_m7120 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex__ctor_m5725 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.String)
- void Regex__ctor_m6648 (Regex_t309 * __this, String_t* ___pattern, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex__ctor_m5726 (Regex_t280 * __this, String_t* ___pattern, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.String,System.Text.RegularExpressions.RegexOptions)
- void Regex__ctor_m7121 (Regex_t309 * __this, String_t* ___pattern, int32_t ___options, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex__ctor_m5727 (Regex_t280 * __this, String_t* ___pattern, int32_t ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void Regex__ctor_m7122 (Regex_t309 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex__ctor_m5728 (Regex_t280 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::.cctor()
- void Regex__cctor_m7123 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex__cctor_m5729 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void Regex_System_Runtime_Serialization_ISerializable_GetObjectData_m7124 (Regex_t309 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex_System_Runtime_Serialization_ISerializable_GetObjectData_m5730 (Regex_t280 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String,System.String)
- bool Regex_IsMatch_m1293 (Object_t * __this/* static, unused */, String_t* ___input, String_t* ___pattern, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Regex_IsMatch_m1127 (Object_t * __this /* static, unused */, String_t* ___input, String_t* ___pattern, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
- bool Regex_IsMatch_m7125 (Object_t * __this/* static, unused */, String_t* ___input, String_t* ___pattern, int32_t ___options, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Regex_IsMatch_m5731 (Object_t * __this /* static, unused */, String_t* ___input, String_t* ___pattern, int32_t ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.RegularExpressions.Regex::Replace(System.String,System.String,System.String)
+extern "C" String_t* Regex_Replace_m5147 (Object_t * __this /* static, unused */, String_t* ___input, String_t* ___pattern, String_t* ___replacement, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.RegularExpressions.Regex::Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+extern "C" String_t* Regex_Replace_m5732 (Object_t * __this /* static, unused */, String_t* ___input, String_t* ___pattern, String_t* ___replacement, int32_t ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::validate_options(System.Text.RegularExpressions.RegexOptions)
- void Regex_validate_options_m7126 (Object_t * __this/* static, unused */, int32_t ___options, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex_validate_options_m5733 (Object_t * __this /* static, unused */, int32_t ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::Init()
- void Regex_Init_m7127 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex_Init_m5734 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Regex::InitNewRegex()
- void Regex_InitNewRegex_m7128 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Regex_InitNewRegex_m5735 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.IMachineFactory System.Text.RegularExpressions.Regex::CreateMachineFactory(System.String,System.Text.RegularExpressions.RegexOptions)
- Object_t * Regex_CreateMachineFactory_m7129 (Object_t * __this/* static, unused */, String_t* ___pattern, int32_t ___options, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Regex_CreateMachineFactory_m5736 (Object_t * __this /* static, unused */, String_t* ___pattern, int32_t ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.RegexOptions System.Text.RegularExpressions.Regex::get_Options()
- int32_t Regex_get_Options_m7130 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Regex_get_Options_m5737 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::get_RightToLeft()
- bool Regex_get_RightToLeft_m7131 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Regex_get_RightToLeft_m5738 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Regex::GroupNumberFromName(System.String)
+extern "C" int32_t Regex_GroupNumberFromName_m5739 (Regex_t280 * __this, String_t* ___name, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.RegularExpressions.Regex::GetGroupIndex(System.Int32)
- int32_t Regex_GetGroupIndex_m7132 (Regex_t309 * __this, int32_t ___number, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Regex_GetGroupIndex_m5740 (Regex_t280 * __this, int32_t ___number, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.RegularExpressions.Regex::default_startat(System.String)
- int32_t Regex_default_startat_m7133 (Regex_t309 * __this, String_t* ___input, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Regex_default_startat_m5741 (Regex_t280 * __this, String_t* ___input, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String)
- bool Regex_IsMatch_m7134 (Regex_t309 * __this, String_t* ___input, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Regex_IsMatch_m5742 (Regex_t280 * __this, String_t* ___input, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String,System.Int32)
- bool Regex_IsMatch_m7135 (Regex_t309 * __this, String_t* ___input, int32_t ___startat, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Regex_IsMatch_m5743 (Regex_t280 * __this, String_t* ___input, int32_t ___startat, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.Match System.Text.RegularExpressions.Regex::Match(System.String,System.Int32)
- Match_t1548 * Regex_Match_m7136 (Regex_t309 * __this, String_t* ___input, int32_t ___startat, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Match_t1114 * Regex_Match_m5744 (Regex_t280 * __this, String_t* ___input, int32_t ___startat, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.MatchCollection System.Text.RegularExpressions.Regex::Matches(System.String)
- MatchCollection_t1547 * Regex_Matches_m6649 (Regex_t309 * __this, String_t* ___input, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" MatchCollection_t1124 * Regex_Matches_m5745 (Regex_t280 * __this, String_t* ___input, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.MatchCollection System.Text.RegularExpressions.Regex::Matches(System.String,System.Int32)
- MatchCollection_t1547 * Regex_Matches_m7137 (Regex_t309 * __this, String_t* ___input, int32_t ___startat, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" MatchCollection_t1124 * Regex_Matches_m5746 (Regex_t280 * __this, String_t* ___input, int32_t ___startat, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.RegularExpressions.Regex::Replace(System.String,System.String)
+extern "C" String_t* Regex_Replace_m5747 (Regex_t280 * __this, String_t* ___input, String_t* ___replacement, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.RegularExpressions.Regex::Replace(System.String,System.String,System.Int32,System.Int32)
+extern "C" String_t* Regex_Replace_m5748 (Regex_t280 * __this, String_t* ___input, String_t* ___replacement, int32_t ___count, int32_t ___startat, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Text.RegularExpressions.Regex::ToString()
- String_t* Regex_ToString_m7138 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* Regex_ToString_m5749 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Regex::get_GroupCount()
+extern "C" int32_t Regex_get_GroupCount_m5750 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.RegularExpressions.Regex::get_Gap()
- int32_t Regex_get_Gap_m7139 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Regex_get_Gap_m5751 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.IMachine System.Text.RegularExpressions.Regex::CreateMachine()
- Object_t * Regex_CreateMachine_m7140 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Regex_CreateMachine_m5752 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String[] System.Text.RegularExpressions.Regex::GetGroupNamesArray(System.Int32,System.Collections.IDictionary)
- StringU5BU5D_t3* Regex_GetGroupNamesArray_m7141 (Object_t * __this/* static, unused */, int32_t ___groupCount, Object_t * ___mapping, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" StringU5BU5D_t63* Regex_GetGroupNamesArray_m5753 (Object_t * __this /* static, unused */, int32_t ___groupCount, Object_t * ___mapping, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32[] System.Text.RegularExpressions.Regex::get_GroupNumbers()
- Int32U5BU5D_t1185* Regex_get_GroupNumbers_m7142 (Regex_t309 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Int32U5BU5D_t735* Regex_get_GroupNumbers_m5754 (Regex_t280 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

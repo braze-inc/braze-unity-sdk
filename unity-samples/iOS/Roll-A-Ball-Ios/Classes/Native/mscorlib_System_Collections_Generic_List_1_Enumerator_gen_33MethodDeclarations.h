@@ -1,27 +1,32 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_7MethodDeclarations.h"
 
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>
-struct Enumerator_t4411;
-// System.Object
-struct Object_t;
-// System.Collections.Generic.List`1<UnityEngine.UILineInfo>
-struct List_1_t923;
-// UnityEngine.UILineInfo
-#include "UnityEngine_UnityEngine_UILineInfo.h"
-
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::.ctor(System.Collections.Generic.List`1<T>)
- void Enumerator__ctor_m23664 (Enumerator_t4411 * __this, List_1_t923 * ___l, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::System.Collections.IEnumerator.get_Current()
- Object_t * Enumerator_System_Collections_IEnumerator_get_Current_m23665 (Enumerator_t4411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::Dispose()
- void Enumerator_Dispose_m23666 (Enumerator_t4411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::VerifyState()
- void Enumerator_VerifyState_m23667 (Enumerator_t4411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::MoveNext()
- bool Enumerator_MoveNext_m23668 (Enumerator_t4411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::get_Current()
- UILineInfo_t746  Enumerator_get_Current_m23669 (Enumerator_t4411 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::.ctor(System.Collections.Generic.List`1<T>)
+#define Enumerator__ctor_m18087(__this, ___l, method) (( void (*) (Enumerator_t2539 *, List_1_t600 *, const MethodInfo*))Enumerator__ctor_m12561_gshared)(__this, ___l, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::System.Collections.IEnumerator.Reset()
+#define Enumerator_System_Collections_IEnumerator_Reset_m18088(__this, method) (( void (*) (Enumerator_t2539 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_Reset_m12562_gshared)(__this, method)
+// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::System.Collections.IEnumerator.get_Current()
+#define Enumerator_System_Collections_IEnumerator_get_Current_m18089(__this, method) (( Object_t * (*) (Enumerator_t2539 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_get_Current_m12563_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::Dispose()
+#define Enumerator_Dispose_m18090(__this, method) (( void (*) (Enumerator_t2539 *, const MethodInfo*))Enumerator_Dispose_m12564_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::VerifyState()
+#define Enumerator_VerifyState_m18091(__this, method) (( void (*) (Enumerator_t2539 *, const MethodInfo*))Enumerator_VerifyState_m12565_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::MoveNext()
+#define Enumerator_MoveNext_m18092(__this, method) (( bool (*) (Enumerator_t2539 *, const MethodInfo*))Enumerator_MoveNext_m12566_gshared)(__this, method)
+// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::get_Current()
+#define Enumerator_get_Current_m18093(__this, method) (( Toggle_t127 * (*) (Enumerator_t2539 *, const MethodInfo*))Enumerator_get_Current_m12567_gshared)(__this, method)

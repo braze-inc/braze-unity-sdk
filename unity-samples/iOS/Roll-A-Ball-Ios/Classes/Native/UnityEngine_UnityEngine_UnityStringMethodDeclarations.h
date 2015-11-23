@@ -1,15 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.UnityString
-struct UnityString_t876;
 // System.String
 struct String_t;
 // System.Object[]
-struct ObjectU5BU5D_t112;
+struct ObjectU5BU5D_t87;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.String UnityEngine.UnityString::Format(System.String,System.Object[])
- String_t* UnityString_Format_m4462 (Object_t * __this/* static, unused */, String_t* ___fmt, ObjectU5BU5D_t112* ___args, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* UnityString_Format_m4047 (Object_t * __this /* static, unused */, String_t* ___fmt, ObjectU5BU5D_t87* ___args, const MethodInfo* method) IL2CPP_METHOD_ATTR;

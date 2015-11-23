@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+// System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Vector3>
+struct DefaultComparer_t2568;
+
 #include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_Vector3.h"
 
-// System.Collections.Generic.Comparer`1/DefaultComparer<Appboy.Models.Cards.Card>
-struct DefaultComparer_t2808;
-// Appboy.Models.Cards.Card
-struct Card_t11;
-
-// System.Void System.Collections.Generic.Comparer`1/DefaultComparer<Appboy.Models.Cards.Card>::.ctor()
-// System.Collections.Generic.Comparer`1/DefaultComparer<System.Object>
-#include "mscorlib_System_Collections_Generic_Comparer_1_DefaultCompar_0MethodDeclarations.h"
-#define DefaultComparer__ctor_m13305(__this, method) (void)DefaultComparer__ctor_m12998_gshared((DefaultComparer_t2773 *)__this, method)
-// System.Int32 System.Collections.Generic.Comparer`1/DefaultComparer<Appboy.Models.Cards.Card>::Compare(T,T)
-#define DefaultComparer_Compare_m13306(__this, ___x, ___y, method) (int32_t)DefaultComparer_Compare_m12999_gshared((DefaultComparer_t2773 *)__this, (Object_t *)___x, (Object_t *)___y, method)
+// System.Void System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Vector3>::.ctor()
+extern "C" void DefaultComparer__ctor_m18531_gshared (DefaultComparer_t2568 * __this, const MethodInfo* method);
+#define DefaultComparer__ctor_m18531(__this, method) (( void (*) (DefaultComparer_t2568 *, const MethodInfo*))DefaultComparer__ctor_m18531_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Vector3>::Compare(T,T)
+extern "C" int32_t DefaultComparer_Compare_m18532_gshared (DefaultComparer_t2568 * __this, Vector3_t259  ___x, Vector3_t259  ___y, const MethodInfo* method);
+#define DefaultComparer_Compare_m18532(__this, ___x, ___y, method) (( int32_t (*) (DefaultComparer_t2568 *, Vector3_t259 , Vector3_t259 , const MethodInfo*))DefaultComparer_Compare_m18532_gshared)(__this, ___x, ___y, method)

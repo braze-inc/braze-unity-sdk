@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Byte[]
-struct ByteU5BU5D_t97;
-// System.IO.Stream
+struct ByteU5BU5D_t98;
+
 #include "mscorlib_System_IO_Stream.h"
+
 // System.IO.MemoryStream
-struct MemoryStream_t96  : public Stream_t27
+struct  MemoryStream_t97  : public Stream_t68
 {
 	// System.Boolean System.IO.MemoryStream::canWrite
 	bool ___canWrite_1;
@@ -16,7 +27,7 @@ struct MemoryStream_t96  : public Stream_t27
 	// System.Int32 System.IO.MemoryStream::length
 	int32_t ___length_4;
 	// System.Byte[] System.IO.MemoryStream::internalBuffer
-	ByteU5BU5D_t97* ___internalBuffer_5;
+	ByteU5BU5D_t98* ___internalBuffer_5;
 	// System.Int32 System.IO.MemoryStream::initialIndex
 	int32_t ___initialIndex_6;
 	// System.Boolean System.IO.MemoryStream::expandable

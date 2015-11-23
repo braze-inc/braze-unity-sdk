@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.EventSystems.BaseRaycaster[]
-struct BaseRaycasterU5BU5D_t3562;
-// System.Object
+struct BaseRaycasterU5BU5D_t2369;
+
 #include "mscorlib_System_Object.h"
+
 // System.Collections.Generic.List`1<UnityEngine.EventSystems.BaseRaycaster>
-struct List_1_t515  : public Object_t
+struct  List_1_t459  : public Object_t
 {
 	// T[] System.Collections.Generic.List`1<UnityEngine.EventSystems.BaseRaycaster>::_items
-	BaseRaycasterU5BU5D_t3562* ____items_1;
+	BaseRaycasterU5BU5D_t2369* ____items_1;
 	// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.BaseRaycaster>::_size
 	int32_t ____size_2;
 	// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.BaseRaycaster>::_version
 	int32_t ____version_3;
 };
-struct List_1_t515_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.BaseRaycaster>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
+struct List_1_t459_StaticFields{
 	// T[] System.Collections.Generic.List`1<UnityEngine.EventSystems.BaseRaycaster>::EmptyArray
-	BaseRaycasterU5BU5D_t3562* ___EmptyArray_4;
+	BaseRaycasterU5BU5D_t2369* ___EmptyArray_4;
 };

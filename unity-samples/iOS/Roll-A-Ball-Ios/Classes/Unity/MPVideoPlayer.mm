@@ -9,15 +9,19 @@
 #include "Unity/ObjCRuntime.h"
 
 
-@interface UnityVideoViewController : MPMoviePlayerViewController {}
+@interface MovieHolderView : UIView
+{
+	UIView*	movieView;
+	BOOL	cancelOnTouch;
+}
+- (id)initWithView:(UIView*)view cancelOnTouch:(bool)cot;
 @end
 
 @interface MPVideoContext : NSObject
 {
 @public
 	MPMoviePlayerController*	moviePlayer;
-	UnityVideoViewController*	movieController;
-	UIView*						overlayView;
+	MovieHolderView*			movieHolderView;
 
 	MPMovieControlStyle			controlMode;
 	MPMovieScalingMode			scalingMode;
@@ -33,8 +37,6 @@
 - (void)finish;
 @end
 
-@interface CancelMovieView : UIView	{}
-@end
 
 
 static bool				_IsPlaying	= false;
@@ -48,8 +50,7 @@ static MPVideoContext*	_CurContext	= nil;
 	UnityPause(1);
 
 	moviePlayer		= nil;
-	movieController	= nil;
-	overlayView		= nil;
+	movieHolderView	= nil;
 
 	controlMode		= control;
 	scalingMode		= scaling;
@@ -69,34 +70,23 @@ static MPVideoContext*	_CurContext	= nil;
 {
 	@autoreleasepool
 	{
-		movieController = [[UnityVideoViewController alloc] initWithContentURL:url];
-		if (movieController == nil)
-			return;
-
-		moviePlayer = [movieController moviePlayer];
+		moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
 		if (moviePlayer == nil)
 			return;
 
 		UIView* bgView = [moviePlayer backgroundView];
 		bgView.backgroundColor = bgColor;
 
-		[moviePlayer setControlStyle:controlMode];
-		[moviePlayer setScalingMode:scalingMode];
+		[moviePlayer prepareToPlay];
+		moviePlayer.controlStyle = controlMode;
+		moviePlayer.scalingMode = scalingMode;
 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayBackDidFinish:) name:MPMoviePlayerDidExitFullscreenNotification object:moviePlayer];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioRouteChanged:) name:AVAudioSessionRouteChangeNotification object:nil];
 
-		// TODO: wrong controller
-		[UnityGetGLViewController() presentMoviePlayerViewControllerAnimated:movieController];
-
-		if (cancelOnTouch)
-		{
-			// Add our overlay view to the movie player's subviews so touches could be intercepted
-			overlayView = [[CancelMovieView alloc] initWithFrame:UnityGetMainWindow().frame];
-			overlayView.backgroundColor = [UIColor clearColor];
-			[UnityGetMainWindow() addSubview:overlayView];
-		}
+		movieHolderView = [[MovieHolderView alloc] initWithView:moviePlayer.view cancelOnTouch:cancelOnTouch];
+		[GetAppController().rootView addSubview:movieHolderView];
 	}
 }
 
@@ -123,14 +113,9 @@ static MPVideoContext*	_CurContext	= nil;
 		[[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
 	}
 
-	if(overlayView)
-		[overlayView removeFromSuperview];
-	overlayView = nil;
-
-	// TODO: wrong controller
-	if(movieController)
-		[UnityGetGLViewController() dismissMoviePlayerViewControllerAnimated];
-	movieController = nil;
+	if(movieHolderView)
+		[movieHolderView removeFromSuperview];
+	movieHolderView = nil;
 
 	if(moviePlayer)
 	{
@@ -141,52 +126,45 @@ static MPVideoContext*	_CurContext	= nil;
 
 	_IsPlaying	= false;
 	_CurContext	= nil;
+
+	if(UnityIsPaused())
+		UnityPause(0);
 }
 @end
 
-@implementation CancelMovieView
-- (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
+@implementation MovieHolderView
+- (id)initWithView:(UIView*)view cancelOnTouch:(bool)cot
 {
-	[self removeFromSuperview];
-
-	if(_CurContext)
-		[_CurContext finish];
-}
-@end
-
-
-@implementation UnityVideoViewController
-- (id)initWithContentURL:(NSURL*)contentURL
-{
-	if( (self = [super initWithContentURL:contentURL]) )
+	UIView* rootView = GetAppController().rootView;
+	if( (self = [super initWithFrame:rootView.bounds]) )
 	{
-		Class dstClass = [self class];
-		Class srcClass = [GetAppController().rootViewController class];
-		ObjCCopyInstanceMethod(dstClass, srcClass, @selector(shouldAutorotate));
-		ObjCCopyInstanceMethod(dstClass, srcClass, @selector(supportedInterfaceOrientations));
-		ObjCCopyInstanceMethod(dstClass, srcClass, @selector(prefersStatusBarHidden));
-		ObjCCopyInstanceMethod(dstClass, srcClass, @selector(preferredStatusBarStyle));
-		AddViewControllerDefaultRotationHandling(dstClass);
+		movieView = view;
+		cancelOnTouch = cot;
+
+		movieView.frame = rootView.bounds;
+		[self addSubview:view];
+		self.backgroundColor = [UIColor clearColor];
 	}
 	return self;
 }
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	for (UITouch* touch in touches)
-	{
-		for(UIGestureRecognizer* gesture in touch.gestureRecognizers)
-		{
-			if(gesture.enabled && [gesture isMemberOfClass:[UIPinchGestureRecognizer class]])
-				gesture.enabled = NO;
-		}
-	}
 }
-
-- (void)viewDidDisappear:(BOOL)animated
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	[super viewDidDisappear:animated];
-	UnityPause(0);
+	if(_CurContext && cancelOnTouch)
+		[_CurContext finish];
+}
+- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event
+{
+}
+- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
+{
+}
+- (void)onUnityUpdateViewLayout
+{
+	UIView* rootView = GetAppController().rootView;
+	self.frame	= movieView.frame	= rootView.bounds;
 }
 @end
 

@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.IO.TextReader/NullTextReader
-struct NullTextReader_t1935;
+struct NullTextReader_t1578;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.IO.TextReader/NullTextReader::.ctor()
- void NullTextReader__ctor_m9617 (NullTextReader_t1935 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void NullTextReader__ctor_m9445 (NullTextReader_t1578 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.IO.TextReader/NullTextReader::ReadLine()
- String_t* NullTextReader_ReadLine_m9618 (NullTextReader_t1935 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* NullTextReader_ReadLine_m9446 (NullTextReader_t1578 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -55,6 +55,13 @@
 - (void)interfaceDidChangeOrientationFrom:(UIInterfaceOrientation)fromInterfaceOrientation;
 
 
+// override this if you want to have custom snapshot view.
+// by default it will capture the frame drawn inside applicationWillResignActive specifically to let app respond to OnApplicationPause
+// will be called on every applicationWillResignActive; returned view will be released in applicationDidBecomeActive
+// NB: case of returning nil will be handled gracefully
+- (UIView*)createSnapshotView;
+
+
 // you should not override these methods
 
 // creates initial UI hierarchy (e.g. splash screen) and calls willStartWithViewController

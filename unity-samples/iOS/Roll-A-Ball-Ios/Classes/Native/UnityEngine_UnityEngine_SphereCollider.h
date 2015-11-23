@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Collider
+
+
 #include "UnityEngine_UnityEngine_Collider.h"
+
 // UnityEngine.SphereCollider
-struct SphereCollider_t374  : public Collider_t373
+struct  SphereCollider_t344  : public Collider_t410
 {
 };

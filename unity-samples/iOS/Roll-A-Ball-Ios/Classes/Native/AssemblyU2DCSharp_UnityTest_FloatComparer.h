@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityTest.ComparerBaseGeneric`1<System.Single>
+
+
 #include "AssemblyU2DCSharp_UnityTest_ComparerBaseGeneric_1_gen_1.h"
-// UnityTest.FloatComparer/CompareTypes
 #include "AssemblyU2DCSharp_UnityTest_FloatComparer_CompareTypes.h"
+
 // UnityTest.FloatComparer
-struct FloatComparer_t161  : public ComparerBaseGeneric_1_t162
+struct  FloatComparer_t152  : public ComparerBaseGeneric_1_t153
 {
 	// UnityTest.FloatComparer/CompareTypes UnityTest.FloatComparer::compareTypes
 	int32_t ___compareTypes_14;

@@ -1,31 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UI_UnityEngine_EventSystems_ExecuteEvents_EventF_16MethodDeclarations.h"
 
-// UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IScrollHandler>
-struct EventFunction_1_t484;
-// System.Object
-struct Object_t;
-// UnityEngine.EventSystems.IScrollHandler
-struct IScrollHandler_t505;
-// UnityEngine.EventSystems.BaseEventData
-struct BaseEventData_t457;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-
-// System.Void UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IScrollHandler>::.ctor(System.Object,System.IntPtr)
-// UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<System.Object>
-#include "UnityEngine_UI_UnityEngine_EventSystems_ExecuteEvents_EventF_17MethodDeclarations.h"
-#define EventFunction_1__ctor_m3246(__this, ___object, ___method, method) (void)EventFunction_1__ctor_m17530_gshared((EventFunction_1_t3517 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
-// System.Void UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IScrollHandler>::Invoke(T1,UnityEngine.EventSystems.BaseEventData)
-#define EventFunction_1_Invoke_m18443(__this, ___handler, ___eventData, method) (void)EventFunction_1_Invoke_m17532_gshared((EventFunction_1_t3517 *)__this, (Object_t *)___handler, (BaseEventData_t457 *)___eventData, method)
-// System.IAsyncResult UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IScrollHandler>::BeginInvoke(T1,UnityEngine.EventSystems.BaseEventData,System.AsyncCallback,System.Object)
-#define EventFunction_1_BeginInvoke_m18444(__this, ___handler, ___eventData, ___callback, ___object, method) (Object_t *)EventFunction_1_BeginInvoke_m17534_gshared((EventFunction_1_t3517 *)__this, (Object_t *)___handler, (BaseEventData_t457 *)___eventData, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
-// System.Void UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IScrollHandler>::EndInvoke(System.IAsyncResult)
-#define EventFunction_1_EndInvoke_m18445(__this, ___result, method) (void)EventFunction_1_EndInvoke_m17536_gshared((EventFunction_1_t3517 *)__this, (Object_t *)___result, method)
+// System.Void UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IUpdateSelectedHandler>::.ctor(System.Object,System.IntPtr)
+#define EventFunction_1__ctor_m3181(__this, ___object, ___method, method) (( void (*) (EventFunction_1_t448 *, Object_t *, IntPtr_t, const MethodInfo*))EventFunction_1__ctor_m15110_gshared)(__this, ___object, ___method, method)
+// System.Void UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IUpdateSelectedHandler>::Invoke(T1,UnityEngine.EventSystems.BaseEventData)
+#define EventFunction_1_Invoke_m15764(__this, ___handler, ___eventData, method) (( void (*) (EventFunction_1_t448 *, Object_t *, BaseEventData_t428 *, const MethodInfo*))EventFunction_1_Invoke_m15112_gshared)(__this, ___handler, ___eventData, method)
+// System.IAsyncResult UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IUpdateSelectedHandler>::BeginInvoke(T1,UnityEngine.EventSystems.BaseEventData,System.AsyncCallback,System.Object)
+#define EventFunction_1_BeginInvoke_m15765(__this, ___handler, ___eventData, ___callback, ___object, method) (( Object_t * (*) (EventFunction_1_t448 *, Object_t *, BaseEventData_t428 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))EventFunction_1_BeginInvoke_m15114_gshared)(__this, ___handler, ___eventData, ___callback, ___object, method)
+// System.Void UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IUpdateSelectedHandler>::EndInvoke(System.IAsyncResult)
+#define EventFunction_1_EndInvoke_m15766(__this, ___result, method) (( void (*) (EventFunction_1_t448 *, Object_t *, const MethodInfo*))EventFunction_1_EndInvoke_m15116_gshared)(__this, ___result, method)

@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // LogCustomEvent
-struct LogCustomEvent_t124;
+struct LogCustomEvent_t123;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void LogCustomEvent::.ctor()
- void LogCustomEvent__ctor_m611 (LogCustomEvent_t124 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LogCustomEvent__ctor_m590 (LogCustomEvent_t123 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void LogCustomEvent::OnDoneButtonClick()
- void LogCustomEvent_OnDoneButtonClick_m612 (LogCustomEvent_t124 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LogCustomEvent_OnDoneButtonClick_m591 (LogCustomEvent_t123 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void LogCustomEvent::OnCancelButtonClick()
- void LogCustomEvent_OnCancelButtonClick_m613 (LogCustomEvent_t124 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LogCustomEvent_OnCancelButtonClick_m592 (LogCustomEvent_t123 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

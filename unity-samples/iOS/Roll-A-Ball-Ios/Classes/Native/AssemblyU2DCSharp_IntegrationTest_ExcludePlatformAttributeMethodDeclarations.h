@@ -1,19 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // IntegrationTest/ExcludePlatformAttribute
-struct ExcludePlatformAttribute_t212;
+struct ExcludePlatformAttribute_t190;
 // UnityEngine.RuntimePlatform[]
-struct RuntimePlatformU5BU5D_t214;
+struct RuntimePlatformU5BU5D_t262;
 // System.String
 struct String_t;
-// UnityEngine.RuntimePlatform
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UnityEngine_RuntimePlatform.h"
 
 // System.Void IntegrationTest/ExcludePlatformAttribute::.ctor(UnityEngine.RuntimePlatform[])
- void ExcludePlatformAttribute__ctor_m818 (ExcludePlatformAttribute_t212 * __this, RuntimePlatformU5BU5D_t214* ___platformsToExclude, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ExcludePlatformAttribute__ctor_m798 (ExcludePlatformAttribute_t190 * __this, RuntimePlatformU5BU5D_t262* ___platformsToExclude, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String IntegrationTest/ExcludePlatformAttribute::<ExcludePlatformAttribute>m__2(UnityEngine.RuntimePlatform)
- String_t* ExcludePlatformAttribute_U3CExcludePlatformAttributeU3Em__2_m819 (Object_t * __this/* static, unused */, int32_t ___platform, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* ExcludePlatformAttribute_U3CExcludePlatformAttributeU3Em__2_m799 (Object_t * __this /* static, unused */, int32_t ___platform, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,39 +1,48 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.ContentSizeFitter
-struct ContentSizeFitter_t649;
+struct ContentSizeFitter_t613;
 // UnityEngine.RectTransform
-struct RectTransform_t559;
-// UnityEngine.UI.ContentSizeFitter/FitMode
+struct RectTransform_t504;
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UI_UnityEngine_UI_ContentSizeFitter_FitMode.h"
 
 // System.Void UnityEngine.UI.ContentSizeFitter::.ctor()
- void ContentSizeFitter__ctor_m3000 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter__ctor_m2969 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.UI.ContentSizeFitter/FitMode UnityEngine.UI.ContentSizeFitter::get_horizontalFit()
- int32_t ContentSizeFitter_get_horizontalFit_m3001 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ContentSizeFitter_get_horizontalFit_m2970 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::set_horizontalFit(UnityEngine.UI.ContentSizeFitter/FitMode)
- void ContentSizeFitter_set_horizontalFit_m3002 (ContentSizeFitter_t649 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_set_horizontalFit_m2971 (ContentSizeFitter_t613 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.UI.ContentSizeFitter/FitMode UnityEngine.UI.ContentSizeFitter::get_verticalFit()
- int32_t ContentSizeFitter_get_verticalFit_m3003 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ContentSizeFitter_get_verticalFit_m2972 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::set_verticalFit(UnityEngine.UI.ContentSizeFitter/FitMode)
- void ContentSizeFitter_set_verticalFit_m3004 (ContentSizeFitter_t649 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_set_verticalFit_m2973 (ContentSizeFitter_t613 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.RectTransform UnityEngine.UI.ContentSizeFitter::get_rectTransform()
- RectTransform_t559 * ContentSizeFitter_get_rectTransform_m3005 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RectTransform_t504 * ContentSizeFitter_get_rectTransform_m2974 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::OnEnable()
- void ContentSizeFitter_OnEnable_m3006 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_OnEnable_m2975 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::OnDisable()
- void ContentSizeFitter_OnDisable_m3007 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_OnDisable_m2976 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::OnRectTransformDimensionsChange()
- void ContentSizeFitter_OnRectTransformDimensionsChange_m3008 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_OnRectTransformDimensionsChange_m2977 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::HandleSelfFittingAlongAxis(System.Int32)
- void ContentSizeFitter_HandleSelfFittingAlongAxis_m3009 (ContentSizeFitter_t649 * __this, int32_t ___axis, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_HandleSelfFittingAlongAxis_m2978 (ContentSizeFitter_t613 * __this, int32_t ___axis, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::SetLayoutHorizontal()
- void ContentSizeFitter_SetLayoutHorizontal_m3010 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_SetLayoutHorizontal_m2979 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::SetLayoutVertical()
- void ContentSizeFitter_SetLayoutVertical_m3011 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_SetLayoutVertical_m2980 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ContentSizeFitter::SetDirty()
- void ContentSizeFitter_SetDirty_m3012 (ContentSizeFitter_t649 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentSizeFitter_SetDirty_m2981 (ContentSizeFitter_t613 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

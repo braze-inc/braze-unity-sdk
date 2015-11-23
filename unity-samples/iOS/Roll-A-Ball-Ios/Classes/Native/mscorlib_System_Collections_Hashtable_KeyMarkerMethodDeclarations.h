@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Hashtable/KeyMarker
-struct KeyMarker_t1878;
+struct KeyMarker_t1514;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Collections.Hashtable/KeyMarker::.ctor()
- void KeyMarker__ctor_m9089 (KeyMarker_t1878 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void KeyMarker__ctor_m8815 (KeyMarker_t1514 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Hashtable/KeyMarker::.cctor()
- void KeyMarker__cctor_m9090 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void KeyMarker__cctor_m8816 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

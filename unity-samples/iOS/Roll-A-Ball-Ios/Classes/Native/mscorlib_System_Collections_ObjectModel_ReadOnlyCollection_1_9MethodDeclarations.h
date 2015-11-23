@@ -1,85 +1,78 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_ObjectModel_ReadOnlyCollection_1_2MethodDeclarations.h"
 
-// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>
-struct ReadOnlyCollection_1_t3310;
-// UnityTest.AssertionComponent
-struct AssertionComponent_t135;
-// System.Object
-struct Object_t;
-// System.Collections.Generic.IList`1<UnityTest.AssertionComponent>
-struct IList_1_t3314;
-// System.Array
-struct Array_t;
-// System.Collections.IEnumerator
-struct IEnumerator_t21;
-// UnityTest.AssertionComponent[]
-struct AssertionComponentU5BU5D_t141;
-// System.Collections.Generic.IEnumerator`1<UnityTest.AssertionComponent>
-struct IEnumerator_1_t3306;
-
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::.ctor(System.Collections.Generic.IList`1<T>)
-// System.Collections.ObjectModel.ReadOnlyCollection`1<System.Object>
-#include "mscorlib_System_Collections_ObjectModel_ReadOnlyCollection_1_0MethodDeclarations.h"
-#define ReadOnlyCollection_1__ctor_m16550(__this, ___list, method) (void)ReadOnlyCollection_1__ctor_m12886_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t*)___list, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.ICollection<T>.Add(T)
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m16551(__this, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m12887_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.ICollection<T>.Clear()
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m16552(__this, method) (void)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m12888_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.IList<T>.Insert(System.Int32,T)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m16553(__this, ___index, ___item, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m12889_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.ICollection<T>.Remove(T)
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m16554(__this, ___item, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m12890_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m16555(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m12891_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
-// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.IList<T>.get_Item(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m16556(__this, ___index, method) (AssertionComponent_t135 *)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m12892_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.IList<T>.set_Item(System.Int32,T)
-#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m16557(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m12893_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
-#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m16558(__this, method) (bool)ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12894_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-#define ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m16559(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m12895_gshared((ReadOnlyCollection_1_t2761 *)__this, (Array_t *)___array, (int32_t)___index, method)
-// System.Collections.IEnumerator System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IEnumerable.GetEnumerator()
-#define ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m16560(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m12896_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.Add(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Add_m16561(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_Add_m12897_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.Clear()
-#define ReadOnlyCollection_1_System_Collections_IList_Clear_m16562(__this, method) (void)ReadOnlyCollection_1_System_Collections_IList_Clear_m12898_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.Contains(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Contains_m16563(__this, ___value, method) (bool)ReadOnlyCollection_1_System_Collections_IList_Contains_m12899_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.IndexOf(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_IndexOf_m16564(__this, ___value, method) (int32_t)ReadOnlyCollection_1_System_Collections_IList_IndexOf_m12900_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.Insert(System.Int32,System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Insert_m16565(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Insert_m12901_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.Remove(System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_Remove_m16566(__this, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_Remove_m12902_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.RemoveAt(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m16567(__this, ___index, method) (void)ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m12903_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.ICollection.get_IsSynchronized()
-#define ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m16568(__this, method) (bool)ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m12904_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.ICollection.get_SyncRoot()
-#define ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m16569(__this, method) (Object_t *)ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m12905_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.get_IsFixedSize()
-#define ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m16570(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m12906_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.get_IsReadOnly()
-#define ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m16571(__this, method) (bool)ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m12907_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.get_Item(System.Int32)
-#define ReadOnlyCollection_1_System_Collections_IList_get_Item_m16572(__this, ___index, method) (Object_t *)ReadOnlyCollection_1_System_Collections_IList_get_Item_m12908_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::System.Collections.IList.set_Item(System.Int32,System.Object)
-#define ReadOnlyCollection_1_System_Collections_IList_set_Item_m16573(__this, ___index, ___value, method) (void)ReadOnlyCollection_1_System_Collections_IList_set_Item_m12909_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::Contains(T)
-#define ReadOnlyCollection_1_Contains_m16574(__this, ___value, method) (bool)ReadOnlyCollection_1_Contains_m12910_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::CopyTo(T[],System.Int32)
-#define ReadOnlyCollection_1_CopyTo_m16575(__this, ___array, ___index, method) (void)ReadOnlyCollection_1_CopyTo_m12911_gshared((ReadOnlyCollection_1_t2761 *)__this, (ObjectU5BU5D_t112*)___array, (int32_t)___index, method)
-// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::GetEnumerator()
-#define ReadOnlyCollection_1_GetEnumerator_m16576(__this, method) (Object_t*)ReadOnlyCollection_1_GetEnumerator_m12912_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::IndexOf(T)
-#define ReadOnlyCollection_1_IndexOf_m16577(__this, ___value, method) (int32_t)ReadOnlyCollection_1_IndexOf_m12913_gshared((ReadOnlyCollection_1_t2761 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::get_Count()
-#define ReadOnlyCollection_1_get_Count_m16578(__this, method) (int32_t)ReadOnlyCollection_1_get_Count_m12914_gshared((ReadOnlyCollection_1_t2761 *)__this, method)
-// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::get_Item(System.Int32)
-#define ReadOnlyCollection_1_get_Item_m16579(__this, ___index, method) (AssertionComponent_t135 *)ReadOnlyCollection_1_get_Item_m12915_gshared((ReadOnlyCollection_1_t2761 *)__this, (int32_t)___index, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::.ctor(System.Collections.Generic.IList`1<T>)
+#define ReadOnlyCollection_1__ctor_m14199(__this, ___list, method) (( void (*) (ReadOnlyCollection_1_t2259 *, Object_t*, const MethodInfo*))ReadOnlyCollection_1__ctor_m12568_gshared)(__this, ___list, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.ICollection<T>.Add(T)
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m14200(__this, ___item, method) (( void (*) (ReadOnlyCollection_1_t2259 *, TestResult_t226 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Add_m12569_gshared)(__this, ___item, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.ICollection<T>.Clear()
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m14201(__this, method) (( void (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Clear_m12570_gshared)(__this, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.IList<T>.Insert(System.Int32,T)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m14202(__this, ___index, ___item, method) (( void (*) (ReadOnlyCollection_1_t2259 *, int32_t, TestResult_t226 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_Insert_m12571_gshared)(__this, ___index, ___item, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.ICollection<T>.Remove(T)
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m14203(__this, ___item, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, TestResult_t226 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_Remove_m12572_gshared)(__this, ___item, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m14204(__this, ___index, method) (( void (*) (ReadOnlyCollection_1_t2259 *, int32_t, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_RemoveAt_m12573_gshared)(__this, ___index, method)
+// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.IList<T>.get_Item(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m14205(__this, ___index, method) (( TestResult_t226 * (*) (ReadOnlyCollection_1_t2259 *, int32_t, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_get_Item_m12574_gshared)(__this, ___index, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.IList<T>.set_Item(System.Int32,T)
+#define ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m14206(__this, ___index, ___value, method) (( void (*) (ReadOnlyCollection_1_t2259 *, int32_t, TestResult_t226 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_IListU3CTU3E_set_Item_m12575_gshared)(__this, ___index, ___value, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
+#define ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m14207(__this, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12576_gshared)(__this, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+#define ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m14208(__this, ___array, ___index, method) (( void (*) (ReadOnlyCollection_1_t2259 *, Array_t *, int32_t, const MethodInfo*))ReadOnlyCollection_1_System_Collections_ICollection_CopyTo_m12577_gshared)(__this, ___array, ___index, method)
+// System.Collections.IEnumerator System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IEnumerable.GetEnumerator()
+#define ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m14209(__this, method) (( Object_t * (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IEnumerable_GetEnumerator_m12578_gshared)(__this, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.Add(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Add_m14210(__this, ___value, method) (( int32_t (*) (ReadOnlyCollection_1_t2259 *, Object_t *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_Add_m12579_gshared)(__this, ___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.Clear()
+#define ReadOnlyCollection_1_System_Collections_IList_Clear_m14211(__this, method) (( void (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_Clear_m12580_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.Contains(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Contains_m14212(__this, ___value, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, Object_t *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_Contains_m12581_gshared)(__this, ___value, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.IndexOf(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_IndexOf_m14213(__this, ___value, method) (( int32_t (*) (ReadOnlyCollection_1_t2259 *, Object_t *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_IndexOf_m12582_gshared)(__this, ___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.Insert(System.Int32,System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Insert_m14214(__this, ___index, ___value, method) (( void (*) (ReadOnlyCollection_1_t2259 *, int32_t, Object_t *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_Insert_m12583_gshared)(__this, ___index, ___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.Remove(System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_Remove_m14215(__this, ___value, method) (( void (*) (ReadOnlyCollection_1_t2259 *, Object_t *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_Remove_m12584_gshared)(__this, ___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.RemoveAt(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m14216(__this, ___index, method) (( void (*) (ReadOnlyCollection_1_t2259 *, int32_t, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_RemoveAt_m12585_gshared)(__this, ___index, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.ICollection.get_IsSynchronized()
+#define ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m14217(__this, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_ICollection_get_IsSynchronized_m12586_gshared)(__this, method)
+// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.ICollection.get_SyncRoot()
+#define ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m14218(__this, method) (( Object_t * (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_ICollection_get_SyncRoot_m12587_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.get_IsFixedSize()
+#define ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m14219(__this, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_get_IsFixedSize_m12588_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.get_IsReadOnly()
+#define ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m14220(__this, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_get_IsReadOnly_m12589_gshared)(__this, method)
+// System.Object System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.get_Item(System.Int32)
+#define ReadOnlyCollection_1_System_Collections_IList_get_Item_m14221(__this, ___index, method) (( Object_t * (*) (ReadOnlyCollection_1_t2259 *, int32_t, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_get_Item_m12590_gshared)(__this, ___index, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::System.Collections.IList.set_Item(System.Int32,System.Object)
+#define ReadOnlyCollection_1_System_Collections_IList_set_Item_m14222(__this, ___index, ___value, method) (( void (*) (ReadOnlyCollection_1_t2259 *, int32_t, Object_t *, const MethodInfo*))ReadOnlyCollection_1_System_Collections_IList_set_Item_m12591_gshared)(__this, ___index, ___value, method)
+// System.Boolean System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::Contains(T)
+#define ReadOnlyCollection_1_Contains_m14223(__this, ___value, method) (( bool (*) (ReadOnlyCollection_1_t2259 *, TestResult_t226 *, const MethodInfo*))ReadOnlyCollection_1_Contains_m12592_gshared)(__this, ___value, method)
+// System.Void System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::CopyTo(T[],System.Int32)
+#define ReadOnlyCollection_1_CopyTo_m14224(__this, ___array, ___index, method) (( void (*) (ReadOnlyCollection_1_t2259 *, TestResultU5BU5D_t2258*, int32_t, const MethodInfo*))ReadOnlyCollection_1_CopyTo_m12593_gshared)(__this, ___array, ___index, method)
+// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::GetEnumerator()
+#define ReadOnlyCollection_1_GetEnumerator_m14225(__this, method) (( Object_t* (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_GetEnumerator_m12594_gshared)(__this, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::IndexOf(T)
+#define ReadOnlyCollection_1_IndexOf_m14226(__this, ___value, method) (( int32_t (*) (ReadOnlyCollection_1_t2259 *, TestResult_t226 *, const MethodInfo*))ReadOnlyCollection_1_IndexOf_m12595_gshared)(__this, ___value, method)
+// System.Int32 System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::get_Count()
+#define ReadOnlyCollection_1_get_Count_m14227(__this, method) (( int32_t (*) (ReadOnlyCollection_1_t2259 *, const MethodInfo*))ReadOnlyCollection_1_get_Count_m12596_gshared)(__this, method)
+// T System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::get_Item(System.Int32)
+#define ReadOnlyCollection_1_get_Item_m14228(__this, ___index, method) (( TestResult_t226 * (*) (ReadOnlyCollection_1_t2259 *, int32_t, const MethodInfo*))ReadOnlyCollection_1_get_Item_m12597_gshared)(__this, ___index, method)

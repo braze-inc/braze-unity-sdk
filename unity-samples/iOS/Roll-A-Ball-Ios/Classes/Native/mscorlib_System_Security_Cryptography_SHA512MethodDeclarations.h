@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.SHA512
-struct SHA512_t2165;
+struct SHA512_t1879;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Security.Cryptography.SHA512::.ctor()
- void SHA512__ctor_m10831 (SHA512_t2165 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SHA512__ctor_m11036 (SHA512_t1879 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

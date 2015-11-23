@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.RegularExpressions.Syntax.Assertion
+
+
 #include "System_System_Text_RegularExpressions_Syntax_Assertion.h"
+
 // System.Text.RegularExpressions.Syntax.ExpressionAssertion
-struct ExpressionAssertion_t1676  : public Assertion_t1674
+struct  ExpressionAssertion_t1168  : public Assertion_t1166
 {
 	// System.Boolean System.Text.RegularExpressions.Syntax.ExpressionAssertion::reverse
 	bool ___reverse_1;

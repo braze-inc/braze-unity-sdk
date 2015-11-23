@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object
 struct Object_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Remoting.Channels.CrossAppDomainChannel
-struct CrossAppDomainChannel_t2043  : public Object_t
+struct  CrossAppDomainChannel_t1727  : public Object_t
 {
 };
-struct CrossAppDomainChannel_t2043_StaticFields{
+struct CrossAppDomainChannel_t1727_StaticFields{
 	// System.Object System.Runtime.Remoting.Channels.CrossAppDomainChannel::s_lock
 	Object_t * ___s_lock_0;
 };

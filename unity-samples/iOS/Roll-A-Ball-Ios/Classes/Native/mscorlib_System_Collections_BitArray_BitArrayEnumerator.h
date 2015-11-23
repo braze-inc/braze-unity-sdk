@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Collections.BitArray
-struct BitArray_t1659;
-// System.Object
+struct BitArray_t1175;
+
 #include "mscorlib_System_Object.h"
+
 // System.Collections.BitArray/BitArrayEnumerator
-struct BitArrayEnumerator_t1874  : public Object_t
+struct  BitArrayEnumerator_t1510  : public Object_t
 {
 	// System.Collections.BitArray System.Collections.BitArray/BitArrayEnumerator::_bitArray
-	BitArray_t1659 * ____bitArray_0;
+	BitArray_t1175 * ____bitArray_0;
 	// System.Boolean System.Collections.BitArray/BitArrayEnumerator::_current
 	bool ____current_1;
 	// System.Int32 System.Collections.BitArray/BitArrayEnumerator::_index

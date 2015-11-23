@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // UnityEngine.Object
-struct Object_t70  : public Object_t
+struct  Object_t253  : public Object_t
 {
 	// System.Int32 UnityEngine.Object::m_InstanceID
 	int32_t ___m_InstanceID_0;
 	// System.IntPtr UnityEngine.Object::m_CachedPtr
-	IntPtr_t107 ___m_CachedPtr_1;
+	IntPtr_t ___m_CachedPtr_1;
 };
 // Native definition for marshalling of: UnityEngine.Object
-struct Object_t70_marshaled
+struct Object_t253_marshaled
 {
 	int32_t ___m_InstanceID_0;
-	IntPtr_t107 ___m_CachedPtr_1;
+	intptr_t ___m_CachedPtr_1;
 };

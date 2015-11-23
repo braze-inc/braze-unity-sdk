@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // System.IO.File
-struct File_t1914  : public Object_t
+struct  File_t1556  : public Object_t
 {
 };

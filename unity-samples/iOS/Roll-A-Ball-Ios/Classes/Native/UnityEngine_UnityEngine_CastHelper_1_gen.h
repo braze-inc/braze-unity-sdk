@@ -1,16 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityTest.TestComponent
-struct TestComponent_t247;
-// System.ValueType
+
+// System.Object
+struct Object_t;
+
 #include "mscorlib_System_ValueType.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
-// UnityEngine.CastHelper`1<UnityTest.TestComponent>
-struct CastHelper_1_t3242 
+
+// UnityEngine.CastHelper`1<System.Object>
+struct  CastHelper_1_t2295 
 {
-	// T UnityEngine.CastHelper`1<UnityTest.TestComponent>::t
-	TestComponent_t247 * ___t_0;
-	// System.IntPtr UnityEngine.CastHelper`1<UnityTest.TestComponent>::onePointerFurtherThanT
-	IntPtr_t107 ___onePointerFurtherThanT_1;
+	// T UnityEngine.CastHelper`1<System.Object>::t
+	Object_t * ___t_0;
+	// System.IntPtr UnityEngine.CastHelper`1<System.Object>::onePointerFurtherThanT
+	IntPtr_t ___onePointerFurtherThanT_1;
 };

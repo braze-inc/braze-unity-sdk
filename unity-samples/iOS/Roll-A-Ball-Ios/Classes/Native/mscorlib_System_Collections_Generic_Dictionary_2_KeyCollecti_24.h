@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
-#include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.Dictionary`2/Enumerator<UnityEngine.UI.Graphic,System.Int32>
-#include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__11.h"
-// System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator<UnityEngine.UI.Graphic,System.Int32>
-struct Enumerator_t3870 
+
+// System.Collections.Generic.Dictionary`2<System.Object,System.Boolean>
+struct Dictionary_2_t2769;
+
+#include "mscorlib_System_Object.h"
+
+// System.Collections.Generic.Dictionary`2/KeyCollection<System.Object,System.Boolean>
+struct  KeyCollection_t2774  : public Object_t
 {
-	// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator<UnityEngine.UI.Graphic,System.Int32>::host_enumerator
-	Enumerator_t3868  ___host_enumerator_0;
+	// System.Collections.Generic.Dictionary`2<TKey,TValue> System.Collections.Generic.Dictionary`2/KeyCollection<System.Object,System.Boolean>::dictionary
+	Dictionary_2_t2769 * ___dictionary_0;
 };

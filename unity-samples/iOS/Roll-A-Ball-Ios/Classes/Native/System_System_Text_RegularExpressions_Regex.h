@@ -1,23 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Text.RegularExpressions.FactoryCache
-struct FactoryCache_t1642;
+struct FactoryCache_t1125;
 // System.Text.RegularExpressions.IMachineFactory
-struct IMachineFactory_t1643;
+struct IMachineFactory_t1126;
 // System.Collections.IDictionary
-struct IDictionary_t1560;
+struct IDictionary_t1127;
 // System.String[]
-struct StringU5BU5D_t3;
+struct StringU5BU5D_t63;
 // System.Int32[]
-struct Int32U5BU5D_t1185;
+struct Int32U5BU5D_t735;
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Text.RegularExpressions.RegexOptions
 #include "System_System_Text_RegularExpressions_RegexOptions.h"
+
 // System.Text.RegularExpressions.Regex
-struct Regex_t309  : public Object_t
+struct  Regex_t280  : public Object_t
 {
 	// System.Text.RegularExpressions.IMachineFactory System.Text.RegularExpressions.Regex::machineFactory
 	Object_t * ___machineFactory_1;
@@ -28,15 +38,15 @@ struct Regex_t309  : public Object_t
 	// System.Int32 System.Text.RegularExpressions.Regex::gap
 	int32_t ___gap_4;
 	// System.String[] System.Text.RegularExpressions.Regex::group_names
-	StringU5BU5D_t3* ___group_names_5;
+	StringU5BU5D_t63* ___group_names_5;
 	// System.Int32[] System.Text.RegularExpressions.Regex::group_numbers
-	Int32U5BU5D_t1185* ___group_numbers_6;
+	Int32U5BU5D_t735* ___group_numbers_6;
 	// System.String System.Text.RegularExpressions.Regex::pattern
 	String_t* ___pattern_7;
 	// System.Text.RegularExpressions.RegexOptions System.Text.RegularExpressions.Regex::roptions
 	int32_t ___roptions_8;
 };
-struct Regex_t309_StaticFields{
+struct Regex_t280_StaticFields{
 	// System.Text.RegularExpressions.FactoryCache System.Text.RegularExpressions.Regex::cache
-	FactoryCache_t1642 * ___cache_0;
+	FactoryCache_t1125 * ___cache_0;
 };

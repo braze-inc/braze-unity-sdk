@@ -1,25 +1,41 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Array/InternalEnumerator`1<UnityTest.TestResultState>
-struct InternalEnumerator_1_t3108;
-// System.Object
-struct Object_t;
 // System.Array
 struct Array_t;
-// UnityTest.TestResultState
-#include "AssemblyU2DCSharp_UnityTest_TestResultState.h"
+// System.Object
+struct Object_t;
 
-// System.Void System.Array/InternalEnumerator`1<UnityTest.TestResultState>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m15087 (InternalEnumerator_1_t3108 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<UnityTest.TestResultState>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m15088 (InternalEnumerator_1_t3108 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<UnityTest.TestResultState>::Dispose()
- void InternalEnumerator_1_Dispose_m15089 (InternalEnumerator_1_t3108 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<UnityTest.TestResultState>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m15090 (InternalEnumerator_1_t3108 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<UnityTest.TestResultState>::get_Current()
- uint8_t InternalEnumerator_1_get_Current_m15091 (InternalEnumerator_1_t3108 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Array_InternalEnumerator_1_gen_118.h"
+#include "mscorlib_System_DateTime.h"
+
+// System.Void System.Array/InternalEnumerator`1<System.DateTime>::.ctor(System.Array)
+extern "C" void InternalEnumerator_1__ctor_m21882_gshared (InternalEnumerator_1_t2868 * __this, Array_t * ___array, const MethodInfo* method);
+#define InternalEnumerator_1__ctor_m21882(__this, ___array, method) (( void (*) (InternalEnumerator_1_t2868 *, Array_t *, const MethodInfo*))InternalEnumerator_1__ctor_m21882_gshared)(__this, ___array, method)
+// System.Void System.Array/InternalEnumerator`1<System.DateTime>::System.Collections.IEnumerator.Reset()
+extern "C" void InternalEnumerator_1_System_Collections_IEnumerator_Reset_m21883_gshared (InternalEnumerator_1_t2868 * __this, const MethodInfo* method);
+#define InternalEnumerator_1_System_Collections_IEnumerator_Reset_m21883(__this, method) (( void (*) (InternalEnumerator_1_t2868 *, const MethodInfo*))InternalEnumerator_1_System_Collections_IEnumerator_Reset_m21883_gshared)(__this, method)
+// System.Object System.Array/InternalEnumerator`1<System.DateTime>::System.Collections.IEnumerator.get_Current()
+extern "C" Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m21884_gshared (InternalEnumerator_1_t2868 * __this, const MethodInfo* method);
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m21884(__this, method) (( Object_t * (*) (InternalEnumerator_1_t2868 *, const MethodInfo*))InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m21884_gshared)(__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.DateTime>::Dispose()
+extern "C" void InternalEnumerator_1_Dispose_m21885_gshared (InternalEnumerator_1_t2868 * __this, const MethodInfo* method);
+#define InternalEnumerator_1_Dispose_m21885(__this, method) (( void (*) (InternalEnumerator_1_t2868 *, const MethodInfo*))InternalEnumerator_1_Dispose_m21885_gshared)(__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.DateTime>::MoveNext()
+extern "C" bool InternalEnumerator_1_MoveNext_m21886_gshared (InternalEnumerator_1_t2868 * __this, const MethodInfo* method);
+#define InternalEnumerator_1_MoveNext_m21886(__this, method) (( bool (*) (InternalEnumerator_1_t2868 *, const MethodInfo*))InternalEnumerator_1_MoveNext_m21886_gshared)(__this, method)
+// T System.Array/InternalEnumerator`1<System.DateTime>::get_Current()
+extern "C" DateTime_t852  InternalEnumerator_1_get_Current_m21887_gshared (InternalEnumerator_1_t2868 * __this, const MethodInfo* method);
+#define InternalEnumerator_1_get_Current_m21887(__this, method) (( DateTime_t852  (*) (InternalEnumerator_1_t2868 *, const MethodInfo*))InternalEnumerator_1_get_Current_m21887_gshared)(__this, method)

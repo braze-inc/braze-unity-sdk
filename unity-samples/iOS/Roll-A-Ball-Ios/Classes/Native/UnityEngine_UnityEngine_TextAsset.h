@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Object
+
+
 #include "UnityEngine_UnityEngine_Object.h"
+
 // UnityEngine.TextAsset
-struct TextAsset_t356  : public Object_t70
+struct  TextAsset_t310  : public Object_t253
 {
 };

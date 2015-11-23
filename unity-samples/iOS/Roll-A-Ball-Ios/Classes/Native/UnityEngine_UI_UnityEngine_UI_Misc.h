@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // UnityEngine.UI.Misc
-struct Misc_t603  : public Object_t
+struct  Misc_t566  : public Object_t
 {
 };

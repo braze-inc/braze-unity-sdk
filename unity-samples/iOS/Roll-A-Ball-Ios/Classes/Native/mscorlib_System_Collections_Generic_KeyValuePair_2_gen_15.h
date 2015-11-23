@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Event
-struct Event_t601;
-struct Event_t601_marshaled;
-// System.ValueType
+
+// System.String
+struct String_t;
+// UnityEngine.GUIStyle
+struct GUIStyle_t228;
+
 #include "mscorlib_System_ValueType.h"
-// UnityEngine.TextEditor/TextEditOp
-#include "UnityEngine_UnityEngine_TextEditor_TextEditOp.h"
-// System.Collections.Generic.KeyValuePair`2<UnityEngine.Event,UnityEngine.TextEditor/TextEditOp>
-struct KeyValuePair_2_t4490 
+
+// System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>
+struct  KeyValuePair_2_t2696 
 {
-	// TKey System.Collections.Generic.KeyValuePair`2<UnityEngine.Event,UnityEngine.TextEditor/TextEditOp>::key
-	Event_t601 * ___key_0;
-	// TValue System.Collections.Generic.KeyValuePair`2<UnityEngine.Event,UnityEngine.TextEditor/TextEditOp>::value
-	int32_t ___value_1;
+	// TKey System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::key
+	String_t* ___key_0;
+	// TValue System.Collections.Generic.KeyValuePair`2<System.String,UnityEngine.GUIStyle>::value
+	GUIStyle_t228 * ___value_1;
 };

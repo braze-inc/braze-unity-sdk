@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// System.Environment/SpecialFolder
 #include "mscorlib_System_Environment_SpecialFolder.h"
+
 // System.Environment/SpecialFolder
-struct SpecialFolder_t2259 
+struct  SpecialFolder_t1992 
 {
 	// System.Int32 System.Environment/SpecialFolder::value__
 	int32_t ___value___1;

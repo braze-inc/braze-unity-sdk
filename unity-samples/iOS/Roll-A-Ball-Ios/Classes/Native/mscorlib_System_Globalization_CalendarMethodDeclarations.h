@@ -1,29 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Globalization.Calendar
-struct Calendar_t1896;
-// System.Int32[]
-struct Int32U5BU5D_t1185;
+struct Calendar_t1534;
+// System.Object
+struct Object_t;
 // System.String[]
-struct StringU5BU5D_t3;
-// System.DateTime
-#include "mscorlib_System_DateTime.h"
-// System.DayOfWeek
-#include "mscorlib_System_DayOfWeek.h"
+struct StringU5BU5D_t63;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Globalization.Calendar::.ctor()
- void Calendar__ctor_m9194 (Calendar_t1896 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32[] System.Globalization.Calendar::get_Eras()
+extern "C" void Calendar__ctor_m8978 (Calendar_t1534 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Globalization.Calendar::Clone()
+extern "C" Object_t * Calendar_Clone_m8979 (Calendar_t1534 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Globalization.Calendar::CheckReadOnly()
- void Calendar_CheckReadOnly_m9195 (Calendar_t1896 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Globalization.Calendar::GetDayOfMonth(System.DateTime)
-// System.DayOfWeek System.Globalization.Calendar::GetDayOfWeek(System.DateTime)
-// System.Int32 System.Globalization.Calendar::GetEra(System.DateTime)
-// System.Int32 System.Globalization.Calendar::GetMonth(System.DateTime)
-// System.Int32 System.Globalization.Calendar::GetYear(System.DateTime)
+extern "C" void Calendar_CheckReadOnly_m8980 (Calendar_t1534 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String[] System.Globalization.Calendar::get_EraNames()
- StringU5BU5D_t3* Calendar_get_EraNames_m9196 (Calendar_t1896 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" StringU5BU5D_t63* Calendar_get_EraNames_m8981 (Calendar_t1534 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

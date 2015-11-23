@@ -1,27 +1,37 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.UnhandledExceptionEventHandler
-struct UnhandledExceptionEventHandler_t2231;
+struct UnhandledExceptionEventHandler_t965;
 // System.Object
 struct Object_t;
 // System.UnhandledExceptionEventArgs
-struct UnhandledExceptionEventArgs_t2297;
+struct UnhandledExceptionEventArgs_t950;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
+struct AsyncCallback_t552;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
 
 // System.Void System.UnhandledExceptionEventHandler::.ctor(System.Object,System.IntPtr)
- void UnhandledExceptionEventHandler__ctor_m12055 (UnhandledExceptionEventHandler_t2231 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UnhandledExceptionEventHandler__ctor_m5078 (UnhandledExceptionEventHandler_t965 * __this, Object_t * ___object, IntPtr_t ___method, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UnhandledExceptionEventHandler::Invoke(System.Object,System.UnhandledExceptionEventArgs)
- void UnhandledExceptionEventHandler_Invoke_m12056 (UnhandledExceptionEventHandler_t2231 * __this, Object_t * ___sender, UnhandledExceptionEventArgs_t2297 * ___e, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UnhandledExceptionEventHandler_Invoke_m12428 (UnhandledExceptionEventHandler_t965 * __this, Object_t * ___sender, UnhandledExceptionEventArgs_t950 * ___e, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void pinvoke_delegate_wrapper_UnhandledExceptionEventHandler_t965(Il2CppObject* delegate, Object_t * ___sender, UnhandledExceptionEventArgs_t950 * ___e);
 // System.IAsyncResult System.UnhandledExceptionEventHandler::BeginInvoke(System.Object,System.UnhandledExceptionEventArgs,System.AsyncCallback,System.Object)
- Object_t * UnhandledExceptionEventHandler_BeginInvoke_m12057 (UnhandledExceptionEventHandler_t2231 * __this, Object_t * ___sender, UnhandledExceptionEventArgs_t2297 * ___e, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * UnhandledExceptionEventHandler_BeginInvoke_m12429 (UnhandledExceptionEventHandler_t965 * __this, Object_t * ___sender, UnhandledExceptionEventArgs_t950 * ___e, AsyncCallback_t552 * ___callback, Object_t * ___object, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UnhandledExceptionEventHandler::EndInvoke(System.IAsyncResult)
- void UnhandledExceptionEventHandler_EndInvoke_m12058 (UnhandledExceptionEventHandler_t2231 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UnhandledExceptionEventHandler_EndInvoke_m12430 (UnhandledExceptionEventHandler_t965 * __this, Object_t * ___result, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Behaviour
-#include "UnityEngine_UnityEngine_Behaviour.h"
+
+
+#include "UnityEngine_UnityEngine_Experimental_Director_DirectorPlayer.h"
+
 // UnityEngine.Animator
-struct Animator_t624  : public Behaviour_t769
+struct  Animator_t669  : public DirectorPlayer_t803
 {
 };

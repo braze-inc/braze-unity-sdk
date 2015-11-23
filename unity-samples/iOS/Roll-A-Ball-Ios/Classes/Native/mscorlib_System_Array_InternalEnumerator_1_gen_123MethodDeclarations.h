@@ -1,25 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
 
-// System.Array/InternalEnumerator`1<UnityEngine.RuntimePlatform>
-struct InternalEnumerator_1_t3125;
-// System.Object
-struct Object_t;
-// System.Array
-struct Array_t;
-// UnityEngine.RuntimePlatform
-#include "UnityEngine_UnityEngine_RuntimePlatform.h"
-
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.RuntimePlatform>::.ctor(System.Array)
- void InternalEnumerator_1__ctor_m15152 (InternalEnumerator_1_t3125 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Array/InternalEnumerator`1<UnityEngine.RuntimePlatform>::System.Collections.IEnumerator.get_Current()
- Object_t * InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m15153 (InternalEnumerator_1_t3125 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Array/InternalEnumerator`1<UnityEngine.RuntimePlatform>::Dispose()
- void InternalEnumerator_1_Dispose_m15154 (InternalEnumerator_1_t3125 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Array/InternalEnumerator`1<UnityEngine.RuntimePlatform>::MoveNext()
- bool InternalEnumerator_1_MoveNext_m15155 (InternalEnumerator_1_t3125 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Array/InternalEnumerator`1<UnityEngine.RuntimePlatform>::get_Current()
- int32_t InternalEnumerator_1_get_Current_m15156 (InternalEnumerator_1_t3125 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.CustomAttributeData>::.ctor(System.Array)
+#define InternalEnumerator_1__ctor_m22061(__this, ___array, method) (( void (*) (InternalEnumerator_1_t2890 *, Array_t *, const MethodInfo*))InternalEnumerator_1__ctor_m12454_gshared)(__this, ___array, method)
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.CustomAttributeData>::System.Collections.IEnumerator.Reset()
+#define InternalEnumerator_1_System_Collections_IEnumerator_Reset_m22062(__this, method) (( void (*) (InternalEnumerator_1_t2890 *, const MethodInfo*))InternalEnumerator_1_System_Collections_IEnumerator_Reset_m12456_gshared)(__this, method)
+// System.Object System.Array/InternalEnumerator`1<System.Reflection.CustomAttributeData>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m22063(__this, method) (( Object_t * (*) (InternalEnumerator_1_t2890 *, const MethodInfo*))InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12458_gshared)(__this, method)
+// System.Void System.Array/InternalEnumerator`1<System.Reflection.CustomAttributeData>::Dispose()
+#define InternalEnumerator_1_Dispose_m22064(__this, method) (( void (*) (InternalEnumerator_1_t2890 *, const MethodInfo*))InternalEnumerator_1_Dispose_m12460_gshared)(__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<System.Reflection.CustomAttributeData>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m22065(__this, method) (( bool (*) (InternalEnumerator_1_t2890 *, const MethodInfo*))InternalEnumerator_1_MoveNext_m12462_gshared)(__this, method)
+// T System.Array/InternalEnumerator`1<System.Reflection.CustomAttributeData>::get_Current()
+#define InternalEnumerator_1_get_Current_m22066(__this, method) (( CustomAttributeData_t1644 * (*) (InternalEnumerator_1_t2890 *, const MethodInfo*))InternalEnumerator_1_get_Current_m12464_gshared)(__this, method)

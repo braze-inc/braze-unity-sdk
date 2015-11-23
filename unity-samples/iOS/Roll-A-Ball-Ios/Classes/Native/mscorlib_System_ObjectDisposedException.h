@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.InvalidOperationException
+
 #include "mscorlib_System_InvalidOperationException.h"
+
 // System.ObjectDisposedException
-struct ObjectDisposedException_t1513  : public InvalidOperationException_t1534
+struct  ObjectDisposedException_t1255  : public InvalidOperationException_t1206
 {
 	// System.String System.ObjectDisposedException::obj_name
 	String_t* ___obj_name_12;

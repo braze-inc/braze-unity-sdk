@@ -1,27 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,Appboy.Utilities.JSONNode>,System.Boolean>
-struct Func_2_t104;
-// System.Object
-struct Object_t;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-// System.Collections.Generic.KeyValuePair`2<System.String,Appboy.Utilities.JSONNode>
-#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen.h"
+
+#include "codegen/il2cpp-codegen.h"
+#include "System_Core_System_Func_2_gen_21MethodDeclarations.h"
 
 // System.Void System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,Appboy.Utilities.JSONNode>,System.Boolean>::.ctor(System.Object,System.IntPtr)
- void Func_2__ctor_m564 (Func_2_t104 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Func_2__ctor_m548(__this, ___object, ___method, method) (( void (*) (Func_2_t100 *, Object_t *, IntPtr_t, const MethodInfo*))Func_2__ctor_m13370_gshared)(__this, ___object, ___method, method)
 // TResult System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,Appboy.Utilities.JSONNode>,System.Boolean>::Invoke(T)
- bool Func_2_Invoke_m13919 (Func_2_t104 * __this, KeyValuePair_2_t35  ___arg1, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Func_2_Invoke_m13371(__this, ___arg1, method) (( bool (*) (Func_2_t100 *, KeyValuePair_2_t21 , const MethodInfo*))Func_2_Invoke_m13372_gshared)(__this, ___arg1, method)
 // System.IAsyncResult System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,Appboy.Utilities.JSONNode>,System.Boolean>::BeginInvoke(T,System.AsyncCallback,System.Object)
- Object_t * Func_2_BeginInvoke_m13920 (Func_2_t104 * __this, KeyValuePair_2_t35  ___arg1, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Func_2_BeginInvoke_m13373(__this, ___arg1, ___callback, ___object, method) (( Object_t * (*) (Func_2_t100 *, KeyValuePair_2_t21 , AsyncCallback_t552 *, Object_t *, const MethodInfo*))Func_2_BeginInvoke_m13374_gshared)(__this, ___arg1, ___callback, ___object, method)
 // TResult System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,Appboy.Utilities.JSONNode>,System.Boolean>::EndInvoke(System.IAsyncResult)
- bool Func_2_EndInvoke_m13921 (Func_2_t104 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Func_2_EndInvoke_m13375(__this, ___result, method) (( bool (*) (Func_2_t100 *, Object_t *, const MethodInfo*))Func_2_EndInvoke_m13376_gshared)(__this, ___result, method)

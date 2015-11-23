@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.Shadow
+
+
 #include "UnityEngine_UI_UnityEngine_UI_Shadow.h"
+
 // UnityEngine.UI.Outline
-struct Outline_t679  : public Shadow_t680
+struct  Outline_t639  : public Shadow_t640
 {
 };

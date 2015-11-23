@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.HMACSHA256
-struct HMACSHA256_t2144;
+struct HMACSHA256_t1858;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Security.Cryptography.HMACSHA256::.ctor()
- void HMACSHA256__ctor_m10657 (HMACSHA256_t2144 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void HMACSHA256__ctor_m10849 (HMACSHA256_t1858 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Security.Cryptography.HMACSHA256::.ctor(System.Byte[])
- void HMACSHA256__ctor_m10658 (HMACSHA256_t2144 * __this, ByteU5BU5D_t97* ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void HMACSHA256__ctor_m10850 (HMACSHA256_t1858 * __this, ByteU5BU5D_t98* ___key, const MethodInfo* method) IL2CPP_METHOD_ATTR;

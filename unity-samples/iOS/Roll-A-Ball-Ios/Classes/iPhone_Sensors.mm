@@ -15,7 +15,10 @@ static bool gJoysticksInited = false;
 #define MAX_JOYSTICKS 4
 static bool gPausedJoysticks[MAX_JOYSTICKS] = {false, false, false, false};
 static id gGameControllerClass = nil;
-static ControllerPausedHandler gControllerHandler = ^(GCController *controller)
+// This defines the number of maximum acceleration events Unity will queue internally for scripts to access.
+int gMaxQueuedAccelerationEvents = 2 * 60; // 120 events or 2 seconds at 60Hz reporting.
+
+static ControllerPausedHandler gControllerHandler = ^(GCController *controller) 
 {
 	NSArray* list = QueryControllerCollection();
 	if (list != nil)

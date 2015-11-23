@@ -18,6 +18,7 @@
 	inline CVReturn			CVMetalTextureCacheCreateTextureFromImage(CFAllocatorRef, CVMetalTextureCacheRef, CVImageBufferRef, CFDictionaryRef, MTLPixelFormat, size_t, size_t, size_t, CVMetalTextureRef*)	{ return 0; }
 	inline void				CVMetalTextureCacheFlush(CVMetalTextureCacheRef, uint64_t options)	{ }
 	inline MTLTextureRef	CVMetalTextureGetTexture(CVMetalTextureRef)	{ return nil; }
+	inline Boolean			CVMetalTextureIsFlipped(CVMetalTextureRef)	{ return 0; }
 #endif
 
 
@@ -115,3 +116,12 @@ void* CreateReadableRTFromCVTextureCache(void* cache, unsigned w, unsigned h, vo
 	*pb = CreatePixelBufferForCVTextureCache(w, h);
 	return CreateTextureFromCVTextureCache(cache, *pb, w, h);
 }
+
+int IsCVTextureFlipped(void* texture)
+{
+	if(UnitySelectedRenderingAPI() == apiMetal)
+		return CVMetalTextureIsFlipped((CVMetalTextureRef)texture);
+	else
+		return CVOpenGLESTextureIsFlipped((CVOpenGLESTextureRef)texture);
+}
+

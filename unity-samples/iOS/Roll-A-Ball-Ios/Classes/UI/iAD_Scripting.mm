@@ -86,7 +86,7 @@ bool UnityAD_BannerAdVisible(void* target)
 
 bool UnityAD_InterstitialAvailable()
 {
-	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || _ios70orNewer;
 }
 
 void* UnityAD_CreateInterstitial(bool autoReload)
@@ -123,5 +123,5 @@ void UnityAD_ReloadInterstitial(void* target)
 
 bool UnityAD_InterstitialAdLoaded(void* target)
 {
-	return target ? ((__bridge UnityInterstitialAd*)target).view.loaded : false;
+	return target ? ((__bridge UnityInterstitialAd*)target).interstitial.loaded : false;
 }

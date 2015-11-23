@@ -1,79 +1,95 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Collections.ArrayList/SynchronizedArrayListWrapper
-struct SynchronizedArrayListWrapper_t1871;
+struct SynchronizedArrayListWrapper_t1507;
+// System.Collections.ArrayList
+struct ArrayList_t1029;
 // System.Object
 struct Object_t;
-// System.Collections.ArrayList
-struct ArrayList_t1372;
 // System.Collections.ICollection
-struct ICollection_t1103;
+struct ICollection_t1202;
 // System.Array
 struct Array_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t21;
+struct IEnumerator_t66;
 // System.Collections.IComparer
-struct IComparer_t1565;
+struct IComparer_t1024;
 // System.Object[]
-struct ObjectU5BU5D_t112;
+struct ObjectU5BU5D_t87;
 // System.Type
 struct Type_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::.ctor(System.Collections.ArrayList)
- void SynchronizedArrayListWrapper__ctor_m9005 (SynchronizedArrayListWrapper_t1871 * __this, ArrayList_t1372 * ___innerArrayList, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper__ctor_m8673 (SynchronizedArrayListWrapper_t1507 * __this, ArrayList_t1029 * ___innerArrayList, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.ArrayList/SynchronizedArrayListWrapper::get_Item(System.Int32)
- Object_t * SynchronizedArrayListWrapper_get_Item_m9006 (SynchronizedArrayListWrapper_t1871 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * SynchronizedArrayListWrapper_get_Item_m8674 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___index, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::set_Item(System.Int32,System.Object)
- void SynchronizedArrayListWrapper_set_Item_m9007 (SynchronizedArrayListWrapper_t1871 * __this, int32_t ___index, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_set_Item_m8675 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___index, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.ArrayList/SynchronizedArrayListWrapper::get_Count()
- int32_t SynchronizedArrayListWrapper_get_Count_m9008 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t SynchronizedArrayListWrapper_get_Count_m8676 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.ArrayList/SynchronizedArrayListWrapper::get_Capacity()
+extern "C" int32_t SynchronizedArrayListWrapper_get_Capacity_m8677 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::set_Capacity(System.Int32)
+extern "C" void SynchronizedArrayListWrapper_set_Capacity_m8678 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.ArrayList/SynchronizedArrayListWrapper::get_IsFixedSize()
- bool SynchronizedArrayListWrapper_get_IsFixedSize_m9009 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool SynchronizedArrayListWrapper_get_IsFixedSize_m8679 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.ArrayList/SynchronizedArrayListWrapper::get_IsReadOnly()
- bool SynchronizedArrayListWrapper_get_IsReadOnly_m9010 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool SynchronizedArrayListWrapper_get_IsReadOnly_m8680 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.ArrayList/SynchronizedArrayListWrapper::get_IsSynchronized()
- bool SynchronizedArrayListWrapper_get_IsSynchronized_m9011 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool SynchronizedArrayListWrapper_get_IsSynchronized_m8681 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.ArrayList/SynchronizedArrayListWrapper::get_SyncRoot()
- Object_t * SynchronizedArrayListWrapper_get_SyncRoot_m9012 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * SynchronizedArrayListWrapper_get_SyncRoot_m8682 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.ArrayList/SynchronizedArrayListWrapper::Add(System.Object)
- int32_t SynchronizedArrayListWrapper_Add_m9013 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t SynchronizedArrayListWrapper_Add_m8683 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::Clear()
- void SynchronizedArrayListWrapper_Clear_m9014 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_Clear_m8684 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.ArrayList/SynchronizedArrayListWrapper::Contains(System.Object)
- bool SynchronizedArrayListWrapper_Contains_m9015 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool SynchronizedArrayListWrapper_Contains_m8685 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.ArrayList/SynchronizedArrayListWrapper::IndexOf(System.Object)
- int32_t SynchronizedArrayListWrapper_IndexOf_m9016 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t SynchronizedArrayListWrapper_IndexOf_m8686 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.ArrayList/SynchronizedArrayListWrapper::IndexOf(System.Object,System.Int32)
- int32_t SynchronizedArrayListWrapper_IndexOf_m9017 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___value, int32_t ___startIndex, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t SynchronizedArrayListWrapper_IndexOf_m8687 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___value, int32_t ___startIndex, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.ArrayList/SynchronizedArrayListWrapper::IndexOf(System.Object,System.Int32,System.Int32)
- int32_t SynchronizedArrayListWrapper_IndexOf_m9018 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___value, int32_t ___startIndex, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t SynchronizedArrayListWrapper_IndexOf_m8688 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___value, int32_t ___startIndex, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::Insert(System.Int32,System.Object)
- void SynchronizedArrayListWrapper_Insert_m9019 (SynchronizedArrayListWrapper_t1871 * __this, int32_t ___index, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_Insert_m8689 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___index, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::InsertRange(System.Int32,System.Collections.ICollection)
- void SynchronizedArrayListWrapper_InsertRange_m9020 (SynchronizedArrayListWrapper_t1871 * __this, int32_t ___index, Object_t * ___c, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_InsertRange_m8690 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___index, Object_t * ___c, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::Remove(System.Object)
- void SynchronizedArrayListWrapper_Remove_m9021 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_Remove_m8691 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::RemoveAt(System.Int32)
- void SynchronizedArrayListWrapper_RemoveAt_m9022 (SynchronizedArrayListWrapper_t1871 * __this, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_RemoveAt_m8692 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___index, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::CopyTo(System.Array)
- void SynchronizedArrayListWrapper_CopyTo_m9023 (SynchronizedArrayListWrapper_t1871 * __this, Array_t * ___array, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_CopyTo_m8693 (SynchronizedArrayListWrapper_t1507 * __this, Array_t * ___array, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::CopyTo(System.Array,System.Int32)
- void SynchronizedArrayListWrapper_CopyTo_m9024 (SynchronizedArrayListWrapper_t1871 * __this, Array_t * ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_CopyTo_m8694 (SynchronizedArrayListWrapper_t1507 * __this, Array_t * ___array, int32_t ___index, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::CopyTo(System.Int32,System.Array,System.Int32,System.Int32)
- void SynchronizedArrayListWrapper_CopyTo_m9025 (SynchronizedArrayListWrapper_t1871 * __this, int32_t ___index, Array_t * ___array, int32_t ___arrayIndex, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_CopyTo_m8695 (SynchronizedArrayListWrapper_t1507 * __this, int32_t ___index, Array_t * ___array, int32_t ___arrayIndex, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator System.Collections.ArrayList/SynchronizedArrayListWrapper::GetEnumerator()
- Object_t * SynchronizedArrayListWrapper_GetEnumerator_m9026 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * SynchronizedArrayListWrapper_GetEnumerator_m8696 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::AddRange(System.Collections.ICollection)
- void SynchronizedArrayListWrapper_AddRange_m9027 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___c, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_AddRange_m8697 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___c, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.ArrayList/SynchronizedArrayListWrapper::Clone()
+extern "C" Object_t * SynchronizedArrayListWrapper_Clone_m8698 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::Sort()
- void SynchronizedArrayListWrapper_Sort_m9028 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_Sort_m8699 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.ArrayList/SynchronizedArrayListWrapper::Sort(System.Collections.IComparer)
- void SynchronizedArrayListWrapper_Sort_m9029 (SynchronizedArrayListWrapper_t1871 * __this, Object_t * ___comparer, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedArrayListWrapper_Sort_m8700 (SynchronizedArrayListWrapper_t1507 * __this, Object_t * ___comparer, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object[] System.Collections.ArrayList/SynchronizedArrayListWrapper::ToArray()
- ObjectU5BU5D_t112* SynchronizedArrayListWrapper_ToArray_m9030 (SynchronizedArrayListWrapper_t1871 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ObjectU5BU5D_t87* SynchronizedArrayListWrapper_ToArray_m8701 (SynchronizedArrayListWrapper_t1507 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Array System.Collections.ArrayList/SynchronizedArrayListWrapper::ToArray(System.Type)
- Array_t * SynchronizedArrayListWrapper_ToArray_m9031 (SynchronizedArrayListWrapper_t1871 * __this, Type_t * ___elementType, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Array_t * SynchronizedArrayListWrapper_ToArray_m8702 (SynchronizedArrayListWrapper_t1507 * __this, Type_t * ___elementType, const MethodInfo* method) IL2CPP_METHOD_ATTR;

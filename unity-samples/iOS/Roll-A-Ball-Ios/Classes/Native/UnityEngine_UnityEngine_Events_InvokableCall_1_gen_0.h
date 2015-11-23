@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Events.UnityAction`1<System.Object>
-struct UnityAction_1_t2747;
-// UnityEngine.Events.BaseInvokableCall
+
+// UnityEngine.Events.UnityAction`1<UnityEngine.Color>
+struct UnityAction_1_t661;
+
 #include "UnityEngine_UnityEngine_Events_BaseInvokableCall.h"
-// UnityEngine.Events.InvokableCall`1<System.Object>
-struct InvokableCall_1_t2746  : public BaseInvokableCall_t970
+
+// UnityEngine.Events.InvokableCall`1<UnityEngine.Color>
+struct  InvokableCall_1_t2418  : public BaseInvokableCall_t934
 {
-	// UnityEngine.Events.UnityAction`1<T1> UnityEngine.Events.InvokableCall`1<System.Object>::Delegate
-	UnityAction_1_t2747 * ___Delegate_0;
+	// UnityEngine.Events.UnityAction`1<T1> UnityEngine.Events.InvokableCall`1<UnityEngine.Color>::Delegate
+	UnityAction_1_t661 * ___Delegate_0;
 };

@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// MovementMotor
+
+
 #include "AssemblyU2DUnityScript_MovementMotor.h"
+
 // FreeMovementMotor
-struct FreeMovementMotor_t426  : public MovementMotor_t377
+struct  FreeMovementMotor_t393  : public MovementMotor_t347
 {
 	// System.Single FreeMovementMotor::walkingSpeed
 	float ___walkingSpeed_5;

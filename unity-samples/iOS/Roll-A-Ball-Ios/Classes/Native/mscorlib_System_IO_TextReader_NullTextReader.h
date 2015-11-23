@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.IO.TextReader
+
+
 #include "mscorlib_System_IO_TextReader.h"
+
 // System.IO.TextReader/NullTextReader
-struct NullTextReader_t1935  : public TextReader_t1843
+struct  NullTextReader_t1578  : public TextReader_t1499
 {
 };

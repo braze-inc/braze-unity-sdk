@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.YieldInstruction
+
+
 #include "UnityEngine_UnityEngine_YieldInstruction.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // UnityEngine.AsyncOperation
-struct AsyncOperation_t794  : public YieldInstruction_t798
+struct  AsyncOperation_t739  : public YieldInstruction_t745
 {
 	// System.IntPtr UnityEngine.AsyncOperation::m_Ptr
-	IntPtr_t107 ___m_Ptr_0;
+	IntPtr_t ___m_Ptr_0;
 };
 // Native definition for marshalling of: UnityEngine.AsyncOperation
-struct AsyncOperation_t794_marshaled
+struct AsyncOperation_t739_marshaled
 {
-	IntPtr_t107 ___m_Ptr_0;
+	intptr_t ___m_Ptr_0;
 };

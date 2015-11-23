@@ -1,22 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Collections.Hashtable
-struct Hashtable_t414;
+struct Hashtable_t382;
 // System.Collections.ArrayList
-struct ArrayList_t1372;
+struct ArrayList_t1029;
 // System.String
 struct String_t;
 // System.Runtime.Serialization.IFormatterConverter
-struct IFormatterConverter_t2132;
-// System.Object
+struct IFormatterConverter_t1845;
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960  : public Object_t
+struct  SerializationInfo_t962  : public Object_t
 {
 	// System.Collections.Hashtable System.Runtime.Serialization.SerializationInfo::serialized
-	Hashtable_t414 * ___serialized_0;
+	Hashtable_t382 * ___serialized_0;
 	// System.Collections.ArrayList System.Runtime.Serialization.SerializationInfo::values
-	ArrayList_t1372 * ___values_1;
+	ArrayList_t1029 * ___values_1;
 	// System.String System.Runtime.Serialization.SerializationInfo::assemblyName
 	String_t* ___assemblyName_2;
 	// System.String System.Runtime.Serialization.SerializationInfo::fullTypeName

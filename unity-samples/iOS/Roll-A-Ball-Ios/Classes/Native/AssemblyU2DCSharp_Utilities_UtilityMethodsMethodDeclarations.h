@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Utilities.UtilityMethods
-struct UtilityMethods_t133;
+struct UtilityMethods_t132;
 // System.String
 struct String_t;
-// System.Decimal
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Decimal.h"
 
 // System.Void Utilities.UtilityMethods::.ctor()
- void UtilityMethods__ctor_m652 (UtilityMethods_t133 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UtilityMethods__ctor_m632 (UtilityMethods_t132 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Utilities.UtilityMethods::textIsValid(System.String)
- bool UtilityMethods_textIsValid_m653 (Object_t * __this/* static, unused */, String_t* ___text, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool UtilityMethods_textIsValid_m633 (Object_t * __this /* static, unused */, String_t* ___text, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Utilities.UtilityMethods::ParseStringToInt(System.String,System.String,System.Int32&)
- bool UtilityMethods_ParseStringToInt_m654 (Object_t * __this/* static, unused */, String_t* ___text, String_t* ___ErrorDescription, int32_t* ___ParsedInt, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool UtilityMethods_ParseStringToInt_m634 (Object_t * __this /* static, unused */, String_t* ___text, String_t* ___ErrorDescription, int32_t* ___ParsedInt, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Utilities.UtilityMethods::ParseStringToDecimal(System.String,System.String,System.Decimal&)
- bool UtilityMethods_ParseStringToDecimal_m655 (Object_t * __this/* static, unused */, String_t* ___text, String_t* ___ErrorDescription, Decimal_t5 * ___ParsedDecimal, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool UtilityMethods_ParseStringToDecimal_m635 (Object_t * __this /* static, unused */, String_t* ___text, String_t* ___ErrorDescription, Decimal_t62 * ___ParsedDecimal, const MethodInfo* method) IL2CPP_METHOD_ATTR;

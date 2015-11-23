@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.IEventSystemHandler>
-struct EqualityComparer_1_t3528;
-// System.Object
+
+// System.Collections.Generic.EqualityComparer`1<System.DateTimeOffset>
+struct EqualityComparer_1_t2884;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.IEventSystemHandler>
-struct EqualityComparer_1_t3528  : public Object_t
+
+// System.Collections.Generic.EqualityComparer`1<System.DateTimeOffset>
+struct  EqualityComparer_1_t2884  : public Object_t
 {
 };
-struct EqualityComparer_1_t3528_StaticFields{
-	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.EventSystems.IEventSystemHandler>::_default
-	EqualityComparer_1_t3528 * ____default_0;
+struct EqualityComparer_1_t2884_StaticFields{
+	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<System.DateTimeOffset>::_default
+	EqualityComparer_1_t2884 * ____default_0;
 };

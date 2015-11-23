@@ -1,25 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.X509.Extensions.SubjectAltNameExtension
-struct SubjectAltNameExtension_t1426;
-// System.String[]
-struct StringU5BU5D_t3;
+struct SubjectAltNameExtension_t1299;
 // Mono.Security.X509.X509Extension
-struct X509Extension_t1414;
+struct X509Extension_t1199;
+// System.String[]
+struct StringU5BU5D_t63;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void Mono.Security.X509.Extensions.SubjectAltNameExtension::.ctor(Mono.Security.X509.X509Extension)
- void SubjectAltNameExtension__ctor_m5871 (SubjectAltNameExtension_t1426 * __this, X509Extension_t1414 * ___extension, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SubjectAltNameExtension__ctor_m6681 (SubjectAltNameExtension_t1299 * __this, X509Extension_t1199 * ___extension, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.Extensions.SubjectAltNameExtension::Decode()
- void SubjectAltNameExtension_Decode_m5872 (SubjectAltNameExtension_t1426 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SubjectAltNameExtension_Decode_m6682 (SubjectAltNameExtension_t1299 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String[] Mono.Security.X509.Extensions.SubjectAltNameExtension::get_DNSNames()
- StringU5BU5D_t3* SubjectAltNameExtension_get_DNSNames_m5873 (SubjectAltNameExtension_t1426 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" StringU5BU5D_t63* SubjectAltNameExtension_get_DNSNames_m6683 (SubjectAltNameExtension_t1299 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String[] Mono.Security.X509.Extensions.SubjectAltNameExtension::get_IPAddresses()
- StringU5BU5D_t3* SubjectAltNameExtension_get_IPAddresses_m5874 (SubjectAltNameExtension_t1426 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" StringU5BU5D_t63* SubjectAltNameExtension_get_IPAddresses_m6684 (SubjectAltNameExtension_t1299 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.X509.Extensions.SubjectAltNameExtension::ToString()
- String_t* SubjectAltNameExtension_ToString_m5875 (SubjectAltNameExtension_t1426 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* SubjectAltNameExtension_ToString_m6685 (SubjectAltNameExtension_t1299 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

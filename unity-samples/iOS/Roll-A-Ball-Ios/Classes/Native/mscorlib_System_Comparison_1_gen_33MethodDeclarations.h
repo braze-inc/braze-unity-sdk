@@ -1,27 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Comparison_1_gen_3MethodDeclarations.h"
 
-// System.Comparison`1<UnityEngine.UILineInfo>
-struct Comparison_1_t4410;
-// System.Object
-struct Object_t;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-// UnityEngine.UILineInfo
-#include "UnityEngine_UnityEngine_UILineInfo.h"
-
-// System.Void System.Comparison`1<UnityEngine.UILineInfo>::.ctor(System.Object,System.IntPtr)
- void Comparison_1__ctor_m23754 (Comparison_1_t4410 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Comparison`1<UnityEngine.UILineInfo>::Invoke(T,T)
- int32_t Comparison_1_Invoke_m23755 (Comparison_1_t4410 * __this, UILineInfo_t746  ___x, UILineInfo_t746  ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.IAsyncResult System.Comparison`1<UnityEngine.UILineInfo>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
- Object_t * Comparison_1_BeginInvoke_m23756 (Comparison_1_t4410 * __this, UILineInfo_t746  ___x, UILineInfo_t746  ___y, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Comparison`1<UnityEngine.UILineInfo>::EndInvoke(System.IAsyncResult)
- int32_t Comparison_1_EndInvoke_m23757 (Comparison_1_t4410 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Comparison`1<UnityEngine.UI.IClipper>::.ctor(System.Object,System.IntPtr)
+#define Comparison_1__ctor_m18217(__this, ___object, ___method, method) (( void (*) (Comparison_1_t2546 *, Object_t *, IntPtr_t, const MethodInfo*))Comparison_1__ctor_m12676_gshared)(__this, ___object, ___method, method)
+// System.Int32 System.Comparison`1<UnityEngine.UI.IClipper>::Invoke(T,T)
+#define Comparison_1_Invoke_m18218(__this, ___x, ___y, method) (( int32_t (*) (Comparison_1_t2546 *, Object_t *, Object_t *, const MethodInfo*))Comparison_1_Invoke_m12677_gshared)(__this, ___x, ___y, method)
+// System.IAsyncResult System.Comparison`1<UnityEngine.UI.IClipper>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
+#define Comparison_1_BeginInvoke_m18219(__this, ___x, ___y, ___callback, ___object, method) (( Object_t * (*) (Comparison_1_t2546 *, Object_t *, Object_t *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Comparison_1_BeginInvoke_m12678_gshared)(__this, ___x, ___y, ___callback, ___object, method)
+// System.Int32 System.Comparison`1<UnityEngine.UI.IClipper>::EndInvoke(System.IAsyncResult)
+#define Comparison_1_EndInvoke_m18220(__this, ___result, method) (( int32_t (*) (Comparison_1_t2546 *, Object_t *, const MethodInfo*))Comparison_1_EndInvoke_m12679_gshared)(__this, ___result, method)

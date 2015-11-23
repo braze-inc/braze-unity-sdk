@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.Decoder
+
+
 #include "mscorlib_System_Text_Decoder.h"
+
 // System.Text.UTF8Encoding/UTF8Decoder
-struct UTF8Decoder_t2208  : public Decoder_t1910
+struct  UTF8Decoder_t1941  : public Decoder_t1551
 {
 	// System.UInt32 System.Text.UTF8Encoding/UTF8Decoder::leftOverBits
 	uint32_t ___leftOverBits_2;

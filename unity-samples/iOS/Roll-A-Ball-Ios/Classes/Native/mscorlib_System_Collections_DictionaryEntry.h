@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object
 struct Object_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Collections.DictionaryEntry
-struct DictionaryEntry_t1564 
+struct  DictionaryEntry_t1193 
 {
 	// System.Object System.Collections.DictionaryEntry::_key
 	Object_t * ____key_0;

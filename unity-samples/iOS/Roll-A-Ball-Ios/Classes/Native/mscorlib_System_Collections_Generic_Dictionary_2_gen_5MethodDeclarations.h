@@ -1,129 +1,110 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>
-struct Dictionary_2_t524;
-// System.Object
-struct Object_t;
-// UnityEngine.EventSystems.PointerEventData
-struct PointerEventData_t461;
-// System.Collections.Generic.Dictionary`2/KeyCollection<System.Int32,UnityEngine.EventSystems.PointerEventData>
-struct KeyCollection_t3647;
-// System.Collections.Generic.Dictionary`2/ValueCollection<System.Int32,UnityEngine.EventSystems.PointerEventData>
-struct ValueCollection_t704;
-// System.Collections.Generic.IEqualityComparer`1<System.Int32>
-struct IEqualityComparer_1_t3645;
-// System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>[]
-struct KeyValuePair_2U5BU5D_t3648;
-// System.Array
-struct Array_t;
-// System.Collections.IEnumerator
-struct IEnumerator_t21;
-// System.Collections.Generic.IEnumerator`1<System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>>
-struct IEnumerator_1_t3649;
-// System.Collections.IDictionaryEnumerator
-struct IDictionaryEnumerator_t1561;
-// System.Runtime.Serialization.StreamingContext
-#include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
-// System.Collections.Generic.KeyValuePair`2<System.Int32,UnityEngine.EventSystems.PointerEventData>
-#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_4.h"
-// System.Collections.Generic.Dictionary`2/Enumerator<System.Int32,UnityEngine.EventSystems.PointerEventData>
-#include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__3.h"
-// System.Collections.DictionaryEntry
-#include "mscorlib_System_Collections_DictionaryEntry.h"
+
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_Dictionary_2_gen_13MethodDeclarations.h"
 
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::.ctor()
- void Dictionary_2__ctor_m3294 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2__ctor_m3202(__this, method) (( void (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2__ctor_m5128_gshared)(__this, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::.ctor(System.Collections.Generic.IEqualityComparer`1<TKey>)
- void Dictionary_2__ctor_m18656 (Dictionary_2_t524 * __this, Object_t* ___comparer, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2__ctor_m15964(__this, ___comparer, method) (( void (*) (Dictionary_2_t473 *, Object_t*, const MethodInfo*))Dictionary_2__ctor_m15965_gshared)(__this, ___comparer, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::.ctor(System.Int32)
- void Dictionary_2__ctor_m18657 (Dictionary_2_t524 * __this, int32_t ___capacity, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2__ctor_m15966(__this, ___capacity, method) (( void (*) (Dictionary_2_t473 *, int32_t, const MethodInfo*))Dictionary_2__ctor_m15967_gshared)(__this, ___capacity, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void Dictionary_2__ctor_m18658 (Dictionary_2_t524 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2__ctor_m15968(__this, ___info, ___context, method) (( void (*) (Dictionary_2_t473 *, SerializationInfo_t962 *, StreamingContext_t963 , const MethodInfo*))Dictionary_2__ctor_m15969_gshared)(__this, ___info, ___context, method)
 // System.Object System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IDictionary.get_Item(System.Object)
- Object_t * Dictionary_2_System_Collections_IDictionary_get_Item_m18659 (Dictionary_2_t524 * __this, Object_t * ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_IDictionary_get_Item_m15970(__this, ___key, method) (( Object_t * (*) (Dictionary_2_t473 *, Object_t *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_get_Item_m15971_gshared)(__this, ___key, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IDictionary.set_Item(System.Object,System.Object)
- void Dictionary_2_System_Collections_IDictionary_set_Item_m18660 (Dictionary_2_t524 * __this, Object_t * ___key, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_IDictionary_set_Item_m15972(__this, ___key, ___value, method) (( void (*) (Dictionary_2_t473 *, Object_t *, Object_t *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_set_Item_m15973_gshared)(__this, ___key, ___value, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IDictionary.Add(System.Object,System.Object)
- void Dictionary_2_System_Collections_IDictionary_Add_m18661 (Dictionary_2_t524 * __this, Object_t * ___key, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_IDictionary_Add_m15974(__this, ___key, ___value, method) (( void (*) (Dictionary_2_t473 *, Object_t *, Object_t *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_Add_m15975_gshared)(__this, ___key, ___value, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IDictionary.Contains(System.Object)
+#define Dictionary_2_System_Collections_IDictionary_Contains_m15976(__this, ___key, method) (( bool (*) (Dictionary_2_t473 *, Object_t *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_Contains_m15977_gshared)(__this, ___key, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IDictionary.Remove(System.Object)
- void Dictionary_2_System_Collections_IDictionary_Remove_m18662 (Dictionary_2_t524 * __this, Object_t * ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_IDictionary_Remove_m15978(__this, ___key, method) (( void (*) (Dictionary_2_t473 *, Object_t *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_Remove_m15979_gshared)(__this, ___key, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.ICollection.get_IsSynchronized()
- bool Dictionary_2_System_Collections_ICollection_get_IsSynchronized_m18663 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_ICollection_get_IsSynchronized_m15980(__this, method) (( bool (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_System_Collections_ICollection_get_IsSynchronized_m15981_gshared)(__this, method)
 // System.Object System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.ICollection.get_SyncRoot()
- Object_t * Dictionary_2_System_Collections_ICollection_get_SyncRoot_m18664 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_ICollection_get_SyncRoot_m15982(__this, method) (( Object_t * (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_System_Collections_ICollection_get_SyncRoot_m15983_gshared)(__this, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.get_IsReadOnly()
- bool Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_get_IsReadOnly_m18665 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_get_IsReadOnly_m15984(__this, method) (( bool (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_get_IsReadOnly_m15985_gshared)(__this, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
- void Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Add_m18666 (Dictionary_2_t524 * __this, KeyValuePair_2_t703  ___keyValuePair, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Add_m15986(__this, ___keyValuePair, method) (( void (*) (Dictionary_2_t473 *, KeyValuePair_2_t678 , const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Add_m15987_gshared)(__this, ___keyValuePair, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
- bool Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Contains_m18667 (Dictionary_2_t524 * __this, KeyValuePair_2_t703  ___keyValuePair, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Contains_m15988(__this, ___keyValuePair, method) (( bool (*) (Dictionary_2_t473 *, KeyValuePair_2_t678 , const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Contains_m15989_gshared)(__this, ___keyValuePair, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(System.Collections.Generic.KeyValuePair`2<TKey,TValue>[],System.Int32)
- void Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_CopyTo_m18668 (Dictionary_2_t524 * __this, KeyValuePair_2U5BU5D_t3648* ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_CopyTo_m15990(__this, ___array, ___index, method) (( void (*) (Dictionary_2_t473 *, KeyValuePair_2U5BU5D_t2922*, int32_t, const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_CopyTo_m15991_gshared)(__this, ___array, ___index, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
- bool Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Remove_m18669 (Dictionary_2_t524 * __this, KeyValuePair_2_t703  ___keyValuePair, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Remove_m15992(__this, ___keyValuePair, method) (( bool (*) (Dictionary_2_t473 *, KeyValuePair_2_t678 , const MethodInfo*))Dictionary_2_System_Collections_Generic_ICollectionU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_Remove_m15993_gshared)(__this, ___keyValuePair, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
- void Dictionary_2_System_Collections_ICollection_CopyTo_m18670 (Dictionary_2_t524 * __this, Array_t * ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_ICollection_CopyTo_m15994(__this, ___array, ___index, method) (( void (*) (Dictionary_2_t473 *, Array_t *, int32_t, const MethodInfo*))Dictionary_2_System_Collections_ICollection_CopyTo_m15995_gshared)(__this, ___array, ___index, method)
 // System.Collections.IEnumerator System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IEnumerable.GetEnumerator()
- Object_t * Dictionary_2_System_Collections_IEnumerable_GetEnumerator_m18671 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_IEnumerable_GetEnumerator_m15996(__this, method) (( Object_t * (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_System_Collections_IEnumerable_GetEnumerator_m15997_gshared)(__this, method)
 // System.Collections.Generic.IEnumerator`1<System.Collections.Generic.KeyValuePair`2<TKey,TValue>> System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>.GetEnumerator()
- Object_t* Dictionary_2_System_Collections_Generic_IEnumerableU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_GetEnumerator_m18672 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_Generic_IEnumerableU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_GetEnumerator_m15998(__this, method) (( Object_t* (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_System_Collections_Generic_IEnumerableU3CSystem_Collections_Generic_KeyValuePairU3CTKeyU2CTValueU3EU3E_GetEnumerator_m15999_gshared)(__this, method)
 // System.Collections.IDictionaryEnumerator System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::System.Collections.IDictionary.GetEnumerator()
- Object_t * Dictionary_2_System_Collections_IDictionary_GetEnumerator_m18673 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_System_Collections_IDictionary_GetEnumerator_m16000(__this, method) (( Object_t * (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_System_Collections_IDictionary_GetEnumerator_m16001_gshared)(__this, method)
 // System.Int32 System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::get_Count()
- int32_t Dictionary_2_get_Count_m18674 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_get_Count_m16002(__this, method) (( int32_t (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_get_Count_m16003_gshared)(__this, method)
 // TValue System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::get_Item(TKey)
- PointerEventData_t461 * Dictionary_2_get_Item_m18675 (Dictionary_2_t524 * __this, int32_t ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_get_Item_m16004(__this, ___key, method) (( PointerEventData_t465 * (*) (Dictionary_2_t473 *, int32_t, const MethodInfo*))Dictionary_2_get_Item_m16005_gshared)(__this, ___key, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::set_Item(TKey,TValue)
- void Dictionary_2_set_Item_m18676 (Dictionary_2_t524 * __this, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_set_Item_m16006(__this, ___key, ___value, method) (( void (*) (Dictionary_2_t473 *, int32_t, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_set_Item_m16007_gshared)(__this, ___key, ___value, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::Init(System.Int32,System.Collections.Generic.IEqualityComparer`1<TKey>)
- void Dictionary_2_Init_m18677 (Dictionary_2_t524 * __this, int32_t ___capacity, Object_t* ___hcp, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_Init_m16008(__this, ___capacity, ___hcp, method) (( void (*) (Dictionary_2_t473 *, int32_t, Object_t*, const MethodInfo*))Dictionary_2_Init_m16009_gshared)(__this, ___capacity, ___hcp, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::InitArrays(System.Int32)
- void Dictionary_2_InitArrays_m18678 (Dictionary_2_t524 * __this, int32_t ___size, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_InitArrays_m16010(__this, ___size, method) (( void (*) (Dictionary_2_t473 *, int32_t, const MethodInfo*))Dictionary_2_InitArrays_m16011_gshared)(__this, ___size, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::CopyToCheck(System.Array,System.Int32)
- void Dictionary_2_CopyToCheck_m18679 (Dictionary_2_t524 * __this, Array_t * ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_CopyToCheck_m16012(__this, ___array, ___index, method) (( void (*) (Dictionary_2_t473 *, Array_t *, int32_t, const MethodInfo*))Dictionary_2_CopyToCheck_m16013_gshared)(__this, ___array, ___index, method)
 // System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::make_pair(TKey,TValue)
- KeyValuePair_2_t703  Dictionary_2_make_pair_m18680 (Object_t * __this/* static, unused */, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_make_pair_m16014(__this /* static, unused */, ___key, ___value, method) (( KeyValuePair_2_t678  (*) (Object_t * /* static, unused */, int32_t, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_make_pair_m16015_gshared)(__this /* static, unused */, ___key, ___value, method)
 // TKey System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::pick_key(TKey,TValue)
- int32_t Dictionary_2_pick_key_m18681 (Object_t * __this/* static, unused */, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_pick_key_m16016(__this /* static, unused */, ___key, ___value, method) (( int32_t (*) (Object_t * /* static, unused */, int32_t, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_pick_key_m16017_gshared)(__this /* static, unused */, ___key, ___value, method)
 // TValue System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::pick_value(TKey,TValue)
- PointerEventData_t461 * Dictionary_2_pick_value_m18682 (Object_t * __this/* static, unused */, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_pick_value_m16018(__this /* static, unused */, ___key, ___value, method) (( PointerEventData_t465 * (*) (Object_t * /* static, unused */, int32_t, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_pick_value_m16019_gshared)(__this /* static, unused */, ___key, ___value, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::CopyTo(System.Collections.Generic.KeyValuePair`2<TKey,TValue>[],System.Int32)
- void Dictionary_2_CopyTo_m18683 (Dictionary_2_t524 * __this, KeyValuePair_2U5BU5D_t3648* ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_CopyTo_m16020(__this, ___array, ___index, method) (( void (*) (Dictionary_2_t473 *, KeyValuePair_2U5BU5D_t2922*, int32_t, const MethodInfo*))Dictionary_2_CopyTo_m16021_gshared)(__this, ___array, ___index, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::Resize()
- void Dictionary_2_Resize_m18684 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_Resize_m16022(__this, method) (( void (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_Resize_m16023_gshared)(__this, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::Add(TKey,TValue)
- void Dictionary_2_Add_m3296 (Dictionary_2_t524 * __this, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_Add_m16024(__this, ___key, ___value, method) (( void (*) (Dictionary_2_t473 *, int32_t, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_Add_m16025_gshared)(__this, ___key, ___value, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::Clear()
- void Dictionary_2_Clear_m3309 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_Clear_m16026(__this, method) (( void (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_Clear_m16027_gshared)(__this, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::ContainsKey(TKey)
- bool Dictionary_2_ContainsKey_m18685 (Dictionary_2_t524 * __this, int32_t ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_ContainsKey_m16028(__this, ___key, method) (( bool (*) (Dictionary_2_t473 *, int32_t, const MethodInfo*))Dictionary_2_ContainsKey_m16029_gshared)(__this, ___key, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::ContainsValue(TValue)
- bool Dictionary_2_ContainsValue_m18686 (Dictionary_2_t524 * __this, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_ContainsValue_m16030(__this, ___value, method) (( bool (*) (Dictionary_2_t473 *, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_ContainsValue_m16031_gshared)(__this, ___value, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void Dictionary_2_GetObjectData_m18687 (Dictionary_2_t524 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_GetObjectData_m16032(__this, ___info, ___context, method) (( void (*) (Dictionary_2_t473 *, SerializationInfo_t962 *, StreamingContext_t963 , const MethodInfo*))Dictionary_2_GetObjectData_m16033_gshared)(__this, ___info, ___context, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::OnDeserialization(System.Object)
- void Dictionary_2_OnDeserialization_m18688 (Dictionary_2_t524 * __this, Object_t * ___sender, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_OnDeserialization_m16034(__this, ___sender, method) (( void (*) (Dictionary_2_t473 *, Object_t *, const MethodInfo*))Dictionary_2_OnDeserialization_m16035_gshared)(__this, ___sender, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::Remove(TKey)
- bool Dictionary_2_Remove_m3297 (Dictionary_2_t524 * __this, int32_t ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_Remove_m16036(__this, ___key, method) (( bool (*) (Dictionary_2_t473 *, int32_t, const MethodInfo*))Dictionary_2_Remove_m16037_gshared)(__this, ___key, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::TryGetValue(TKey,TValue&)
- bool Dictionary_2_TryGetValue_m3295 (Dictionary_2_t524 * __this, int32_t ___key, PointerEventData_t461 ** ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_TryGetValue_m16038(__this, ___key, ___value, method) (( bool (*) (Dictionary_2_t473 *, int32_t, PointerEventData_t465 **, const MethodInfo*))Dictionary_2_TryGetValue_m16039_gshared)(__this, ___key, ___value, method)
 // System.Collections.Generic.Dictionary`2/KeyCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::get_Keys()
- KeyCollection_t3647 * Dictionary_2_get_Keys_m18689 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_get_Keys_m16040(__this, method) (( KeyCollection_t2409 * (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_get_Keys_m16041_gshared)(__this, method)
 // System.Collections.Generic.Dictionary`2/ValueCollection<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::get_Values()
- ValueCollection_t704 * Dictionary_2_get_Values_m3305 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_get_Values_m3210(__this, method) (( ValueCollection_t677 * (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_get_Values_m16042_gshared)(__this, method)
 // TKey System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::ToTKey(System.Object)
- int32_t Dictionary_2_ToTKey_m18690 (Dictionary_2_t524 * __this, Object_t * ___key, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_ToTKey_m16043(__this, ___key, method) (( int32_t (*) (Dictionary_2_t473 *, Object_t *, const MethodInfo*))Dictionary_2_ToTKey_m16044_gshared)(__this, ___key, method)
 // TValue System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::ToTValue(System.Object)
- PointerEventData_t461 * Dictionary_2_ToTValue_m18691 (Dictionary_2_t524 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_ToTValue_m16045(__this, ___value, method) (( PointerEventData_t465 * (*) (Dictionary_2_t473 *, Object_t *, const MethodInfo*))Dictionary_2_ToTValue_m16046_gshared)(__this, ___value, method)
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::ContainsKeyValuePair(System.Collections.Generic.KeyValuePair`2<TKey,TValue>)
- bool Dictionary_2_ContainsKeyValuePair_m18692 (Dictionary_2_t524 * __this, KeyValuePair_2_t703  ___pair, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_ContainsKeyValuePair_m16047(__this, ___pair, method) (( bool (*) (Dictionary_2_t473 *, KeyValuePair_2_t678 , const MethodInfo*))Dictionary_2_ContainsKeyValuePair_m16048_gshared)(__this, ___pair, method)
 // System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::GetEnumerator()
- Enumerator_t702  Dictionary_2_GetEnumerator_m3311 (Dictionary_2_t524 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_GetEnumerator_m3215(__this, method) (( Enumerator_t679  (*) (Dictionary_2_t473 *, const MethodInfo*))Dictionary_2_GetEnumerator_m16049_gshared)(__this, method)
 // System.Collections.DictionaryEntry System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>::<CopyTo>m__0(TKey,TValue)
- DictionaryEntry_t1564  Dictionary_2_U3CCopyToU3Em__0_m18693 (Object_t * __this/* static, unused */, int32_t ___key, PointerEventData_t461 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#define Dictionary_2_U3CCopyToU3Em__0_m16050(__this /* static, unused */, ___key, ___value, method) (( DictionaryEntry_t1193  (*) (Object_t * /* static, unused */, int32_t, PointerEventData_t465 *, const MethodInfo*))Dictionary_2_U3CCopyToU3Em__0_m16051_gshared)(__this /* static, unused */, ___key, ___value, method)

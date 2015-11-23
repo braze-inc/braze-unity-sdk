@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.SocialPlatforms.GameCenter.GcScoreData
-struct GcScoreData_t815 
+struct  GcScoreData_t892 
 {
 	// System.String UnityEngine.SocialPlatforms.GameCenter.GcScoreData::m_Category
 	String_t* ___m_Category_0;
@@ -23,7 +34,7 @@ struct GcScoreData_t815
 	int32_t ___m_Rank_6;
 };
 // Native definition for marshalling of: UnityEngine.SocialPlatforms.GameCenter.GcScoreData
-struct GcScoreData_t815_marshaled
+struct GcScoreData_t892_marshaled
 {
 	char* ___m_Category_0;
 	int32_t ___m_ValueLow_1;

@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// System.Collections.SortedList/EnumeratorMode
 #include "mscorlib_System_Collections_SortedList_EnumeratorMode.h"
+
 // System.Collections.SortedList/EnumeratorMode
-struct EnumeratorMode_t1885 
+struct  EnumeratorMode_t1522 
 {
 	// System.Int32 System.Collections.SortedList/EnumeratorMode::value__
 	int32_t ___value___1;

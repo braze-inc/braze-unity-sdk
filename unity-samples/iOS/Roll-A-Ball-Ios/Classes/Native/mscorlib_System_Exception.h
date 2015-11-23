@@ -1,22 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.IntPtr[]
-struct IntPtrU5BU5D_t884;
+struct IntPtrU5BU5D_t956;
 // System.Exception
-struct Exception_t71;
+struct Exception_t74;
 // System.String
 struct String_t;
 // System.Collections.IDictionary
-struct IDictionary_t1560;
-// System.Object
+struct IDictionary_t1127;
+
 #include "mscorlib_System_Object.h"
+
 // System.Exception
-struct Exception_t71  : public Object_t
+struct  Exception_t74  : public Object_t
 {
 	// System.IntPtr[] System.Exception::trace_ips
-	IntPtrU5BU5D_t884* ___trace_ips_0;
+	IntPtrU5BU5D_t956* ___trace_ips_0;
 	// System.Exception System.Exception::inner_exception
-	Exception_t71 * ___inner_exception_1;
+	Exception_t74 * ___inner_exception_1;
 	// System.String System.Exception::message
 	String_t* ___message_2;
 	// System.String System.Exception::help_link

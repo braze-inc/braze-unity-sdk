@@ -1,20 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct List_1_t522;
-// UnityEngine.EventSystems.PointerInputModule/ButtonState
-struct ButtonState_t521;
-// System.ValueType
+
+// System.Collections.Generic.List`1<UnityEngine.GameObject>
+struct List_1_t466;
+// UnityEngine.GameObject
+struct GameObject_t141;
+
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct Enumerator_t3668 
+
+// System.Collections.Generic.List`1/Enumerator<UnityEngine.GameObject>
+struct  Enumerator_t2392 
 {
-	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::l
-	List_1_t522 * ___l_0;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::next
+	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.GameObject>::l
+	List_1_t466 * ___l_0;
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.GameObject>::next
 	int32_t ___next_1;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::ver
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.GameObject>::ver
 	int32_t ___ver_2;
-	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>::current
-	ButtonState_t521 * ___current_3;
+	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.GameObject>::current
+	GameObject_t141 * ___current_3;
 };

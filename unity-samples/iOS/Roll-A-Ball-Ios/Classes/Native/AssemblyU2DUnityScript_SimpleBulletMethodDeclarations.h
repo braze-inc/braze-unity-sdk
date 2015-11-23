@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // SimpleBullet
-struct SimpleBullet_t440;
+struct SimpleBullet_t408;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void SimpleBullet::.ctor()
- void SimpleBullet__ctor_m1761 (SimpleBullet_t440 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SimpleBullet__ctor_m1531 (SimpleBullet_t408 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SimpleBullet::OnEnable()
- void SimpleBullet_OnEnable_m1762 (SimpleBullet_t440 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SimpleBullet_OnEnable_m1532 (SimpleBullet_t408 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SimpleBullet::Update()
- void SimpleBullet_Update_m1763 (SimpleBullet_t440 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SimpleBullet_Update_m1533 (SimpleBullet_t408 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SimpleBullet::Main()
- void SimpleBullet_Main_m1764 (SimpleBullet_t440 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SimpleBullet_Main_m1534 (SimpleBullet_t408 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

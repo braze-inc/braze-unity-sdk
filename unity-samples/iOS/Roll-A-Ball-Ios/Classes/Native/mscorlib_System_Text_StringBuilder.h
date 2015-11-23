@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Text.StringBuilder
-struct StringBuilder_t80  : public Object_t
+struct  StringBuilder_t82  : public Object_t
 {
 	// System.Int32 System.Text.StringBuilder::_length
 	int32_t ____length_1;

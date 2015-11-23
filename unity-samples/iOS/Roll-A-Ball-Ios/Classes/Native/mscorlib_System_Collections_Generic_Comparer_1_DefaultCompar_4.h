@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.Comparer`1<System.Reflection.MemberInfo>
-#include "mscorlib_System_Collections_Generic_Comparer_1_gen_3.h"
-// System.Collections.Generic.Comparer`1/DefaultComparer<System.Reflection.MemberInfo>
-struct DefaultComparer_t3103  : public Comparer_1_t3102
+
+
+#include "mscorlib_System_Collections_Generic_Comparer_1_gen_4.h"
+
+// System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Color32>
+struct  DefaultComparer_t2588  : public Comparer_1_t2587
 {
 };

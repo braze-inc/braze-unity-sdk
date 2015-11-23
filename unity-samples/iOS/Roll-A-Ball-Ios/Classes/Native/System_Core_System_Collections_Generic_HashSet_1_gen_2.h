@@ -1,38 +1,49 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Int32[]
-struct Int32U5BU5D_t1185;
+struct Int32U5BU5D_t735;
 // System.Collections.Generic.HashSet`1/Link<System.Object>[]
-struct LinkU5BU5D_t3196;
+struct LinkU5BU5D_t2281;
 // System.Object[]
-struct ObjectU5BU5D_t112;
+struct ObjectU5BU5D_t87;
 // System.Collections.Generic.IEqualityComparer`1<System.Object>
-struct IEqualityComparer_1_t2831;
+struct IEqualityComparer_1_t2165;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Object
+struct SerializationInfo_t962;
+
 #include "mscorlib_System_Object.h"
+
 // System.Collections.Generic.HashSet`1<System.Object>
-struct HashSet_1_t3195  : public Object_t
+struct  HashSet_1_t2280  : public Object_t
 {
 	// System.Int32[] System.Collections.Generic.HashSet`1<System.Object>::table
-	Int32U5BU5D_t1185* ___table_0;
+	Int32U5BU5D_t735* ___table_4;
 	// System.Collections.Generic.HashSet`1/Link<T>[] System.Collections.Generic.HashSet`1<System.Object>::links
-	LinkU5BU5D_t3196* ___links_1;
+	LinkU5BU5D_t2281* ___links_5;
 	// T[] System.Collections.Generic.HashSet`1<System.Object>::slots
-	ObjectU5BU5D_t112* ___slots_2;
+	ObjectU5BU5D_t87* ___slots_6;
 	// System.Int32 System.Collections.Generic.HashSet`1<System.Object>::touched
-	int32_t ___touched_3;
+	int32_t ___touched_7;
 	// System.Int32 System.Collections.Generic.HashSet`1<System.Object>::empty_slot
-	int32_t ___empty_slot_4;
+	int32_t ___empty_slot_8;
 	// System.Int32 System.Collections.Generic.HashSet`1<System.Object>::count
-	int32_t ___count_5;
+	int32_t ___count_9;
 	// System.Int32 System.Collections.Generic.HashSet`1<System.Object>::threshold
-	int32_t ___threshold_6;
+	int32_t ___threshold_10;
 	// System.Collections.Generic.IEqualityComparer`1<T> System.Collections.Generic.HashSet`1<System.Object>::comparer
-	Object_t* ___comparer_7;
+	Object_t* ___comparer_11;
 	// System.Runtime.Serialization.SerializationInfo System.Collections.Generic.HashSet`1<System.Object>::si
-	SerializationInfo_t960 * ___si_8;
+	SerializationInfo_t962 * ___si_12;
 	// System.Int32 System.Collections.Generic.HashSet`1<System.Object>::generation
-	int32_t ___generation_9;
+	int32_t ___generation_13;
 };

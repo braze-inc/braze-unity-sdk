@@ -1,35 +1,50 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Globalization.TextInfo
-struct TextInfo_t1794;
-// System.String
-struct String_t;
+struct TextInfo_t1452;
 // System.Globalization.CultureInfo
-struct CultureInfo_t1065;
+struct CultureInfo_t980;
 // System.Object
 struct Object_t;
-// System.Void
+// System.String
+struct String_t;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Void.h"
 
 // System.Void System.Globalization.TextInfo::.ctor(System.Globalization.CultureInfo,System.Int32,System.Void*,System.Boolean)
- void TextInfo__ctor_m9363 (TextInfo_t1794 * __this, CultureInfo_t1065 * ___ci, int32_t ___lcid, void* ___data, bool ___read_only, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TextInfo__ctor_m9153 (TextInfo_t1452 * __this, CultureInfo_t980 * ___ci, int32_t ___lcid, void* ___data, bool ___read_only, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Globalization.TextInfo::.ctor(System.Globalization.TextInfo)
+extern "C" void TextInfo__ctor_m9154 (TextInfo_t1452 * __this, TextInfo_t1452 * ___textInfo, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Globalization.TextInfo::System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(System.Object)
- void TextInfo_System_Runtime_Serialization_IDeserializationCallback_OnDeserialization_m9364 (TextInfo_t1794 * __this, Object_t * ___sender, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TextInfo_System_Runtime_Serialization_IDeserializationCallback_OnDeserialization_m9155 (TextInfo_t1452 * __this, Object_t * ___sender, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Globalization.TextInfo::get_ListSeparator()
+extern "C" String_t* TextInfo_get_ListSeparator_m9156 (TextInfo_t1452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Globalization.TextInfo::get_CultureName()
- String_t* TextInfo_get_CultureName_m9365 (TextInfo_t1794 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* TextInfo_get_CultureName_m9157 (TextInfo_t1452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Globalization.TextInfo::Equals(System.Object)
- bool TextInfo_Equals_m9366 (TextInfo_t1794 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool TextInfo_Equals_m9158 (TextInfo_t1452 * __this, Object_t * ___obj, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Globalization.TextInfo::GetHashCode()
- int32_t TextInfo_GetHashCode_m9367 (TextInfo_t1794 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t TextInfo_GetHashCode_m9159 (TextInfo_t1452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Globalization.TextInfo::ToString()
- String_t* TextInfo_ToString_m9368 (TextInfo_t1794 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* TextInfo_ToString_m9160 (TextInfo_t1452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Char System.Globalization.TextInfo::ToLower(System.Char)
- uint16_t TextInfo_ToLower_m9369 (TextInfo_t1794 * __this, uint16_t ___c, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" uint16_t TextInfo_ToLower_m9161 (TextInfo_t1452 * __this, uint16_t ___c, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Char System.Globalization.TextInfo::ToUpper(System.Char)
- uint16_t TextInfo_ToUpper_m9370 (TextInfo_t1794 * __this, uint16_t ___c, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" uint16_t TextInfo_ToUpper_m9162 (TextInfo_t1452 * __this, uint16_t ___c, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Globalization.TextInfo::ToLower(System.String)
- String_t* TextInfo_ToLower_m9371 (TextInfo_t1794 * __this, String_t* ___str, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* TextInfo_ToLower_m9163 (TextInfo_t1452 * __this, String_t* ___str, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Globalization.TextInfo::Clone()
+extern "C" Object_t * TextInfo_Clone_m9164 (TextInfo_t1452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

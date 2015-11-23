@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Boundary
-struct Boundary_t427;
+struct Boundary_t394;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void Boundary::.ctor()
- void Boundary__ctor_m1714 (Boundary_t427 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Boundary__ctor_m1484 (Boundary_t394 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

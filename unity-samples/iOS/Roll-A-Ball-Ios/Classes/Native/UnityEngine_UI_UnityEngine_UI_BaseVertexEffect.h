@@ -1,12 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.Graphic
-struct Graphic_t565;
-// UnityEngine.EventSystems.UIBehaviour
-#include "UnityEngine_UI_UnityEngine_EventSystems_UIBehaviour.h"
+
+
+#include "mscorlib_System_Object.h"
+
 // UnityEngine.UI.BaseVertexEffect
-struct BaseVertexEffect_t678  : public UIBehaviour_t460
+struct  BaseVertexEffect_t637  : public Object_t
 {
-	// UnityEngine.UI.Graphic UnityEngine.UI.BaseVertexEffect::m_Graphic
-	Graphic_t565 * ___m_Graphic_2;
 };

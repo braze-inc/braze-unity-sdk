@@ -1,12 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.RegularExpressions.LinkStack
+
+
 #include "System_System_Text_RegularExpressions_LinkStack.h"
-// System.Text.RegularExpressions.PatternCompiler/PatternLinkStack/Link
 #include "System_System_Text_RegularExpressions_PatternCompiler_Patter.h"
+
 // System.Text.RegularExpressions.PatternCompiler/PatternLinkStack
-struct PatternLinkStack_t1656  : public LinkStack_t1657
+struct  PatternLinkStack_t1140  : public LinkStack_t1141
 {
 	// System.Text.RegularExpressions.PatternCompiler/PatternLinkStack/Link System.Text.RegularExpressions.PatternCompiler/PatternLinkStack::link
-	Link_t1655  ___link_1;
+	Link_t1139  ___link_1;
 };

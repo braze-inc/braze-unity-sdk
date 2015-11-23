@@ -1,12 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>
-#include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__4.h"
-// System.Collections.Generic.Dictionary`2/ShimEnumerator<System.Object,System.Object>
-struct ShimEnumerator_t2843  : public Object_t
+#include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__6.h"
+
+// System.Collections.Generic.Dictionary`2/ShimEnumerator<System.Object,System.Int32>
+struct  ShimEnumerator_t2217  : public Object_t
 {
-	// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2/ShimEnumerator<System.Object,System.Object>::host_enumerator
-	Enumerator_t2836  ___host_enumerator_0;
+	// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2/ShimEnumerator<System.Object,System.Int32>::host_enumerator
+	Enumerator_t2211  ___host_enumerator_0;
 };

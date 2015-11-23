@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.Comparer`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>
-#include "mscorlib_System_Collections_Generic_Comparer_1_gen_9.h"
-// System.Collections.Generic.Comparer`1/DefaultComparer<UnityTest.IntegrationTestRunner.ITestRunnerCallback>
-struct DefaultComparer_t3333  : public Comparer_1_t3332
+
+
+#include "mscorlib_System_Collections_Generic_Comparer_1_gen_10.h"
+
+// System.Collections.Generic.Comparer`1/DefaultComparer<System.Reflection.CustomAttributeNamedArgument>
+struct  DefaultComparer_t2856  : public Comparer_1_t2855
 {
 };

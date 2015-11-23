@@ -1,57 +1,64 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.IntPtr
-struct IntPtr_t107;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
+struct SerializationInfo_t962;
 // System.Object
 struct Object_t;
 // System.String
 struct String_t;
-// System.Void
-#include "mscorlib_System_Void.h"
-// System.Runtime.Serialization.StreamingContext
-#include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
-// System.IntPtr
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
+#include "mscorlib_System_Void.h"
+#include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.IntPtr::.ctor(System.Int32)
- void IntPtr__ctor_m5032 (IntPtr_t107* __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void IntPtr__ctor_m5099 (IntPtr_t* __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IntPtr::.ctor(System.Int64)
- void IntPtr__ctor_m8215 (IntPtr_t107* __this, int64_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void IntPtr__ctor_m7790 (IntPtr_t* __this, int64_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IntPtr::.ctor(System.Void*)
- void IntPtr__ctor_m8216 (IntPtr_t107* __this, void* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void IntPtr__ctor_m7791 (IntPtr_t* __this, void* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IntPtr::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void IntPtr__ctor_m8217 (IntPtr_t107* __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void IntPtr__ctor_m7792 (IntPtr_t* __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IntPtr::System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void IntPtr_System_Runtime_Serialization_ISerializable_GetObjectData_m8218 (IntPtr_t107* __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void IntPtr_System_Runtime_Serialization_ISerializable_GetObjectData_m7793 (IntPtr_t* __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.IntPtr::get_Size()
- int32_t IntPtr_get_Size_m8219 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t IntPtr_get_Size_m7794 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.IntPtr::Equals(System.Object)
- bool IntPtr_Equals_m8220 (IntPtr_t107* __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool IntPtr_Equals_m7795 (IntPtr_t* __this, Object_t * ___obj, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.IntPtr::GetHashCode()
- int32_t IntPtr_GetHashCode_m8221 (IntPtr_t107* __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t IntPtr_GetHashCode_m7796 (IntPtr_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int64 System.IntPtr::ToInt64()
- int64_t IntPtr_ToInt64_m8222 (IntPtr_t107* __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int64_t IntPtr_ToInt64_m7797 (IntPtr_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void* System.IntPtr::ToPointer()
+extern "C" void* IntPtr_ToPointer_m5094 (IntPtr_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.IntPtr::ToString()
- String_t* IntPtr_ToString_m8223 (IntPtr_t107* __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* IntPtr_ToString_m7798 (IntPtr_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.IntPtr::ToString(System.String)
- String_t* IntPtr_ToString_m8224 (IntPtr_t107* __this, String_t* ___format, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* IntPtr_ToString_m7799 (IntPtr_t* __this, String_t* ___format, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.IntPtr::op_Equality(System.IntPtr,System.IntPtr)
- bool IntPtr_op_Equality_m5097 (Object_t * __this/* static, unused */, IntPtr_t107 ___value1, IntPtr_t107 ___value2, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool IntPtr_op_Equality_m5146 (Object_t * __this /* static, unused */, IntPtr_t ___value1, IntPtr_t ___value2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.IntPtr::op_Inequality(System.IntPtr,System.IntPtr)
- bool IntPtr_op_Inequality_m5033 (Object_t * __this/* static, unused */, IntPtr_t107 ___value1, IntPtr_t107 ___value2, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool IntPtr_op_Inequality_m5093 (Object_t * __this /* static, unused */, IntPtr_t ___value1, IntPtr_t ___value2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IntPtr System.IntPtr::op_Explicit(System.Int32)
- IntPtr_t107 IntPtr_op_Explicit_m8225 (Object_t * __this/* static, unused */, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" IntPtr_t IntPtr_op_Explicit_m7800 (Object_t * __this /* static, unused */, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IntPtr System.IntPtr::op_Explicit(System.Int64)
- IntPtr_t107 IntPtr_op_Explicit_m8226 (Object_t * __this/* static, unused */, int64_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" IntPtr_t IntPtr_op_Explicit_m7801 (Object_t * __this /* static, unused */, int64_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IntPtr System.IntPtr::op_Explicit(System.Void*)
- IntPtr_t107 IntPtr_op_Explicit_m8227 (Object_t * __this/* static, unused */, void* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" IntPtr_t IntPtr_op_Explicit_m7802 (Object_t * __this /* static, unused */, void* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.IntPtr::op_Explicit(System.IntPtr)
- int32_t IntPtr_op_Explicit_m5096 (Object_t * __this/* static, unused */, IntPtr_t107 ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t IntPtr_op_Explicit_m5145 (Object_t * __this /* static, unused */, IntPtr_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void* System.IntPtr::op_Explicit(System.IntPtr)
- void* IntPtr_op_Explicit_m8228 (Object_t * __this/* static, unused */, IntPtr_t107 ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void* IntPtr_op_Explicit_m7803 (Object_t * __this /* static, unused */, IntPtr_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

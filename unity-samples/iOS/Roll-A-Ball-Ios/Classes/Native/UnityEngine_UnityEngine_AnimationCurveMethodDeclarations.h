@@ -1,25 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AnimationCurve
-struct AnimationCurve_t909;
-struct AnimationCurve_t909_marshaled;
+struct AnimationCurve_t829;
+struct AnimationCurve_t829_marshaled;
 // UnityEngine.Keyframe[]
-struct KeyframeU5BU5D_t910;
+struct KeyframeU5BU5D_t957;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.AnimationCurve::.ctor(UnityEngine.Keyframe[])
- void AnimationCurve__ctor_m4664 (AnimationCurve_t909 * __this, KeyframeU5BU5D_t910* ___keys, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AnimationCurve__ctor_m4290 (AnimationCurve_t829 * __this, KeyframeU5BU5D_t957* ___keys, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AnimationCurve::.ctor()
- void AnimationCurve__ctor_m4665 (AnimationCurve_t909 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AnimationCurve__ctor_m4291 (AnimationCurve_t829 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AnimationCurve::Cleanup()
- void AnimationCurve_Cleanup_m4666 (AnimationCurve_t909 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AnimationCurve_Cleanup_m4292 (AnimationCurve_t829 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AnimationCurve::Finalize()
- void AnimationCurve_Finalize_m4667 (AnimationCurve_t909 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AnimationCurve_Finalize_m4293 (AnimationCurve_t829 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AnimationCurve::Init(UnityEngine.Keyframe[])
- void AnimationCurve_Init_m4668 (AnimationCurve_t909 * __this, KeyframeU5BU5D_t910* ___keys, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void AnimationCurve_t909_marshal(const AnimationCurve_t909& unmarshaled, AnimationCurve_t909_marshaled& marshaled);
-void AnimationCurve_t909_marshal_back(const AnimationCurve_t909_marshaled& marshaled, AnimationCurve_t909& unmarshaled);
-void AnimationCurve_t909_marshal_cleanup(AnimationCurve_t909_marshaled& marshaled);
+extern "C" void AnimationCurve_Init_m4294 (AnimationCurve_t829 * __this, KeyframeU5BU5D_t957* ___keys, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AnimationCurve_t829_marshal(const AnimationCurve_t829& unmarshaled, AnimationCurve_t829_marshaled& marshaled);
+extern "C" void AnimationCurve_t829_marshal_back(const AnimationCurve_t829_marshaled& marshaled, AnimationCurve_t829& unmarshaled);
+extern "C" void AnimationCurve_t829_marshal_cleanup(AnimationCurve_t829_marshaled& marshaled);

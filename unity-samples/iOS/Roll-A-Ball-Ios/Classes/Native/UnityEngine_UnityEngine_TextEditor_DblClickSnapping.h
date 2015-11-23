@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// UnityEngine.TextEditor/DblClickSnapping
 #include "UnityEngine_UnityEngine_TextEditor_DblClickSnapping.h"
+
 // UnityEngine.TextEditor/DblClickSnapping
-struct DblClickSnapping_t965 
+struct  DblClickSnapping_t927 
 {
 	// System.Byte UnityEngine.TextEditor/DblClickSnapping::value__
 	uint8_t ___value___1;

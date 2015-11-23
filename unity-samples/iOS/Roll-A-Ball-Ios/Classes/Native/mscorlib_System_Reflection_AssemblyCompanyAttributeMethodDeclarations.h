@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyCompanyAttribute
-struct AssemblyCompanyAttribute_t785;
+struct AssemblyCompanyAttribute_t1625;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Reflection.AssemblyCompanyAttribute::.ctor(System.String)
- void AssemblyCompanyAttribute__ctor_m3851 (AssemblyCompanyAttribute_t785 * __this, String_t* ___company, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyCompanyAttribute__ctor_m9799 (AssemblyCompanyAttribute_t1625 * __this, String_t* ___company, const MethodInfo* method) IL2CPP_METHOD_ATTR;

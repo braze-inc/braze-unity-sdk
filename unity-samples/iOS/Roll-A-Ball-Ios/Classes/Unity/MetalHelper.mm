@@ -133,8 +133,8 @@ extern "C" void DestroySharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface)
 
 extern "C" void CreateUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface)
 {
-	UnityRenderBufferDesc sys_desc = { surface->systemW, surface->systemH, 1, 1 };
-	UnityRenderBufferDesc tgt_desc	= { surface->targetW, surface->targetH, (unsigned int)surface->msaaSamples, 1 };
+	UnityRenderBufferDesc sys_desc = { surface->systemW, surface->systemH, 1, 1, 1 };
+	UnityRenderBufferDesc tgt_desc = { surface->targetW, surface->targetH, 1, (unsigned int)surface->msaaSamples, 1 };
 
 	// drawable (final color texture) we will be updating on every frame
 	// in case of rendering to native + AA, we will also update native target every frame
@@ -144,14 +144,14 @@ extern "C" void CreateUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface)
 	else if(surface->targetColorRT)
 		surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetColorRT, nil, &tgt_desc);
 	else
-		surface->unityColorBuffer = UnityCreateDummySurface(apiMetal, surface->unityColorBuffer, true, &sys_desc);
+		surface->unityColorBuffer = UnityCreateDummySurface(surface->unityColorBuffer, true, &sys_desc);
 
 	surface->unityDepthBuffer	= UnityCreateExternalDepthSurfaceMTL(surface->unityDepthBuffer, surface->depthRB, surface->stencilRB, &tgt_desc);
 
 	if(surface->targetColorRT)
 	{
-		surface->systemColorBuffer = UnityCreateDummySurface(apiMetal, surface->systemColorBuffer, true, &sys_desc);
-		surface->systemDepthBuffer = UnityCreateDummySurface(apiMetal, surface->systemDepthBuffer, false, &sys_desc);
+		surface->systemColorBuffer = UnityCreateDummySurface(surface->systemColorBuffer, true, &sys_desc);
+		surface->systemDepthBuffer = UnityCreateDummySurface(surface->systemDepthBuffer, false, &sys_desc);
 	}
 	else
 	{
@@ -168,35 +168,28 @@ extern "C" void DestroySystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface
 
 extern "C" void DestroyUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface)
 {
-	if(surface->unityColorBuffer)	UnityDestroyExternalSurface(surface->api, surface->unityColorBuffer);
-	if(surface->systemColorBuffer)	UnityDestroyExternalSurface(surface->api, surface->systemColorBuffer);
+	if(surface->unityColorBuffer)	UnityDestroyExternalSurface(surface->unityColorBuffer);
+	if(surface->systemColorBuffer)	UnityDestroyExternalSurface(surface->systemColorBuffer);
 	surface->unityColorBuffer = surface->systemColorBuffer = 0;
 
-	if(surface->unityDepthBuffer)	UnityDestroyExternalSurface(surface->api, surface->unityDepthBuffer);
-	if(surface->systemDepthBuffer)	UnityDestroyExternalSurface(surface->api, surface->systemDepthBuffer);
+	if(surface->unityDepthBuffer)	UnityDestroyExternalSurface(surface->unityDepthBuffer);
+	if(surface->systemDepthBuffer)	UnityDestroyExternalSurface(surface->systemDepthBuffer);
 	surface->unityDepthBuffer = surface->systemDepthBuffer = 0;
 }
-
-static int s_MetalFrameCounter = 0;
 
 
 extern "C" void PreparePresentMTL(UnityDisplaySurfaceMTL* surface)
 {
 	if(surface->allowScreenshot && UnityIsCaptureScreenshotRequested())
 	{
-		if(surface->unityColorBuffer && surface->unityDepthBuffer)
-			UnitySetFBOMetal(surface->unityColorBuffer, surface->unityDepthBuffer);
-		else
-			UnitySetFBOMetal(surface->systemColorBuffer, surface->systemDepthBuffer);
+		UnitySetRenderTarget(surface->unityColorBuffer, surface->unityDepthBuffer);
 		UnityCaptureScreenshot();
 	}
 
 	if(surface->targetColorRT)
 	{
 		assert(surface->systemColorBuffer != 0 && surface->systemDepthBuffer != 0);
-		UnitySetAsDefaultFBOMetal(surface->systemColorBuffer, surface->systemDepthBuffer);
-		UnitySetFBOMetal(surface->systemColorBuffer, surface->systemDepthBuffer);
-		UnityBlitToSystemFBOMetal(surface->targetColorRT, surface->targetW, surface->targetH, surface->systemW, surface->systemH);
+		UnityBlitToBackbuffer(surface->unityColorBuffer, surface->systemColorBuffer, surface->systemDepthBuffer);
 	}
 
 	APP_CONTROLLER_RENDER_PLUGIN_METHOD(onFrameResolved);
@@ -204,22 +197,27 @@ extern "C" void PreparePresentMTL(UnityDisplaySurfaceMTL* surface)
 extern "C" void PresentMTL(UnityDisplaySurfaceMTL* surface)
 {
 	if(surface->drawable)
-		[UnityGetCommandBufferMetal() presentDrawable:surface->drawable];
+		[UnityCurrentMTLCommandBuffer() presentDrawable:surface->drawable];
 }
 
-extern "C" void PrepareRenderingMTL(UnityDisplaySurfaceMTL* surface)
+extern "C" void StartFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
 {
 	// in case of skipping present we want to nullify prev drawable explicitly to poke ARC
 	surface->drawable		= nil;
 	surface->drawable		= [surface->layer nextDrawable];
+
+	// on A7 SoC nextDrawable may be nil before locking the screen
+	if (!surface->drawable)
+		return;
+
 	surface->systemColorRB	= [surface->drawable texture];
 
 	// screen disconnect notification comes asynchronously
 	// even better when preparing render we might still have [UIScreen screens].count == 2, but drawable would be nil already
 	if(surface->systemColorRB)
 	{
-		UnityRenderBufferDesc sys_desc = { surface->systemW, surface->systemH, 1, 1};
-		UnityRenderBufferDesc tgt_desc = { surface->targetW, surface->targetH, (unsigned int)surface->msaaSamples, 1};
+		UnityRenderBufferDesc sys_desc = { surface->systemW, surface->systemH, 1, 1, 1};
+		UnityRenderBufferDesc tgt_desc = { surface->targetW, surface->targetH, 1, (unsigned int)surface->msaaSamples, 1};
 
 		if(surface->targetColorRT)
 			surface->systemColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->systemColorBuffer, surface->systemColorRB, nil, &sys_desc);
@@ -227,54 +225,21 @@ extern "C" void PrepareRenderingMTL(UnityDisplaySurfaceMTL* surface)
 			surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetAAColorRT, surface->systemColorRB, &tgt_desc);
 		else
 			surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->systemColorRB, nil, &tgt_desc);
-
-		if(surface->unityColorBuffer && surface->unityDepthBuffer)
-			UnitySetAsDefaultFBOMetal(surface->unityColorBuffer, surface->unityDepthBuffer);
-		else
-			UnitySetAsDefaultFBOMetal(surface->systemColorBuffer, surface->systemDepthBuffer);
-
 	}
 	else
 	{
 		UnityDisableRenderBuffers(surface->unityColorBuffer, surface->unityDepthBuffer);
 	}
 }
-extern "C" void TeardownRenderingMTL(UnityDisplaySurfaceMTL* surface)
+extern "C" void EndFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
 {
 	surface->systemColorRB	= nil;
 	surface->drawable		= nil;
 }
 
-extern "C" void PrepareFrameRenderingMTL()
-{
-	const int frameNumber = OSAtomicAdd32Barrier(1, &s_MetalFrameCounter);
-
-	UnityDisplaySurfaceMTL* surf = (UnityDisplaySurfaceMTL*)GetMainDisplaySurface();
-	if(surf->unityColorBuffer && surf->unityDepthBuffer)
-		UnityStartMetalFrame(surf->unityColorBuffer, surf->unityDepthBuffer, frameNumber);
-	else
-		UnityStartMetalFrame(surf->systemColorBuffer, surf->systemDepthBuffer, frameNumber);
-}
-extern "C" void TeardownFrameRenderingMTL()
-{
-	id<MTLCommandBuffer> commandBuffer = UnityPrepareEndMetalFrame();
-	if(commandBuffer != nil)
-	{
-		int frameNumber = s_MetalFrameCounter;
-		[commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> buffer)
-		{
-			UnityFinishedMetalFrame(frameNumber);
-		}];
-		[commandBuffer commit];
-		commandBuffer = nil;
-	}
-}
-
 #else
 
 extern "C" void InitRenderingMTL()											{}
-extern "C" void PrepareFrameRenderingMTL()									{}
-extern "C" void TeardownFrameRenderingMTL()									{}
 
 extern "C" void CreateSystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL*)	{}
 extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL*)			{}
@@ -284,8 +249,8 @@ extern "C" void DestroySharedDepthbufferMTL(UnityDisplaySurfaceMTL*)		{}
 extern "C" void CreateUnityRenderBuffersMTL(UnityDisplaySurfaceMTL*)		{}
 extern "C" void DestroySystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL*)	{}
 extern "C" void DestroyUnityRenderBuffersMTL(UnityDisplaySurfaceMTL*)		{}
-extern "C" void PrepareRenderingMTL(UnityDisplaySurfaceMTL*)				{}
-extern "C" void TeardownRenderingMTL(UnityDisplaySurfaceMTL*)				{}
+extern "C" void StartFrameRenderingMTL(UnityDisplaySurfaceMTL*)				{}
+extern "C" void EndFrameRenderingMTL(UnityDisplaySurfaceMTL*)				{}
 extern "C" void PreparePresentMTL(UnityDisplaySurfaceMTL*)					{}
 extern "C" void PresentMTL(UnityDisplaySurfaceMTL*)							{}
 

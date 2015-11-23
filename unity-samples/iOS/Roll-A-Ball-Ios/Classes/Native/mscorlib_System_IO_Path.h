@@ -1,18 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Char[]
-struct CharU5BU5D_t276;
+struct CharU5BU5D_t270;
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.IO.Path
-struct Path_t327  : public Object_t
+struct  Path_t286  : public Object_t
 {
 };
-struct Path_t327_StaticFields{
+struct Path_t286_StaticFields{
 	// System.Char[] System.IO.Path::InvalidPathChars
-	CharU5BU5D_t276* ___InvalidPathChars_0;
+	CharU5BU5D_t270* ___InvalidPathChars_0;
 	// System.Char System.IO.Path::AltDirectorySeparatorChar
 	uint16_t ___AltDirectorySeparatorChar_1;
 	// System.Char System.IO.Path::DirectorySeparatorChar
@@ -24,7 +35,7 @@ struct Path_t327_StaticFields{
 	// System.Char System.IO.Path::VolumeSeparatorChar
 	uint16_t ___VolumeSeparatorChar_5;
 	// System.Char[] System.IO.Path::PathSeparatorChars
-	CharU5BU5D_t276* ___PathSeparatorChars_6;
+	CharU5BU5D_t270* ___PathSeparatorChars_6;
 	// System.Boolean System.IO.Path::dirEqualsVolume
 	bool ___dirEqualsVolume_7;
 };

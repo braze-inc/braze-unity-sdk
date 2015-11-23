@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // MechAnimation
-struct MechAnimation_t393;
+struct MechAnimation_t358;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void MechAnimation::.ctor()
- void MechAnimation__ctor_m1611 (MechAnimation_t393 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MechAnimation__ctor_m1381 (MechAnimation_t358 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MechAnimation::OnEnable()
- void MechAnimation_OnEnable_m1612 (MechAnimation_t393 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MechAnimation_OnEnable_m1382 (MechAnimation_t358 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MechAnimation::FixedUpdate()
- void MechAnimation_FixedUpdate_m1613 (MechAnimation_t393 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MechAnimation_FixedUpdate_m1383 (MechAnimation_t358 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MechAnimation::Main()
- void MechAnimation_Main_m1614 (MechAnimation_t393 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MechAnimation_Main_m1384 (MechAnimation_t358 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

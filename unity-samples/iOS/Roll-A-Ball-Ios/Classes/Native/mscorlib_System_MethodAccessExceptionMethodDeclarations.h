@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.MethodAccessException
-struct MethodAccessException_t2269;
+struct MethodAccessException_t2004;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.MethodAccessException::.ctor()
- void MethodAccessException__ctor_m11697 (MethodAccessException_t2269 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MethodAccessException__ctor_m12038 (MethodAccessException_t2004 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.MethodAccessException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void MethodAccessException__ctor_m11698 (MethodAccessException_t2269 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MethodAccessException__ctor_m12039 (MethodAccessException_t2004 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

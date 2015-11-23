@@ -1,97 +1,140 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>
-struct Collection_1_t2865;
-// System.Object
-struct Object_t;
-// Appboy.Utilities.JSONNode
-struct JSONNode_t19;
+// System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>
+struct Collection_1_t2563;
 // System.Array
 struct Array_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t21;
-// Appboy.Utilities.JSONNode[]
-struct JSONNodeU5BU5D_t2852;
-// System.Collections.Generic.IEnumerator`1<Appboy.Utilities.JSONNode>
-struct IEnumerator_1_t22;
-// System.Collections.Generic.IList`1<Appboy.Utilities.JSONNode>
-struct IList_1_t2864;
+struct IEnumerator_t66;
+// System.Object
+struct Object_t;
+// UnityEngine.Vector3[]
+struct Vector3U5BU5D_t540;
+// System.Collections.Generic.IEnumerator`1<UnityEngine.Vector3>
+struct IEnumerator_1_t2949;
+// System.Collections.Generic.IList`1<UnityEngine.Vector3>
+struct IList_1_t2562;
 
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::.ctor()
-// System.Collections.ObjectModel.Collection`1<System.Object>
-#include "mscorlib_System_Collections_ObjectModel_Collection_1_genMethodDeclarations.h"
-#define Collection_1__ctor_m13753(__this, method) (void)Collection_1__ctor_m12916_gshared((Collection_1_t2763 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
-#define Collection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m13754(__this, method) (bool)Collection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12917_gshared((Collection_1_t2763 *)__this, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-#define Collection_1_System_Collections_ICollection_CopyTo_m13755(__this, ___array, ___index, method) (void)Collection_1_System_Collections_ICollection_CopyTo_m12918_gshared((Collection_1_t2763 *)__this, (Array_t *)___array, (int32_t)___index, method)
-// System.Collections.IEnumerator System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IEnumerable.GetEnumerator()
-#define Collection_1_System_Collections_IEnumerable_GetEnumerator_m13756(__this, method) (Object_t *)Collection_1_System_Collections_IEnumerable_GetEnumerator_m12919_gshared((Collection_1_t2763 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.Add(System.Object)
-#define Collection_1_System_Collections_IList_Add_m13757(__this, ___value, method) (int32_t)Collection_1_System_Collections_IList_Add_m12920_gshared((Collection_1_t2763 *)__this, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.Contains(System.Object)
-#define Collection_1_System_Collections_IList_Contains_m13758(__this, ___value, method) (bool)Collection_1_System_Collections_IList_Contains_m12921_gshared((Collection_1_t2763 *)__this, (Object_t *)___value, method)
-// System.Int32 System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.IndexOf(System.Object)
-#define Collection_1_System_Collections_IList_IndexOf_m13759(__this, ___value, method) (int32_t)Collection_1_System_Collections_IList_IndexOf_m12922_gshared((Collection_1_t2763 *)__this, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.Insert(System.Int32,System.Object)
-#define Collection_1_System_Collections_IList_Insert_m13760(__this, ___index, ___value, method) (void)Collection_1_System_Collections_IList_Insert_m12923_gshared((Collection_1_t2763 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.Remove(System.Object)
-#define Collection_1_System_Collections_IList_Remove_m13761(__this, ___value, method) (void)Collection_1_System_Collections_IList_Remove_m12924_gshared((Collection_1_t2763 *)__this, (Object_t *)___value, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.ICollection.get_IsSynchronized()
-#define Collection_1_System_Collections_ICollection_get_IsSynchronized_m13762(__this, method) (bool)Collection_1_System_Collections_ICollection_get_IsSynchronized_m12925_gshared((Collection_1_t2763 *)__this, method)
-// System.Object System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.ICollection.get_SyncRoot()
-#define Collection_1_System_Collections_ICollection_get_SyncRoot_m13763(__this, method) (Object_t *)Collection_1_System_Collections_ICollection_get_SyncRoot_m12926_gshared((Collection_1_t2763 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.get_IsFixedSize()
-#define Collection_1_System_Collections_IList_get_IsFixedSize_m13764(__this, method) (bool)Collection_1_System_Collections_IList_get_IsFixedSize_m12927_gshared((Collection_1_t2763 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.get_IsReadOnly()
-#define Collection_1_System_Collections_IList_get_IsReadOnly_m13765(__this, method) (bool)Collection_1_System_Collections_IList_get_IsReadOnly_m12928_gshared((Collection_1_t2763 *)__this, method)
-// System.Object System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.get_Item(System.Int32)
-#define Collection_1_System_Collections_IList_get_Item_m13766(__this, ___index, method) (Object_t *)Collection_1_System_Collections_IList_get_Item_m12929_gshared((Collection_1_t2763 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::System.Collections.IList.set_Item(System.Int32,System.Object)
-#define Collection_1_System_Collections_IList_set_Item_m13767(__this, ___index, ___value, method) (void)Collection_1_System_Collections_IList_set_Item_m12930_gshared((Collection_1_t2763 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::Add(T)
-#define Collection_1_Add_m13768(__this, ___item, method) (void)Collection_1_Add_m12931_gshared((Collection_1_t2763 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::Clear()
-#define Collection_1_Clear_m13769(__this, method) (void)Collection_1_Clear_m12932_gshared((Collection_1_t2763 *)__this, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::ClearItems()
-#define Collection_1_ClearItems_m13770(__this, method) (void)Collection_1_ClearItems_m12933_gshared((Collection_1_t2763 *)__this, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::Contains(T)
-#define Collection_1_Contains_m13771(__this, ___item, method) (bool)Collection_1_Contains_m12934_gshared((Collection_1_t2763 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::CopyTo(T[],System.Int32)
-#define Collection_1_CopyTo_m13772(__this, ___array, ___index, method) (void)Collection_1_CopyTo_m12935_gshared((Collection_1_t2763 *)__this, (ObjectU5BU5D_t112*)___array, (int32_t)___index, method)
-// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::GetEnumerator()
-#define Collection_1_GetEnumerator_m13773(__this, method) (Object_t*)Collection_1_GetEnumerator_m12936_gshared((Collection_1_t2763 *)__this, method)
-// System.Int32 System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::IndexOf(T)
-#define Collection_1_IndexOf_m13774(__this, ___item, method) (int32_t)Collection_1_IndexOf_m12937_gshared((Collection_1_t2763 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::Insert(System.Int32,T)
-#define Collection_1_Insert_m13775(__this, ___index, ___item, method) (void)Collection_1_Insert_m12938_gshared((Collection_1_t2763 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::InsertItem(System.Int32,T)
-#define Collection_1_InsertItem_m13776(__this, ___index, ___item, method) (void)Collection_1_InsertItem_m12939_gshared((Collection_1_t2763 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::Remove(T)
-#define Collection_1_Remove_m13777(__this, ___item, method) (bool)Collection_1_Remove_m12940_gshared((Collection_1_t2763 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::RemoveAt(System.Int32)
-#define Collection_1_RemoveAt_m13778(__this, ___index, method) (void)Collection_1_RemoveAt_m12941_gshared((Collection_1_t2763 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::RemoveItem(System.Int32)
-#define Collection_1_RemoveItem_m13779(__this, ___index, method) (void)Collection_1_RemoveItem_m12942_gshared((Collection_1_t2763 *)__this, (int32_t)___index, method)
-// System.Int32 System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::get_Count()
-#define Collection_1_get_Count_m13780(__this, method) (int32_t)Collection_1_get_Count_m12943_gshared((Collection_1_t2763 *)__this, method)
-// T System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::get_Item(System.Int32)
-#define Collection_1_get_Item_m13781(__this, ___index, method) (JSONNode_t19 *)Collection_1_get_Item_m12944_gshared((Collection_1_t2763 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::set_Item(System.Int32,T)
-#define Collection_1_set_Item_m13782(__this, ___index, ___value, method) (void)Collection_1_set_Item_m12945_gshared((Collection_1_t2763 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::SetItem(System.Int32,T)
-#define Collection_1_SetItem_m13783(__this, ___index, ___item, method) (void)Collection_1_SetItem_m12946_gshared((Collection_1_t2763 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::IsValidItem(System.Object)
-#define Collection_1_IsValidItem_m13784(__this/* static, unused */, ___item, method) (bool)Collection_1_IsValidItem_m12947_gshared((Object_t *)__this/* static, unused */, (Object_t *)___item, method)
-// T System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::ConvertItem(System.Object)
-#define Collection_1_ConvertItem_m13785(__this/* static, unused */, ___item, method) (JSONNode_t19 *)Collection_1_ConvertItem_m12948_gshared((Object_t *)__this/* static, unused */, (Object_t *)___item, method)
-// System.Void System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::CheckWritable(System.Collections.Generic.IList`1<T>)
-#define Collection_1_CheckWritable_m13786(__this/* static, unused */, ___list, method) (void)Collection_1_CheckWritable_m12949_gshared((Object_t *)__this/* static, unused */, (Object_t*)___list, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::IsSynchronized(System.Collections.Generic.IList`1<T>)
-#define Collection_1_IsSynchronized_m13787(__this/* static, unused */, ___list, method) (bool)Collection_1_IsSynchronized_m12950_gshared((Object_t *)__this/* static, unused */, (Object_t*)___list, method)
-// System.Boolean System.Collections.ObjectModel.Collection`1<Appboy.Utilities.JSONNode>::IsFixedSize(System.Collections.Generic.IList`1<T>)
-#define Collection_1_IsFixedSize_m13788(__this/* static, unused */, ___list, method) (bool)Collection_1_IsFixedSize_m12951_gshared((Object_t *)__this/* static, unused */, (Object_t*)___list, method)
+#include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_Vector3.h"
+
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::.ctor()
+extern "C" void Collection_1__ctor_m18479_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1__ctor_m18479(__this, method) (( void (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1__ctor_m18479_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
+extern "C" bool Collection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m18480_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m18480(__this, method) (( bool (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m18480_gshared)(__this, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+extern "C" void Collection_1_System_Collections_ICollection_CopyTo_m18481_gshared (Collection_1_t2563 * __this, Array_t * ___array, int32_t ___index, const MethodInfo* method);
+#define Collection_1_System_Collections_ICollection_CopyTo_m18481(__this, ___array, ___index, method) (( void (*) (Collection_1_t2563 *, Array_t *, int32_t, const MethodInfo*))Collection_1_System_Collections_ICollection_CopyTo_m18481_gshared)(__this, ___array, ___index, method)
+// System.Collections.IEnumerator System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IEnumerable.GetEnumerator()
+extern "C" Object_t * Collection_1_System_Collections_IEnumerable_GetEnumerator_m18482_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_System_Collections_IEnumerable_GetEnumerator_m18482(__this, method) (( Object_t * (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_System_Collections_IEnumerable_GetEnumerator_m18482_gshared)(__this, method)
+// System.Int32 System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.Add(System.Object)
+extern "C" int32_t Collection_1_System_Collections_IList_Add_m18483_gshared (Collection_1_t2563 * __this, Object_t * ___value, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_Add_m18483(__this, ___value, method) (( int32_t (*) (Collection_1_t2563 *, Object_t *, const MethodInfo*))Collection_1_System_Collections_IList_Add_m18483_gshared)(__this, ___value, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.Contains(System.Object)
+extern "C" bool Collection_1_System_Collections_IList_Contains_m18484_gshared (Collection_1_t2563 * __this, Object_t * ___value, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_Contains_m18484(__this, ___value, method) (( bool (*) (Collection_1_t2563 *, Object_t *, const MethodInfo*))Collection_1_System_Collections_IList_Contains_m18484_gshared)(__this, ___value, method)
+// System.Int32 System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.IndexOf(System.Object)
+extern "C" int32_t Collection_1_System_Collections_IList_IndexOf_m18485_gshared (Collection_1_t2563 * __this, Object_t * ___value, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_IndexOf_m18485(__this, ___value, method) (( int32_t (*) (Collection_1_t2563 *, Object_t *, const MethodInfo*))Collection_1_System_Collections_IList_IndexOf_m18485_gshared)(__this, ___value, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.Insert(System.Int32,System.Object)
+extern "C" void Collection_1_System_Collections_IList_Insert_m18486_gshared (Collection_1_t2563 * __this, int32_t ___index, Object_t * ___value, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_Insert_m18486(__this, ___index, ___value, method) (( void (*) (Collection_1_t2563 *, int32_t, Object_t *, const MethodInfo*))Collection_1_System_Collections_IList_Insert_m18486_gshared)(__this, ___index, ___value, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.Remove(System.Object)
+extern "C" void Collection_1_System_Collections_IList_Remove_m18487_gshared (Collection_1_t2563 * __this, Object_t * ___value, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_Remove_m18487(__this, ___value, method) (( void (*) (Collection_1_t2563 *, Object_t *, const MethodInfo*))Collection_1_System_Collections_IList_Remove_m18487_gshared)(__this, ___value, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.ICollection.get_IsSynchronized()
+extern "C" bool Collection_1_System_Collections_ICollection_get_IsSynchronized_m18488_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_System_Collections_ICollection_get_IsSynchronized_m18488(__this, method) (( bool (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_System_Collections_ICollection_get_IsSynchronized_m18488_gshared)(__this, method)
+// System.Object System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.ICollection.get_SyncRoot()
+extern "C" Object_t * Collection_1_System_Collections_ICollection_get_SyncRoot_m18489_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_System_Collections_ICollection_get_SyncRoot_m18489(__this, method) (( Object_t * (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_System_Collections_ICollection_get_SyncRoot_m18489_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.get_IsFixedSize()
+extern "C" bool Collection_1_System_Collections_IList_get_IsFixedSize_m18490_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_get_IsFixedSize_m18490(__this, method) (( bool (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_System_Collections_IList_get_IsFixedSize_m18490_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.get_IsReadOnly()
+extern "C" bool Collection_1_System_Collections_IList_get_IsReadOnly_m18491_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_get_IsReadOnly_m18491(__this, method) (( bool (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_System_Collections_IList_get_IsReadOnly_m18491_gshared)(__this, method)
+// System.Object System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.get_Item(System.Int32)
+extern "C" Object_t * Collection_1_System_Collections_IList_get_Item_m18492_gshared (Collection_1_t2563 * __this, int32_t ___index, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_get_Item_m18492(__this, ___index, method) (( Object_t * (*) (Collection_1_t2563 *, int32_t, const MethodInfo*))Collection_1_System_Collections_IList_get_Item_m18492_gshared)(__this, ___index, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::System.Collections.IList.set_Item(System.Int32,System.Object)
+extern "C" void Collection_1_System_Collections_IList_set_Item_m18493_gshared (Collection_1_t2563 * __this, int32_t ___index, Object_t * ___value, const MethodInfo* method);
+#define Collection_1_System_Collections_IList_set_Item_m18493(__this, ___index, ___value, method) (( void (*) (Collection_1_t2563 *, int32_t, Object_t *, const MethodInfo*))Collection_1_System_Collections_IList_set_Item_m18493_gshared)(__this, ___index, ___value, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::Add(T)
+extern "C" void Collection_1_Add_m18494_gshared (Collection_1_t2563 * __this, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_Add_m18494(__this, ___item, method) (( void (*) (Collection_1_t2563 *, Vector3_t259 , const MethodInfo*))Collection_1_Add_m18494_gshared)(__this, ___item, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::Clear()
+extern "C" void Collection_1_Clear_m18495_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_Clear_m18495(__this, method) (( void (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_Clear_m18495_gshared)(__this, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::ClearItems()
+extern "C" void Collection_1_ClearItems_m18496_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_ClearItems_m18496(__this, method) (( void (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_ClearItems_m18496_gshared)(__this, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::Contains(T)
+extern "C" bool Collection_1_Contains_m18497_gshared (Collection_1_t2563 * __this, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_Contains_m18497(__this, ___item, method) (( bool (*) (Collection_1_t2563 *, Vector3_t259 , const MethodInfo*))Collection_1_Contains_m18497_gshared)(__this, ___item, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::CopyTo(T[],System.Int32)
+extern "C" void Collection_1_CopyTo_m18498_gshared (Collection_1_t2563 * __this, Vector3U5BU5D_t540* ___array, int32_t ___index, const MethodInfo* method);
+#define Collection_1_CopyTo_m18498(__this, ___array, ___index, method) (( void (*) (Collection_1_t2563 *, Vector3U5BU5D_t540*, int32_t, const MethodInfo*))Collection_1_CopyTo_m18498_gshared)(__this, ___array, ___index, method)
+// System.Collections.Generic.IEnumerator`1<T> System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::GetEnumerator()
+extern "C" Object_t* Collection_1_GetEnumerator_m18499_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_GetEnumerator_m18499(__this, method) (( Object_t* (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_GetEnumerator_m18499_gshared)(__this, method)
+// System.Int32 System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::IndexOf(T)
+extern "C" int32_t Collection_1_IndexOf_m18500_gshared (Collection_1_t2563 * __this, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_IndexOf_m18500(__this, ___item, method) (( int32_t (*) (Collection_1_t2563 *, Vector3_t259 , const MethodInfo*))Collection_1_IndexOf_m18500_gshared)(__this, ___item, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::Insert(System.Int32,T)
+extern "C" void Collection_1_Insert_m18501_gshared (Collection_1_t2563 * __this, int32_t ___index, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_Insert_m18501(__this, ___index, ___item, method) (( void (*) (Collection_1_t2563 *, int32_t, Vector3_t259 , const MethodInfo*))Collection_1_Insert_m18501_gshared)(__this, ___index, ___item, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::InsertItem(System.Int32,T)
+extern "C" void Collection_1_InsertItem_m18502_gshared (Collection_1_t2563 * __this, int32_t ___index, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_InsertItem_m18502(__this, ___index, ___item, method) (( void (*) (Collection_1_t2563 *, int32_t, Vector3_t259 , const MethodInfo*))Collection_1_InsertItem_m18502_gshared)(__this, ___index, ___item, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::Remove(T)
+extern "C" bool Collection_1_Remove_m18503_gshared (Collection_1_t2563 * __this, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_Remove_m18503(__this, ___item, method) (( bool (*) (Collection_1_t2563 *, Vector3_t259 , const MethodInfo*))Collection_1_Remove_m18503_gshared)(__this, ___item, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::RemoveAt(System.Int32)
+extern "C" void Collection_1_RemoveAt_m18504_gshared (Collection_1_t2563 * __this, int32_t ___index, const MethodInfo* method);
+#define Collection_1_RemoveAt_m18504(__this, ___index, method) (( void (*) (Collection_1_t2563 *, int32_t, const MethodInfo*))Collection_1_RemoveAt_m18504_gshared)(__this, ___index, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::RemoveItem(System.Int32)
+extern "C" void Collection_1_RemoveItem_m18505_gshared (Collection_1_t2563 * __this, int32_t ___index, const MethodInfo* method);
+#define Collection_1_RemoveItem_m18505(__this, ___index, method) (( void (*) (Collection_1_t2563 *, int32_t, const MethodInfo*))Collection_1_RemoveItem_m18505_gshared)(__this, ___index, method)
+// System.Int32 System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::get_Count()
+extern "C" int32_t Collection_1_get_Count_m18506_gshared (Collection_1_t2563 * __this, const MethodInfo* method);
+#define Collection_1_get_Count_m18506(__this, method) (( int32_t (*) (Collection_1_t2563 *, const MethodInfo*))Collection_1_get_Count_m18506_gshared)(__this, method)
+// T System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::get_Item(System.Int32)
+extern "C" Vector3_t259  Collection_1_get_Item_m18507_gshared (Collection_1_t2563 * __this, int32_t ___index, const MethodInfo* method);
+#define Collection_1_get_Item_m18507(__this, ___index, method) (( Vector3_t259  (*) (Collection_1_t2563 *, int32_t, const MethodInfo*))Collection_1_get_Item_m18507_gshared)(__this, ___index, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::set_Item(System.Int32,T)
+extern "C" void Collection_1_set_Item_m18508_gshared (Collection_1_t2563 * __this, int32_t ___index, Vector3_t259  ___value, const MethodInfo* method);
+#define Collection_1_set_Item_m18508(__this, ___index, ___value, method) (( void (*) (Collection_1_t2563 *, int32_t, Vector3_t259 , const MethodInfo*))Collection_1_set_Item_m18508_gshared)(__this, ___index, ___value, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::SetItem(System.Int32,T)
+extern "C" void Collection_1_SetItem_m18509_gshared (Collection_1_t2563 * __this, int32_t ___index, Vector3_t259  ___item, const MethodInfo* method);
+#define Collection_1_SetItem_m18509(__this, ___index, ___item, method) (( void (*) (Collection_1_t2563 *, int32_t, Vector3_t259 , const MethodInfo*))Collection_1_SetItem_m18509_gshared)(__this, ___index, ___item, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::IsValidItem(System.Object)
+extern "C" bool Collection_1_IsValidItem_m18510_gshared (Object_t * __this /* static, unused */, Object_t * ___item, const MethodInfo* method);
+#define Collection_1_IsValidItem_m18510(__this /* static, unused */, ___item, method) (( bool (*) (Object_t * /* static, unused */, Object_t *, const MethodInfo*))Collection_1_IsValidItem_m18510_gshared)(__this /* static, unused */, ___item, method)
+// T System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::ConvertItem(System.Object)
+extern "C" Vector3_t259  Collection_1_ConvertItem_m18511_gshared (Object_t * __this /* static, unused */, Object_t * ___item, const MethodInfo* method);
+#define Collection_1_ConvertItem_m18511(__this /* static, unused */, ___item, method) (( Vector3_t259  (*) (Object_t * /* static, unused */, Object_t *, const MethodInfo*))Collection_1_ConvertItem_m18511_gshared)(__this /* static, unused */, ___item, method)
+// System.Void System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::CheckWritable(System.Collections.Generic.IList`1<T>)
+extern "C" void Collection_1_CheckWritable_m18512_gshared (Object_t * __this /* static, unused */, Object_t* ___list, const MethodInfo* method);
+#define Collection_1_CheckWritable_m18512(__this /* static, unused */, ___list, method) (( void (*) (Object_t * /* static, unused */, Object_t*, const MethodInfo*))Collection_1_CheckWritable_m18512_gshared)(__this /* static, unused */, ___list, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::IsSynchronized(System.Collections.Generic.IList`1<T>)
+extern "C" bool Collection_1_IsSynchronized_m18513_gshared (Object_t * __this /* static, unused */, Object_t* ___list, const MethodInfo* method);
+#define Collection_1_IsSynchronized_m18513(__this /* static, unused */, ___list, method) (( bool (*) (Object_t * /* static, unused */, Object_t*, const MethodInfo*))Collection_1_IsSynchronized_m18513_gshared)(__this /* static, unused */, ___list, method)
+// System.Boolean System.Collections.ObjectModel.Collection`1<UnityEngine.Vector3>::IsFixedSize(System.Collections.Generic.IList`1<T>)
+extern "C" bool Collection_1_IsFixedSize_m18514_gshared (Object_t * __this /* static, unused */, Object_t* ___list, const MethodInfo* method);
+#define Collection_1_IsFixedSize_m18514(__this /* static, unused */, ___list, method) (( bool (*) (Object_t * /* static, unused */, Object_t*, const MethodInfo*))Collection_1_IsFixedSize_m18514_gshared)(__this /* static, unused */, ___list, method)

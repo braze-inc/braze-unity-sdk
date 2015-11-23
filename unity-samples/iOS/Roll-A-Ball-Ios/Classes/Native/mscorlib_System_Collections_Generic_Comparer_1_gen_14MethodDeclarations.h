@@ -1,24 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Collections.Generic.Comparer`1<UnityEngine.EventSystems.BaseRaycaster>
-struct Comparer_1_t3575;
+// System.Collections.Generic.Comparer`1<System.TimeSpan>
+struct Comparer_1_t2891;
 // System.Object
 struct Object_t;
-// UnityEngine.EventSystems.BaseRaycaster
-struct BaseRaycaster_t517;
 
-// System.Void System.Collections.Generic.Comparer`1<UnityEngine.EventSystems.BaseRaycaster>::.ctor()
-// System.Collections.Generic.Comparer`1<System.Object>
-#include "mscorlib_System_Collections_Generic_Comparer_1_genMethodDeclarations.h"
-#define Comparer_1__ctor_m18136(__this, method) (void)Comparer_1__ctor_m12994_gshared((Comparer_1_t2772 *)__this, method)
-// System.Void System.Collections.Generic.Comparer`1<UnityEngine.EventSystems.BaseRaycaster>::.cctor()
-#define Comparer_1__cctor_m18137(__this/* static, unused */, method) (void)Comparer_1__cctor_m12995_gshared((Object_t *)__this/* static, unused */, method)
-// System.Int32 System.Collections.Generic.Comparer`1<UnityEngine.EventSystems.BaseRaycaster>::System.Collections.IComparer.Compare(System.Object,System.Object)
-#define Comparer_1_System_Collections_IComparer_Compare_m18138(__this, ___x, ___y, method) (int32_t)Comparer_1_System_Collections_IComparer_Compare_m12996_gshared((Comparer_1_t2772 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.Int32 System.Collections.Generic.Comparer`1<UnityEngine.EventSystems.BaseRaycaster>::Compare(T,T)
-// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<UnityEngine.EventSystems.BaseRaycaster>::get_Default()
-#define Comparer_1_get_Default_m18139(__this/* static, unused */, method) (Comparer_1_t3575 *)Comparer_1_get_Default_m12997_gshared((Object_t *)__this/* static, unused */, method)
+#include "codegen/il2cpp-codegen.h"
+
+// System.Void System.Collections.Generic.Comparer`1<System.TimeSpan>::.ctor()
+extern "C" void Comparer_1__ctor_m22098_gshared (Comparer_1_t2891 * __this, const MethodInfo* method);
+#define Comparer_1__ctor_m22098(__this, method) (( void (*) (Comparer_1_t2891 *, const MethodInfo*))Comparer_1__ctor_m22098_gshared)(__this, method)
+// System.Void System.Collections.Generic.Comparer`1<System.TimeSpan>::.cctor()
+extern "C" void Comparer_1__cctor_m22099_gshared (Object_t * __this /* static, unused */, const MethodInfo* method);
+#define Comparer_1__cctor_m22099(__this /* static, unused */, method) (( void (*) (Object_t * /* static, unused */, const MethodInfo*))Comparer_1__cctor_m22099_gshared)(__this /* static, unused */, method)
+// System.Int32 System.Collections.Generic.Comparer`1<System.TimeSpan>::System.Collections.IComparer.Compare(System.Object,System.Object)
+extern "C" int32_t Comparer_1_System_Collections_IComparer_Compare_m22100_gshared (Comparer_1_t2891 * __this, Object_t * ___x, Object_t * ___y, const MethodInfo* method);
+#define Comparer_1_System_Collections_IComparer_Compare_m22100(__this, ___x, ___y, method) (( int32_t (*) (Comparer_1_t2891 *, Object_t *, Object_t *, const MethodInfo*))Comparer_1_System_Collections_IComparer_Compare_m22100_gshared)(__this, ___x, ___y, method)
+// System.Collections.Generic.Comparer`1<T> System.Collections.Generic.Comparer`1<System.TimeSpan>::get_Default()
+extern "C" Comparer_1_t2891 * Comparer_1_get_Default_m22101_gshared (Object_t * __this /* static, unused */, const MethodInfo* method);
+#define Comparer_1_get_Default_m22101(__this /* static, unused */, method) (( Comparer_1_t2891 * (*) (Object_t * /* static, unused */, const MethodInfo*))Comparer_1_get_Default_m22101_gshared)(__this /* static, unused */, method)

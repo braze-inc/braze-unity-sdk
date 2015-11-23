@@ -1,28 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Runtime.Serialization.SerializationBinder
-struct SerializationBinder_t2106;
+struct SerializationBinder_t1819;
 // System.Runtime.Serialization.ISurrogateSelector
-struct ISurrogateSelector_t2070;
-// System.Object
+struct ISurrogateSelector_t1770;
+
 #include "mscorlib_System_Object.h"
-// System.Runtime.Serialization.Formatters.FormatterAssemblyStyle
 #include "mscorlib_System_Runtime_Serialization_Formatters_FormatterAs.h"
-// System.Runtime.Serialization.StreamingContext
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
-// System.Runtime.Serialization.Formatters.FormatterTypeStyle
 #include "mscorlib_System_Runtime_Serialization_Formatters_FormatterTy.h"
-// System.Runtime.Serialization.Formatters.TypeFilterLevel
 #include "mscorlib_System_Runtime_Serialization_Formatters_TypeFilterL.h"
+
 // System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-struct BinaryFormatter_t2094  : public Object_t
+struct  BinaryFormatter_t1804  : public Object_t
 {
 	// System.Runtime.Serialization.Formatters.FormatterAssemblyStyle System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::assembly_format
 	int32_t ___assembly_format_0;
 	// System.Runtime.Serialization.SerializationBinder System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::binder
-	SerializationBinder_t2106 * ___binder_1;
+	SerializationBinder_t1819 * ___binder_1;
 	// System.Runtime.Serialization.StreamingContext System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::context
-	StreamingContext_t961  ___context_2;
+	StreamingContext_t963  ___context_2;
 	// System.Runtime.Serialization.ISurrogateSelector System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::surrogate_selector
 	Object_t * ___surrogate_selector_3;
 	// System.Runtime.Serialization.Formatters.FormatterTypeStyle System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::type_format
@@ -30,7 +37,7 @@ struct BinaryFormatter_t2094  : public Object_t
 	// System.Runtime.Serialization.Formatters.TypeFilterLevel System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::filter_level
 	int32_t ___filter_level_5;
 };
-struct BinaryFormatter_t2094_StaticFields{
+struct BinaryFormatter_t1804_StaticFields{
 	// System.Runtime.Serialization.ISurrogateSelector System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::<DefaultSurrogateSelector>k__BackingField
 	Object_t * ___U3CDefaultSurrogateSelectorU3Ek__BackingField_6;
 };

@@ -1,135 +1,118 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_List_1_gen_3MethodDeclarations.h"
 
-// System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct List_1_t522;
-// System.Object
-struct Object_t;
-// UnityEngine.EventSystems.PointerInputModule/ButtonState
-struct ButtonState_t521;
-// System.Collections.Generic.IEnumerable`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct IEnumerable_1_t3662;
-// System.Collections.Generic.IEnumerator`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct IEnumerator_1_t3663;
-// System.Array
-struct Array_t;
-// System.Collections.IEnumerator
-struct IEnumerator_t21;
-// System.Collections.Generic.ICollection`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct ICollection_1_t3664;
-// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct ReadOnlyCollection_1_t3665;
-// UnityEngine.EventSystems.PointerInputModule/ButtonState[]
-struct ButtonStateU5BU5D_t3661;
-// System.Predicate`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct Predicate_1_t3666;
-// System.Comparison`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-struct Comparison_1_t3667;
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.EventSystems.PointerInputModule/ButtonState>
-#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_20.h"
-
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::.ctor()
-// System.Collections.Generic.List`1<System.Object>
-#include "mscorlib_System_Collections_Generic_List_1_gen_2MethodDeclarations.h"
-#define List_1__ctor_m3290(__this, method) (void)List_1__ctor_m579_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
-#define List_1__ctor_m18787(__this, ___collection, method) (void)List_1__ctor_m12787_gshared((List_1_t110 *)__this, (Object_t*)___collection, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::.ctor(System.Int32)
-#define List_1__ctor_m18788(__this, ___capacity, method) (void)List_1__ctor_m12789_gshared((List_1_t110 *)__this, (int32_t)___capacity, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::.cctor()
-#define List_1__cctor_m18789(__this/* static, unused */, method) (void)List_1__cctor_m12791_gshared((Object_t *)__this/* static, unused */, method)
-// System.Collections.Generic.IEnumerator`1<T> System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.Generic.IEnumerable<T>.GetEnumerator()
-#define List_1_System_Collections_Generic_IEnumerableU3CTU3E_GetEnumerator_m18790(__this, method) (Object_t*)List_1_System_Collections_Generic_IEnumerableU3CTU3E_GetEnumerator_m12793_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-#define List_1_System_Collections_ICollection_CopyTo_m18791(__this, ___array, ___arrayIndex, method) (void)List_1_System_Collections_ICollection_CopyTo_m12795_gshared((List_1_t110 *)__this, (Array_t *)___array, (int32_t)___arrayIndex, method)
-// System.Collections.IEnumerator System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IEnumerable.GetEnumerator()
-#define List_1_System_Collections_IEnumerable_GetEnumerator_m18792(__this, method) (Object_t *)List_1_System_Collections_IEnumerable_GetEnumerator_m12797_gshared((List_1_t110 *)__this, method)
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.Add(System.Object)
-#define List_1_System_Collections_IList_Add_m18793(__this, ___item, method) (int32_t)List_1_System_Collections_IList_Add_m12799_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.Contains(System.Object)
-#define List_1_System_Collections_IList_Contains_m18794(__this, ___item, method) (bool)List_1_System_Collections_IList_Contains_m12801_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.IndexOf(System.Object)
-#define List_1_System_Collections_IList_IndexOf_m18795(__this, ___item, method) (int32_t)List_1_System_Collections_IList_IndexOf_m12803_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.Insert(System.Int32,System.Object)
-#define List_1_System_Collections_IList_Insert_m18796(__this, ___index, ___item, method) (void)List_1_System_Collections_IList_Insert_m12805_gshared((List_1_t110 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.Remove(System.Object)
-#define List_1_System_Collections_IList_Remove_m18797(__this, ___item, method) (void)List_1_System_Collections_IList_Remove_m12807_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
-#define List_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m18798(__this, method) (bool)List_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12809_gshared((List_1_t110 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.ICollection.get_IsSynchronized()
-#define List_1_System_Collections_ICollection_get_IsSynchronized_m18799(__this, method) (bool)List_1_System_Collections_ICollection_get_IsSynchronized_m12811_gshared((List_1_t110 *)__this, method)
-// System.Object System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.ICollection.get_SyncRoot()
-#define List_1_System_Collections_ICollection_get_SyncRoot_m18800(__this, method) (Object_t *)List_1_System_Collections_ICollection_get_SyncRoot_m12813_gshared((List_1_t110 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.get_IsFixedSize()
-#define List_1_System_Collections_IList_get_IsFixedSize_m18801(__this, method) (bool)List_1_System_Collections_IList_get_IsFixedSize_m12815_gshared((List_1_t110 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.get_IsReadOnly()
-#define List_1_System_Collections_IList_get_IsReadOnly_m18802(__this, method) (bool)List_1_System_Collections_IList_get_IsReadOnly_m12817_gshared((List_1_t110 *)__this, method)
-// System.Object System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.get_Item(System.Int32)
-#define List_1_System_Collections_IList_get_Item_m18803(__this, ___index, method) (Object_t *)List_1_System_Collections_IList_get_Item_m12819_gshared((List_1_t110 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::System.Collections.IList.set_Item(System.Int32,System.Object)
-#define List_1_System_Collections_IList_set_Item_m18804(__this, ___index, ___value, method) (void)List_1_System_Collections_IList_set_Item_m12821_gshared((List_1_t110 *)__this, (int32_t)___index, (Object_t *)___value, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Add(T)
-#define List_1_Add_m3293(__this, ___item, method) (void)List_1_Add_m12822_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::GrowIfNeeded(System.Int32)
-#define List_1_GrowIfNeeded_m18805(__this, ___newCount, method) (void)List_1_GrowIfNeeded_m12824_gshared((List_1_t110 *)__this, (int32_t)___newCount, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::AddCollection(System.Collections.Generic.ICollection`1<T>)
-#define List_1_AddCollection_m18806(__this, ___collection, method) (void)List_1_AddCollection_m12826_gshared((List_1_t110 *)__this, (Object_t*)___collection, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::AddEnumerable(System.Collections.Generic.IEnumerable`1<T>)
-#define List_1_AddEnumerable_m18807(__this, ___enumerable, method) (void)List_1_AddEnumerable_m12828_gshared((List_1_t110 *)__this, (Object_t*)___enumerable, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
-#define List_1_AddRange_m18808(__this, ___collection, method) (void)List_1_AddRange_m12830_gshared((List_1_t110 *)__this, (Object_t*)___collection, method)
-// System.Collections.ObjectModel.ReadOnlyCollection`1<T> System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::AsReadOnly()
-#define List_1_AsReadOnly_m18809(__this, method) (ReadOnlyCollection_1_t3665 *)List_1_AsReadOnly_m12832_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Clear()
-#define List_1_Clear_m18810(__this, method) (void)List_1_Clear_m12834_gshared((List_1_t110 *)__this, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Contains(T)
-#define List_1_Contains_m18811(__this, ___item, method) (bool)List_1_Contains_m12836_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::CopyTo(T[],System.Int32)
-#define List_1_CopyTo_m18812(__this, ___array, ___arrayIndex, method) (void)List_1_CopyTo_m12838_gshared((List_1_t110 *)__this, (ObjectU5BU5D_t112*)___array, (int32_t)___arrayIndex, method)
-// T System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Find(System.Predicate`1<T>)
-#define List_1_Find_m18813(__this, ___match, method) (ButtonState_t521 *)List_1_Find_m12840_gshared((List_1_t110 *)__this, (Predicate_1_t2759 *)___match, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::CheckMatch(System.Predicate`1<T>)
-#define List_1_CheckMatch_m18814(__this/* static, unused */, ___match, method) (void)List_1_CheckMatch_m12842_gshared((Object_t *)__this/* static, unused */, (Predicate_1_t2759 *)___match, method)
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::GetIndex(System.Int32,System.Int32,System.Predicate`1<T>)
-#define List_1_GetIndex_m18815(__this, ___startIndex, ___count, ___match, method) (int32_t)List_1_GetIndex_m12844_gshared((List_1_t110 *)__this, (int32_t)___startIndex, (int32_t)___count, (Predicate_1_t2759 *)___match, method)
-// System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::GetEnumerator()
- Enumerator_t3668  List_1_GetEnumerator_m18816 (List_1_t522 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::IndexOf(T)
-#define List_1_IndexOf_m18817(__this, ___item, method) (int32_t)List_1_IndexOf_m12846_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Shift(System.Int32,System.Int32)
-#define List_1_Shift_m18818(__this, ___start, ___delta, method) (void)List_1_Shift_m12848_gshared((List_1_t110 *)__this, (int32_t)___start, (int32_t)___delta, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::CheckIndex(System.Int32)
-#define List_1_CheckIndex_m18819(__this, ___index, method) (void)List_1_CheckIndex_m12850_gshared((List_1_t110 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Insert(System.Int32,T)
-#define List_1_Insert_m18820(__this, ___index, ___item, method) (void)List_1_Insert_m12852_gshared((List_1_t110 *)__this, (int32_t)___index, (Object_t *)___item, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::CheckCollection(System.Collections.Generic.IEnumerable`1<T>)
-#define List_1_CheckCollection_m18821(__this, ___collection, method) (void)List_1_CheckCollection_m12854_gshared((List_1_t110 *)__this, (Object_t*)___collection, method)
-// System.Boolean System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Remove(T)
-#define List_1_Remove_m18822(__this, ___item, method) (bool)List_1_Remove_m12856_gshared((List_1_t110 *)__this, (Object_t *)___item, method)
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::RemoveAll(System.Predicate`1<T>)
-#define List_1_RemoveAll_m18823(__this, ___match, method) (int32_t)List_1_RemoveAll_m12858_gshared((List_1_t110 *)__this, (Predicate_1_t2759 *)___match, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::RemoveAt(System.Int32)
-#define List_1_RemoveAt_m18824(__this, ___index, method) (void)List_1_RemoveAt_m12860_gshared((List_1_t110 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Reverse()
-#define List_1_Reverse_m18825(__this, method) (void)List_1_Reverse_m12862_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Sort()
-#define List_1_Sort_m18826(__this, method) (void)List_1_Sort_m12864_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::Sort(System.Comparison`1<T>)
-#define List_1_Sort_m18827(__this, ___comparison, method) (void)List_1_Sort_m12866_gshared((List_1_t110 *)__this, (Comparison_1_t2760 *)___comparison, method)
-// T[] System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::ToArray()
-#define List_1_ToArray_m18828(__this, method) (ButtonStateU5BU5D_t3661*)List_1_ToArray_m12867_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::TrimExcess()
-#define List_1_TrimExcess_m18829(__this, method) (void)List_1_TrimExcess_m12869_gshared((List_1_t110 *)__this, method)
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::get_Capacity()
-#define List_1_get_Capacity_m18830(__this, method) (int32_t)List_1_get_Capacity_m12871_gshared((List_1_t110 *)__this, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::set_Capacity(System.Int32)
-#define List_1_set_Capacity_m18831(__this, ___value, method) (void)List_1_set_Capacity_m12873_gshared((List_1_t110 *)__this, (int32_t)___value, method)
-// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::get_Count()
-#define List_1_get_Count_m3292(__this, method) (int32_t)List_1_get_Count_m12874_gshared((List_1_t110 *)__this, method)
-// T System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::get_Item(System.Int32)
-#define List_1_get_Item_m3291(__this, ___index, method) (ButtonState_t521 *)List_1_get_Item_m12876_gshared((List_1_t110 *)__this, (int32_t)___index, method)
-// System.Void System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::set_Item(System.Int32,T)
-#define List_1_set_Item_m18832(__this, ___index, ___value, method) (void)List_1_set_Item_m12878_gshared((List_1_t110 *)__this, (int32_t)___index, (Object_t *)___value, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::.ctor()
+#define List_1__ctor_m3195(__this, method) (( void (*) (List_1_t466 *, const MethodInfo*))List_1__ctor_m560_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
+#define List_1__ctor_m15870(__this, ___collection, method) (( void (*) (List_1_t466 *, Object_t*, const MethodInfo*))List_1__ctor_m12466_gshared)(__this, ___collection, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::.ctor(System.Int32)
+#define List_1__ctor_m15871(__this, ___capacity, method) (( void (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1__ctor_m12468_gshared)(__this, ___capacity, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::.cctor()
+#define List_1__cctor_m15872(__this /* static, unused */, method) (( void (*) (Object_t * /* static, unused */, const MethodInfo*))List_1__cctor_m12470_gshared)(__this /* static, unused */, method)
+// System.Collections.Generic.IEnumerator`1<T> System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+#define List_1_System_Collections_Generic_IEnumerableU3CTU3E_GetEnumerator_m15873(__this, method) (( Object_t* (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_Generic_IEnumerableU3CTU3E_GetEnumerator_m12472_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+#define List_1_System_Collections_ICollection_CopyTo_m15874(__this, ___array, ___arrayIndex, method) (( void (*) (List_1_t466 *, Array_t *, int32_t, const MethodInfo*))List_1_System_Collections_ICollection_CopyTo_m12474_gshared)(__this, ___array, ___arrayIndex, method)
+// System.Collections.IEnumerator System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IEnumerable.GetEnumerator()
+#define List_1_System_Collections_IEnumerable_GetEnumerator_m15875(__this, method) (( Object_t * (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_IEnumerable_GetEnumerator_m12476_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.Add(System.Object)
+#define List_1_System_Collections_IList_Add_m15876(__this, ___item, method) (( int32_t (*) (List_1_t466 *, Object_t *, const MethodInfo*))List_1_System_Collections_IList_Add_m12478_gshared)(__this, ___item, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.Contains(System.Object)
+#define List_1_System_Collections_IList_Contains_m15877(__this, ___item, method) (( bool (*) (List_1_t466 *, Object_t *, const MethodInfo*))List_1_System_Collections_IList_Contains_m12480_gshared)(__this, ___item, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.IndexOf(System.Object)
+#define List_1_System_Collections_IList_IndexOf_m15878(__this, ___item, method) (( int32_t (*) (List_1_t466 *, Object_t *, const MethodInfo*))List_1_System_Collections_IList_IndexOf_m12482_gshared)(__this, ___item, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.Insert(System.Int32,System.Object)
+#define List_1_System_Collections_IList_Insert_m15879(__this, ___index, ___item, method) (( void (*) (List_1_t466 *, int32_t, Object_t *, const MethodInfo*))List_1_System_Collections_IList_Insert_m12484_gshared)(__this, ___index, ___item, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.Remove(System.Object)
+#define List_1_System_Collections_IList_Remove_m15880(__this, ___item, method) (( void (*) (List_1_t466 *, Object_t *, const MethodInfo*))List_1_System_Collections_IList_Remove_m12486_gshared)(__this, ___item, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.Generic.ICollection<T>.get_IsReadOnly()
+#define List_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m15881(__this, method) (( bool (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_Generic_ICollectionU3CTU3E_get_IsReadOnly_m12488_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.ICollection.get_IsSynchronized()
+#define List_1_System_Collections_ICollection_get_IsSynchronized_m15882(__this, method) (( bool (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_ICollection_get_IsSynchronized_m12490_gshared)(__this, method)
+// System.Object System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.ICollection.get_SyncRoot()
+#define List_1_System_Collections_ICollection_get_SyncRoot_m15883(__this, method) (( Object_t * (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_ICollection_get_SyncRoot_m12492_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.get_IsFixedSize()
+#define List_1_System_Collections_IList_get_IsFixedSize_m15884(__this, method) (( bool (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_IList_get_IsFixedSize_m12494_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.get_IsReadOnly()
+#define List_1_System_Collections_IList_get_IsReadOnly_m15885(__this, method) (( bool (*) (List_1_t466 *, const MethodInfo*))List_1_System_Collections_IList_get_IsReadOnly_m12496_gshared)(__this, method)
+// System.Object System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.get_Item(System.Int32)
+#define List_1_System_Collections_IList_get_Item_m15886(__this, ___index, method) (( Object_t * (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1_System_Collections_IList_get_Item_m12498_gshared)(__this, ___index, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::System.Collections.IList.set_Item(System.Int32,System.Object)
+#define List_1_System_Collections_IList_set_Item_m15887(__this, ___index, ___value, method) (( void (*) (List_1_t466 *, int32_t, Object_t *, const MethodInfo*))List_1_System_Collections_IList_set_Item_m12500_gshared)(__this, ___index, ___value, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Add(T)
+#define List_1_Add_m15888(__this, ___item, method) (( void (*) (List_1_t466 *, GameObject_t141 *, const MethodInfo*))List_1_Add_m12502_gshared)(__this, ___item, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::GrowIfNeeded(System.Int32)
+#define List_1_GrowIfNeeded_m15889(__this, ___newCount, method) (( void (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1_GrowIfNeeded_m12504_gshared)(__this, ___newCount, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::AddCollection(System.Collections.Generic.ICollection`1<T>)
+#define List_1_AddCollection_m15890(__this, ___collection, method) (( void (*) (List_1_t466 *, Object_t*, const MethodInfo*))List_1_AddCollection_m12506_gshared)(__this, ___collection, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::AddEnumerable(System.Collections.Generic.IEnumerable`1<T>)
+#define List_1_AddEnumerable_m15891(__this, ___enumerable, method) (( void (*) (List_1_t466 *, Object_t*, const MethodInfo*))List_1_AddEnumerable_m12508_gshared)(__this, ___enumerable, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
+#define List_1_AddRange_m15892(__this, ___collection, method) (( void (*) (List_1_t466 *, Object_t*, const MethodInfo*))List_1_AddRange_m12510_gshared)(__this, ___collection, method)
+// System.Collections.ObjectModel.ReadOnlyCollection`1<T> System.Collections.Generic.List`1<UnityEngine.GameObject>::AsReadOnly()
+#define List_1_AsReadOnly_m15893(__this, method) (( ReadOnlyCollection_1_t2389 * (*) (List_1_t466 *, const MethodInfo*))List_1_AsReadOnly_m12512_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Clear()
+#define List_1_Clear_m15894(__this, method) (( void (*) (List_1_t466 *, const MethodInfo*))List_1_Clear_m12514_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::Contains(T)
+#define List_1_Contains_m15895(__this, ___item, method) (( bool (*) (List_1_t466 *, GameObject_t141 *, const MethodInfo*))List_1_Contains_m12516_gshared)(__this, ___item, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::CopyTo(T[],System.Int32)
+#define List_1_CopyTo_m15896(__this, ___array, ___arrayIndex, method) (( void (*) (List_1_t466 *, GameObjectU5BU5D_t379*, int32_t, const MethodInfo*))List_1_CopyTo_m12518_gshared)(__this, ___array, ___arrayIndex, method)
+// T System.Collections.Generic.List`1<UnityEngine.GameObject>::Find(System.Predicate`1<T>)
+#define List_1_Find_m15897(__this, ___match, method) (( GameObject_t141 * (*) (List_1_t466 *, Predicate_1_t2391 *, const MethodInfo*))List_1_Find_m12520_gshared)(__this, ___match, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::CheckMatch(System.Predicate`1<T>)
+#define List_1_CheckMatch_m15898(__this /* static, unused */, ___match, method) (( void (*) (Object_t * /* static, unused */, Predicate_1_t2391 *, const MethodInfo*))List_1_CheckMatch_m12522_gshared)(__this /* static, unused */, ___match, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::GetIndex(System.Int32,System.Int32,System.Predicate`1<T>)
+#define List_1_GetIndex_m15899(__this, ___startIndex, ___count, ___match, method) (( int32_t (*) (List_1_t466 *, int32_t, int32_t, Predicate_1_t2391 *, const MethodInfo*))List_1_GetIndex_m12524_gshared)(__this, ___startIndex, ___count, ___match, method)
+// System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<UnityEngine.GameObject>::GetEnumerator()
+#define List_1_GetEnumerator_m15900(__this, method) (( Enumerator_t2392  (*) (List_1_t466 *, const MethodInfo*))List_1_GetEnumerator_m12525_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::IndexOf(T)
+#define List_1_IndexOf_m15901(__this, ___item, method) (( int32_t (*) (List_1_t466 *, GameObject_t141 *, const MethodInfo*))List_1_IndexOf_m12527_gshared)(__this, ___item, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Shift(System.Int32,System.Int32)
+#define List_1_Shift_m15902(__this, ___start, ___delta, method) (( void (*) (List_1_t466 *, int32_t, int32_t, const MethodInfo*))List_1_Shift_m12529_gshared)(__this, ___start, ___delta, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::CheckIndex(System.Int32)
+#define List_1_CheckIndex_m15903(__this, ___index, method) (( void (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1_CheckIndex_m12531_gshared)(__this, ___index, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Insert(System.Int32,T)
+#define List_1_Insert_m15904(__this, ___index, ___item, method) (( void (*) (List_1_t466 *, int32_t, GameObject_t141 *, const MethodInfo*))List_1_Insert_m12533_gshared)(__this, ___index, ___item, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::CheckCollection(System.Collections.Generic.IEnumerable`1<T>)
+#define List_1_CheckCollection_m15905(__this, ___collection, method) (( void (*) (List_1_t466 *, Object_t*, const MethodInfo*))List_1_CheckCollection_m12535_gshared)(__this, ___collection, method)
+// System.Boolean System.Collections.Generic.List`1<UnityEngine.GameObject>::Remove(T)
+#define List_1_Remove_m15906(__this, ___item, method) (( bool (*) (List_1_t466 *, GameObject_t141 *, const MethodInfo*))List_1_Remove_m12537_gshared)(__this, ___item, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::RemoveAll(System.Predicate`1<T>)
+#define List_1_RemoveAll_m15907(__this, ___match, method) (( int32_t (*) (List_1_t466 *, Predicate_1_t2391 *, const MethodInfo*))List_1_RemoveAll_m12539_gshared)(__this, ___match, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::RemoveAt(System.Int32)
+#define List_1_RemoveAt_m15908(__this, ___index, method) (( void (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1_RemoveAt_m12541_gshared)(__this, ___index, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Reverse()
+#define List_1_Reverse_m15909(__this, method) (( void (*) (List_1_t466 *, const MethodInfo*))List_1_Reverse_m12543_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Sort()
+#define List_1_Sort_m15910(__this, method) (( void (*) (List_1_t466 *, const MethodInfo*))List_1_Sort_m12545_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::Sort(System.Comparison`1<T>)
+#define List_1_Sort_m15911(__this, ___comparison, method) (( void (*) (List_1_t466 *, Comparison_1_t2393 *, const MethodInfo*))List_1_Sort_m12547_gshared)(__this, ___comparison, method)
+// T[] System.Collections.Generic.List`1<UnityEngine.GameObject>::ToArray()
+#define List_1_ToArray_m15912(__this, method) (( GameObjectU5BU5D_t379* (*) (List_1_t466 *, const MethodInfo*))List_1_ToArray_m12548_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::TrimExcess()
+#define List_1_TrimExcess_m15913(__this, method) (( void (*) (List_1_t466 *, const MethodInfo*))List_1_TrimExcess_m12550_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::get_Capacity()
+#define List_1_get_Capacity_m15914(__this, method) (( int32_t (*) (List_1_t466 *, const MethodInfo*))List_1_get_Capacity_m12552_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::set_Capacity(System.Int32)
+#define List_1_set_Capacity_m15915(__this, ___value, method) (( void (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1_set_Capacity_m12554_gshared)(__this, ___value, method)
+// System.Int32 System.Collections.Generic.List`1<UnityEngine.GameObject>::get_Count()
+#define List_1_get_Count_m15916(__this, method) (( int32_t (*) (List_1_t466 *, const MethodInfo*))List_1_get_Count_m12556_gshared)(__this, method)
+// T System.Collections.Generic.List`1<UnityEngine.GameObject>::get_Item(System.Int32)
+#define List_1_get_Item_m15917(__this, ___index, method) (( GameObject_t141 * (*) (List_1_t466 *, int32_t, const MethodInfo*))List_1_get_Item_m12558_gshared)(__this, ___index, method)
+// System.Void System.Collections.Generic.List`1<UnityEngine.GameObject>::set_Item(System.Int32,T)
+#define List_1_set_Item_m15918(__this, ___index, ___value, method) (( void (*) (List_1_t466 *, int32_t, GameObject_t141 *, const MethodInfo*))List_1_set_Item_m12560_gshared)(__this, ___index, ___value, method)

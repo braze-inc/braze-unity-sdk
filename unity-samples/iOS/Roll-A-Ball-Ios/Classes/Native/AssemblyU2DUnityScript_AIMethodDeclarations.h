@@ -1,31 +1,41 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // AI
-struct AI_t372;
+struct AI_t341;
 // UnityEngine.Collider
-struct Collider_t373;
+struct Collider_t410;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void AI::.ctor()
- void AI__ctor_m1574 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI__ctor_m1344 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::Awake()
- void AI_Awake_m1575 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_Awake_m1345 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::OnEnable()
- void AI_OnEnable_m1576 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_OnEnable_m1346 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::OnTriggerEnter(UnityEngine.Collider)
- void AI_OnTriggerEnter_m1577 (AI_t372 * __this, Collider_t373 * ___other, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_OnTriggerEnter_m1347 (AI_t341 * __this, Collider_t410 * ___other, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::OnEnterInterestArea()
- void AI_OnEnterInterestArea_m1578 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_OnEnterInterestArea_m1348 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::OnExitInterestArea()
- void AI_OnExitInterestArea_m1579 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_OnExitInterestArea_m1349 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::OnSpotted()
- void AI_OnSpotted_m1580 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_OnSpotted_m1350 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::OnLostTrack()
- void AI_OnLostTrack_m1581 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_OnLostTrack_m1351 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean AI::CanSeePlayer()
- bool AI_CanSeePlayer_m1582 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool AI_CanSeePlayer_m1352 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void AI::Main()
- void AI_Main_m1583 (AI_t372 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AI_Main_m1353 (AI_t341 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

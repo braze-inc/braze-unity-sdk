@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityTest.IntegrationTestRunner.ITestRunnerCallback[]
-struct ITestRunnerCallbackU5BU5D_t3320;
-// System.Object
+struct ITestRunnerCallbackU5BU5D_t2314;
+
 #include "mscorlib_System_Object.h"
+
 // System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>
-struct List_1_t271  : public Object_t
+struct  List_1_t249  : public Object_t
 {
 	// T[] System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::_items
-	ITestRunnerCallbackU5BU5D_t3320* ____items_1;
+	ITestRunnerCallbackU5BU5D_t2314* ____items_1;
 	// System.Int32 System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::_size
 	int32_t ____size_2;
 	// System.Int32 System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::_version
 	int32_t ____version_3;
 };
-struct List_1_t271_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
+struct List_1_t249_StaticFields{
 	// T[] System.Collections.Generic.List`1<UnityTest.IntegrationTestRunner.ITestRunnerCallback>::EmptyArray
-	ITestRunnerCallbackU5BU5D_t3320* ___EmptyArray_4;
+	ITestRunnerCallbackU5BU5D_t2314* ___EmptyArray_4;
 };

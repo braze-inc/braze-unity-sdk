@@ -1,37 +1,47 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate
-struct TlsServerCertificate_t1487;
+struct TlsServerCertificate_t1356;
 // Mono.Security.Protocol.Tls.Context
-struct Context_t1434;
+struct Context_t1308;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
 // Mono.Security.X509.X509Certificate
-struct X509Certificate_t1406;
+struct X509Certificate_t1083;
 // Mono.Security.X509.X509CertificateCollection
-struct X509CertificateCollection_t1402;
+struct X509CertificateCollection_t1220;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::.ctor(Mono.Security.Protocol.Tls.Context,System.Byte[])
- void TlsServerCertificate__ctor_m6332 (TlsServerCertificate_t1487 * __this, Context_t1434 * ___context, ByteU5BU5D_t97* ___buffer, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsServerCertificate__ctor_m7142 (TlsServerCertificate_t1356 * __this, Context_t1308 * ___context, ByteU5BU5D_t98* ___buffer, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::Update()
- void TlsServerCertificate_Update_m6333 (TlsServerCertificate_t1487 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsServerCertificate_Update_m7143 (TlsServerCertificate_t1356 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::ProcessAsSsl3()
- void TlsServerCertificate_ProcessAsSsl3_m6334 (TlsServerCertificate_t1487 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsServerCertificate_ProcessAsSsl3_m7144 (TlsServerCertificate_t1356 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::ProcessAsTls1()
- void TlsServerCertificate_ProcessAsTls1_m6335 (TlsServerCertificate_t1487 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsServerCertificate_ProcessAsTls1_m7145 (TlsServerCertificate_t1356 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::checkCertificateUsage(Mono.Security.X509.X509Certificate)
- bool TlsServerCertificate_checkCertificateUsage_m6336 (TlsServerCertificate_t1487 * __this, X509Certificate_t1406 * ___cert, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool TlsServerCertificate_checkCertificateUsage_m7146 (TlsServerCertificate_t1356 * __this, X509Certificate_t1083 * ___cert, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::validateCertificates(Mono.Security.X509.X509CertificateCollection)
- void TlsServerCertificate_validateCertificates_m6337 (TlsServerCertificate_t1487 * __this, X509CertificateCollection_t1402 * ___certificates, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsServerCertificate_validateCertificates_m7147 (TlsServerCertificate_t1356 * __this, X509CertificateCollection_t1220 * ___certificates, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::checkServerIdentity(Mono.Security.X509.X509Certificate)
- bool TlsServerCertificate_checkServerIdentity_m6338 (TlsServerCertificate_t1487 * __this, X509Certificate_t1406 * ___cert, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool TlsServerCertificate_checkServerIdentity_m7148 (TlsServerCertificate_t1356 * __this, X509Certificate_t1083 * ___cert, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::checkDomainName(System.String)
- bool TlsServerCertificate_checkDomainName_m6339 (TlsServerCertificate_t1487 * __this, String_t* ___subjectName, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool TlsServerCertificate_checkDomainName_m7149 (TlsServerCertificate_t1356 * __this, String_t* ___subjectName, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Mono.Security.Protocol.Tls.Handshake.Client.TlsServerCertificate::Match(System.String,System.String)
- bool TlsServerCertificate_Match_m6340 (Object_t * __this/* static, unused */, String_t* ___hostname, String_t* ___pattern, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool TlsServerCertificate_Match_m7150 (Object_t * __this /* static, unused */, String_t* ___hostname, String_t* ___pattern, const MethodInfo* method) IL2CPP_METHOD_ATTR;

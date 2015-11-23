@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.Matrix4x4
-struct Matrix4x4_t447 
+struct  Matrix4x4_t417 
 {
 	// System.Single UnityEngine.Matrix4x4::m00
 	float ___m00_0;

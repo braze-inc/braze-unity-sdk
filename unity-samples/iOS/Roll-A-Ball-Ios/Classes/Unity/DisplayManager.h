@@ -51,10 +51,9 @@ RenderingSurfaceParams;
 - (BOOL)displayAvailable:(UIScreen*)targetScreen;
 - (void)updateDisplayListInUnity;
 
-- (void)prepareFrameRendering;
 - (void)startFrameRendering;
 - (void)present;
-- (void)teardownRendering;
+- (void)endFrameRendering;
 
 - (void)enumerateDisplaysWithBlock:(void (^)(DisplayConnection* conn))block;
 

@@ -82,7 +82,7 @@ ADBannerType;
 
 @interface UnityInterstitialAd : NSObject <ADInterstitialAdDelegate, UnityViewControllerListener>
 {
-	ADInterstitialAd*	_view;
+	ADInterstitialAd*	_interstitial;
 	UIViewController*	_presentController;
 
 	BOOL				_autoReload;
@@ -91,6 +91,6 @@ ADBannerType;
 - (void)show;
 - (void)reloadAD;
 
-@property (readonly, copy, nonatomic) ADInterstitialAd* view;
+@property (readonly, copy, nonatomic) ADInterstitialAd* interstitial;
 
 @end

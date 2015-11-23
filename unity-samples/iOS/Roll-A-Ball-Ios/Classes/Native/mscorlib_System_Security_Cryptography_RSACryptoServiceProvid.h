@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // Mono.Security.Cryptography.KeyPairPersistence
-struct KeyPairPersistence_t1812;
+struct KeyPairPersistence_t1470;
 // Mono.Security.Cryptography.RSAManaged
-struct RSAManaged_t1819;
-// System.Security.Cryptography.RSA
+struct RSAManaged_t1477;
+
 #include "mscorlib_System_Security_Cryptography_RSA.h"
+
 // System.Security.Cryptography.RSACryptoServiceProvider
-struct RSACryptoServiceProvider_t1511  : public RSA_t1388
+struct  RSACryptoServiceProvider_t1212  : public RSA_t1195
 {
 	// Mono.Security.Cryptography.KeyPairPersistence System.Security.Cryptography.RSACryptoServiceProvider::store
-	KeyPairPersistence_t1812 * ___store_2;
+	KeyPairPersistence_t1470 * ___store_2;
 	// System.Boolean System.Security.Cryptography.RSACryptoServiceProvider::persistKey
 	bool ___persistKey_3;
 	// System.Boolean System.Security.Cryptography.RSACryptoServiceProvider::persisted
@@ -20,9 +31,9 @@ struct RSACryptoServiceProvider_t1511  : public RSA_t1388
 	// System.Boolean System.Security.Cryptography.RSACryptoServiceProvider::m_disposed
 	bool ___m_disposed_6;
 	// Mono.Security.Cryptography.RSAManaged System.Security.Cryptography.RSACryptoServiceProvider::rsa
-	RSAManaged_t1819 * ___rsa_7;
+	RSAManaged_t1477 * ___rsa_7;
 };
-struct RSACryptoServiceProvider_t1511_StaticFields{
+struct RSACryptoServiceProvider_t1212_StaticFields{
 	// System.Boolean System.Security.Cryptography.RSACryptoServiceProvider::useMachineKeyStore
 	bool ___useMachineKeyStore_8;
 };

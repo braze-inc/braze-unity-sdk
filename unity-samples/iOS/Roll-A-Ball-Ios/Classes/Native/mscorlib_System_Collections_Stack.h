@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object[]
-struct ObjectU5BU5D_t112;
-// System.Object
+struct ObjectU5BU5D_t87;
+
 #include "mscorlib_System_Object.h"
+
 // System.Collections.Stack
-struct Stack_t993  : public Object_t
+struct  Stack_t948  : public Object_t
 {
 	// System.Object[] System.Collections.Stack::contents
-	ObjectU5BU5D_t112* ___contents_0;
+	ObjectU5BU5D_t87* ___contents_0;
 	// System.Int32 System.Collections.Stack::current
 	int32_t ___current_1;
 	// System.Int32 System.Collections.Stack::count

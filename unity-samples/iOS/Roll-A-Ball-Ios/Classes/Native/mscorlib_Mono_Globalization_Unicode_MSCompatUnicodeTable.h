@@ -1,20 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Char[]
-struct CharU5BU5D_t276;
+struct CharU5BU5D_t270;
 // Mono.Globalization.Unicode.TailoringInfo[]
-struct TailoringInfoU5BU5D_t1784;
+struct TailoringInfoU5BU5D_t1445;
 // System.Object
 struct Object_t;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
-struct Dictionary_2_t56;
-// System.Object
+struct Dictionary_2_t46;
+
 #include "mscorlib_System_Object.h"
+
 // Mono.Globalization.Unicode.MSCompatUnicodeTable
-struct MSCompatUnicodeTable_t1785  : public Object_t
+struct  MSCompatUnicodeTable_t1444  : public Object_t
 {
 };
-struct MSCompatUnicodeTable_t1785_StaticFields{
+struct MSCompatUnicodeTable_t1444_StaticFields{
 	// System.Int32 Mono.Globalization.Unicode.MSCompatUnicodeTable::MaxExpansionLength
 	int32_t ___MaxExpansionLength_0;
 	// System.Byte* Mono.Globalization.Unicode.MSCompatUnicodeTable::ignorableFlags
@@ -46,17 +57,17 @@ struct MSCompatUnicodeTable_t1785_StaticFields{
 	// System.Byte* Mono.Globalization.Unicode.MSCompatUnicodeTable::cjkKOlv2
 	uint8_t* ___cjkKOlv2_14;
 	// System.Char[] Mono.Globalization.Unicode.MSCompatUnicodeTable::tailoringArr
-	CharU5BU5D_t276* ___tailoringArr_15;
+	CharU5BU5D_t270* ___tailoringArr_15;
 	// Mono.Globalization.Unicode.TailoringInfo[] Mono.Globalization.Unicode.MSCompatUnicodeTable::tailoringInfos
-	TailoringInfoU5BU5D_t1784* ___tailoringInfos_16;
+	TailoringInfoU5BU5D_t1445* ___tailoringInfos_16;
 	// System.Object Mono.Globalization.Unicode.MSCompatUnicodeTable::forLock
 	Object_t * ___forLock_17;
 	// System.Boolean Mono.Globalization.Unicode.MSCompatUnicodeTable::isReady
 	bool ___isReady_18;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> Mono.Globalization.Unicode.MSCompatUnicodeTable::<>f__switch$map2
-	Dictionary_2_t56 * ___U3CU3Ef__switch$map2_19;
+	Dictionary_2_t46 * ___U3CU3Ef__switchU24map2_19;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> Mono.Globalization.Unicode.MSCompatUnicodeTable::<>f__switch$map3
-	Dictionary_2_t56 * ___U3CU3Ef__switch$map3_20;
+	Dictionary_2_t46 * ___U3CU3Ef__switchU24map3_20;
 	// System.Collections.Generic.Dictionary`2<System.String,System.Int32> Mono.Globalization.Unicode.MSCompatUnicodeTable::<>f__switch$map4
-	Dictionary_2_t56 * ___U3CU3Ef__switch$map4_21;
+	Dictionary_2_t46 * ___U3CU3Ef__switchU24map4_21;
 };

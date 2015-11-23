@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
+
 // System.Object
 struct Object_t;
 // System.EventArgs
-struct EventArgs_t1396;
+struct EventArgs_t1286;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
-// System.MulticastDelegate
+struct AsyncCallback_t552;
+
 #include "mscorlib_System_MulticastDelegate.h"
+#include "mscorlib_System_Void.h"
+
 // Mono.Security.Cryptography.RSAManaged/KeyGeneratedEventHandler
-struct KeyGeneratedEventHandler_t1397  : public MulticastDelegate_t594
+struct  KeyGeneratedEventHandler_t1285  : public MulticastDelegate_t550
 {
 };

@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Reflection.MemberInfo
-struct MemberInfo_t196;
+struct MemberInfo_t;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
+
 // System.Predicate`1<System.Reflection.MemberInfo>
-struct Predicate_1_t3095  : public MulticastDelegate_t594
+struct  Predicate_1_t2247  : public MulticastDelegate_t550
 {
 };

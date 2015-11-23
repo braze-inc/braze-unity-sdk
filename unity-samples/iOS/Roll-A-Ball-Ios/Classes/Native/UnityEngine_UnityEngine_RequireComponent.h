@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Type
 struct Type_t;
-// System.Attribute
+
 #include "mscorlib_System_Attribute.h"
+
 // UnityEngine.RequireComponent
-struct RequireComponent_t444  : public Attribute_t213
+struct  RequireComponent_t882  : public Attribute_t191
 {
 	// System.Type UnityEngine.RequireComponent::m_Type0
 	Type_t * ___m_Type0_0;

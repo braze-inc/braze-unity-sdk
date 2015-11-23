@@ -1,21 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.IO.TextWriter/NullTextWriter
-struct NullTextWriter_t1937;
+struct NullTextWriter_t1580;
 // System.String
 struct String_t;
 // System.Char[]
-struct CharU5BU5D_t276;
+struct CharU5BU5D_t270;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.IO.TextWriter/NullTextWriter::.ctor()
- void NullTextWriter__ctor_m9635 (NullTextWriter_t1937 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void NullTextWriter__ctor_m9463 (NullTextWriter_t1580 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.TextWriter/NullTextWriter::Write(System.String)
- void NullTextWriter_Write_m9636 (NullTextWriter_t1937 * __this, String_t* ___s, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void NullTextWriter_Write_m9464 (NullTextWriter_t1580 * __this, String_t* ___s, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.TextWriter/NullTextWriter::Write(System.Char)
- void NullTextWriter_Write_m9637 (NullTextWriter_t1937 * __this, uint16_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void NullTextWriter_Write_m9465 (NullTextWriter_t1580 * __this, uint16_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.TextWriter/NullTextWriter::Write(System.Char[],System.Int32,System.Int32)
- void NullTextWriter_Write_m9638 (NullTextWriter_t1937 * __this, CharU5BU5D_t276* ___value, int32_t ___index, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void NullTextWriter_Write_m9466 (NullTextWriter_t1580 * __this, CharU5BU5D_t270* ___value, int32_t ___index, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;

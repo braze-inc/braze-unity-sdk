@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Attribute
+
+
 #include "mscorlib_System_Attribute.h"
+
 // System.Security.SuppressUnmanagedCodeSecurityAttribute
-struct SuppressUnmanagedCodeSecurityAttribute_t2184  : public Attribute_t213
+struct  SuppressUnmanagedCodeSecurityAttribute_t1917  : public Attribute_t191
 {
 };

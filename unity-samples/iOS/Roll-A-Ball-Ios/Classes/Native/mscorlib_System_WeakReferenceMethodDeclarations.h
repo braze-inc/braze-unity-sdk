@@ -1,33 +1,42 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.WeakReference
-struct WeakReference_t2088;
+struct WeakReference_t1792;
 // System.Object
 struct Object_t;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.WeakReference::.ctor()
- void WeakReference__ctor_m12014 (WeakReference_t2088 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference__ctor_m12367 (WeakReference_t1792 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.WeakReference::.ctor(System.Object)
- void WeakReference__ctor_m12015 (WeakReference_t2088 * __this, Object_t * ___target, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference__ctor_m12368 (WeakReference_t1792 * __this, Object_t * ___target, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.WeakReference::.ctor(System.Object,System.Boolean)
- void WeakReference__ctor_m12016 (WeakReference_t2088 * __this, Object_t * ___target, bool ___trackResurrection, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference__ctor_m12369 (WeakReference_t1792 * __this, Object_t * ___target, bool ___trackResurrection, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.WeakReference::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void WeakReference__ctor_m12017 (WeakReference_t2088 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference__ctor_m12370 (WeakReference_t1792 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.WeakReference::AllocateHandle(System.Object)
- void WeakReference_AllocateHandle_m12018 (WeakReference_t2088 * __this, Object_t * ___target, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference_AllocateHandle_m12371 (WeakReference_t1792 * __this, Object_t * ___target, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.WeakReference::get_Target()
- Object_t * WeakReference_get_Target_m12019 (WeakReference_t2088 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * WeakReference_get_Target_m12372 (WeakReference_t1792 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.WeakReference::get_TrackResurrection()
- bool WeakReference_get_TrackResurrection_m12020 (WeakReference_t2088 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool WeakReference_get_TrackResurrection_m12373 (WeakReference_t1792 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.WeakReference::Finalize()
- void WeakReference_Finalize_m12021 (WeakReference_t2088 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference_Finalize_m12374 (WeakReference_t1792 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.WeakReference::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void WeakReference_GetObjectData_m12022 (WeakReference_t2088 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WeakReference_GetObjectData_m12375 (WeakReference_t1792 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

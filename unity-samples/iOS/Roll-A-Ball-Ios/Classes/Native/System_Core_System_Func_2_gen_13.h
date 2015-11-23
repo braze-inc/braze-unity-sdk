@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
+// UnityTest.AssertionComponent
+struct AssertionComponent_t135;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ITestResult>>
-#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_2.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo KeyValuePair_2_t257_il2cpp_TypeInfo;
-// System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ITestResult>>,System.Int32>
-struct Func_2_t253  : public MulticastDelegate_t594
+
+// System.Func`2<UnityTest.AssertionComponent,System.Boolean>
+struct  Func_2_t239  : public MulticastDelegate_t550
 {
 };

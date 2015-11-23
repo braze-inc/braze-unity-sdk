@@ -1,34 +1,52 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>
-struct ComparerBaseGeneric_2_t2984;
+struct ComparerBaseGeneric_2_t2229;
 // System.Object
 struct Object_t;
 // System.Type
 struct Type_t;
 // System.Type[]
-struct TypeU5BU5D_t146;
+struct TypeU5BU5D_t216;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::.ctor()
- void ComparerBaseGeneric_2__ctor_m14488 (ComparerBaseGeneric_2_t2984 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ComparerBaseGeneric_2__ctor_m13811_gshared (ComparerBaseGeneric_2_t2229 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_2__ctor_m13811(__this, method) (( void (*) (ComparerBaseGeneric_2_t2229 *, const MethodInfo*))ComparerBaseGeneric_2__ctor_m13811_gshared)(__this, method)
 // System.Object UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::get_ConstValue()
- Object_t * ComparerBaseGeneric_2_get_ConstValue_m1162 (ComparerBaseGeneric_2_t2984 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * ComparerBaseGeneric_2_get_ConstValue_m13812_gshared (ComparerBaseGeneric_2_t2229 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_2_get_ConstValue_m13812(__this, method) (( Object_t * (*) (ComparerBaseGeneric_2_t2229 *, const MethodInfo*))ComparerBaseGeneric_2_get_ConstValue_m13812_gshared)(__this, method)
 // System.Void UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::set_ConstValue(System.Object)
- void ComparerBaseGeneric_2_set_ConstValue_m1163 (ComparerBaseGeneric_2_t2984 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ComparerBaseGeneric_2_set_ConstValue_m13813_gshared (ComparerBaseGeneric_2_t2229 * __this, Object_t * ___value, const MethodInfo* method);
+#define ComparerBaseGeneric_2_set_ConstValue_m13813(__this, ___value, method) (( void (*) (ComparerBaseGeneric_2_t2229 *, Object_t *, const MethodInfo*))ComparerBaseGeneric_2_set_ConstValue_m13813_gshared)(__this, ___value, method)
 // System.Object UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::GetDefaultConstValue()
- Object_t * ComparerBaseGeneric_2_GetDefaultConstValue_m1164 (ComparerBaseGeneric_2_t2984 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * ComparerBaseGeneric_2_GetDefaultConstValue_m13814_gshared (ComparerBaseGeneric_2_t2229 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_2_GetDefaultConstValue_m13814(__this, method) (( Object_t * (*) (ComparerBaseGeneric_2_t2229 *, const MethodInfo*))ComparerBaseGeneric_2_GetDefaultConstValue_m13814_gshared)(__this, method)
 // System.Boolean UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::IsValueType(System.Type)
- bool ComparerBaseGeneric_2_IsValueType_m14489 (Object_t * __this/* static, unused */, Type_t * ___type, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool ComparerBaseGeneric_2_IsValueType_m13815_gshared (Object_t * __this /* static, unused */, Type_t * ___type, const MethodInfo* method);
+#define ComparerBaseGeneric_2_IsValueType_m13815(__this /* static, unused */, ___type, method) (( bool (*) (Object_t * /* static, unused */, Type_t *, const MethodInfo*))ComparerBaseGeneric_2_IsValueType_m13815_gshared)(__this /* static, unused */, ___type, method)
 // System.Boolean UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::Compare(System.Object,System.Object)
- bool ComparerBaseGeneric_2_Compare_m1160 (ComparerBaseGeneric_2_t2984 * __this, Object_t * ___a, Object_t * ___b, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::Compare(T1,T2)
+extern "C" bool ComparerBaseGeneric_2_Compare_m13816_gshared (ComparerBaseGeneric_2_t2229 * __this, Object_t * ___a, Object_t * ___b, const MethodInfo* method);
+#define ComparerBaseGeneric_2_Compare_m13816(__this, ___a, ___b, method) (( bool (*) (ComparerBaseGeneric_2_t2229 *, Object_t *, Object_t *, const MethodInfo*))ComparerBaseGeneric_2_Compare_m13816_gshared)(__this, ___a, ___b, method)
 // System.Type[] UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::GetAccepatbleTypesForA()
- TypeU5BU5D_t146* ComparerBaseGeneric_2_GetAccepatbleTypesForA_m1158 (ComparerBaseGeneric_2_t2984 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" TypeU5BU5D_t216* ComparerBaseGeneric_2_GetAccepatbleTypesForA_m13817_gshared (ComparerBaseGeneric_2_t2229 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_2_GetAccepatbleTypesForA_m13817(__this, method) (( TypeU5BU5D_t216* (*) (ComparerBaseGeneric_2_t2229 *, const MethodInfo*))ComparerBaseGeneric_2_GetAccepatbleTypesForA_m13817_gshared)(__this, method)
 // System.Type[] UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::GetAccepatbleTypesForB()
- TypeU5BU5D_t146* ComparerBaseGeneric_2_GetAccepatbleTypesForB_m1161 (ComparerBaseGeneric_2_t2984 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" TypeU5BU5D_t216* ComparerBaseGeneric_2_GetAccepatbleTypesForB_m13818_gshared (ComparerBaseGeneric_2_t2229 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_2_GetAccepatbleTypesForB_m13818(__this, method) (( TypeU5BU5D_t216* (*) (ComparerBaseGeneric_2_t2229 *, const MethodInfo*))ComparerBaseGeneric_2_GetAccepatbleTypesForB_m13818_gshared)(__this, method)
 // System.Boolean UnityTest.ComparerBaseGeneric`2<System.Boolean,System.Boolean>::get_UseCache()
- bool ComparerBaseGeneric_2_get_UseCache_m1159 (ComparerBaseGeneric_2_t2984 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool ComparerBaseGeneric_2_get_UseCache_m13819_gshared (ComparerBaseGeneric_2_t2229 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_2_get_UseCache_m13819(__this, method) (( bool (*) (ComparerBaseGeneric_2_t2229 *, const MethodInfo*))ComparerBaseGeneric_2_get_UseCache_m13819_gshared)(__this, method)

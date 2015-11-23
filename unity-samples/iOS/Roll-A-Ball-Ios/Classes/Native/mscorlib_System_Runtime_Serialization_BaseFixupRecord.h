@@ -1,20 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Runtime.Serialization.ObjectRecord
-struct ObjectRecord_t2118;
+struct ObjectRecord_t1830;
 // System.Runtime.Serialization.BaseFixupRecord
-struct BaseFixupRecord_t2119;
-// System.Object
+struct BaseFixupRecord_t1831;
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Serialization.BaseFixupRecord
-struct BaseFixupRecord_t2119  : public Object_t
+struct  BaseFixupRecord_t1831  : public Object_t
 {
 	// System.Runtime.Serialization.ObjectRecord System.Runtime.Serialization.BaseFixupRecord::ObjectToBeFixed
-	ObjectRecord_t2118 * ___ObjectToBeFixed_0;
+	ObjectRecord_t1830 * ___ObjectToBeFixed_0;
 	// System.Runtime.Serialization.ObjectRecord System.Runtime.Serialization.BaseFixupRecord::ObjectRequired
-	ObjectRecord_t2118 * ___ObjectRequired_1;
+	ObjectRecord_t1830 * ___ObjectRequired_1;
 	// System.Runtime.Serialization.BaseFixupRecord System.Runtime.Serialization.BaseFixupRecord::NextSameContainer
-	BaseFixupRecord_t2119 * ___NextSameContainer_2;
+	BaseFixupRecord_t1831 * ___NextSameContainer_2;
 	// System.Runtime.Serialization.BaseFixupRecord System.Runtime.Serialization.BaseFixupRecord::NextSameRequired
-	BaseFixupRecord_t2119 * ___NextSameRequired_3;
+	BaseFixupRecord_t1831 * ___NextSameRequired_3;
 };

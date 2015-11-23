@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Cryptography.HMAC
+
+
 #include "mscorlib_System_Security_Cryptography_HMAC.h"
+
 // System.Security.Cryptography.HMACSHA256
-struct HMACSHA256_t2144  : public HMAC_t1516
+struct  HMACSHA256_t1858  : public HMAC_t1378
 {
 };

@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// UnityEngine.CameraClearFlags
 #include "UnityEngine_UnityEngine_CameraClearFlags.h"
+
 // UnityEngine.CameraClearFlags
-struct CameraClearFlags_t940 
+struct  CameraClearFlags_t895 
 {
 	// System.Int32 UnityEngine.CameraClearFlags::value__
 	int32_t ___value___1;

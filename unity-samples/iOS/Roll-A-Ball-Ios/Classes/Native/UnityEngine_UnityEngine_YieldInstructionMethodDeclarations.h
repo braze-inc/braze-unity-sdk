@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.YieldInstruction
-struct YieldInstruction_t798;
-struct YieldInstruction_t798_marshaled;
+struct YieldInstruction_t745;
+struct YieldInstruction_t745_marshaled;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.YieldInstruction::.ctor()
- void YieldInstruction__ctor_m4586 (YieldInstruction_t798 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void YieldInstruction_t798_marshal(const YieldInstruction_t798& unmarshaled, YieldInstruction_t798_marshaled& marshaled);
-void YieldInstruction_t798_marshal_back(const YieldInstruction_t798_marshaled& marshaled, YieldInstruction_t798& unmarshaled);
-void YieldInstruction_t798_marshal_cleanup(YieldInstruction_t798_marshaled& marshaled);
+extern "C" void YieldInstruction__ctor_m4178 (YieldInstruction_t745 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void YieldInstruction_t745_marshal(const YieldInstruction_t745& unmarshaled, YieldInstruction_t745_marshaled& marshaled);
+extern "C" void YieldInstruction_t745_marshal_back(const YieldInstruction_t745_marshaled& marshaled, YieldInstruction_t745& unmarshaled);
+extern "C" void YieldInstruction_t745_marshal_cleanup(YieldInstruction_t745_marshaled& marshaled);

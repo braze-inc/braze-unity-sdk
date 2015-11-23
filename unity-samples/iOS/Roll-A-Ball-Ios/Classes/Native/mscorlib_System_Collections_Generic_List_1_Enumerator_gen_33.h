@@ -1,20 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.List`1<UnityEngine.UILineInfo>
-struct List_1_t923;
-// System.ValueType
+
+// System.Collections.Generic.List`1<UnityEngine.UI.Toggle>
+struct List_1_t600;
+// UnityEngine.UI.Toggle
+struct Toggle_t127;
+
 #include "mscorlib_System_ValueType.h"
-// UnityEngine.UILineInfo
-#include "UnityEngine_UnityEngine_UILineInfo.h"
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>
-struct Enumerator_t4411 
+
+// System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>
+struct  Enumerator_t2539 
 {
-	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::l
-	List_1_t923 * ___l_0;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::next
+	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::l
+	List_1_t600 * ___l_0;
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::next
 	int32_t ___next_1;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::ver
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::ver
 	int32_t ___ver_2;
-	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UILineInfo>::current
-	UILineInfo_t746  ___current_3;
+	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::current
+	Toggle_t127 * ___current_3;
 };

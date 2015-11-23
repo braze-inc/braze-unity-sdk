@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<Appboy.Models.CardCategory>
-struct EqualityComparer_1_t2901;
-// System.Object
+
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.UIVertex>
+struct EqualityComparer_1_t2473;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.EqualityComparer`1<Appboy.Models.CardCategory>
-struct EqualityComparer_1_t2901  : public Object_t
+
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.UIVertex>
+struct  EqualityComparer_1_t2473  : public Object_t
 {
 };
-struct EqualityComparer_1_t2901_StaticFields{
-	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<Appboy.Models.CardCategory>::_default
-	EqualityComparer_1_t2901 * ____default_0;
+struct EqualityComparer_1_t2473_StaticFields{
+	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.UIVertex>::_default
+	EqualityComparer_1_t2473 * ____default_0;
 };

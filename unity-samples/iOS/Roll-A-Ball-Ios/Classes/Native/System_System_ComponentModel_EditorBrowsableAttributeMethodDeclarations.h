@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.ComponentModel.EditorBrowsableAttribute
-struct EditorBrowsableAttribute_t1026;
+struct EditorBrowsableAttribute_t1033;
 // System.Object
 struct Object_t;
-// System.ComponentModel.EditorBrowsableState
+
+#include "codegen/il2cpp-codegen.h"
 #include "System_System_ComponentModel_EditorBrowsableState.h"
 
 // System.Void System.ComponentModel.EditorBrowsableAttribute::.ctor(System.ComponentModel.EditorBrowsableState)
- void EditorBrowsableAttribute__ctor_m5031 (EditorBrowsableAttribute_t1026 * __this, int32_t ___state, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void EditorBrowsableAttribute__ctor_m5305 (EditorBrowsableAttribute_t1033 * __this, int32_t ___state, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.ComponentModel.EditorBrowsableState System.ComponentModel.EditorBrowsableAttribute::get_State()
- int32_t EditorBrowsableAttribute_get_State_m6738 (EditorBrowsableAttribute_t1026 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t EditorBrowsableAttribute_get_State_m5306 (EditorBrowsableAttribute_t1033 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.ComponentModel.EditorBrowsableAttribute::Equals(System.Object)
- bool EditorBrowsableAttribute_Equals_m6739 (EditorBrowsableAttribute_t1026 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool EditorBrowsableAttribute_Equals_m5307 (EditorBrowsableAttribute_t1033 * __this, Object_t * ___obj, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.ComponentModel.EditorBrowsableAttribute::GetHashCode()
- int32_t EditorBrowsableAttribute_GetHashCode_m6740 (EditorBrowsableAttribute_t1026 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t EditorBrowsableAttribute_GetHashCode_m5308 (EditorBrowsableAttribute_t1033 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

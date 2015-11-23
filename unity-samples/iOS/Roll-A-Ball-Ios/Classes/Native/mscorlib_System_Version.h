@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // System.Version
-struct Version_t1587  : public Object_t
+struct  Version_t1053  : public Object_t
 {
 	// System.Int32 System.Version::_Major
 	int32_t ____Major_1;

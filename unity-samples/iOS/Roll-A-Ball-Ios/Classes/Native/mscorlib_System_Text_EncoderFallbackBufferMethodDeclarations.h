@@ -1,15 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.EncoderFallbackBuffer
-struct EncoderFallbackBuffer_t2187;
+struct EncoderFallbackBuffer_t1930;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Text.EncoderFallbackBuffer::.ctor()
- void EncoderFallbackBuffer__ctor_m11007 (EncoderFallbackBuffer_t2187 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Int32 System.Text.EncoderFallbackBuffer::get_Remaining()
-// System.Boolean System.Text.EncoderFallbackBuffer::Fallback(System.Char,System.Int32)
-// System.Boolean System.Text.EncoderFallbackBuffer::Fallback(System.Char,System.Char,System.Int32)
-// System.Char System.Text.EncoderFallbackBuffer::GetNextChar()
+extern "C" void EncoderFallbackBuffer__ctor_m11275 (EncoderFallbackBuffer_t1930 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.OrdinalComparer
-struct OrdinalComparer_t2290;
+struct OrdinalComparer_t2024;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.OrdinalComparer::.ctor(System.Boolean)
- void OrdinalComparer__ctor_m11919 (OrdinalComparer_t2290 * __this, bool ___ignoreCase, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void OrdinalComparer__ctor_m12264 (OrdinalComparer_t2024 * __this, bool ___ignoreCase, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.OrdinalComparer::Compare(System.String,System.String)
- int32_t OrdinalComparer_Compare_m11920 (OrdinalComparer_t2290 * __this, String_t* ___x, String_t* ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t OrdinalComparer_Compare_m12265 (OrdinalComparer_t2024 * __this, String_t* ___x, String_t* ___y, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.OrdinalComparer::Equals(System.String,System.String)
- bool OrdinalComparer_Equals_m11921 (OrdinalComparer_t2290 * __this, String_t* ___x, String_t* ___y, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool OrdinalComparer_Equals_m12266 (OrdinalComparer_t2024 * __this, String_t* ___x, String_t* ___y, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.OrdinalComparer::GetHashCode(System.String)
- int32_t OrdinalComparer_GetHashCode_m11922 (OrdinalComparer_t2290 * __this, String_t* ___s, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t OrdinalComparer_GetHashCode_m12267 (OrdinalComparer_t2024 * __this, String_t* ___s, const MethodInfo* method) IL2CPP_METHOD_ATTR;

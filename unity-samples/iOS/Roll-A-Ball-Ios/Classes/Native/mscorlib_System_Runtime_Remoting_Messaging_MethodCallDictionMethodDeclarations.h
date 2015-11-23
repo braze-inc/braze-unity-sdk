@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.Remoting.Messaging.MethodCallDictionary
-struct MethodCallDictionary_t2064;
+struct MethodCallDictionary_t1763;
 // System.Runtime.Remoting.Messaging.IMethodMessage
-struct IMethodMessage_t2065;
+struct IMethodMessage_t1765;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.Remoting.Messaging.MethodCallDictionary::.ctor(System.Runtime.Remoting.Messaging.IMethodMessage)
- void MethodCallDictionary__ctor_m10296 (MethodCallDictionary_t2064 * __this, Object_t * ___message, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MethodCallDictionary__ctor_m10359 (MethodCallDictionary_t1763 * __this, Object_t * ___message, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Messaging.MethodCallDictionary::.cctor()
- void MethodCallDictionary__cctor_m10297 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MethodCallDictionary__cctor_m10360 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

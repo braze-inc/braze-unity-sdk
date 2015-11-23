@@ -1,19 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.Void
-#include "mscorlib_System_Void.h"
-// System.Runtime.Serialization.StreamingContext
-#include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo StreamingContext_t961_il2cpp_TypeInfo;
+#include "mscorlib_System_Void.h"
+#include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
+
 // System.Runtime.Serialization.SerializationCallbacks/CallbackHandler
-struct CallbackHandler_t2129  : public MulticastDelegate_t594
+struct  CallbackHandler_t1842  : public MulticastDelegate_t550
 {
 };

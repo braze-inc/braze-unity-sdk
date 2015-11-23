@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyInformationalVersionAttribute
-struct AssemblyInformationalVersionAttribute_t1353;
+struct AssemblyInformationalVersionAttribute_t1632;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Reflection.AssemblyInformationalVersionAttribute::.ctor(System.String)
- void AssemblyInformationalVersionAttribute__ctor_m5509 (AssemblyInformationalVersionAttribute_t1353 * __this, String_t* ___informationalVersion, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyInformationalVersionAttribute__ctor_m9806 (AssemblyInformationalVersionAttribute_t1632 * __this, String_t* ___informationalVersion, const MethodInfo* method) IL2CPP_METHOD_ATTR;

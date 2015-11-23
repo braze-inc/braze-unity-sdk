@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ArgumentException
+
+
 #include "mscorlib_System_ArgumentException.h"
+
 // System.ArgumentNullException
-struct ArgumentNullException_t117  : public ArgumentException_t116
+struct  ArgumentNullException_t113  : public ArgumentException_t111
 {
 };

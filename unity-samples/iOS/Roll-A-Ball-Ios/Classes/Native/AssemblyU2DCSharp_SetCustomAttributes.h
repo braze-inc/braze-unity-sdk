@@ -1,15 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.UI.InputField
 struct InputField_t121;
 // UnityEngine.UI.Toggle
 struct Toggle_t127;
 // UnityEngine.UI.Text
 struct Text_t128;
-// UnityEngine.MonoBehaviour
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
+
 // SetCustomAttributes
-struct SetCustomAttributes_t129  : public MonoBehaviour_t2
+struct  SetCustomAttributes_t126  : public MonoBehaviour_t2
 {
 	// UnityEngine.UI.InputField SetCustomAttributes::BoolKeyField
 	InputField_t121 * ___BoolKeyField_2;

@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.MonoTypeInfo
-struct MonoTypeInfo_t2278;
-// System.Type
+struct MonoTypeInfo_t2012;
+
 #include "mscorlib_System_Type.h"
+
 // System.MonoType
-struct MonoType_t2279  : public Type_t
+struct  MonoType_t  : public Type_t
 {
 	// System.MonoTypeInfo System.MonoType::type_info
-	MonoTypeInfo_t2278 * ___type_info_8;
+	MonoTypeInfo_t2012 * ___type_info_8;
 };

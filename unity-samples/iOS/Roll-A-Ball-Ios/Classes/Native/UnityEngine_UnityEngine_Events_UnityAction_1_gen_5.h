@@ -1,18 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
-// System.Collections.Generic.List`1<UnityEngine.Component>
-struct List_1_t663;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
+
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+// System.IAsyncResult
+struct IAsyncResult_t551;
+// System.AsyncCallback
+struct AsyncCallback_t552;
+
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.Events.UnityAction`1<System.Collections.Generic.List`1<UnityEngine.Component>>
-struct UnityAction_1_t675  : public MulticastDelegate_t594
+#include "mscorlib_System_Void.h"
+
+// UnityEngine.Events.UnityAction`1<System.Object>
+struct  UnityAction_1_t2343  : public MulticastDelegate_t550
 {
 };

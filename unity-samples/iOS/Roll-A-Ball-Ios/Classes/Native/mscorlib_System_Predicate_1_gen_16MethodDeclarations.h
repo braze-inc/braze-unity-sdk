@@ -1,27 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Predicate_1_gen_2MethodDeclarations.h"
 
-// System.Predicate`1<UnityEngine.EventSystems.RaycastResult>
-struct Predicate_1_t3553;
-// System.Object
-struct Object_t;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-// UnityEngine.EventSystems.RaycastResult
-#include "UnityEngine_UI_UnityEngine_EventSystems_RaycastResult.h"
-
-// System.Void System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::.ctor(System.Object,System.IntPtr)
- void Predicate_1__ctor_m17993 (Predicate_1_t3553 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::Invoke(T)
- bool Predicate_1_Invoke_m17994 (Predicate_1_t3553 * __this, RaycastResult_t463  ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.IAsyncResult System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::BeginInvoke(T,System.AsyncCallback,System.Object)
- Object_t * Predicate_1_BeginInvoke_m17995 (Predicate_1_t3553 * __this, RaycastResult_t463  ___obj, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Predicate`1<UnityEngine.EventSystems.RaycastResult>::EndInvoke(System.IAsyncResult)
- bool Predicate_1_EndInvoke_m17996 (Predicate_1_t3553 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Predicate`1<UnityEngine.EventSystems.BaseRaycaster>::.ctor(System.Object,System.IntPtr)
+#define Predicate_1__ctor_m15602(__this, ___object, ___method, method) (( void (*) (Predicate_1_t2372 *, Object_t *, IntPtr_t, const MethodInfo*))Predicate_1__ctor_m12648_gshared)(__this, ___object, ___method, method)
+// System.Boolean System.Predicate`1<UnityEngine.EventSystems.BaseRaycaster>::Invoke(T)
+#define Predicate_1_Invoke_m15603(__this, ___obj, method) (( bool (*) (Predicate_1_t2372 *, BaseRaycaster_t461 *, const MethodInfo*))Predicate_1_Invoke_m12649_gshared)(__this, ___obj, method)
+// System.IAsyncResult System.Predicate`1<UnityEngine.EventSystems.BaseRaycaster>::BeginInvoke(T,System.AsyncCallback,System.Object)
+#define Predicate_1_BeginInvoke_m15604(__this, ___obj, ___callback, ___object, method) (( Object_t * (*) (Predicate_1_t2372 *, BaseRaycaster_t461 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Predicate_1_BeginInvoke_m12650_gshared)(__this, ___obj, ___callback, ___object, method)
+// System.Boolean System.Predicate`1<UnityEngine.EventSystems.BaseRaycaster>::EndInvoke(System.IAsyncResult)
+#define Predicate_1_EndInvoke_m15605(__this, ___result, method) (( bool (*) (Predicate_1_t2372 *, Object_t *, const MethodInfo*))Predicate_1_EndInvoke_m12651_gshared)(__this, ___result, method)

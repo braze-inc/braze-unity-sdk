@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.Stack`1<System.Collections.Generic.List`1<UnityEngine.EventSystems.IEventSystemHandler>>
-struct Stack_1_t3532;
-// System.ValueType
+
+// System.Collections.Generic.Stack`1<System.Type>
+struct Stack_1_t976;
+
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.EventSystems.IEventSystemHandler>>
-struct Enumerator_t3536 
+
+// System.Collections.Generic.Stack`1/Enumerator<System.Type>
+struct  Enumerator_t2702 
 {
-	// System.Collections.Generic.Stack`1<T> System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.EventSystems.IEventSystemHandler>>::parent
-	Stack_1_t3532 * ___parent_0;
-	// System.Int32 System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.EventSystems.IEventSystemHandler>>::idx
+	// System.Collections.Generic.Stack`1<T> System.Collections.Generic.Stack`1/Enumerator<System.Type>::parent
+	Stack_1_t976 * ___parent_0;
+	// System.Int32 System.Collections.Generic.Stack`1/Enumerator<System.Type>::idx
 	int32_t ___idx_1;
-	// System.Int32 System.Collections.Generic.Stack`1/Enumerator<System.Collections.Generic.List`1<UnityEngine.EventSystems.IEventSystemHandler>>::_version
+	// System.Int32 System.Collections.Generic.Stack`1/Enumerator<System.Type>::_version
 	int32_t ____version_2;
 };

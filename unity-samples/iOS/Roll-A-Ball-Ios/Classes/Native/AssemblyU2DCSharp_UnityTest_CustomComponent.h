@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.MonoBehaviour
+
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
+
 // UnityTest.CustomComponent
-struct CustomComponent_t202  : public MonoBehaviour_t2
+struct  CustomComponent_t183  : public MonoBehaviour_t2
 {
 	// System.Single UnityTest.CustomComponent::MyFloatField
 	float ___MyFloatField_2;

@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.CanvasGroup
-struct CanvasGroup_t728;
+
+// UnityEngine.UI.Text
+struct Text_t128;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<UnityEngine.CanvasGroup>
-struct Comparison_1_t3959  : public MulticastDelegate_t594
+
+// System.Comparison`1<UnityEngine.UI.Text>
+struct  Comparison_1_t2462  : public MulticastDelegate_t550
 {
 };

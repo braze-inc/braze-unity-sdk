@@ -1,25 +1,38 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Action`1<System.Boolean>
-struct Action_1_t801;
+struct Action_1_t750;
 // System.Object
 struct Object_t;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
+struct AsyncCallback_t552;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
 
 // System.Void System.Action`1<System.Boolean>::.ctor(System.Object,System.IntPtr)
- void Action_1__ctor_m21998 (Action_1_t801 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Action_1__ctor_m19263_gshared (Action_1_t750 * __this, Object_t * ___object, IntPtr_t ___method, const MethodInfo* method);
+#define Action_1__ctor_m19263(__this, ___object, ___method, method) (( void (*) (Action_1_t750 *, Object_t *, IntPtr_t, const MethodInfo*))Action_1__ctor_m19263_gshared)(__this, ___object, ___method, method)
 // System.Void System.Action`1<System.Boolean>::Invoke(T)
- void Action_1_Invoke_m4973 (Action_1_t801 * __this, bool ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Action_1_Invoke_m5083_gshared (Action_1_t750 * __this, bool ___obj, const MethodInfo* method);
+#define Action_1_Invoke_m5083(__this, ___obj, method) (( void (*) (Action_1_t750 *, bool, const MethodInfo*))Action_1_Invoke_m5083_gshared)(__this, ___obj, method)
 // System.IAsyncResult System.Action`1<System.Boolean>::BeginInvoke(T,System.AsyncCallback,System.Object)
- Object_t * Action_1_BeginInvoke_m21999 (Action_1_t801 * __this, bool ___obj, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Action_1_BeginInvoke_m19264_gshared (Action_1_t750 * __this, bool ___obj, AsyncCallback_t552 * ___callback, Object_t * ___object, const MethodInfo* method);
+#define Action_1_BeginInvoke_m19264(__this, ___obj, ___callback, ___object, method) (( Object_t * (*) (Action_1_t750 *, bool, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Action_1_BeginInvoke_m19264_gshared)(__this, ___obj, ___callback, ___object, method)
 // System.Void System.Action`1<System.Boolean>::EndInvoke(System.IAsyncResult)
- void Action_1_EndInvoke_m22000 (Action_1_t801 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Action_1_EndInvoke_m19265_gshared (Action_1_t750 * __this, Object_t * ___result, const MethodInfo* method);
+#define Action_1_EndInvoke_m19265(__this, ___result, method) (( void (*) (Action_1_t750 *, Object_t *, const MethodInfo*))Action_1_EndInvoke_m19265_gshared)(__this, ___result, method)

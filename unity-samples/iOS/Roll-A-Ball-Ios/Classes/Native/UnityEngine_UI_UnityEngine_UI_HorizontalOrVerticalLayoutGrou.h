@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.LayoutGroup
+
+
 #include "UnityEngine_UI_UnityEngine_UI_LayoutGroup.h"
+
 // UnityEngine.UI.HorizontalOrVerticalLayoutGroup
-struct HorizontalOrVerticalLayoutGroup_t656  : public LayoutGroup_t654
+struct  HorizontalOrVerticalLayoutGroup_t620  : public LayoutGroup_t618
 {
 	// System.Single UnityEngine.UI.HorizontalOrVerticalLayoutGroup::m_Spacing
 	float ___m_Spacing_10;

@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// System.IO.FileAttributes
 #include "mscorlib_System_IO_FileAttributes.h"
+
 // System.IO.MonoIOStat
-struct MonoIOStat_t1924 
+struct  MonoIOStat_t1565 
 {
 	// System.String System.IO.MonoIOStat::Name
 	String_t* ___Name_0;
@@ -23,7 +33,7 @@ struct MonoIOStat_t1924
 	int64_t ___LastWriteTime_5;
 };
 // Native definition for marshalling of: System.IO.MonoIOStat
-struct MonoIOStat_t1924_marshaled
+struct MonoIOStat_t1565_marshaled
 {
 	char* ___Name_0;
 	int32_t ___Attributes_1;

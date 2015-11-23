@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.Encoding
+
+
 #include "mscorlib_System_Text_Encoding.h"
+
 // System.Text.ASCIIEncoding
-struct ASCIIEncoding_t2186  : public Encoding_t322
+struct  ASCIIEncoding_t1919  : public Encoding_t284
 {
 };

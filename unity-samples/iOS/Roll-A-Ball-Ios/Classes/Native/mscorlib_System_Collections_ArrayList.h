@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object[]
-struct ObjectU5BU5D_t112;
-// System.Object
+struct ObjectU5BU5D_t87;
+
 #include "mscorlib_System_Object.h"
+
 // System.Collections.ArrayList
-struct ArrayList_t1372  : public Object_t
+struct  ArrayList_t1029  : public Object_t
 {
 	// System.Int32 System.Collections.ArrayList::_size
 	int32_t ____size_1;
 	// System.Object[] System.Collections.ArrayList::_items
-	ObjectU5BU5D_t112* ____items_2;
+	ObjectU5BU5D_t87* ____items_2;
 	// System.Int32 System.Collections.ArrayList::_version
 	int32_t ____version_3;
 };
-struct ArrayList_t1372_StaticFields{
-	// System.Int32 System.Collections.ArrayList::DefaultInitialCapacity
-	int32_t ___DefaultInitialCapacity_0;
+struct ArrayList_t1029_StaticFields{
 	// System.Object[] System.Collections.ArrayList::EmptyArray
-	ObjectU5BU5D_t112* ___EmptyArray_4;
+	ObjectU5BU5D_t87* ___EmptyArray_4;
 };

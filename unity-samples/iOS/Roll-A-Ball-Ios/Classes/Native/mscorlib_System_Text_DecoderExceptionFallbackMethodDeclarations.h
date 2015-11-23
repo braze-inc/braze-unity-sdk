@@ -1,21 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.DecoderExceptionFallback
-struct DecoderExceptionFallback_t2190;
+struct DecoderExceptionFallback_t1922;
 // System.Text.DecoderFallbackBuffer
-struct DecoderFallbackBuffer_t2188;
+struct DecoderFallbackBuffer_t1921;
 // System.Object
 struct Object_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Text.DecoderExceptionFallback::.ctor()
- void DecoderExceptionFallback__ctor_m10964 (DecoderExceptionFallback_t2190 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecoderExceptionFallback__ctor_m11232 (DecoderExceptionFallback_t1922 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.DecoderFallbackBuffer System.Text.DecoderExceptionFallback::CreateFallbackBuffer()
- DecoderFallbackBuffer_t2188 * DecoderExceptionFallback_CreateFallbackBuffer_m10965 (DecoderExceptionFallback_t2190 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DecoderFallbackBuffer_t1921 * DecoderExceptionFallback_CreateFallbackBuffer_m11233 (DecoderExceptionFallback_t1922 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.DecoderExceptionFallback::Equals(System.Object)
- bool DecoderExceptionFallback_Equals_m10966 (DecoderExceptionFallback_t2190 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool DecoderExceptionFallback_Equals_m11234 (DecoderExceptionFallback_t1922 * __this, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.DecoderExceptionFallback::GetHashCode()
- int32_t DecoderExceptionFallback_GetHashCode_m10967 (DecoderExceptionFallback_t2190 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t DecoderExceptionFallback_GetHashCode_m11235 (DecoderExceptionFallback_t1922 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

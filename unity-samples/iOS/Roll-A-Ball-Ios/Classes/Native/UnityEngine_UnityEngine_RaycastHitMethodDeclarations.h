@@ -1,29 +1,37 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.RaycastHit
-struct RaycastHit_t439;
 // UnityEngine.Collider
-struct Collider_t373;
+struct Collider_t410;
 // UnityEngine.Rigidbody
-struct Rigidbody_t390;
+struct Rigidbody_t359;
 // UnityEngine.Transform
-struct Transform_t179;
-// UnityEngine.Vector3
+struct Transform_t258;
+
+#include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_RaycastHit.h"
 #include "UnityEngine_UnityEngine_Vector3.h"
 
 // UnityEngine.Vector3 UnityEngine.RaycastHit::get_point()
- Vector3_t188  RaycastHit_get_point_m1927 (RaycastHit_t439 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Vector3_t259  RaycastHit_get_point_m1678 (RaycastHit_t407 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Vector3 UnityEngine.RaycastHit::get_normal()
- Vector3_t188  RaycastHit_get_normal_m1928 (RaycastHit_t439 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Vector3_t259  RaycastHit_get_normal_m1679 (RaycastHit_t407 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Single UnityEngine.RaycastHit::get_distance()
- float RaycastHit_get_distance_m1921 (RaycastHit_t439 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float RaycastHit_get_distance_m1672 (RaycastHit_t407 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Collider UnityEngine.RaycastHit::get_collider()
- Collider_t373 * RaycastHit_get_collider_m1811 (RaycastHit_t439 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Collider_t410 * RaycastHit_get_collider_m1568 (RaycastHit_t407 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Rigidbody UnityEngine.RaycastHit::get_rigidbody()
- Rigidbody_t390 * RaycastHit_get_rigidbody_m1993 (RaycastHit_t439 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Rigidbody_t359 * RaycastHit_get_rigidbody_m1742 (RaycastHit_t407 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Transform UnityEngine.RaycastHit::get_transform()
- Transform_t179 * RaycastHit_get_transform_m1920 (RaycastHit_t439 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Transform_t258 * RaycastHit_get_transform_m1671 (RaycastHit_t407 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

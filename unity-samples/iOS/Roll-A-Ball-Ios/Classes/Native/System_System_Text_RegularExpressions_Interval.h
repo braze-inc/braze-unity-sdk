@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Text.RegularExpressions.Interval
-struct Interval_t1667 
+struct  Interval_t1150 
 {
 	// System.Int32 System.Text.RegularExpressions.Interval::low
 	int32_t ___low_0;
@@ -13,7 +24,7 @@ struct Interval_t1667
 	bool ___contiguous_2;
 };
 // Native definition for marshalling of: System.Text.RegularExpressions.Interval
-struct Interval_t1667_marshaled
+struct Interval_t1150_marshaled
 {
 	int32_t ___low_0;
 	int32_t ___high_1;

@@ -1,23 +1,32 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.RegularExpressions.FactoryCache
-struct FactoryCache_t1642;
+struct FactoryCache_t1125;
 // System.String
 struct String_t;
 // System.Text.RegularExpressions.IMachineFactory
-struct IMachineFactory_t1643;
-// System.Text.RegularExpressions.RegexOptions
+struct IMachineFactory_t1126;
+
+#include "codegen/il2cpp-codegen.h"
 #include "System_System_Text_RegularExpressions_RegexOptions.h"
 
 // System.Void System.Text.RegularExpressions.FactoryCache::.ctor(System.Int32)
- void FactoryCache__ctor_m7147 (FactoryCache_t1642 * __this, int32_t ___capacity, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FactoryCache__ctor_m5759 (FactoryCache_t1125 * __this, int32_t ___capacity, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.FactoryCache::Add(System.String,System.Text.RegularExpressions.RegexOptions,System.Text.RegularExpressions.IMachineFactory)
- void FactoryCache_Add_m7148 (FactoryCache_t1642 * __this, String_t* ___pattern, int32_t ___options, Object_t * ___factory, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FactoryCache_Add_m5760 (FactoryCache_t1125 * __this, String_t* ___pattern, int32_t ___options, Object_t * ___factory, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.FactoryCache::Cleanup()
- void FactoryCache_Cleanup_m7149 (FactoryCache_t1642 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FactoryCache_Cleanup_m5761 (FactoryCache_t1125 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.RegularExpressions.IMachineFactory System.Text.RegularExpressions.FactoryCache::Lookup(System.String,System.Text.RegularExpressions.RegexOptions)
- Object_t * FactoryCache_Lookup_m7150 (FactoryCache_t1642 * __this, String_t* ___pattern, int32_t ___options, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * FactoryCache_Lookup_m5762 (FactoryCache_t1125 * __this, String_t* ___pattern, int32_t ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;

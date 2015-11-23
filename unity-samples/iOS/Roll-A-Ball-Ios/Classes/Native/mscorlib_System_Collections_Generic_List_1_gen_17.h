@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.Text[]
-struct TextU5BU5D_t3762;
-// System.Object
+
+// UnityEngine.EventSystems.PointerInputModule/ButtonState[]
+struct ButtonStateU5BU5D_t2410;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityEngine.UI.Text>
-struct List_1_t722  : public Object_t
+
+// System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>
+struct  List_1_t471  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Text>::_items
-	TextU5BU5D_t3762* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Text>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::_items
+	ButtonStateU5BU5D_t2410* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Text>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::_version
 	int32_t ____version_3;
 };
-struct List_1_t722_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Text>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Text>::EmptyArray
-	TextU5BU5D_t3762* ___EmptyArray_4;
+struct List_1_t471_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityEngine.EventSystems.PointerInputModule/ButtonState>::EmptyArray
+	ButtonStateU5BU5D_t2410* ___EmptyArray_4;
 };

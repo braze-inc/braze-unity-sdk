@@ -1,19 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.Canvas
-struct Canvas_t561;
-// UnityEngine.EventSystems.UIBehaviour
+struct Canvas_t521;
+
 #include "UnityEngine_UI_UnityEngine_EventSystems_UIBehaviour.h"
-// UnityEngine.UI.CanvasScaler/ScaleMode
 #include "UnityEngine_UI_UnityEngine_UI_CanvasScaler_ScaleMode.h"
-// UnityEngine.Vector2
 #include "UnityEngine_UnityEngine_Vector2.h"
-// UnityEngine.UI.CanvasScaler/ScreenMatchMode
 #include "UnityEngine_UI_UnityEngine_UI_CanvasScaler_ScreenMatchMode.h"
-// UnityEngine.UI.CanvasScaler/Unit
 #include "UnityEngine_UI_UnityEngine_UI_CanvasScaler_Unit.h"
+
 // UnityEngine.UI.CanvasScaler
-struct CanvasScaler_t647  : public UIBehaviour_t460
+struct  CanvasScaler_t611  : public UIBehaviour_t425
 {
 	// UnityEngine.UI.CanvasScaler/ScaleMode UnityEngine.UI.CanvasScaler::m_UiScaleMode
 	int32_t ___m_UiScaleMode_3;
@@ -22,7 +29,7 @@ struct CanvasScaler_t647  : public UIBehaviour_t460
 	// System.Single UnityEngine.UI.CanvasScaler::m_ScaleFactor
 	float ___m_ScaleFactor_5;
 	// UnityEngine.Vector2 UnityEngine.UI.CanvasScaler::m_ReferenceResolution
-	Vector2_t184  ___m_ReferenceResolution_6;
+	Vector2_t231  ___m_ReferenceResolution_6;
 	// UnityEngine.UI.CanvasScaler/ScreenMatchMode UnityEngine.UI.CanvasScaler::m_ScreenMatchMode
 	int32_t ___m_ScreenMatchMode_7;
 	// System.Single UnityEngine.UI.CanvasScaler::m_MatchWidthOrHeight
@@ -36,7 +43,7 @@ struct CanvasScaler_t647  : public UIBehaviour_t460
 	// System.Single UnityEngine.UI.CanvasScaler::m_DynamicPixelsPerUnit
 	float ___m_DynamicPixelsPerUnit_12;
 	// UnityEngine.Canvas UnityEngine.UI.CanvasScaler::m_Canvas
-	Canvas_t561 * ___m_Canvas_13;
+	Canvas_t521 * ___m_Canvas_13;
 	// System.Single UnityEngine.UI.CanvasScaler::m_PrevScaleFactor
 	float ___m_PrevScaleFactor_14;
 	// System.Single UnityEngine.UI.CanvasScaler::m_PrevReferencePixelsPerUnit

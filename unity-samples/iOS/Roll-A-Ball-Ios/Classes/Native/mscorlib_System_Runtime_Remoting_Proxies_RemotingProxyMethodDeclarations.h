@@ -1,27 +1,37 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.Remoting.Proxies.RemotingProxy
-struct RemotingProxy_t2082;
-// System.String
-struct String_t;
+struct RemotingProxy_t1784;
 // System.Type
 struct Type_t;
 // System.Runtime.Remoting.ClientIdentity
-struct ClientIdentity_t2081;
+struct ClientIdentity_t1791;
+// System.String
+struct String_t;
 // System.Object[]
-struct ObjectU5BU5D_t112;
+struct ObjectU5BU5D_t87;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.Remoting.Proxies.RemotingProxy::.ctor(System.Type,System.Runtime.Remoting.ClientIdentity)
- void RemotingProxy__ctor_m10370 (RemotingProxy_t2082 * __this, Type_t * ___type, ClientIdentity_t2081 * ___identity, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RemotingProxy__ctor_m10461 (RemotingProxy_t1784 * __this, Type_t * ___type, ClientIdentity_t1791 * ___identity, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Proxies.RemotingProxy::.ctor(System.Type,System.String,System.Object[])
- void RemotingProxy__ctor_m10371 (RemotingProxy_t2082 * __this, Type_t * ___type, String_t* ___activationUrl, ObjectU5BU5D_t112* ___activationAttributes, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RemotingProxy__ctor_m10462 (RemotingProxy_t1784 * __this, Type_t * ___type, String_t* ___activationUrl, ObjectU5BU5D_t87* ___activationAttributes, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Proxies.RemotingProxy::.cctor()
- void RemotingProxy__cctor_m10372 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RemotingProxy__cctor_m10463 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Runtime.Remoting.Proxies.RemotingProxy::get_TypeName()
- String_t* RemotingProxy_get_TypeName_m10373 (RemotingProxy_t2082 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* RemotingProxy_get_TypeName_m10464 (RemotingProxy_t1784 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Proxies.RemotingProxy::Finalize()
- void RemotingProxy_Finalize_m10374 (RemotingProxy_t2082 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RemotingProxy_Finalize_m10465 (RemotingProxy_t1784 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

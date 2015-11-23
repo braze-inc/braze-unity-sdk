@@ -1,16 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.DateTime
 #include "mscorlib_System_DateTime.h"
+
 // UnityEngine.SocialPlatforms.Impl.Score
-struct Score_t939  : public Object_t
+struct  Score_t904  : public Object_t
 {
 	// System.DateTime UnityEngine.SocialPlatforms.Impl.Score::m_Date
-	DateTime_t837  ___m_Date_0;
+	DateTime_t852  ___m_Date_0;
 	// System.String UnityEngine.SocialPlatforms.Impl.Score::m_FormattedValue
 	String_t* ___m_FormattedValue_1;
 	// System.String UnityEngine.SocialPlatforms.Impl.Score::m_UserID

@@ -1,15 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.GameObject
-struct GameObject_t140;
+struct GameObject_t141;
 // UnityEngine.LineRenderer
-struct LineRenderer_t407;
+struct LineRenderer_t375;
 // PerFrameRaycast
-struct PerFrameRaycast_t408;
-// UnityEngine.MonoBehaviour
+struct PerFrameRaycast_t376;
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
+
 // LaserScope
-struct LaserScope_t404  : public MonoBehaviour_t2
+struct  LaserScope_t373  : public MonoBehaviour_t2
 {
 	// System.Single LaserScope::scrollSpeed
 	float ___scrollSpeed_2;
@@ -22,13 +33,13 @@ struct LaserScope_t404  : public MonoBehaviour_t2
 	// System.Single LaserScope::minWidth
 	float ___minWidth_6;
 	// UnityEngine.GameObject LaserScope::pointer
-	GameObject_t140 * ___pointer_7;
+	GameObject_t141 * ___pointer_7;
 	// UnityEngine.LineRenderer LaserScope::lRenderer
-	LineRenderer_t407 * ___lRenderer_8;
+	LineRenderer_t375 * ___lRenderer_8;
 	// System.Single LaserScope::aniTime
 	float ___aniTime_9;
 	// System.Single LaserScope::aniDir
 	float ___aniDir_10;
 	// PerFrameRaycast LaserScope::raycast
-	PerFrameRaycast_t408 * ___raycast_11;
+	PerFrameRaycast_t376 * ___raycast_11;
 };

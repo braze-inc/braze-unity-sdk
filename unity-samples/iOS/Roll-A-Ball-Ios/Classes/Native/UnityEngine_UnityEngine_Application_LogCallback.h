@@ -1,21 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
+
 // System.String
 struct String_t;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// UnityEngine.LogType
-#include "UnityEngine_UnityEngine_LogType.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo LogType_t354_il2cpp_TypeInfo;
+#include "mscorlib_System_Void.h"
+#include "UnityEngine_UnityEngine_LogType.h"
+
 // UnityEngine.Application/LogCallback
-struct LogCallback_t346  : public MulticastDelegate_t594
+struct  LogCallback_t303  : public MulticastDelegate_t550
 {
 };

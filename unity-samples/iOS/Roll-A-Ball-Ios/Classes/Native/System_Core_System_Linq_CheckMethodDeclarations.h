@@ -1,19 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Linq.Check
-struct Check_t1174;
 // System.Object
 struct Object_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Linq.Check::Source(System.Object)
- void Check_Source_m5334 (Object_t * __this/* static, unused */, Object_t * ___source, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Check_Source_m6316 (Object_t * __this /* static, unused */, Object_t * ___source, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Linq.Check::SourceAndSelector(System.Object,System.Object)
- void Check_SourceAndSelector_m5335 (Object_t * __this/* static, unused */, Object_t * ___source, Object_t * ___selector, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Check_SourceAndSelector_m6317 (Object_t * __this /* static, unused */, Object_t * ___source, Object_t * ___selector, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Linq.Check::SourceAndPredicate(System.Object,System.Object)
- void Check_SourceAndPredicate_m5336 (Object_t * __this/* static, unused */, Object_t * ___source, Object_t * ___predicate, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Check_SourceAndPredicate_m6318 (Object_t * __this /* static, unused */, Object_t * ___source, Object_t * ___predicate, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Linq.Check::SourceAndKeySelector(System.Object,System.Object)
- void Check_SourceAndKeySelector_m5337 (Object_t * __this/* static, unused */, Object_t * ___source, Object_t * ___keySelector, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Check_SourceAndKeySelector_m6319 (Object_t * __this /* static, unused */, Object_t * ___source, Object_t * ___keySelector, const MethodInfo* method) IL2CPP_METHOD_ATTR;

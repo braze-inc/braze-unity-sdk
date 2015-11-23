@@ -1,13 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.SocialPlatforms.GameCenter.GcAchievementDescriptionData
-struct GcAchievementDescriptionData_t818;
 // UnityEngine.SocialPlatforms.Impl.AchievementDescription
-struct AchievementDescription_t937;
+struct AchievementDescription_t903;
+
+#include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_SocialPlatforms_GameCenter_GcAchieve.h"
 
 // UnityEngine.SocialPlatforms.Impl.AchievementDescription UnityEngine.SocialPlatforms.GameCenter.GcAchievementDescriptionData::ToAchievementDescription()
- AchievementDescription_t937 * GcAchievementDescriptionData_ToAchievementDescription_m4775 (GcAchievementDescriptionData_t818 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" AchievementDescription_t903 * GcAchievementDescriptionData_ToAchievementDescription_m4789 (GcAchievementDescriptionData_t890 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

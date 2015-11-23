@@ -1,24 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Reflection.TypeFilter
-struct TypeFilter_t1978;
+struct TypeFilter_t1657;
 // System.Reflection.Assembly
-struct Assembly_t239;
+struct Assembly_t215;
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Reflection.BindingFlags
 #include "mscorlib_System_Reflection_BindingFlags.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // System.Reflection.Module
-struct Module_t1752  : public Object_t
+struct  Module_t1605  : public Object_t
 {
 	// System.IntPtr System.Reflection.Module::_impl
-	IntPtr_t107 ____impl_3;
+	IntPtr_t ____impl_3;
 	// System.Reflection.Assembly System.Reflection.Module::assembly
-	Assembly_t239 * ___assembly_4;
+	Assembly_t215 * ___assembly_4;
 	// System.String System.Reflection.Module::fqname
 	String_t* ___fqname_5;
 	// System.String System.Reflection.Module::name
@@ -30,11 +39,9 @@ struct Module_t1752  : public Object_t
 	// System.Int32 System.Reflection.Module::token
 	int32_t ___token_9;
 };
-struct Module_t1752_StaticFields{
-	// System.Reflection.BindingFlags System.Reflection.Module::defaultBindingFlags
-	int32_t ___defaultBindingFlags_0;
+struct Module_t1605_StaticFields{
 	// System.Reflection.TypeFilter System.Reflection.Module::FilterTypeName
-	TypeFilter_t1978 * ___FilterTypeName_1;
+	TypeFilter_t1657 * ___FilterTypeName_1;
 	// System.Reflection.TypeFilter System.Reflection.Module::FilterTypeNameIgnoreCase
-	TypeFilter_t1978 * ___FilterTypeNameIgnoreCase_2;
+	TypeFilter_t1657 * ___FilterTypeNameIgnoreCase_2;
 };

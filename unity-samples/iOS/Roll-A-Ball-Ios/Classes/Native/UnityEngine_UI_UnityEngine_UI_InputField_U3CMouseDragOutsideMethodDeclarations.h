@@ -1,23 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3
-struct U3CMouseDragOutsideRectU3Ec__Iterator3_t596;
+// UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4
+struct U3CMouseDragOutsideRectU3Ec__Iterator4_t554;
 // System.Object
 struct Object_t;
 
-// System.Void UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3::.ctor()
- void U3CMouseDragOutsideRectU3Ec__Iterator3__ctor_m2500 (U3CMouseDragOutsideRectU3Ec__Iterator3_t596 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3::System.Collections.Generic.IEnumerator<object>.get_Current()
- Object_t * U3CMouseDragOutsideRectU3Ec__Iterator3_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m2501 (U3CMouseDragOutsideRectU3Ec__Iterator3_t596 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3::System.Collections.IEnumerator.get_Current()
- Object_t * U3CMouseDragOutsideRectU3Ec__Iterator3_System_Collections_IEnumerator_get_Current_m2502 (U3CMouseDragOutsideRectU3Ec__Iterator3_t596 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3::MoveNext()
- bool U3CMouseDragOutsideRectU3Ec__Iterator3_MoveNext_m2503 (U3CMouseDragOutsideRectU3Ec__Iterator3_t596 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3::Dispose()
- void U3CMouseDragOutsideRectU3Ec__Iterator3_Dispose_m2504 (U3CMouseDragOutsideRectU3Ec__Iterator3_t596 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator3::Reset()
- void U3CMouseDragOutsideRectU3Ec__Iterator3_Reset_m2505 (U3CMouseDragOutsideRectU3Ec__Iterator3_t596 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+#include "codegen/il2cpp-codegen.h"
+
+// System.Void UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4::.ctor()
+extern "C" void U3CMouseDragOutsideRectU3Ec__Iterator4__ctor_m2372 (U3CMouseDragOutsideRectU3Ec__Iterator4_t554 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4::System.Collections.Generic.IEnumerator<object>.get_Current()
+extern "C" Object_t * U3CMouseDragOutsideRectU3Ec__Iterator4_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m2373 (U3CMouseDragOutsideRectU3Ec__Iterator4_t554 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4::System.Collections.IEnumerator.get_Current()
+extern "C" Object_t * U3CMouseDragOutsideRectU3Ec__Iterator4_System_Collections_IEnumerator_get_Current_m2374 (U3CMouseDragOutsideRectU3Ec__Iterator4_t554 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4::MoveNext()
+extern "C" bool U3CMouseDragOutsideRectU3Ec__Iterator4_MoveNext_m2375 (U3CMouseDragOutsideRectU3Ec__Iterator4_t554 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4::Dispose()
+extern "C" void U3CMouseDragOutsideRectU3Ec__Iterator4_Dispose_m2376 (U3CMouseDragOutsideRectU3Ec__Iterator4_t554 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.UI.InputField/<MouseDragOutsideRect>c__Iterator4::Reset()
+extern "C" void U3CMouseDragOutsideRectU3Ec__Iterator4_Reset_m2377 (U3CMouseDragOutsideRectU3Ec__Iterator4_t554 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // System.NumberFormatter/CustomInfo
-struct CustomInfo_t2282  : public Object_t
+struct  CustomInfo_t2015  : public Object_t
 {
 	// System.Boolean System.NumberFormatter/CustomInfo::UseGroup
 	bool ___UseGroup_0;

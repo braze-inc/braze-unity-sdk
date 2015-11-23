@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // FanRotate
-struct FanRotate_t385;
+struct FanRotate_t352;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void FanRotate::.ctor()
- void FanRotate__ctor_m1605 (FanRotate_t385 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FanRotate__ctor_m1375 (FanRotate_t352 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void FanRotate::Main()
- void FanRotate_Main_m1606 (FanRotate_t385 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FanRotate_Main_m1376 (FanRotate_t352 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

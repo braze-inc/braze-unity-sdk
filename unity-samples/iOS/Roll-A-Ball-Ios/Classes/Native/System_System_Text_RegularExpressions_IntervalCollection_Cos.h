@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.Text.RegularExpressions.Interval
-#include "System_System_Text_RegularExpressions_Interval.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo Interval_t1667_il2cpp_TypeInfo;
+#include "System_System_Text_RegularExpressions_Interval.h"
+
 // System.Text.RegularExpressions.IntervalCollection/CostDelegate
-struct CostDelegate_t1669  : public MulticastDelegate_t594
+struct  CostDelegate_t1153  : public MulticastDelegate_t550
 {
 };

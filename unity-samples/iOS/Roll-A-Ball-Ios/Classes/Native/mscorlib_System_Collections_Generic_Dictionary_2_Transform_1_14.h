@@ -1,19 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.String
-struct String_t;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
+
 // System.Object
 struct Object_t;
-// System.Int32
-#include "mscorlib_System_Int32.h"
-// System.MulticastDelegate
+// System.IAsyncResult
+struct IAsyncResult_t551;
+// System.AsyncCallback
+struct AsyncCallback_t552;
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo Int32_t63_il2cpp_TypeInfo;
-// System.Collections.Generic.Dictionary`2/Transform`1<System.String,System.Int32,System.String>
-struct Transform_1_t2914  : public MulticastDelegate_t594
+#include "mscorlib_System_Collections_DictionaryEntry.h"
+#include "mscorlib_System_Int32.h"
+
+// System.Collections.Generic.Dictionary`2/Transform`1<System.Int32,System.Object,System.Collections.DictionaryEntry>
+struct  Transform_1_t2397  : public MulticastDelegate_t550
 {
 };

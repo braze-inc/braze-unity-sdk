@@ -12,6 +12,10 @@
 
 namespace
 {
+	enum {
+		GpuProfilerBlockEachNthFrame = 4
+	};
+	
 	mach_timebase_info_data_t timebaseInfo;
 	void ProfilerInit()
 	{
@@ -129,16 +133,18 @@ Profiler_FrameStart()
 void
 Profiler_FrameEnd()
 {
-#if ENABLE_BLOCK_ON_GPU_PROFILER
-		int64_t gpuTime0 = mach_absolute_time();
+	_gpuDelta = 0;
+
+#if ENABLE_GPU_TIMING
+	if (_frameId % GpuProfilerBlockEachNthFrame == 0)
+	{
 		UnityFinishRendering();
-		int64_t gpuTime1 = mach_absolute_time();
+		int64_t gpuTime = mach_absolute_time();
 
-		_gpuDelta = gpuTime1 - gpuTime0;
-#else
-		_gpuDelta = 0;
+		_gpuDelta = gpuTime - _frameStart;
+	}
 #endif
-
+	
 	_swapStart = mach_absolute_time();
 }
 
@@ -166,17 +172,18 @@ Profiler_FrameUpdate(const UnityFrameStats* unityFrameStats)
 
 	_lastVBlankTime = vblankTime;
 
-	const int EachNthFrame = 30;
+	const int MustBeDivisibleBy = (ENABLE_GPU_TIMING) ? GpuProfilerBlockEachNthFrame: 1;
+	const int EachNthFrame = (32/MustBeDivisibleBy)*MustBeDivisibleBy;
 	if (_frameId == EachNthFrame)
 	{
 		_frameId = 0;
 
-		::printf("iPhone Unity internal profiler stats:\n");
+		::printf("iPhone Unity internal profiler stats\n");
 		::printf("cpu-player>    min: %4.1f   max: %4.1f   avg: %4.1f\n", MachToMillisecondsDelta(_playerPB.minV), MachToMillisecondsDelta(_playerPB.maxV), MachToMillisecondsDelta(_playerPB.avgV / EachNthFrame));
 		::printf("cpu-ogles-drv> min: %4.1f   max: %4.1f   avg: %4.1f\n", MachToMillisecondsDelta(_oglesPB.minV), MachToMillisecondsDelta(_oglesPB.maxV), MachToMillisecondsDelta(_oglesPB.avgV / EachNthFrame));
 		::printf("cpu-present>   min: %4.1f   max: %4.1f   avg: %4.1f\n", MachToMillisecondsDelta(_presentPB.minV), MachToMillisecondsDelta(_presentPB.maxV), MachToMillisecondsDelta(_presentPB.avgV / EachNthFrame));
-#if ENABLE_BLOCK_ON_GPU_PROFILER
-		::printf("gpu>           min: %4.1f   max: %4.1f   avg: %4.1f\n", MachToMillisecondsDelta(_gpuPB.minV), MachToMillisecondsDelta(_gpuPB.maxV), MachToMillisecondsDelta(_gpuPB.avgV) / EachNthFrame);
+#if ENABLE_GPU_TIMING
+		::printf("gpu>           min: %4.1f   max: %4.1f   avg: %4.1f\n", MachToMillisecondsDelta(_gpuPB.minV), MachToMillisecondsDelta(_gpuPB.maxV), MachToMillisecondsDelta(_gpuPB.avgV) / (EachNthFrame/GpuProfilerBlockEachNthFrame));
 #endif
 		// only pay attention if wait-for-gpu is significant (2 milliseconds)
 		const float waitForGpuThreshold = 2.0f * EachNthFrame;
@@ -270,8 +277,6 @@ void Profiler_EndMSAAResolve()
 
 extern "C"
 {
-	// TODO: move it to unityinterface.h?
-
 	enum ScriptingGCEvent
 	{
 		SCRIPTING_GC_EVENT_START,

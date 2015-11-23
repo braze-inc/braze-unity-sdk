@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.EncoderFallback
+
+
 #include "mscorlib_System_Text_EncoderFallback.h"
+
 // System.Text.EncoderExceptionFallback
-struct EncoderExceptionFallback_t2195  : public EncoderFallback_t2196
+struct  EncoderExceptionFallback_t1927  : public EncoderFallback_t1928
 {
 };

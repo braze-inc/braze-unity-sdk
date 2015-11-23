@@ -1,15 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
 // System.Collections.Hashtable
-struct Hashtable_t414;
-// System.Object
+struct Hashtable_t382;
+
 #include "mscorlib_System_Object.h"
+
 // System.Text.RegularExpressions.QuickSearch
-struct QuickSearch_t1664  : public Object_t
+struct  QuickSearch_t1148  : public Object_t
 {
 	// System.String System.Text.RegularExpressions.QuickSearch::str
 	String_t* ___str_0;
@@ -20,11 +31,11 @@ struct QuickSearch_t1664  : public Object_t
 	// System.Boolean System.Text.RegularExpressions.QuickSearch::reverse
 	bool ___reverse_3;
 	// System.Byte[] System.Text.RegularExpressions.QuickSearch::shift
-	ByteU5BU5D_t97* ___shift_4;
+	ByteU5BU5D_t98* ___shift_4;
 	// System.Collections.Hashtable System.Text.RegularExpressions.QuickSearch::shiftExtended
-	Hashtable_t414 * ___shiftExtended_5;
+	Hashtable_t382 * ___shiftExtended_5;
 };
-struct QuickSearch_t1664_StaticFields{
+struct QuickSearch_t1148_StaticFields{
 	// System.Int32 System.Text.RegularExpressions.QuickSearch::THRESHOLD
 	int32_t ___THRESHOLD_6;
 };

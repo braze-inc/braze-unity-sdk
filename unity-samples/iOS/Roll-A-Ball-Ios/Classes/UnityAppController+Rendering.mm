@@ -42,19 +42,19 @@ static int SelectRenderingAPIImpl();
 - (void)repaintDisplayLink
 {
 #if ENABLE_DISPLAY_LINK_PAUSING || ENABLE_DISPATCH
-    _displayLink.paused = YES;
+	_displayLink.paused = YES;
 #endif
 
 #if ENABLE_DISPATCH
-    dispatch_async(dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 #endif
-        if(!_didResignActive)
-            [self repaint];
+		if(!_didResignActive)
+			[self repaint];
 #if ENABLE_DISPLAY_LINK_PAUSING || ENABLE_DISPATCH
-        _displayLink.paused = NO;
+		_displayLink.paused = NO;
 #endif
 #if ENABLE_DISPATCH
-    });
+	});
 #endif
 }
 
@@ -62,6 +62,7 @@ static int SelectRenderingAPIImpl();
 {
 	[self checkOrientationRequest];
 	[_unityView recreateGLESSurfaceIfNeeded];
+	UnityDeliverUIEvents();
 
 	if (!UnityIsPaused())
 		UnityRepaint();
@@ -129,19 +130,18 @@ extern "C" void UnityFramerateChangeCallback(int targetFPS)
 	[GetAppController() callbackFramerateChange:targetFPS];
 }
 
-extern "C" void UnityInitMainScreenRenderingCallback(int* screenWidth, int* screenHeight)
+extern "C" void UnityInitMainScreenRenderingCallback()
 {
-	extern void QueryTargetResolution(int* targetW, int* targetH);
+	{
+		extern void QueryTargetResolution(int* targetW, int* targetH);
 
-	int resW=0, resH=0;
-	QueryTargetResolution(&resW, &resH);
-	UnityRequestRenderingResolution(resW, resH);
+		int resW=0, resH=0;
+		QueryTargetResolution(&resW, &resH);
+		UnityRequestRenderingResolution(resW, resH);
+	}
 
 	DisplayConnection* display = GetAppController().mainDisplay;
 	[display initRendering];
-
-	*screenWidth	= resW;
-	*screenHeight	= resH;
 }
 
 
@@ -176,46 +176,78 @@ typedef bool(*CheckSupportedFunc)(int);
 
 static int SelectRenderingAPIImpl()
 {
-	int api = 0;
-
-	// we want to do fallback Metal->Gles3->Gles2
-	// metal support is available only if built with ios8 sdk and running on ios8
 #if UNITY_CAN_USE_METAL
 	const bool	canSupportMetal = _ios80orNewer;
 #else
 	const bool	canSupportMetal = false;
 #endif
 
-	const int			unityApiEnum[]		= {apiMetal, apiOpenGLES3, apiOpenGLES2};
-	CheckSupportedFunc	checkSupport[]		= {&IsMetalSupported, &IsGlesSupported, &IsGlesSupported};
-	const int			checkSupportArg[]	= {0, kEAGLRenderingAPIOpenGLES3, kEAGLRenderingAPIOpenGLES2};
-	const bool			iosSupport[]		= {canSupportMetal, _ios70orNewer, true};
+	// Get list of graphics APIs to try from player settings
+	const int kMaxAPIs = 3;
+	int apis[kMaxAPIs];
+	const int apiCount = UnityGetRenderingAPIs (kMaxAPIs, apis);
 
-	for(int i = 0 ; i < 3 && !api ; ++i)
+	// Go over them and try each
+	for (int i = 0; i < apiCount; ++i)
 	{
-		if(iosSupport[i] && UnityIsRenderingAPISupported(unityApiEnum[i]) && checkSupport[i](checkSupportArg[i]))
-			api = unityApiEnum[i];
+		int api = apis[i];
+		// Metal
+		if (api == apiMetal)
+		{
+			if (!canSupportMetal)
+				continue;
+			if (!IsMetalSupported(0))
+				continue;
+			return api;
+		}
+		// GLES3
+		if (api == apiOpenGLES3)
+		{
+			if (!_ios70orNewer)
+				continue;
+			if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES3))
+				continue;
+			return api;
+		}
+		// GLES2
+		if (api == apiOpenGLES2)
+		{
+			if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES2))
+				continue;
+			return api;
+		}
 	}
-	return api;
+
+	return 0;
 }
 
 extern "C" NSBundle*			UnityGetMetalBundle()		{ return _MetalBundle; }
 extern "C" MTLDeviceRef			UnityGetMetalDevice()		{ return _MetalDevice; }
 extern "C" MTLCommandQueueRef	UnityGetMetalCommandQueue()	{ return  ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->commandQueue; }
 
-extern "C" EAGLContext*	UnityGetDataContextEAGL()	{ return _GlesContext; }
-extern "C" int			UnitySelectedRenderingAPI()	{ return _renderingAPI; }
+extern "C" EAGLContext*			UnityGetDataContextEAGL()	{ return _GlesContext; }
+extern "C" int					UnitySelectedRenderingAPI()	{ return _renderingAPI; }
+
+extern "C" UnityRenderBuffer	UnityBackbufferColor()		{ return GetMainDisplaySurface()->unityColorBuffer; }
+extern "C" UnityRenderBuffer	UnityBackbufferDepth()		{ return GetMainDisplaySurface()->unityDepthBuffer; }
+
 
 
 extern "C" void UnityRepaint()
 {
 	@autoreleasepool
 	{
+		// this will handle running on metal just fine (nop)
+		EAGLContextSetCurrentAutoRestore autorestore(GetMainDisplaySurface());
+
 		Profiler_FrameStart();
 		UnityInputProcess();
 
-		[[DisplayManager Instance] prepareFrameRendering];
+		UnityStartFrame(GetMainDisplaySurface()->unityColorBuffer, GetMainDisplaySurface()->unityDepthBuffer);
+
 		UnityPlayerLoop();
-		[[DisplayManager Instance] teardownRendering];
+
+		[[DisplayManager Instance] endFrameRendering];
+		UnityEndFrame();
 	}
 }

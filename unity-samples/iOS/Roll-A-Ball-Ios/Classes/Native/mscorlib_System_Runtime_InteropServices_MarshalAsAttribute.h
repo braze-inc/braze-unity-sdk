@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
-// System.Attribute
+
 #include "mscorlib_System_Attribute.h"
-// System.Runtime.InteropServices.UnmanagedType
 #include "mscorlib_System_Runtime_InteropServices_UnmanagedType.h"
+
 // System.Runtime.InteropServices.MarshalAsAttribute
-struct MarshalAsAttribute_t1758  : public Attribute_t213
+struct  MarshalAsAttribute_t1411  : public Attribute_t191
 {
 	// System.Runtime.InteropServices.UnmanagedType System.Runtime.InteropServices.MarshalAsAttribute::utype
 	int32_t ___utype_0;

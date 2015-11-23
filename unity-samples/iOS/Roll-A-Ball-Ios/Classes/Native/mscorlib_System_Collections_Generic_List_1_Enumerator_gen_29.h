@@ -1,20 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.List`1<UnityEngine.UI.Toggle>
-struct List_1_t638;
-// UnityEngine.UI.Toggle
-struct Toggle_t127;
-// System.ValueType
+
+// System.Collections.Generic.List`1<UnityEngine.UI.IClippable>
+struct List_1_t571;
+// UnityEngine.UI.IClippable
+struct IClippable_t668;
+
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>
-struct Enumerator_t4012 
+
+// System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.IClippable>
+struct  Enumerator_t2514 
 {
-	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::l
-	List_1_t638 * ___l_0;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::next
+	// System.Collections.Generic.List`1<T> System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.IClippable>::l
+	List_1_t571 * ___l_0;
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.IClippable>::next
 	int32_t ___next_1;
-	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::ver
+	// System.Int32 System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.IClippable>::ver
 	int32_t ___ver_2;
-	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Toggle>::current
-	Toggle_t127 * ___current_3;
+	// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.IClippable>::current
+	Object_t * ___current_3;
 };

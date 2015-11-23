@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.Transform
-struct Transform_t179;
-// UnityEngine.MonoBehaviour
+struct Transform_t258;
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
+
 // SpawnAtCheckpoint
-struct SpawnAtCheckpoint_t422  : public MonoBehaviour_t2
+struct  SpawnAtCheckpoint_t389  : public MonoBehaviour_t2
 {
 	// UnityEngine.Transform SpawnAtCheckpoint::checkpoint
-	Transform_t179 * ___checkpoint_2;
+	Transform_t258 * ___checkpoint_2;
 };

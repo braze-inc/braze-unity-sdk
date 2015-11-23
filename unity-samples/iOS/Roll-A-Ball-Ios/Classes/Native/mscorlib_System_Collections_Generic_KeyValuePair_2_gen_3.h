@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityTest.ITestComponent
-struct ITestComponent_t224;
-// System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>
-struct HashSet_1_t329;
-// System.ValueType
+
+// System.String
+struct String_t;
+// System.Collections.Generic.List`1<ITestResult>
+struct List_1_t297;
+
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>
-struct KeyValuePair_2_t333 
+
+// System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ITestResult>>
+struct  KeyValuePair_2_t266 
 {
-	// TKey System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::key
-	Object_t * ___key_0;
-	// TValue System.Collections.Generic.KeyValuePair`2<UnityTest.ITestComponent,System.Collections.Generic.HashSet`1<UnityTest.ITestComponent>>::value
-	HashSet_1_t329 * ___value_1;
+	// TKey System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ITestResult>>::key
+	String_t* ___key_0;
+	// TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ITestResult>>::value
+	List_1_t297 * ___value_1;
 };

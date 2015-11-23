@@ -31,7 +31,8 @@ KeyboardShowParam;
 + (KeyboardDelegate*)Instance;
 
 - (id)init;
-- (void)show:(KeyboardShowParam)param;
+- (void)setKeyboardParams:(KeyboardShowParam)param;
+- (void)show;
 - (void)hide;
 - (void)positionInput:(CGRect)keyboardRect x:(float)x y:(float)y;
 - (void)shouldHideInput:(BOOL)hide;

@@ -1,30 +1,41 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // MovementMotor
-struct MovementMotor_t377;
+struct MovementMotor_t347;
 // UnityEngine.Renderer
-struct Renderer_t171;
+struct Renderer_t256;
 // UnityEngine.AudioSource
-struct AudioSource_t378;
+struct AudioSource_t348;
 // SelfIlluminationBlink[]
-struct SelfIlluminationBlinkU5BU5D_t379;
+struct SelfIlluminationBlinkU5BU5D_t349;
 // GlowPlane
-struct GlowPlane_t380;
+struct GlowPlane_t350;
 // UnityEngine.GameObject
-struct GameObject_t140;
+struct GameObject_t141;
 // UnityEngine.MonoBehaviour
 struct MonoBehaviour_t2;
 // AI
-struct AI_t372;
+struct AI_t341;
 // UnityEngine.Transform
-struct Transform_t179;
-// UnityEngine.MonoBehaviour
+struct Transform_t258;
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
+
 // SpiderAttackMoveController
-struct SpiderAttackMoveController_t381  : public MonoBehaviour_t2
+struct  SpiderAttackMoveController_t346  : public MonoBehaviour_t2
 {
 	// MovementMotor SpiderAttackMoveController::motor
-	MovementMotor_t377 * ___motor_2;
+	MovementMotor_t347 * ___motor_2;
 	// System.Single SpiderAttackMoveController::targetDistanceMin
 	float ___targetDistanceMin_3;
 	// System.Single SpiderAttackMoveController::targetDistanceMax
@@ -40,23 +51,23 @@ struct SpiderAttackMoveController_t381  : public MonoBehaviour_t2
 	// System.Single SpiderAttackMoveController::damageAmount
 	float ___damageAmount_9;
 	// UnityEngine.Renderer SpiderAttackMoveController::proximityRenderer
-	Renderer_t171 * ___proximityRenderer_10;
+	Renderer_t256 * ___proximityRenderer_10;
 	// UnityEngine.AudioSource SpiderAttackMoveController::audioSource
-	AudioSource_t378 * ___audioSource_11;
+	AudioSource_t348 * ___audioSource_11;
 	// SelfIlluminationBlink[] SpiderAttackMoveController::blinkComponents
-	SelfIlluminationBlinkU5BU5D_t379* ___blinkComponents_12;
+	SelfIlluminationBlinkU5BU5D_t349* ___blinkComponents_12;
 	// GlowPlane SpiderAttackMoveController::blinkPlane
-	GlowPlane_t380 * ___blinkPlane_13;
+	GlowPlane_t350 * ___blinkPlane_13;
 	// UnityEngine.GameObject SpiderAttackMoveController::intentionalExplosion
-	GameObject_t140 * ___intentionalExplosion_14;
+	GameObject_t141 * ___intentionalExplosion_14;
 	// UnityEngine.MonoBehaviour SpiderAttackMoveController::animationBehaviour
 	MonoBehaviour_t2 * ___animationBehaviour_15;
 	// AI SpiderAttackMoveController::ai
-	AI_t372 * ___ai_16;
+	AI_t341 * ___ai_16;
 	// UnityEngine.Transform SpiderAttackMoveController::character
-	Transform_t179 * ___character_17;
+	Transform_t258 * ___character_17;
 	// UnityEngine.Transform SpiderAttackMoveController::player
-	Transform_t179 * ___player_18;
+	Transform_t258 * ___player_18;
 	// System.Boolean SpiderAttackMoveController::inRange
 	bool ___inRange_19;
 	// System.Single SpiderAttackMoveController::nextRaycastTime

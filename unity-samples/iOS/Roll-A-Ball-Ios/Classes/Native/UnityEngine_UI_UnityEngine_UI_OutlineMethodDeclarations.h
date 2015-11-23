@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.Outline
-struct Outline_t679;
-// System.Collections.Generic.List`1<UnityEngine.UIVertex>
-struct List_1_t566;
+struct Outline_t639;
+// UnityEngine.UI.VertexHelper
+struct VertexHelper_t525;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.UI.Outline::.ctor()
- void Outline__ctor_m3167 (Outline_t679 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.UI.Outline::ModifyVertices(System.Collections.Generic.List`1<UnityEngine.UIVertex>)
- void Outline_ModifyVertices_m3168 (Outline_t679 * __this, List_1_t566 * ___verts, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Outline__ctor_m3142 (Outline_t639 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.UI.Outline::ModifyMesh(UnityEngine.UI.VertexHelper)
+extern "C" void Outline_ModifyMesh_m3143 (Outline_t639 * __this, VertexHelper_t525 * ___vh, const MethodInfo* method) IL2CPP_METHOD_ATTR;

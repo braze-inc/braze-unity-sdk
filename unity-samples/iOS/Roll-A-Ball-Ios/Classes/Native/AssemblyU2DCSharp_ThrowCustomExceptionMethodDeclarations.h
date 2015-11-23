@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // ThrowCustomException
-struct ThrowCustomException_t205;
+struct ThrowCustomException_t186;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void ThrowCustomException::.ctor()
- void ThrowCustomException__ctor_m792 (ThrowCustomException_t205 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ThrowCustomException__ctor_m772 (ThrowCustomException_t186 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void ThrowCustomException::Start()
- void ThrowCustomException_Start_m793 (ThrowCustomException_t205 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ThrowCustomException_Start_m773 (ThrowCustomException_t186 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

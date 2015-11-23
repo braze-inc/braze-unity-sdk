@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.WaitForEndOfFrame
-struct WaitForEndOfFrame_t751;
+struct WaitForEndOfFrame_t712;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.WaitForEndOfFrame::.ctor()
- void WaitForEndOfFrame__ctor_m3646 (WaitForEndOfFrame_t751 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WaitForEndOfFrame__ctor_m3535 (WaitForEndOfFrame_t712 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,13 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.UInt16[]
-struct UInt16U5BU5D_t1589;
+struct UInt16U5BU5D_t1058;
 // System.Byte[]
-struct ByteU5BU5D_t97;
-// Mono.Security.Cryptography.SymmetricTransform
+struct ByteU5BU5D_t98;
+
 #include "mscorlib_Mono_Security_Cryptography_SymmetricTransform.h"
+
 // System.Security.Cryptography.RC2Transform
-struct RC2Transform_t2150  : public SymmetricTransform_t1820
+struct  RC2Transform_t1864  : public SymmetricTransform_t1478
 {
 	// System.UInt16 System.Security.Cryptography.RC2Transform::R0
 	uint16_t ___R0_12;
@@ -18,11 +29,11 @@ struct RC2Transform_t2150  : public SymmetricTransform_t1820
 	// System.UInt16 System.Security.Cryptography.RC2Transform::R3
 	uint16_t ___R3_15;
 	// System.UInt16[] System.Security.Cryptography.RC2Transform::K
-	UInt16U5BU5D_t1589* ___K_16;
+	UInt16U5BU5D_t1058* ___K_16;
 	// System.Int32 System.Security.Cryptography.RC2Transform::j
 	int32_t ___j_17;
 };
-struct RC2Transform_t2150_StaticFields{
+struct RC2Transform_t1864_StaticFields{
 	// System.Byte[] System.Security.Cryptography.RC2Transform::pitable
-	ByteU5BU5D_t97* ___pitable_18;
+	ByteU5BU5D_t98* ___pitable_18;
 };

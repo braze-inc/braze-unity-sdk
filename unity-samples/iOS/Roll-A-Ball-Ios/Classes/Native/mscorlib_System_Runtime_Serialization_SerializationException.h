@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.SystemException
+
+
 #include "mscorlib_System_SystemException.h"
+
 // System.Runtime.Serialization.SerializationException
-struct SerializationException_t1721  : public SystemException_t1729
+struct  SerializationException_t1208  : public SystemException_t1227
 {
 };

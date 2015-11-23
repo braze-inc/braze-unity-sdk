@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
+
 // UnityEngine.Camera
-struct Camera_t172;
+struct Camera_t257;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
+#include "mscorlib_System_Void.h"
+
 // UnityEngine.Camera/CameraCallback
-struct CameraCallback_t878  : public MulticastDelegate_t594
+struct  CameraCallback_t791  : public MulticastDelegate_t550
 {
 };

@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyDelaySignAttribute
-struct AssemblyDelaySignAttribute_t1167;
+struct AssemblyDelaySignAttribute_t1629;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Reflection.AssemblyDelaySignAttribute::.ctor(System.Boolean)
- void AssemblyDelaySignAttribute__ctor_m5332 (AssemblyDelaySignAttribute_t1167 * __this, bool ___delaySign, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyDelaySignAttribute__ctor_m9803 (AssemblyDelaySignAttribute_t1629 * __this, bool ___delaySign, const MethodInfo* method) IL2CPP_METHOD_ATTR;

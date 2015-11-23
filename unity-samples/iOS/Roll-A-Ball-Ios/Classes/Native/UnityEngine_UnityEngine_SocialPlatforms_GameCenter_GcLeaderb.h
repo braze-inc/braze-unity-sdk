@@ -1,16 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.SocialPlatforms.Impl.Leaderboard
-struct Leaderboard_t820;
-// System.Object
+struct Leaderboard_t760;
+
 #include "mscorlib_System_Object.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard
-struct GcLeaderboard_t821  : public Object_t
+struct  GcLeaderboard_t759  : public Object_t
 {
 	// System.IntPtr UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard::m_InternalLeaderboard
-	IntPtr_t107 ___m_InternalLeaderboard_0;
+	IntPtr_t ___m_InternalLeaderboard_0;
 	// UnityEngine.SocialPlatforms.Impl.Leaderboard UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard::m_GenericLeaderboard
-	Leaderboard_t820 * ___m_GenericLeaderboard_1;
+	Leaderboard_t760 * ___m_GenericLeaderboard_1;
 };

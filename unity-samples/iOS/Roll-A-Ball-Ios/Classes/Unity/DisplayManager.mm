@@ -319,26 +319,21 @@ extern bool _ios80orNewer;
 	}
 }
 
-- (void)prepareFrameRendering
-{
-	PrepareFrameRendering();
-}
 - (void)startFrameRendering
 {
 	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn)
 		{
-			PrepareRendering(conn.surface);
+			StartFrameRendering(conn.surface);
 		}
 	];
 }
-- (void)teardownRendering
+- (void)endFrameRendering
 {
 	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn)
 		{
-			TeardownRendering(conn.surface);
+			EndFrameRendering(conn.surface);
 		}
 	];
-	TeardownFrameRendering();
 }
 - (void)present
 {
@@ -416,7 +411,7 @@ static void EnsureDisplayIsInited(DisplayConnection* conn)
 			if(api != apiMetal)
 				[EAGLContext setCurrentContext:UnityGetMainScreenContextGLES()];
 
-			PrepareRendering(main.surface);
+			StartFrameRendering(main.surface);
 		}
 	}
 }

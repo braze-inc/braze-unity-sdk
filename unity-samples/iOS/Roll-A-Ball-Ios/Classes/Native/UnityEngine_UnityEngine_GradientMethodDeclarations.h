@@ -1,21 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Gradient
-struct Gradient_t832;
-struct Gradient_t832_marshaled;
+struct Gradient_t773;
+struct Gradient_t773_marshaled;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.Gradient::.ctor()
- void Gradient__ctor_m4000 (Gradient_t832 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Gradient__ctor_m3847 (Gradient_t773 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Gradient::Init()
- void Gradient_Init_m4001 (Gradient_t832 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Gradient_Init_m3848 (Gradient_t773 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Gradient::Cleanup()
- void Gradient_Cleanup_m4002 (Gradient_t832 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Gradient_Cleanup_m3849 (Gradient_t773 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Gradient::Finalize()
- void Gradient_Finalize_m4003 (Gradient_t832 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void Gradient_t832_marshal(const Gradient_t832& unmarshaled, Gradient_t832_marshaled& marshaled);
-void Gradient_t832_marshal_back(const Gradient_t832_marshaled& marshaled, Gradient_t832& unmarshaled);
-void Gradient_t832_marshal_cleanup(Gradient_t832_marshaled& marshaled);
+extern "C" void Gradient_Finalize_m3850 (Gradient_t773 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Gradient_t773_marshal(const Gradient_t773& unmarshaled, Gradient_t773_marshaled& marshaled);
+extern "C" void Gradient_t773_marshal_back(const Gradient_t773_marshaled& marshaled, Gradient_t773& unmarshaled);
+extern "C" void Gradient_t773_marshal_cleanup(Gradient_t773_marshaled& marshaled);

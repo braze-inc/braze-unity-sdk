@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object
 struct Object_t;
 // System.Security.Cryptography.RandomNumberGenerator
-struct RandomNumberGenerator_t1366;
-// System.ValueType
+struct RandomNumberGenerator_t1237;
+
 #include "mscorlib_System_ValueType.h"
-// System.Guid
 #include "mscorlib_System_Guid.h"
+
 // System.Guid
-struct Guid_t103 
+struct  Guid_t99 
 {
 	// System.Int32 System.Guid::_a
 	int32_t ____a_0;
@@ -34,11 +44,11 @@ struct Guid_t103
 	// System.Byte System.Guid::_k
 	uint8_t ____k_10;
 };
-struct Guid_t103_StaticFields{
+struct Guid_t99_StaticFields{
 	// System.Guid System.Guid::Empty
-	Guid_t103  ___Empty_11;
+	Guid_t99  ___Empty_11;
 	// System.Object System.Guid::_rngAccess
 	Object_t * ____rngAccess_12;
 	// System.Security.Cryptography.RandomNumberGenerator System.Guid::_rng
-	RandomNumberGenerator_t1366 * ____rng_13;
+	RandomNumberGenerator_t1237 * ____rng_13;
 };

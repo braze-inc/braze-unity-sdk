@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+// System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.UIVertex>
+struct DefaultComparer_t2477;
+
 #include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_UIVertex.h"
 
-// System.Collections.Generic.Comparer`1/DefaultComparer<System.String>
-struct DefaultComparer_t2790;
-// System.String
-struct String_t;
-
-// System.Void System.Collections.Generic.Comparer`1/DefaultComparer<System.String>::.ctor()
-// System.Collections.Generic.Comparer`1/DefaultComparer<System.Object>
-#include "mscorlib_System_Collections_Generic_Comparer_1_DefaultCompar_0MethodDeclarations.h"
-#define DefaultComparer__ctor_m13148(__this, method) (void)DefaultComparer__ctor_m12998_gshared((DefaultComparer_t2773 *)__this, method)
-// System.Int32 System.Collections.Generic.Comparer`1/DefaultComparer<System.String>::Compare(T,T)
-#define DefaultComparer_Compare_m13149(__this, ___x, ___y, method) (int32_t)DefaultComparer_Compare_m12999_gshared((DefaultComparer_t2773 *)__this, (Object_t *)___x, (Object_t *)___y, method)
+// System.Void System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.UIVertex>::.ctor()
+extern "C" void DefaultComparer__ctor_m17135_gshared (DefaultComparer_t2477 * __this, const MethodInfo* method);
+#define DefaultComparer__ctor_m17135(__this, method) (( void (*) (DefaultComparer_t2477 *, const MethodInfo*))DefaultComparer__ctor_m17135_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.UIVertex>::Compare(T,T)
+extern "C" int32_t DefaultComparer_Compare_m17136_gshared (DefaultComparer_t2477 * __this, UIVertex_t560  ___x, UIVertex_t560  ___y, const MethodInfo* method);
+#define DefaultComparer_Compare_m17136(__this, ___x, ___y, method) (( int32_t (*) (DefaultComparer_t2477 *, UIVertex_t560 , UIVertex_t560 , const MethodInfo*))DefaultComparer_Compare_m17136_gshared)(__this, ___x, ___y, method)

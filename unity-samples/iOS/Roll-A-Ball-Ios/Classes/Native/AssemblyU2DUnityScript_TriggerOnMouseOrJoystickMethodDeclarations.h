@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // TriggerOnMouseOrJoystick
-struct TriggerOnMouseOrJoystick_t425;
+struct TriggerOnMouseOrJoystick_t391;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void TriggerOnMouseOrJoystick::.ctor()
- void TriggerOnMouseOrJoystick__ctor_m1706 (TriggerOnMouseOrJoystick_t425 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TriggerOnMouseOrJoystick__ctor_m1476 (TriggerOnMouseOrJoystick_t391 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TriggerOnMouseOrJoystick::Start()
- void TriggerOnMouseOrJoystick_Start_m1707 (TriggerOnMouseOrJoystick_t425 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TriggerOnMouseOrJoystick_Start_m1477 (TriggerOnMouseOrJoystick_t391 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TriggerOnMouseOrJoystick::Update()
- void TriggerOnMouseOrJoystick_Update_m1708 (TriggerOnMouseOrJoystick_t425 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TriggerOnMouseOrJoystick_Update_m1478 (TriggerOnMouseOrJoystick_t391 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void TriggerOnMouseOrJoystick::Main()
- void TriggerOnMouseOrJoystick_Main_m1709 (TriggerOnMouseOrJoystick_t425 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TriggerOnMouseOrJoystick_Main_m1479 (TriggerOnMouseOrJoystick_t391 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

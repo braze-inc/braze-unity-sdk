@@ -1,24 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Uri
-struct Uri_t61;
+struct Uri_t1043;
 // System.Net.IWebProxy
-struct IWebProxy_t1580;
+struct IWebProxy_t1045;
 // System.String
 struct String_t;
 // System.Object
 struct Object_t;
 // System.String[]
-struct StringU5BU5D_t3;
+struct StringU5BU5D_t63;
 // System.Net.Security.RemoteCertificateValidationCallback
-struct RemoteCertificateValidationCallback_t1540;
-// System.Net.WebRequest
+struct RemoteCertificateValidationCallback_t1049;
+
 #include "System_System_Net_WebRequest.h"
+
 // System.Net.FtpWebRequest
-struct FtpWebRequest_t1584  : public WebRequest_t1537
+struct  FtpWebRequest_t1048  : public WebRequest_t1042
 {
 	// System.Uri System.Net.FtpWebRequest::requestUri
-	Uri_t61 * ___requestUri_6;
+	Uri_t1043 * ___requestUri_6;
 	// System.Net.IWebProxy System.Net.FtpWebRequest::proxy
 	Object_t * ___proxy_7;
 	// System.Int32 System.Net.FtpWebRequest::timeout
@@ -34,11 +45,11 @@ struct FtpWebRequest_t1584  : public WebRequest_t1537
 	// System.Object System.Net.FtpWebRequest::locker
 	Object_t * ___locker_13;
 	// System.Net.Security.RemoteCertificateValidationCallback System.Net.FtpWebRequest::callback
-	RemoteCertificateValidationCallback_t1540 * ___callback_15;
+	RemoteCertificateValidationCallback_t1049 * ___callback_15;
 };
-struct FtpWebRequest_t1584_StaticFields{
+struct FtpWebRequest_t1048_StaticFields{
 	// System.String[] System.Net.FtpWebRequest::supportedCommands
-	StringU5BU5D_t3* ___supportedCommands_14;
+	StringU5BU5D_t63* ___supportedCommands_14;
 	// System.Net.Security.RemoteCertificateValidationCallback System.Net.FtpWebRequest::<>f__am$cache1C
-	RemoteCertificateValidationCallback_t1540 * ___U3CU3Ef__am$cache1C_16;
+	RemoteCertificateValidationCallback_t1049 * ___U3CU3Ef__amU24cache1C_16;
 };

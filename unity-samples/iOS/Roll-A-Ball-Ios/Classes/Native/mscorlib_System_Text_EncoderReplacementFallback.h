@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Text.EncoderFallback
+
 #include "mscorlib_System_Text_EncoderFallback.h"
+
 // System.Text.EncoderReplacementFallback
-struct EncoderReplacementFallback_t2199  : public EncoderFallback_t2196
+struct  EncoderReplacementFallback_t1932  : public EncoderFallback_t1928
 {
 	// System.String System.Text.EncoderReplacementFallback::replacement
 	String_t* ___replacement_3;

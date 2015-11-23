@@ -1,29 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
-
-// System.Comparison`1<UnityTest.TestResult>
-struct Comparison_1_t3149;
-// System.Object
-struct Object_t;
-// UnityTest.TestResult
-struct TestResult_t232;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-
-// System.Void System.Comparison`1<UnityTest.TestResult>::.ctor(System.Object,System.IntPtr)
-// System.Comparison`1<System.Object>
 #include "mscorlib_System_Comparison_1_gen_3MethodDeclarations.h"
-#define Comparison_1__ctor_m15480(__this, ___object, ___method, method) (void)Comparison_1__ctor_m13055_gshared((Comparison_1_t2760 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
-// System.Int32 System.Comparison`1<UnityTest.TestResult>::Invoke(T,T)
-#define Comparison_1_Invoke_m15481(__this, ___x, ___y, method) (int32_t)Comparison_1_Invoke_m13056_gshared((Comparison_1_t2760 *)__this, (Object_t *)___x, (Object_t *)___y, method)
-// System.IAsyncResult System.Comparison`1<UnityTest.TestResult>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
-#define Comparison_1_BeginInvoke_m15482(__this, ___x, ___y, ___callback, ___object, method) (Object_t *)Comparison_1_BeginInvoke_m13057_gshared((Comparison_1_t2760 *)__this, (Object_t *)___x, (Object_t *)___y, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
-// System.Int32 System.Comparison`1<UnityTest.TestResult>::EndInvoke(System.IAsyncResult)
-#define Comparison_1_EndInvoke_m15483(__this, ___result, method) (int32_t)Comparison_1_EndInvoke_m13058_gshared((Comparison_1_t2760 *)__this, (Object_t *)___result, method)
+
+// System.Void System.Comparison`1<UnityTest.TestComponent>::.ctor(System.Object,System.IntPtr)
+#define Comparison_1__ctor_m14146(__this, ___object, ___method, method) (( void (*) (Comparison_1_t2257 *, Object_t *, IntPtr_t, const MethodInfo*))Comparison_1__ctor_m12676_gshared)(__this, ___object, ___method, method)
+// System.Int32 System.Comparison`1<UnityTest.TestComponent>::Invoke(T,T)
+#define Comparison_1_Invoke_m14147(__this, ___x, ___y, method) (( int32_t (*) (Comparison_1_t2257 *, TestComponent_t220 *, TestComponent_t220 *, const MethodInfo*))Comparison_1_Invoke_m12677_gshared)(__this, ___x, ___y, method)
+// System.IAsyncResult System.Comparison`1<UnityTest.TestComponent>::BeginInvoke(T,T,System.AsyncCallback,System.Object)
+#define Comparison_1_BeginInvoke_m14148(__this, ___x, ___y, ___callback, ___object, method) (( Object_t * (*) (Comparison_1_t2257 *, TestComponent_t220 *, TestComponent_t220 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Comparison_1_BeginInvoke_m12678_gshared)(__this, ___x, ___y, ___callback, ___object, method)
+// System.Int32 System.Comparison`1<UnityTest.TestComponent>::EndInvoke(System.IAsyncResult)
+#define Comparison_1_EndInvoke_m14149(__this, ___result, method) (( int32_t (*) (Comparison_1_t2257 *, Object_t *, const MethodInfo*))Comparison_1_EndInvoke_m12679_gshared)(__this, ___result, method)

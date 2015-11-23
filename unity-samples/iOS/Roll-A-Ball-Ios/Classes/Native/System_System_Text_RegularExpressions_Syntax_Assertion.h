@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.RegularExpressions.Syntax.CompositeExpression
+
+
 #include "System_System_Text_RegularExpressions_Syntax_CompositeExpres.h"
+
 // System.Text.RegularExpressions.Syntax.Assertion
-struct Assertion_t1674  : public CompositeExpression_t1680
+struct  Assertion_t1166  : public CompositeExpression_t1159
 {
 };

@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AddComponentMenu
-struct AddComponentMenu_t684;
+struct AddComponentMenu_t883;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void UnityEngine.AddComponentMenu::.ctor(System.String)
- void AddComponentMenu__ctor_m3218 (AddComponentMenu_t684 * __this, String_t* ___menuName, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AddComponentMenu__ctor_m4778 (AddComponentMenu_t883 * __this, String_t* ___menuName, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AddComponentMenu::.ctor(System.String,System.Int32)
- void AddComponentMenu__ctor_m3385 (AddComponentMenu_t684 * __this, String_t* ___menuName, int32_t ___order, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AddComponentMenu__ctor_m4779 (AddComponentMenu_t883 * __this, String_t* ___menuName, int32_t ___order, const MethodInfo* method) IL2CPP_METHOD_ATTR;

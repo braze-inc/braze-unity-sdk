@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Security.Cryptography.CspProviderFlags
 #include "mscorlib_System_Security_Cryptography_CspProviderFlags.h"
+
 // System.Security.Cryptography.CspParameters
-struct CspParameters_t1510  : public Object_t
+struct  CspParameters_t1376  : public Object_t
 {
 	// System.Security.Cryptography.CspProviderFlags System.Security.Cryptography.CspParameters::_Flags
 	int32_t ____Flags_0;

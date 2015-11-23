@@ -1,15 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Text.RegularExpressions.Mark
-struct Mark_t1660;
+
+#include "codegen/il2cpp-codegen.h"
+#include "System_System_Text_RegularExpressions_Mark.h"
 
 // System.Boolean System.Text.RegularExpressions.Mark::get_IsDefined()
- bool Mark_get_IsDefined_m7218 (Mark_t1660 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Mark_get_IsDefined_m5830 (Mark_t1143 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.RegularExpressions.Mark::get_Index()
- int32_t Mark_get_Index_m7219 (Mark_t1660 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Mark_get_Index_m5831 (Mark_t1143 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.RegularExpressions.Mark::get_Length()
- int32_t Mark_get_Length_m7220 (Mark_t1660 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Mark_get_Length_m5832 (Mark_t1143 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

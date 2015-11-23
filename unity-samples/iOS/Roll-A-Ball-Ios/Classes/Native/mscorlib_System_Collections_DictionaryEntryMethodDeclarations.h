@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Collections.DictionaryEntry
-struct DictionaryEntry_t1564;
 // System.Object
 struct Object_t;
 
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_DictionaryEntry.h"
+
 // System.Void System.Collections.DictionaryEntry::.ctor(System.Object,System.Object)
- void DictionaryEntry__ctor_m7547 (DictionaryEntry_t1564 * __this, Object_t * ___key, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DictionaryEntry__ctor_m6135 (DictionaryEntry_t1193 * __this, Object_t * ___key, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.DictionaryEntry::get_Key()
- Object_t * DictionaryEntry_get_Key_m9087 (DictionaryEntry_t1564 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * DictionaryEntry_get_Key_m8813 (DictionaryEntry_t1193 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.DictionaryEntry::get_Value()
- Object_t * DictionaryEntry_get_Value_m9088 (DictionaryEntry_t1564 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * DictionaryEntry_get_Value_m8814 (DictionaryEntry_t1193 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

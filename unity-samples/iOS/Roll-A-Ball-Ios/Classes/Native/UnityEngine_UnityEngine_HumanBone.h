@@ -1,25 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// UnityEngine.HumanLimit
 #include "UnityEngine_UnityEngine_HumanLimit.h"
+
 // UnityEngine.HumanBone
-struct HumanBone_t918 
+struct  HumanBone_t837 
 {
 	// System.String UnityEngine.HumanBone::m_BoneName
 	String_t* ___m_BoneName_0;
 	// System.String UnityEngine.HumanBone::m_HumanName
 	String_t* ___m_HumanName_1;
 	// UnityEngine.HumanLimit UnityEngine.HumanBone::limit
-	HumanLimit_t917  ___limit_2;
+	HumanLimit_t836  ___limit_2;
 };
 // Native definition for marshalling of: UnityEngine.HumanBone
-struct HumanBone_t918_marshaled
+struct HumanBone_t837_marshaled
 {
 	char* ___m_BoneName_0;
 	char* ___m_HumanName_1;
-	HumanLimit_t917  ___limit_2;
+	HumanLimit_t836  ___limit_2;
 };

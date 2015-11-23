@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.SystemException
+
+
 #include "mscorlib_System_SystemException.h"
+
 // System.Threading.ThreadAbortException
-struct ThreadAbortException_t2219  : public SystemException_t1729
+struct  ThreadAbortException_t1952  : public SystemException_t1227
 {
 };

@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.GUIStyle
-struct GUIStyle_t250;
-// UnityEngine.GUILayoutGroup
+struct GUIStyle_t228;
+
 #include "UnityEngine_UnityEngine_GUILayoutGroup.h"
+
 // UnityEngine.GUIScrollGroup
-struct GUIScrollGroup_t847  : public GUILayoutGroup_t841
+struct  GUIScrollGroup_t861  : public GUILayoutGroup_t856
 {
 	// System.Single UnityEngine.GUIScrollGroup::calcMinWidth
 	float ___calcMinWidth_27;
@@ -28,7 +39,7 @@ struct GUIScrollGroup_t847  : public GUILayoutGroup_t841
 	// System.Boolean UnityEngine.GUIScrollGroup::needsVerticalScrollbar
 	bool ___needsVerticalScrollbar_36;
 	// UnityEngine.GUIStyle UnityEngine.GUIScrollGroup::horizontalScrollbar
-	GUIStyle_t250 * ___horizontalScrollbar_37;
+	GUIStyle_t228 * ___horizontalScrollbar_37;
 	// UnityEngine.GUIStyle UnityEngine.GUIScrollGroup::verticalScrollbar
-	GUIStyle_t250 * ___verticalScrollbar_38;
+	GUIStyle_t228 * ___verticalScrollbar_38;
 };

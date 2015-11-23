@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyProductAttribute
-struct AssemblyProductAttribute_t786;
+struct AssemblyProductAttribute_t1638;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Reflection.AssemblyProductAttribute::.ctor(System.String)
- void AssemblyProductAttribute__ctor_m3852 (AssemblyProductAttribute_t786 * __this, String_t* ___product, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyProductAttribute__ctor_m9825 (AssemblyProductAttribute_t1638 * __this, String_t* ___product, const MethodInfo* method) IL2CPP_METHOD_ATTR;

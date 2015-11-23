@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // IntegrationTest/IgnoreAttribute
-struct IgnoreAttribute_t217;
+struct IgnoreAttribute_t195;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void IntegrationTest/IgnoreAttribute::.ctor()
- void IgnoreAttribute__ctor_m827 (IgnoreAttribute_t217 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void IgnoreAttribute__ctor_m807 (IgnoreAttribute_t195 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

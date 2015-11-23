@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.YieldInstruction
+
+
 #include "UnityEngine_UnityEngine_YieldInstruction.h"
+
 // UnityEngine.WaitForEndOfFrame
-struct WaitForEndOfFrame_t751  : public YieldInstruction_t798
+struct  WaitForEndOfFrame_t712  : public YieldInstruction_t745
 {
 };

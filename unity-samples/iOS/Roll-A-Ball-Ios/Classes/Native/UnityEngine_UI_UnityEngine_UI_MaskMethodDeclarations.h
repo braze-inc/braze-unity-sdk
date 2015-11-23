@@ -1,45 +1,50 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.Mask
-struct Mask_t668;
-// UnityEngine.UI.Graphic
-struct Graphic_t565;
+struct Mask_t561;
 // UnityEngine.RectTransform
-struct RectTransform_t559;
+struct RectTransform_t504;
+// UnityEngine.UI.Graphic
+struct Graphic_t519;
 // UnityEngine.Camera
-struct Camera_t172;
+struct Camera_t257;
 // UnityEngine.Material
-struct Material_t401;
-// UnityEngine.Vector2
+struct Material_t370;
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UnityEngine_Vector2.h"
 
 // System.Void UnityEngine.UI.Mask::.ctor()
- void Mask__ctor_m3142 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// UnityEngine.UI.Graphic UnityEngine.UI.Mask::get_graphic()
- Graphic_t565 * Mask_get_graphic_m3143 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean UnityEngine.UI.Mask::get_showMaskGraphic()
- bool Mask_get_showMaskGraphic_m3144 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.UI.Mask::set_showMaskGraphic(System.Boolean)
- void Mask_set_showMaskGraphic_m3145 (Mask_t668 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Mask__ctor_m2505 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.RectTransform UnityEngine.UI.Mask::get_rectTransform()
- RectTransform_t559 * Mask_get_rectTransform_m3146 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RectTransform_t504 * Mask_get_rectTransform_m2506 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.UI.Mask::get_showMaskGraphic()
+extern "C" bool Mask_get_showMaskGraphic_m2507 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.UI.Mask::set_showMaskGraphic(System.Boolean)
+extern "C" void Mask_set_showMaskGraphic_m2508 (Mask_t561 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.UI.Graphic UnityEngine.UI.Mask::get_graphic()
+extern "C" Graphic_t519 * Mask_get_graphic_m2509 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.UI.Mask::MaskEnabled()
- bool Mask_MaskEnabled_m3147 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Mask_MaskEnabled_m2510 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.Mask::OnSiblingGraphicEnabledDisabled()
- void Mask_OnSiblingGraphicEnabledDisabled_m3148 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.UI.Mask::NotifyMaskStateChanged()
- void Mask_NotifyMaskStateChanged_m3149 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.UI.Mask::ClearCachedMaterial()
- void Mask_ClearCachedMaterial_m3150 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Mask_OnSiblingGraphicEnabledDisabled_m2511 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.Mask::OnEnable()
- void Mask_OnEnable_m3151 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Mask_OnEnable_m2512 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.Mask::OnDisable()
- void Mask_OnDisable_m3152 (Mask_t668 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Mask_OnDisable_m2513 (Mask_t561 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.UI.Mask::IsRaycastLocationValid(UnityEngine.Vector2,UnityEngine.Camera)
- bool Mask_IsRaycastLocationValid_m3153 (Mask_t668 * __this, Vector2_t184  ___sp, Camera_t172 * ___eventCamera, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Mask_IsRaycastLocationValid_m2514 (Mask_t561 * __this, Vector2_t231  ___sp, Camera_t257 * ___eventCamera, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Material UnityEngine.UI.Mask::GetModifiedMaterial(UnityEngine.Material)
- Material_t401 * Mask_GetModifiedMaterial_m3154 (Mask_t668 * __this, Material_t401 * ___baseMaterial, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Material_t370 * Mask_GetModifiedMaterial_m2515 (Mask_t561 * __this, Material_t370 * ___baseMaterial, const MethodInfo* method) IL2CPP_METHOD_ATTR;

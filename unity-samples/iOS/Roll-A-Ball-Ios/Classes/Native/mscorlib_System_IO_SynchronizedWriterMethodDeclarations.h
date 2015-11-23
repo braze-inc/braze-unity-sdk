@@ -1,33 +1,43 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.IO.SynchronizedWriter
-struct SynchronizedWriter_t1938;
+struct SynchronizedWriter_t1581;
 // System.IO.TextWriter
-struct TextWriter_t1733;
+struct TextWriter_t1229;
 // System.Char[]
-struct CharU5BU5D_t276;
+struct CharU5BU5D_t270;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.IO.SynchronizedWriter::.ctor(System.IO.TextWriter,System.Boolean)
- void SynchronizedWriter__ctor_m9651 (SynchronizedWriter_t1938 * __this, TextWriter_t1733 * ___writer, bool ___neverClose, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter__ctor_m9480 (SynchronizedWriter_t1581 * __this, TextWriter_t1229 * ___writer, bool ___neverClose, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::Close()
- void SynchronizedWriter_Close_m9652 (SynchronizedWriter_t1938 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_Close_m9481 (SynchronizedWriter_t1581 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::Flush()
- void SynchronizedWriter_Flush_m9653 (SynchronizedWriter_t1938 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_Flush_m9482 (SynchronizedWriter_t1581 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::Write(System.Char)
- void SynchronizedWriter_Write_m9654 (SynchronizedWriter_t1938 * __this, uint16_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_Write_m9483 (SynchronizedWriter_t1581 * __this, uint16_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::Write(System.Char[])
- void SynchronizedWriter_Write_m9655 (SynchronizedWriter_t1938 * __this, CharU5BU5D_t276* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_Write_m9484 (SynchronizedWriter_t1581 * __this, CharU5BU5D_t270* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::Write(System.String)
- void SynchronizedWriter_Write_m9656 (SynchronizedWriter_t1938 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_Write_m9485 (SynchronizedWriter_t1581 * __this, String_t* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::Write(System.Char[],System.Int32,System.Int32)
- void SynchronizedWriter_Write_m9657 (SynchronizedWriter_t1938 * __this, CharU5BU5D_t276* ___buffer, int32_t ___index, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_Write_m9486 (SynchronizedWriter_t1581 * __this, CharU5BU5D_t270* ___buffer, int32_t ___index, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::WriteLine()
- void SynchronizedWriter_WriteLine_m9658 (SynchronizedWriter_t1938 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_WriteLine_m9487 (SynchronizedWriter_t1581 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.SynchronizedWriter::WriteLine(System.String)
- void SynchronizedWriter_WriteLine_m9659 (SynchronizedWriter_t1938 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizedWriter_WriteLine_m9488 (SynchronizedWriter_t1581 * __this, String_t* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

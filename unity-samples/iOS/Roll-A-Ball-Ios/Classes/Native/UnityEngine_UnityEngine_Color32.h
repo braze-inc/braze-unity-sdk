@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.Color32
-struct Color32_t682 
+struct ALIGN_TYPE(4) Color32_t666 
 {
 	// System.Byte UnityEngine.Color32::r
 	uint8_t ___r_0;

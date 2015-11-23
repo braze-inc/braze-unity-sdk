@@ -1,17 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+// System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Color32>
+struct DefaultComparer_t2588;
+
 #include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_Color32.h"
 
-// System.Collections.Generic.Comparer`1/DefaultComparer<System.Reflection.MemberInfo>
-struct DefaultComparer_t3103;
-// System.Reflection.MemberInfo
-struct MemberInfo_t196;
-
-// System.Void System.Collections.Generic.Comparer`1/DefaultComparer<System.Reflection.MemberInfo>::.ctor()
-// System.Collections.Generic.Comparer`1/DefaultComparer<System.Object>
-#include "mscorlib_System_Collections_Generic_Comparer_1_DefaultCompar_0MethodDeclarations.h"
-#define DefaultComparer__ctor_m15041(__this, method) (void)DefaultComparer__ctor_m12998_gshared((DefaultComparer_t2773 *)__this, method)
-// System.Int32 System.Collections.Generic.Comparer`1/DefaultComparer<System.Reflection.MemberInfo>::Compare(T,T)
-#define DefaultComparer_Compare_m15042(__this, ___x, ___y, method) (int32_t)DefaultComparer_Compare_m12999_gshared((DefaultComparer_t2773 *)__this, (Object_t *)___x, (Object_t *)___y, method)
+// System.Void System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Color32>::.ctor()
+extern "C" void DefaultComparer__ctor_m18819_gshared (DefaultComparer_t2588 * __this, const MethodInfo* method);
+#define DefaultComparer__ctor_m18819(__this, method) (( void (*) (DefaultComparer_t2588 *, const MethodInfo*))DefaultComparer__ctor_m18819_gshared)(__this, method)
+// System.Int32 System.Collections.Generic.Comparer`1/DefaultComparer<UnityEngine.Color32>::Compare(T,T)
+extern "C" int32_t DefaultComparer_Compare_m18820_gshared (DefaultComparer_t2588 * __this, Color32_t666  ___x, Color32_t666  ___y, const MethodInfo* method);
+#define DefaultComparer_Compare_m18820(__this, ___x, ___y, method) (( int32_t (*) (DefaultComparer_t2588 *, Color32_t666 , Color32_t666 , const MethodInfo*))DefaultComparer_Compare_m18820_gshared)(__this, ___x, ___y, method)

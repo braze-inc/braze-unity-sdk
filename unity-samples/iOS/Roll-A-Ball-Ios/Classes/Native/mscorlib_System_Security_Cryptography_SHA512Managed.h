@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
 // System.UInt64[]
-struct UInt64U5BU5D_t2163;
-// System.Security.Cryptography.SHA512
+struct UInt64U5BU5D_t1878;
+
 #include "mscorlib_System_Security_Cryptography_SHA512.h"
+
 // System.Security.Cryptography.SHA512Managed
-struct SHA512Managed_t2166  : public SHA512_t2165
+struct  SHA512Managed_t1880  : public SHA512_t1879
 {
 	// System.Byte[] System.Security.Cryptography.SHA512Managed::xBuf
-	ByteU5BU5D_t97* ___xBuf_4;
+	ByteU5BU5D_t98* ___xBuf_4;
 	// System.Int32 System.Security.Cryptography.SHA512Managed::xBufOff
 	int32_t ___xBufOff_5;
 	// System.UInt64 System.Security.Cryptography.SHA512Managed::byteCount1
@@ -34,7 +45,7 @@ struct SHA512Managed_t2166  : public SHA512_t2165
 	// System.UInt64 System.Security.Cryptography.SHA512Managed::H8
 	uint64_t ___H8_15;
 	// System.UInt64[] System.Security.Cryptography.SHA512Managed::W
-	UInt64U5BU5D_t2163* ___W_16;
+	UInt64U5BU5D_t1878* ___W_16;
 	// System.Int32 System.Security.Cryptography.SHA512Managed::wOff
 	int32_t ___wOff_17;
 };

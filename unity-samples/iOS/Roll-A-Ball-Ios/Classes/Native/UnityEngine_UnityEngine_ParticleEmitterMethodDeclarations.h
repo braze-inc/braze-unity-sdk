@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.ParticleEmitter
-struct ParticleEmitter_t437;
+struct ParticleEmitter_t405;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Single UnityEngine.ParticleEmitter::get_maxEnergy()
- float ParticleEmitter_get_maxEnergy_m1771 (ParticleEmitter_t437 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float ParticleEmitter_get_maxEnergy_m1540 (ParticleEmitter_t405 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Single UnityEngine.ParticleEmitter::get_minEmission()
- float ParticleEmitter_get_minEmission_m4603 (ParticleEmitter_t437 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float ParticleEmitter_get_minEmission_m4221 (ParticleEmitter_t405 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Single UnityEngine.ParticleEmitter::get_maxEmission()
- float ParticleEmitter_get_maxEmission_m4604 (ParticleEmitter_t437 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float ParticleEmitter_get_maxEmission_m4222 (ParticleEmitter_t405 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.ParticleEmitter::Emit()
- void ParticleEmitter_Emit_m2000 (ParticleEmitter_t437 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ParticleEmitter_Emit_m1749 (ParticleEmitter_t405 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.ParticleEmitter::Emit2(System.Int32)
- void ParticleEmitter_Emit2_m4605 (ParticleEmitter_t437 * __this, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ParticleEmitter_Emit2_m4223 (ParticleEmitter_t405 * __this, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;

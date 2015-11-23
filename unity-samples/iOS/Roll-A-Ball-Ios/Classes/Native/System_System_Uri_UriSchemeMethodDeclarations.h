@@ -1,17 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Uri/UriScheme
-struct UriScheme_t1695;
-struct UriScheme_t1695_marshaled;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+#include "System_System_Uri_UriScheme.h"
+
 // System.Void System.Uri/UriScheme::.ctor(System.String,System.String,System.Int32)
- void UriScheme__ctor_m7438 (UriScheme_t1695 * __this, String_t* ___s, String_t* ___d, int32_t ___p, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void UriScheme_t1695_marshal(const UriScheme_t1695& unmarshaled, UriScheme_t1695_marshaled& marshaled);
-void UriScheme_t1695_marshal_back(const UriScheme_t1695_marshaled& marshaled, UriScheme_t1695& unmarshaled);
-void UriScheme_t1695_marshal_cleanup(UriScheme_t1695_marshaled& marshaled);
+extern "C" void UriScheme__ctor_m6059 (UriScheme_t1180 * __this, String_t* ___s, String_t* ___d, int32_t ___p, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UriScheme_t1180_marshal(const UriScheme_t1180& unmarshaled, UriScheme_t1180_marshaled& marshaled);
+extern "C" void UriScheme_t1180_marshal_back(const UriScheme_t1180_marshaled& marshaled, UriScheme_t1180& unmarshaled);
+extern "C" void UriScheme_t1180_marshal_cleanup(UriScheme_t1180_marshaled& marshaled);

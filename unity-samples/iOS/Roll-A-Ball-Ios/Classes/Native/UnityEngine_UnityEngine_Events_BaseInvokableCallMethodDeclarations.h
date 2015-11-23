@@ -1,25 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Events.BaseInvokableCall
-struct BaseInvokableCall_t970;
+struct BaseInvokableCall_t934;
 // System.Object
 struct Object_t;
 // System.Reflection.MethodInfo
-struct MethodInfo_t198;
-// System.Object[]
-struct ObjectU5BU5D_t112;
+struct MethodInfo_t;
 // System.Delegate
-struct Delegate_t730;
+struct Delegate_t698;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.Events.BaseInvokableCall::.ctor()
- void BaseInvokableCall__ctor_m4922 (BaseInvokableCall_t970 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BaseInvokableCall__ctor_m5020 (BaseInvokableCall_t934 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Events.BaseInvokableCall::.ctor(System.Object,System.Reflection.MethodInfo)
- void BaseInvokableCall__ctor_m4923 (BaseInvokableCall_t970 * __this, Object_t * ___target, MethodInfo_t198 * ___function, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.Events.BaseInvokableCall::Invoke(System.Object[])
+extern "C" void BaseInvokableCall__ctor_m5021 (BaseInvokableCall_t934 * __this, Object_t * ___target, MethodInfo_t * ___function, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Events.BaseInvokableCall::AllowInvoke(System.Delegate)
- bool BaseInvokableCall_AllowInvoke_m4924 (Object_t * __this/* static, unused */, Delegate_t730 * ___delegate, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean UnityEngine.Events.BaseInvokableCall::Find(System.Object,System.Reflection.MethodInfo)
+extern "C" bool BaseInvokableCall_AllowInvoke_m5022 (Object_t * __this /* static, unused */, Delegate_t698 * ___delegate, const MethodInfo* method) IL2CPP_METHOD_ATTR;

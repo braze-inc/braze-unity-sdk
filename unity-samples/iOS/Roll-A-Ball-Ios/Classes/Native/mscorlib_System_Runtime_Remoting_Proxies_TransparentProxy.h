@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Runtime.Remoting.Proxies.RealProxy
-struct RealProxy_t2077;
-// System.Object
+struct RealProxy_t1775;
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Remoting.Proxies.TransparentProxy
-struct TransparentProxy_t2079  : public Object_t
+struct  TransparentProxy_t1782  : public Object_t
 {
 	// System.Runtime.Remoting.Proxies.RealProxy System.Runtime.Remoting.Proxies.TransparentProxy::_rp
-	RealProxy_t2077 * ____rp_0;
+	RealProxy_t1775 * ____rp_0;
 };

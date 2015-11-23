@@ -1,40 +1,51 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Reflection.MonoMethod
-struct MonoMethod_t1983;
+struct MonoMethod_t;
 // System.Object[]
-struct ObjectU5BU5D_t112;
+struct ObjectU5BU5D_t87;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
 // System.Runtime.Remoting.Messaging.LogicalCallContext
-struct LogicalCallContext_t2062;
+struct LogicalCallContext_t1761;
 // System.Object
 struct Object_t;
 // System.Exception
-struct Exception_t71;
+struct Exception_t74;
 // System.String
 struct String_t;
 // System.Type[]
-struct TypeU5BU5D_t146;
-// System.Object
+struct TypeU5BU5D_t216;
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Remoting.Messaging.MonoMethodMessage
-struct MonoMethodMessage_t2052  : public Object_t
+struct  MonoMethodMessage_t1751  : public Object_t
 {
 	// System.Reflection.MonoMethod System.Runtime.Remoting.Messaging.MonoMethodMessage::method
-	MonoMethod_t1983 * ___method_0;
+	MonoMethod_t * ___method_0;
 	// System.Object[] System.Runtime.Remoting.Messaging.MonoMethodMessage::args
-	ObjectU5BU5D_t112* ___args_1;
+	ObjectU5BU5D_t87* ___args_1;
 	// System.Byte[] System.Runtime.Remoting.Messaging.MonoMethodMessage::arg_types
-	ByteU5BU5D_t97* ___arg_types_2;
+	ByteU5BU5D_t98* ___arg_types_2;
 	// System.Runtime.Remoting.Messaging.LogicalCallContext System.Runtime.Remoting.Messaging.MonoMethodMessage::ctx
-	LogicalCallContext_t2062 * ___ctx_3;
+	LogicalCallContext_t1761 * ___ctx_3;
 	// System.Object System.Runtime.Remoting.Messaging.MonoMethodMessage::rval
 	Object_t * ___rval_4;
 	// System.Exception System.Runtime.Remoting.Messaging.MonoMethodMessage::exc
-	Exception_t71 * ___exc_5;
+	Exception_t74 * ___exc_5;
 	// System.String System.Runtime.Remoting.Messaging.MonoMethodMessage::uri
 	String_t* ___uri_6;
 	// System.Type[] System.Runtime.Remoting.Messaging.MonoMethodMessage::methodSignature
-	TypeU5BU5D_t146* ___methodSignature_7;
+	TypeU5BU5D_t216* ___methodSignature_7;
 };

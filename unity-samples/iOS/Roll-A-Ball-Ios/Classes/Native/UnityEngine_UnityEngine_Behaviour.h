@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Component
+
+
 #include "UnityEngine_UnityEngine_Component.h"
+
 // UnityEngine.Behaviour
-struct Behaviour_t769  : public Component_t263
+struct  Behaviour_t727  : public Component_t267
 {
 };

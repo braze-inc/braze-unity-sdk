@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Collections.Generic.List`1<UnityEngine.GUILayoutEntry>
-struct List_1_t846;
+struct List_1_t860;
 // UnityEngine.RectOffset
-struct RectOffset_t658;
-// UnityEngine.GUILayoutEntry
+struct RectOffset_t622;
+
 #include "UnityEngine_UnityEngine_GUILayoutEntry.h"
+
 // UnityEngine.GUILayoutGroup
-struct GUILayoutGroup_t841  : public GUILayoutEntry_t845
+struct  GUILayoutGroup_t856  : public GUILayoutEntry_t859
 {
 	// System.Collections.Generic.List`1<UnityEngine.GUILayoutEntry> UnityEngine.GUILayoutGroup::entries
-	List_1_t846 * ___entries_10;
+	List_1_t860 * ___entries_10;
 	// System.Boolean UnityEngine.GUILayoutGroup::isVertical
 	bool ___isVertical_11;
 	// System.Boolean UnityEngine.GUILayoutGroup::resetCoords
@@ -23,24 +34,24 @@ struct GUILayoutGroup_t841  : public GUILayoutEntry_t845
 	bool ___isWindow_15;
 	// System.Int32 UnityEngine.GUILayoutGroup::windowID
 	int32_t ___windowID_16;
-	// System.Int32 UnityEngine.GUILayoutGroup::cursor
-	int32_t ___cursor_17;
-	// System.Int32 UnityEngine.GUILayoutGroup::stretchableCountX
-	int32_t ___stretchableCountX_18;
-	// System.Int32 UnityEngine.GUILayoutGroup::stretchableCountY
-	int32_t ___stretchableCountY_19;
-	// System.Boolean UnityEngine.GUILayoutGroup::userSpecifiedWidth
-	bool ___userSpecifiedWidth_20;
-	// System.Boolean UnityEngine.GUILayoutGroup::userSpecifiedHeight
-	bool ___userSpecifiedHeight_21;
-	// System.Single UnityEngine.GUILayoutGroup::childMinWidth
-	float ___childMinWidth_22;
-	// System.Single UnityEngine.GUILayoutGroup::childMaxWidth
-	float ___childMaxWidth_23;
-	// System.Single UnityEngine.GUILayoutGroup::childMinHeight
-	float ___childMinHeight_24;
-	// System.Single UnityEngine.GUILayoutGroup::childMaxHeight
-	float ___childMaxHeight_25;
+	// System.Int32 UnityEngine.GUILayoutGroup::m_Cursor
+	int32_t ___m_Cursor_17;
+	// System.Int32 UnityEngine.GUILayoutGroup::m_StretchableCountX
+	int32_t ___m_StretchableCountX_18;
+	// System.Int32 UnityEngine.GUILayoutGroup::m_StretchableCountY
+	int32_t ___m_StretchableCountY_19;
+	// System.Boolean UnityEngine.GUILayoutGroup::m_UserSpecifiedWidth
+	bool ___m_UserSpecifiedWidth_20;
+	// System.Boolean UnityEngine.GUILayoutGroup::m_UserSpecifiedHeight
+	bool ___m_UserSpecifiedHeight_21;
+	// System.Single UnityEngine.GUILayoutGroup::m_ChildMinWidth
+	float ___m_ChildMinWidth_22;
+	// System.Single UnityEngine.GUILayoutGroup::m_ChildMaxWidth
+	float ___m_ChildMaxWidth_23;
+	// System.Single UnityEngine.GUILayoutGroup::m_ChildMinHeight
+	float ___m_ChildMinHeight_24;
+	// System.Single UnityEngine.GUILayoutGroup::m_ChildMaxHeight
+	float ___m_ChildMaxHeight_25;
 	// UnityEngine.RectOffset UnityEngine.GUILayoutGroup::m_Margin
-	RectOffset_t658 * ___m_Margin_26;
+	RectOffset_t622 * ___m_Margin_26;
 };

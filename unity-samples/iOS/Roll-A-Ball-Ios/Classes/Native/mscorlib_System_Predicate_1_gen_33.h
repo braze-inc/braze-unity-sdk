@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
+// UnityEngine.UI.IClipper
+struct IClipper_t672;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// UnityEngine.UILineInfo
-#include "UnityEngine_UnityEngine_UILineInfo.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo UILineInfo_t746_il2cpp_TypeInfo;
-// System.Predicate`1<UnityEngine.UILineInfo>
-struct Predicate_1_t4409  : public MulticastDelegate_t594
+
+// System.Predicate`1<UnityEngine.UI.IClipper>
+struct  Predicate_1_t2545  : public MulticastDelegate_t550
 {
 };

@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Runtime.InteropServices.UnmanagedType
 #include "mscorlib_System_Runtime_InteropServices_UnmanagedType.h"
+
 // System.Reflection.Emit.UnmanagedMarshal
-struct UnmanagedMarshal_t1950  : public Object_t
+struct  UnmanagedMarshal_t1596  : public Object_t
 {
 	// System.Int32 System.Reflection.Emit.UnmanagedMarshal::count
 	int32_t ___count_0;

@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Array
 struct Array_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<UnityTest.ComparerBase/CompareToType>
-struct InternalEnumerator_1_t3002 
+
+// System.Array/InternalEnumerator`1<System.Security.Cryptography.KeySizes>
+struct  InternalEnumerator_1_t2797 
 {
-	// System.Array System.Array/InternalEnumerator`1<UnityTest.ComparerBase/CompareToType>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Security.Cryptography.KeySizes>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<UnityTest.ComparerBase/CompareToType>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Security.Cryptography.KeySizes>::idx
 	int32_t ___idx_1;
 };

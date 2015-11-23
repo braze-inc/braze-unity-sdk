@@ -1,21 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.GUIWordWrapSizer
-struct GUIWordWrapSizer_t848;
+struct GUIWordWrapSizer_t862;
 // UnityEngine.GUIStyle
-struct GUIStyle_t250;
+struct GUIStyle_t228;
 // UnityEngine.GUIContent
-struct GUIContent_t744;
+struct GUIContent_t853;
 // UnityEngine.GUILayoutOption[]
-struct GUILayoutOptionU5BU5D_t343;
+struct GUILayoutOptionU5BU5D_t299;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.GUIWordWrapSizer::.ctor(UnityEngine.GUIStyle,UnityEngine.GUIContent,UnityEngine.GUILayoutOption[])
- void GUIWordWrapSizer__ctor_m4101 (GUIWordWrapSizer_t848 * __this, GUIStyle_t250 * ____style, GUIContent_t744 * ____content, GUILayoutOptionU5BU5D_t343* ___options, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIWordWrapSizer__ctor_m4594 (GUIWordWrapSizer_t862 * __this, GUIStyle_t228 * ___style, GUIContent_t853 * ___content, GUILayoutOptionU5BU5D_t299* ___options, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIWordWrapSizer::CalcWidth()
- void GUIWordWrapSizer_CalcWidth_m4102 (GUIWordWrapSizer_t848 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIWordWrapSizer_CalcWidth_m4595 (GUIWordWrapSizer_t862 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIWordWrapSizer::CalcHeight()
- void GUIWordWrapSizer_CalcHeight_m4103 (GUIWordWrapSizer_t848 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIWordWrapSizer_CalcHeight_m4596 (GUIWordWrapSizer_t862 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

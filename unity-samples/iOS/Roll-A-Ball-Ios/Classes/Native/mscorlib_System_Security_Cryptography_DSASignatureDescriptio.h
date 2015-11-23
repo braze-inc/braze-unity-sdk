@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Cryptography.SignatureDescription
+
+
 #include "mscorlib_System_Security_Cryptography_SignatureDescription.h"
+
 // System.Security.Cryptography.DSASignatureDescription
-struct DSASignatureDescription_t2169  : public SignatureDescription_t2168
+struct  DSASignatureDescription_t1883  : public SignatureDescription_t1882
 {
 };

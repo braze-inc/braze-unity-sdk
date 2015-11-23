@@ -1,29 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Predicate_1_gen_2MethodDeclarations.h"
 
-// System.Predicate`1<UnityEngine.UI.ICanvasElement>
-struct Predicate_1_t550;
-// System.Object
-struct Object_t;
-// UnityEngine.UI.ICanvasElement
-struct ICanvasElement_t551;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-
-// System.Void System.Predicate`1<UnityEngine.UI.ICanvasElement>::.ctor(System.Object,System.IntPtr)
-// System.Predicate`1<System.Object>
-#include "mscorlib_System_Predicate_1_gen_3MethodDeclarations.h"
-#define Predicate_1__ctor_m3393(__this, ___object, ___method, method) (void)Predicate_1__ctor_m12990_gshared((Predicate_1_t2759 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
-// System.Boolean System.Predicate`1<UnityEngine.UI.ICanvasElement>::Invoke(T)
-#define Predicate_1_Invoke_m19348(__this, ___obj, method) (bool)Predicate_1_Invoke_m12991_gshared((Predicate_1_t2759 *)__this, (Object_t *)___obj, method)
-// System.IAsyncResult System.Predicate`1<UnityEngine.UI.ICanvasElement>::BeginInvoke(T,System.AsyncCallback,System.Object)
-#define Predicate_1_BeginInvoke_m19349(__this, ___obj, ___callback, ___object, method) (Object_t *)Predicate_1_BeginInvoke_m12992_gshared((Predicate_1_t2759 *)__this, (Object_t *)___obj, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
-// System.Boolean System.Predicate`1<UnityEngine.UI.ICanvasElement>::EndInvoke(System.IAsyncResult)
-#define Predicate_1_EndInvoke_m19350(__this, ___result, method) (bool)Predicate_1_EndInvoke_m12993_gshared((Predicate_1_t2759 *)__this, (Object_t *)___result, method)
+// System.Void System.Predicate`1<UnityEngine.UI.Toggle>::.ctor(System.Object,System.IntPtr)
+#define Predicate_1__ctor_m3606(__this, ___object, ___method, method) (( void (*) (Predicate_1_t601 *, Object_t *, IntPtr_t, const MethodInfo*))Predicate_1__ctor_m12648_gshared)(__this, ___object, ___method, method)
+// System.Boolean System.Predicate`1<UnityEngine.UI.Toggle>::Invoke(T)
+#define Predicate_1_Invoke_m18084(__this, ___obj, method) (( bool (*) (Predicate_1_t601 *, Toggle_t127 *, const MethodInfo*))Predicate_1_Invoke_m12649_gshared)(__this, ___obj, method)
+// System.IAsyncResult System.Predicate`1<UnityEngine.UI.Toggle>::BeginInvoke(T,System.AsyncCallback,System.Object)
+#define Predicate_1_BeginInvoke_m18085(__this, ___obj, ___callback, ___object, method) (( Object_t * (*) (Predicate_1_t601 *, Toggle_t127 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Predicate_1_BeginInvoke_m12650_gshared)(__this, ___obj, ___callback, ___object, method)
+// System.Boolean System.Predicate`1<UnityEngine.UI.Toggle>::EndInvoke(System.IAsyncResult)
+#define Predicate_1_EndInvoke_m18086(__this, ___result, method) (( bool (*) (Predicate_1_t601 *, Object_t *, const MethodInfo*))Predicate_1_EndInvoke_m12651_gshared)(__this, ___result, method)

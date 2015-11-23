@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.ArrayList/FixedSizeArrayListWrapper
+
+
 #include "mscorlib_System_Collections_ArrayList_FixedSizeArrayListWrap.h"
+
 // System.Collections.ArrayList/ReadOnlyArrayListWrapper
-struct ReadOnlyArrayListWrapper_t1873  : public FixedSizeArrayListWrapper_t1872
+struct  ReadOnlyArrayListWrapper_t1509  : public FixedSizeArrayListWrapper_t1508
 {
 };

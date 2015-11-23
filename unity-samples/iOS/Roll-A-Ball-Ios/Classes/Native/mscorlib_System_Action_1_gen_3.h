@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.SocialPlatforms.IScore[]
-struct IScoreU5BU5D_t947;
+struct IScoreU5BU5D_t905;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.Void
-#include "mscorlib_System_Void.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
+#include "mscorlib_System_Void.h"
+
 // System.Action`1<UnityEngine.SocialPlatforms.IScore[]>
-struct Action_1_t804  : public MulticastDelegate_t594
+struct  Action_1_t753  : public MulticastDelegate_t550
 {
 };

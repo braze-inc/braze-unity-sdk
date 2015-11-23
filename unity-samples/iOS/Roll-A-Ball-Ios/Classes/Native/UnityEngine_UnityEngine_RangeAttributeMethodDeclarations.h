@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.RangeAttribute
-struct RangeAttribute_t717;
+struct RangeAttribute_t918;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.RangeAttribute::.ctor(System.Single,System.Single)
- void RangeAttribute__ctor_m3403 (RangeAttribute_t717 * __this, float ___min, float ___max, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void RangeAttribute__ctor_m4871 (RangeAttribute_t918 * __this, float ___min, float ___max, const MethodInfo* method) IL2CPP_METHOD_ATTR;

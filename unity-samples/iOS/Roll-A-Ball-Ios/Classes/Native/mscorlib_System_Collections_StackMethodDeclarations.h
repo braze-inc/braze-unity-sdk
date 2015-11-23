@@ -1,37 +1,55 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Stack
-struct Stack_t993;
+struct Stack_t948;
+// System.Collections.ICollection
+struct ICollection_t1202;
 // System.Object
 struct Object_t;
 // System.Array
 struct Array_t;
 // System.Collections.IEnumerator
-struct IEnumerator_t21;
+struct IEnumerator_t66;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Collections.Stack::.ctor()
- void Stack__ctor_m5160 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Stack__ctor_m5164 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Stack::.ctor(System.Collections.ICollection)
+extern "C" void Stack__ctor_m8939 (Stack_t948 * __this, Object_t * ___col, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Stack::.ctor(System.Int32)
+extern "C" void Stack__ctor_m8940 (Stack_t948 * __this, int32_t ___initialCapacity, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Stack::Resize(System.Int32)
- void Stack_Resize_m9173 (Stack_t993 * __this, int32_t ___ncapacity, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Stack_Resize_m8941 (Stack_t948 * __this, int32_t ___ncapacity, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Collections.Stack::get_Count()
- int32_t Stack_get_Count_m5162 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Stack_get_Count_m8942 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Stack::get_IsSynchronized()
- bool Stack_get_IsSynchronized_m5163 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Stack_get_IsSynchronized_m8943 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Stack::get_SyncRoot()
- Object_t * Stack_get_SyncRoot_m5164 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Stack_get_SyncRoot_m8944 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Stack::Clear()
- void Stack_Clear_m4999 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Stack_Clear_m8945 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Stack::Clone()
+extern "C" Object_t * Stack_Clone_m8946 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Stack::CopyTo(System.Array,System.Int32)
- void Stack_CopyTo_m5165 (Stack_t993 * __this, Array_t * ___array, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Stack_CopyTo_m8947 (Stack_t948 * __this, Array_t * ___array, int32_t ___index, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator System.Collections.Stack::GetEnumerator()
- Object_t * Stack_GetEnumerator_m5161 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Stack_GetEnumerator_m8948 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Stack::Peek()
- Object_t * Stack_Peek_m4994 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Stack_Peek_m8949 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Stack::Pop()
- Object_t * Stack_Pop_m4995 (Stack_t993 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Stack_Pop_m8950 (Stack_t948 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Stack::Push(System.Object)
- void Stack_Push_m4993 (Stack_t993 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Stack_Push_m8951 (Stack_t948 * __this, Object_t * ___obj, const MethodInfo* method) IL2CPP_METHOD_ATTR;

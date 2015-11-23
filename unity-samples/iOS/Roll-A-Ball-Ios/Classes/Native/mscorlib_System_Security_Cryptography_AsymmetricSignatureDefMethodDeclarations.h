@@ -1,20 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Security.Cryptography.AsymmetricSignatureDeformatter
-struct AsymmetricSignatureDeformatter_t1466;
-// System.String
-struct String_t;
-// System.Security.Cryptography.AsymmetricAlgorithm
-struct AsymmetricAlgorithm_t1407;
-// System.Byte[]
-struct ByteU5BU5D_t97;
+struct AsymmetricSignatureDeformatter_t1333;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Security.Cryptography.AsymmetricSignatureDeformatter::.ctor()
- void AsymmetricSignatureDeformatter__ctor_m6606 (AsymmetricSignatureDeformatter_t1466 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Security.Cryptography.AsymmetricSignatureDeformatter::SetHashAlgorithm(System.String)
-// System.Void System.Security.Cryptography.AsymmetricSignatureDeformatter::SetKey(System.Security.Cryptography.AsymmetricAlgorithm)
-// System.Boolean System.Security.Cryptography.AsymmetricSignatureDeformatter::VerifySignature(System.Byte[],System.Byte[])
+extern "C" void AsymmetricSignatureDeformatter__ctor_m7250 (AsymmetricSignatureDeformatter_t1333 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

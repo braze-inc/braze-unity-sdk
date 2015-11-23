@@ -1,21 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // LaserScope
-struct LaserScope_t404;
+struct LaserScope_t373;
 // System.Collections.IEnumerator
-struct IEnumerator_t21;
+struct IEnumerator_t66;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void LaserScope::.ctor()
- void LaserScope__ctor_m1666 (LaserScope_t404 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LaserScope__ctor_m1436 (LaserScope_t373 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void LaserScope::Start()
- void LaserScope_Start_m1667 (LaserScope_t404 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LaserScope_Start_m1437 (LaserScope_t373 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.IEnumerator LaserScope::ChoseNewAnimationTargetCoroutine()
- Object_t * LaserScope_ChoseNewAnimationTargetCoroutine_m1668 (LaserScope_t404 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * LaserScope_ChoseNewAnimationTargetCoroutine_m1438 (LaserScope_t373 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void LaserScope::Update()
- void LaserScope_Update_m1669 (LaserScope_t404 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LaserScope_Update_m1439 (LaserScope_t373 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void LaserScope::Main()
- void LaserScope_Main_m1670 (LaserScope_t404 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void LaserScope_Main_m1440 (LaserScope_t373 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.TrackedReference
+
+
 #include "UnityEngine_UnityEngine_TrackedReference.h"
+
 // UnityEngine.AnimationState
-struct AnimationState_t445  : public TrackedReference_t914
+struct  AnimationState_t415  : public TrackedReference_t833
 {
 };

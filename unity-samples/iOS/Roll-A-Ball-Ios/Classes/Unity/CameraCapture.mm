@@ -1,6 +1,7 @@
 #include "CameraCapture.h"
 #include "AVCapture.h"
 #include "CMVideoSampling.h"
+#include "CVTextureCache.h"
 
 #import <CoreVideo/CoreVideo.h>
 
@@ -133,6 +134,11 @@
 	if([self.captureDevice respondsToSelector:@selector(activeFormat)])
 	{
 		float minDiff = INFINITY;
+
+		// In some corner cases (seeing this on iPod iOS 6.1.5) activeFormat is null.
+		if (!self.captureDevice.activeFormat)
+			return nil;
+
 		for(AVFrameRateRange* rate in self.captureDevice.activeFormat.videoSupportedFrameRateRanges)
 		{
 			float bestMatch = rate.minFrameRate;
@@ -234,6 +240,7 @@ extern "C" void UnityCameraCaptureReadToMemory(void* capture, void* dst_, int w,
 		dst += dstRowSize;
 		src -= srcRowSize;
 	}
+	::free(tmpMem);
 }
 
 extern "C" int UnityCameraCaptureVideoRotationDeg(void* capture)
@@ -256,5 +263,5 @@ extern "C" int UnityCameraCaptureVideoRotationDeg(void* capture)
 extern "C" int UnityCameraCaptureVerticallyMirrored(void* capture)
 {
 	CameraCaptureController* controller = (__bridge CameraCaptureController*)capture;
-	return CVOpenGLESTextureIsFlipped((CVOpenGLESTextureRef)controller->_cmVideoSampling.cvTextureCacheTexture);
+	return IsCVTextureFlipped(controller->_cmVideoSampling.cvTextureCacheTexture);
 }

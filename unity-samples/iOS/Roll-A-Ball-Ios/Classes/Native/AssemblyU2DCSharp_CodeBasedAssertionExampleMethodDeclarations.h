@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // CodeBasedAssertionExample
-struct CodeBasedAssertionExample_t201;
+struct CodeBasedAssertionExample_t182;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void CodeBasedAssertionExample::.ctor()
- void CodeBasedAssertionExample__ctor_m784 (CodeBasedAssertionExample_t201 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void CodeBasedAssertionExample__ctor_m764 (CodeBasedAssertionExample_t182 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void CodeBasedAssertionExample::Awake()
- void CodeBasedAssertionExample_Awake_m785 (CodeBasedAssertionExample_t201 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void CodeBasedAssertionExample_Awake_m765 (CodeBasedAssertionExample_t182 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.SystemException
+
+
 #include "mscorlib_System_SystemException.h"
+
 // Mono.Xml.SmallXmlParserException
-struct SmallXmlParserException_t1844  : public SystemException_t1729
+struct  SmallXmlParserException_t1501  : public SystemException_t1227
 {
 	// System.Int32 Mono.Xml.SmallXmlParserException::line
 	int32_t ___line_11;

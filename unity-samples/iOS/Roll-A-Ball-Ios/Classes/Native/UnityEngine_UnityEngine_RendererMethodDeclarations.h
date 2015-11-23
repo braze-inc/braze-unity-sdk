@@ -1,27 +1,38 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Renderer
-struct Renderer_t171;
+struct Renderer_t256;
 // UnityEngine.Material
-struct Material_t401;
-// UnityEngine.Bounds
+struct Material_t370;
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UnityEngine_Bounds.h"
 
 // System.Boolean UnityEngine.Renderer::get_enabled()
- bool Renderer_get_enabled_m1832 (Renderer_t171 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Renderer_get_enabled_m1588 (Renderer_t256 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Renderer::set_enabled(System.Boolean)
- void Renderer_set_enabled_m1822 (Renderer_t171 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Renderer_set_enabled_m1578 (Renderer_t256 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Material UnityEngine.Renderer::get_material()
- Material_t401 * Renderer_get_material_m1824 (Renderer_t171 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Material_t370 * Renderer_get_material_m1580 (Renderer_t256 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Material UnityEngine.Renderer::get_sharedMaterial()
- Material_t401 * Renderer_get_sharedMaterial_m1913 (Renderer_t171 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Material_t370 * Renderer_get_sharedMaterial_m1664 (Renderer_t256 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Bounds UnityEngine.Renderer::get_bounds()
- Bounds_t155  Renderer_get_bounds_m1208 (Renderer_t171 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Bounds_t255  Renderer_get_bounds_m1101 (Renderer_t256 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Renderer::INTERNAL_get_bounds(UnityEngine.Bounds&)
+extern "C" void Renderer_INTERNAL_get_bounds_m3812 (Renderer_t256 * __this, Bounds_t255 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Renderer::get_sortingLayerID()
- int32_t Renderer_get_sortingLayerID_m3350 (Renderer_t171 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Renderer_get_sortingLayerID_m3254 (Renderer_t256 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.Renderer::get_sortingOrder()
- int32_t Renderer_get_sortingOrder_m3351 (Renderer_t171 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t Renderer_get_sortingOrder_m3255 (Renderer_t256 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

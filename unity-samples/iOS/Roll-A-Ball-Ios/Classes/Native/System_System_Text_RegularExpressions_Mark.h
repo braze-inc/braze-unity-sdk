@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Text.RegularExpressions.Mark
-struct Mark_t1660 
+struct  Mark_t1143 
 {
 	// System.Int32 System.Text.RegularExpressions.Mark::Start
 	int32_t ___Start_0;

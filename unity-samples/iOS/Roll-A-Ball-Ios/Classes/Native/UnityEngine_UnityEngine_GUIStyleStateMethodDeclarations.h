@@ -1,33 +1,41 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.GUIStyleState
-struct GUIStyleState_t340;
+struct GUIStyleState_t296;
 // UnityEngine.GUIStyle
-struct GUIStyle_t250;
+struct GUIStyle_t228;
 // UnityEngine.Texture2D
-struct Texture2D_t557;
-// UnityEngine.Color
-#include "UnityEngine_UnityEngine_Color.h"
-// System.IntPtr
+struct Texture2D_t524;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
+#include "UnityEngine_UnityEngine_Color.h"
 
 // System.Void UnityEngine.GUIStyleState::.ctor()
- void GUIStyleState__ctor_m4200 (GUIStyleState_t340 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIStyleState__ctor_m4663 (GUIStyleState_t296 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIStyleState::.ctor(UnityEngine.GUIStyle,System.IntPtr)
- void GUIStyleState__ctor_m4201 (GUIStyleState_t340 * __this, GUIStyle_t250 * ___sourceStyle, IntPtr_t107 ___source, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIStyleState__ctor_m4664 (GUIStyleState_t296 * __this, GUIStyle_t228 * ___sourceStyle, IntPtr_t ___source, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIStyleState::Finalize()
- void GUIStyleState_Finalize_m4202 (GUIStyleState_t340 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIStyleState_Finalize_m4665 (GUIStyleState_t296 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIStyleState::Init()
- void GUIStyleState_Init_m4203 (GUIStyleState_t340 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIStyleState_Init_m4666 (GUIStyleState_t296 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIStyleState::Cleanup()
- void GUIStyleState_Cleanup_m4204 (GUIStyleState_t340 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIStyleState_Cleanup_m4667 (GUIStyleState_t296 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Texture2D UnityEngine.GUIStyleState::GetBackgroundInternal()
- Texture2D_t557 * GUIStyleState_GetBackgroundInternal_m4205 (GUIStyleState_t340 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.GUIStyleState::INTERNAL_set_textColor(UnityEngine.Color&)
- void GUIStyleState_INTERNAL_set_textColor_m4206 (GUIStyleState_t340 * __this, Color_t341 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Texture2D_t524 * GUIStyleState_GetBackgroundInternal_m4668 (GUIStyleState_t296 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUIStyleState::set_textColor(UnityEngine.Color)
- void GUIStyleState_set_textColor_m1466 (GUIStyleState_t340 * __this, Color_t341  ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GUIStyleState_set_textColor_m1227 (GUIStyleState_t296 * __this, Color_t65  ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.GUIStyleState::INTERNAL_set_textColor(UnityEngine.Color&)
+extern "C" void GUIStyleState_INTERNAL_set_textColor_m4669 (GUIStyleState_t296 * __this, Color_t65 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

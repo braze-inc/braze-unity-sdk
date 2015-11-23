@@ -1,35 +1,44 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.MulticastDelegate
-struct MulticastDelegate_t594;
+struct MulticastDelegate_t550;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
+struct SerializationInfo_t962;
 // System.Object
 struct Object_t;
 // System.Delegate[]
-struct DelegateU5BU5D_t1741;
+struct DelegateU5BU5D_t2064;
 // System.Delegate
-struct Delegate_t730;
-// System.Runtime.Serialization.StreamingContext
+struct Delegate_t698;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.MulticastDelegate::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void MulticastDelegate_GetObjectData_m3543 (MulticastDelegate_t594 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MulticastDelegate_GetObjectData_m7824 (MulticastDelegate_t550 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.MulticastDelegate::Equals(System.Object)
- bool MulticastDelegate_Equals_m3541 (MulticastDelegate_t594 * __this, Object_t * ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool MulticastDelegate_Equals_m7825 (MulticastDelegate_t550 * __this, Object_t * ___obj, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.MulticastDelegate::GetHashCode()
- int32_t MulticastDelegate_GetHashCode_m3542 (MulticastDelegate_t594 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t MulticastDelegate_GetHashCode_m7826 (MulticastDelegate_t550 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Delegate[] System.MulticastDelegate::GetInvocationList()
- DelegateU5BU5D_t1741* MulticastDelegate_GetInvocationList_m3545 (MulticastDelegate_t594 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DelegateU5BU5D_t2064* MulticastDelegate_GetInvocationList_m7827 (MulticastDelegate_t550 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Delegate System.MulticastDelegate::CombineImpl(System.Delegate)
- Delegate_t730 * MulticastDelegate_CombineImpl_m3546 (MulticastDelegate_t594 * __this, Delegate_t730 * ___follow, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Delegate_t698 * MulticastDelegate_CombineImpl_m7828 (MulticastDelegate_t550 * __this, Delegate_t698 * ___follow, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.MulticastDelegate::BaseEquals(System.MulticastDelegate)
- bool MulticastDelegate_BaseEquals_m8249 (MulticastDelegate_t594 * __this, MulticastDelegate_t594 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool MulticastDelegate_BaseEquals_m7829 (MulticastDelegate_t550 * __this, MulticastDelegate_t550 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.MulticastDelegate System.MulticastDelegate::KPM(System.MulticastDelegate,System.MulticastDelegate,System.MulticastDelegate&)
- MulticastDelegate_t594 * MulticastDelegate_KPM_m8250 (Object_t * __this/* static, unused */, MulticastDelegate_t594 * ___needle, MulticastDelegate_t594 * ___haystack, MulticastDelegate_t594 ** ___tail, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" MulticastDelegate_t550 * MulticastDelegate_KPM_m7830 (Object_t * __this /* static, unused */, MulticastDelegate_t550 * ___needle, MulticastDelegate_t550 * ___haystack, MulticastDelegate_t550 ** ___tail, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Delegate System.MulticastDelegate::RemoveImpl(System.Delegate)
- Delegate_t730 * MulticastDelegate_RemoveImpl_m3547 (MulticastDelegate_t594 * __this, Delegate_t730 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Delegate_t698 * MulticastDelegate_RemoveImpl_m7831 (MulticastDelegate_t550 * __this, Delegate_t698 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

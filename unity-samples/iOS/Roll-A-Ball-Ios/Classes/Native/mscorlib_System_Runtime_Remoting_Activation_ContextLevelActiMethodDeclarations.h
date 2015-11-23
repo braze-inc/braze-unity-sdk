@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.Remoting.Activation.ContextLevelActivator
-struct ContextLevelActivator_t2032;
+struct ContextLevelActivator_t1719;
 // System.Runtime.Remoting.Activation.IActivator
-struct IActivator_t2027;
+struct IActivator_t1716;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.Remoting.Activation.ContextLevelActivator::.ctor(System.Runtime.Remoting.Activation.IActivator)
- void ContextLevelActivator__ctor_m10185 (ContextLevelActivator_t2032 * __this, Object_t * ___next, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContextLevelActivator__ctor_m10183 (ContextLevelActivator_t1719 * __this, Object_t * ___next, const MethodInfo* method) IL2CPP_METHOD_ATTR;

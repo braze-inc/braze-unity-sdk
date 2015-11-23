@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.SocialPlatforms.GameCenter.GcAchievementData
-struct GcAchievementData_t813 
+struct  GcAchievementData_t891 
 {
 	// System.String UnityEngine.SocialPlatforms.GameCenter.GcAchievementData::m_Identifier
 	String_t* ___m_Identifier_0;
@@ -19,7 +30,7 @@ struct GcAchievementData_t813
 	int32_t ___m_LastReportedDate_4;
 };
 // Native definition for marshalling of: UnityEngine.SocialPlatforms.GameCenter.GcAchievementData
-struct GcAchievementData_t813_marshaled
+struct GcAchievementData_t891_marshaled
 {
 	char* ___m_Identifier_0;
 	double ___m_PercentCompleted_1;

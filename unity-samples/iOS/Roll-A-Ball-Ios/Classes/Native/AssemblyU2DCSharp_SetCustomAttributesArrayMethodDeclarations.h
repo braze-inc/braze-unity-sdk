@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // SetCustomAttributesArray
-struct SetCustomAttributesArray_t130;
+struct SetCustomAttributesArray_t129;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void SetCustomAttributesArray::.ctor()
- void SetCustomAttributesArray__ctor_m633 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributesArray__ctor_m613 (SetCustomAttributesArray_t129 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnBackButtonClick()
- void SetCustomAttributesArray_OnBackButtonClick_m634 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributesArray_OnBackButtonClick_m614 (SetCustomAttributesArray_t129 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnSetArrayButtonClick()
- void SetCustomAttributesArray_OnSetArrayButtonClick_m635 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributesArray_OnSetArrayButtonClick_m615 (SetCustomAttributesArray_t129 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnAddStringButtonClick()
- void SetCustomAttributesArray_OnAddStringButtonClick_m636 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributesArray_OnAddStringButtonClick_m616 (SetCustomAttributesArray_t129 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributesArray::OnRemoveStringButtonClick()
- void SetCustomAttributesArray_OnRemoveStringButtonClick_m637 (SetCustomAttributesArray_t130 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributesArray_OnRemoveStringButtonClick_m617 (SetCustomAttributesArray_t129 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

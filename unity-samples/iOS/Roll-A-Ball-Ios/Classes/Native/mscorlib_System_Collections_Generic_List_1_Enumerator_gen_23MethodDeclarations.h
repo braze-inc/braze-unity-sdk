@@ -1,27 +1,32 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Collections_Generic_List_1_Enumerator_gen_7MethodDeclarations.h"
 
-// System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>
-struct Enumerator_t3811;
-// System.Object
-struct Object_t;
-// System.Collections.Generic.List`1<UnityEngine.UIVertex>
-struct List_1_t566;
-// UnityEngine.UIVertex
-#include "UnityEngine_UnityEngine_UIVertex.h"
-
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>::.ctor(System.Collections.Generic.List`1<T>)
- void Enumerator__ctor_m19879 (Enumerator_t3811 * __this, List_1_t566 * ___l, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>::System.Collections.IEnumerator.get_Current()
- Object_t * Enumerator_System_Collections_IEnumerator_get_Current_m19880 (Enumerator_t3811 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>::Dispose()
- void Enumerator_Dispose_m19881 (Enumerator_t3811 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>::VerifyState()
- void Enumerator_VerifyState_m19882 (Enumerator_t3811 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>::MoveNext()
- bool Enumerator_MoveNext_m19883 (Enumerator_t3811 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UIVertex>::get_Current()
- UIVertex_t584  Enumerator_get_Current_m19884 (Enumerator_t3811 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::.ctor(System.Collections.Generic.List`1<T>)
+#define Enumerator__ctor_m16646(__this, ___l, method) (( void (*) (Enumerator_t2438 *, List_1_t513 *, const MethodInfo*))Enumerator__ctor_m12561_gshared)(__this, ___l, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::System.Collections.IEnumerator.Reset()
+#define Enumerator_System_Collections_IEnumerator_Reset_m16647(__this, method) (( void (*) (Enumerator_t2438 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_Reset_m12562_gshared)(__this, method)
+// System.Object System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::System.Collections.IEnumerator.get_Current()
+#define Enumerator_System_Collections_IEnumerator_get_Current_m16648(__this, method) (( Object_t * (*) (Enumerator_t2438 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_get_Current_m12563_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::Dispose()
+#define Enumerator_Dispose_m16649(__this, method) (( void (*) (Enumerator_t2438 *, const MethodInfo*))Enumerator_Dispose_m12564_gshared)(__this, method)
+// System.Void System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::VerifyState()
+#define Enumerator_VerifyState_m16650(__this, method) (( void (*) (Enumerator_t2438 *, const MethodInfo*))Enumerator_VerifyState_m12565_gshared)(__this, method)
+// System.Boolean System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::MoveNext()
+#define Enumerator_MoveNext_m16651(__this, method) (( bool (*) (Enumerator_t2438 *, const MethodInfo*))Enumerator_MoveNext_m12566_gshared)(__this, method)
+// T System.Collections.Generic.List`1/Enumerator<UnityEngine.UI.Dropdown/DropdownItem>::get_Current()
+#define Enumerator_get_Current_m16652(__this, method) (( DropdownItem_t502 * (*) (Enumerator_t2438 *, const MethodInfo*))Enumerator_get_Current_m12567_gshared)(__this, method)

@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // MoveAnimation
-struct MoveAnimation_t395;
+struct MoveAnimation_t363;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void MoveAnimation::.ctor()
- void MoveAnimation__ctor_m1620 (MoveAnimation_t395 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MoveAnimation__ctor_m1390 (MoveAnimation_t363 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void MoveAnimation::Init()
- void MoveAnimation_Init_m1621 (MoveAnimation_t395 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MoveAnimation_Init_m1391 (MoveAnimation_t363 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

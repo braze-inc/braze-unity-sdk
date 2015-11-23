@@ -1,18 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
-// System.DateTime
 #include "mscorlib_System_DateTime.h"
-// System.TimeSpan
 #include "mscorlib_System_TimeSpan.h"
+
 // System.Globalization.DaylightTime
-struct DaylightTime_t1904  : public Object_t
+struct  DaylightTime_t1544  : public Object_t
 {
 	// System.DateTime System.Globalization.DaylightTime::m_start
-	DateTime_t837  ___m_start_0;
+	DateTime_t852  ___m_start_0;
 	// System.DateTime System.Globalization.DaylightTime::m_end
-	DateTime_t837  ___m_end_1;
+	DateTime_t852  ___m_end_1;
 	// System.TimeSpan System.Globalization.DaylightTime::m_delta
-	TimeSpan_t1620  ___m_delta_2;
+	TimeSpan_t1097  ___m_delta_2;
 };

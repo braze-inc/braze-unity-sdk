@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// System.Security.Principal.PrincipalPolicy
 #include "mscorlib_System_Security_Principal_PrincipalPolicy.h"
+
 // System.Security.Principal.PrincipalPolicy
-struct PrincipalPolicy_t2180 
+struct  PrincipalPolicy_t1903 
 {
 	// System.Int32 System.Security.Principal.PrincipalPolicy::value__
 	int32_t ___value___1;

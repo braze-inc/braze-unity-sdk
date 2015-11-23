@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Collections.Generic.Dictionary`2<System.String,System.Collections.Generic.List`1<ITestResult>>
-struct Dictionary_2_t252;
-// System.ValueType
+struct Dictionary_2_t230;
+
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.KeyValuePair`2<System.String,System.Collections.Generic.List`1<ITestResult>>
-#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_2.h"
+#include "mscorlib_System_Collections_Generic_KeyValuePair_2_gen_3.h"
+
 // System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Collections.Generic.List`1<ITestResult>>
-struct Enumerator_t345 
+struct  Enumerator_t298 
 {
 	// System.Collections.Generic.Dictionary`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Collections.Generic.List`1<ITestResult>>::dictionary
-	Dictionary_2_t252 * ___dictionary_0;
+	Dictionary_2_t230 * ___dictionary_0;
 	// System.Int32 System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Collections.Generic.List`1<ITestResult>>::next
 	int32_t ___next_1;
 	// System.Int32 System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Collections.Generic.List`1<ITestResult>>::stamp
 	int32_t ___stamp_2;
 	// System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Collections.Generic.List`1<ITestResult>>::current
-	KeyValuePair_2_t257  ___current_3;
+	KeyValuePair_2_t266  ___current_3;
 };

@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Coroutine
-struct Coroutine_t600;
-struct Coroutine_t600_marshaled;
+struct Coroutine_t558;
+struct Coroutine_t558_marshaled;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.Coroutine::.ctor()
- void Coroutine__ctor_m3872 (Coroutine_t600 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Coroutine__ctor_m3701 (Coroutine_t558 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Coroutine::ReleaseCoroutine()
- void Coroutine_ReleaseCoroutine_m3873 (Coroutine_t600 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Coroutine_ReleaseCoroutine_m3702 (Coroutine_t558 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Coroutine::Finalize()
- void Coroutine_Finalize_m3874 (Coroutine_t600 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void Coroutine_t600_marshal(const Coroutine_t600& unmarshaled, Coroutine_t600_marshaled& marshaled);
-void Coroutine_t600_marshal_back(const Coroutine_t600_marshaled& marshaled, Coroutine_t600& unmarshaled);
-void Coroutine_t600_marshal_cleanup(Coroutine_t600_marshaled& marshaled);
+extern "C" void Coroutine_Finalize_m3703 (Coroutine_t558 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Coroutine_t558_marshal(const Coroutine_t558& unmarshaled, Coroutine_t558_marshaled& marshaled);
+extern "C" void Coroutine_t558_marshal_back(const Coroutine_t558_marshaled& marshaled, Coroutine_t558& unmarshaled);
+extern "C" void Coroutine_t558_marshal_cleanup(Coroutine_t558_marshaled& marshaled);

@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Array
 struct Array_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`1<UnityEngine.Vector4>>
-struct InternalEnumerator_1_t3083 
+
+// System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContextProperty>
+struct  InternalEnumerator_1_t2864 
 {
-	// System.Array System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`1<UnityEngine.Vector4>>::array
+	// System.Array System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContextProperty>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`1<UnityEngine.Vector4>>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<System.Runtime.Remoting.Contexts.IContextProperty>::idx
 	int32_t ___idx_1;
 };

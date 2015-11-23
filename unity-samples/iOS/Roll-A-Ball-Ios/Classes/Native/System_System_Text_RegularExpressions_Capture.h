@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Text.RegularExpressions.Capture
-struct Capture_t1636  : public Object_t
+struct  Capture_t1116  : public Object_t
 {
 	// System.Int32 System.Text.RegularExpressions.Capture::index
 	int32_t ___index_0;

@@ -1,11 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
 
-// System.Security.Cryptography.SHAConstants
-struct SHAConstants_t2167;
-
 // System.Void System.Security.Cryptography.SHAConstants::.cctor()
- void SHAConstants__cctor_m10850 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SHAConstants__cctor_m11055 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

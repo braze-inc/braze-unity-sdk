@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.WaitForSeconds
-struct WaitForSeconds_t279;
-struct WaitForSeconds_t279_marshaled;
+struct WaitForSeconds_t271;
+struct WaitForSeconds_t271_marshaled;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.WaitForSeconds::.ctor(System.Single)
- void WaitForSeconds__ctor_m1081 (WaitForSeconds_t279 * __this, float ___seconds, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void WaitForSeconds_t279_marshal(const WaitForSeconds_t279& unmarshaled, WaitForSeconds_t279_marshaled& marshaled);
-void WaitForSeconds_t279_marshal_back(const WaitForSeconds_t279_marshaled& marshaled, WaitForSeconds_t279& unmarshaled);
-void WaitForSeconds_t279_marshal_cleanup(WaitForSeconds_t279_marshaled& marshaled);
+extern "C" void WaitForSeconds__ctor_m1063 (WaitForSeconds_t271 * __this, float ___seconds, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void WaitForSeconds_t271_marshal(const WaitForSeconds_t271& unmarshaled, WaitForSeconds_t271_marshaled& marshaled);
+extern "C" void WaitForSeconds_t271_marshal_back(const WaitForSeconds_t271_marshaled& marshaled, WaitForSeconds_t271& unmarshaled);
+extern "C" void WaitForSeconds_t271_marshal_cleanup(WaitForSeconds_t271_marshaled& marshaled);

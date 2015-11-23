@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Component
+
+
 #include "UnityEngine_UnityEngine_Component.h"
+
 // UnityEngine.Transform
-struct Transform_t179  : public Component_t263
+struct  Transform_t258  : public Component_t267
 {
 };

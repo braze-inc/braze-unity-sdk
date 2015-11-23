@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
-// System.Reflection.ConstructorInfo
+
 #include "mscorlib_System_Reflection_ConstructorInfo.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // System.Reflection.MonoCMethod
-struct MonoCMethod_t1985  : public ConstructorInfo_t1089
+struct  MonoCMethod_t1660  : public ConstructorInfo_t990
 {
 	// System.IntPtr System.Reflection.MonoCMethod::mhandle
-	IntPtr_t107 ___mhandle_2;
+	IntPtr_t ___mhandle_2;
 	// System.String System.Reflection.MonoCMethod::name
 	String_t* ___name_3;
 	// System.Type System.Reflection.MonoCMethod::reftype

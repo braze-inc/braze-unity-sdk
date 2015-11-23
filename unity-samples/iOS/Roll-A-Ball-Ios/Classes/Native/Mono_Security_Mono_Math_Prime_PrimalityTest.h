@@ -1,19 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // Mono.Math.BigInteger
-struct BigInteger_t1361;
+struct BigInteger_t1263;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// Mono.Math.Prime.ConfidenceFactor
-#include "Mono_Security_Mono_Math_Prime_ConfidenceFactor.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo ConfidenceFactor_t1367_il2cpp_TypeInfo;
+#include "Mono_Security_Mono_Math_Prime_ConfidenceFactor.h"
+
 // Mono.Math.Prime.PrimalityTest
-struct PrimalityTest_t1370  : public MulticastDelegate_t594
+struct  PrimalityTest_t1362  : public MulticastDelegate_t550
 {
 };

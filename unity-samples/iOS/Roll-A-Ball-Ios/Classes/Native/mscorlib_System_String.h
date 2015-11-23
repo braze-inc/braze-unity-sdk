@@ -1,13 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // System.Char[]
-struct CharU5BU5D_t276;
-// System.Object
+struct CharU5BU5D_t270;
+
 #include "mscorlib_System_Object.h"
+
 // System.String
-struct String_t  : public Object_t
+struct  String_t  : public Object_t
 {
 	// System.Int32 System.String::length
 	int32_t ___length_0;
@@ -18,5 +29,5 @@ struct String_t_StaticFields{
 	// System.String System.String::Empty
 	String_t* ___Empty_2;
 	// System.Char[] System.String::WhiteChars
-	CharU5BU5D_t276* ___WhiteChars_3;
+	CharU5BU5D_t270* ___WhiteChars_3;
 };

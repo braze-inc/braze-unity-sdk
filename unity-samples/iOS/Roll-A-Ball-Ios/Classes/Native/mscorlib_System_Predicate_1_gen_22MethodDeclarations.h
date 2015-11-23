@@ -1,27 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Predicate_1_gen_2MethodDeclarations.h"
 
-// System.Predicate`1<UnityEngine.UIVertex>
-struct Predicate_1_t3809;
-// System.Object
-struct Object_t;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-// UnityEngine.UIVertex
-#include "UnityEngine_UnityEngine_UIVertex.h"
-
-// System.Void System.Predicate`1<UnityEngine.UIVertex>::.ctor(System.Object,System.IntPtr)
- void Predicate_1__ctor_m19959 (Predicate_1_t3809 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Predicate`1<UnityEngine.UIVertex>::Invoke(T)
- bool Predicate_1_Invoke_m19960 (Predicate_1_t3809 * __this, UIVertex_t584  ___obj, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.IAsyncResult System.Predicate`1<UnityEngine.UIVertex>::BeginInvoke(T,System.AsyncCallback,System.Object)
- Object_t * Predicate_1_BeginInvoke_m19961 (Predicate_1_t3809 * __this, UIVertex_t584  ___obj, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean System.Predicate`1<UnityEngine.UIVertex>::EndInvoke(System.IAsyncResult)
- bool Predicate_1_EndInvoke_m19962 (Predicate_1_t3809 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Predicate`1<UnityEngine.UI.Dropdown/OptionData>::.ctor(System.Object,System.IntPtr)
+#define Predicate_1__ctor_m16535(__this, ___object, ___method, method) (( void (*) (Predicate_1_t2429 *, Object_t *, IntPtr_t, const MethodInfo*))Predicate_1__ctor_m12648_gshared)(__this, ___object, ___method, method)
+// System.Boolean System.Predicate`1<UnityEngine.UI.Dropdown/OptionData>::Invoke(T)
+#define Predicate_1_Invoke_m16536(__this, ___obj, method) (( bool (*) (Predicate_1_t2429 *, OptionData_t505 *, const MethodInfo*))Predicate_1_Invoke_m12649_gshared)(__this, ___obj, method)
+// System.IAsyncResult System.Predicate`1<UnityEngine.UI.Dropdown/OptionData>::BeginInvoke(T,System.AsyncCallback,System.Object)
+#define Predicate_1_BeginInvoke_m16537(__this, ___obj, ___callback, ___object, method) (( Object_t * (*) (Predicate_1_t2429 *, OptionData_t505 *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Predicate_1_BeginInvoke_m12650_gshared)(__this, ___obj, ___callback, ___object, method)
+// System.Boolean System.Predicate`1<UnityEngine.UI.Dropdown/OptionData>::EndInvoke(System.IAsyncResult)
+#define Predicate_1_EndInvoke_m16538(__this, ___result, method) (( bool (*) (Predicate_1_t2429 *, Object_t *, const MethodInfo*))Predicate_1_EndInvoke_m12651_gshared)(__this, ___result, method)

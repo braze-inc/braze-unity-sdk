@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Cryptography.DES
+
+
 #include "mscorlib_System_Security_Cryptography_DES.h"
+
 // System.Security.Cryptography.DESCryptoServiceProvider
-struct DESCryptoServiceProvider_t2140  : public DES_t1527
+struct  DESCryptoServiceProvider_t1854  : public DES_t1384
 {
 };

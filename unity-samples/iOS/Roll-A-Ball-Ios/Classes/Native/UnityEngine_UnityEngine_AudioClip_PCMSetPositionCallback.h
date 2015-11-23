@@ -1,19 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
+
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.Int32
-#include "mscorlib_System_Int32.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo Int32_t63_il2cpp_TypeInfo;
+#include "mscorlib_System_Void.h"
+#include "mscorlib_System_Int32.h"
+
 // UnityEngine.AudioClip/PCMSetPositionCallback
-struct PCMSetPositionCallback_t902  : public MulticastDelegate_t594
+struct  PCMSetPositionCallback_t822  : public MulticastDelegate_t550
 {
 };

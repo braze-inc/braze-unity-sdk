@@ -52,6 +52,11 @@ UnityDisplaySurfaceBase
 }
 UnityDisplaySurfaceBase;
 
+
+// START_STRUCT confuse clang c compiler (though it is idiomatic c code that works)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmissing-declarations"
+
 // GLES display surface
 START_STRUCT(UnityDisplaySurfaceGLES, UnityDisplaySurfaceBase)
 	OBJC_OBJECT_PTR	CAEAGLLayer*	layer;
@@ -68,6 +73,10 @@ START_STRUCT(UnityDisplaySurfaceGLES, UnityDisplaySurfaceBase)
 	// MSAA FB
 	unsigned	msaaFB;
 	unsigned	msaaColorRB;
+
+	// when we enable AA for non-native resolution we need interim RT to resolve AA to (and then we will blit it to screen)
+	UnityRenderBuffer	resolvedColorBuffer;
+
 
 	// will be "shared", only one depth buffer is needed
 	unsigned	depthRB;
@@ -96,6 +105,10 @@ START_STRUCT(UnityDisplaySurfaceMTL, UnityDisplaySurfaceBase)
 	unsigned							depthFormat;	// [MTLPixelFormat]
 END_STRUCT(UnityDisplaySurfaceMTL)
 
+// START_STRUCT confuse clang c compiler (though it is idiomatic c code that works)
+#pragma clang diagnostic pop
+
+
 // unity common base for UIView ready to be rendered into
 #ifdef __OBJC__
 @interface UnityRenderingView : UIView {}
@@ -119,8 +132,6 @@ extern "C" {
 #endif
 
 void InitRenderingGLES();
-void PrepareFrameRenderingGLES();
-void TeardownFrameRenderingGLES();
 
 void CreateSystemRenderingSurfaceGLES(UnityDisplaySurfaceGLES* surface);
 void DestroySystemRenderingSurfaceGLES(UnityDisplaySurfaceGLES* surface);
@@ -130,8 +141,8 @@ void CreateSharedDepthbufferGLES(UnityDisplaySurfaceGLES* surface);
 void DestroySharedDepthbufferGLES(UnityDisplaySurfaceGLES* surface);
 void CreateUnityRenderBuffersGLES(UnityDisplaySurfaceGLES* surface);
 void DestroyUnityRenderBuffersGLES(UnityDisplaySurfaceGLES* surface);
-void PrepareRenderingGLES(UnityDisplaySurfaceGLES* surface);
-void TeardownRenderingGLES(UnityDisplaySurfaceGLES* surface);
+void StartFrameRenderingGLES(UnityDisplaySurfaceGLES* surface);
+void EndFrameRenderingGLES(UnityDisplaySurfaceGLES* surface);
 void PreparePresentGLES(UnityDisplaySurfaceGLES* surface);
 void PresentGLES(UnityDisplaySurfaceGLES* surface);
 
@@ -145,8 +156,6 @@ extern "C" {
 #endif
 
 void InitRenderingMTL();
-void PrepareFrameRenderingMTL();
-void TeardownFrameRenderingMTL();
 
 void CreateSystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface);
 void DestroySystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface);
@@ -156,8 +165,8 @@ void CreateSharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface);
 void DestroySharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface);
 void CreateUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface);
 void DestroyUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface);
-void PrepareRenderingMTL(UnityDisplaySurfaceMTL* surface);
-void TeardownRenderingMTL(UnityDisplaySurfaceMTL* surface);
+void StartFrameRenderingMTL(UnityDisplaySurfaceMTL* surface);
+void EndFrameRenderingMTL(UnityDisplaySurfaceMTL* surface);
 void PreparePresentMTL(UnityDisplaySurfaceMTL* surface);
 void PresentMTL(UnityDisplaySurfaceMTL* surface);
 
@@ -183,8 +192,6 @@ inline void f()													\
 
 
 GLES_METAL_COMMON_IMPL(InitRendering);
-GLES_METAL_COMMON_IMPL(PrepareFrameRendering);
-GLES_METAL_COMMON_IMPL(TeardownFrameRendering);
 
 GLES_METAL_COMMON_IMPL_SURF(CreateSystemRenderingSurface);
 GLES_METAL_COMMON_IMPL_SURF(DestroySystemRenderingSurface);
@@ -194,8 +201,8 @@ GLES_METAL_COMMON_IMPL_SURF(CreateSharedDepthbuffer);
 GLES_METAL_COMMON_IMPL_SURF(DestroySharedDepthbuffer);
 GLES_METAL_COMMON_IMPL_SURF(CreateUnityRenderBuffers);
 GLES_METAL_COMMON_IMPL_SURF(DestroyUnityRenderBuffers);
-GLES_METAL_COMMON_IMPL_SURF(PrepareRendering);
-GLES_METAL_COMMON_IMPL_SURF(TeardownRendering);
+GLES_METAL_COMMON_IMPL_SURF(StartFrameRendering);
+GLES_METAL_COMMON_IMPL_SURF(EndFrameRendering);
 GLES_METAL_COMMON_IMPL_SURF(PreparePresent);
 GLES_METAL_COMMON_IMPL_SURF(Present);
 

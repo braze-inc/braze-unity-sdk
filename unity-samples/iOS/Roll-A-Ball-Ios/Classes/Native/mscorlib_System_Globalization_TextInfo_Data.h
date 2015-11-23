@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Globalization.TextInfo/Data
-struct Data_t1908 
+struct  Data_t1548 
 {
 	// System.Int32 System.Globalization.TextInfo/Data::ansi
 	int32_t ___ansi_0;

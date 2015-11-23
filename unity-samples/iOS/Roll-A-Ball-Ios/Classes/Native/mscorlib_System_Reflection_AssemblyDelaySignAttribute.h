@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Attribute
+
+
 #include "mscorlib_System_Attribute.h"
+
 // System.Reflection.AssemblyDelaySignAttribute
-struct AssemblyDelaySignAttribute_t1167  : public Attribute_t213
+struct  AssemblyDelaySignAttribute_t1629  : public Attribute_t191
 {
 	// System.Boolean System.Reflection.AssemblyDelaySignAttribute::delay
 	bool ___delay_0;

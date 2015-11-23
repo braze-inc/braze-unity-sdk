@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Cryptography.HashAlgorithm
+
+
 #include "mscorlib_System_Security_Cryptography_HashAlgorithm.h"
+
 // System.Security.Cryptography.RIPEMD160
-struct RIPEMD160_t2151  : public HashAlgorithm_t1385
+struct  RIPEMD160_t1865  : public HashAlgorithm_t1279
 {
 };

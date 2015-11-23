@@ -1,30 +1,49 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.RectTransform
-struct RectTransform_t559;
-// UnityEngine.Events.UnityAction`1<UnityEngine.Component>
-struct UnityAction_1_t660;
+struct RectTransform_t504;
+// UnityEngine.UI.ObjectPool`1<UnityEngine.UI.LayoutRebuilder>
+struct ObjectPool_1_t625;
+// UnityEngine.Events.UnityAction`1<UnityEngine.UI.LayoutRebuilder>
+struct UnityAction_1_t626;
 // System.Predicate`1<UnityEngine.Component>
-struct Predicate_1_t661;
-// System.ValueType
-#include "mscorlib_System_ValueType.h"
+struct Predicate_1_t627;
+// UnityEngine.Events.UnityAction`1<UnityEngine.Component>
+struct UnityAction_1_t628;
+
+#include "mscorlib_System_Object.h"
+
 // UnityEngine.UI.LayoutRebuilder
-struct LayoutRebuilder_t662 
+struct  LayoutRebuilder_t624  : public Object_t
 {
 	// UnityEngine.RectTransform UnityEngine.UI.LayoutRebuilder::m_ToRebuild
-	RectTransform_t559 * ___m_ToRebuild_0;
-	// System.Int32 UnityEngine.UI.LayoutRebuilder::m_CachedHasFromTrasnform
-	int32_t ___m_CachedHasFromTrasnform_1;
+	RectTransform_t504 * ___m_ToRebuild_0;
+	// System.Int32 UnityEngine.UI.LayoutRebuilder::m_CachedHashFromTransform
+	int32_t ___m_CachedHashFromTransform_1;
 };
-struct LayoutRebuilder_t662_StaticFields{
-	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache2
-	UnityAction_1_t660 * ___U3CU3Ef__am$cache2_2;
-	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache3
-	UnityAction_1_t660 * ___U3CU3Ef__am$cache3_3;
-	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache4
-	UnityAction_1_t660 * ___U3CU3Ef__am$cache4_4;
+struct LayoutRebuilder_t624_StaticFields{
+	// UnityEngine.UI.ObjectPool`1<UnityEngine.UI.LayoutRebuilder> UnityEngine.UI.LayoutRebuilder::s_Rebuilders
+	ObjectPool_1_t625 * ___s_Rebuilders_2;
+	// UnityEngine.Events.UnityAction`1<UnityEngine.UI.LayoutRebuilder> UnityEngine.UI.LayoutRebuilder::<>f__am$cache3
+	UnityAction_1_t626 * ___U3CU3Ef__amU24cache3_3;
+	// System.Predicate`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache4
+	Predicate_1_t627 * ___U3CU3Ef__amU24cache4_4;
 	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache5
-	UnityAction_1_t660 * ___U3CU3Ef__am$cache5_5;
-	// System.Predicate`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache6
-	Predicate_1_t661 * ___U3CU3Ef__am$cache6_6;
+	UnityAction_1_t628 * ___U3CU3Ef__amU24cache5_5;
+	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache6
+	UnityAction_1_t628 * ___U3CU3Ef__amU24cache6_6;
+	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache7
+	UnityAction_1_t628 * ___U3CU3Ef__amU24cache7_7;
+	// UnityEngine.Events.UnityAction`1<UnityEngine.Component> UnityEngine.UI.LayoutRebuilder::<>f__am$cache8
+	UnityAction_1_t628 * ___U3CU3Ef__amU24cache8_8;
 };

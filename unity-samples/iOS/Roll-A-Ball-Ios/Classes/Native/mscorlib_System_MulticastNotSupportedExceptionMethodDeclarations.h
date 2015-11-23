@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.MulticastNotSupportedException
-struct MulticastNotSupportedException_t2280;
+struct MulticastNotSupportedException_t2013;
 // System.String
 struct String_t;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.MulticastNotSupportedException::.ctor()
- void MulticastNotSupportedException__ctor_m11782 (MulticastNotSupportedException_t2280 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MulticastNotSupportedException__ctor_m12125 (MulticastNotSupportedException_t2013 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.MulticastNotSupportedException::.ctor(System.String)
- void MulticastNotSupportedException__ctor_m11783 (MulticastNotSupportedException_t2280 * __this, String_t* ___message, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MulticastNotSupportedException__ctor_m12126 (MulticastNotSupportedException_t2013 * __this, String_t* ___message, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.MulticastNotSupportedException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void MulticastNotSupportedException__ctor_m11784 (MulticastNotSupportedException_t2280 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MulticastNotSupportedException__ctor_m12127 (MulticastNotSupportedException_t2013 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

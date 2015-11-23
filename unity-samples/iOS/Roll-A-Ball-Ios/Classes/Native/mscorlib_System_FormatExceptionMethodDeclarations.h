@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.FormatException
-struct FormatException_t1507;
+struct FormatException_t1183;
 // System.String
 struct String_t;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.FormatException::.ctor()
- void FormatException__ctor_m11662 (FormatException_t1507 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FormatException__ctor_m11991 (FormatException_t1183 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.FormatException::.ctor(System.String)
- void FormatException__ctor_m6402 (FormatException_t1507 * __this, String_t* ___message, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FormatException__ctor_m6158 (FormatException_t1183 * __this, String_t* ___message, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.FormatException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void FormatException__ctor_m7697 (FormatException_t1507 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void FormatException__ctor_m6288 (FormatException_t1183 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;

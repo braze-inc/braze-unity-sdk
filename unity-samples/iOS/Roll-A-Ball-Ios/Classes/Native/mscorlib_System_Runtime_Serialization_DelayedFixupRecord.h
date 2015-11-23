@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Runtime.Serialization.BaseFixupRecord
+
 #include "mscorlib_System_Runtime_Serialization_BaseFixupRecord.h"
+
 // System.Runtime.Serialization.DelayedFixupRecord
-struct DelayedFixupRecord_t2123  : public BaseFixupRecord_t2119
+struct  DelayedFixupRecord_t1835  : public BaseFixupRecord_t1831
 {
 	// System.String System.Runtime.Serialization.DelayedFixupRecord::_memberName
 	String_t* ____memberName_4;

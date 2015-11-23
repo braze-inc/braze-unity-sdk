@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// Appboy.Models.Cards.Card
-struct Card_t11;
+
+// Appboy.Models.InAppMessage.InAppMessageButton
+struct InAppMessageButton_t51;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<Appboy.Models.Cards.Card>
-struct Comparison_1_t2801  : public MulticastDelegate_t594
+
+// System.Comparison`1<Appboy.Models.InAppMessage.InAppMessageButton>
+struct  Comparison_1_t2153  : public MulticastDelegate_t550
 {
 };

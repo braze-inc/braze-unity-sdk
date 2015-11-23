@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
+
 // Mono.Globalization.Unicode.SimpleCollator/Escape
-struct Escape_t1791 
+struct  Escape_t1449 
 {
 	// System.String Mono.Globalization.Unicode.SimpleCollator/Escape::Source
 	String_t* ___Source_0;
@@ -19,7 +30,7 @@ struct Escape_t1791
 	int32_t ___Optional_4;
 };
 // Native definition for marshalling of: Mono.Globalization.Unicode.SimpleCollator/Escape
-struct Escape_t1791_marshaled
+struct Escape_t1449_marshaled
 {
 	char* ___Source_0;
 	int32_t ___Index_1;

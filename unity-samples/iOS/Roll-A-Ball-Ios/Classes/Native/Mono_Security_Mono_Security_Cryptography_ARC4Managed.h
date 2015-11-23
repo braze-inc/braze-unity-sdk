@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Byte[]
-struct ByteU5BU5D_t97;
-// Mono.Security.Cryptography.RC4
+struct ByteU5BU5D_t98;
+
 #include "Mono_Security_Mono_Security_Cryptography_RC4.h"
+
 // Mono.Security.Cryptography.ARC4Managed
-struct ARC4Managed_t1379  : public RC4_t1380
+struct  ARC4Managed_t1274  : public RC4_t1275
 {
 	// System.Byte[] Mono.Security.Cryptography.ARC4Managed::key
-	ByteU5BU5D_t97* ___key_12;
+	ByteU5BU5D_t98* ___key_12;
 	// System.Byte[] Mono.Security.Cryptography.ARC4Managed::state
-	ByteU5BU5D_t97* ___state_13;
+	ByteU5BU5D_t98* ___state_13;
 	// System.Byte Mono.Security.Cryptography.ARC4Managed::x
 	uint8_t ___x_14;
 	// System.Byte Mono.Security.Cryptography.ARC4Managed::y

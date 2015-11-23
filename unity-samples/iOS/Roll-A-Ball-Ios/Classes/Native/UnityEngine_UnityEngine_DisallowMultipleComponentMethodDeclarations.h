@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.DisallowMultipleComponent
-struct DisallowMultipleComponent_t731;
+struct DisallowMultipleComponent_t881;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.DisallowMultipleComponent::.ctor()
- void DisallowMultipleComponent__ctor_m3462 (DisallowMultipleComponent_t731 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DisallowMultipleComponent__ctor_m4776 (DisallowMultipleComponent_t881 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

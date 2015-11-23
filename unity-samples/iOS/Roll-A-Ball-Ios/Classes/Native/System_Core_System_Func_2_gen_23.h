@@ -1,16 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.ILayoutElement
-struct ILayoutElement_t666;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
+
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+// System.IAsyncResult
+struct IAsyncResult_t551;
+// System.AsyncCallback
+struct AsyncCallback_t552;
+
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Func`2<UnityEngine.UI.ILayoutElement,System.Single>
-struct Func_2_t664  : public MulticastDelegate_t594
+#include "UnityEngine_UnityEngine_RuntimePlatform.h"
+
+// System.Func`2<UnityEngine.RuntimePlatform,System.Object>
+struct  Func_2_t314  : public MulticastDelegate_t550
 {
 };

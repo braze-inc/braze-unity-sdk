@@ -29,3 +29,6 @@ void*		CreatePixelBufferForCVTextureCache(unsigned w, unsigned h);
 // pb = CVPixelBufferRef (out)
 // enforces rgba texture with bgra backing
 void*		CreateReadableRTFromCVTextureCache(void* cache, unsigned w, unsigned h, void** pb);
+
+// texture = CVOpenGLESTextureRef/CVMetalTextureRef
+int			IsCVTextureFlipped(void* texture);

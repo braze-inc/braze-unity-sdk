@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.GUIStyle
-struct GUIStyle_t250;
+struct GUIStyle_t228;
 // UnityEngine.Texture2D
-struct Texture2D_t557;
-// System.Object
+struct Texture2D_t524;
+
 #include "mscorlib_System_Object.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // UnityEngine.GUIStyleState
-struct GUIStyleState_t340  : public Object_t
+struct  GUIStyleState_t296  : public Object_t
 {
 	// System.IntPtr UnityEngine.GUIStyleState::m_Ptr
-	IntPtr_t107 ___m_Ptr_0;
+	IntPtr_t ___m_Ptr_0;
 	// UnityEngine.GUIStyle UnityEngine.GUIStyleState::m_SourceStyle
-	GUIStyle_t250 * ___m_SourceStyle_1;
+	GUIStyle_t228 * ___m_SourceStyle_1;
 	// UnityEngine.Texture2D UnityEngine.GUIStyleState::m_Background
-	Texture2D_t557 * ___m_Background_2;
+	Texture2D_t524 * ___m_Background_2;
 };

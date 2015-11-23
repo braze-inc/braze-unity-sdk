@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Boolean
-struct Boolean_t64 
+struct  Boolean_t91 
 {
 	// System.Boolean System.Boolean::m_value
 	bool ___m_value_2;
 };
-struct Boolean_t64_StaticFields{
+struct Boolean_t91_StaticFields{
 	// System.String System.Boolean::FalseString
 	String_t* ___FalseString_0;
 	// System.String System.Boolean::TrueString

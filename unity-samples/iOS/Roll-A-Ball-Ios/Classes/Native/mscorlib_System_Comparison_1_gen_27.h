@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.Toggle
-struct Toggle_t127;
+
+// UnityEngine.UI.RectMask2D
+struct RectMask2D_t564;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<UnityEngine.UI.Toggle>
-struct Comparison_1_t4011  : public MulticastDelegate_t594
+
+// System.Comparison`1<UnityEngine.UI.RectMask2D>
+struct  Comparison_1_t2509  : public MulticastDelegate_t550
 {
 };

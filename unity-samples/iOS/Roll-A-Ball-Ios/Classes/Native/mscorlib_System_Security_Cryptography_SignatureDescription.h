@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Security.Cryptography.SignatureDescription
-struct SignatureDescription_t2168  : public Object_t
+struct  SignatureDescription_t1882  : public Object_t
 {
 	// System.String System.Security.Cryptography.SignatureDescription::_DeformatterAlgorithm
 	String_t* ____DeformatterAlgorithm_0;

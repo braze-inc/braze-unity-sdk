@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.UI.Toggle[]
-struct ToggleU5BU5D_t4007;
-// System.Object
+
+// UnityEngine.UI.RectMask2D[]
+struct RectMask2DU5BU5D_t2504;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityEngine.UI.Toggle>
-struct List_1_t638  : public Object_t
+
+// System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D>
+struct  List_1_t572  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::_items
-	ToggleU5BU5D_t4007* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D>::_items
+	RectMask2DU5BU5D_t2504* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D>::_version
 	int32_t ____version_3;
 };
-struct List_1_t638_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Toggle>::EmptyArray
-	ToggleU5BU5D_t4007* ___EmptyArray_4;
+struct List_1_t572_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.RectMask2D>::EmptyArray
+	RectMask2DU5BU5D_t2504* ___EmptyArray_4;
 };

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Attribute
+
+
 #include "mscorlib_System_Attribute.h"
+
 // System.SerializableAttribute
-struct SerializableAttribute_t1738  : public Attribute_t213
+struct  SerializableAttribute_t1393  : public Attribute_t191
 {
 };

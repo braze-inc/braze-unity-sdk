@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Globalization.Calendar
+
+
 #include "mscorlib_System_Globalization_Calendar.h"
-// System.Globalization.GregorianCalendarTypes
 #include "mscorlib_System_Globalization_GregorianCalendarTypes.h"
+
 // System.Globalization.GregorianCalendar
-struct GregorianCalendar_t1905  : public Calendar_t1896
+struct  GregorianCalendar_t1545  : public Calendar_t1534
 {
 	// System.Globalization.GregorianCalendarTypes System.Globalization.GregorianCalendar::m_type
 	int32_t ___m_type_4;

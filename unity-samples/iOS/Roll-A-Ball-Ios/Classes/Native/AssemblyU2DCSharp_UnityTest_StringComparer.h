@@ -1,13 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityTest.ComparerBaseGeneric`1<System.String>
+
+
 #include "AssemblyU2DCSharp_UnityTest_ComparerBaseGeneric_1_gen_3.h"
-// UnityTest.StringComparer/CompareType
 #include "AssemblyU2DCSharp_UnityTest_StringComparer_CompareType.h"
-// System.StringComparison
 #include "mscorlib_System_StringComparison.h"
+
 // UnityTest.StringComparer
-struct StringComparer_t174  : public ComparerBaseGeneric_1_t175
+struct  StringComparer_t163  : public ComparerBaseGeneric_1_t164
 {
 	// UnityTest.StringComparer/CompareType UnityTest.StringComparer::compareType
 	int32_t ___compareType_14;

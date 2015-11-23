@@ -1,14 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
-// UnityEngine.Vector3
 #include "UnityEngine_UnityEngine_Vector3.h"
+
 // UnityEngine.Bounds
-struct Bounds_t155 
+struct  Bounds_t255 
 {
 	// UnityEngine.Vector3 UnityEngine.Bounds::m_Center
-	Vector3_t188  ___m_Center_0;
+	Vector3_t259  ___m_Center_0;
 	// UnityEngine.Vector3 UnityEngine.Bounds::m_Extents
-	Vector3_t188  ___m_Extents_1;
+	Vector3_t259  ___m_Extents_1;
 };

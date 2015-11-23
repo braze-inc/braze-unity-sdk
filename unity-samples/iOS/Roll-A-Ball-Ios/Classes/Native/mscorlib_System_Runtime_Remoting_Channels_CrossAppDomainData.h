@@ -1,13 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object
 struct Object_t;
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Remoting.Channels.CrossAppDomainData
-struct CrossAppDomainData_t2042  : public Object_t
+struct  CrossAppDomainData_t1726  : public Object_t
 {
 	// System.Object System.Runtime.Remoting.Channels.CrossAppDomainData::_ContextID
 	Object_t * ____ContextID_0;

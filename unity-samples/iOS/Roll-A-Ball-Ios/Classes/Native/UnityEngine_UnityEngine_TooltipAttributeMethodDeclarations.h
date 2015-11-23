@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.TooltipAttribute
-struct TooltipAttribute_t756;
+struct TooltipAttribute_t916;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void UnityEngine.TooltipAttribute::.ctor(System.String)
- void TooltipAttribute__ctor_m3708 (TooltipAttribute_t756 * __this, String_t* ___tooltip, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TooltipAttribute__ctor_m4868 (TooltipAttribute_t916 * __this, String_t* ___tooltip, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.AsyncOperation
+
+
 #include "UnityEngine_UnityEngine_AsyncOperation.h"
+
 // UnityEngine.AssetBundleCreateRequest
-struct AssetBundleCreateRequest_t793  : public AsyncOperation_t794
+struct  AssetBundleCreateRequest_t738  : public AsyncOperation_t739
 {
 };

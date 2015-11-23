@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.MonoDocumentationNoteAttribute
-struct MonoDocumentationNoteAttribute_t1772;
+struct MonoDocumentationNoteAttribute_t1432;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.MonoDocumentationNoteAttribute::.ctor(System.String)
- void MonoDocumentationNoteAttribute__ctor_m8483 (MonoDocumentationNoteAttribute_t1772 * __this, String_t* ___comment, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MonoDocumentationNoteAttribute__ctor_m8123 (MonoDocumentationNoteAttribute_t1432 * __this, String_t* ___comment, const MethodInfo* method) IL2CPP_METHOD_ATTR;

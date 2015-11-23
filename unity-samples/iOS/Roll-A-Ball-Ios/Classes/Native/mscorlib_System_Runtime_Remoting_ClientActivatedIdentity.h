@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Runtime.Remoting.ServerIdentity
+
+
 #include "mscorlib_System_Runtime_Remoting_ServerIdentity.h"
+
 // System.Runtime.Remoting.ClientActivatedIdentity
-struct ClientActivatedIdentity_t2096  : public ServerIdentity_t1767
+struct  ClientActivatedIdentity_t1805  : public ServerIdentity_t1428
 {
 };

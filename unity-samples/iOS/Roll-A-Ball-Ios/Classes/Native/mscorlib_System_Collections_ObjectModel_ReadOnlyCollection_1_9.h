@@ -1,12 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.IList`1<UnityTest.AssertionComponent>
-struct IList_1_t3314;
-// System.Object
+
+// System.Collections.Generic.IList`1<UnityTest.TestResult>
+struct IList_1_t2260;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>
-struct ReadOnlyCollection_1_t3310  : public Object_t
+
+// System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>
+struct  ReadOnlyCollection_1_t2259  : public Object_t
 {
-	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.AssertionComponent>::list
+	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.ReadOnlyCollection`1<UnityTest.TestResult>::list
 	Object_t* ___list_0;
 };

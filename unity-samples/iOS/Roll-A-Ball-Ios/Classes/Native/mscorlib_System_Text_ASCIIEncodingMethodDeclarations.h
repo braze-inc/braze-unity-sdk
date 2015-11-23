@@ -1,53 +1,63 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.ASCIIEncoding
-struct ASCIIEncoding_t2186;
+struct ASCIIEncoding_t1919;
 // System.Char[]
-struct CharU5BU5D_t276;
+struct CharU5BU5D_t270;
 // System.String
 struct String_t;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
 // System.Text.EncoderFallbackBuffer
-struct EncoderFallbackBuffer_t2187;
+struct EncoderFallbackBuffer_t1930;
 // System.Text.DecoderFallbackBuffer
-struct DecoderFallbackBuffer_t2188;
+struct DecoderFallbackBuffer_t1921;
 // System.Text.Decoder
-struct Decoder_t1910;
+struct Decoder_t1551;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Text.ASCIIEncoding::.ctor()
- void ASCIIEncoding__ctor_m10945 (ASCIIEncoding_t2186 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ASCIIEncoding__ctor_m11213 (ASCIIEncoding_t1919 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetByteCount(System.Char[],System.Int32,System.Int32)
- int32_t ASCIIEncoding_GetByteCount_m10946 (ASCIIEncoding_t2186 * __this, CharU5BU5D_t276* ___chars, int32_t ___index, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetByteCount_m11214 (ASCIIEncoding_t1919 * __this, CharU5BU5D_t270* ___chars, int32_t ___index, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetByteCount(System.String)
- int32_t ASCIIEncoding_GetByteCount_m10947 (ASCIIEncoding_t2186 * __this, String_t* ___chars, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetByteCount_m11215 (ASCIIEncoding_t1919 * __this, String_t* ___chars, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)
- int32_t ASCIIEncoding_GetBytes_m10948 (ASCIIEncoding_t2186 * __this, CharU5BU5D_t276* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetBytes_m11216 (ASCIIEncoding_t1919 * __this, CharU5BU5D_t270* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32,System.Text.EncoderFallbackBuffer&,System.Char[]&)
- int32_t ASCIIEncoding_GetBytes_m10949 (ASCIIEncoding_t2186 * __this, CharU5BU5D_t276* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, EncoderFallbackBuffer_t2187 ** ___buffer, CharU5BU5D_t276** ___fallback_chars, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetBytes_m11217 (ASCIIEncoding_t1919 * __this, CharU5BU5D_t270* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, EncoderFallbackBuffer_t1930 ** ___buffer, CharU5BU5D_t270** ___fallback_chars, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)
- int32_t ASCIIEncoding_GetBytes_m10950 (ASCIIEncoding_t2186 * __this, String_t* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetBytes_m11218 (ASCIIEncoding_t1919 * __this, String_t* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32,System.Text.EncoderFallbackBuffer&,System.Char[]&)
- int32_t ASCIIEncoding_GetBytes_m10951 (ASCIIEncoding_t2186 * __this, String_t* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, EncoderFallbackBuffer_t2187 ** ___buffer, CharU5BU5D_t276** ___fallback_chars, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetBytes_m11219 (ASCIIEncoding_t1919 * __this, String_t* ___chars, int32_t ___charIndex, int32_t ___charCount, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, EncoderFallbackBuffer_t1930 ** ___buffer, CharU5BU5D_t270** ___fallback_chars, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetCharCount(System.Byte[],System.Int32,System.Int32)
- int32_t ASCIIEncoding_GetCharCount_m10952 (ASCIIEncoding_t2186 * __this, ByteU5BU5D_t97* ___bytes, int32_t ___index, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetCharCount_m11220 (ASCIIEncoding_t1919 * __this, ByteU5BU5D_t98* ___bytes, int32_t ___index, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)
- int32_t ASCIIEncoding_GetChars_m10953 (ASCIIEncoding_t2186 * __this, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, int32_t ___byteCount, CharU5BU5D_t276* ___chars, int32_t ___charIndex, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetChars_m11221 (ASCIIEncoding_t1919 * __this, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, int32_t ___byteCount, CharU5BU5D_t270* ___chars, int32_t ___charIndex, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32,System.Text.DecoderFallbackBuffer&)
- int32_t ASCIIEncoding_GetChars_m10954 (ASCIIEncoding_t2186 * __this, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, int32_t ___byteCount, CharU5BU5D_t276* ___chars, int32_t ___charIndex, DecoderFallbackBuffer_t2188 ** ___buffer, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetChars_m11222 (ASCIIEncoding_t1919 * __this, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, int32_t ___byteCount, CharU5BU5D_t270* ___chars, int32_t ___charIndex, DecoderFallbackBuffer_t1921 ** ___buffer, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetMaxByteCount(System.Int32)
- int32_t ASCIIEncoding_GetMaxByteCount_m10955 (ASCIIEncoding_t2186 * __this, int32_t ___charCount, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetMaxByteCount_m11223 (ASCIIEncoding_t1919 * __this, int32_t ___charCount, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetMaxCharCount(System.Int32)
- int32_t ASCIIEncoding_GetMaxCharCount_m10956 (ASCIIEncoding_t2186 * __this, int32_t ___byteCount, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetMaxCharCount_m11224 (ASCIIEncoding_t1919 * __this, int32_t ___byteCount, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Text.ASCIIEncoding::GetString(System.Byte[],System.Int32,System.Int32)
- String_t* ASCIIEncoding_GetString_m10957 (ASCIIEncoding_t2186 * __this, ByteU5BU5D_t97* ___bytes, int32_t ___byteIndex, int32_t ___byteCount, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* ASCIIEncoding_GetString_m11225 (ASCIIEncoding_t1919 * __this, ByteU5BU5D_t98* ___bytes, int32_t ___byteIndex, int32_t ___byteCount, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetBytes(System.Char*,System.Int32,System.Byte*,System.Int32)
- int32_t ASCIIEncoding_GetBytes_m10958 (ASCIIEncoding_t2186 * __this, uint16_t* ___chars, int32_t ___charCount, uint8_t* ___bytes, int32_t ___byteCount, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetBytes_m11226 (ASCIIEncoding_t1919 * __this, uint16_t* ___chars, int32_t ___charCount, uint8_t* ___bytes, int32_t ___byteCount, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.ASCIIEncoding::GetByteCount(System.Char*,System.Int32)
- int32_t ASCIIEncoding_GetByteCount_m10959 (ASCIIEncoding_t2186 * __this, uint16_t* ___chars, int32_t ___count, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASCIIEncoding_GetByteCount_m11227 (ASCIIEncoding_t1919 * __this, uint16_t* ___chars, int32_t ___count, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.Decoder System.Text.ASCIIEncoding::GetDecoder()
- Decoder_t1910 * ASCIIEncoding_GetDecoder_m10960 (ASCIIEncoding_t2186 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Decoder_t1551 * ASCIIEncoding_GetDecoder_m11228 (ASCIIEncoding_t1919 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,30 +1,42 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Boo.Lang.GenericGeneratorEnumerator`1<System.Object>
-struct GenericGeneratorEnumerator_1_t361;
+struct GenericGeneratorEnumerator_1_t331;
 // System.Object
 struct Object_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::.ctor()
- void GenericGeneratorEnumerator_1__ctor_m1765_gshared (GenericGeneratorEnumerator_1_t361 * __this, MethodInfo* method);
-#define GenericGeneratorEnumerator_1__ctor_m1765(__this, method) (void)GenericGeneratorEnumerator_1__ctor_m1765_gshared((GenericGeneratorEnumerator_1_t361 *)__this, method)
+extern "C" void GenericGeneratorEnumerator_1__ctor_m1535_gshared (GenericGeneratorEnumerator_1_t331 * __this, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1__ctor_m1535(__this, method) (( void (*) (GenericGeneratorEnumerator_1_t331 *, const MethodInfo*))GenericGeneratorEnumerator_1__ctor_m1535_gshared)(__this, method)
 // System.Object Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::System.Collections.IEnumerator.get_Current()
- Object_t * GenericGeneratorEnumerator_1_System_Collections_IEnumerator_get_Current_m1778_gshared (GenericGeneratorEnumerator_1_t361 * __this, MethodInfo* method);
-#define GenericGeneratorEnumerator_1_System_Collections_IEnumerator_get_Current_m1778(__this, method) (Object_t *)GenericGeneratorEnumerator_1_System_Collections_IEnumerator_get_Current_m1778_gshared((GenericGeneratorEnumerator_1_t361 *)__this, method)
+extern "C" Object_t * GenericGeneratorEnumerator_1_System_Collections_IEnumerator_get_Current_m14954_gshared (GenericGeneratorEnumerator_1_t331 * __this, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1_System_Collections_IEnumerator_get_Current_m14954(__this, method) (( Object_t * (*) (GenericGeneratorEnumerator_1_t331 *, const MethodInfo*))GenericGeneratorEnumerator_1_System_Collections_IEnumerator_get_Current_m14954_gshared)(__this, method)
 // T Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::get_Current()
- Object_t * GenericGeneratorEnumerator_1_get_Current_m1780_gshared (GenericGeneratorEnumerator_1_t361 * __this, MethodInfo* method);
-#define GenericGeneratorEnumerator_1_get_Current_m1780(__this, method) (Object_t *)GenericGeneratorEnumerator_1_get_Current_m1780_gshared((GenericGeneratorEnumerator_1_t361 *)__this, method)
+extern "C" Object_t * GenericGeneratorEnumerator_1_get_Current_m14955_gshared (GenericGeneratorEnumerator_1_t331 * __this, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1_get_Current_m14955(__this, method) (( Object_t * (*) (GenericGeneratorEnumerator_1_t331 *, const MethodInfo*))GenericGeneratorEnumerator_1_get_Current_m14955_gshared)(__this, method)
 // System.Void Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::Dispose()
- void GenericGeneratorEnumerator_1_Dispose_m1779_gshared (GenericGeneratorEnumerator_1_t361 * __this, MethodInfo* method);
-#define GenericGeneratorEnumerator_1_Dispose_m1779(__this, method) (void)GenericGeneratorEnumerator_1_Dispose_m1779_gshared((GenericGeneratorEnumerator_1_t361 *)__this, method)
-// System.Boolean Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::MoveNext()
+extern "C" void GenericGeneratorEnumerator_1_Dispose_m14956_gshared (GenericGeneratorEnumerator_1_t331 * __this, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1_Dispose_m14956(__this, method) (( void (*) (GenericGeneratorEnumerator_1_t331 *, const MethodInfo*))GenericGeneratorEnumerator_1_Dispose_m14956_gshared)(__this, method)
+// System.Void Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::Reset()
+extern "C" void GenericGeneratorEnumerator_1_Reset_m14957_gshared (GenericGeneratorEnumerator_1_t331 * __this, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1_Reset_m14957(__this, method) (( void (*) (GenericGeneratorEnumerator_1_t331 *, const MethodInfo*))GenericGeneratorEnumerator_1_Reset_m14957_gshared)(__this, method)
 // System.Boolean Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::Yield(System.Int32,T)
- bool GenericGeneratorEnumerator_1_Yield_m16826_gshared (GenericGeneratorEnumerator_1_t361 * __this, int32_t ___state, Object_t * ___value, MethodInfo* method);
-#define GenericGeneratorEnumerator_1_Yield_m16826(__this, ___state, ___value, method) (bool)GenericGeneratorEnumerator_1_Yield_m16826_gshared((GenericGeneratorEnumerator_1_t361 *)__this, (int32_t)___state, (Object_t *)___value, method)
+extern "C" bool GenericGeneratorEnumerator_1_Yield_m14958_gshared (GenericGeneratorEnumerator_1_t331 * __this, int32_t ___state, Object_t * ___value, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1_Yield_m14958(__this, ___state, ___value, method) (( bool (*) (GenericGeneratorEnumerator_1_t331 *, int32_t, Object_t *, const MethodInfo*))GenericGeneratorEnumerator_1_Yield_m14958_gshared)(__this, ___state, ___value, method)
 // System.Boolean Boo.Lang.GenericGeneratorEnumerator`1<System.Object>::YieldDefault(System.Int32)
- bool GenericGeneratorEnumerator_1_YieldDefault_m1776_gshared (GenericGeneratorEnumerator_1_t361 * __this, int32_t ___state, MethodInfo* method);
-#define GenericGeneratorEnumerator_1_YieldDefault_m1776(__this, ___state, method) (bool)GenericGeneratorEnumerator_1_YieldDefault_m1776_gshared((GenericGeneratorEnumerator_1_t361 *)__this, (int32_t)___state, method)
+extern "C" bool GenericGeneratorEnumerator_1_YieldDefault_m1545_gshared (GenericGeneratorEnumerator_1_t331 * __this, int32_t ___state, const MethodInfo* method);
+#define GenericGeneratorEnumerator_1_YieldDefault_m1545(__this, ___state, method) (( bool (*) (GenericGeneratorEnumerator_1_t331 *, int32_t, const MethodInfo*))GenericGeneratorEnumerator_1_YieldDefault_m1545_gshared)(__this, ___state, method)

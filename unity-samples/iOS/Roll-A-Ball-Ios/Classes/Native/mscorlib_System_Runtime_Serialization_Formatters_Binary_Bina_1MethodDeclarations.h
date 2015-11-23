@@ -1,49 +1,56 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-struct BinaryFormatter_t2094;
+struct BinaryFormatter_t1804;
 // System.Runtime.Serialization.ISurrogateSelector
-struct ISurrogateSelector_t2070;
+struct ISurrogateSelector_t1770;
 // System.Runtime.Serialization.SerializationBinder
-struct SerializationBinder_t2106;
+struct SerializationBinder_t1819;
 // System.Object
 struct Object_t;
 // System.IO.Stream
-struct Stream_t27;
+struct Stream_t68;
 // System.Runtime.Remoting.Messaging.HeaderHandler
-struct HeaderHandler_t2107;
+struct HeaderHandler_t2036;
 // System.IO.BinaryReader
-struct BinaryReader_t28;
-// System.Runtime.Serialization.Formatters.FormatterAssemblyStyle
-#include "mscorlib_System_Runtime_Serialization_Formatters_FormatterAs.h"
-// System.Runtime.Serialization.StreamingContext
+struct BinaryReader_t69;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
-// System.Runtime.Serialization.Formatters.TypeFilterLevel
+#include "mscorlib_System_Runtime_Serialization_Formatters_FormatterAs.h"
 #include "mscorlib_System_Runtime_Serialization_Formatters_TypeFilterL.h"
 
 // System.Void System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::.ctor()
- void BinaryFormatter__ctor_m10452 (BinaryFormatter_t2094 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryFormatter__ctor_m10628 (BinaryFormatter_t1804 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::.ctor(System.Runtime.Serialization.ISurrogateSelector,System.Runtime.Serialization.StreamingContext)
- void BinaryFormatter__ctor_m10453 (BinaryFormatter_t2094 * __this, Object_t * ___selector, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryFormatter__ctor_m10629 (BinaryFormatter_t1804 * __this, Object_t * ___selector, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.Serialization.ISurrogateSelector System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::get_DefaultSurrogateSelector()
- Object_t * BinaryFormatter_get_DefaultSurrogateSelector_m10454 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * BinaryFormatter_get_DefaultSurrogateSelector_m10630 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::set_AssemblyFormat(System.Runtime.Serialization.Formatters.FormatterAssemblyStyle)
- void BinaryFormatter_set_AssemblyFormat_m10455 (BinaryFormatter_t2094 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryFormatter_set_AssemblyFormat_m10631 (BinaryFormatter_t1804 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.Serialization.SerializationBinder System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::get_Binder()
- SerializationBinder_t2106 * BinaryFormatter_get_Binder_m10456 (BinaryFormatter_t2094 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" SerializationBinder_t1819 * BinaryFormatter_get_Binder_m10632 (BinaryFormatter_t1804 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.Serialization.StreamingContext System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::get_Context()
- StreamingContext_t961  BinaryFormatter_get_Context_m10457 (BinaryFormatter_t2094 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" StreamingContext_t963  BinaryFormatter_get_Context_m10633 (BinaryFormatter_t1804 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.Serialization.ISurrogateSelector System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::get_SurrogateSelector()
- Object_t * BinaryFormatter_get_SurrogateSelector_m10458 (BinaryFormatter_t2094 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * BinaryFormatter_get_SurrogateSelector_m10634 (BinaryFormatter_t1804 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.Serialization.Formatters.TypeFilterLevel System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::get_FilterLevel()
- int32_t BinaryFormatter_get_FilterLevel_m10459 (BinaryFormatter_t2094 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t BinaryFormatter_get_FilterLevel_m10635 (BinaryFormatter_t1804 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::Deserialize(System.IO.Stream)
- Object_t * BinaryFormatter_Deserialize_m10460 (BinaryFormatter_t2094 * __this, Stream_t27 * ___serializationStream, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * BinaryFormatter_Deserialize_m10636 (BinaryFormatter_t1804 * __this, Stream_t68 * ___serializationStream, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::NoCheckDeserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)
- Object_t * BinaryFormatter_NoCheckDeserialize_m10461 (BinaryFormatter_t2094 * __this, Stream_t27 * ___serializationStream, HeaderHandler_t2107 * ___handler, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * BinaryFormatter_NoCheckDeserialize_m10637 (BinaryFormatter_t1804 * __this, Stream_t68 * ___serializationStream, HeaderHandler_t2036 * ___handler, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Serialization.Formatters.Binary.BinaryFormatter::ReadBinaryHeader(System.IO.BinaryReader,System.Boolean&)
- void BinaryFormatter_ReadBinaryHeader_m10462 (BinaryFormatter_t2094 * __this, BinaryReader_t28 * ___reader, bool* ___hasHeaders, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryFormatter_ReadBinaryHeader_m10638 (BinaryFormatter_t1804 * __this, BinaryReader_t69 * ___reader, bool* ___hasHeaders, const MethodInfo* method) IL2CPP_METHOD_ATTR;

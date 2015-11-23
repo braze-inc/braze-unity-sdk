@@ -88,24 +88,31 @@ static const char* GetScaleSuffix(float scale, float maxScale)
 			orientSuffix = "-Landscape";
 	}
 
-	NSString* imageName;
+	bool isIphone = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
 	if (_usesLaunchscreen)
 	{
-		// Launch screen uses the same aspect-filled image for all iPhones. So,
-		// we need a special case if there's a launch screen and iOS is configured
-		// to use it.
-		// Note that we don't use launch screens for iPads since there's no way
-		// to use different layouts depending on orientation.
+		// Launch screen uses the same aspect-filled image for all iPhone and/or
+		// all iPads, as configured in Unity. We need a special case if there's
+		// a launch screen and iOS is configured to use it.
 		if (self->m_XibView == nil)
 		{
-			self->m_XibView = [[[NSBundle mainBundle] loadNibNamed:@"LaunchScreen" owner:nil options:nil] objectAtIndex:0];
+			NSString* name = isIphone ? @"LaunchScreen-iPhone" : @"LaunchScreen-iPad";
+			self->m_XibView = [[[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil] objectAtIndex:0];
 			[self addSubview:self->m_XibView];
 		}
+		return;
 	}
-	else
+
+	// Try asset catalog on iOS 7.0+. Note, that we can't be sure that asset
+	// catalog is used, because the deployment target might have been lower and
+	// thus old launch images are used.
+	UIImage* image = [UIImage imageNamed:@"LaunchImage"];
+
+	if (image == nil)
 	{
 		// Old launch image from file
-		if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone)
+		NSString* imageName;
+		if (!isIphone)
 		{
 			// iPads
 			const char* iOSSuffix = _ios70orNewer ? "-700" : "";
@@ -143,15 +150,16 @@ static const char* GetScaleSuffix(float scale, float maxScale)
 
 		NSString* imagePath = [[NSBundle mainBundle] pathForResource: imageName ofType: @"png"];
 
-		UIImage* image = [UIImage imageWithContentsOfFile: imagePath];
-		if (self->m_ImageView == nil)
-		{
-			self->m_ImageView = [[UIImageView alloc] initWithImage:image];
-			[self addSubview:self->m_ImageView];
-		}
-		else
-			self->m_ImageView.image = image;
+		image = [UIImage imageWithContentsOfFile: imagePath];
 	}
+
+	if (self->m_ImageView == nil)
+	{
+		self->m_ImageView = [[UIImageView alloc] initWithImage:image];
+		[self addSubview:self->m_ImageView];
+	}
+	else
+		self->m_ImageView.image = image;
 }
 
 - (void)layoutSubviews
@@ -233,6 +241,8 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 - (void)create:(UIWindow*)window
 {
 	NSArray* supportedOrientation = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UISupportedInterfaceOrientations"];
+	bool isIphone = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+	bool isIpad = !isIphone;
 
 	// splash will be shown way before unity is inited so we need to override autorotation handling with values read from info.plist
 	_canRotateToPortrait			= [supportedOrientation containsObject: @"UIInterfaceOrientationPortrait"];
@@ -243,13 +253,19 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 	CGSize size = [[UIScreen mainScreen] bounds].size;
 
 	// iPads and iPhone 6+ have orientable splash screen
-	_isOrientable = UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone || (size.height == 736 || size.width == 736);
+	_isOrientable = isIpad || (size.height == 736 || size.width == 736);
 
 	// Launch screens are used only on iOS8+ iPhones
 	const char* xib = UnityGetLaunchScreenXib();
-	_usesLaunchscreen = (_ios80orNewer && xib != NULL && std::strcmp(xib, "LaunchScreen") == 0 &&
-						 UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone);
+	_usesLaunchscreen = false;
+	if (_ios80orNewer && xib != NULL)
+	{
+		const char* expectedName = isIphone ? "LaunchScreen-iPhone" : "LaunchScreen-iPad";
+		if (std::strcmp(xib, expectedName) == 0)
+			_usesLaunchscreen = true;
+	}
 
+	// TODO: implement on iPads
 	if (_usesLaunchscreen && !(_canRotateToPortrait || _canRotateToPortraitUpsideDown))
 		_nonOrientableDefaultOrientation = landscapeLeft;
 	else
@@ -270,7 +286,7 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 	}
 	// launch screens always use landscapeLeft in landscape
 	if (_usesLaunchscreen && _canRotateToLandscapeLeft)
-		_canRotateToLandscapeRight = false;
+		_canRotateToLandscapeRight = false; // FIXME: check on iPad
 
 	self.view = _splash;
 

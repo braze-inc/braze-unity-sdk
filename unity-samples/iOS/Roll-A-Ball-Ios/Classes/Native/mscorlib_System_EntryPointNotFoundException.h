@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.TypeLoadException
+
+
 #include "mscorlib_System_TypeLoadException.h"
+
 // System.EntryPointNotFoundException
-struct EntryPointNotFoundException_t2253  : public TypeLoadException_t2252
+struct  EntryPointNotFoundException_t1986  : public TypeLoadException_t1985
 {
 };

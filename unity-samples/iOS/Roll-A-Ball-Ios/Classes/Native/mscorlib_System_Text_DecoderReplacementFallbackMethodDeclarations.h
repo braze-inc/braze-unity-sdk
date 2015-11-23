@@ -1,27 +1,37 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.DecoderReplacementFallback
-struct DecoderReplacementFallback_t2193;
+struct DecoderReplacementFallback_t1925;
 // System.String
 struct String_t;
 // System.Text.DecoderFallbackBuffer
-struct DecoderFallbackBuffer_t2188;
+struct DecoderFallbackBuffer_t1921;
 // System.Object
 struct Object_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Text.DecoderReplacementFallback::.ctor()
- void DecoderReplacementFallback__ctor_m10982 (DecoderReplacementFallback_t2193 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecoderReplacementFallback__ctor_m11250 (DecoderReplacementFallback_t1925 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.DecoderReplacementFallback::.ctor(System.String)
- void DecoderReplacementFallback__ctor_m10983 (DecoderReplacementFallback_t2193 * __this, String_t* ___replacement, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecoderReplacementFallback__ctor_m11251 (DecoderReplacementFallback_t1925 * __this, String_t* ___replacement, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Text.DecoderReplacementFallback::get_DefaultString()
- String_t* DecoderReplacementFallback_get_DefaultString_m10984 (DecoderReplacementFallback_t2193 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* DecoderReplacementFallback_get_DefaultString_m11252 (DecoderReplacementFallback_t1925 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Text.DecoderFallbackBuffer System.Text.DecoderReplacementFallback::CreateFallbackBuffer()
- DecoderFallbackBuffer_t2188 * DecoderReplacementFallback_CreateFallbackBuffer_m10985 (DecoderReplacementFallback_t2193 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DecoderFallbackBuffer_t1921 * DecoderReplacementFallback_CreateFallbackBuffer_m11253 (DecoderReplacementFallback_t1925 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.DecoderReplacementFallback::Equals(System.Object)
- bool DecoderReplacementFallback_Equals_m10986 (DecoderReplacementFallback_t2193 * __this, Object_t * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool DecoderReplacementFallback_Equals_m11254 (DecoderReplacementFallback_t1925 * __this, Object_t * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Text.DecoderReplacementFallback::GetHashCode()
- int32_t DecoderReplacementFallback_GetHashCode_m10987 (DecoderReplacementFallback_t2193 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t DecoderReplacementFallback_GetHashCode_m11255 (DecoderReplacementFallback_t1925 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

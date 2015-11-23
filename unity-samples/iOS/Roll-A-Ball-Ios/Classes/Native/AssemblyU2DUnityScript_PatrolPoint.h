@@ -1,12 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.MonoBehaviour
+
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
-// UnityEngine.Vector3
 #include "UnityEngine_UnityEngine_Vector3.h"
+
 // PatrolPoint
-struct PatrolPoint_t376  : public MonoBehaviour_t2
+struct  PatrolPoint_t345  : public MonoBehaviour_t2
 {
 	// UnityEngine.Vector3 PatrolPoint::position
-	Vector3_t188  ___position_2;
+	Vector3_t259  ___position_2;
 };

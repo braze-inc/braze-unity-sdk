@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.AppDomainSetup
-struct AppDomainSetup_t2233;
+struct AppDomainSetup_t1967;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.AppDomainSetup::.ctor()
- void AppDomainSetup__ctor_m11258 (AppDomainSetup_t2233 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AppDomainSetup__ctor_m11581 (AppDomainSetup_t1967 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

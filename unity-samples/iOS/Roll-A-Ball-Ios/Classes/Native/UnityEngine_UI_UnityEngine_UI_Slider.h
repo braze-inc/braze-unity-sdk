@@ -1,28 +1,36 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.RectTransform
-struct RectTransform_t559;
+struct RectTransform_t504;
 // UnityEngine.UI.Slider/SliderEvent
-struct SliderEvent_t627;
+struct SliderEvent_t591;
 // UnityEngine.UI.Image
-struct Image_t582;
+struct Image_t503;
 // UnityEngine.Transform
-struct Transform_t179;
-// UnityEngine.UI.Selectable
+struct Transform_t258;
+
 #include "UnityEngine_UI_UnityEngine_UI_Selectable.h"
-// UnityEngine.UI.Slider/Direction
 #include "UnityEngine_UI_UnityEngine_UI_Slider_Direction.h"
-// UnityEngine.Vector2
 #include "UnityEngine_UnityEngine_Vector2.h"
-// UnityEngine.DrivenRectTransformTracker
 #include "UnityEngine_UnityEngine_DrivenRectTransformTracker.h"
+
 // UnityEngine.UI.Slider
-struct Slider_t629  : public Selectable_t545
+struct  Slider_t593  : public Selectable_t493
 {
 	// UnityEngine.RectTransform UnityEngine.UI.Slider::m_FillRect
-	RectTransform_t559 * ___m_FillRect_16;
+	RectTransform_t504 * ___m_FillRect_16;
 	// UnityEngine.RectTransform UnityEngine.UI.Slider::m_HandleRect
-	RectTransform_t559 * ___m_HandleRect_17;
+	RectTransform_t504 * ___m_HandleRect_17;
 	// UnityEngine.UI.Slider/Direction UnityEngine.UI.Slider::m_Direction
 	int32_t ___m_Direction_18;
 	// System.Single UnityEngine.UI.Slider::m_MinValue
@@ -34,19 +42,19 @@ struct Slider_t629  : public Selectable_t545
 	// System.Single UnityEngine.UI.Slider::m_Value
 	float ___m_Value_22;
 	// UnityEngine.UI.Slider/SliderEvent UnityEngine.UI.Slider::m_OnValueChanged
-	SliderEvent_t627 * ___m_OnValueChanged_23;
+	SliderEvent_t591 * ___m_OnValueChanged_23;
 	// UnityEngine.UI.Image UnityEngine.UI.Slider::m_FillImage
-	Image_t582 * ___m_FillImage_24;
+	Image_t503 * ___m_FillImage_24;
 	// UnityEngine.Transform UnityEngine.UI.Slider::m_FillTransform
-	Transform_t179 * ___m_FillTransform_25;
+	Transform_t258 * ___m_FillTransform_25;
 	// UnityEngine.RectTransform UnityEngine.UI.Slider::m_FillContainerRect
-	RectTransform_t559 * ___m_FillContainerRect_26;
+	RectTransform_t504 * ___m_FillContainerRect_26;
 	// UnityEngine.Transform UnityEngine.UI.Slider::m_HandleTransform
-	Transform_t179 * ___m_HandleTransform_27;
+	Transform_t258 * ___m_HandleTransform_27;
 	// UnityEngine.RectTransform UnityEngine.UI.Slider::m_HandleContainerRect
-	RectTransform_t559 * ___m_HandleContainerRect_28;
+	RectTransform_t504 * ___m_HandleContainerRect_28;
 	// UnityEngine.Vector2 UnityEngine.UI.Slider::m_Offset
-	Vector2_t184  ___m_Offset_29;
+	Vector2_t231  ___m_Offset_29;
 	// UnityEngine.DrivenRectTransformTracker UnityEngine.UI.Slider::m_Tracker
-	DrivenRectTransformTracker_t613  ___m_Tracker_30;
+	DrivenRectTransformTracker_t578  ___m_Tracker_30;
 };

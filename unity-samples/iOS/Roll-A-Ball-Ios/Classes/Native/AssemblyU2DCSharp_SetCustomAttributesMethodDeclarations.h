@@ -1,27 +1,37 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // SetCustomAttributes
-struct SetCustomAttributes_t129;
+struct SetCustomAttributes_t126;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void SetCustomAttributes::.ctor()
- void SetCustomAttributes__ctor_m624 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes__ctor_m604 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnBackButtonClick()
- void SetCustomAttributes_OnBackButtonClick_m625 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnBackButtonClick_m605 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnSetBoolButtonClick()
- void SetCustomAttributes_OnSetBoolButtonClick_m626 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnSetBoolButtonClick_m606 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnSetIntButtonClick()
- void SetCustomAttributes_OnSetIntButtonClick_m627 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnSetIntButtonClick_m607 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnSetFloatButtonClick()
- void SetCustomAttributes_OnSetFloatButtonClick_m628 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnSetFloatButtonClick_m608 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnSetStringButtonClick()
- void SetCustomAttributes_OnSetStringButtonClick_m629 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnSetStringButtonClick_m609 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnSetDateButtonClick()
- void SetCustomAttributes_OnSetDateButtonClick_m630 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnSetDateButtonClick_m610 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnUnsetButtonClick()
- void SetCustomAttributes_OnUnsetButtonClick_m631 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnUnsetButtonClick_m611 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SetCustomAttributes::OnNowToggleValueChange()
- void SetCustomAttributes_OnNowToggleValueChange_m632 (SetCustomAttributes_t129 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SetCustomAttributes_OnNowToggleValueChange_m612 (SetCustomAttributes_t126 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,29 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
+#include "System_Core_System_Func_2_gen_24MethodDeclarations.h"
 
-// System.Func`2<UnityEngine.RuntimePlatform,System.String>
-struct Func_2_t211;
-// System.Object
-struct Object_t;
-// System.String
-struct String_t;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
-// UnityEngine.RuntimePlatform
-#include "UnityEngine_UnityEngine_RuntimePlatform.h"
-
-// System.Void System.Func`2<UnityEngine.RuntimePlatform,System.String>::.ctor(System.Object,System.IntPtr)
- void Func_2__ctor_m1354 (Func_2_t211 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TResult System.Func`2<UnityEngine.RuntimePlatform,System.String>::Invoke(T)
- String_t* Func_2_Invoke_m15641 (Func_2_t211 * __this, int32_t ___arg1, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.IAsyncResult System.Func`2<UnityEngine.RuntimePlatform,System.String>::BeginInvoke(T,System.AsyncCallback,System.Object)
- Object_t * Func_2_BeginInvoke_m15642 (Func_2_t211 * __this, int32_t ___arg1, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// TResult System.Func`2<UnityEngine.RuntimePlatform,System.String>::EndInvoke(System.IAsyncResult)
- String_t* Func_2_EndInvoke_m15643 (Func_2_t211 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Func`2<System.Type,System.String>::.ctor(System.Object,System.IntPtr)
+#define Func_2__ctor_m1154(__this, ___object, ___method, method) (( void (*) (Func_2_t194 *, Object_t *, IntPtr_t, const MethodInfo*))Func_2__ctor_m14352_gshared)(__this, ___object, ___method, method)
+// TResult System.Func`2<System.Type,System.String>::Invoke(T)
+#define Func_2_Invoke_m14353(__this, ___arg1, method) (( String_t* (*) (Func_2_t194 *, Type_t *, const MethodInfo*))Func_2_Invoke_m14354_gshared)(__this, ___arg1, method)
+// System.IAsyncResult System.Func`2<System.Type,System.String>::BeginInvoke(T,System.AsyncCallback,System.Object)
+#define Func_2_BeginInvoke_m14355(__this, ___arg1, ___callback, ___object, method) (( Object_t * (*) (Func_2_t194 *, Type_t *, AsyncCallback_t552 *, Object_t *, const MethodInfo*))Func_2_BeginInvoke_m14356_gshared)(__this, ___arg1, ___callback, ___object, method)
+// TResult System.Func`2<System.Type,System.String>::EndInvoke(System.IAsyncResult)
+#define Func_2_EndInvoke_m14357(__this, ___result, method) (( String_t* (*) (Func_2_t194 *, Object_t *, const MethodInfo*))Func_2_EndInvoke_m14358_gshared)(__this, ___result, method)

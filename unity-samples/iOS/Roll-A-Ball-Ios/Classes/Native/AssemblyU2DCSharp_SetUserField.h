@@ -1,15 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.UI.InputField
 struct InputField_t121;
-// UnityEngine.MonoBehaviour
+
 #include "UnityEngine_UnityEngine_MonoBehaviour.h"
-// Appboy.Models.Gender
 #include "AssemblyU2DCSharpU2Dfirstpass_Appboy_Models_Gender.h"
-// Appboy.Models.AppboyNotificationSubscriptionType
 #include "AssemblyU2DCSharpU2Dfirstpass_Appboy_Models_AppboyNotificati.h"
+
 // SetUserField
-struct SetUserField_t131  : public MonoBehaviour_t2
+struct  SetUserField_t130  : public MonoBehaviour_t2
 {
 	// UnityEngine.UI.InputField SetUserField::FirstNameField
 	InputField_t121 * ___FirstNameField_2;

@@ -1,27 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
+
+
 #include "codegen/il2cpp-codegen.h"
-
-// System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>>
-struct InternalEnumerator_1_t3033;
-// System.Object
-struct Object_t;
-// UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>
-struct ComparerBaseGeneric_2_t170;
-// System.Array
-struct Array_t;
-
-// System.Void System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>>::.ctor(System.Array)
-// System.Array/InternalEnumerator`1<System.Object>
 #include "mscorlib_System_Array_InternalEnumerator_1_gen_0MethodDeclarations.h"
-#define InternalEnumerator_1__ctor_m14681(__this, ___array, method) (void)InternalEnumerator_1__ctor_m12702_gshared((InternalEnumerator_1_t2738 *)__this, (Array_t *)___array, method)
-// System.Object System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>>::System.Collections.IEnumerator.get_Current()
-#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m14682(__this, method) (Object_t *)InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12704_gshared((InternalEnumerator_1_t2738 *)__this, method)
-// System.Void System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>>::Dispose()
-#define InternalEnumerator_1_Dispose_m14683(__this, method) (void)InternalEnumerator_1_Dispose_m12706_gshared((InternalEnumerator_1_t2738 *)__this, method)
-// System.Boolean System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>>::MoveNext()
-#define InternalEnumerator_1_MoveNext_m14684(__this, method) (bool)InternalEnumerator_1_MoveNext_m12708_gshared((InternalEnumerator_1_t2738 *)__this, method)
-// T System.Array/InternalEnumerator`1<UnityTest.ComparerBaseGeneric`2<UnityEngine.Renderer,UnityEngine.Camera>>::get_Current()
-#define InternalEnumerator_1_get_Current_m14685(__this, method) (ComparerBaseGeneric_2_t170 *)InternalEnumerator_1_get_Current_m12710_gshared((InternalEnumerator_1_t2738 *)__this, method)
+
+// System.Void System.Array/InternalEnumerator`1<Mono.Globalization.Unicode.TailoringInfo>::.ctor(System.Array)
+#define InternalEnumerator_1__ctor_m21367(__this, ___array, method) (( void (*) (InternalEnumerator_1_t2812 *, Array_t *, const MethodInfo*))InternalEnumerator_1__ctor_m12454_gshared)(__this, ___array, method)
+// System.Void System.Array/InternalEnumerator`1<Mono.Globalization.Unicode.TailoringInfo>::System.Collections.IEnumerator.Reset()
+#define InternalEnumerator_1_System_Collections_IEnumerator_Reset_m21368(__this, method) (( void (*) (InternalEnumerator_1_t2812 *, const MethodInfo*))InternalEnumerator_1_System_Collections_IEnumerator_Reset_m12456_gshared)(__this, method)
+// System.Object System.Array/InternalEnumerator`1<Mono.Globalization.Unicode.TailoringInfo>::System.Collections.IEnumerator.get_Current()
+#define InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m21369(__this, method) (( Object_t * (*) (InternalEnumerator_1_t2812 *, const MethodInfo*))InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m12458_gshared)(__this, method)
+// System.Void System.Array/InternalEnumerator`1<Mono.Globalization.Unicode.TailoringInfo>::Dispose()
+#define InternalEnumerator_1_Dispose_m21370(__this, method) (( void (*) (InternalEnumerator_1_t2812 *, const MethodInfo*))InternalEnumerator_1_Dispose_m12460_gshared)(__this, method)
+// System.Boolean System.Array/InternalEnumerator`1<Mono.Globalization.Unicode.TailoringInfo>::MoveNext()
+#define InternalEnumerator_1_MoveNext_m21371(__this, method) (( bool (*) (InternalEnumerator_1_t2812 *, const MethodInfo*))InternalEnumerator_1_MoveNext_m12462_gshared)(__this, method)
+// T System.Array/InternalEnumerator`1<Mono.Globalization.Unicode.TailoringInfo>::get_Current()
+#define InternalEnumerator_1_get_Current_m21372(__this, method) (( TailoringInfo_t1439 * (*) (InternalEnumerator_1_t2812 *, const MethodInfo*))InternalEnumerator_1_get_Current_m12464_gshared)(__this, method)

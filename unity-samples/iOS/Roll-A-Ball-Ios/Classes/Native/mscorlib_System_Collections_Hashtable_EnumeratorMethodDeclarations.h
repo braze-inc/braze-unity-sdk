@@ -1,35 +1,43 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Collections.Hashtable/Enumerator
-struct Enumerator_t1880;
+struct Enumerator_t1516;
+// System.Collections.Hashtable
+struct Hashtable_t382;
 // System.Object
 struct Object_t;
-// System.Collections.Hashtable
-struct Hashtable_t414;
-// System.Collections.DictionaryEntry
-#include "mscorlib_System_Collections_DictionaryEntry.h"
-// System.Collections.Hashtable/EnumeratorMode
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Collections_Hashtable_EnumeratorMode.h"
+#include "mscorlib_System_Collections_DictionaryEntry.h"
 
 // System.Void System.Collections.Hashtable/Enumerator::.ctor(System.Collections.Hashtable,System.Collections.Hashtable/EnumeratorMode)
- void Enumerator__ctor_m9091 (Enumerator_t1880 * __this, Hashtable_t414 * ___host, int32_t ___mode, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Enumerator__ctor_m8817 (Enumerator_t1516 * __this, Hashtable_t382 * ___host, int32_t ___mode, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Hashtable/Enumerator::.cctor()
- void Enumerator__cctor_m9092 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Enumerator__cctor_m8818 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Hashtable/Enumerator::FailFast()
- void Enumerator_FailFast_m9093 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Enumerator_FailFast_m8819 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Hashtable/Enumerator::Reset()
- void Enumerator_Reset_m9094 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Enumerator_Reset_m8820 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Collections.Hashtable/Enumerator::MoveNext()
- bool Enumerator_MoveNext_m9095 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Enumerator_MoveNext_m8821 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.DictionaryEntry System.Collections.Hashtable/Enumerator::get_Entry()
- DictionaryEntry_t1564  Enumerator_get_Entry_m9096 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DictionaryEntry_t1193  Enumerator_get_Entry_m8822 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Hashtable/Enumerator::get_Key()
- Object_t * Enumerator_get_Key_m9097 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Enumerator_get_Key_m8823 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Hashtable/Enumerator::get_Value()
- Object_t * Enumerator_get_Value_m9098 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Enumerator_get_Value_m8824 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Collections.Hashtable/Enumerator::get_Current()
- Object_t * Enumerator_get_Current_m9099 (Enumerator_t1880 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * Enumerator_get_Current_m8825 (Enumerator_t1516 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

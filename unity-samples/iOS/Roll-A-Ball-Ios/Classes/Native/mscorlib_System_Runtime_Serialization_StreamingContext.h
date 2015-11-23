@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object
 struct Object_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// System.Runtime.Serialization.StreamingContextStates
 #include "mscorlib_System_Runtime_Serialization_StreamingContextStates.h"
+
 // System.Runtime.Serialization.StreamingContext
-struct StreamingContext_t961 
+struct  StreamingContext_t963 
 {
 	// System.Runtime.Serialization.StreamingContextStates System.Runtime.Serialization.StreamingContext::state
 	int32_t ___state_0;

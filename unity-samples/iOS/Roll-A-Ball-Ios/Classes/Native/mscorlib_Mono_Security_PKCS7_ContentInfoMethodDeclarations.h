@@ -1,29 +1,45 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.PKCS7/ContentInfo
-struct ContentInfo_t1834;
-// Mono.Security.ASN1
-struct ASN1_t1821;
+struct ContentInfo_t1491;
 // System.String
 struct String_t;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
+// Mono.Security.ASN1
+struct ASN1_t1480;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void Mono.Security.PKCS7/ContentInfo::.ctor()
- void ContentInfo__ctor_m8916 (ContentInfo_t1834 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentInfo__ctor_m8573 (ContentInfo_t1491 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.PKCS7/ContentInfo::.ctor(System.String)
- void ContentInfo__ctor_m8917 (ContentInfo_t1834 * __this, String_t* ___oid, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentInfo__ctor_m8574 (ContentInfo_t1491 * __this, String_t* ___oid, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.PKCS7/ContentInfo::.ctor(System.Byte[])
- void ContentInfo__ctor_m8918 (ContentInfo_t1834 * __this, ByteU5BU5D_t97* ___data, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentInfo__ctor_m8575 (ContentInfo_t1491 * __this, ByteU5BU5D_t98* ___data, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.PKCS7/ContentInfo::.ctor(Mono.Security.ASN1)
- void ContentInfo__ctor_m8919 (ContentInfo_t1834 * __this, ASN1_t1821 * ___asn1, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentInfo__ctor_m8576 (ContentInfo_t1491 * __this, ASN1_t1480 * ___asn1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.PKCS7/ContentInfo::get_ASN1()
+extern "C" ASN1_t1480 * ContentInfo_get_ASN1_m8577 (ContentInfo_t1491 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // Mono.Security.ASN1 Mono.Security.PKCS7/ContentInfo::get_Content()
- ASN1_t1821 * ContentInfo_get_Content_m8920 (ContentInfo_t1834 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ASN1_t1480 * ContentInfo_get_Content_m8578 (ContentInfo_t1491 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.PKCS7/ContentInfo::set_Content(Mono.Security.ASN1)
- void ContentInfo_set_Content_m8921 (ContentInfo_t1834 * __this, ASN1_t1821 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContentInfo_set_Content_m8579 (ContentInfo_t1491 * __this, ASN1_t1480 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.PKCS7/ContentInfo::get_ContentType()
- String_t* ContentInfo_get_ContentType_m8922 (ContentInfo_t1834 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* ContentInfo_get_ContentType_m8580 (ContentInfo_t1491 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.PKCS7/ContentInfo::set_ContentType(System.String)
+extern "C" void ContentInfo_set_ContentType_m8581 (ContentInfo_t1491 * __this, String_t* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.PKCS7/ContentInfo::GetASN1()
+extern "C" ASN1_t1480 * ContentInfo_GetASN1_m8582 (ContentInfo_t1491 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

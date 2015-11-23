@@ -1,18 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.String
-struct String_t;
-// Appboy.Utilities.JSONNode
-struct JSONNode_t19;
-// System.IAsyncResult
-struct IAsyncResult_t472;
-// System.AsyncCallback
-struct AsyncCallback_t473;
+
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+// System.IAsyncResult
+struct IAsyncResult_t551;
+// System.AsyncCallback
+struct AsyncCallback_t552;
+
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Collections.Generic.Dictionary`2/Transform`1<System.String,Appboy.Utilities.JSONNode,System.String>
-struct Transform_1_t2875  : public MulticastDelegate_t594
+#include "mscorlib_System_Int32.h"
+
+// System.Collections.Generic.Dictionary`2/Transform`1<System.Object,System.Int32,System.Int32>
+struct  Transform_1_t2215  : public MulticastDelegate_t550
 {
 };

@@ -1,13 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Collections.Generic.IList`1<System.String>
-struct IList_1_t46;
+struct IList_1_t33;
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // Appboy.Models.ApplePushNotificationAlert
-struct ApplePushNotificationAlert_t43  : public Object_t
+struct  ApplePushNotificationAlert_t31  : public Object_t
 {
 	// System.Collections.Generic.IList`1<System.String> Appboy.Models.ApplePushNotificationAlert::<LocationArguments>k__BackingField
 	Object_t* ___U3CLocationArgumentsU3Ek__BackingField_0;

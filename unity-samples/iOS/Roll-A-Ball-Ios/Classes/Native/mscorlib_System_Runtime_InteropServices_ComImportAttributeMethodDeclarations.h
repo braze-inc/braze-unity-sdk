@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.InteropServices.ComImportAttribute
-struct ComImportAttribute_t1760;
+struct ComImportAttribute_t1416;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.InteropServices.ComImportAttribute::.ctor()
- void ComImportAttribute__ctor_m8466 (ComImportAttribute_t1760 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ComImportAttribute__ctor_m8099 (ComImportAttribute_t1416 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

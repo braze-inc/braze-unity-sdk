@@ -1,23 +1,32 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.EventSystems.PointerInputModule/ButtonState
-struct ButtonState_t521;
+struct ButtonState_t468;
 // UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData
-struct MouseButtonEventData_t520;
-// UnityEngine.EventSystems.PointerEventData/InputButton
+struct MouseButtonEventData_t469;
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UI_UnityEngine_EventSystems_PointerEventData_Inp.h"
 
 // System.Void UnityEngine.EventSystems.PointerInputModule/ButtonState::.ctor()
- void ButtonState__ctor_m2187 (ButtonState_t521 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ButtonState__ctor_m1941 (ButtonState_t468 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData UnityEngine.EventSystems.PointerInputModule/ButtonState::get_eventData()
- MouseButtonEventData_t520 * ButtonState_get_eventData_m2188 (ButtonState_t521 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" MouseButtonEventData_t469 * ButtonState_get_eventData_m1942 (ButtonState_t468 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.EventSystems.PointerInputModule/ButtonState::set_eventData(UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData)
- void ButtonState_set_eventData_m2189 (ButtonState_t521 * __this, MouseButtonEventData_t520 * ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ButtonState_set_eventData_m1943 (ButtonState_t468 * __this, MouseButtonEventData_t469 * ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.EventSystems.PointerEventData/InputButton UnityEngine.EventSystems.PointerInputModule/ButtonState::get_button()
- int32_t ButtonState_get_button_m2190 (ButtonState_t521 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ButtonState_get_button_m1944 (ButtonState_t468 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.EventSystems.PointerInputModule/ButtonState::set_button(UnityEngine.EventSystems.PointerEventData/InputButton)
- void ButtonState_set_button_m2191 (ButtonState_t521 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ButtonState_set_button_m1945 (ButtonState_t468 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

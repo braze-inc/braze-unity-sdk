@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.SystemException
+
+
 #include "mscorlib_System_SystemException.h"
+
 // System.NotImplementedException
-struct NotImplementedException_t299  : public SystemException_t1729
+struct  NotImplementedException_t276  : public SystemException_t1227
 {
 };

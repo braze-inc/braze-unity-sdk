@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.InteropServices.InAttribute
-struct InAttribute_t1759;
+struct InAttribute_t1412;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.InteropServices.InAttribute::.ctor()
- void InAttribute__ctor_m8465 (InAttribute_t1759 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void InAttribute__ctor_m8095 (InAttribute_t1412 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

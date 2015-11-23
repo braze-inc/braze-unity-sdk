@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.PropertyAttribute
+
+
 #include "UnityEngine_UnityEngine_PropertyAttribute.h"
+
 // UnityEngine.TextAreaAttribute
-struct TextAreaAttribute_t762  : public PropertyAttribute_t955
+struct  TextAreaAttribute_t919  : public PropertyAttribute_t915
 {
 	// System.Int32 UnityEngine.TextAreaAttribute::minLines
 	int32_t ___minLines_0;

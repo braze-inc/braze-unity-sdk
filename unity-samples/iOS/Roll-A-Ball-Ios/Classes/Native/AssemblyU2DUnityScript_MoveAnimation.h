@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.AnimationClip
-struct AnimationClip_t391;
-// System.Object
+struct AnimationClip_t360;
+
 #include "mscorlib_System_Object.h"
-// UnityEngine.Vector3
 #include "UnityEngine_UnityEngine_Vector3.h"
+
 // MoveAnimation
-struct MoveAnimation_t395  : public Object_t
+struct  MoveAnimation_t363  : public Object_t
 {
 	// UnityEngine.AnimationClip MoveAnimation::clip
-	AnimationClip_t391 * ___clip_0;
+	AnimationClip_t360 * ___clip_0;
 	// UnityEngine.Vector3 MoveAnimation::velocity
-	Vector3_t188  ___velocity_1;
+	Vector3_t259  ___velocity_1;
 	// System.Single MoveAnimation::weight
 	float ___weight_2;
 	// System.Boolean MoveAnimation::currentBest

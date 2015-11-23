@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // UnityEngine.TrackedReference
-struct TrackedReference_t914  : public Object_t
+struct  TrackedReference_t833  : public Object_t
 {
 	// System.IntPtr UnityEngine.TrackedReference::m_Ptr
-	IntPtr_t107 ___m_Ptr_0;
+	IntPtr_t ___m_Ptr_0;
 };
 // Native definition for marshalling of: UnityEngine.TrackedReference
-struct TrackedReference_t914_marshaled
+struct TrackedReference_t833_marshaled
 {
-	IntPtr_t107 ___m_Ptr_0;
+	intptr_t ___m_Ptr_0;
 };

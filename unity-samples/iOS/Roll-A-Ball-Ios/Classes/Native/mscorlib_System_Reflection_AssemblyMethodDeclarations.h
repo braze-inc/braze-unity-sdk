@@ -1,69 +1,86 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.Assembly
-struct Assembly_t239;
+struct Assembly_t215;
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
 // System.Object[]
-struct ObjectU5BU5D_t112;
+struct ObjectU5BU5D_t87;
 // System.Reflection.Module
-struct Module_t1752;
+struct Module_t1605;
 // System.Type[]
-struct TypeU5BU5D_t146;
+struct TypeU5BU5D_t216;
 // System.Reflection.AssemblyName
-struct AssemblyName_t1944;
+struct AssemblyName_t1635;
 // System.Reflection.Module[]
-struct ModuleU5BU5D_t1942;
-// System.IntPtr
+struct ModuleU5BU5D_t1588;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
 
 // System.Void System.Reflection.Assembly::.ctor()
- void Assembly__ctor_m9875 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Assembly__ctor_m9773 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Reflection.Assembly::get_code_base(System.Boolean)
+extern "C" String_t* Assembly_get_code_base_m9774 (Assembly_t215 * __this, bool ___escaped, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Reflection.Assembly::get_fullname()
- String_t* Assembly_get_fullname_m9876 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* Assembly_get_fullname_m9775 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Reflection.Assembly::get_location()
- String_t* Assembly_get_location_m9877 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* Assembly_get_location_m9776 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Reflection.Assembly::GetCodeBase(System.Boolean)
+extern "C" String_t* Assembly_GetCodeBase_m9777 (Assembly_t215 * __this, bool ___escaped, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Reflection.Assembly::get_FullName()
- String_t* Assembly_get_FullName_m9878 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* Assembly_get_FullName_m9778 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Reflection.Assembly::get_Location()
- String_t* Assembly_get_Location_m9879 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* Assembly_get_Location_m9779 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Reflection.Assembly::IsDefined(System.Type,System.Boolean)
- bool Assembly_IsDefined_m9880 (Assembly_t239 * __this, Type_t * ___attributeType, bool ___inherit, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Assembly_IsDefined_m9780 (Assembly_t215 * __this, Type_t * ___attributeType, bool ___inherit, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object[] System.Reflection.Assembly::GetCustomAttributes(System.Type,System.Boolean)
- ObjectU5BU5D_t112* Assembly_GetCustomAttributes_m9881 (Assembly_t239 * __this, Type_t * ___attributeType, bool ___inherit, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ObjectU5BU5D_t87* Assembly_GetCustomAttributes_m9781 (Assembly_t215 * __this, Type_t * ___attributeType, bool ___inherit, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.IntPtr System.Reflection.Assembly::GetManifestResourceInternal(System.String,System.Int32&,System.Reflection.Module&)
- IntPtr_t107 Assembly_GetManifestResourceInternal_m9882 (Assembly_t239 * __this, String_t* ___name, int32_t* ___size, Module_t1752 ** ___module, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" IntPtr_t Assembly_GetManifestResourceInternal_m9782 (Assembly_t215 * __this, String_t* ___name, int32_t* ___size, Module_t1605 ** ___module, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type[] System.Reflection.Assembly::GetTypes(System.Boolean)
- TypeU5BU5D_t146* Assembly_GetTypes_m9883 (Assembly_t239 * __this, bool ___exportedOnly, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" TypeU5BU5D_t216* Assembly_GetTypes_m9783 (Assembly_t215 * __this, bool ___exportedOnly, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type[] System.Reflection.Assembly::GetTypes()
- TypeU5BU5D_t146* Assembly_GetTypes_m1414 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" TypeU5BU5D_t216* Assembly_GetTypes_m9784 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Reflection.Assembly::GetType(System.String,System.Boolean)
- Type_t * Assembly_GetType_m9884 (Assembly_t239 * __this, String_t* ___name, bool ___throwOnError, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Type_t * Assembly_GetType_m9785 (Assembly_t215 * __this, String_t* ___name, bool ___throwOnError, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Reflection.Assembly::GetType(System.String)
- Type_t * Assembly_GetType_m7586 (Assembly_t239 * __this, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Type_t * Assembly_GetType_m9786 (Assembly_t215 * __this, String_t* ___name, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Reflection.Assembly::InternalGetType(System.Reflection.Module,System.String,System.Boolean,System.Boolean)
- Type_t * Assembly_InternalGetType_m9885 (Assembly_t239 * __this, Module_t1752 * ___module, String_t* ___name, bool ___throwOnError, bool ___ignoreCase, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Type_t * Assembly_InternalGetType_m9787 (Assembly_t215 * __this, Module_t1605 * ___module, String_t* ___name, bool ___throwOnError, bool ___ignoreCase, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Reflection.Assembly::GetType(System.String,System.Boolean,System.Boolean)
- Type_t * Assembly_GetType_m9886 (Assembly_t239 * __this, String_t* ___name, bool ___throwOnError, bool ___ignoreCase, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Type_t * Assembly_GetType_m9788 (Assembly_t215 * __this, String_t* ___name, bool ___throwOnError, bool ___ignoreCase, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Reflection.Assembly::FillName(System.Reflection.Assembly,System.Reflection.AssemblyName)
- void Assembly_FillName_m9887 (Object_t * __this/* static, unused */, Assembly_t239 * ___ass, AssemblyName_t1944 * ___aname, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Assembly_FillName_m9789 (Object_t * __this /* static, unused */, Assembly_t215 * ___ass, AssemblyName_t1635 * ___aname, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Reflection.AssemblyName System.Reflection.Assembly::GetName(System.Boolean)
+extern "C" AssemblyName_t1635 * Assembly_GetName_m9790 (Assembly_t215 * __this, bool ___copiedName, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Reflection.AssemblyName System.Reflection.Assembly::GetName()
+extern "C" AssemblyName_t1635 * Assembly_GetName_m9791 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Reflection.AssemblyName System.Reflection.Assembly::UnprotectedGetName()
- AssemblyName_t1944 * Assembly_UnprotectedGetName_m9888 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" AssemblyName_t1635 * Assembly_UnprotectedGetName_m9792 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Reflection.Assembly::ToString()
- String_t* Assembly_ToString_m9889 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* Assembly_ToString_m9793 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Reflection.Assembly System.Reflection.Assembly::Load(System.String)
- Assembly_t239 * Assembly_Load_m9890 (Object_t * __this/* static, unused */, String_t* ___assemblyString, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Assembly_t215 * Assembly_Load_m9794 (Object_t * __this /* static, unused */, String_t* ___assemblyString, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Reflection.Module System.Reflection.Assembly::GetModule(System.String)
- Module_t1752 * Assembly_GetModule_m9891 (Assembly_t239 * __this, String_t* ___name, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Module_t1605 * Assembly_GetModule_m9795 (Assembly_t215 * __this, String_t* ___name, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Reflection.Module[] System.Reflection.Assembly::GetModulesInternal()
- ModuleU5BU5D_t1942* Assembly_GetModulesInternal_m9892 (Assembly_t239 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ModuleU5BU5D_t1588* Assembly_GetModulesInternal_m9796 (Assembly_t215 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Reflection.Module[] System.Reflection.Assembly::GetModules(System.Boolean)
- ModuleU5BU5D_t1942* Assembly_GetModules_m9893 (Assembly_t239 * __this, bool ___getResourceModules, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ModuleU5BU5D_t1588* Assembly_GetModules_m9797 (Assembly_t215 * __this, bool ___getResourceModules, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Reflection.Assembly System.Reflection.Assembly::GetExecutingAssembly()
- Assembly_t239 * Assembly_GetExecutingAssembly_m9894 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Assembly_t215 * Assembly_GetExecutingAssembly_m9798 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

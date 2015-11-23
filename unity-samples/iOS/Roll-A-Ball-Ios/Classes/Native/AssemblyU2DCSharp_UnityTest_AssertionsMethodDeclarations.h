@@ -1,23 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityTest.Assertions
-struct Assertions_t139;
 // UnityTest.AssertionComponent
 struct AssertionComponent_t135;
 // UnityEngine.GameObject
-struct GameObject_t140;
+struct GameObject_t141;
 // UnityTest.AssertionComponent[]
-struct AssertionComponentU5BU5D_t141;
+struct AssertionComponentU5BU5D_t237;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityTest.Assertions::CheckAssertions()
- void Assertions_CheckAssertions_m710 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Assertions_CheckAssertions_m690 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityTest.Assertions::CheckAssertions(UnityTest.AssertionComponent)
- void Assertions_CheckAssertions_m711 (Object_t * __this/* static, unused */, AssertionComponent_t135 * ___assertion, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Assertions_CheckAssertions_m691 (Object_t * __this /* static, unused */, AssertionComponent_t135 * ___assertion, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityTest.Assertions::CheckAssertions(UnityEngine.GameObject)
- void Assertions_CheckAssertions_m712 (Object_t * __this/* static, unused */, GameObject_t140 * ___gameObject, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Assertions_CheckAssertions_m692 (Object_t * __this /* static, unused */, GameObject_t141 * ___gameObject, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityTest.Assertions::CheckAssertions(UnityTest.AssertionComponent[])
- void Assertions_CheckAssertions_m713 (Object_t * __this/* static, unused */, AssertionComponentU5BU5D_t141* ___assertions, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Assertions_CheckAssertions_m693 (Object_t * __this /* static, unused */, AssertionComponentU5BU5D_t237* ___assertions, const MethodInfo* method) IL2CPP_METHOD_ATTR;

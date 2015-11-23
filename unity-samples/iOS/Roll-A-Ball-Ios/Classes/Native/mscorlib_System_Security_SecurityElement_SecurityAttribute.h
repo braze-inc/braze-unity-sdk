@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // System.Security.SecurityElement/SecurityAttribute
-struct SecurityAttribute_t2181  : public Object_t
+struct  SecurityAttribute_t1909  : public Object_t
 {
 	// System.String System.Security.SecurityElement/SecurityAttribute::_name
 	String_t* ____name_0;

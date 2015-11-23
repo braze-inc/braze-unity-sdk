@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Runtime.Remoting.Messaging.MethodDictionary
-struct MethodDictionary_t2058;
+struct MethodDictionary_t1758;
 // System.Collections.IDictionaryEnumerator
-struct IDictionaryEnumerator_t1561;
-// System.Object
+struct IDictionaryEnumerator_t1192;
+
 #include "mscorlib_System_Object.h"
+
 // System.Runtime.Remoting.Messaging.MethodDictionary/DictionaryEnumerator
-struct DictionaryEnumerator_t2066  : public Object_t
+struct  DictionaryEnumerator_t1764  : public Object_t
 {
 	// System.Runtime.Remoting.Messaging.MethodDictionary System.Runtime.Remoting.Messaging.MethodDictionary/DictionaryEnumerator::_methodDictionary
-	MethodDictionary_t2058 * ____methodDictionary_0;
+	MethodDictionary_t1758 * ____methodDictionary_0;
 	// System.Collections.IDictionaryEnumerator System.Runtime.Remoting.Messaging.MethodDictionary/DictionaryEnumerator::_hashtableEnum
 	Object_t * ____hashtableEnum_1;
 	// System.Int32 System.Runtime.Remoting.Messaging.MethodDictionary/DictionaryEnumerator::_posMethod

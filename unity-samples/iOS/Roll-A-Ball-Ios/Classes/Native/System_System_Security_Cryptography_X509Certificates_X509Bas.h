@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Security.Cryptography.X509Certificates.X509Extension
+
 #include "System_System_Security_Cryptography_X509Certificates_X509Ext.h"
-// System.Security.Cryptography.AsnDecodeStatus
 #include "System_System_Security_Cryptography_AsnDecodeStatus.h"
+
 // System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension
-struct X509BasicConstraintsExtension_t1607  : public X509Extension_t1608
+struct  X509BasicConstraintsExtension_t1078  : public X509Extension_t1079
 {
 	// System.Boolean System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::_certificateAuthority
 	bool ____certificateAuthority_6;

@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // ITestResult
-struct ITestResult_t234;
-// System.Object
+struct ITestResult_t209;
+
 #include "mscorlib_System_Object.h"
-// UnityTest.ResultDTO/MessageType
 #include "AssemblyU2DCSharp_UnityTest_ResultDTO_MessageType.h"
+
 // UnityTest.ResultDTO
-struct ResultDTO_t209  : public Object_t
+struct  ResultDTO_t208  : public Object_t
 {
 	// UnityTest.ResultDTO/MessageType UnityTest.ResultDTO::messageType
 	uint8_t ___messageType_0;

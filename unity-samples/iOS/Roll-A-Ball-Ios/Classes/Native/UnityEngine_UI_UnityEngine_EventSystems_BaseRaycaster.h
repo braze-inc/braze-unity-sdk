@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.EventSystems.UIBehaviour
+
+
 #include "UnityEngine_UI_UnityEngine_EventSystems_UIBehaviour.h"
+
 // UnityEngine.EventSystems.BaseRaycaster
-struct BaseRaycaster_t517  : public UIBehaviour_t460
+struct  BaseRaycaster_t461  : public UIBehaviour_t425
 {
 };

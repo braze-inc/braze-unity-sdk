@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.Protocol.Tls.Handshake.Client.TlsClientHello
-struct TlsClientHello_t1485;
+struct TlsClientHello_t1354;
 // Mono.Security.Protocol.Tls.Context
-struct Context_t1434;
+struct Context_t1308;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientHello::.ctor(Mono.Security.Protocol.Tls.Context)
- void TlsClientHello__ctor_m6324 (TlsClientHello_t1485 * __this, Context_t1434 * ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientHello__ctor_m7134 (TlsClientHello_t1354 * __this, Context_t1308 * ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientHello::Update()
- void TlsClientHello_Update_m6325 (TlsClientHello_t1485 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientHello_Update_m7135 (TlsClientHello_t1354 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientHello::ProcessAsSsl3()
- void TlsClientHello_ProcessAsSsl3_m6326 (TlsClientHello_t1485 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientHello_ProcessAsSsl3_m7136 (TlsClientHello_t1354 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientHello::ProcessAsTls1()
- void TlsClientHello_ProcessAsTls1_m6327 (TlsClientHello_t1485 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientHello_ProcessAsTls1_m7137 (TlsClientHello_t1354 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

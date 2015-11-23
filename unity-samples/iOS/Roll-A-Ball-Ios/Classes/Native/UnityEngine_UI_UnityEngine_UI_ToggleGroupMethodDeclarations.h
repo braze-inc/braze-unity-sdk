@@ -1,37 +1,47 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.ToggleGroup
-struct ToggleGroup_t637;
+struct ToggleGroup_t599;
 // UnityEngine.UI.Toggle
 struct Toggle_t127;
 // System.Collections.Generic.IEnumerable`1<UnityEngine.UI.Toggle>
-struct IEnumerable_1_t641;
+struct IEnumerable_1_t671;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.UI.ToggleGroup::.ctor()
- void ToggleGroup__ctor_m2942 (ToggleGroup_t637 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup__ctor_m2902 (ToggleGroup_t599 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.UI.ToggleGroup::get_allowSwitchOff()
- bool ToggleGroup_get_allowSwitchOff_m2943 (ToggleGroup_t637 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool ToggleGroup_get_allowSwitchOff_m2903 (ToggleGroup_t599 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ToggleGroup::set_allowSwitchOff(System.Boolean)
- void ToggleGroup_set_allowSwitchOff_m2944 (ToggleGroup_t637 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup_set_allowSwitchOff_m2904 (ToggleGroup_t599 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ToggleGroup::ValidateToggleIsInGroup(UnityEngine.UI.Toggle)
- void ToggleGroup_ValidateToggleIsInGroup_m2945 (ToggleGroup_t637 * __this, Toggle_t127 * ___toggle, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup_ValidateToggleIsInGroup_m2905 (ToggleGroup_t599 * __this, Toggle_t127 * ___toggle, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ToggleGroup::NotifyToggleOn(UnityEngine.UI.Toggle)
- void ToggleGroup_NotifyToggleOn_m2946 (ToggleGroup_t637 * __this, Toggle_t127 * ___toggle, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup_NotifyToggleOn_m2906 (ToggleGroup_t599 * __this, Toggle_t127 * ___toggle, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ToggleGroup::UnregisterToggle(UnityEngine.UI.Toggle)
- void ToggleGroup_UnregisterToggle_m2947 (ToggleGroup_t637 * __this, Toggle_t127 * ___toggle, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup_UnregisterToggle_m2907 (ToggleGroup_t599 * __this, Toggle_t127 * ___toggle, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ToggleGroup::RegisterToggle(UnityEngine.UI.Toggle)
- void ToggleGroup_RegisterToggle_m2948 (ToggleGroup_t637 * __this, Toggle_t127 * ___toggle, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup_RegisterToggle_m2908 (ToggleGroup_t599 * __this, Toggle_t127 * ___toggle, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.UI.ToggleGroup::AnyTogglesOn()
- bool ToggleGroup_AnyTogglesOn_m2949 (ToggleGroup_t637 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool ToggleGroup_AnyTogglesOn_m2909 (ToggleGroup_t599 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Collections.Generic.IEnumerable`1<UnityEngine.UI.Toggle> UnityEngine.UI.ToggleGroup::ActiveToggles()
- Object_t* ToggleGroup_ActiveToggles_m2950 (ToggleGroup_t637 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t* ToggleGroup_ActiveToggles_m2910 (ToggleGroup_t599 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.ToggleGroup::SetAllTogglesOff()
- void ToggleGroup_SetAllTogglesOff_m2951 (ToggleGroup_t637 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean UnityEngine.UI.ToggleGroup::<AnyTogglesOn>m__7(UnityEngine.UI.Toggle)
- bool ToggleGroup_U3CAnyTogglesOnU3Em__7_m2952 (Object_t * __this/* static, unused */, Toggle_t127 * ___x, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Boolean UnityEngine.UI.ToggleGroup::<ActiveToggles>m__8(UnityEngine.UI.Toggle)
- bool ToggleGroup_U3CActiveTogglesU3Em__8_m2953 (Object_t * __this/* static, unused */, Toggle_t127 * ___x, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ToggleGroup_SetAllTogglesOff_m2911 (ToggleGroup_t599 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.UI.ToggleGroup::<AnyTogglesOn>m__4(UnityEngine.UI.Toggle)
+extern "C" bool ToggleGroup_U3CAnyTogglesOnU3Em__4_m2912 (Object_t * __this /* static, unused */, Toggle_t127 * ___x, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.UI.ToggleGroup::<ActiveToggles>m__5(UnityEngine.UI.Toggle)
+extern "C" bool ToggleGroup_U3CActiveTogglesU3Em__5_m2913 (Object_t * __this /* static, unused */, Toggle_t127 * ___x, const MethodInfo* method) IL2CPP_METHOD_ATTR;

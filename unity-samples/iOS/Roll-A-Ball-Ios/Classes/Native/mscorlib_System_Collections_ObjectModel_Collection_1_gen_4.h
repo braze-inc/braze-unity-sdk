@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.IList`1<UnityTest.TestComponent>
-struct IList_1_t3137;
+
+// System.Collections.Generic.IList`1<UnityEngine.Color32>
+struct IList_1_t2582;
 // System.Object
 struct Object_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Collections.ObjectModel.Collection`1<UnityTest.TestComponent>
-struct Collection_1_t3138  : public Object_t
+
+// System.Collections.ObjectModel.Collection`1<UnityEngine.Color32>
+struct  Collection_1_t2583  : public Object_t
 {
-	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.Collection`1<UnityTest.TestComponent>::list
+	// System.Collections.Generic.IList`1<T> System.Collections.ObjectModel.Collection`1<UnityEngine.Color32>::list
 	Object_t* ___list_0;
-	// System.Object System.Collections.ObjectModel.Collection`1<UnityTest.TestComponent>::syncRoot
+	// System.Object System.Collections.ObjectModel.Collection`1<UnityEngine.Color32>::syncRoot
 	Object_t * ___syncRoot_1;
 };

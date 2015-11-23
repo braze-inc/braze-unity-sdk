@@ -1,35 +1,41 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Runtime.InteropServices.GCHandle
-struct GCHandle_t2018;
 // System.Object
 struct Object_t;
-// System.Runtime.InteropServices.GCHandleType
-#include "mscorlib_System_Runtime_InteropServices_GCHandleType.h"
-// System.Runtime.InteropServices.GCHandle
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_InteropServices_GCHandle.h"
+#include "mscorlib_System_Runtime_InteropServices_GCHandleType.h"
 
 // System.Void System.Runtime.InteropServices.GCHandle::.ctor(System.Object,System.Runtime.InteropServices.GCHandleType)
- void GCHandle__ctor_m10151 (GCHandle_t2018 * __this, Object_t * ___value, int32_t ___type, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GCHandle__ctor_m10145 (GCHandle_t1706 * __this, Object_t * ___value, int32_t ___type, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Runtime.InteropServices.GCHandle::get_IsAllocated()
- bool GCHandle_get_IsAllocated_m10152 (GCHandle_t2018 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool GCHandle_get_IsAllocated_m10146 (GCHandle_t1706 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Runtime.InteropServices.GCHandle::get_Target()
- Object_t * GCHandle_get_Target_m10153 (GCHandle_t2018 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * GCHandle_get_Target_m10147 (GCHandle_t1706 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.InteropServices.GCHandle System.Runtime.InteropServices.GCHandle::Alloc(System.Object,System.Runtime.InteropServices.GCHandleType)
- GCHandle_t2018  GCHandle_Alloc_m10154 (Object_t * __this/* static, unused */, Object_t * ___value, int32_t ___type, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" GCHandle_t1706  GCHandle_Alloc_m10148 (Object_t * __this /* static, unused */, Object_t * ___value, int32_t ___type, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.InteropServices.GCHandle::Free()
- void GCHandle_Free_m10155 (GCHandle_t2018 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GCHandle_Free_m10149 (GCHandle_t1706 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Object System.Runtime.InteropServices.GCHandle::GetTarget(System.Int32)
- Object_t * GCHandle_GetTarget_m10156 (Object_t * __this/* static, unused */, int32_t ___handle, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * GCHandle_GetTarget_m10150 (Object_t * __this /* static, unused */, int32_t ___handle, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Runtime.InteropServices.GCHandle::GetTargetHandle(System.Object,System.Int32,System.Runtime.InteropServices.GCHandleType)
- int32_t GCHandle_GetTargetHandle_m10157 (Object_t * __this/* static, unused */, Object_t * ___obj, int32_t ___handle, int32_t ___type, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t GCHandle_GetTargetHandle_m10151 (Object_t * __this /* static, unused */, Object_t * ___obj, int32_t ___handle, int32_t ___type, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.InteropServices.GCHandle::FreeHandle(System.Int32)
- void GCHandle_FreeHandle_m10158 (Object_t * __this/* static, unused */, int32_t ___handle, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GCHandle_FreeHandle_m10152 (Object_t * __this /* static, unused */, int32_t ___handle, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Runtime.InteropServices.GCHandle::Equals(System.Object)
- bool GCHandle_Equals_m10159 (GCHandle_t2018 * __this, Object_t * ___o, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool GCHandle_Equals_m10153 (GCHandle_t1706 * __this, Object_t * ___o, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 System.Runtime.InteropServices.GCHandle::GetHashCode()
- int32_t GCHandle_GetHashCode_m10160 (GCHandle_t2018 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t GCHandle_GetHashCode_m10154 (GCHandle_t1706 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

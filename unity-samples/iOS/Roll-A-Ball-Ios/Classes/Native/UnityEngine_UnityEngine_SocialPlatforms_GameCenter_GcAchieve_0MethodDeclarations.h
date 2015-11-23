@@ -1,17 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// UnityEngine.SocialPlatforms.GameCenter.GcAchievementData
-struct GcAchievementData_t813;
-struct GcAchievementData_t813_marshaled;
 // UnityEngine.SocialPlatforms.Impl.Achievement
-struct Achievement_t938;
+struct Achievement_t902;
+
+#include "codegen/il2cpp-codegen.h"
+#include "UnityEngine_UnityEngine_SocialPlatforms_GameCenter_GcAchieve_0.h"
 
 // UnityEngine.SocialPlatforms.Impl.Achievement UnityEngine.SocialPlatforms.GameCenter.GcAchievementData::ToAchievement()
- Achievement_t938 * GcAchievementData_ToAchievement_m4776 (GcAchievementData_t813 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-void GcAchievementData_t813_marshal(const GcAchievementData_t813& unmarshaled, GcAchievementData_t813_marshaled& marshaled);
-void GcAchievementData_t813_marshal_back(const GcAchievementData_t813_marshaled& marshaled, GcAchievementData_t813& unmarshaled);
-void GcAchievementData_t813_marshal_cleanup(GcAchievementData_t813_marshaled& marshaled);
+extern "C" Achievement_t902 * GcAchievementData_ToAchievement_m4790 (GcAchievementData_t891 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GcAchievementData_t891_marshal(const GcAchievementData_t891& unmarshaled, GcAchievementData_t891_marshaled& marshaled);
+extern "C" void GcAchievementData_t891_marshal_back(const GcAchievementData_t891_marshaled& marshaled, GcAchievementData_t891& unmarshaled);
+extern "C" void GcAchievementData_t891_marshal_cleanup(GcAchievementData_t891_marshaled& marshaled);

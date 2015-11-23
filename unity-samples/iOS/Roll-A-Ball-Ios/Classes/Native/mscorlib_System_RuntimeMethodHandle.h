@@ -1,12 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
-// System.IntPtr
 #include "mscorlib_System_IntPtr.h"
+
 // System.RuntimeMethodHandle
-struct RuntimeMethodHandle_t1948 
+struct  RuntimeMethodHandle_t2022 
 {
 	// System.IntPtr System.RuntimeMethodHandle::value
-	IntPtr_t107 ___value_0;
+	IntPtr_t ___value_0;
 };

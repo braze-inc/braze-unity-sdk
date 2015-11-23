@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// System.DateTime/Which
 #include "mscorlib_System_DateTime_Which.h"
+
 // System.DateTime/Which
-struct Which_t2242 
+struct  Which_t1976 
 {
 	// System.Int32 System.DateTime/Which::value__
 	int32_t ___value___1;

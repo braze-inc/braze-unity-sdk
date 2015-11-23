@@ -1,27 +1,37 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify
-struct TlsClientCertificateVerify_t1483;
+struct TlsClientCertificateVerify_t1352;
 // Mono.Security.Protocol.Tls.Context
-struct Context_t1434;
+struct Context_t1308;
 // System.Security.Cryptography.RSA
-struct RSA_t1388;
+struct RSA_t1195;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify::.ctor(Mono.Security.Protocol.Tls.Context)
- void TlsClientCertificateVerify__ctor_m6313 (TlsClientCertificateVerify_t1483 * __this, Context_t1434 * ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientCertificateVerify__ctor_m7123 (TlsClientCertificateVerify_t1352 * __this, Context_t1308 * ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify::Update()
- void TlsClientCertificateVerify_Update_m6314 (TlsClientCertificateVerify_t1483 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientCertificateVerify_Update_m7124 (TlsClientCertificateVerify_t1352 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify::ProcessAsSsl3()
- void TlsClientCertificateVerify_ProcessAsSsl3_m6315 (TlsClientCertificateVerify_t1483 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientCertificateVerify_ProcessAsSsl3_m7125 (TlsClientCertificateVerify_t1352 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify::ProcessAsTls1()
- void TlsClientCertificateVerify_ProcessAsTls1_m6316 (TlsClientCertificateVerify_t1483 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void TlsClientCertificateVerify_ProcessAsTls1_m7126 (TlsClientCertificateVerify_t1352 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Security.Cryptography.RSA Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify::getClientCertRSA(System.Security.Cryptography.RSA)
- RSA_t1388 * TlsClientCertificateVerify_getClientCertRSA_m6317 (TlsClientCertificateVerify_t1483 * __this, RSA_t1388 * ___privKey, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" RSA_t1195 * TlsClientCertificateVerify_getClientCertRSA_m7127 (TlsClientCertificateVerify_t1352 * __this, RSA_t1195 * ___privKey, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Byte[] Mono.Security.Protocol.Tls.Handshake.Client.TlsClientCertificateVerify::getUnsignedBigInteger(System.Byte[])
- ByteU5BU5D_t97* TlsClientCertificateVerify_getUnsignedBigInteger_m6318 (TlsClientCertificateVerify_t1483 * __this, ByteU5BU5D_t97* ___integer, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ByteU5BU5D_t98* TlsClientCertificateVerify_getUnsignedBigInteger_m7128 (TlsClientCertificateVerify_t1352 * __this, ByteU5BU5D_t98* ___integer, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.DecoderFallbackBuffer
+
+
 #include "mscorlib_System_Text_DecoderFallbackBuffer.h"
+
 // System.Text.DecoderExceptionFallbackBuffer
-struct DecoderExceptionFallbackBuffer_t2191  : public DecoderFallbackBuffer_t2188
+struct  DecoderExceptionFallbackBuffer_t1923  : public DecoderFallbackBuffer_t1921
 {
 };

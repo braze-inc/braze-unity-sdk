@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Events.PersistentCall[]
-struct PersistentCallU5BU5D_t4519;
-// System.Object
+
+// UnityEngine.Color32[]
+struct Color32U5BU5D_t733;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>
-struct List_1_t980  : public Object_t
+
+// System.Collections.Generic.List`1<UnityEngine.Color32>
+struct  List_1_t633  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>::_items
-	PersistentCallU5BU5D_t4519* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.Color32>::_items
+	Color32U5BU5D_t733* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Color32>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Color32>::_version
 	int32_t ____version_3;
 };
-struct List_1_t980_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>::EmptyArray
-	PersistentCallU5BU5D_t4519* ___EmptyArray_4;
+struct List_1_t633_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityEngine.Color32>::EmptyArray
+	Color32U5BU5D_t733* ___EmptyArray_4;
 };

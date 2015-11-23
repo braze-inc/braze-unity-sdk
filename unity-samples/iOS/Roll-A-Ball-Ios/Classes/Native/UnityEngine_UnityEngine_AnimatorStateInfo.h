@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // UnityEngine.AnimatorStateInfo
-struct AnimatorStateInfo_t906 
+struct  AnimatorStateInfo_t826 
 {
 	// System.Int32 UnityEngine.AnimatorStateInfo::m_Name
 	int32_t ___m_Name_0;
@@ -15,8 +26,12 @@ struct AnimatorStateInfo_t906
 	float ___m_NormalizedTime_3;
 	// System.Single UnityEngine.AnimatorStateInfo::m_Length
 	float ___m_Length_4;
+	// System.Single UnityEngine.AnimatorStateInfo::m_Speed
+	float ___m_Speed_5;
+	// System.Single UnityEngine.AnimatorStateInfo::m_SpeedMultiplier
+	float ___m_SpeedMultiplier_6;
 	// System.Int32 UnityEngine.AnimatorStateInfo::m_Tag
-	int32_t ___m_Tag_5;
+	int32_t ___m_Tag_7;
 	// System.Int32 UnityEngine.AnimatorStateInfo::m_Loop
-	int32_t ___m_Loop_6;
+	int32_t ___m_Loop_8;
 };

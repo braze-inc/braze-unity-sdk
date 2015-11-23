@@ -1,9 +1,17 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Security.Cryptography.X509Certificates.X509FindType
-struct X509FindType_t1624;
+
+#include "codegen/il2cpp-codegen.h"
 

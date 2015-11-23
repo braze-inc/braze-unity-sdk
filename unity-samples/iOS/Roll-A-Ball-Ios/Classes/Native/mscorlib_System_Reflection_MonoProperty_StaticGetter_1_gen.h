@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Object
 struct Object_t;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
-// System.MulticastDelegate
+struct AsyncCallback_t552;
+
 #include "mscorlib_System_MulticastDelegate.h"
+
 // System.Reflection.MonoProperty/StaticGetter`1<System.Object>
-struct StaticGetter_1_t4802  : public MulticastDelegate_t594
+struct  StaticGetter_1_t2861  : public MulticastDelegate_t550
 {
 };

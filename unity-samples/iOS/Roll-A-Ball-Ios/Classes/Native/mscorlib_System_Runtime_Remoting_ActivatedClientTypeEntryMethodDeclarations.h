@@ -1,23 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.Remoting.ActivatedClientTypeEntry
-struct ActivatedClientTypeEntry_t2084;
+struct ActivatedClientTypeEntry_t1786;
 // System.String
 struct String_t;
 // System.Runtime.Remoting.Contexts.IContextAttribute[]
-struct IContextAttributeU5BU5D_t2086;
+struct IContextAttributeU5BU5D_t2080;
 // System.Type
 struct Type_t;
 
+#include "codegen/il2cpp-codegen.h"
+
+// System.Void System.Runtime.Remoting.ActivatedClientTypeEntry::.ctor(System.String,System.String,System.String)
+extern "C" void ActivatedClientTypeEntry__ctor_m10468 (ActivatedClientTypeEntry_t1786 * __this, String_t* ___typeName, String_t* ___assemblyName, String_t* ___appUrl, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Runtime.Remoting.ActivatedClientTypeEntry::get_ApplicationUrl()
- String_t* ActivatedClientTypeEntry_get_ApplicationUrl_m10377 (ActivatedClientTypeEntry_t2084 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* ActivatedClientTypeEntry_get_ApplicationUrl_m10469 (ActivatedClientTypeEntry_t1786 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Runtime.Remoting.Contexts.IContextAttribute[] System.Runtime.Remoting.ActivatedClientTypeEntry::get_ContextAttributes()
- IContextAttributeU5BU5D_t2086* ActivatedClientTypeEntry_get_ContextAttributes_m10378 (ActivatedClientTypeEntry_t2084 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" IContextAttributeU5BU5D_t2080* ActivatedClientTypeEntry_get_ContextAttributes_m10470 (ActivatedClientTypeEntry_t1786 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Runtime.Remoting.ActivatedClientTypeEntry::get_ObjectType()
- Type_t * ActivatedClientTypeEntry_get_ObjectType_m10379 (ActivatedClientTypeEntry_t2084 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Type_t * ActivatedClientTypeEntry_get_ObjectType_m10471 (ActivatedClientTypeEntry_t1786 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String System.Runtime.Remoting.ActivatedClientTypeEntry::ToString()
- String_t* ActivatedClientTypeEntry_ToString_m10380 (ActivatedClientTypeEntry_t2084 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* ActivatedClientTypeEntry_ToString_m10472 (ActivatedClientTypeEntry_t1786 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

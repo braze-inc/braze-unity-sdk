@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.CompilerServices.DecimalConstantAttribute
-struct DecimalConstantAttribute_t1762;
+struct DecimalConstantAttribute_t1423;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.CompilerServices.DecimalConstantAttribute::.ctor(System.Byte,System.Byte,System.UInt32,System.UInt32,System.UInt32)
- void DecimalConstantAttribute__ctor_m8469 (DecimalConstantAttribute_t1762 * __this, uint8_t ___scale, uint8_t ___sign, uint32_t ___hi, uint32_t ___mid, uint32_t ___low, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecimalConstantAttribute__ctor_m8108 (DecimalConstantAttribute_t1423 * __this, uint8_t ___scale, uint8_t ___sign, uint32_t ___hi, uint32_t ___mid, uint32_t ___low, const MethodInfo* method) IL2CPP_METHOD_ATTR;

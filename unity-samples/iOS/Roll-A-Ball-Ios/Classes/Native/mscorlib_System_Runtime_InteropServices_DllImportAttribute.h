@@ -1,15 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Attribute
+
 #include "mscorlib_System_Attribute.h"
-// System.Runtime.InteropServices.CallingConvention
 #include "mscorlib_System_Runtime_InteropServices_CallingConvention.h"
-// System.Runtime.InteropServices.CharSet
 #include "mscorlib_System_Runtime_InteropServices_CharSet.h"
+
 // System.Runtime.InteropServices.DllImportAttribute
-struct DllImportAttribute_t1757  : public Attribute_t213
+struct  DllImportAttribute_t1410  : public Attribute_t191
 {
 	// System.Runtime.InteropServices.CallingConvention System.Runtime.InteropServices.DllImportAttribute::CallingConvention
 	int32_t ___CallingConvention_0;

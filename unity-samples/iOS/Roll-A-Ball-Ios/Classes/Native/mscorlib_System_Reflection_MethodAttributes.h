@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// System.Reflection.MethodAttributes
 #include "mscorlib_System_Reflection_MethodAttributes.h"
+
 // System.Reflection.MethodAttributes
-struct MethodAttributes_t1975 
+struct  MethodAttributes_t1654 
 {
 	// System.Int32 System.Reflection.MethodAttributes::value__
 	int32_t ___value___1;

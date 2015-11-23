@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<ITestResult>
-struct EqualityComparer_1_t3265;
-// System.Object
+
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>
+struct EqualityComparer_1_t2729;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.EqualityComparer`1<ITestResult>
-struct EqualityComparer_1_t3265  : public Object_t
+
+// System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>
+struct  EqualityComparer_1_t2729  : public Object_t
 {
 };
-struct EqualityComparer_1_t3265_StaticFields{
-	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<ITestResult>::_default
-	EqualityComparer_1_t3265 * ____default_0;
+struct EqualityComparer_1_t2729_StaticFields{
+	// System.Collections.Generic.EqualityComparer`1<T> System.Collections.Generic.EqualityComparer`1<UnityEngine.TextEditor/TextEditOp>::_default
+	EqualityComparer_1_t2729 * ____default_0;
 };

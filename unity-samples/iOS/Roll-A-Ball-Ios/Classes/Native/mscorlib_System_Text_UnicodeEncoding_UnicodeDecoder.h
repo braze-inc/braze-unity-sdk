@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Text.Decoder
+
+
 #include "mscorlib_System_Text_Decoder.h"
+
 // System.Text.UnicodeEncoding/UnicodeDecoder
-struct UnicodeDecoder_t2210  : public Decoder_t1910
+struct  UnicodeDecoder_t1943  : public Decoder_t1551
 {
 	// System.Boolean System.Text.UnicodeEncoding/UnicodeDecoder::bigEndian
 	bool ___bigEndian_2;

@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard[]
-struct GcLeaderboardU5BU5D_t4132;
-// System.Object
+
+// UnityEngine.CanvasGroup[]
+struct CanvasGroupU5BU5D_t2524;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>
-struct List_1_t809  : public Object_t
+
+// System.Collections.Generic.List`1<UnityEngine.CanvasGroup>
+struct  List_1_t587  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>::_items
-	GcLeaderboardU5BU5D_t4132* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.CanvasGroup>::_items
+	CanvasGroupU5BU5D_t2524* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.CanvasGroup>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.CanvasGroup>::_version
 	int32_t ____version_3;
 };
-struct List_1_t809_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>::EmptyArray
-	GcLeaderboardU5BU5D_t4132* ___EmptyArray_4;
+struct List_1_t587_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityEngine.CanvasGroup>::EmptyArray
+	CanvasGroupU5BU5D_t2524* ___EmptyArray_4;
 };

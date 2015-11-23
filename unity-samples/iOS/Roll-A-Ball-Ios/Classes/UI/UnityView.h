@@ -11,7 +11,8 @@
 - (id)initWithFrame:(CGRect)frame;
 - (id)initFromMainScreen;
 
-// layoutSubviews can be called from non-main thread, so we only set flag here
+// in here we will go through subviews and call onUnityUpdateViewLayout selector (if present)
+// that allows to handle simple overlay child view layout without doing view controller magic
 - (void)layoutSubviews;
 
 // will simply update content orientation (it might be tweaked in layoutSubviews, due to disagreement between unity and view controller)

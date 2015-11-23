@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.YieldInstruction
+
+
 #include "UnityEngine_UnityEngine_YieldInstruction.h"
+
 // UnityEngine.WaitForFixedUpdate
-struct WaitForFixedUpdate_t799  : public YieldInstruction_t798
+struct  WaitForFixedUpdate_t746  : public YieldInstruction_t745
 {
 };

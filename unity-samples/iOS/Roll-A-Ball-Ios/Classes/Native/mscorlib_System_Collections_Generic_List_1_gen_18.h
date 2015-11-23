@@ -1,22 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Component[]
-struct ComponentU5BU5D_t353;
-// System.Object
+
+// UnityEngine.UI.Dropdown/OptionData[]
+struct OptionDataU5BU5D_t2426;
+
 #include "mscorlib_System_Object.h"
-// System.Collections.Generic.List`1<UnityEngine.Component>
-struct List_1_t663  : public Object_t
+
+// System.Collections.Generic.List`1<UnityEngine.UI.Dropdown/OptionData>
+struct  List_1_t507  : public Object_t
 {
-	// T[] System.Collections.Generic.List`1<UnityEngine.Component>::_items
-	ComponentU5BU5D_t353* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Component>::_size
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Dropdown/OptionData>::_items
+	OptionDataU5BU5D_t2426* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Dropdown/OptionData>::_size
 	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Component>::_version
+	// System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.Dropdown/OptionData>::_version
 	int32_t ____version_3;
 };
-struct List_1_t663_StaticFields{
-	// System.Int32 System.Collections.Generic.List`1<UnityEngine.Component>::DefaultCapacity
-	int32_t ___DefaultCapacity_0;
-	// T[] System.Collections.Generic.List`1<UnityEngine.Component>::EmptyArray
-	ComponentU5BU5D_t353* ___EmptyArray_4;
+struct List_1_t507_StaticFields{
+	// T[] System.Collections.Generic.List`1<UnityEngine.UI.Dropdown/OptionData>::EmptyArray
+	OptionDataU5BU5D_t2426* ___EmptyArray_4;
 };

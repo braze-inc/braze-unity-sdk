@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.FormatException
+
+
 #include "mscorlib_System_FormatException.h"
+
 // System.UriFormatException
-struct UriFormatException_t1697  : public FormatException_t1507
+struct  UriFormatException_t1182  : public FormatException_t1183
 {
 };

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Collections.Generic.EqualityComparer`1<UnityTest.AssertionComponent>
-#include "mscorlib_System_Collections_Generic_EqualityComparer_1_gen_12.h"
-// System.Collections.Generic.EqualityComparer`1/DefaultComparer<UnityTest.AssertionComponent>
-struct DefaultComparer_t3317  : public EqualityComparer_1_t3316
+
+
+#include "mscorlib_System_Collections_Generic_EqualityComparer_1_gen_13.h"
+
+// System.Collections.Generic.EqualityComparer`1/DefaultComparer<System.Reflection.CustomAttributeNamedArgument>
+struct  DefaultComparer_t2853  : public EqualityComparer_1_t2852
 {
 };

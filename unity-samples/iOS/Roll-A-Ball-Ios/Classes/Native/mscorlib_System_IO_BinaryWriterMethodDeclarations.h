@@ -1,41 +1,51 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.IO.BinaryWriter
-struct BinaryWriter_t26;
+struct BinaryWriter_t67;
 // System.IO.Stream
-struct Stream_t27;
+struct Stream_t68;
 // System.Text.Encoding
-struct Encoding_t322;
+struct Encoding_t284;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.IO.BinaryWriter::.ctor()
- void BinaryWriter__ctor_m9393 (BinaryWriter_t26 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter__ctor_m9195 (BinaryWriter_t67 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::.ctor(System.IO.Stream)
- void BinaryWriter__ctor_m517 (BinaryWriter_t26 * __this, Stream_t27 * ___output, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter__ctor_m525 (BinaryWriter_t67 * __this, Stream_t68 * ___output, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::.ctor(System.IO.Stream,System.Text.Encoding)
- void BinaryWriter__ctor_m9394 (BinaryWriter_t26 * __this, Stream_t27 * ___output, Encoding_t322 * ___encoding, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter__ctor_m9196 (BinaryWriter_t67 * __this, Stream_t68 * ___output, Encoding_t284 * ___encoding, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::.cctor()
- void BinaryWriter__cctor_m9395 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter__cctor_m9197 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::System.IDisposable.Dispose()
- void BinaryWriter_System_IDisposable_Dispose_m9396 (BinaryWriter_t26 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_System_IDisposable_Dispose_m9198 (BinaryWriter_t67 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Dispose(System.Boolean)
- void BinaryWriter_Dispose_m9397 (BinaryWriter_t26 * __this, bool ___disposing, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Dispose_m9199 (BinaryWriter_t67 * __this, bool ___disposing, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write(System.Boolean)
- void BinaryWriter_Write_m576 (BinaryWriter_t26 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write_m9200 (BinaryWriter_t67 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write(System.Byte)
- void BinaryWriter_Write_m549 (BinaryWriter_t26 * __this, uint8_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write_m9201 (BinaryWriter_t67 * __this, uint8_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write(System.Double)
- void BinaryWriter_Write_m575 (BinaryWriter_t26 * __this, double ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write_m9202 (BinaryWriter_t67 * __this, double ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write(System.Int32)
- void BinaryWriter_Write_m550 (BinaryWriter_t26 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write_m9203 (BinaryWriter_t67 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write(System.Single)
- void BinaryWriter_Write_m574 (BinaryWriter_t26 * __this, float ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write_m9204 (BinaryWriter_t67 * __this, float ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write(System.String)
- void BinaryWriter_Write_m571 (BinaryWriter_t26 * __this, String_t* ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write_m9205 (BinaryWriter_t67 * __this, String_t* ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.IO.BinaryWriter::Write7BitEncodedInt(System.Int32)
- void BinaryWriter_Write7BitEncodedInt_m9398 (BinaryWriter_t26 * __this, int32_t ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BinaryWriter_Write7BitEncodedInt_m9206 (BinaryWriter_t67 * __this, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

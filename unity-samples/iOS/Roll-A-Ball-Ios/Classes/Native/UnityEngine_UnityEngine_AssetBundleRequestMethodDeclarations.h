@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AssetBundleRequest
-struct AssetBundleRequest_t796;
+struct AssetBundleRequest_t740;
 // UnityEngine.Object
-struct Object_t70;
-struct Object_t70_marshaled;
+struct Object_t253;
+struct Object_t253_marshaled;
 // UnityEngine.Object[]
-struct ObjectU5BU5D_t282;
+struct ObjectU5BU5D_t272;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.AssetBundleRequest::.ctor()
- void AssetBundleRequest__ctor_m3861 (AssetBundleRequest_t796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssetBundleRequest__ctor_m3693 (AssetBundleRequest_t740 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Object UnityEngine.AssetBundleRequest::get_asset()
- Object_t70 * AssetBundleRequest_get_asset_m3862 (AssetBundleRequest_t796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t253 * AssetBundleRequest_get_asset_m3694 (AssetBundleRequest_t740 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Object[] UnityEngine.AssetBundleRequest::get_allAssets()
- ObjectU5BU5D_t282* AssetBundleRequest_get_allAssets_m3863 (AssetBundleRequest_t796 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" ObjectU5BU5D_t272* AssetBundleRequest_get_allAssets_m3695 (AssetBundleRequest_t740 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

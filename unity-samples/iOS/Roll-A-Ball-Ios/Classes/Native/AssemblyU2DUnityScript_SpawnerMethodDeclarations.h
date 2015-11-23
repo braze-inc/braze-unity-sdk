@@ -1,25 +1,33 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // Spawner
-struct Spawner_t412;
+struct Spawner_t380;
 // UnityEngine.GameObject
-struct GameObject_t140;
-// UnityEngine.Vector3
+struct GameObject_t141;
+
+#include "codegen/il2cpp-codegen.h"
 #include "UnityEngine_UnityEngine_Vector3.h"
-// UnityEngine.Quaternion
 #include "UnityEngine_UnityEngine_Quaternion.h"
 
 // System.Void Spawner::.ctor()
- void Spawner__ctor_m1678 (Spawner_t412 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Spawner__ctor_m1448 (Spawner_t380 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Spawner::Awake()
- void Spawner_Awake_m1679 (Spawner_t412 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Spawner_Awake_m1449 (Spawner_t380 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.GameObject Spawner::Spawn(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion)
- GameObject_t140 * Spawner_Spawn_m1680 (Object_t * __this/* static, unused */, GameObject_t140 * ___prefab, Vector3_t188  ___position, Quaternion_t415  ___rotation, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" GameObject_t141 * Spawner_Spawn_m1450 (Object_t * __this /* static, unused */, GameObject_t141 * ___prefab, Vector3_t259  ___position, Quaternion_t400  ___rotation, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Spawner::Destroy(UnityEngine.GameObject)
- void Spawner_Destroy_m1681 (Object_t * __this/* static, unused */, GameObject_t140 * ___objectToDestroy, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Spawner_Destroy_m1451 (Object_t * __this /* static, unused */, GameObject_t141 * ___objectToDestroy, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Spawner::Main()
- void Spawner_Main_m1682 (Spawner_t412 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Spawner_Main_m1452 (Spawner_t380 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

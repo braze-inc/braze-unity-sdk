@@ -1,25 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AudioClip/PCMSetPositionCallback
-struct PCMSetPositionCallback_t902;
+struct PCMSetPositionCallback_t822;
 // System.Object
 struct Object_t;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
+struct AsyncCallback_t552;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_IntPtr.h"
 
 // System.Void UnityEngine.AudioClip/PCMSetPositionCallback::.ctor(System.Object,System.IntPtr)
- void PCMSetPositionCallback__ctor_m4632 (PCMSetPositionCallback_t902 * __this, Object_t * ___object, IntPtr_t107 ___method, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PCMSetPositionCallback__ctor_m4257 (PCMSetPositionCallback_t822 * __this, Object_t * ___object, IntPtr_t ___method, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AudioClip/PCMSetPositionCallback::Invoke(System.Int32)
- void PCMSetPositionCallback_Invoke_m4633 (PCMSetPositionCallback_t902 * __this, int32_t ___position, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PCMSetPositionCallback_Invoke_m4258 (PCMSetPositionCallback_t822 * __this, int32_t ___position, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void pinvoke_delegate_wrapper_PCMSetPositionCallback_t822(Il2CppObject* delegate, int32_t ___position);
 // System.IAsyncResult UnityEngine.AudioClip/PCMSetPositionCallback::BeginInvoke(System.Int32,System.AsyncCallback,System.Object)
- Object_t * PCMSetPositionCallback_BeginInvoke_m4634 (PCMSetPositionCallback_t902 * __this, int32_t ___position, AsyncCallback_t473 * ___callback, Object_t * ___object, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" Object_t * PCMSetPositionCallback_BeginInvoke_m4259 (PCMSetPositionCallback_t822 * __this, int32_t ___position, AsyncCallback_t552 * ___callback, Object_t * ___object, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AudioClip/PCMSetPositionCallback::EndInvoke(System.IAsyncResult)
- void PCMSetPositionCallback_EndInvoke_m4635 (PCMSetPositionCallback_t902 * __this, Object_t * ___result, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void PCMSetPositionCallback_EndInvoke_m4260 (PCMSetPositionCallback_t822 * __this, Object_t * ___result, const MethodInfo* method) IL2CPP_METHOD_ATTR;

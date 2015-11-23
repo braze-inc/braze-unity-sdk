@@ -1,29 +1,35 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.EventSystems.BaseRaycaster
-struct BaseRaycaster_t517;
-// UnityEngine.Camera
-struct Camera_t172;
-// UnityEngine.EventSystems.PointerEventData
-struct PointerEventData_t461;
-// System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult>
-struct List_1_t462;
+struct BaseRaycaster_t461;
+// System.String
+struct String_t;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.EventSystems.BaseRaycaster::.ctor()
- void BaseRaycaster__ctor_m2256 (BaseRaycaster_t517 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.EventSystems.BaseRaycaster::Raycast(UnityEngine.EventSystems.PointerEventData,System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult>)
-// UnityEngine.Camera UnityEngine.EventSystems.BaseRaycaster::get_eventCamera()
+extern "C" void BaseRaycaster__ctor_m2016 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.EventSystems.BaseRaycaster::get_priority()
- int32_t BaseRaycaster_get_priority_m2257 (BaseRaycaster_t517 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t BaseRaycaster_get_priority_m2017 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.EventSystems.BaseRaycaster::get_sortOrderPriority()
- int32_t BaseRaycaster_get_sortOrderPriority_m2258 (BaseRaycaster_t517 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t BaseRaycaster_get_sortOrderPriority_m2018 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 UnityEngine.EventSystems.BaseRaycaster::get_renderOrderPriority()
- int32_t BaseRaycaster_get_renderOrderPriority_m2259 (BaseRaycaster_t517 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t BaseRaycaster_get_renderOrderPriority_m2019 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String UnityEngine.EventSystems.BaseRaycaster::ToString()
+extern "C" String_t* BaseRaycaster_ToString_m2020 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.EventSystems.BaseRaycaster::OnEnable()
- void BaseRaycaster_OnEnable_m2260 (BaseRaycaster_t517 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BaseRaycaster_OnEnable_m2021 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.EventSystems.BaseRaycaster::OnDisable()
- void BaseRaycaster_OnDisable_m2261 (BaseRaycaster_t517 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void BaseRaycaster_OnDisable_m2022 (BaseRaycaster_t461 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -12,8 +12,6 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
-#import "AppboyKit.h"
-#import "AppboyUnityManager.h"
 
 #include <mach/mach_time.h>
 
@@ -33,6 +31,8 @@
 #include "Unity/EAGLContextHelper.h"
 #include "Unity/GlesHelper.h"
 #include "PluginBase/AppDelegateListener.h"
+#import "AppboyKit.h"
+#import "AppboyUnityManager.h"
 
 static NSString *const AppboyApiKey = @"APPBOY-API-KEY";
 
@@ -142,6 +142,7 @@ bool	_supportsMSAA			= false;
 {
 	AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
 	UnitySendRemoteNotification(userInfo);
+  
   [[AppboyUnityManager sharedInstance] registerApplication:application
                               didReceiveRemoteNotification:userInfo];
 }
@@ -150,6 +151,7 @@ bool	_supportsMSAA			= false;
 {
 	AppController_SendNotificationWithArg(kUnityDidRegisterForRemoteNotificationsWithDeviceToken, deviceToken);
 	UnitySendDeviceToken(deviceToken);
+  
   [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
 
@@ -186,6 +188,24 @@ bool	_supportsMSAA			= false;
 {
 	::printf("-> applicationDidFinishLaunching()\n");
 
+  [Appboy startWithApiKey:AppboyApiKey
+            inApplication:application
+        withLaunchOptions:launchOptions];
+  
+  [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
+  [[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName:@"AppboyCallback"
+                                                          callbackMethodName:@"InAppMessageReceivedCallback"];
+  [[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName:@"AppboyCallback"
+                                                  callbackMethodName:@"FeedReceivedCallback"];
+  [[AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName:@"AppboyCallback"
+                                                          callbackMethodName:@"PushNotificationReceivedCallbackForiOS"];
+  [[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName:@"AppboyCallback"
+                                                        callbackMethodName:@"PushNotificationOpenedCallbackForiOS"];
+  
+  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+  
 	// send notfications
 	if(UILocalNotification* notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey])
 		UnitySendLocalNotification(notification);
@@ -213,21 +233,6 @@ bool	_supportsMSAA			= false;
 
 	// if you wont use keyboard you may comment it out at save some memory
 	[KeyboardDelegate Initialize];
-  
-  [Appboy startWithApiKey:AppboyApiKey inApplication:application withLaunchOptions:launchOptions];
-  [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
-  [[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName:@"AppboyCallback"
-                                                          callbackMethodName:@"InAppMessageReceivedCallback"];
-  [[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName:@"AppboyCallback"
-                                                 callbackMethodName:@"FeedReceivedCallback"];
-  [[AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName:@"AppboyCallback"
-                                                          callbackMethodName:@"PushNotificationReceivedCallbackForiOS"];
-  [[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName:@"AppboyCallback"
-                                                        callbackMethodName:@"PushNotificationOpenedCallbackForiOS"];
-  
-  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
-  [[UIApplication sharedApplication] registerForRemoteNotifications];
-  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 
 	return YES;
 }
@@ -253,6 +258,12 @@ bool	_supportsMSAA			= false;
 {
 	::printf("-> applicationDidBecomeActive()\n");
 
+	if(_snapshotView)
+	{
+		[_snapshotView removeFromSuperview];
+		_snapshotView = nil;
+	}
+
 	if(_unityAppReady)
 	{
 		if(UnityIsPaused())
@@ -269,6 +280,8 @@ bool	_supportsMSAA			= false;
 	}
 
 	_didResignActive = false;
+
+	[UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application
@@ -282,18 +295,19 @@ bool	_supportsMSAA			= false;
 
 		// do pause unity only if we dont need special background processing
 		// otherwise batched player loop can be called to run user scripts
-
 		int bgBehavior = UnityGetAppBackgroundBehavior();
 		if(bgBehavior == appbgSuspend || bgBehavior == appbgExit)
 		{
+			// Force player to do one more frame, so scripts get a chance to render custom screen for minimized app in task manager.
+			// NB: UnityWillPause will schedule OnApplicationPause message, which will be sent normally inside repaint (unity player loop)
+			// NB: We will actually pause after the loop (when calling UnityPause).
 			UnityWillPause();
-
-			// Force player to do one more frame, so scripts get a chance to render custom screen for
-			// minimized app in task manager.
-			UnityPlayerLoop();
-			[self repaintDisplayLink];
-
+			[self repaint];
 			UnityPause(1);
+
+			_snapshotView = [self createSnapshotView];
+			if(_snapshotView)
+				[_rootView addSubview:_snapshotView];
 		}
 	}
 

@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Text.DecoderFallbackException
-struct DecoderFallbackException_t2192;
+struct DecoderFallbackException_t1924;
 // System.String
 struct String_t;
 // System.Byte[]
-struct ByteU5BU5D_t97;
+struct ByteU5BU5D_t98;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Text.DecoderFallbackException::.ctor()
- void DecoderFallbackException__ctor_m10979 (DecoderFallbackException_t2192 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecoderFallbackException__ctor_m11247 (DecoderFallbackException_t1924 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.DecoderFallbackException::.ctor(System.String)
- void DecoderFallbackException__ctor_m10980 (DecoderFallbackException_t2192 * __this, String_t* ___message, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecoderFallbackException__ctor_m11248 (DecoderFallbackException_t1924 * __this, String_t* ___message, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.DecoderFallbackException::.ctor(System.String,System.Byte[],System.Int32)
- void DecoderFallbackException__ctor_m10981 (DecoderFallbackException_t2192 * __this, String_t* ___message, ByteU5BU5D_t97* ___bytesUnknown, int32_t ___index, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void DecoderFallbackException__ctor_m11249 (DecoderFallbackException_t1924 * __this, String_t* ___message, ByteU5BU5D_t98* ___bytesUnknown, int32_t ___index, const MethodInfo* method) IL2CPP_METHOD_ATTR;

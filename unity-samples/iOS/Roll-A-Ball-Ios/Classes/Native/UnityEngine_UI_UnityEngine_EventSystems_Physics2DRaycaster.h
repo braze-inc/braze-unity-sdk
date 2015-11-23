@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.EventSystems.PhysicsRaycaster
+
+
 #include "UnityEngine_UI_UnityEngine_EventSystems_PhysicsRaycaster.h"
+
 // UnityEngine.EventSystems.Physics2DRaycaster
-struct Physics2DRaycaster_t529  : public PhysicsRaycaster_t530
+struct  Physics2DRaycaster_t477  : public PhysicsRaycaster_t478
 {
 };

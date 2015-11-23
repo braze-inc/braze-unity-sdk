@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
-// System.Text.RegularExpressions.RegexOptions
 #include "System_System_Text_RegularExpressions_RegexOptions.h"
+
 // System.Text.RegularExpressions.FactoryCache/Key
-struct Key_t1648  : public Object_t
+struct  Key_t1132  : public Object_t
 {
 	// System.String System.Text.RegularExpressions.FactoryCache/Key::pattern
 	String_t* ___pattern_0;

@@ -1,18 +1,28 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
 // System.Byte[]
-struct ByteU5BU5D_t97;
-// System.Security.Cryptography.X509Certificates.X509Extension
+struct ByteU5BU5D_t98;
+
 #include "System_System_Security_Cryptography_X509Certificates_X509Ext.h"
-// System.Security.Cryptography.AsnDecodeStatus
 #include "System_System_Security_Cryptography_AsnDecodeStatus.h"
+
 // System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension
-struct X509SubjectKeyIdentifierExtension_t1630  : public X509Extension_t1608
+struct  X509SubjectKeyIdentifierExtension_t1108  : public X509Extension_t1079
 {
 	// System.Byte[] System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::_subjectKeyIdentifier
-	ByteU5BU5D_t97* ____subjectKeyIdentifier_6;
+	ByteU5BU5D_t98* ____subjectKeyIdentifier_6;
 	// System.String System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::_ski
 	String_t* ____ski_7;
 	// System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::_status

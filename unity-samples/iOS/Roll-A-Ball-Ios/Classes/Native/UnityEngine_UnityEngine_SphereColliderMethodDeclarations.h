@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.SphereCollider
-struct SphereCollider_t374;
+struct SphereCollider_t344;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Single UnityEngine.SphereCollider::get_radius()
- float SphereCollider_get_radius_m1813 (SphereCollider_t374 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" float SphereCollider_get_radius_m1570 (SphereCollider_t344 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.SphereCollider::set_radius(System.Single)
- void SphereCollider_set_radius_m1816 (SphereCollider_t374 * __this, float ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SphereCollider_set_radius_m1573 (SphereCollider_t344 * __this, float ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;

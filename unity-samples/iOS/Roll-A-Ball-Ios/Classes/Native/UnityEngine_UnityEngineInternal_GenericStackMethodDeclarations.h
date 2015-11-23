@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngineInternal.GenericStack
-struct GenericStack_t836;
+struct GenericStack_t851;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngineInternal.GenericStack::.ctor()
- void GenericStack__ctor_m4965 (GenericStack_t836 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GenericStack__ctor_m5067 (GenericStack_t851 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

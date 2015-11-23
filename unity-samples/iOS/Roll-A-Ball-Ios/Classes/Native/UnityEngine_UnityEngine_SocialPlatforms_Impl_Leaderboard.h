@@ -1,23 +1,31 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.SocialPlatforms.IScore
-struct IScore_t946;
+struct IScore_t907;
 // UnityEngine.SocialPlatforms.IScore[]
-struct IScoreU5BU5D_t947;
+struct IScoreU5BU5D_t905;
 // System.String
 struct String_t;
 // System.String[]
-struct StringU5BU5D_t3;
-// System.Object
+struct StringU5BU5D_t63;
+
 #include "mscorlib_System_Object.h"
-// UnityEngine.SocialPlatforms.UserScope
 #include "UnityEngine_UnityEngine_SocialPlatforms_UserScope.h"
-// UnityEngine.SocialPlatforms.Range
 #include "UnityEngine_UnityEngine_SocialPlatforms_Range.h"
-// UnityEngine.SocialPlatforms.TimeScope
 #include "UnityEngine_UnityEngine_SocialPlatforms_TimeScope.h"
+
 // UnityEngine.SocialPlatforms.Impl.Leaderboard
-struct Leaderboard_t820  : public Object_t
+struct  Leaderboard_t760  : public Object_t
 {
 	// System.Boolean UnityEngine.SocialPlatforms.Impl.Leaderboard::m_Loading
 	bool ___m_Loading_0;
@@ -26,17 +34,17 @@ struct Leaderboard_t820  : public Object_t
 	// System.UInt32 UnityEngine.SocialPlatforms.Impl.Leaderboard::m_MaxRange
 	uint32_t ___m_MaxRange_2;
 	// UnityEngine.SocialPlatforms.IScore[] UnityEngine.SocialPlatforms.Impl.Leaderboard::m_Scores
-	IScoreU5BU5D_t947* ___m_Scores_3;
+	IScoreU5BU5D_t905* ___m_Scores_3;
 	// System.String UnityEngine.SocialPlatforms.Impl.Leaderboard::m_Title
 	String_t* ___m_Title_4;
 	// System.String[] UnityEngine.SocialPlatforms.Impl.Leaderboard::m_UserIDs
-	StringU5BU5D_t3* ___m_UserIDs_5;
+	StringU5BU5D_t63* ___m_UserIDs_5;
 	// System.String UnityEngine.SocialPlatforms.Impl.Leaderboard::<id>k__BackingField
 	String_t* ___U3CidU3Ek__BackingField_6;
 	// UnityEngine.SocialPlatforms.UserScope UnityEngine.SocialPlatforms.Impl.Leaderboard::<userScope>k__BackingField
 	int32_t ___U3CuserScopeU3Ek__BackingField_7;
 	// UnityEngine.SocialPlatforms.Range UnityEngine.SocialPlatforms.Impl.Leaderboard::<range>k__BackingField
-	Range_t948  ___U3CrangeU3Ek__BackingField_8;
+	Range_t906  ___U3CrangeU3Ek__BackingField_8;
 	// UnityEngine.SocialPlatforms.TimeScope UnityEngine.SocialPlatforms.Impl.Leaderboard::<timeScope>k__BackingField
 	int32_t ___U3CtimeScopeU3Ek__BackingField_9;
 };

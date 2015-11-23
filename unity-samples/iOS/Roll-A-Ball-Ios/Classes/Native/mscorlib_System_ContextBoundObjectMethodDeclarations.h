@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.ContextBoundObject
-struct ContextBoundObject_t2240;
+struct ContextBoundObject_t1737;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.ContextBoundObject::.ctor()
- void ContextBoundObject__ctor_m11303 (ContextBoundObject_t2240 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ContextBoundObject__ctor_m11628 (ContextBoundObject_t1737 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

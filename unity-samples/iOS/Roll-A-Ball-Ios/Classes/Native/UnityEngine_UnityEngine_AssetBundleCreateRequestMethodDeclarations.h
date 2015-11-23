@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.AssetBundleCreateRequest
-struct AssetBundleCreateRequest_t793;
+struct AssetBundleCreateRequest_t738;
 // UnityEngine.AssetBundle
-struct AssetBundle_t795;
+struct AssetBundle_t741;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.AssetBundleCreateRequest::.ctor()
- void AssetBundleCreateRequest__ctor_m3858 (AssetBundleCreateRequest_t793 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssetBundleCreateRequest__ctor_m3690 (AssetBundleCreateRequest_t738 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.AssetBundle UnityEngine.AssetBundleCreateRequest::get_assetBundle()
- AssetBundle_t795 * AssetBundleCreateRequest_get_assetBundle_m3859 (AssetBundleCreateRequest_t793 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" AssetBundle_t741 * AssetBundleCreateRequest_get_assetBundle_m3691 (AssetBundleCreateRequest_t738 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.AssetBundleCreateRequest::DisableCompatibilityChecks()
- void AssetBundleCreateRequest_DisableCompatibilityChecks_m3860 (AssetBundleCreateRequest_t793 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssetBundleCreateRequest_DisableCompatibilityChecks_m3692 (AssetBundleCreateRequest_t738 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

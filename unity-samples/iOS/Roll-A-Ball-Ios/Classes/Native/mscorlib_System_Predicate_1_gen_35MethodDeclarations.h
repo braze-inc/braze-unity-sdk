@@ -1,29 +1,39 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// System.Predicate`1<UnityEngine.Events.PersistentCall>
-struct Predicate_1_t4524;
+// System.Predicate`1<UnityEngine.Vector3>
+struct Predicate_1_t2566;
 // System.Object
 struct Object_t;
-// UnityEngine.Events.PersistentCall
-struct PersistentCall_t978;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
-// System.IntPtr
-#include "mscorlib_System_IntPtr.h"
+struct AsyncCallback_t552;
 
-// System.Void System.Predicate`1<UnityEngine.Events.PersistentCall>::.ctor(System.Object,System.IntPtr)
-// System.Predicate`1<System.Object>
-#include "mscorlib_System_Predicate_1_gen_3MethodDeclarations.h"
-#define Predicate_1__ctor_m24544(__this, ___object, ___method, method) (void)Predicate_1__ctor_m12990_gshared((Predicate_1_t2759 *)__this, (Object_t *)___object, (IntPtr_t107)___method, method)
-// System.Boolean System.Predicate`1<UnityEngine.Events.PersistentCall>::Invoke(T)
-#define Predicate_1_Invoke_m24545(__this, ___obj, method) (bool)Predicate_1_Invoke_m12991_gshared((Predicate_1_t2759 *)__this, (Object_t *)___obj, method)
-// System.IAsyncResult System.Predicate`1<UnityEngine.Events.PersistentCall>::BeginInvoke(T,System.AsyncCallback,System.Object)
-#define Predicate_1_BeginInvoke_m24546(__this, ___obj, ___callback, ___object, method) (Object_t *)Predicate_1_BeginInvoke_m12992_gshared((Predicate_1_t2759 *)__this, (Object_t *)___obj, (AsyncCallback_t473 *)___callback, (Object_t *)___object, method)
-// System.Boolean System.Predicate`1<UnityEngine.Events.PersistentCall>::EndInvoke(System.IAsyncResult)
-#define Predicate_1_EndInvoke_m24547(__this, ___result, method) (bool)Predicate_1_EndInvoke_m12993_gshared((Predicate_1_t2759 *)__this, (Object_t *)___result, method)
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_IntPtr.h"
+#include "UnityEngine_UnityEngine_Vector3.h"
+
+// System.Void System.Predicate`1<UnityEngine.Vector3>::.ctor(System.Object,System.IntPtr)
+extern "C" void Predicate_1__ctor_m18523_gshared (Predicate_1_t2566 * __this, Object_t * ___object, IntPtr_t ___method, const MethodInfo* method);
+#define Predicate_1__ctor_m18523(__this, ___object, ___method, method) (( void (*) (Predicate_1_t2566 *, Object_t *, IntPtr_t, const MethodInfo*))Predicate_1__ctor_m18523_gshared)(__this, ___object, ___method, method)
+// System.Boolean System.Predicate`1<UnityEngine.Vector3>::Invoke(T)
+extern "C" bool Predicate_1_Invoke_m18524_gshared (Predicate_1_t2566 * __this, Vector3_t259  ___obj, const MethodInfo* method);
+#define Predicate_1_Invoke_m18524(__this, ___obj, method) (( bool (*) (Predicate_1_t2566 *, Vector3_t259 , const MethodInfo*))Predicate_1_Invoke_m18524_gshared)(__this, ___obj, method)
+// System.IAsyncResult System.Predicate`1<UnityEngine.Vector3>::BeginInvoke(T,System.AsyncCallback,System.Object)
+extern "C" Object_t * Predicate_1_BeginInvoke_m18525_gshared (Predicate_1_t2566 * __this, Vector3_t259  ___obj, AsyncCallback_t552 * ___callback, Object_t * ___object, const MethodInfo* method);
+#define Predicate_1_BeginInvoke_m18525(__this, ___obj, ___callback, ___object, method) (( Object_t * (*) (Predicate_1_t2566 *, Vector3_t259 , AsyncCallback_t552 *, Object_t *, const MethodInfo*))Predicate_1_BeginInvoke_m18525_gshared)(__this, ___obj, ___callback, ___object, method)
+// System.Boolean System.Predicate`1<UnityEngine.Vector3>::EndInvoke(System.IAsyncResult)
+extern "C" bool Predicate_1_EndInvoke_m18526_gshared (Predicate_1_t2566 * __this, Object_t * ___result, const MethodInfo* method);
+#define Predicate_1_EndInvoke_m18526(__this, ___result, method) (( bool (*) (Predicate_1_t2566 *, Object_t *, const MethodInfo*))Predicate_1_EndInvoke_m18526_gshared)(__this, ___result, method)

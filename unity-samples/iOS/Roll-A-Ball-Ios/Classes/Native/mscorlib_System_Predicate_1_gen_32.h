@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
+// UnityEngine.UI.StencilMaterial/MatEntry
+struct MatEntry_t594;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// UnityEngine.UICharInfo
-#include "UnityEngine_UnityEngine_UICharInfo.h"
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-extern TypeInfo UICharInfo_t748_il2cpp_TypeInfo;
-// System.Predicate`1<UnityEngine.UICharInfo>
-struct Predicate_1_t4398  : public MulticastDelegate_t594
+
+// System.Predicate`1<UnityEngine.UI.StencilMaterial/MatEntry>
+struct  Predicate_1_t2533  : public MulticastDelegate_t550
 {
 };

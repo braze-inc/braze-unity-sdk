@@ -1,15 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData
-struct MouseButtonEventData_t520;
+struct MouseButtonEventData_t469;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData::.ctor()
- void MouseButtonEventData__ctor_m2197 (MouseButtonEventData_t520 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void MouseButtonEventData__ctor_m1951 (MouseButtonEventData_t469 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData::PressedThisFrame()
- bool MouseButtonEventData_PressedThisFrame_m2198 (MouseButtonEventData_t520 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool MouseButtonEventData_PressedThisFrame_m1952 (MouseButtonEventData_t469 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.EventSystems.PointerInputModule/MouseButtonEventData::ReleasedThisFrame()
- bool MouseButtonEventData_ReleasedThisFrame_m2199 (MouseButtonEventData_t520 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool MouseButtonEventData_ReleasedThisFrame_m1953 (MouseButtonEventData_t469 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

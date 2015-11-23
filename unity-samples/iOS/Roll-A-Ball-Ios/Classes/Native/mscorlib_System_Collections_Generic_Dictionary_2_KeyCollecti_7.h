@@ -1,12 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
-// System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.String>
-#include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__0.h"
-// System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator<System.String,System.String>
-struct Enumerator_t2845 
+#include "mscorlib_System_Collections_Generic_Dictionary_2_Enumerator__6.h"
+
+// System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator<System.Object,System.Int32>
+struct  Enumerator_t2210 
 {
-	// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator<System.String,System.String>::host_enumerator
-	Enumerator_t81  ___host_enumerator_0;
+	// System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2/KeyCollection/Enumerator<System.Object,System.Int32>::host_enumerator
+	Enumerator_t2211  ___host_enumerator_0;
 };

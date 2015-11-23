@@ -1,11 +1,22 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityTest.ComparerBaseGeneric`1<UnityEngine.Bounds>
-struct ComparerBaseGeneric_1_t154;
+struct ComparerBaseGeneric_1_t148;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityTest.ComparerBaseGeneric`1<UnityEngine.Bounds>::.ctor()
- void ComparerBaseGeneric_1__ctor_m1165 (ComparerBaseGeneric_1_t154 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void ComparerBaseGeneric_1__ctor_m1092_gshared (ComparerBaseGeneric_1_t148 * __this, const MethodInfo* method);
+#define ComparerBaseGeneric_1__ctor_m1092(__this, method) (( void (*) (ComparerBaseGeneric_1_t148 *, const MethodInfo*))ComparerBaseGeneric_1__ctor_m1092_gshared)(__this, method)

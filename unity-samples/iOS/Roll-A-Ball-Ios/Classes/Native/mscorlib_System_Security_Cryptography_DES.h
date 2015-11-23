@@ -1,16 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Byte[,]
-struct ByteU5BU2CU5D_t2138;
-// System.Security.Cryptography.SymmetricAlgorithm
+struct ByteU5BU2CU5D_t1852;
+
 #include "mscorlib_System_Security_Cryptography_SymmetricAlgorithm.h"
+
 // System.Security.Cryptography.DES
-struct DES_t1527  : public SymmetricAlgorithm_t1395
+struct  DES_t1384  : public SymmetricAlgorithm_t1239
 {
 };
-struct DES_t1527_StaticFields{
+struct DES_t1384_StaticFields{
 	// System.Byte[,] System.Security.Cryptography.DES::weakKeys
-	ByteU5BU2CU5D_t2138* ___weakKeys_10;
+	ByteU5BU2CU5D_t1852* ___weakKeys_10;
 	// System.Byte[,] System.Security.Cryptography.DES::semiWeakKeys
-	ByteU5BU2CU5D_t2138* ___semiWeakKeys_11;
+	ByteU5BU2CU5D_t1852* ___semiWeakKeys_11;
 };

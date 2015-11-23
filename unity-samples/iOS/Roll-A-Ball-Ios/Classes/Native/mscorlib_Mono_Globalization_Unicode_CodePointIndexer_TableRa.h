@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // Mono.Globalization.Unicode.CodePointIndexer/TableRange
-struct TableRange_t1776 
+struct  TableRange_t1436 
 {
 	// System.Int32 Mono.Globalization.Unicode.CodePointIndexer/TableRange::Start
 	int32_t ___Start_0;

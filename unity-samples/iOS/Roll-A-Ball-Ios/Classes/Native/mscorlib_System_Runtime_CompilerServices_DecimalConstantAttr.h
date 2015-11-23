@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Attribute
+
+
 #include "mscorlib_System_Attribute.h"
+
 // System.Runtime.CompilerServices.DecimalConstantAttribute
-struct DecimalConstantAttribute_t1762  : public Attribute_t213
+struct  DecimalConstantAttribute_t1423  : public Attribute_t191
 {
 	// System.Byte System.Runtime.CompilerServices.DecimalConstantAttribute::scale
 	uint8_t ___scale_0;

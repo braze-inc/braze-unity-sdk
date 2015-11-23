@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Security.Cryptography.HashAlgorithm
+
+
 #include "mscorlib_System_Security_Cryptography_HashAlgorithm.h"
+
 // Mono.Security.Cryptography.MD2
-struct MD2_t1384  : public HashAlgorithm_t1385
+struct  MD2_t1278  : public HashAlgorithm_t1279
 {
 };

@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyTitleAttribute
-struct AssemblyTitleAttribute_t782;
+struct AssemblyTitleAttribute_t1639;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Reflection.AssemblyTitleAttribute::.ctor(System.String)
- void AssemblyTitleAttribute__ctor_m3848 (AssemblyTitleAttribute_t782 * __this, String_t* ___title, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyTitleAttribute__ctor_m9826 (AssemblyTitleAttribute_t1639 * __this, String_t* ___title, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,16 +1,26 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Events.PersistentCall
-struct PersistentCall_t978;
+
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-// System.Comparison`1<UnityEngine.Events.PersistentCall>
-struct Comparison_1_t4525  : public MulticastDelegate_t594
+#include "UnityEngine_UnityEngine_Vector3.h"
+
+// System.Comparison`1<UnityEngine.Vector3>
+struct  Comparison_1_t2569  : public MulticastDelegate_t550
 {
 };

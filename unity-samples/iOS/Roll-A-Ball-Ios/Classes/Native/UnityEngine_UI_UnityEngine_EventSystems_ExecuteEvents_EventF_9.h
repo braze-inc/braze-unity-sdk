@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
-// UnityEngine.EventSystems.IDragHandler
-struct IDragHandler_t502;
+
+// UnityEngine.EventSystems.IEndDragHandler
+struct IEndDragHandler_t651;
 // UnityEngine.EventSystems.BaseEventData
-struct BaseEventData_t457;
+struct BaseEventData_t428;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IDragHandler>
-struct EventFunction_1_t481  : public MulticastDelegate_t594
+#include "mscorlib_System_Void.h"
+
+// UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IEndDragHandler>
+struct  EventFunction_1_t445  : public MulticastDelegate_t550
 {
 };

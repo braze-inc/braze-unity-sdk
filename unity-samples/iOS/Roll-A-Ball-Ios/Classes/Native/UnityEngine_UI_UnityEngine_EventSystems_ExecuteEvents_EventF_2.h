@@ -1,20 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Void
-struct Void_t62;
-// UnityEngine.EventSystems.IPointerEnterHandler
-struct IPointerEnterHandler_t495;
+
+// UnityEngine.EventSystems.IPointerExitHandler
+struct IPointerExitHandler_t644;
 // UnityEngine.EventSystems.BaseEventData
-struct BaseEventData_t457;
+struct BaseEventData_t428;
 // System.IAsyncResult
-struct IAsyncResult_t472;
+struct IAsyncResult_t551;
 // System.AsyncCallback
-struct AsyncCallback_t473;
+struct AsyncCallback_t552;
 // System.Object
 struct Object_t;
-// System.MulticastDelegate
+
 #include "mscorlib_System_MulticastDelegate.h"
-// UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IPointerEnterHandler>
-struct EventFunction_1_t474  : public MulticastDelegate_t594
+#include "mscorlib_System_Void.h"
+
+// UnityEngine.EventSystems.ExecuteEvents/EventFunction`1<UnityEngine.EventSystems.IPointerExitHandler>
+struct  EventFunction_1_t438  : public MulticastDelegate_t550
 {
 };

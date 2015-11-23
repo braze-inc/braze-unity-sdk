@@ -1,13 +1,24 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Threading.Mutex
-struct Mutex_t2046;
+struct Mutex_t1739;
 // System.Threading.Thread
-struct Thread_t2047;
-// System.Runtime.Remoting.Contexts.ContextAttribute
+struct Thread_t1740;
+
 #include "mscorlib_System_Runtime_Remoting_Contexts_ContextAttribute.h"
+
 // System.Runtime.Remoting.Contexts.SynchronizationAttribute
-struct SynchronizationAttribute_t2048  : public ContextAttribute_t2035
+struct  SynchronizationAttribute_t1738  : public ContextAttribute_t1722
 {
 	// System.Boolean System.Runtime.Remoting.Contexts.SynchronizationAttribute::_bReEntrant
 	bool ____bReEntrant_1;
@@ -16,7 +27,7 @@ struct SynchronizationAttribute_t2048  : public ContextAttribute_t2035
 	// System.Int32 System.Runtime.Remoting.Contexts.SynchronizationAttribute::_lockCount
 	int32_t ____lockCount_3;
 	// System.Threading.Mutex System.Runtime.Remoting.Contexts.SynchronizationAttribute::_mutex
-	Mutex_t2046 * ____mutex_4;
+	Mutex_t1739 * ____mutex_4;
 	// System.Threading.Thread System.Runtime.Remoting.Contexts.SynchronizationAttribute::_ownerThread
-	Thread_t2047 * ____ownerThread_5;
+	Thread_t1740 * ____ownerThread_5;
 };

@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.String
 struct String_t;
-// System.Object
+
 #include "mscorlib_System_Object.h"
+
 // Utilities.Constants
-struct Constants_t134  : public Object_t
+struct  Constants_t133  : public Object_t
 {
 };
-struct Constants_t134_StaticFields{
+struct Constants_t133_StaticFields{
 	// System.String Utilities.Constants::MainMenuScene
 	String_t* ___MainMenuScene_0;
 	// System.String Utilities.Constants::SetCustomAttributesScene

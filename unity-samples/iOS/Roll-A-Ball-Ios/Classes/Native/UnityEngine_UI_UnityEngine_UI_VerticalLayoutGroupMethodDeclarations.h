@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.UI.VerticalLayoutGroup
-struct VerticalLayoutGroup_t667;
+struct VerticalLayoutGroup_t631;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.UI.VerticalLayoutGroup::.ctor()
- void VerticalLayoutGroup__ctor_m3137 (VerticalLayoutGroup_t667 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void VerticalLayoutGroup__ctor_m3112 (VerticalLayoutGroup_t631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.VerticalLayoutGroup::CalculateLayoutInputHorizontal()
- void VerticalLayoutGroup_CalculateLayoutInputHorizontal_m3138 (VerticalLayoutGroup_t667 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void VerticalLayoutGroup_CalculateLayoutInputHorizontal_m3113 (VerticalLayoutGroup_t631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.VerticalLayoutGroup::CalculateLayoutInputVertical()
- void VerticalLayoutGroup_CalculateLayoutInputVertical_m3139 (VerticalLayoutGroup_t667 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void VerticalLayoutGroup_CalculateLayoutInputVertical_m3114 (VerticalLayoutGroup_t631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.VerticalLayoutGroup::SetLayoutHorizontal()
- void VerticalLayoutGroup_SetLayoutHorizontal_m3140 (VerticalLayoutGroup_t667 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void VerticalLayoutGroup_SetLayoutHorizontal_m3115 (VerticalLayoutGroup_t631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.UI.VerticalLayoutGroup::SetLayoutVertical()
- void VerticalLayoutGroup_SetLayoutVertical_m3141 (VerticalLayoutGroup_t667 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void VerticalLayoutGroup_SetLayoutVertical_m3116 (VerticalLayoutGroup_t631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

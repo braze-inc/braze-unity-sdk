@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Reflection.MonoCMethod
+
+
 #include "mscorlib_System_Reflection_MonoCMethod.h"
+
 // System.Reflection.MonoGenericCMethod
-struct MonoGenericCMethod_t1984  : public MonoCMethod_t1985
+struct  MonoGenericCMethod_t1659  : public MonoCMethod_t1660
 {
 };

@@ -1,17 +1,27 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.Behaviour
-struct Behaviour_t769;
+struct Behaviour_t727;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.Behaviour::.ctor()
- void Behaviour__ctor_m4473 (Behaviour_t769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Behaviour__ctor_m4058 (Behaviour_t727 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Behaviour::get_enabled()
- bool Behaviour_get_enabled_m1505 (Behaviour_t769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Behaviour_get_enabled_m1260 (Behaviour_t727 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
- void Behaviour_set_enabled_m1806 (Behaviour_t769 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void Behaviour_set_enabled_m1563 (Behaviour_t727 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Behaviour::get_isActiveAndEnabled()
- bool Behaviour_get_isActiveAndEnabled_m3282 (Behaviour_t769 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool Behaviour_get_isActiveAndEnabled_m3194 (Behaviour_t727 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

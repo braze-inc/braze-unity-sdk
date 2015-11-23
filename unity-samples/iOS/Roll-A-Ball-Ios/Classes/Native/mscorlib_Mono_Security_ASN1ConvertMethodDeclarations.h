@@ -1,21 +1,32 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
-// Mono.Security.ASN1Convert
-struct ASN1Convert_t1832;
 // Mono.Security.ASN1
-struct ASN1_t1821;
+struct ASN1_t1480;
 // System.String
 struct String_t;
-// System.DateTime
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_DateTime.h"
 
+// Mono.Security.ASN1 Mono.Security.ASN1Convert::FromInt32(System.Int32)
+extern "C" ASN1_t1480 * ASN1Convert_FromInt32_m8556 (Object_t * __this /* static, unused */, int32_t ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.ASN1Convert::FromOid(System.String)
+extern "C" ASN1_t1480 * ASN1Convert_FromOid_m8557 (Object_t * __this /* static, unused */, String_t* ___oid, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Int32 Mono.Security.ASN1Convert::ToInt32(Mono.Security.ASN1)
- int32_t ASN1Convert_ToInt32_m8901 (Object_t * __this/* static, unused */, ASN1_t1821 * ___asn1, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" int32_t ASN1Convert_ToInt32_m8558 (Object_t * __this /* static, unused */, ASN1_t1480 * ___asn1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.ASN1Convert::ToOid(Mono.Security.ASN1)
- String_t* ASN1Convert_ToOid_m8902 (Object_t * __this/* static, unused */, ASN1_t1821 * ___asn1, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" String_t* ASN1Convert_ToOid_m8559 (Object_t * __this /* static, unused */, ASN1_t1480 * ___asn1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.DateTime Mono.Security.ASN1Convert::ToDateTime(Mono.Security.ASN1)
- DateTime_t837  ASN1Convert_ToDateTime_m8903 (Object_t * __this/* static, unused */, ASN1_t1821 * ___time, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" DateTime_t852  ASN1Convert_ToDateTime_m8560 (Object_t * __this /* static, unused */, ASN1_t1480 * ___time, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.Texture
+
+
 #include "UnityEngine_UnityEngine_Texture.h"
+
 // UnityEngine.RenderTexture
-struct RenderTexture_t826  : public Texture_t450
+struct  RenderTexture_t766  : public Texture_t419
 {
 };

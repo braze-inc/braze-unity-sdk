@@ -1,29 +1,45 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Runtime.Remoting.Contexts.SynchronizationAttribute
-struct SynchronizationAttribute_t2048;
+struct SynchronizationAttribute_t1738;
 // System.Runtime.Remoting.Activation.IConstructionCallMessage
-struct IConstructionCallMessage_t2036;
+struct IConstructionCallMessage_t2073;
+// System.Runtime.Remoting.Messaging.IMessageSink
+struct IMessageSink_t1733;
 // System.Runtime.Remoting.Contexts.Context
-struct Context_t2037;
+struct Context_t1730;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::.ctor()
- void SynchronizationAttribute__ctor_m10220 (SynchronizationAttribute_t2048 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute__ctor_m10268 (SynchronizationAttribute_t1738 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::.ctor(System.Int32,System.Boolean)
- void SynchronizationAttribute__ctor_m10221 (SynchronizationAttribute_t2048 * __this, int32_t ___flag, bool ___reEntrant, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute__ctor_m10269 (SynchronizationAttribute_t1738 * __this, int32_t ___flag, bool ___reEntrant, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::set_Locked(System.Boolean)
- void SynchronizationAttribute_set_Locked_m10222 (SynchronizationAttribute_t2048 * __this, bool ___value, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute_set_Locked_m10270 (SynchronizationAttribute_t1738 * __this, bool ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::ReleaseLock()
- void SynchronizationAttribute_ReleaseLock_m10223 (SynchronizationAttribute_t2048 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute_ReleaseLock_m10271 (SynchronizationAttribute_t1738 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::GetPropertiesForNewContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)
- void SynchronizationAttribute_GetPropertiesForNewContext_m10224 (SynchronizationAttribute_t2048 * __this, Object_t * ___ctorMsg, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute_GetPropertiesForNewContext_m10272 (SynchronizationAttribute_t1738 * __this, Object_t * ___ctorMsg, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Runtime.Remoting.Messaging.IMessageSink System.Runtime.Remoting.Contexts.SynchronizationAttribute::GetClientContextSink(System.Runtime.Remoting.Messaging.IMessageSink)
+extern "C" Object_t * SynchronizationAttribute_GetClientContextSink_m10273 (SynchronizationAttribute_t1738 * __this, Object_t * ___nextSink, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Runtime.Remoting.Messaging.IMessageSink System.Runtime.Remoting.Contexts.SynchronizationAttribute::GetServerContextSink(System.Runtime.Remoting.Messaging.IMessageSink)
+extern "C" Object_t * SynchronizationAttribute_GetServerContextSink_m10274 (SynchronizationAttribute_t1738 * __this, Object_t * ___nextSink, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Runtime.Remoting.Contexts.SynchronizationAttribute::IsContextOK(System.Runtime.Remoting.Contexts.Context,System.Runtime.Remoting.Activation.IConstructionCallMessage)
- bool SynchronizationAttribute_IsContextOK_m10225 (SynchronizationAttribute_t2048 * __this, Context_t2037 * ___ctx, Object_t * ___msg, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" bool SynchronizationAttribute_IsContextOK_m10275 (SynchronizationAttribute_t1738 * __this, Context_t1730 * ___ctx, Object_t * ___msg, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::ExitContext()
- void SynchronizationAttribute_ExitContext_m10226 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute_ExitContext_m10276 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Runtime.Remoting.Contexts.SynchronizationAttribute::EnterContext()
- void SynchronizationAttribute_EnterContext_m10227 (Object_t * __this/* static, unused */, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SynchronizationAttribute_EnterContext_m10277 (Object_t * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;

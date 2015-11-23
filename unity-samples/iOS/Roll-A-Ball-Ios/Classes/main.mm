@@ -12,20 +12,12 @@ void UnityInitTrampoline();
 // WARNING: this MUST be c decl (NSString ctor will be called after +load, so we cant really change its value)
 const char* AppControllerClassName = "UnityAppController";
 
-#if INIT_SCRIPTING_BACKEND
-extern "C" void InitializeScriptingBackend();
-#endif
-
 int main(int argc, char* argv[])
 {
 	@autoreleasepool
 	{
 		UnityInitTrampoline();
 		UnityParseCommandLine(argc, argv);
-
-	#if INIT_SCRIPTING_BACKEND
-		InitializeScriptingBackend();
-	#endif
 
 		RegisterMonoModules();
 		NSLog(@"-> registered mono modules %p\n", &constsection);

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// UnityEngine.ScriptableObject
+
+
 #include "UnityEngine_UnityEngine_ScriptableObject.h"
+
 // UnityEngine.StateMachineBehaviour
-struct StateMachineBehaviour_t963  : public ScriptableObject_t145
+struct  StateMachineBehaviour_t925  : public ScriptableObject_t140
 {
 };

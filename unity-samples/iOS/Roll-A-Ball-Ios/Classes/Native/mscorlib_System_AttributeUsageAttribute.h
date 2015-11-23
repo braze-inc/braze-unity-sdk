@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Attribute
+
+
 #include "mscorlib_System_Attribute.h"
-// System.AttributeTargets
 #include "mscorlib_System_AttributeTargets.h"
+
 // System.AttributeUsageAttribute
-struct AttributeUsageAttribute_t324  : public Attribute_t213
+struct  AttributeUsageAttribute_t1394  : public Attribute_t191
 {
 	// System.AttributeTargets System.AttributeUsageAttribute::valid_on
 	int32_t ___valid_on_0;

@@ -1,14 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // System.Array
 struct Array_t;
-// System.ValueType
+
 #include "mscorlib_System_ValueType.h"
-// System.Array/InternalEnumerator`1<CustomAttributesSetting>
-struct InternalEnumerator_1_t2929 
+
+// System.Array/InternalEnumerator`1<UnityEngine.ContactPoint2D>
+struct  InternalEnumerator_1_t2661 
 {
-	// System.Array System.Array/InternalEnumerator`1<CustomAttributesSetting>::array
+	// System.Array System.Array/InternalEnumerator`1<UnityEngine.ContactPoint2D>::array
 	Array_t * ___array_0;
-	// System.Int32 System.Array/InternalEnumerator`1<CustomAttributesSetting>::idx
+	// System.Int32 System.Array/InternalEnumerator`1<UnityEngine.ContactPoint2D>::idx
 	int32_t ___idx_1;
 };

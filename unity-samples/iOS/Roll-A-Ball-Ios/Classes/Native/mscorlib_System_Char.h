@@ -1,18 +1,25 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.ValueType
+
+
 #include "mscorlib_System_ValueType.h"
+
 // System.Char
-struct Char_t92 
+struct  Char_t92 
 {
 	// System.Char System.Char::m_value
 	uint16_t ___m_value_2;
 };
 struct Char_t92_StaticFields{
-	// System.Char System.Char::MaxValue
-	uint16_t ___MaxValue_0;
-	// System.Char System.Char::MinValue
-	uint16_t ___MinValue_1;
 	// System.Byte* System.Char::category_data
 	uint8_t* ___category_data_3;
 	// System.Byte* System.Char::numeric_data

@@ -1,8 +1,19 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.TypeLoadException
+
+
 #include "mscorlib_System_TypeLoadException.h"
+
 // System.DllNotFoundException
-struct DllNotFoundException_t2251  : public TypeLoadException_t2252
+struct  DllNotFoundException_t1984  : public TypeLoadException_t1985
 {
 };

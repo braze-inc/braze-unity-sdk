@@ -1,9 +1,20 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Object
+
+
 #include "mscorlib_System_Object.h"
+
 // System.ActivationContext
-struct ActivationContext_t2224  : public Object_t
+struct  ActivationContext_t1961  : public Object_t
 {
 	// System.Boolean System.ActivationContext::_disposed
 	bool ____disposed_0;

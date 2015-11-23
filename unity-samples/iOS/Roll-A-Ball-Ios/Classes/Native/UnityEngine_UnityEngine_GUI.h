@@ -1,48 +1,57 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.GUISkin
-struct GUISkin_t835;
+struct GUISkin_t850;
 // UnityEngineInternal.GenericStack
-struct GenericStack_t836;
-// System.Object
+struct GenericStack_t851;
+
 #include "mscorlib_System_Object.h"
-// UnityEngine.Rect
 #include "UnityEngine_UnityEngine_Rect.h"
-// System.DateTime
 #include "mscorlib_System_DateTime.h"
+
 // UnityEngine.GUI
-struct GUI_t79  : public Object_t
+struct  GUI_t416  : public Object_t
 {
 };
-struct GUI_t79_StaticFields{
-	// System.Single UnityEngine.GUI::scrollStepSize
-	float ___scrollStepSize_0;
-	// System.Int32 UnityEngine.GUI::scrollControlID
-	int32_t ___scrollControlID_1;
-	// System.Int32 UnityEngine.GUI::hotTextField
-	int32_t ___hotTextField_2;
+struct GUI_t416_StaticFields{
+	// System.Single UnityEngine.GUI::s_ScrollStepSize
+	float ___s_ScrollStepSize_0;
+	// System.Int32 UnityEngine.GUI::s_ScrollControlId
+	int32_t ___s_ScrollControlId_1;
+	// System.Int32 UnityEngine.GUI::s_HotTextField
+	int32_t ___s_HotTextField_2;
+	// System.Int32 UnityEngine.GUI::s_BoxHash
+	int32_t ___s_BoxHash_3;
+	// System.Int32 UnityEngine.GUI::s_RepeatButtonHash
+	int32_t ___s_RepeatButtonHash_4;
+	// System.Int32 UnityEngine.GUI::s_ToggleHash
+	int32_t ___s_ToggleHash_5;
+	// System.Int32 UnityEngine.GUI::s_ButtonGridHash
+	int32_t ___s_ButtonGridHash_6;
+	// System.Int32 UnityEngine.GUI::s_SliderHash
+	int32_t ___s_SliderHash_7;
+	// System.Int32 UnityEngine.GUI::s_BeginGroupHash
+	int32_t ___s_BeginGroupHash_8;
+	// System.Int32 UnityEngine.GUI::s_ScrollviewHash
+	int32_t ___s_ScrollviewHash_9;
 	// UnityEngine.GUISkin UnityEngine.GUI::s_Skin
-	GUISkin_t835 * ___s_Skin_3;
+	GUISkin_t850 * ___s_Skin_10;
 	// UnityEngine.Rect UnityEngine.GUI::s_ToolTipRect
-	Rect_t78  ___s_ToolTipRect_4;
-	// System.Int32 UnityEngine.GUI::boxHash
-	int32_t ___boxHash_5;
-	// System.Int32 UnityEngine.GUI::repeatButtonHash
-	int32_t ___repeatButtonHash_6;
-	// System.Int32 UnityEngine.GUI::toggleHash
-	int32_t ___toggleHash_7;
-	// System.Int32 UnityEngine.GUI::buttonGridHash
-	int32_t ___buttonGridHash_8;
-	// System.Int32 UnityEngine.GUI::sliderHash
-	int32_t ___sliderHash_9;
-	// System.Int32 UnityEngine.GUI::beginGroupHash
-	int32_t ___beginGroupHash_10;
-	// System.Int32 UnityEngine.GUI::scrollviewHash
-	int32_t ___scrollviewHash_11;
+	Rect_t396  ___s_ToolTipRect_11;
 	// UnityEngineInternal.GenericStack UnityEngine.GUI::s_ScrollViewStates
-	GenericStack_t836 * ___s_ScrollViewStates_12;
+	GenericStack_t851 * ___s_ScrollViewStates_12;
 	// System.DateTime UnityEngine.GUI::<nextScrollStepTime>k__BackingField
-	DateTime_t837  ___U3CnextScrollStepTimeU3Ek__BackingField_13;
+	DateTime_t852  ___U3CnextScrollStepTimeU3Ek__BackingField_13;
 	// System.Int32 UnityEngine.GUI::<scrollTroughSide>k__BackingField
 	int32_t ___U3CscrollTroughSideU3Ek__BackingField_14;
 };

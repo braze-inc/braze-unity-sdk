@@ -1,13 +1,23 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.Reflection.AssemblyTrademarkAttribute
-struct AssemblyTrademarkAttribute_t791;
+struct AssemblyTrademarkAttribute_t1640;
 // System.String
 struct String_t;
 
+#include "codegen/il2cpp-codegen.h"
+
 // System.Void System.Reflection.AssemblyTrademarkAttribute::.ctor(System.String)
- void AssemblyTrademarkAttribute__ctor_m3857 (AssemblyTrademarkAttribute_t791 * __this, String_t* ___trademark, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void AssemblyTrademarkAttribute__ctor_m9827 (AssemblyTrademarkAttribute_t1640 * __this, String_t* ___trademark, const MethodInfo* method) IL2CPP_METHOD_ATTR;

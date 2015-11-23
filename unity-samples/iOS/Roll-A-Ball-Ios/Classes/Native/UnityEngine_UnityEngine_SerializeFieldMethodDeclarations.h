@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // UnityEngine.SerializeField
-struct SerializeField_t291;
+struct SerializeField_t783;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void UnityEngine.SerializeField::.ctor()
- void SerializeField__ctor_m1115 (SerializeField_t291 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void SerializeField__ctor_m4010 (SerializeField_t783 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -1,26 +1,36 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
+
 // UnityEngine.RectTransform
-struct RectTransform_t559;
+struct RectTransform_t504;
 // UnityEngine.UI.Scrollbar
-struct Scrollbar_t611;
+struct Scrollbar_t577;
 // UnityEngine.UI.ScrollRect/ScrollRectEvent
-struct ScrollRectEvent_t615;
+struct ScrollRectEvent_t581;
 // UnityEngine.Vector3[]
-struct Vector3U5BU5D_t617;
-// UnityEngine.EventSystems.UIBehaviour
+struct Vector3U5BU5D_t540;
+
 #include "UnityEngine_UI_UnityEngine_EventSystems_UIBehaviour.h"
-// UnityEngine.UI.ScrollRect/MovementType
 #include "UnityEngine_UI_UnityEngine_UI_ScrollRect_MovementType.h"
-// UnityEngine.Vector2
+#include "UnityEngine_UI_UnityEngine_UI_ScrollRect_ScrollbarVisibility.h"
 #include "UnityEngine_UnityEngine_Vector2.h"
-// UnityEngine.Bounds
 #include "UnityEngine_UnityEngine_Bounds.h"
+#include "UnityEngine_UnityEngine_DrivenRectTransformTracker.h"
+
 // UnityEngine.UI.ScrollRect
-struct ScrollRect_t618  : public UIBehaviour_t460
+struct  ScrollRect_t583  : public UIBehaviour_t425
 {
 	// UnityEngine.RectTransform UnityEngine.UI.ScrollRect::m_Content
-	RectTransform_t559 * ___m_Content_2;
+	RectTransform_t504 * ___m_Content_2;
 	// System.Boolean UnityEngine.UI.ScrollRect::m_Horizontal
 	bool ___m_Horizontal_3;
 	// System.Boolean UnityEngine.UI.ScrollRect::m_Vertical
@@ -35,34 +45,62 @@ struct ScrollRect_t618  : public UIBehaviour_t460
 	float ___m_DecelerationRate_8;
 	// System.Single UnityEngine.UI.ScrollRect::m_ScrollSensitivity
 	float ___m_ScrollSensitivity_9;
+	// UnityEngine.RectTransform UnityEngine.UI.ScrollRect::m_Viewport
+	RectTransform_t504 * ___m_Viewport_10;
 	// UnityEngine.UI.Scrollbar UnityEngine.UI.ScrollRect::m_HorizontalScrollbar
-	Scrollbar_t611 * ___m_HorizontalScrollbar_10;
+	Scrollbar_t577 * ___m_HorizontalScrollbar_11;
 	// UnityEngine.UI.Scrollbar UnityEngine.UI.ScrollRect::m_VerticalScrollbar
-	Scrollbar_t611 * ___m_VerticalScrollbar_11;
+	Scrollbar_t577 * ___m_VerticalScrollbar_12;
+	// UnityEngine.UI.ScrollRect/ScrollbarVisibility UnityEngine.UI.ScrollRect::m_HorizontalScrollbarVisibility
+	int32_t ___m_HorizontalScrollbarVisibility_13;
+	// UnityEngine.UI.ScrollRect/ScrollbarVisibility UnityEngine.UI.ScrollRect::m_VerticalScrollbarVisibility
+	int32_t ___m_VerticalScrollbarVisibility_14;
+	// System.Single UnityEngine.UI.ScrollRect::m_HorizontalScrollbarSpacing
+	float ___m_HorizontalScrollbarSpacing_15;
+	// System.Single UnityEngine.UI.ScrollRect::m_VerticalScrollbarSpacing
+	float ___m_VerticalScrollbarSpacing_16;
 	// UnityEngine.UI.ScrollRect/ScrollRectEvent UnityEngine.UI.ScrollRect::m_OnValueChanged
-	ScrollRectEvent_t615 * ___m_OnValueChanged_12;
+	ScrollRectEvent_t581 * ___m_OnValueChanged_17;
 	// UnityEngine.Vector2 UnityEngine.UI.ScrollRect::m_PointerStartLocalCursor
-	Vector2_t184  ___m_PointerStartLocalCursor_13;
+	Vector2_t231  ___m_PointerStartLocalCursor_18;
 	// UnityEngine.Vector2 UnityEngine.UI.ScrollRect::m_ContentStartPosition
-	Vector2_t184  ___m_ContentStartPosition_14;
+	Vector2_t231  ___m_ContentStartPosition_19;
 	// UnityEngine.RectTransform UnityEngine.UI.ScrollRect::m_ViewRect
-	RectTransform_t559 * ___m_ViewRect_15;
+	RectTransform_t504 * ___m_ViewRect_20;
 	// UnityEngine.Bounds UnityEngine.UI.ScrollRect::m_ContentBounds
-	Bounds_t155  ___m_ContentBounds_16;
+	Bounds_t255  ___m_ContentBounds_21;
 	// UnityEngine.Bounds UnityEngine.UI.ScrollRect::m_ViewBounds
-	Bounds_t155  ___m_ViewBounds_17;
+	Bounds_t255  ___m_ViewBounds_22;
 	// UnityEngine.Vector2 UnityEngine.UI.ScrollRect::m_Velocity
-	Vector2_t184  ___m_Velocity_18;
+	Vector2_t231  ___m_Velocity_23;
 	// System.Boolean UnityEngine.UI.ScrollRect::m_Dragging
-	bool ___m_Dragging_19;
+	bool ___m_Dragging_24;
 	// UnityEngine.Vector2 UnityEngine.UI.ScrollRect::m_PrevPosition
-	Vector2_t184  ___m_PrevPosition_20;
+	Vector2_t231  ___m_PrevPosition_25;
 	// UnityEngine.Bounds UnityEngine.UI.ScrollRect::m_PrevContentBounds
-	Bounds_t155  ___m_PrevContentBounds_21;
+	Bounds_t255  ___m_PrevContentBounds_26;
 	// UnityEngine.Bounds UnityEngine.UI.ScrollRect::m_PrevViewBounds
-	Bounds_t155  ___m_PrevViewBounds_22;
+	Bounds_t255  ___m_PrevViewBounds_27;
 	// System.Boolean UnityEngine.UI.ScrollRect::m_HasRebuiltLayout
-	bool ___m_HasRebuiltLayout_23;
+	bool ___m_HasRebuiltLayout_28;
+	// System.Boolean UnityEngine.UI.ScrollRect::m_HSliderExpand
+	bool ___m_HSliderExpand_29;
+	// System.Boolean UnityEngine.UI.ScrollRect::m_VSliderExpand
+	bool ___m_VSliderExpand_30;
+	// System.Single UnityEngine.UI.ScrollRect::m_HSliderHeight
+	float ___m_HSliderHeight_31;
+	// System.Single UnityEngine.UI.ScrollRect::m_VSliderWidth
+	float ___m_VSliderWidth_32;
+	// UnityEngine.RectTransform UnityEngine.UI.ScrollRect::m_Rect
+	RectTransform_t504 * ___m_Rect_33;
+	// UnityEngine.RectTransform UnityEngine.UI.ScrollRect::m_HorizontalScrollbarRect
+	RectTransform_t504 * ___m_HorizontalScrollbarRect_34;
+	// UnityEngine.RectTransform UnityEngine.UI.ScrollRect::m_VerticalScrollbarRect
+	RectTransform_t504 * ___m_VerticalScrollbarRect_35;
+	// UnityEngine.DrivenRectTransformTracker UnityEngine.UI.ScrollRect::m_Tracker
+	DrivenRectTransformTracker_t578  ___m_Tracker_36;
 	// UnityEngine.Vector3[] UnityEngine.UI.ScrollRect::m_Corners
-	Vector3U5BU5D_t617* ___m_Corners_24;
+	Vector3U5BU5D_t540* ___m_Corners_37;
+	// System.Single UnityEngine.UI.ScrollRect::<flexibleWidth>k__BackingField
+	float ___U3CflexibleWidthU3Ek__BackingField_38;
 };

@@ -1,19 +1,29 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // GlowPlaneAngleFade
-struct GlowPlaneAngleFade_t403;
+struct GlowPlaneAngleFade_t371;
+
+#include "codegen/il2cpp-codegen.h"
 
 // System.Void GlowPlaneAngleFade::.ctor()
- void GlowPlaneAngleFade__ctor_m1657 (GlowPlaneAngleFade_t403 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GlowPlaneAngleFade__ctor_m1427 (GlowPlaneAngleFade_t371 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void GlowPlaneAngleFade::Start()
- void GlowPlaneAngleFade_Start_m1658 (GlowPlaneAngleFade_t403 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GlowPlaneAngleFade_Start_m1428 (GlowPlaneAngleFade_t371 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void GlowPlaneAngleFade::Update()
- void GlowPlaneAngleFade_Update_m1659 (GlowPlaneAngleFade_t403 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GlowPlaneAngleFade_Update_m1429 (GlowPlaneAngleFade_t371 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void GlowPlaneAngleFade::OnWillRenderObject()
- void GlowPlaneAngleFade_OnWillRenderObject_m1660 (GlowPlaneAngleFade_t403 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GlowPlaneAngleFade_OnWillRenderObject_m1430 (GlowPlaneAngleFade_t371 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void GlowPlaneAngleFade::Main()
- void GlowPlaneAngleFade_Main_m1661 (GlowPlaneAngleFade_t403 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void GlowPlaneAngleFade_Main_m1431 (GlowPlaneAngleFade_t371 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

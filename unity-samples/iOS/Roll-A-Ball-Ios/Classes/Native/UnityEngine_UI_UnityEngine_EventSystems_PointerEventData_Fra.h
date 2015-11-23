@@ -1,11 +1,21 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
-// System.Enum
+
+
 #include "mscorlib_System_Enum.h"
-// UnityEngine.EventSystems.PointerEventData/FramePressState
 #include "UnityEngine_UI_UnityEngine_EventSystems_PointerEventData_Fra.h"
+
 // UnityEngine.EventSystems.PointerEventData/FramePressState
-struct FramePressState_t519 
+struct  FramePressState_t464 
 {
 	// System.Int32 UnityEngine.EventSystems.PointerEventData/FramePressState::value__
 	int32_t ___value___1;

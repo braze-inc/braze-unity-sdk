@@ -1,21 +1,30 @@
 ﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
 #include <stdint.h>
 #include <assert.h>
 #include <exception>
-#include "codegen/il2cpp-codegen.h"
 
 // System.UnauthorizedAccessException
-struct UnauthorizedAccessException_t2296;
+struct UnauthorizedAccessException_t2031;
 // System.String
 struct String_t;
 // System.Runtime.Serialization.SerializationInfo
-struct SerializationInfo_t960;
-// System.Runtime.Serialization.StreamingContext
+struct SerializationInfo_t962;
+
+#include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingContext.h"
 
 // System.Void System.UnauthorizedAccessException::.ctor()
- void UnauthorizedAccessException__ctor_m11988 (UnauthorizedAccessException_t2296 * __this, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UnauthorizedAccessException__ctor_m12337 (UnauthorizedAccessException_t2031 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UnauthorizedAccessException::.ctor(System.String)
- void UnauthorizedAccessException__ctor_m11989 (UnauthorizedAccessException_t2296 * __this, String_t* ___message, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UnauthorizedAccessException__ctor_m12338 (UnauthorizedAccessException_t2031 * __this, String_t* ___message, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.UnauthorizedAccessException::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
- void UnauthorizedAccessException__ctor_m11990 (UnauthorizedAccessException_t2296 * __this, SerializationInfo_t960 * ___info, StreamingContext_t961  ___context, MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C" void UnauthorizedAccessException__ctor_m12339 (UnauthorizedAccessException_t2031 * __this, SerializationInfo_t962 * ___info, StreamingContext_t963  ___context, const MethodInfo* method) IL2CPP_METHOD_ATTR;
