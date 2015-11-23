@@ -35,6 +35,8 @@
 
     <activity android:name="com.appboy.ui.activities.AppboyFeedActivity" android:theme="@android:style/Theme" />
 
+    <activity android:name="com.appboy.unity.AppboyOverlayActivity" android:theme="@style/Appboy.Theme.Transparent" />
+
     <receiver android:name="com.appboy.AppboyGcmReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
       <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />

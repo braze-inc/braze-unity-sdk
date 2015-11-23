@@ -15,12 +15,16 @@ namespace Appboy {
       Debug.Log("InAppMessageReceivedCallback message: " + message);
       IInAppMessage inApp = InAppMessageFactory.BuildInAppMessage(message);
       Debug.Log("In-app message received: " + inApp);
-      inApp.LogClicked();
-      inApp.LogImpression();
+      // Here we are testing the Unity SDK by manually logging the in-app message's click and impression.
+      // We should only log the click and impression when the in-app message isn't displayed by Appboy but in Unity.
+      //inApp.LogClicked();
+      //inApp.LogImpression();
       if (inApp is IInAppMessageImmersive) {
         IInAppMessageImmersive inAppImmersive = inApp as IInAppMessageImmersive;
         if (inAppImmersive.Buttons != null && inAppImmersive.Buttons.Count > 0) {
-          inAppImmersive.LogButtonClicked(inAppImmersive.Buttons[0].ButtonID);
+          // Here we are testing the Unity SDK by manually logging the in-app message's first button's click.
+          // We should only log the button click when the in-app message isn't displayed by Appboy but in Unity.
+          //inAppImmersive.LogButtonClicked(inAppImmersive.Buttons[0].ButtonID);
         }
       }
     }
@@ -56,8 +60,10 @@ namespace Appboy {
       foreach (Card card in feed.Cards) {
         Debug.Log("Card: " + card);
       }
-      feed.Cards[0].LogImpression();
-      feed.Cards[0].LogClick();
+      // Here we are testing the Unity SDK by manually logging the first card's click and impression in the news feed.
+      // We should only log the card's click and impression when the news feed isn't displayed by Appboy but in Unity.
+      //feed.Cards[0].LogImpression();
+      //feed.Cards[0].LogClick();
     }
   }
 }
