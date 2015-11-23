@@ -25,6 +25,7 @@ x64/
 *_p.c
 *.ilk
 *.meta
+!unity-samples/Assets/**/*.meta
 *.obj
 *.pch
 *.pdb
