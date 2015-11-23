@@ -1,0 +1,12 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/AngryBotsTests/Scripts/Weapons/Health.js">
+    <Files>
+      <File FileName="Assets/UnityTestTools/Examples/IntegrationTestsFrameworkExamples/AngryBotsTests/Scripts/Weapons/Health.js" Line="18" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
