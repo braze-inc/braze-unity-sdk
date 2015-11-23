@@ -27,7 +27,6 @@ x64/
 *.meta
 !unity-samples/Assets/**/*.meta
 *.obj
-*.pch
 *.pdb
 *.pgc
 *.pgd
