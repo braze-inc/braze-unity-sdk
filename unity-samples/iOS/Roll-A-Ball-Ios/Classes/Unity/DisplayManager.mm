@@ -54,7 +54,10 @@ extern bool _ios80orNewer;
 	{
 		self->_screen = targetScreen;
 
+#if !UNITY_TVOS
 		targetScreen.currentMode = targetScreen.preferredMode;
+#endif
+		
 		targetScreen.overscanCompensation = UIScreenOverscanCompensationInsetApplicationFrame;
 
 		self->_screenSize = targetScreen.currentMode.size;
@@ -249,7 +252,7 @@ extern bool _ios80orNewer;
 
 @synthesize mainDisplay     = _mainDisplay;
 @synthesize displayCount;
-- (int)displayCount { return _displayConnection.count; }
+- (NSUInteger)displayCount { return _displayConnection.count; }
 
 
 - (void)registerScreen:(UIScreen*)screen
@@ -321,27 +324,21 @@ extern bool _ios80orNewer;
 
 - (void)startFrameRendering
 {
-	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn)
-		{
-			StartFrameRendering(conn.surface);
-		}
-	];
+	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn){
+		StartFrameRendering(conn.surface);
+	}];
 }
 - (void)endFrameRendering
 {
-	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn)
-		{
-			EndFrameRendering(conn.surface);
-		}
-	];
+	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn){
+		EndFrameRendering(conn.surface);
+	}];
 }
 - (void)present
 {
-	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn)
-		{
-			[conn present];
-		}
-	];
+	[self enumerateDisplaysWithBlock:^(DisplayConnection* conn){
+		[conn present];
+	}];
 }
 
 
@@ -416,9 +413,10 @@ static void EnsureDisplayIsInited(DisplayConnection* conn)
 	}
 }
 
+#if !UNITY_TVOS
 extern "C" int UnityDisplayManager_DisplayCount()
 {
-	return [DisplayManager Instance].displayCount;
+	return (int)[DisplayManager Instance].displayCount;
 }
 
 extern "C" bool UnityDisplayManager_DisplayAvailable(void* nativeDisplay)
@@ -474,6 +472,7 @@ extern "C" void UnityDisplayManager_ShouldShowWindowOnDisplay(void* nativeDispla
 	if(screen != [UIScreen mainScreen])
 		[conn shouldShowWindow:show];
 }
+#endif
 
 extern "C" EAGLContext* UnityGetMainScreenContextGLES()
 {
@@ -486,13 +485,17 @@ extern "C" EAGLContext* UnityGetContextEAGL()
 
 extern "C" float UnityScreenScaleFactor(UIScreen* screen)
 {
-#if defined(__IPHONE_8_0)
-	// iPhone 6+ pretends to be a x3 device, while its physical screen is x2.6 something. So we
-	// query nativeScale to get the true device resolution to avoid unnecessarily large frame
-	// buffers and downscaling.
+	// we should query nativeScale if available to get the true device resolution
+	// this way we avoid unnecessarily large frame buffers and downscaling.
+	// e.g. iPhone 6+ pretends to be a x3 device, while its physical screen is x2.6 something.
 	if([screen respondsToSelector:@selector(nativeScale)])
-		return screen.nativeScale;
-#endif
+	{
+		// On AppleTV screen.nativeScale returns NaN when device is in sleep mode
+		if (isnan(screen.nativeScale))
+			return 1.0f;
+		else
+			return screen.nativeScale;
+	}
 	return screen.scale;
 }
 

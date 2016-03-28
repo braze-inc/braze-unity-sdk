@@ -292,6 +292,10 @@ extern "C" float UnityDeviceDPI()
 			case deviceiPodTouchUnknown:
 				_DeviceDPI = 326.0f; break;
 		}
+
+		// If we didn't find DPI, set it to "unknown" value.
+		if (_DeviceDPI < 0.0f)
+			_DeviceDPI = 0.0f;
 	}
 
 	return _DeviceDPI;
@@ -351,47 +355,3 @@ extern "C" const char* UnityDeviceUniqueIdentifier()
 		return strdup(uid_str);
 	}
 #endif
-
-
-// target resolution selector for "auto" values
-
-extern "C" void QueryTargetResolution(int* targetW, int* targetH)
-{
-	enum
-	{
-		kTargetResolutionNative = 0,
-		kTargetResolutionAutoPerformance = 3,
-		kTargetResolutionAutoQuality = 4,
-		kTargetResolution320p = 5,
-		kTargetResolution640p = 6,
-		kTargetResolution768p = 7
-	};
-
-	int systemW = GetMainDisplay().screenSize.width, systemH = GetMainDisplay().screenSize.height;
-	int renderW = 0, renderH = 0;
-
-	#define SCALED_RES(scale)	do { renderW = (int)(systemW * scale); renderH = (int)(systemH * scale); } while(0)
-	#define EXPLICIT_RES(w,h)	do { renderW = w; renderH = h; } while(0)
-
-	int targetRes = UnityGetTargetResolution();
-	if(targetRes == kTargetResolutionAutoPerformance)
-	{
-		if(UnityDeviceGeneration() == deviceiPhone4)	SCALED_RES(0.6f);
-		else											SCALED_RES(0.75f);
-	}
-	else if(targetRes == kTargetResolutionAutoQuality)
-	{
-		if(UnityDeviceGeneration() == deviceiPhone4)
-			SCALED_RES(0.8f);
-	}
-	else
-	{
-		if(targetRes == kTargetResolution320p)		EXPLICIT_RES(320, 480);
-		else if(targetRes == kTargetResolution640p)	EXPLICIT_RES(640, 960);
-		else if(targetRes == kTargetResolution768p)	EXPLICIT_RES(768, 1024);
-	}
-	*targetW = renderW; *targetH = renderH;
-
-	#undef EXPLICIT_RES
-	#undef SCALED_RES
-}

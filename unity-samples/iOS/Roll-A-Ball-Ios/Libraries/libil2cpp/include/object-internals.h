@@ -30,7 +30,8 @@ namespace il2cpp
 
 struct Il2CppReflectionAssembly;
 
-struct Il2CppObject{
+struct Il2CppObject
+{
 	TypeInfo *klass;
 	MonitorData *monitor;
 };
@@ -45,23 +46,31 @@ struct Il2CppArrayBounds
 	il2cpp_array_lower_bound_t lower_bound;
 };
 
-struct Il2CppArray
+#if IL2CPP_COMPILER_MSVC
+#pragma warning( push )
+#pragma warning( disable : 4200 )
+#elif defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#endif
+
+struct Il2CppArray : public Il2CppObject
 {
-	Il2CppObject obj;
 	/* bounds is NULL for szarrays */
 	Il2CppArrayBounds *bounds;
 	/* total number of elements of the array */
 	il2cpp_array_size_t max_length;
-	/* we use double to ensure proper alignment on platforms that need it */
-	double vector [IL2CPP_ZERO_LEN_ARRAY];
 };
 
-// This is a part of a string literal - it is needed for debugging visualization
-// Note: store just Il2CppObject here, so this struct does not change memory layout!
-struct Il2CppDataSegmentString
+struct Il2CppArraySize : public Il2CppArray
 {
-	Il2CppObject object;
+	ALIGN_TYPE(8) void* vector;
 };
+
+const size_t kIl2CppSizeOfArray = (offsetof (Il2CppArraySize, vector));
+const size_t kIl2CppOffsetOfArrayBounds = (offsetof (Il2CppArray, bounds));
+const size_t kIl2CppOffsetOfArrayLength = (offsetof (Il2CppArray, max_length));
+
 
 // System.String
 struct Il2CppString
@@ -70,6 +79,12 @@ struct Il2CppString
 	int32_t length;								///< Length of string *excluding* the trailing null (which is included in 'chars').
 	uint16_t chars [IL2CPP_ZERO_LEN_ARRAY];
 };
+
+#if IL2CPP_COMPILER_MSVC
+#pragma warning( pop )
+#elif defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 
 #define IL2CPP_OBJECT_SETREF(obj,fieldname,value) do {	\
 		/* mono_gc_wbarrier_set_field ((MonoObject*)(obj), &((obj)->fieldname), (MonoObject*)value); */	\
@@ -335,7 +350,7 @@ struct Il2CppException {
 	Il2CppString *stack_trace;
 	Il2CppString *remote_stack_trace;
 	int32_t    remote_stack_index;
-	int32_t    hresult;
+	il2cpp_hresult_t hresult;
 	Il2CppString *source;
 	Il2CppObject *_data;
 };
@@ -352,7 +367,8 @@ struct Il2CppArgumentException {
 };
 
 // System.TypedReference
-struct Il2CppTypedRef {
+struct Il2CppTypedRef
+{
 	Il2CppType *type;
 	void*  value;
 	TypeInfo *klass;
@@ -636,4 +652,25 @@ struct Il2CppAppContext
 	int32_t domain_id;
 	int32_t context_id;
 	void* static_data;
+};
+
+struct Il2CppGuid
+{
+	uint32_t data1;
+	uint16_t data2;
+	uint16_t data3;
+	uint8_t data4[8];
+};
+
+struct NOVTABLE Il2CppIUnknown
+{
+	static const Il2CppGuid IID;
+	virtual il2cpp_hresult_t STDCALL QueryInterface(const Il2CppGuid& iid, void** object) = 0;
+	virtual uint32_t STDCALL AddRef() = 0;
+	virtual uint32_t STDCALL Release() = 0;
+};
+
+struct Il2CppRCW : Il2CppObject
+{
+	Il2CppIUnknown* identity;
 };

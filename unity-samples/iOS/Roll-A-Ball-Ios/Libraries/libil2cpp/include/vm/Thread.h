@@ -34,6 +34,15 @@ enum ThreadState
 };
 
 
+// System.Threading.ApartmentState
+enum ThreadApartmentState
+{
+	kThreadApartmentStateSTA = 0x00000000,
+	kThreadApartmentStateMTA = 0x00000001,
+	kThreadApartmentStateUnknown = 0x00000002
+};
+
+
 class Thread
 {
 public:
@@ -50,9 +59,11 @@ public:
 	static void RequestInterrupt (Il2CppThread* thread);
 	static void CheckCurrentThreadForInterruptAndThrowIfNecessary();
 
-	////WORKAROUND: A dummy exception we throw when we abort background thread. This needs to be
-	////	replaced with proper thread abortion support.
-	struct TempAbortWorkaroundException {};
+	static void RequestAbort(Il2CppThread* thread);
+	static void CheckCurrentThreadForAbortAndThrowIfNecessary();
+	static void ResetAbort(Il2CppThread* thread);
+
+	struct NativeThreadAbortException {};
 
 public:
 	// internal

@@ -14,17 +14,17 @@
 #include <assert.h>
 
 // System.Array
-struct Array_t;
+struct Il2CppArray;
 
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
-#include "mscorlib_System_Array.h"
-#include "UnityScript_Lang_U3CModuleU3E.h"
-#include "UnityScript_Lang_U3CModuleU3EMethodDeclarations.h"
-#include "UnityScript_Lang_UnityScript_Lang_Extensions.h"
-#include "UnityScript_Lang_UnityScript_Lang_ExtensionsMethodDeclarations.h"
-#include "mscorlib_System_Int32.h"
-#include "mscorlib_System_ArrayMethodDeclarations.h"
+#include "mscorlib_System_Array2840145358.h"
+#include "UnityScript_Lang_U3CModuleU3E86524790.h"
+#include "UnityScript_Lang_U3CModuleU3E86524790MethodDeclarations.h"
+#include "UnityScript_Lang_UnityScript_Lang_Extensions1330391816.h"
+#include "UnityScript_Lang_UnityScript_Lang_Extensions1330391816MethodDeclarations.h"
+#include "mscorlib_System_Int322847414787.h"
+#include "mscorlib_System_Array2840145358MethodDeclarations.h"
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -32,12 +32,12 @@ struct Array_t;
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Int32 UnityScript.Lang.Extensions::get_length(System.Array)
-extern "C" int32_t Extensions_get_length_m1688 (Object_t * __this /* static, unused */, Array_t * ___a, const MethodInfo* method)
+extern "C"  int32_t Extensions_get_length_m1049594766 (Il2CppObject * __this /* static, unused */, Il2CppArray * ___a, const MethodInfo* method)
 {
 	{
-		Array_t * L_0 = ___a;
+		Il2CppArray * L_0 = ___a;
 		NullCheck(L_0);
-		int32_t L_1 = Array_get_Length_m1575(L_0, /*hidden argument*/NULL);
+		int32_t L_1 = Array_get_Length_m1203127607(L_0, /*hidden argument*/NULL);
 		return L_1;
 	}
 }

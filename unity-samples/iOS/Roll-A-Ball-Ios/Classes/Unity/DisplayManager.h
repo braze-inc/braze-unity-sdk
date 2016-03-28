@@ -62,7 +62,7 @@ RenderingSurfaceParams;
 
 @property (readonly, nonatomic)	DisplayConnection*	mainDisplay;
 
-@property (readonly, nonatomic)	int					displayCount;
+@property (readonly, nonatomic)	NSUInteger			displayCount;
 
 @end
 

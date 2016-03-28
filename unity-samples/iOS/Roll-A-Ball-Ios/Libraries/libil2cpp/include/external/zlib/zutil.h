@@ -190,6 +190,9 @@ extern const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #    define HAVE_VSNPRINTF
 #  endif
 #endif
+#if defined (_MSC_VER) && (_MSC_VER > 1800)
+#   define HAVE_VSNPRINTF
+#endif
 #if defined(__CYGWIN__)
 #  ifndef HAVE_VSNPRINTF
 #    define HAVE_VSNPRINTF

@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.17.0"
+#define APPBOY_SDK_VERSION @"2.19.1"
 #endif
 
 @class ABKInAppMessageController;
@@ -22,13 +22,15 @@
 @class ABKUser;
 @class ABKInAppMessage;
 @class ABKInAppMessageViewController;
+@class ABKLocationManager;
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKAppboyEndpointDelegate;
-@class ABKLocationManager;
+@protocol ABKPushURIDelegate;
 
 /*
  * Appboy Public API: Appboy
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface Appboy : NSObject
 
 /* ------------------------------------------------------------------------------------------------------
@@ -36,9 +38,9 @@
  */
 
 /*!
- * Get the Appboy singleton.
+ * Get the Appboy singleton.  Returns nil if accessed before startWithApiKey: called.
  */
-+ (Appboy *) sharedInstance;
++ (nullable Appboy *) sharedInstance;
 
 /*!
  * @param apiKey The app's API key
@@ -52,7 +54,7 @@
  */
 + (void) startWithApiKey:(NSString *)apiKey
            inApplication:(UIApplication *)application
-       withLaunchOptions:(NSDictionary *)launchOptions;
+       withLaunchOptions:(nullable NSDictionary *)launchOptions;
 
 /*!
  * @param apiKey The app's API key
@@ -69,8 +71,8 @@
  */
 + (void) startWithApiKey:(NSString *)apiKey
            inApplication:(UIApplication *)application
-       withLaunchOptions:(NSDictionary *)launchOptions
-       withAppboyOptions:(NSDictionary *)appboyOptions;
+       withLaunchOptions:(nullable NSDictionary *)launchOptions
+       withAppboyOptions:(nullable NSDictionary *)appboyOptions;
 
 /* ------------------------------------------------------------------------------------------------------
  * Keys for Appboy startup options
@@ -100,7 +102,8 @@ extern NSString *const ABKFlushIntervalOptionKey;
 extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
 /*!
- * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
+ * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location
+ * events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
  */
 extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
 
@@ -132,6 +135,12 @@ extern NSString *const ABKAppboyEndpointDelegateKey;
  * it times out. The value should be an integer bigger than 0.
  */
 extern NSString *const ABKSessionTimeoutKey;
+
+/*!
+ * Set the minimum time interval in seconds between triggers. After a trigger happens, we will ignore any triggers until
+ * the minimum time interval elapses. The default value is 30s.
+ */
+extern NSString *const ABKMinimumTriggerTimeIntervalKey;
 
 /* ------------------------------------------------------------------------------------------------------
  * Enums
@@ -238,7 +247,12 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * An class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
-@property (nonatomic, weak) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+@property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
+
+/*!
+ * An class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
+ */
+@property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate;
 
 /* ------------------------------------------------------------------------------------------------------
  * Methods
@@ -307,7 +321,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  */
 - (void) registerApplication:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)notification
-      fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+      fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
 
 /*!
  * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.
@@ -319,7 +333,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void) getActionWithIdentifier:(NSString *)identifier
            forRemoteNotification:(NSDictionary *)userInfo
-               completionHandler:(void (^)())completionHandler;
+               completionHandler:(nullable void (^)())completionHandler;
 
 /*!
 * @param userID The new user's ID (from the host application).
@@ -389,7 +403,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * [[Appboy sharedInstance] logCustomEvent:@"clicked_button" properties:@{@"key1":@"val"}];
  * </pre>
  */
-- (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties;
+- (void) logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties: with a quantity of 1 and nil properties.
@@ -403,8 +417,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(NSDictionary *)properties;
-
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with nil properties.
@@ -445,7 +458,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(NSDictionary *)properties;
+- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
 
 /*!
  * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
@@ -499,12 +512,6 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void) requestInAppMessageRefresh;
 
-- (BOOL) handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *replyInfo))reply;
-
-/*!
- * Enqueues an in-app message request for the current user. Note that this is deprecated from version 2.11.0. Please use
- * requestInAppMessageRefresh instead.
- */
-- (void) requestSlideupRefresh __deprecated_msg("This method is deprecated in version 2.11. Please use "
-"requestInAppMessageRefresh instead.");
+- (BOOL) handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
 @end
+NS_ASSUME_NONNULL_END

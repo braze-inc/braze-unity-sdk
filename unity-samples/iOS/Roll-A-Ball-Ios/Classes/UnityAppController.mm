@@ -34,8 +34,6 @@
 #import "AppboyKit.h"
 #import "AppboyUnityManager.h"
 
-static NSString *const AppboyApiKey = @"APPBOY-API-KEY";
-
 bool	_ios42orNewer			= false;
 bool	_ios43orNewer			= false;
 bool	_ios50orNewer			= false;
@@ -44,11 +42,21 @@ bool	_ios70orNewer			= false;
 bool	_ios80orNewer			= false;
 bool	_ios81orNewer			= false;
 bool	_ios82orNewer			= false;
+bool 	_ios90orNewer			= false;
+bool 	_ios91orNewer			= false;
 
 // was unity rendering already inited: we should not touch rendering while this is false
 bool	_renderingInited		= false;
 // was unity inited: we should not touch unity api while this is false
 bool	_unityAppReady			= false;
+// see if there's a need to do internal player pause/resume handling
+//
+// Typically the trampoline code should manage this internally, but
+// there are use cases, videoplayer, plugin code, etc where the player
+// is paused before the internal handling comes relevant. Avoid
+// overriding externally managed player pause/resume handling by
+// caching the state
+bool	_wasPausedExternal		= false;
 // should we skip present on next draw: used in corner cases (like rotation) to fill both draw-buffers with some content
 bool	_skipPresent			= false;
 // was app "resigned active": some operations do not make sense while app is in background
@@ -69,8 +77,11 @@ bool	_supportsMSAA			= false;
 @synthesize rootViewController		= _rootController;
 @synthesize mainDisplay				= _mainDisplay;
 @synthesize renderDelegate			= _renderDelegate;
+@synthesize quitHandler				= _quitHandler;
 
+#if !UNITY_TVOS
 @synthesize interfaceOrientation	= _curOrientation;
+#endif
 
 - (id)init
 {
@@ -119,6 +130,16 @@ bool	_supportsMSAA			= false;
 	UnitySetPlayerFocus(1);
 }
 
+extern "C" void UnityRequestQuit()
+{
+	_didResignActive = true;
+	if (GetAppController().quitHandler)
+		GetAppController().quitHandler();
+	else
+		exit(0);
+}
+
+#if !UNITY_TVOS
 - (NSUInteger)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window
 {
 	// UIInterfaceOrientationMaskAll
@@ -131,29 +152,43 @@ bool	_supportsMSAA			= false;
 	return   (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationPortraitUpsideDown)
 		   | (1 << UIInterfaceOrientationLandscapeRight) | (1 << UIInterfaceOrientationLandscapeLeft);
 }
+#endif
 
+#if !UNITY_TVOS
 - (void)application:(UIApplication*)application didReceiveLocalNotification:(UILocalNotification*)notification
 {
 	AppController_SendNotificationWithArg(kUnityDidReceiveLocalNotification, notification);
 	UnitySendLocalNotification(notification);
 }
+#endif
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
 	AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
 	UnitySendRemoteNotification(userInfo);
-  
-  [[AppboyUnityManager sharedInstance] registerApplication:application
-                              didReceiveRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
+  [[Appboy sharedInstance] registerPushToken:
+   [NSString stringWithFormat:@"%@", deviceToken]];
 	AppController_SendNotificationWithArg(kUnityDidRegisterForRemoteNotificationsWithDeviceToken, deviceToken);
 	UnitySendDeviceToken(deviceToken);
-  
-  [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
 }
+
+#if !UNITY_TVOS
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler
+{
+  [[AppboyUnityManager sharedInstance] registerApplication:application
+                              didReceiveRemoteNotification:userInfo];
+	AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
+	UnitySendRemoteNotification(userInfo);
+	if (handler)
+	{
+		handler(UIBackgroundFetchResultNoData);
+	}
+}
+#endif
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
@@ -188,25 +223,8 @@ bool	_supportsMSAA			= false;
 {
 	::printf("-> applicationDidFinishLaunching()\n");
 
-  [Appboy startWithApiKey:AppboyApiKey
-            inApplication:application
-        withLaunchOptions:launchOptions];
-  
-  [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
-  [[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName:@"AppboyCallback"
-                                                          callbackMethodName:@"InAppMessageReceivedCallback"];
-  [[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName:@"AppboyCallback"
-                                                  callbackMethodName:@"FeedReceivedCallback"];
-  [[AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName:@"AppboyCallback"
-                                                          callbackMethodName:@"PushNotificationReceivedCallbackForiOS"];
-  [[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName:@"AppboyCallback"
-                                                        callbackMethodName:@"PushNotificationOpenedCallbackForiOS"];
-  
-  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
-  [[UIApplication sharedApplication] registerForRemoteNotifications];
-  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-  
 	// send notfications
+#if !UNITY_TVOS
 	if(UILocalNotification* notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey])
 		UnitySendLocalNotification(notification);
 
@@ -215,6 +233,7 @@ bool	_supportsMSAA			= false;
 
 	if ([UIDevice currentDevice].generatesDeviceOrientationNotifications == NO)
 		[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+#endif
 
 	UnityInitApplicationNoGraphics([[[NSBundle mainBundle] bundlePath] UTF8String]);
 
@@ -233,7 +252,24 @@ bool	_supportsMSAA			= false;
 
 	// if you wont use keyboard you may comment it out at save some memory
 	[KeyboardDelegate Initialize];
-
+  
+  [Appboy startWithApiKey:@"c556cfa1-525b-4493-8eef-63cde1b34af0"
+            inApplication:application
+        withLaunchOptions:launchOptions];
+  [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
+  [[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName:@"AppboyCallback"
+                                                          callbackMethodName:@"InAppMessageReceivedCallback"];
+  [[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName:@"AppboyCallback"
+                                                  callbackMethodName:@"FeedReceivedCallback"];
+  [[AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName:@"AppboyCallback"
+                                                          callbackMethodName:@"PushNotificationReceivedCallbackForiOS"];
+  [[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName:@"AppboyCallback"
+                                                        callbackMethodName:@"PushNotificationOpenedCallbackForiOS"];
+  
+  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+  
 	return YES;
 }
 
@@ -266,7 +302,7 @@ bool	_supportsMSAA			= false;
 
 	if(_unityAppReady)
 	{
-		if(UnityIsPaused())
+		if(UnityIsPaused() && _wasPausedExternal == false)
 		{
 			UnityPause(0);
 			UnityWillResume();
@@ -280,8 +316,6 @@ bool	_supportsMSAA			= false;
 	}
 
 	_didResignActive = false;
-
-	[UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application
@@ -290,24 +324,27 @@ bool	_supportsMSAA			= false;
 
 	if(_unityAppReady)
 	{
-		UnityOnApplicationWillResignActive();
 		UnitySetPlayerFocus(0);
 
-		// do pause unity only if we dont need special background processing
-		// otherwise batched player loop can be called to run user scripts
-		int bgBehavior = UnityGetAppBackgroundBehavior();
-		if(bgBehavior == appbgSuspend || bgBehavior == appbgExit)
+		_wasPausedExternal = UnityIsPaused();
+		if (_wasPausedExternal == false)
 		{
-			// Force player to do one more frame, so scripts get a chance to render custom screen for minimized app in task manager.
-			// NB: UnityWillPause will schedule OnApplicationPause message, which will be sent normally inside repaint (unity player loop)
-			// NB: We will actually pause after the loop (when calling UnityPause).
-			UnityWillPause();
-			[self repaint];
-			UnityPause(1);
+			// do pause unity only if we dont need special background processing
+			// otherwise batched player loop can be called to run user scripts
+			int bgBehavior = UnityGetAppBackgroundBehavior();
+			if(bgBehavior == appbgSuspend || bgBehavior == appbgExit)
+			{
+				// Force player to do one more frame, so scripts get a chance to render custom screen for minimized app in task manager.
+				// NB: UnityWillPause will schedule OnApplicationPause message, which will be sent normally inside repaint (unity player loop)
+				// NB: We will actually pause after the loop (when calling UnityPause).
+				UnityWillPause();
+				[self repaint];
+				UnityPause(1);
 
-			_snapshotView = [self createSnapshotView];
-			if(_snapshotView)
-				[_rootView addSubview:_snapshotView];
+				_snapshotView = [self createSnapshotView];
+				if(_snapshotView)
+					[_rootView addSubview:_snapshotView];
+			}
 		}
 	}
 
@@ -377,11 +414,11 @@ void UnityInitTrampoline()
 	_ios80orNewer = [version compare: @"8.0" options: NSNumericSearch] != NSOrderedAscending;
 	_ios81orNewer = [version compare: @"8.1" options: NSNumericSearch] != NSOrderedAscending;
 	_ios82orNewer = [version compare: @"8.2" options: NSNumericSearch] != NSOrderedAscending;
+	_ios90orNewer = [version compare: @"9.0" options: NSNumericSearch] != NSOrderedAscending;
+	_ios91orNewer = [version compare: @"9.1" options: NSNumericSearch] != NSOrderedAscending;
 
 	// Try writing to console and if it fails switch to NSLog logging
 	::fprintf(stdout, "\n");
 	if(::ftell(stdout) < 0)
 		UnitySetLogEntryHandler(LogToNSLogHandler);
-
-	UnityInitJoysticks();
 }

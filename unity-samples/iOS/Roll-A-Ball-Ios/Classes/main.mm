@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-#if TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR && TARGET_TVOS_SIMULATOR
 
 #include <pthread.h>
 
@@ -49,4 +49,4 @@ extern "C" int pthread_cond_timedwait$UNIX2003(pthread_cond_t *cond, pthread_mut
 											   const struct timespec *abstime)
 { return pthread_cond_timedwait(cond, mutex, abstime); }
 
-#endif // TARGET_IPHONE_SIMULATOR
+#endif // TARGET_IPHONE_SIMULATOR && TARGET_TVOS_SIMULATOR

@@ -55,6 +55,9 @@ public:
 	static Il2CppString* GetStringLiteralFromIndex (StringLiteralIndex index);
 	static const char* GetStringFromIndex (StringIndex index);
 
+	static FieldInfo* GetFieldInfoFromIndex(EncodedMethodIndex index);
+	static void InitializeMethodMetadata (uint32_t index);
+
 	static methodPointerType GetMethodPointerFromIndex (MethodIndex index);
 	static InvokerMethod GetMethodInvokerFromIndex (MethodIndex index);
 	static methodPointerType GetDelegateWrapperNativeToManagedFromIndex (MethodIndex index);
@@ -91,11 +94,14 @@ public:
 
 	// returns the compiler computer field offset for type definition fields
 	static int32_t GetFieldOffsetFromIndex (FieldIndex index);
+
+	static int32_t GetReferenceAssemblyIndexIntoAssemblyTable (int32_t referencedAssemblyTableIndex);
 	
 	static const TypeDefinitionIndex GetIndexForTypeDefinition (const TypeInfo* typeDefinition);
 	static const GenericParameterIndex GetIndexForGenericParameter (const Il2CppGenericParameter* genericParameter);
 
 	static CustomAttributesCache* GenerateCustomAttributesCache (CustomAttributeIndex index);
+	static CustomAttributeTypeCache* GenerateCustomAttributeTypeCache(CustomAttributeIndex index);
 
 	typedef void(*WalkTypesCallback)(TypeInfo* type, void* context);
 	static void WalkPointerTypes(WalkTypesCallback callback, void* context);

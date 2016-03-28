@@ -1,8 +1,16 @@
+## 1.7.0
+* Updates the Android plugin to use Appboy Android SDK 1.13.2.
+* Updates the iOS plugin to use Appboy iOS SDK 2.19.1.
+* Adds binding methods for setting user's Facebook and Twitter data (Android/iOS).
+* Adds binding method to set the GCM registrationId (Android).
+* Adds overloads to the binding methods for `logCustomEvent` and `logPurchase` that include properties (Android/iOS).
+
 ## 1.6.0
 * Updates the Android plugin to use Appboy Android SDK 1.11.0.
 * Updates the iOS plugin to use Appboy iOS SDK 2.17.0.
 
 ## 1.5.0
+* Removes Unity 4 support. Unity 5 or higher is required to use this and future versions of the Appboy Unity SDK. Unity 4 users may integrate Appboy Unity SDK release 1.4.0, which includes analytics and push functionality but does not include native in-app messages on Android; however, upgrading to Unity 5 and using the latest Appboy Unity SDK is recommended.
 * Removes Froyo support, which was dropped in Unity 4.3. See https://unity3d.com/unity/whats-new/unity-4.3.
 * Adds native Appboy ui capability to Android, including in-app messages, the News Feed, and Appboy's webview. Note: As a result of this change, in-app messages will display automatically with native Appboy layouts.  To disable this functionality, set com_appboy_inapp_show_inapp_messages_automatically to false in your Unity project's appboy.xml file.
 * Updates the iOS plugin to use Appboy iOS SDK 2.12.1.

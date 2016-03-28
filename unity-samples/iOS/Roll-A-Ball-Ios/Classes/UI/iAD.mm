@@ -5,6 +5,7 @@
 #include "UnityAppController+ViewHandling.h"
 #include "UnityView.h"
 
+#if !UNITY_TVOS
 @implementation UnityADBanner
 
 @synthesize view = _view;
@@ -177,7 +178,9 @@
 
 @end
 
+#endif
 
+#if !UNITY_TVOS
 @implementation UnityInterstitialAd
 {
 	// on ios9+ interstitialAdActionDidFinish will be called from deep inside of iAD framework, when tweaking internal view controller
@@ -243,8 +246,9 @@
 	[self _loadAD];
 }
 
-- (BOOL)interstitialAdActionShouldBegin:(ADInterstitialAd *)banner willLeaveApplication:(BOOL)willLeave
+- (BOOL)interstitialAdActionShouldBegin:(ADInterstitialAd*)interstitialAd willLeaveApplication:(BOOL)willLeave
 {
+	UnityADInterstitialADWasViewed();
 	return YES;
 }
 - (void)interstitialAd:(ADInterstitialAd*)interstitialAd didFailWithError:(NSError*)error
@@ -289,3 +293,4 @@
 }
 
 @end
+#endif

@@ -171,7 +171,7 @@ DeviceGeneration
 	deviceiPhone6Plus	= 22,
 	deviceiPadMini3Gen	= 23,
 	deviceiPadAir2		= 24,
-	deviceiPhone6S 		= 25,
+	deviceiPhone6S		= 25,
 	deviceiPhone6SPlus	= 26,
 	deviceiPadPro1Gen	= 27,
 	deviceiPadMini4Gen	= 28,
@@ -229,7 +229,6 @@ ViewTouchProcessing
 }
 ViewTouchProcessing;
 
-
 #ifdef __cplusplus
 	extern bool _ios42orNewer;
 	extern bool _ios43orNewer;
@@ -239,4 +238,6 @@ ViewTouchProcessing;
 	extern bool _ios80orNewer;
 	extern bool _ios81orNewer;
 	extern bool _ios82orNewer;
+	extern bool _ios90orNewer;
+	extern bool _ios91orNewer;
 #endif

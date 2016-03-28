@@ -15,7 +15,7 @@
 // As a workaround this switch disables display link during rendering a frame.
 // If you are running a GPU bound scene and experience frame drop you may want to disable this switch.
 #define ENABLE_DISPLAY_LINK_PAUSING 1
-#define ENABLE_DISPATCH 1
+#define ENABLE_RUNLOOP_ACCEPT_INPUT 1
 
 // _glesContextCreated was renamed to _renderingInited
 extern bool	_renderingInited;
@@ -25,6 +25,8 @@ extern bool	_didResignActive;
 
 static int _renderingAPI = 0;
 static int SelectRenderingAPIImpl();
+
+static bool _enableRunLoopAcceptInput = false;
 
 
 @implementation UnityAppController (Rendering)
@@ -37,24 +39,19 @@ static int SelectRenderingAPIImpl();
 	_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(repaintDisplayLink)];
 	[_displayLink setFrameInterval:animationFrameInterval];
 	[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+
+	_enableRunLoopAcceptInput = (animationFrameInterval == 1 && UnityDeviceCPUCount() > 1);
 }
 
 - (void)repaintDisplayLink
 {
-#if ENABLE_DISPLAY_LINK_PAUSING || ENABLE_DISPATCH
+#if ENABLE_DISPLAY_LINK_PAUSING
 	_displayLink.paused = YES;
 #endif
-
-#if ENABLE_DISPATCH
-	dispatch_async(dispatch_get_main_queue(), ^{
-#endif
-		if(!_didResignActive)
-			[self repaint];
-#if ENABLE_DISPLAY_LINK_PAUSING || ENABLE_DISPATCH
-		_displayLink.paused = NO;
-#endif
-#if ENABLE_DISPATCH
-	});
+	if(!_didResignActive)
+		[self repaint];
+#if ENABLE_DISPLAY_LINK_PAUSING
+	_displayLink.paused = NO;
 #endif
 }
 
@@ -132,16 +129,7 @@ extern "C" void UnityFramerateChangeCallback(int targetFPS)
 
 extern "C" void UnityInitMainScreenRenderingCallback()
 {
-	{
-		extern void QueryTargetResolution(int* targetW, int* targetH);
-
-		int resW=0, resH=0;
-		QueryTargetResolution(&resW, &resH);
-		UnityRequestRenderingResolution(resW, resH);
-	}
-
-	DisplayConnection* display = GetAppController().mainDisplay;
-	[display initRendering];
+	[GetAppController().mainDisplay initRendering];
 }
 
 
@@ -249,5 +237,16 @@ extern "C" void UnityRepaint()
 
 		[[DisplayManager Instance] endFrameRendering];
 		UnityEndFrame();
+
+		// On multicore devices running at 60 FPS some touch event delivery isn't properly interleaved with graphical frames.
+		// Running additional run loop here improves event handling in those cases.
+		// Passing here an NSDate from the past invokes run loop only once.
+#if ENABLE_RUNLOOP_ACCEPT_INPUT
+		static NSDate* _past = [NSDate date];
+		if (_enableRunLoopAcceptInput)
+		{
+			[[NSRunLoop currentRunLoop] acceptInputForMode:NSDefaultRunLoopMode beforeDate:_past];
+		}
+#endif
 	}
 }

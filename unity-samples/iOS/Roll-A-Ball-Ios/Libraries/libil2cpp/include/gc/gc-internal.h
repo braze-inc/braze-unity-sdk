@@ -37,6 +37,7 @@ int il2cpp_gc_invoke_finalizers ();
 void il2cpp_gc_run_finalize (void *obj, void *data);
 bool il2cpp_gc_has_finalizer_thread_object();
 
+void il2cpp_gc_register_finalizer_with_callback (Il2CppObject* obj, void (*callback)(void *, void *));
 void il2cpp_gc_register_finalizer (Il2CppObject* obj);
 void il2cpp_gc_suppress_finalizer (Il2CppObject* obj);
 void il2cpp_gc_wait_for_pending_finalizers ();

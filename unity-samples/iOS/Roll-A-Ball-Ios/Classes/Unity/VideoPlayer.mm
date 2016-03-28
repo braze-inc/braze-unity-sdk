@@ -60,6 +60,7 @@ static void* _ObservePlayerItemContext = (void*)0x2;
 }
 
 @synthesize delegate;
+@synthesize player = _player;
 
 - (BOOL)readyToPlay			{ return _playerReady; }
 - (CGSize)videoSize			{ return _videoSize; }
@@ -68,16 +69,44 @@ static void* _ObservePlayerItemContext = (void*)0x2;
 
 
 + (BOOL)CanPlayToTexture:(NSURL*)url	{ return [url isFileURL]; }
++ (BOOL)CheckScalingModeAspectFill:(CGSize)videoSize screenSize:(CGSize)screenSize
+{
+	BOOL ret = NO;
 
+	CGFloat screenAspect = (screenSize.width / screenSize.height);
+	CGFloat videoAspect = (videoSize.width / videoSize.height);
+
+	CGFloat width = ceilf(videoSize.width * videoAspect / screenAspect);
+	CGFloat height = ceilf(videoSize.height * videoAspect / screenAspect);
+
+	// Do additional input video and device resolution aspect ratio
+	// rounding check to see if the width and height values are still
+	// the ~same.
+	//
+	// If they still match, we can change the video scaling mode from
+	// aspectFit to aspectFill, this works around some off-by-one scaling
+	// errors with certain screen size and video resolution combos
+	//
+	// TODO: Shouldn't harm to extend width/height check to
+	// match values within -1..+1 range from the original
+
+	if (videoSize.width == width && videoSize.height == height) {
+		ret = YES;
+	}
+
+	return ret;
+}
 
 - (void)reportError:(NSError*)error category:(const char*)category
 {
 	::printf("[%s]Error: %s\n", category, [[error localizedDescription] UTF8String]);
 	::printf("%s\n", [[error localizedFailureReason] UTF8String]);
+	[delegate onPlayerError:error];
 }
 - (void)reportErrorWithString:(const char*)error category:(const char*)category
 {
 	::printf("[%s]Error: %s\n", category, error);
+	[delegate onPlayerError:nil];
 }
 
 - (id)init
@@ -148,36 +177,48 @@ static void* _ObservePlayerItemContext = (void*)0x2;
 	if(!asset) return NO;
 
 	NSArray* requestedKeys = @[@"tracks", @"playable"];
-	[asset loadValuesAsynchronouslyForKeys:requestedKeys completionHandler:
-		^{
-			dispatch_async(dispatch_get_main_queue(), ^{ [self prepareAsset:asset withKeys:requestedKeys]; });
-		}
-	];
+	[asset loadValuesAsynchronouslyForKeys:requestedKeys completionHandler:^{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self prepareAsset:asset withKeys:requestedKeys];
+		});
+	}];
 	return YES;
 }
 
-- (BOOL)_play:(VideoPlayerView*)view
+- (BOOL)_playWithPrepareBlock:(BOOL (^)())preparePlaybackBlock
 {
 	if(!_playerReady)
 		return NO;
-
-	if(view)    view.player = _player;
-	else        [self prepareReader];
+	if(preparePlaybackBlock && preparePlaybackBlock() == NO)
+		return NO;
 
 	// do not do seekTo and setRate here, it seems that http streaming may hang sometimes if you do so. go figure
 	_curFrameTimestamp = _lastFrameTimestamp = kCMTimeZero;
 	[_player play];
-
 	return YES;
 }
 
-- (BOOL)playToView:(VideoPlayerView*)view	{ return [self _play:view]; }
-- (BOOL)playToTexture						{ return [self _play:nil]; }
+- (BOOL)playToView:(VideoPlayerView*)view
+{
+	return [self _playWithPrepareBlock:^(){
+		view.player = _player;
+		return YES;
+	}];
+}
+- (BOOL)playToTexture
+{
+	return [self _playWithPrepareBlock:^(){
+		return [self prepareReader];
+	}];
+}
+- (BOOL)playVideoPlayer
+{
+	return [self _playWithPrepareBlock:nil];
+}
 
 - (BOOL)isPlaying	{ return _playerReady && _player.rate != 0.0f; }
-
-- (void)pause	{ if(_playerReady && _player.rate != 0.0f) [_player pause]; }
-- (void)resume	{ if(_playerReady && _player.rate == 0.0f) [_player play]; }
+- (void)pause		{ if(_playerReady && _player.rate != 0.0f) [_player pause]; }
+- (void)resume		{ if(_playerReady && _player.rate == 0.0f) [_player play]; }
 
 - (void)rewind						{ [self seekToTimestamp:kCMTimeZero]; }
 - (void)seekTo:(float)timeSeconds	{ [self seekToTimestamp:CMTimeMakeWithSeconds(timeSeconds, 1)]; }
@@ -424,7 +465,7 @@ static bool _AudioRouteWasChanged = false;
 	[self cleanupCVTextureCache];
 	CMVideoSampling_Initialize(&_videoSampling);
 
-	return NO;
+	return YES;
 }
 
 @end

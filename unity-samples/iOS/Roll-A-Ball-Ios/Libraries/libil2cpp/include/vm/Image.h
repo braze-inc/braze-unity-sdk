@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <string>
+#include <vector>
 
 struct TypeInfo;
 struct MethodInfo;
@@ -12,12 +13,14 @@ struct Il2CppType;
 struct Il2CppGenericContext;
 struct Il2CppGenericContainer;
 struct Il2CppReflectionAssembly;
+struct Il2CppArray;
 class AssemblyVector;
 
 namespace il2cpp
 {
 namespace vm
 {
+	typedef std::vector<const TypeInfo*> TypeVector;
 
 class TypeNameParseInfo;
 
@@ -50,6 +53,7 @@ public:
 	static const TypeInfo* GetType(const Il2CppImage* image, size_t index);
 	static TypeInfo* FromTypeNameParseInfo (const Il2CppImage* image, const TypeNameParseInfo &info, bool ignoreCase);
 	static TypeInfo* ClassFromName (Il2CppImage* image, const char* namespaze, const char *name);
+	static void GetTypes (const Il2CppImage* image, bool exportedOnly, TypeVector* target);
 
 	struct EmbeddedResourceData
 	{

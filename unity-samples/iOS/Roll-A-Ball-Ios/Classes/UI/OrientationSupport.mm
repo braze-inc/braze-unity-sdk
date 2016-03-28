@@ -22,7 +22,7 @@ CGAffineTransform TransformBetweenOrientations(ScreenOrientation fromOrient, Scr
 	return CGAffineTransformConcat(CGAffineTransformInvert(fromTransform), toTransform);
 }
 
-
+#if !UNITY_TVOS
 UIInterfaceOrientation ConvertToIosScreenOrientation(ScreenOrientation orient)
 {
 	switch(orient)
@@ -60,6 +60,16 @@ ScreenOrientation ConvertToUnityScreenOrientation(UIInterfaceOrientation orient)
 
 		default:										return portrait;
 	}
+}
+#endif
+
+ScreenOrientation UIViewControllerOrientation(UIViewController* controller)
+{
+#if UNITY_TVOS
+	return portrait;
+#else
+	return ConvertToUnityScreenOrientation(controller.interfaceOrientation);
+#endif
 }
 
 ScreenOrientation OrientationAfterTransform(ScreenOrientation curOrient, CGAffineTransform transform)
@@ -100,11 +110,10 @@ ScreenOrientation OrientationAfterTransform(ScreenOrientation curOrient, CGAffin
 
 void OrientView(UIViewController* host, UIView* view, ScreenOrientation to)
 {
-	ScreenOrientation fromController = ConvertToUnityScreenOrientation(host.interfaceOrientation);
+    ScreenOrientation fromController = UIViewControllerOrientation(host);
 
 	// before ios8 view transform is relative to portrait, while on ios8 it is relative to window/controller
-	// caveat: if app was built with pre-ios8 sdk it will hit "backward compatibility" path
-	const bool newRotationLogic = UNITY_IOS8_ORNEWER_SDK && _ios80orNewer;
+	const bool newRotationLogic = _ios80orNewer;
 
 	CGAffineTransform transform = newRotationLogic ? TransformBetweenOrientations(fromController, to) : TransformForOrientation(to);
 
@@ -117,3 +126,4 @@ void OrientView(UIViewController* host, UIView* view, ScreenOrientation to)
 	view.transform	= transform;
 	view.bounds		= CGRectMake(0, 0, ::fabs(ext.width), ::fabs(ext.height));
 }
+

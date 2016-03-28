@@ -32,8 +32,12 @@
 // _unityView will be inited at the point of calling any of these methods
 // please note that these are actual "create" methods: there is no need to tweak hierarchy right away
 
+#if UNITY_TVOS
+- (UIViewController*)createUnityViewControllerForTVOS;
+#else
 - (UIViewController*)createAutorotatingUnityViewController;
 - (UIViewController*)createUnityViewControllerForOrientation:(UIInterfaceOrientation)orient;
+#endif
 
 // handling of changing ViewControllers:
 // willStartWithViewController: will be called on startup, when creating view hierarchy
@@ -48,12 +52,13 @@
 - (void)willTransitionToViewController:(UIViewController*)toController fromViewController:(UIViewController*)fromController;
 
 
+#if !UNITY_TVOS
 // if you override these you need to call super
 
 // if your root controller is not subclassed from UnityViewControllerBase, call these when rotation is happening
 - (void)interfaceWillChangeOrientationTo:(UIInterfaceOrientation)toInterfaceOrientation;
 - (void)interfaceDidChangeOrientationFrom:(UIInterfaceOrientation)fromInterfaceOrientation;
-
+#endif
 
 // override this if you want to have custom snapshot view.
 // by default it will capture the frame drawn inside applicationWillResignActive specifically to let app respond to OnApplicationPause
@@ -69,8 +74,12 @@
 // shows game itself (hides splash, and bring _rootView to front)
 - (void)showGameUI;
 
+// returns the topmost presentedViewController if there is one, or just rootViewController
+- (UIViewController*)topMostController;
+
 // will create or return from cache correct view controller for requested orientation
 - (UIViewController*)createRootViewController;
+#if !UNITY_TVOS
 // will create or return from cache correct view controller for given orientation
 - (UIViewController*)createRootViewControllerForOrientation:(UIInterfaceOrientation)orientation;
 
@@ -80,7 +89,8 @@
 // use this one in case of simple view hierarchy (e.g. when unity view is root)
 // this will fail if unity content orientation do not match actual ViewController orientation (e.g. portrait view inside landscape VC)
 // this one is called when you change Screen.orientation in script
-- (void)orientUnity:(ScreenOrientation)orient;
+- (void)orientUnity:(UIInterfaceOrientation)orient;
+#endif
 
 // check unity requested orientation and applies it
 - (void)checkOrientationRequest;

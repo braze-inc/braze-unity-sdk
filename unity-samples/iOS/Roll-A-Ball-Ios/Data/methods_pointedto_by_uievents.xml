@@ -8,16 +8,19 @@
 			<method name="OnChangeUserButtonClick"/>
 			<method name="OnRequestInAppMessageButtonClick"/>
 			<method name="OnLogPurchaseButtonClick"/>
+			<method name="OnSocialDataTest"/>
 		</type>
 		<type fullname="ChangeUser">
 			<method name="OnCancelButtonClicked"/>
 			<method name="OnDoneButtonClicked"/>
 		</type>
 		<type fullname="LogCustomEvent">
+			<method name="AddPropertyButtonClick"/>
 			<method name="OnCancelButtonClick"/>
 			<method name="OnDoneButtonClick"/>
 		</type>
 		<type fullname="LogPurchase">
+			<method name="AddPropertyButtonClick"/>
 			<method name="OnDoneButtonClick"/>
 			<method name="OnCancelButtonClick"/>
 		</type>

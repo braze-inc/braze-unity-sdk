@@ -12,6 +12,7 @@
 @protocol VideoPlayerDelegate<NSObject>
 - (void)onPlayerReady;
 - (void)onPlayerDidFinishPlayingVideo;
+- (void)onPlayerError:(NSError*)error;
 @end
 
 @interface VideoPlayer : NSObject
@@ -19,8 +20,10 @@
 	id<VideoPlayerDelegate> delegate;
 }
 @property (nonatomic, retain) id delegate;
+@property (nonatomic, readonly) AVPlayer* player;
 
 + (BOOL)CanPlayToTexture:(NSURL*)url;
++ (BOOL)CheckScalingModeAspectFill:(CGSize)videoSize screenSize:(CGSize)screenSize;
 
 - (BOOL)loadVideo:(NSURL*)url;
 - (BOOL)readyToPlay;
@@ -28,6 +31,7 @@
 
 - (BOOL)playToView:(VideoPlayerView*)view;
 - (BOOL)playToTexture;
+- (BOOL)playVideoPlayer;
 - (BOOL)isPlaying;
 
 - (intptr_t)curFrameTexture;

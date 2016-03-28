@@ -1,7 +1,10 @@
+#if !UNITY_TVOS
+
 #include "CameraCapture.h"
 #include "AVCapture.h"
 #include "CMVideoSampling.h"
 #include "CVTextureCache.h"
+
 
 #import <CoreVideo/CoreVideo.h>
 
@@ -209,8 +212,8 @@ extern "C" void UnityStopCameraCapture(void* capture)
 extern "C" void UnityCameraCaptureExtents(void* capture, int* w, int* h)
 {
 	CameraCaptureController* controller = (__bridge CameraCaptureController*)capture;
-	*w = controller->_width;
-	*h = controller->_height;
+	*w = (int)controller->_width;
+	*h = (int)controller->_height;
 }
 
 extern "C" void UnityCameraCaptureReadToMemory(void* capture, void* dst_, int w, int h)
@@ -265,3 +268,48 @@ extern "C" int UnityCameraCaptureVerticallyMirrored(void* capture)
 	CameraCaptureController* controller = (__bridge CameraCaptureController*)capture;
 	return IsCVTextureFlipped(controller->_cmVideoSampling.cvTextureCacheTexture);
 }
+#else
+
+// STUBBED OUT UNTIL DEVELOPER FINDs AN AWESOME CAMERA SOLUTION FOR APPLE TV //
+
+extern "C" void	UnityEnumVideoCaptureDevices(void* udata, void(*callback)(void* udata, const char* name, int frontFacing))
+{
+}
+
+extern "C" void* UnityInitCameraCapture(int deviceIndex, int w, int h, int fps, void* udata)
+{
+    return 0;
+}
+
+extern "C" void UnityStartCameraCapture(void* capture)
+{
+}
+
+extern "C" void UnityPauseCameraCapture(void* capture)
+{
+}
+
+extern "C" void UnityStopCameraCapture(void* capture)
+{
+}
+
+extern "C" void UnityCameraCaptureExtents(void* capture, int* w, int* h)
+{
+}
+
+extern "C" void UnityCameraCaptureReadToMemory(void* capture, void* dst_, int w, int h)
+{
+}
+
+extern "C" int UnityCameraCaptureVideoRotationDeg(void* capture)
+{
+    return 0;
+}
+
+extern "C" int UnityCameraCaptureVerticallyMirrored(void* capture)
+{
+    return 0;
+}
+
+#endif
+

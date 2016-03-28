@@ -43,6 +43,7 @@ public:
 
 	static VirtualInvokeData GetVirtualInvokeData (Il2CppMethodSlot slot, void* obj);
 	static VirtualInvokeData GetInterfaceInvokeData (Il2CppMethodSlot slot, TypeInfo* declaringInterface, void* obj);
+	static VirtualInvokeData GetComInterfaceInvokeData (Il2CppMethodSlot slot, TypeInfo* declaringInterface, void* obj);
 	static VirtualInvokeData GetGenericVirtualInvokeData (const MethodInfo* method, void* obj);
 	static VirtualInvokeData GetGenericInterfaceInvokeData (const MethodInfo* method, void* obj);
 

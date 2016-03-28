@@ -53,9 +53,9 @@ void HideActivityIndicator()
 	}
 }
 
-
 extern "C" void UnityStartActivityIndicator()
 {
+    // AppleTV does not support activity indicators
 	ShowActivityIndicator(UnityGetGLView());
 }
 

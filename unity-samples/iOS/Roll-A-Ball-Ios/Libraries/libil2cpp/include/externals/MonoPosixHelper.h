@@ -7,11 +7,11 @@
 
 extern "C"
 {
-  struct ZStream;
+	struct ZStream;
 
-	IL2CPP_EXPORT Il2CppIntPtr CreateZStream(int32_t compress, uint8_t gzip, methodPointerType func, Il2CppIntPtr gchandle);
-	IL2CPP_EXPORT int32_t CloseZStream(Il2CppIntPtr zstream);
-	IL2CPP_EXPORT int32_t Flush(Il2CppIntPtr zstream);
-	IL2CPP_EXPORT int32_t ReadZStream(Il2CppIntPtr zstream, Il2CppIntPtr buffer, int32_t length);
-	IL2CPP_EXPORT int32_t WriteZStream(Il2CppIntPtr zstream, Il2CppIntPtr buffer, int32_t length);
+	IL2CPP_EXPORT intptr_t CreateZStream(int32_t compress, uint8_t gzip, methodPointerType func, intptr_t gchandle);
+	IL2CPP_EXPORT int32_t CloseZStream(intptr_t zstream);
+	IL2CPP_EXPORT int32_t Flush(intptr_t zstream);
+	IL2CPP_EXPORT int32_t ReadZStream(intptr_t zstream, intptr_t buffer, int32_t length);
+	IL2CPP_EXPORT int32_t WriteZStream(intptr_t zstream, intptr_t buffer, int32_t length);
 }

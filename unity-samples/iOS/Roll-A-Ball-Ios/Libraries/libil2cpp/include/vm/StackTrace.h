@@ -24,7 +24,7 @@ public:
 	static bool GetStackFrameAt(int32_t depth, Il2CppStackFrameInfo& frame);
 	static void WalkFrameStack(Il2CppFrameWalkFunc callback, void* context);
 
-	inline static int32_t GetStackDepth() { return GetStackFrames()->size(); }
+	inline static size_t GetStackDepth() { return GetStackFrames()->size(); }
 	inline static bool GetTopStackFrame(Il2CppStackFrameInfo& frame) { return GetStackFrameAt(0, frame); }
 
 	static void PushFrame(Il2CppStackFrameInfo& frame);

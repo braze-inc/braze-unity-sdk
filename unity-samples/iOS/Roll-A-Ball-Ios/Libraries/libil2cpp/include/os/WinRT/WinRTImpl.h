@@ -14,16 +14,6 @@ namespace il2cpp
 				return HRESULT_CODE(hr);
 			return ERROR_SUCCESS;
 		}
-
-		NORETURN void ThrowExceptionFromHR(HRESULT hr);
-
-		inline void ThrowExceptionIfFailed(HRESULT hr)
-		{
-			if (SUCCEEDED(hr))
-				return;
-
-			ThrowExceptionFromHR(hr);
-		}
 	}
 }
 

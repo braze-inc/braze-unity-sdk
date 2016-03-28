@@ -4,6 +4,7 @@
 
 #define DEFINE_NOTIFICATION(name) extern "C" __attribute__((visibility ("default"))) NSString* const name = @#name;
 
+DEFINE_NOTIFICATION(kUnityViewDidLayoutSubviews);
 DEFINE_NOTIFICATION(kUnityViewDidDisappear);
 DEFINE_NOTIFICATION(kUnityViewDidAppear);
 DEFINE_NOTIFICATION(kUnityViewWillDisappear);
@@ -23,6 +24,7 @@ void UnityRegisterViewControllerListener(id<UnityViewControllerListener> obj)
 												object:nil		\
 		];														\
 
+	REGISTER_SELECTOR(@selector(viewDidLayoutSubviews:), kUnityViewDidLayoutSubviews);
 	REGISTER_SELECTOR(@selector(viewDidDisappear:), kUnityViewDidDisappear);
 	REGISTER_SELECTOR(@selector(viewWillDisappear:), kUnityViewWillDisappear);
 	REGISTER_SELECTOR(@selector(viewDidAppear:), kUnityViewDidAppear);

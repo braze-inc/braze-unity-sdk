@@ -191,6 +191,11 @@ struct PollRequest
 // TODO: this should really be UNIX_PATH_MAX or SUN_LEN(n)
 #define END_POINT_MAX_PATH_LEN	255
 
+#if IL2CPP_COMPILER_MSVC
+#pragma warning( push )
+#pragma warning( disable : 4200 )
+#endif
+
 struct EndPointInfo
 {
 	AddressFamily family;
@@ -204,6 +209,10 @@ struct EndPointInfo
 		uint8_t raw[IL2CPP_ZERO_LEN_ARRAY];
 	} data;
 };
+
+#if IL2CPP_COMPILER_MSVC
+#pragma warning( pop ) 
+#endif
 
 // NOTE(gab): this must be binary compatible with Windows's WSABUF
 struct WSABuf

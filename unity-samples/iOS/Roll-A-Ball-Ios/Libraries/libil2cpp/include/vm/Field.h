@@ -22,6 +22,7 @@ public:
 	static const char* GetName (FieldInfo *field);
 	static size_t GetOffset (FieldInfo *field);
 	static void GetValue (Il2CppObject *obj, FieldInfo *field, void *value);
+	static uint32_t GetToken (const FieldInfo *field);
 	static Il2CppObject* GetValueObject (FieldInfo *field, Il2CppObject *obj);
 	static bool HasAttribute (FieldInfo *field, TypeInfo *attr_class);
 	static bool IsDeleted (FieldInfo *field);

@@ -54,7 +54,7 @@ intptr_t CMVideoSampling_SampleBuffer(CMVideoSampling* sampling, void* buffer, s
 
 	if(UnitySelectedRenderingAPI() == apiOpenGLES2 || UnitySelectedRenderingAPI() == apiOpenGLES3)
 	{
-		GLES_CHK(glBindTexture(GL_TEXTURE_2D, retTex));
+		GLES_CHK(glBindTexture(GL_TEXTURE_2D, (GLuint)retTex));
 		GLES_CHK(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
 		GLES_CHK(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
 		GLES_CHK(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));

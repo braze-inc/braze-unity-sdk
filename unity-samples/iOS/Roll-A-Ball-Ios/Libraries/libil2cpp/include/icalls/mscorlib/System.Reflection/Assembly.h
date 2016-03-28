@@ -35,7 +35,7 @@ public:
 	static Il2CppArray* GetManifestResourceNames(Il2CppReflectionAssembly* assembly);
 	static Il2CppArray* GetModulesInternal (mscorlib_System_Reflection_Assembly* __this);
 	static Il2CppArray* GetNamespaces (Il2CppAssembly* self);
-	static Il2CppArray* GetReferencedAssemblies (Il2CppAssembly* self);
+	static Il2CppArray* GetReferencedAssemblies (Il2CppReflectionAssembly* self);
 	static void InternalGetAssemblyName (Il2CppString* assemblyFile, Il2CppAssemblyName* aname);
 	static Il2CppReflectionType* InternalGetType (Il2CppReflectionAssembly* ,mscorlib_System_Reflection_Module* ,Il2CppString* ,bool,bool);
 	static Il2CppString* InternalImageRuntimeVersion (Il2CppAssembly* self);

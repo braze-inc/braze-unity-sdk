@@ -8,16 +8,29 @@ static KeyboardDelegate*	_keyboard = nil;
 
 static bool					_shouldHideInput = false;
 static bool					_shouldHideInputChanged = false;
+static const unsigned       kToolBarHeight = 64;
 
 @implementation KeyboardDelegate
 {
 	// UI handling
 	// in case of single line we use UITextField inside UIToolbar
 	// in case of multi-line input we use UITextView with UIToolbar as accessory view
+	// toolbar buttons are kept around to prevent releasing them
+	// tvOS does not support multiline input thus only UITextField option is implemented
+#if UNITY_IOS
 	UITextView*		textView;
-	UITextField*	textField;
+
 	UIToolbar*		viewToolbar;
+	NSArray*		viewToolbarItems;
+#endif
+
+	UITextField*	textField;
+
+	// keep toolbar items for both single- and multi- line edit in NSArray to make sure they are kept around
+#if UNITY_IOS
 	UIToolbar*		fieldToolbar;
+	NSArray*		fieldToolbarItems;
+#endif
 
 	// inputView is view used for actual input (it will be responder): UITextField [single-line] or UITextView [multi-line]
 	// editView is the "root" view for keyboard: UIToolbar [single-line] or UITextView [multi-line]
@@ -45,21 +58,110 @@ static bool					_shouldHideInputChanged = false;
 @synthesize canceled	= _canceled;
 @synthesize text;
 
+bool stringContainsEmoji(NSString *string)
+{
+	__block BOOL returnValue = NO;
+	[string enumerateSubstringsInRange:NSMakeRange(0, [string length])
+		options:NSStringEnumerationByComposedCharacterSequences
+		usingBlock: ^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop)
+		{
+			const unichar hs = [substring characterAtIndex:0];
+		
+			// Surrogate pair
+			if(hs >= 0xD800 && hs <= 0xDBFF)
+			{
+				if(substring.length > 1)
+				{
+					// Compute the code point in the U+10000 - U+10FFFF plane.
+					const unichar ls = [substring characterAtIndex:1];
+					const int uc = ((hs - 0xD800) * 0x400) + (ls - 0xDC00) + 0x10000;
+				
+					// The ranges for the various emoji tables are as follows.
+					// Musical -> [U+1D000, U+1D24F]
+					// Miscellaneous Symbols and Pictographs -> [U+1F300, U+1F5FF]
+					// Emoticons -> [U+1F600, U+1F64F]
+					// Transport and Map Symbols -> [U+1F680, U+1F6FF]
+					// Supplemental Symbols and Pictographs -> [U+1F900, U+1F9FF]
+					if(uc >= 0x1D000 && uc <= 0x1F9FF)
+					{
+						returnValue = YES;
+					}
+				}
+			}
+			else if(substring.length > 1)
+			{
+				const unichar ls = [substring characterAtIndex:1];
+			
+				if(ls == 0x20E3)
+				{
+					// Filter all the emojis for numbers.
+					returnValue = YES;
+				}
+				else if(hs >= 0x270A && hs <= 0x270D)
+				{
+					// Filter all the various hand symbols (e.g., victory sign, writing hand, etc).
+					returnValue = YES;
+				}
+			}
+			else
+			{
+				// Non surrogate pair.
+				if(hs >= 0x2100 && hs <= 0x27FF)
+				{
+					// Filter the following emoji ranges.
+					// Letterlike Symbols -> [U+2100, U+214F]
+					// Number Forms -> [U+2150, U+218F]
+					// Arrows -> [U+2190, U+21FF]
+					// Dingbats -> [U+2700, U+27BF]
+					// Supplemental Arrows-A -> [U+27F0–U+27FF]
+					returnValue = YES;
+				}
+				else if(hs >= 0x2900 && hs <= 0x297F)
+				{
+					// Filter Supplemental Arrows-B -> [U+2900, U+297F]
+					returnValue = YES;
+				}
+				else if(hs >= 0x2B05 && hs <= 0x2BFF)
+				{
+					// Filter Miscellaneous Symbols and Arrows -> [U+2B00, U+2BFF]
+					returnValue = YES;
+				}
+			}
+		}];
+	
+	return returnValue;
+}
+
+// See the documentation for this method in http://apple.co/1OMnz8D.
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+	// Process the input string using the 'stringContainsEmoji' function and return NO or YES
+	// depending on whether it needs to be added to the UITexField or skipped altogether, respectively.
+	// We need to do this because Unity's UI doesn't provide proper Unicode support yet.
+	return !stringContainsEmoji(string);
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField*)textFieldObj
 {
 	[self hide];
 	return YES;
 }
-
 - (void)textInputDone:(id)sender
 {
 	[self hide];
 }
-
 - (void)textInputCancel:(id)sender
 {
 	_canceled = true;
 	[self hide];
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView*)view
+{
+#if !UNITY_TVOS
+	view.inputAccessoryView = viewToolbar;
+#endif
+	return YES;
 }
 
 - (void)keyboardDidShow:(NSNotification*)notification;
@@ -106,50 +208,85 @@ static bool					_shouldHideInputChanged = false;
 	return _keyboard;
 }
 
+#if !UNITY_TVOS
+struct CreateToolbarResult
+{
+	UIToolbar*	toolbar;
+	NSArray*	items;
+};
+- (CreateToolbarResult)createToolbarWithView:(UIView*)view
+{
+	UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,160,320, kToolBarHeight)];
+	UnitySetViewTouchProcessing(toolbar, touchesIgnored);
+	toolbar.hidden = NO;
+
+	UIBarButtonItem* inputItem	= view ? [[UIBarButtonItem alloc] initWithCustomView:view] : nil;
+	UIBarButtonItem* doneItem	= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(textInputDone:)];
+	UIBarButtonItem* cancelItem	= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(textInputCancel:)];
+
+	NSArray* items = view ? @[inputItem, doneItem, cancelItem] : @[doneItem, cancelItem];
+	toolbar.items = items;
+
+	inputItem = nil;
+	doneItem = nil;
+	cancelItem = nil;
+
+	CreateToolbarResult ret = {toolbar, items};
+	return ret;
+}
+#endif
+
 - (id)init
 {
 	NSAssert(_keyboard == nil, @"You can have only one instance of KeyboardDelegate");
 	self = [super init];
 	if(self)
 	{
+#if UNITY_IOS
 		textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 480, 480, 30)];
-		[textView setDelegate: self];
+		textView.delegate = self;
 		textView.font = [UIFont systemFontOfSize:18.0];
 		textView.hidden = YES;
+#endif
 
 		textField = [[UITextField alloc] initWithFrame:CGRectMake(0,0,120,30)];
-		[textField setDelegate: self];
-		[textField setBorderStyle: UITextBorderStyleRoundedRect];
+		textField.delegate = self;
+		textField.borderStyle = UITextBorderStyleRoundedRect;
 		textField.font = [UIFont systemFontOfSize:20.0];
 		textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 
-		viewToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,160,320,64)];
-		viewToolbar.hidden = NO;
-		UnitySetViewTouchProcessing(viewToolbar, touchesIgnored);
-		
-		fieldToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,160,320,64)];
-		fieldToolbar.hidden = NO;
-		UnitySetViewTouchProcessing(fieldToolbar, touchesIgnored);
+		#define CREATE_TOOLBAR(t, i, v)									\
+		do {															\
+			CreateToolbarResult res = [self createToolbarWithView:v];	\
+			t = res.toolbar;											\
+			i = res.items;												\
+		} while(0)
 
-		UIBarButtonItem* doneItem	= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(textInputDone:)];
-		UIBarButtonItem* cancelItem	= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(textInputCancel:)];
-		viewToolbar.items = @[doneItem, cancelItem];
-		
-		UIBarButtonItem* inputItem	= [[UIBarButtonItem alloc] initWithCustomView:textField];
-		doneItem	= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(textInputDone:)];
-		cancelItem	= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(textInputCancel:)];
-		fieldToolbar.items = @[inputItem, doneItem, cancelItem];
+#if UNITY_IOS
+		CREATE_TOOLBAR(viewToolbar, viewToolbarItems, nil);
+		CREATE_TOOLBAR(fieldToolbar, fieldToolbarItems, textField);
+#endif
 
-		inputItem = nil;
-		doneItem = nil;
-		cancelItem = nil;
+		#undef CREATE_TOOLBAR
 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textInputDone:) name:UITextFieldTextDidEndEditingNotification object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
 	}
 
 	return self;
+}
+
+- (void) setTextInputTraits: (id<UITextInputTraits>) traits
+				  withParam: (KeyboardShowParam) param
+					withCap: (UITextAutocapitalizationType) capitalization
+{
+	traits.keyboardType	= param.keyboardType;
+	traits.autocorrectionType = param.autocorrectionType;
+	traits.secureTextEntry = param.secure;
+	traits.keyboardAppearance = param.appearance;
+	traits.autocapitalizationType = capitalization;
 }
 
 - (void)setKeyboardParams:(KeyboardShowParam)param
@@ -159,31 +296,35 @@ static bool					_shouldHideInputChanged = false;
 
 	initialText = param.text ? [[NSString alloc] initWithUTF8String: param.text] : @"";
 
+	UITextAutocapitalizationType capitalization = UITextAutocapitalizationTypeSentences;
+	if(param.keyboardType == UIKeyboardTypeURL || param.keyboardType == UIKeyboardTypeEmailAddress)
+		capitalization = UITextAutocapitalizationTypeNone;
+
+#if UNITY_IOS
 	_multiline = param.multiline;
-	if(param.multiline)
+	if (_multiline)
 	{
-		[textView setText: initialText];
-		[textView setKeyboardType: param.keyboardType];
-		[textView setAutocorrectionType: param.autocorrectionType];
-		[textView setSecureTextEntry: (BOOL)param.secure];
-		[textView setKeyboardAppearance: param.appearance];
-		textView.inputAccessoryView = viewToolbar;
-		inputView = textView;
-		editView = textView;
+		textView.text = initialText;
+		[self setTextInputTraits:textView withParam:param withCap:capitalization];
 	}
 	else
 	{
-		[textField setPlaceholder: [NSString stringWithUTF8String: param.placeholder]];
-		[textField setText: initialText];
-		[textField setKeyboardType: param.keyboardType];
-		[textField setAutocorrectionType: param.autocorrectionType];
-		[textField setSecureTextEntry: (BOOL)param.secure];
-		[textField setKeyboardAppearance: param.appearance];
-		inputView = textField;
-		editView = fieldToolbar;
+		textField.text = initialText;
+		[self setTextInputTraits:textField withParam:param withCap:capitalization];
+		textField.placeholder = [NSString stringWithUTF8String:param.placeholder];
 	}
+	inputView = _multiline ? textView : textField;
+	editView = _multiline ? textView : fieldToolbar;
 
-	[self shouldHideInput:_shouldHideInput];
+#else // UNITY_TVOS
+	textField.text = initialText;
+	[self setTextInputTraits:textField withParam:param withCap:capitalization];
+	textField.placeholder = [NSString stringWithUTF8String:param.placeholder];
+	inputView = textField;
+	editView = textField;
+#endif
+
+    [self shouldHideInput:_shouldHideInput];
 
 	_done		= NO;
 	_canceled	= NO;
@@ -203,10 +344,17 @@ static bool					_shouldHideInputChanged = false;
 }
 - (void)hideUI
 {
-	[inputView resignFirstResponder];
+	// this is done on the next frame so that
+	// in the case where unity is paused while going 
+	// into the background and an input is deactivated
+	// we don't mess with the view hierarchy while taking
+	// a view snapshot (case 760747).
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[inputView resignFirstResponder];
 
-	[editView removeFromSuperview];
-	editView.hidden = YES;
+		[editView removeFromSuperview];
+		editView.hidden = YES;
+	});
 }
 - (void)systemHideKeyboard
 {
@@ -242,24 +390,27 @@ static bool					_shouldHideInputChanged = false;
 
 - (void)positionInput:(CGRect)kbRect x:(float)x y:(float)y
 {
-	static const unsigned kInputBarSize = 48;
-
 	if(_multiline)
 	{
 		// use smaller area for iphones and bigger one for ipads
 		int height = UnityDeviceDPI() > 300 ? 75 : 100;
 
-		editView.frame	= CGRectMake(0, y - kInputBarSize, kbRect.size.width, height);
+		editView.frame	= CGRectMake(0, y - kToolBarHeight, kbRect.size.width, height);
 	}
 	else
 	{
+#if UNITY_TVOS
+        unsigned statusHeight = 0;
+#else
 		CGRect   statusFrame	= [UIApplication sharedApplication].statusBarFrame;
 		unsigned statusHeight	= statusFrame.size.height;
+#endif
 
-		editView.frame	= CGRectMake(0, y - kInputBarSize - statusHeight, kbRect.size.width, kInputBarSize);
-		inputView.frame	= CGRectMake(inputView.frame.origin.x, inputView.frame.origin.y,
-									 kbRect.size.width - 3*18 - 2*50, inputView.frame.size.height
-									);
+		editView.frame	= CGRectMake(0, y - kToolBarHeight - statusHeight, kbRect.size.width, kToolBarHeight);
+        inputView.frame	= CGRectMake(inputView.frame.origin.x,
+                                     inputView.frame.origin.y,
+                                     kbRect.size.width - 3*18 - 2*50,
+                                     inputView.frame.size.height);
 	}
 
 	_area = CGRectMake(x, y, kbRect.size.width, kbRect.size.height);
@@ -298,8 +449,16 @@ static bool					_shouldHideInputChanged = false;
 
 - (NSString*)getText
 {
-	if(_canceled)	return initialText;
-	else			return _multiline ? [textView text] : [textField text];
+	if (_canceled)
+		return initialText;
+	else
+	{
+#if UNITY_TVOS
+		return [textField text];
+#else
+		return _multiline ? [textView text] : [textField text];
+#endif
+	}
 }
 
 - (void) setTextWorkaround:(id<UITextInput>)textInput text:(NSString*)newText
@@ -313,6 +472,7 @@ static bool					_shouldHideInputChanged = false;
 
 - (void)setText:(NSString*)newText
 {
+#if UNITY_IOS
 	// We can't use setText on iOS7 because it does not update the undo stack.
 	// We still prefer setText on other iOSes, because an undo operation results
 	// in a smaller selection shown on the UI
@@ -320,9 +480,12 @@ static bool					_shouldHideInputChanged = false;
 		[self setTextWorkaround: (_multiline ? textView : textField) text:newText];
 
 	if(_multiline)
-		[textView setText:newText];
+		textView.text = newText;
 	else
-		[textField setText:newText];
+		textField.text = newText;
+#else
+	textField.text = newText;
+#endif
 }
 
 - (void)shouldHideInput:(BOOL)hide
@@ -356,6 +519,12 @@ static bool					_shouldHideInputChanged = false;
 
 extern "C" void UnityKeyboard_Create(unsigned keyboardType, int autocorrection, int multiline, int secure, int alert, const char* text, const char* placeholder)
 {
+#if UNITY_TVOS
+	// Not supported. The API for showing keyboard for editing multi-line text
+	// is not available on tvOS
+	multiline = false;
+#endif
+	
 	static const UIKeyboardType keyboardTypes[] =
 	{
 		UIKeyboardTypeDefault,

@@ -4,6 +4,7 @@ using Appboy.Models;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Appboy.Utilities;
 
 /// <summary>
 /// These methods can be called by Unity applications using iOS or Android in order to report 
@@ -32,13 +33,13 @@ namespace Appboy {
     }
   
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _logCustomEvent(string eventName);
+    private static extern void _logCustomEvent(string eventName, string properties);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _changeUser(string userId);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _logPurchase(string productId, string currencyCode, string price, int quantity);
+    private static extern void _logPurchase(string productId, string currencyCode, string price, int quantity, string properties);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserFirstName(string firstName);
@@ -111,6 +112,12 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _removeFromCustomUserAttributeArray(string key, string value);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, int gender, int numberOfFriends, string birthday);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setUserTwitterData(int twitterUserId, string twitterHandle, string name, string description, int followerCount, int followingCount, int tweetCount, string profileImageUrl);
         
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
@@ -146,11 +153,21 @@ namespace Appboy {
     private static extern void _requestInAppMessage();
 
     public static void LogCustomEvent(string eventName) {
-      _logCustomEvent(eventName);
+      _logCustomEvent(eventName, null);
+    }
+
+    public static void LogCustomEvent(string eventName, Dictionary<string, string> properties) {
+      var propertiesString = Json.Serialize(properties);
+      _logCustomEvent(eventName, propertiesString);
     }
 
     public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
-      _logPurchase(productId, currencyCode, price.ToString(), quantity);
+      _logPurchase(productId, currencyCode, price.ToString(), quantity, null);
+    }
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, string> properties) {
+      var propertiesString = Json.Serialize(properties);
+      _logPurchase(productId, currencyCode, price.ToString(), quantity, propertiesString);
     }
   
     public static void ChangeUser(string userId) {
@@ -257,12 +274,16 @@ namespace Appboy {
       _removeFromCustomUserAttributeArray(key, value);
     }
 
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-      _submitFeedback(replyToEmail, message, isReportingABug);
+    public static void setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {
+    _setUserFacebookData(facebookId, firstName, lastName, email, bio, cityName, gender == null ? -1 : (int)gender, numberOfFriends == null ? -1 : (int)numberOfFriends, birthday);
     }
 
-    public static void ClearPushMessage(int notificationId) {
+    public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
+    _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
+    }
 
+    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
+      _submitFeedback(replyToEmail, message, isReportingABug);
     }
     
     public static void RequestInAppMessage() {
@@ -354,9 +375,30 @@ namespace Appboy {
       Appboy.Call<bool>("logCustomEvent", eventName);
     }
 
+    public static AndroidJavaObject ParsePropertiesToAppboyProperties(Dictionary<string, string> properties) {
+      AndroidJavaObject appboyProperties = new AndroidJavaObject("com.appboy.models.outgoing.AppboyProperties");
+      if (properties != null && properties.Count > 0) {
+        foreach (KeyValuePair<string, string> entry in properties) {
+          appboyProperties.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value);
+        }
+      }
+      return appboyProperties;
+    }
+
+    public static void LogCustomEvent(string eventName, Dictionary<string, string> properties) {
+      AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
+      Appboy.Call<bool>("logCustomEvent", eventName, appboyProperties);
+    }
+
     public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
       var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
       Appboy.Call<bool>("logPurchase", productId, currencyCode, javaPrice, quantity);
+    }
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, string> properties) {
+      var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
+      AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
+      Appboy.Call<bool>("logPurchase", productId, currencyCode, javaPrice, quantity, appboyProperties);
     }
  
     public static void ChangeUser(string userId) {
@@ -562,6 +604,57 @@ namespace Appboy {
     public static void AddToCustomUserAttributeArray(string key, string value) {
       GetCurrentUser().Call<bool>("addToCustomAttributeArray", key, value);
     }
+
+    public static void setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {
+      var genderClass = new AndroidJavaClass("com.appboy.enums.Gender");
+      AndroidJavaObject genderEnum = null;
+      if (gender != null) {
+        switch (gender) {
+          case Gender.Male:
+          genderEnum = genderClass.GetStatic<AndroidJavaObject>("MALE");
+            break;
+          case Gender.Female:
+           genderEnum = genderClass.GetStatic<AndroidJavaObject>("FEMALE");
+            break;
+          default:
+            Debug.Log("Unknown gender received: " + gender);
+            break;
+        }
+      }
+
+      var facebookUser = new AndroidJavaObject("com.appboy.models.outgoing.FacebookUser", new object[] 
+        {
+        facebookId, 
+        firstName,
+        lastName, 
+        email, 
+        bio, 
+        cityName, 
+        genderEnum, 
+        numberOfFriends == null ? null : new AndroidJavaObject("java.lang.Integer", numberOfFriends), 
+        null, 
+        birthday
+        }
+      );
+
+      GetCurrentUser().Call<bool>("setFacebookData", facebookUser);
+    }
+    
+    public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
+      var twitterUser = new AndroidJavaObject("com.appboy.models.outgoing.TwitterUser", new object[] 
+        {
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", twitterUserId),
+          twitterHandle,
+          name, 
+          description,
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followerCount), 
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followingCount), 
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", tweetCount), 
+          profileImageUrl
+        }
+      );
+      GetCurrentUser().Call<bool>("setTwitterData", twitterUser);
+    }
     
     public static void RemoveFromCustomUserAttributeArray(string key, string value) {
       GetCurrentUser().Call<bool>("removeFromCustomAttributeArray", key, value);
@@ -571,9 +664,9 @@ namespace Appboy {
       object[] args = new object[] { replyToEmail, message, isReportingABug };
       Appboy.Call<bool>("submitFeedback", args);
     }
-        
-    public static void ClearPushMessage(int notificationId) {
-      AppboyUnityActivity.Call("clearNotification", new object[] { notificationId });
+
+    public static void RegisterAppboyPushMessages(string registrationId) {
+      Appboy.Call("registerAppboyPushMessages", new object[] { registrationId });
     }
 
     public static void RequestSlideup() {
@@ -755,11 +848,7 @@ namespace Appboy {
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       WindowsUniversalUnityAdapter.AppboyAdapter.SubmitFeedback(replyToEmail, message, isReportingABug);
     }
-
-    public static void ClearPushMessage(int notificationId) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.ClearPushMessage(notificationId);
-    }
-
+   
     public static void RequestSlideup() {
       WindowsUniversalUnityAdapter.AppboyAdapter.RequestSlideup();
     }
@@ -921,10 +1010,6 @@ namespace Appboy {
       WindowsPhone8UnityAdapter.AppboyAdapter.SubmitFeedback(replyToEmail, message, isReportingABug);
     }
 
-    public static void ClearPushMessage(int notificationId) {
-      WindowsPhone8UnityAdapter.AppboyAdapter.ClearPushMessage(notificationId);
-    }
-
     public static void RequestSlideup() {
       WindowsPhone8UnityAdapter.AppboyAdapter.RequestSlideup();
     }
@@ -964,7 +1049,13 @@ namespace Appboy {
     public static void LogCustomEvent(string eventName) {
     }
 
+    public static void LogCustomEvent(string eventName, Dictionary<string, string> properties) {
+    }
+
     public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
+    }
+
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, string> properties) {
     }
 
     public static void ChangeUser(string userId) {
@@ -1039,13 +1130,20 @@ namespace Appboy {
     public static void AddToCustomUserAttributeArray(string key, string value) {
     }
 
+    public static void setUserFacebookData(string facebookId, string firstName, string lastName, string email,
+      string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {}
+
+    public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount,
+      int? followingCount, int? tweetCount, string profileImageUrl) {}
+
+
     public static void RemoveFromCustomUserAttributeArray(string key, string value) {
     }
 
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
     }
 
-    public static void ClearPushMessage(int notificationId) {
+    public static void RegisterAppboyPushMessages(string registrationId) {
     }
 
     public static void RequestSlideup() {

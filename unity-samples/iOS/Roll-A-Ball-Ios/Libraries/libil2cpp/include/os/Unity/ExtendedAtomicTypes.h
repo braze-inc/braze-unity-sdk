@@ -50,21 +50,6 @@ UNITY_PLATFORM_BEGIN_NAMESPACE;
 		};
 	};
 	#define ATOMIC_HAS_DCAS
-#elif defined(_M_ARM)
-
-	typedef __int32	atomic_word;
-
-	union atomic_word2
-	{
-		__int64 v;
-		struct
-		{
-			atomic_word lo;
-			atomic_word hi;
-		};
-	};
-
-	#define ATOMIC_HAS_DCAS
 
 #elif defined (__arm64__) && (defined(__clang__) || defined(__GNUC__))
 
@@ -75,13 +60,18 @@ UNITY_PLATFORM_BEGIN_NAMESPACE;
 		atomic_word	hi;
 	};
 #	define ATOMIC_HAS_DCAS
+#	define ATOMIC_HAS_LDR
 
-#elif defined (__arm__) && (defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__) || defined(__ARM_ARCH_7R__) || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7S__)) && (!UNITY_BLACKBERRY) && (!UNITY_STV_API) && (!UNITY_TIZEN) && (defined(__clang__) || defined(__GNUC__))
+#elif defined(_M_ARM) || (defined (__arm__) && (defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__) || defined(__ARM_ARCH_7R__) || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7S__)) && (!UNITY_STV_API) && (!UNITY_TIZEN) && (defined(__clang__) || defined(__GNUC__)))
 
 	typedef int atomic_word;
 	union atomic_word2
 	{
-		double v;
+#	if defined(_MSC_VER)
+		__int64 v;
+#	else
+		long long v;
+#	endif
 		struct
 		{
 			atomic_word	lo;
@@ -89,6 +79,9 @@ UNITY_PLATFORM_BEGIN_NAMESPACE;
 		};
 	};
 #	define ATOMIC_HAS_DCAS
+#	if !defined(_MSC_VER)
+#		define ATOMIC_HAS_LDR
+#	endif
 
 #elif UNITY_PS3
 
@@ -98,6 +91,8 @@ UNITY_PLATFORM_BEGIN_NAMESPACE;
 		atomic_word	lo;
 		atomic_word	hi;
 	};
+	//#define ATOMIC_HAS_DCAS
+#	define ATOMIC_HAS_LDR
 
 #elif UNITY_XENON
 	typedef int atomic_word;
@@ -113,6 +108,7 @@ UNITY_PLATFORM_BEGIN_NAMESPACE;
 	//#define ATOMIC_HAS_DCAS
 
 #elif UNITY_PSP2
+
 	typedef int32_t atomic_word;
 	union atomic_word2
 	{
@@ -123,15 +119,18 @@ UNITY_PLATFORM_BEGIN_NAMESPACE;
 			atomic_word	hi;
 		};
 	};
-	#define ATOMIC_HAS_DCAS
+#	define ATOMIC_HAS_DCAS
+#	define ATOMIC_HAS_LDR
 
 #elif defined (__ppc64__) || defined (_ARCH_PPC64)
 
 	typedef long atomic_word;
+#	define ATOMIC_HAS_LDR
 
 #elif defined (__ppc__)
 
 	typedef int atomic_word;
+#	define ATOMIC_HAS_LDR
 
 #else
 

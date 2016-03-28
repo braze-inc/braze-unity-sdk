@@ -20,10 +20,8 @@ extern "C" OnDemandResourcesRequestData* UnityOnDemandResourcesCreateRequest(NSS
 {
 	OnDemandResourcesRequestData* data = new OnDemandResourcesRequestData();
 	data->request = [[NSBundleResourceRequest alloc] initWithTags:tags];
-	[data->request beginAccessingResourcesWithCompletionHandler:^(NSError* error)
-	{
-		dispatch_async(dispatch_get_main_queue(), ^
-		{
+	[data->request beginAccessingResourcesWithCompletionHandler:^(NSError* error){
+		dispatch_async(dispatch_get_main_queue(), ^{
 			const char* errorMessage = error ? [[error localizedDescription] UTF8String] : NULL;
 			handler(handlerData, errorMessage);
 		});
@@ -41,8 +39,7 @@ extern "C" void UnityOnDemandResourcesRelease(OnDemandResourcesRequestData* data
 
 extern "C" float UnityOnDemandResourcesGetProgress(OnDemandResourcesRequestData* data)
 {
-	float progress = (float)((double)data->request.progress.completedUnitCount / (double)data->request.progress.totalUnitCount);
-	return progress;
+	return data->request.progress.fractionCompleted;
 }
 
 

@@ -42,13 +42,13 @@ public:
 	template<typename T>
 	static inline T* CompareExchangePointer (T* volatile* dest, T* newValue, T* oldValue)
 	{
-		return static_cast<T*> (CompareExchangePointer ((void**) dest, newValue, oldValue));
+		return static_cast<T*> (CompareExchangePointer ((void* volatile*) dest, newValue, oldValue));
 	}
 
 	template<typename T>
 	static inline T* ExchangePointer (T* volatile* dest, T* newValue)
 	{
-		return static_cast<T*> (ExchangePointer ((void**) dest, newValue));
+		return static_cast<T*> (ExchangePointer ((void* volatile*) dest, newValue));
 	}
 	
 	static inline uint64_t Read64 (volatile uint64_t* addr)

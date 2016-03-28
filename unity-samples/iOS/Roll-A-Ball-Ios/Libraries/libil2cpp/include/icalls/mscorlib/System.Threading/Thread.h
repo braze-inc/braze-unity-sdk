@@ -29,7 +29,7 @@ public:
 	static void ResetAbort_internal ();
 	static void MemoryBarrier_ ();
 	static void SpinWait_nop ();
-	static void Abort_internal (void* /* System.Threading.Thread */ self, Il2CppObject* stateInfo);
+	static void Abort_internal (Il2CppThread* __this, Il2CppObject* stateInfo);
 	static void ClrState (Il2CppThread* __this, il2cpp::vm::ThreadState clr);
 	static void FreeLocalSlotValues (int32_t slot, bool use_thread_local);
 	static Il2CppObject* GetAbortExceptionState (void* /* System.Threading.Thread */ self);

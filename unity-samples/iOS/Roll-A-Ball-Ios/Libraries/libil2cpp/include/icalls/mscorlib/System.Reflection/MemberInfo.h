@@ -29,7 +29,7 @@ namespace Reflection
 class MemberInfo
 {
 public:
-	static int32_t get_MetadataToken (void* /* System.Reflection.MemberInfo */ self);
+	static int32_t get_MetadataToken (Il2CppObject* /* System.Reflection.MemberInfo */ self);
 };
 
 } /* namespace Reflection */

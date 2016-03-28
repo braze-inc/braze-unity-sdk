@@ -118,9 +118,12 @@ struct Il2CppStackFrameInfo
 
 typedef struct {
 	void* (*malloc_func)(size_t size);
+	void* (*aligned_malloc_func)(size_t size, size_t alignment);
 	void (*free_func)(void *ptr);
+	void (*aligned_free_func)(void *ptr);
 	void* (*calloc_func)(size_t nmemb, size_t size);
 	void* (*realloc_func)(void *ptr, size_t size);
+	void* (*aligned_realloc_func)(void *ptr, size_t size, size_t alignment);
 } Il2CppMemoryCallbacks;
 
 typedef void (*register_object_callback)(void** arr, int size, void* userdata);
@@ -132,6 +135,8 @@ typedef void (*Il2CppProfileMethodFunc) (Il2CppProfiler* prof, const MethodInfo 
 typedef void (*Il2CppProfileAllocFunc) (Il2CppProfiler* prof, Il2CppObject *obj, TypeInfo *klass);
 typedef void (*Il2CppProfileGCFunc) (Il2CppProfiler* prof, Il2CppGCEvent event, int generation);
 typedef void (*Il2CppProfileGCResizeFunc) (Il2CppProfiler* prof, int64_t new_size);
+
+typedef const char* (*Il2CppSetFindPlugInCallback)(const char*);
 
 struct Il2CppMetadataField
 {

@@ -2,9 +2,11 @@
 
 #include <CoreGraphics/CGAffineTransform.h>
 
-
+#if !UNITY_TVOS
 ScreenOrientation		ConvertToUnityScreenOrientation(UIInterfaceOrientation hwOrient);
 UIInterfaceOrientation	ConvertToIosScreenOrientation(ScreenOrientation orient);
+#endif
+ScreenOrientation UIViewControllerOrientation(UIViewController* controller);
 
 CGAffineTransform		TransformForOrientation(ScreenOrientation curOrient);
 CGAffineTransform		TransformBetweenOrientations(ScreenOrientation fromOrient, ScreenOrientation toOrient);
@@ -12,8 +14,3 @@ CGAffineTransform		TransformBetweenOrientations(ScreenOrientation fromOrient, Sc
 ScreenOrientation		OrientationAfterTransform(ScreenOrientation curOrient, CGAffineTransform transform);
 
 void					OrientView(UIViewController* host, UIView* view, ScreenOrientation to);
-
-
-#if !UNITY_IOS8_ORNEWER_SDK
-	static const NSInteger UIInterfaceOrientationUnknown = UIDeviceOrientationUnknown;
-#endif

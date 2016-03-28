@@ -35,6 +35,7 @@ private:
 	static Il2CppObject* AllocateSpec (size_t size, TypeInfo *typeInfo);
 
 	friend class Array;
+	friend class RCW;
 	friend class String;
 };
 

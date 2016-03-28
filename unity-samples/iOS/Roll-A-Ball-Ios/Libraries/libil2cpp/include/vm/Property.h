@@ -20,6 +20,7 @@ public:
 	static const MethodInfo* GetSetMethod (const PropertyInfo* prop);
 	static const char* GetName (const PropertyInfo* prop);
 	static TypeInfo* GetParent (const PropertyInfo* prop);
+	static uint32_t GetToken (const PropertyInfo* prop);
 };
 
 } /* namespace vm */

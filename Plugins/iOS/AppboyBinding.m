@@ -3,31 +3,48 @@
 // Converts C style string to NSString
 #define GetStringParam( _x_ ) ( _x_ != NULL ) ? [NSString stringWithUTF8String:_x_] : [NSString stringWithUTF8String:""]
 
-void _logCustomEvent(const char* eventName) {
-	[[AppboyUnityManager sharedInstance] logCustomEvent:GetStringParam(eventName)];
+void _logCustomEvent(const char* eventName, const char* properties) {
+  NSMutableDictionary *eventProperties = [NSMutableDictionary dictionaryWithCapacity:1];
+  if (properties != NULL && properties != nil) {
+    NSError *jsonError;
+    NSData *objectData = [GetStringParam(properties) dataUsingEncoding:NSUTF8StringEncoding];
+    eventProperties = [NSJSONSerialization JSONObjectWithData:objectData
+                                                      options:NSJSONReadingMutableContainers
+                                                        error:&jsonError];
+  }
+  [[AppboyUnityManager sharedInstance] logCustomEvent:GetStringParam(eventName) withProperties:eventProperties];
 }
 
 void _changeUser(const char* userId) {
-	[[AppboyUnityManager sharedInstance] changeUser:GetStringParam(userId)];
+  [[AppboyUnityManager sharedInstance] changeUser:GetStringParam(userId)];
 }
 
-void _logPurchase(const char* productId, const char* currencyCode, const char* price, int quantity) {
-    [[AppboyUnityManager sharedInstance] logPurchase:GetStringParam(productId)
-                                          inCurrency:GetStringParam(currencyCode)
-                                             atPrice:GetStringParam(price)
-                                        withQuantity:quantity];
+void _logPurchase(const char* productId, const char* currencyCode, const char* price, int quantity, const char* properties) {
+  NSMutableDictionary *purchaseProperties = [NSMutableDictionary dictionaryWithCapacity:1];
+  if (properties != NULL && properties != nil) {
+    NSError *jsonError;
+    NSData *objectData = [GetStringParam(properties) dataUsingEncoding:NSUTF8StringEncoding];
+    purchaseProperties = [NSJSONSerialization JSONObjectWithData:objectData
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&jsonError];
+  }
+  [[AppboyUnityManager sharedInstance] logPurchase:GetStringParam(productId)
+                                        inCurrency:GetStringParam(currencyCode)
+                                           atPrice:GetStringParam(price)
+                                      withQuantity:quantity
+                                    withProperties:purchaseProperties];
 }
 
 void _setUserFirstName(const char* firstName) {
-	[[AppboyUnityManager sharedInstance] setUserFirstName:GetStringParam(firstName)];
+  [[AppboyUnityManager sharedInstance] setUserFirstName:GetStringParam(firstName)];
 }
 
 void _setUserLastName(const char* lastName) {
-	[[AppboyUnityManager sharedInstance] setUserLastName:GetStringParam(lastName)];
+  [[AppboyUnityManager sharedInstance] setUserLastName:GetStringParam(lastName)];
 }
 
 void _setUserPhoneNumber(const char* phoneNumber) {
-	[[AppboyUnityManager sharedInstance] setUserPhoneNumber:GetStringParam(phoneNumber)];
+  [[AppboyUnityManager sharedInstance] setUserPhoneNumber:GetStringParam(phoneNumber)];
 }
 
 void _setUserAvatarImageURL(const char* imageURL) {
@@ -35,15 +52,15 @@ void _setUserAvatarImageURL(const char* imageURL) {
 }
 
 void _setUserEmail(const char* email) {
-	[[AppboyUnityManager sharedInstance] setUserEmail:GetStringParam(email)];
+  [[AppboyUnityManager sharedInstance] setUserEmail:GetStringParam(email)];
 }
 
 void _setUserBio(const char* bio) {
-	[[AppboyUnityManager sharedInstance] setUserBio:GetStringParam(bio)];
+  [[AppboyUnityManager sharedInstance] setUserBio:GetStringParam(bio)];
 }
 
 void _setUserGender(int gender) {
-	[[AppboyUnityManager sharedInstance] setUserGender:gender];
+  [[AppboyUnityManager sharedInstance] setUserGender:gender];
 }
 
 void _setUserDateOfBirth(int year, int month, int day) {
@@ -127,6 +144,18 @@ void _addToCustomUserAttributeArray(const char* key, const char* value) {
 
 void _removeFromCustomUserAttributeArray(const char* key, const char* value) {
   [[AppboyUnityManager sharedInstance] removeFromCustomAttributeArrayWithKey:GetStringParam(key) value:GetStringParam(value)];
+}
+
+
+void _setUserFacebookData(const char*  facebookId, const char*  firstName, const char*  lastName, const char*  email,
+                          const char*  bio, const char*  cityName, int gender, int numberOfFriends, const char* birthday) {
+  [[AppboyUnityManager sharedInstance] setUserFacebookData:GetStringParam(facebookId) firstName:GetStringParam(firstName) lastName:GetStringParam(lastName) email:GetStringParam(email)
+                                                       bio:GetStringParam(bio) cityName:GetStringParam(cityName) gender:gender numberOfFriends:numberOfFriends birthday:GetStringParam(birthday)];
+}
+
+void _setUserTwitterData(int twitterUserId, const char* twitterHandle, const char* name, const char* description, int followerCount,
+                         int followingCount, int tweetCount, const char* profileImageUrl) {
+  [[AppboyUnityManager sharedInstance] setUserTwitterData:twitterUserId twitterHandle:GetStringParam(twitterHandle) name:GetStringParam(name) description:GetStringParam(description) followerCount:followerCount followingCount:followingCount tweetCount:tweetCount profileImageUrl:GetStringParam(profileImageUrl)];
 }
 
 void _submitFeedback(const char* replyToEmail, const char* message, bool isReportingABug) {

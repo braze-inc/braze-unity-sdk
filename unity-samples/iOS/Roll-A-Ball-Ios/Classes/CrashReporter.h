@@ -23,6 +23,11 @@
 #define ENABLE_CUSTOM_CRASH_REPORTER 0
 #endif
 
+#if UNITY_TVOS
+	#undef ENABLE_CUSTOM_CRASH_REPORTER
+#define ENABLE_CUSTOM_CRASH_REPORTER 0
+#endif
+
 
 void WaitWhileCrashReportsAreSent();
 void SubmitCrashReportsAsync();

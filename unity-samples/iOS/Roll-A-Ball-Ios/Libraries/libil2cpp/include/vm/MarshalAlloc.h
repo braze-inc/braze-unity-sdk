@@ -27,7 +27,7 @@ public:
 
 private:
 	static os::FastMutex s_Mutex; // Locking only necessary in a debug build.
-	static std::map<void*, int> s_Allocations;
+	static std::map<void*, size_t> s_Allocations;
 #endif
 
 };

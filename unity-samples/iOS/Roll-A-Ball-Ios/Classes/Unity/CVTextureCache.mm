@@ -48,7 +48,7 @@ void FlushCVTextureCache(void* cache)
 		CVOpenGLESTextureCacheFlush((CVOpenGLESTextureCacheRef)cache, 0);
 }
 
-void* CreateTextureFromCVTextureCache(void* cache, void* image, unsigned w, unsigned h)
+void* CreateTextureFromCVTextureCache(void* cache, void* image, size_t w, size_t h)
 {
 	void* texture = 0;
 
@@ -64,7 +64,7 @@ void* CreateTextureFromCVTextureCache(void* cache, void* image, unsigned w, unsi
 	{
 		err = CVOpenGLESTextureCacheCreateTextureFromImage(
 			kCFAllocatorDefault, (CVOpenGLESTextureCacheRef)cache, (CVImageBufferRef)image, 0,
-			GL_TEXTURE_2D, GL_RGBA, w, h, GL_BGRA_EXT, GL_UNSIGNED_BYTE,
+			GL_TEXTURE_2D, GL_RGBA, (GLsizei)w, (GLsizei)h, GL_BGRA_EXT, GL_UNSIGNED_BYTE,
 			0, (CVOpenGLESTextureRef*)&texture
 		);
 	}
@@ -95,7 +95,7 @@ uintptr_t GetTextureFromCVTextureCache(void* texture)
 		return (uintptr_t)GetGLTextureFromCVTextureCache(texture);
 }
 
-void* CreatePixelBufferForCVTextureCache(unsigned w, unsigned h)
+void* CreatePixelBufferForCVTextureCache(size_t w, size_t h)
 {
 	NSString* apiKey = UnitySelectedRenderingAPI() == apiMetal	? (__bridge NSString*)kCVPixelBufferMetalCompatibilityKey
 																: (__bridge NSString*)kCVPixelBufferOpenGLESCompatibilityKey;
@@ -111,7 +111,7 @@ void* CreatePixelBufferForCVTextureCache(unsigned w, unsigned h)
 	return pb;
 }
 
-void* CreateReadableRTFromCVTextureCache(void* cache, unsigned w, unsigned h, void** pb)
+void* CreateReadableRTFromCVTextureCache(void* cache, size_t w, size_t h, void** pb)
 {
 	*pb = CreatePixelBufferForCVTextureCache(w, h);
 	return CreateTextureFromCVTextureCache(cache, *pb, w, h);

@@ -28,7 +28,7 @@ public:
 	static Il2CppString* GetGuidInternal (mscorlib_System_Reflection_Module * __this);
 	static int32_t GetMDStreamVersion (Il2CppIntPtr module_handle);
 	static void GetPEKind (Il2CppIntPtr module, PortableExecutableKinds* peKind, ImageFileMachine* machine);
-	static Il2CppArray* InternalGetTypes (mscorlib_System_Reflection_Module * __this);
+	static Il2CppArray* InternalGetTypes (Il2CppReflectionModule * self);
 	static Il2CppIntPtr ResolveFieldToken (Il2CppIntPtr module, int32_t token, Il2CppArray* type_args, Il2CppArray* method_args, ResolveTokenError* error);
 	static void* /* System.Reflection.MemberInfo */ ResolveMemberToken (Il2CppIntPtr module, int32_t token, Il2CppArray* type_args, Il2CppArray* method_args, ResolveTokenError* error);
 	static Il2CppIntPtr ResolveMethodToken (Il2CppIntPtr module, int32_t token, Il2CppArray* type_args, Il2CppArray* method_args, ResolveTokenError* error);

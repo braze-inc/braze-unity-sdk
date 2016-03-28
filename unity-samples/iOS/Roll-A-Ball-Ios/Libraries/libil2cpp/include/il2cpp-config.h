@@ -39,13 +39,15 @@
 #elif defined(__APPLE__)
 	#define IL2CPP_TARGET_DARWIN 1
 	#include "TargetConditionals.h"
-	#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+	#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR || TARGET_TVOS_SIMULATOR
 		#define IL2CPP_TARGET_IOS 1
 	#endif
 #elif defined(__ANDROID__)
 	#define IL2CPP_TARGET_ANDROID 1
 #elif defined(EMSCRIPTEN)
 	#define IL2CPP_TARGET_JAVASCRIPT 1
+#elif defined(TIZEN)
+    #define IL2CPP_TARGET_TIZEN 1
 #elif defined(__linux__)
 	#define IL2CPP_TARGET_LINUX 1
 #elif defined(NN_PLATFORM_CTR)
@@ -74,6 +76,10 @@
 #define IL2CPP_TARGET_JAVASCRIPT 0
 #endif
 
+#ifndef IL2CPP_TARGET_TIZEN
+#define IL2CPP_TARGET_TIZEN 0
+#endif
+
 #ifndef IL2CPP_TARGET_LINUX
 #define IL2CPP_TARGET_LINUX 0
 #endif
@@ -98,7 +104,7 @@
 #define IL2CPP_TARGET_PSP2 0
 #endif
 
-#define IL2CPP_TARGET_POSIX (IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_JAVASCRIPT || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2)
+#define IL2CPP_TARGET_POSIX (IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_JAVASCRIPT || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2 || IL2CPP_TARGET_TIZEN)
 #define IL2CPP_COMPILER_MSVC (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
 #define IL2CPP_PLATFORM_WIN32 (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
 
@@ -177,10 +183,32 @@
 #define CDECL
 #endif
 
-#if IL2CPP_COMPILER_MSVC || IL2CPP_TARGET_DARWIN || defined(__ARMCC_VERSION)
+#if IL2CPP_COMPILER_MSVC || defined(__ARMCC_VERSION)
 #define NORETURN __declspec(noreturn)
+#elif IL2CPP_TARGET_IOS
+#define NORETURN
+#elif IL2CPP_TARGET_DARWIN
+#define NORETURN __attribute__ ((noreturn))
 #else
 #define NORETURN
+#endif
+
+#if IL2CPP_TARGET_IOS
+#define REAL_NORETURN __attribute__ ((noreturn))
+#else
+#define REAL_NORETURN NORETURN
+#endif
+
+#if IL2CPP_COMPILER_MSVC || defined(__ARMCC_VERSION)
+#define IL2CPP_NO_INLINE __declspec(noinline)
+#else
+#define IL2CPP_NO_INLINE __attribute__ ((noinline))
+#endif
+
+#if IL2CPP_COMPILER_MSVC
+#define NOVTABLE __declspec(novtable)
+#else
+#define NOVTABLE
 #endif
 
 #define IL2CPP_ENABLE_MONO_BUG_EMULATION 1
@@ -228,10 +256,19 @@
 #error "No thread implementation defined"
 #endif
 
+/* Platform support to cleanup attached threads even when native threads are not exited cleanly */
+#define IL2CPP_HAS_NATIVE_THREAD_CLEANUP (IL2CPP_THREADS_PTHREAD)
+
+#define IL2CPP_THREAD_IMPL_HAS_COM_APARTMENTS (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
+
+#if !defined(IL2CPP_ENABLE_PLATFORM_THREAD_STACKSIZE) && IL2CPP_TARGET_IOS
+#define IL2CPP_ENABLE_PLATFORM_THREAD_STACKSIZE 1
+#endif
+
 #define IL2CPP_ENABLE_STACKTRACES 1
 /* Platforms which use OS specific implementation to extract stracktrace */
 #if !defined(IL2CPP_ENABLE_NATIVE_STACKTRACES)
-#define IL2CPP_ENABLE_NATIVE_STACKTRACES (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_IOS)
+#define IL2CPP_ENABLE_NATIVE_STACKTRACES (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_IOS || IL2CPP_TARGET_TIZEN)
 #endif
 
 /* Platforms which use stacktrace sentries */
@@ -281,6 +318,15 @@ typedef void (*methodPointerType)();
 #ifndef __has_builtin
 	#define __has_builtin(x) 0 // Compatibility with non-clang compilers.
 #endif
+
+#if _MSC_VER
+#define IL2CPP_UNREACHABLE __assume(0)
+#elif __has_builtin(__builtin_unreachable)
+#define IL2CPP_UNREACHABLE __builtin_unreachable()
+#else
+#define IL2CPP_UNREACHABLE
+#endif
+
 
 /* need to figure out where this goes */
 typedef int32_t il2cpp_array_size_t;
@@ -378,6 +424,8 @@ typedef uint32_t Il2CppMethodSlot;
 
 #define IL2CPP_USE_GENERIC_ENVIRONMENT	(!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX && !IL2CPP_TARGET_XBOXONE)
 
+#define IL2CPP_USE_GENERIC_COM	(!IL2CPP_PLATFORM_WIN32)
+
 #ifndef IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE
 #define IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX)
 #endif
@@ -417,3 +465,18 @@ const uint64_t kIl2CppUInt64Max = UINT64_MAX;
 
 const int ipv6AddressSize = 16;
 #define IL2CPP_SUPPORT_IPV6 !IL2CPP_TARGET_PS4
+
+// Android: "There is no support for locales in the C library" https://code.google.com/p/android/issues/detail?id=57313
+// PS4/PS2: strtol_d doesn't exist
+#define IL2CPP_SUPPORT_LOCALE_INDEPENDENT_PARSING (!IL2CPP_TARGET_ANDROID && !IL2CPP_TARGET_PS4 && !IL2CPP_TARGET_PSP2)
+
+#define NO_UNUSED_WARNING(expr) (void)(expr)
+
+typedef int32_t il2cpp_hresult_t;
+
+#define IL2CPP_S_OK ((il2cpp_hresult_t)0)
+#define IL2CPP_E_NOTIMPL ((il2cpp_hresult_t)0x80004001)
+#define IL2CPP_E_OUTOFMEMORY ((il2cpp_hresult_t)0x8007000E)
+
+#define IL2CPP_HR_SUCCEEDED(hr) (((il2cpp_hresult_t)(hr)) >= 0)
+#define IL2CPP_HR_FAILED(hr) (((il2cpp_hresult_t)(hr)) < 0)

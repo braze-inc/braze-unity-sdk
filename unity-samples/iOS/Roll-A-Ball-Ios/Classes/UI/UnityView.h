@@ -15,8 +15,11 @@
 // that allows to handle simple overlay child view layout without doing view controller magic
 - (void)layoutSubviews;
 
+#if !UNITY_TVOS
 // will simply update content orientation (it might be tweaked in layoutSubviews, due to disagreement between unity and view controller)
 - (void)willRotateToOrientation:(UIInterfaceOrientation)toOrientation fromOrientation:(UIInterfaceOrientation)fromOrientation;
+#endif
+
 // will recreate gles backing if needed and repaint once to make sure we dont have black frame creeping in
 - (void)didRotate;
 

@@ -7,6 +7,7 @@
 
 @protocol UnityViewControllerListener<NSObject>
 @optional
+- (void)viewDidLayoutSubviews:(NSNotification*)notification;
 - (void)viewDidDisappear:(NSNotification*)notification;
 - (void)viewWillDisappear:(NSNotification*)notification;
 - (void)viewDidAppear:(NSNotification*)notification;
@@ -19,6 +20,7 @@
 void UnityRegisterViewControllerListener(id<UnityViewControllerListener> obj);
 void UnityUnregisterViewControllerListener(id<UnityViewControllerListener> obj);
 
+extern "C" __attribute__((visibility ("default"))) NSString* const kUnityViewDidLayoutSubviews;
 extern "C" __attribute__((visibility ("default"))) NSString* const kUnityViewDidDisappear;
 extern "C" __attribute__((visibility ("default"))) NSString* const kUnityViewDidAppear;
 extern "C" __attribute__((visibility ("default"))) NSString* const kUnityViewWillDisappear;
