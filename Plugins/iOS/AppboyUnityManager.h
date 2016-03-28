@@ -15,10 +15,10 @@
 + (AppboyUnityManager *) sharedInstance;
 - (void) showStreamView;
 - (void) showFeedbackForm;
-- (void) logCustomEvent:(NSString *)eventName;
+- (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties;
 - (void) changeUser:(NSString *)userId;
 - (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode
-             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity;
+             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity withProperties:(NSDictionary *)properties;
 - (void) setUserFirstName:(NSString *)firstName;
 - (void) setUserLastName:(NSString *)lastName;
 - (void) setUserPhoneNumber:(NSString *)number;
@@ -43,6 +43,8 @@
 - (void) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray;
 - (void) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
 - (void) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value;
+- (void) setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName  lastName:(NSString *)lastName  email:(NSString *)email  bio:(NSString *)bio  cityName:(NSString *)cityName  gender:(NSInteger)gender  numberOfFriends:(NSInteger)numberOfFriends  birthday:(NSString *)birthday;
+- (void) setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl;
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 - (void) addInAppMessageListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;

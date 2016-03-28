@@ -3,6 +3,8 @@
 #import "ABKFeedbackViewControllerModalContext.h"
 #import "ABKFeedViewControllerModalContext.h"
 #import "ABKCard.h"
+#import "ABKFacebookUser.h"
+#import "ABKTwitterUser.h"
 
 @interface ABKCard(proxy)
 - (NSMutableDictionary *) proxyForJson;
@@ -33,8 +35,8 @@
   [UnityGetGLViewController() presentViewController:feedViewController animated:YES completion:nil];
 }
 
-- (void) logCustomEvent:(NSString *)eventName {
-  [[Appboy sharedInstance] logCustomEvent:eventName];
+- (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties {
+  [[Appboy sharedInstance] logCustomEvent:eventName withProperties:properties];
 }
 
 - (void) changeUser:(NSString *)userId {
@@ -42,11 +44,12 @@
 }
 
 - (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode 
-             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity {
+             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity withProperties:(NSDictionary *)properties {
   [[Appboy sharedInstance] logPurchase:productId 
                             inCurrency:currencyCode 
                                atPrice:[NSDecimalNumber decimalNumberWithString:price] 
-                          withQuantity:quantity];
+                          withQuantity:quantity
+                         andProperties:(NSDictionary *)properties];
 }
 
 - (void) setUserFirstName:(NSString *)firstName {
@@ -150,6 +153,51 @@
 
 - (void) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value {
   [[Appboy sharedInstance].user removeFromCustomAttributeArrayWithKey:key value:value];
+}
+
+- (void) setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName  lastName:(NSString *)lastName  email:(NSString *)email  bio:(NSString *)bio  cityName:(NSString *)cityName  gender:(NSInteger)gender  numberOfFriends:(NSInteger)numberOfFriends  birthday:(NSString *)birthday {
+  NSMutableDictionary *facebookData = [NSMutableDictionary dictionary];
+  facebookData[@"id"] = facebookId;
+  facebookData[@"first_name"] = firstName;
+  facebookData[@"last_name"] = lastName;
+  facebookData[@"email"] = email;
+  facebookData[@"bio"] = bio;
+  facebookData[@"location"] = @{@"name":cityName};
+  if (gender >= 0) {
+    if (gender == ABKUserGenderMale) {
+      facebookData[@"gender"] = @"m";
+    }
+    if (gender == ABKUserGenderFemale) {
+      facebookData[@"gender"] = @"f";
+    }
+  }
+  if (numberOfFriends >= 0) {
+    facebookData[@"num_friends"] = @(numberOfFriends);
+  }
+  facebookData[@"birthday"] = birthday;
+  ABKFacebookUser *facebookUser = [[ABKFacebookUser alloc] initWithFacebookUserDictionary:facebookData numberOfFriends:numberOfFriends likes:nil];
+  [Appboy sharedInstance].user.facebookUser = facebookUser;
+}
+
+- (void) setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl {
+  ABKTwitterUser *twitterUser = [[ABKTwitterUser alloc] init];
+  twitterUser.userDescription = description;
+  if (twitterUserId > 0) {
+    twitterUser.twitterID = (long) twitterUserId;
+  }
+  twitterUser.twitterName = name;
+  twitterUser.profileImageUrl = profileImageUrl;
+  if (followingCount >= 0) {
+    twitterUser.friendsCount = followingCount;
+  }
+  if (followerCount >= 0) {
+    twitterUser.followersCount = followerCount;
+  }
+  twitterUser.screenName = twitterHandle;
+  if (tweetCount >= 0) {
+    twitterUser.statusesCount = tweetCount;
+  }
+  [Appboy sharedInstance].user.twitterUser = twitterUser;
 }
 
 - (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug {
