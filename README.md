@@ -1,4 +1,4 @@
-This repository contains the wrapper code and binaries for the Unity plugins derived from the Appboy Android, iOS, and Windows SDKs.
+This repository contains the the C# interface and native Unity functionality for the Unity plugins derived from the Appboy Android, iOS, and Windows SDKs. Since version 1.5.0, Appboy's Unity plugins require Unity 5. Unity 4 users may integrate Appboy Unity SDK release 1.4.0, but full Appboy functionality will not be supported. See the CHANGELOG for more information. 
 
 ## Android Setup
 
