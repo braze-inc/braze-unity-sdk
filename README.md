@@ -71,14 +71,6 @@ Next, we'll need to make some modifications to your generated `Classes\AppContro
 
 As you make updates to your app from Unity, you should choose the same location to generate the Xcode project each time. Unity will prompt you to replace or append the existing folder. If you choose "Append," you shouldn't have to redo any of your Appboy setup in the future.
 
-## Windows Phone 8 Setup
-
-Once you have placed the plugin DLLs in the proper location in your Unity project, build your Windows Phone 8 application from your Unity project.  You will then have a working Windows Phone 8 XAML application with the required Appboy plugin DLLs referenced from your project.  
-
-You can then follow the normal integration instructions found <a href="https://documentation.appboy.com/SDK_Integration/Windows/Phone8">here</a>, with the following exception:  
-
-<b>Note:</b> Unity does processing and modification of Windows Phone 8 plugin DLLs.  As a result, you must use the DLLs that are output from the Unity build; do not replace a DLL with a different version after you've built from Unity.  In particular, if you are using our UI library, you must modify the references to point at the DLLs unity outputs (not the ones found using Nuget).  If you need to update a DLL version, you can place it in the ```Plugins/WP8``` directory and then use the ones output from Unity.
-
 ## Windows Universal Setup
 
 Once you have placed the plugin DLLs in the proper location in your Unity project, build your Windows Store or Phone 8.1 application from your Unity project.  You will then have a working XAML application with the required Appboy plugin DLLs referenced from your project.  
