@@ -25,48 +25,38 @@ struct ArrayList_t2121638921;
 struct  Evidence_t2439192402  : public Il2CppObject
 {
 public:
-	// System.Boolean System.Security.Policy.Evidence::_locked
-	bool ____locked_0;
 	// System.Collections.ArrayList System.Security.Policy.Evidence::hostEvidenceList
-	ArrayList_t2121638921 * ___hostEvidenceList_1;
+	ArrayList_t2121638921 * ___hostEvidenceList_0;
 	// System.Collections.ArrayList System.Security.Policy.Evidence::assemblyEvidenceList
-	ArrayList_t2121638921 * ___assemblyEvidenceList_2;
+	ArrayList_t2121638921 * ___assemblyEvidenceList_1;
 	// System.Int32 System.Security.Policy.Evidence::_hashCode
-	int32_t ____hashCode_3;
+	int32_t ____hashCode_2;
 
 public:
-	inline static int32_t get_offset_of__locked_0() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ____locked_0)); }
-	inline bool get__locked_0() const { return ____locked_0; }
-	inline bool* get_address_of__locked_0() { return &____locked_0; }
-	inline void set__locked_0(bool value)
+	inline static int32_t get_offset_of_hostEvidenceList_0() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ___hostEvidenceList_0)); }
+	inline ArrayList_t2121638921 * get_hostEvidenceList_0() const { return ___hostEvidenceList_0; }
+	inline ArrayList_t2121638921 ** get_address_of_hostEvidenceList_0() { return &___hostEvidenceList_0; }
+	inline void set_hostEvidenceList_0(ArrayList_t2121638921 * value)
 	{
-		____locked_0 = value;
+		___hostEvidenceList_0 = value;
+		Il2CppCodeGenWriteBarrier(&___hostEvidenceList_0, value);
 	}
 
-	inline static int32_t get_offset_of_hostEvidenceList_1() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ___hostEvidenceList_1)); }
-	inline ArrayList_t2121638921 * get_hostEvidenceList_1() const { return ___hostEvidenceList_1; }
-	inline ArrayList_t2121638921 ** get_address_of_hostEvidenceList_1() { return &___hostEvidenceList_1; }
-	inline void set_hostEvidenceList_1(ArrayList_t2121638921 * value)
+	inline static int32_t get_offset_of_assemblyEvidenceList_1() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ___assemblyEvidenceList_1)); }
+	inline ArrayList_t2121638921 * get_assemblyEvidenceList_1() const { return ___assemblyEvidenceList_1; }
+	inline ArrayList_t2121638921 ** get_address_of_assemblyEvidenceList_1() { return &___assemblyEvidenceList_1; }
+	inline void set_assemblyEvidenceList_1(ArrayList_t2121638921 * value)
 	{
-		___hostEvidenceList_1 = value;
-		Il2CppCodeGenWriteBarrier(&___hostEvidenceList_1, value);
+		___assemblyEvidenceList_1 = value;
+		Il2CppCodeGenWriteBarrier(&___assemblyEvidenceList_1, value);
 	}
 
-	inline static int32_t get_offset_of_assemblyEvidenceList_2() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ___assemblyEvidenceList_2)); }
-	inline ArrayList_t2121638921 * get_assemblyEvidenceList_2() const { return ___assemblyEvidenceList_2; }
-	inline ArrayList_t2121638921 ** get_address_of_assemblyEvidenceList_2() { return &___assemblyEvidenceList_2; }
-	inline void set_assemblyEvidenceList_2(ArrayList_t2121638921 * value)
+	inline static int32_t get_offset_of__hashCode_2() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ____hashCode_2)); }
+	inline int32_t get__hashCode_2() const { return ____hashCode_2; }
+	inline int32_t* get_address_of__hashCode_2() { return &____hashCode_2; }
+	inline void set__hashCode_2(int32_t value)
 	{
-		___assemblyEvidenceList_2 = value;
-		Il2CppCodeGenWriteBarrier(&___assemblyEvidenceList_2, value);
-	}
-
-	inline static int32_t get_offset_of__hashCode_3() { return static_cast<int32_t>(offsetof(Evidence_t2439192402, ____hashCode_3)); }
-	inline int32_t get__hashCode_3() const { return ____hashCode_3; }
-	inline int32_t* get_address_of__hashCode_3() { return &____hashCode_3; }
-	inline void set__hashCode_3(int32_t value)
-	{
-		____hashCode_3 = value;
+		____hashCode_2 = value;
 	}
 };
 

@@ -22,7 +22,7 @@ struct Stack_1_t3407512455;
 #endif
 
 // System.Collections.Generic.Stack`1/Enumerator<System.Object>
-struct  Enumerator_t4014815680 
+struct  Enumerator_t4014815678 
 {
 public:
 	// System.Collections.Generic.Stack`1<T> System.Collections.Generic.Stack`1/Enumerator::parent
@@ -33,7 +33,7 @@ public:
 	int32_t ____version_2;
 
 public:
-	inline static int32_t get_offset_of_parent_0() { return static_cast<int32_t>(offsetof(Enumerator_t4014815680, ___parent_0)); }
+	inline static int32_t get_offset_of_parent_0() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ___parent_0)); }
 	inline Stack_1_t3407512455 * get_parent_0() const { return ___parent_0; }
 	inline Stack_1_t3407512455 ** get_address_of_parent_0() { return &___parent_0; }
 	inline void set_parent_0(Stack_1_t3407512455 * value)
@@ -42,7 +42,7 @@ public:
 		Il2CppCodeGenWriteBarrier(&___parent_0, value);
 	}
 
-	inline static int32_t get_offset_of_idx_1() { return static_cast<int32_t>(offsetof(Enumerator_t4014815680, ___idx_1)); }
+	inline static int32_t get_offset_of_idx_1() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ___idx_1)); }
 	inline int32_t get_idx_1() const { return ___idx_1; }
 	inline int32_t* get_address_of_idx_1() { return &___idx_1; }
 	inline void set_idx_1(int32_t value)
@@ -50,7 +50,7 @@ public:
 		___idx_1 = value;
 	}
 
-	inline static int32_t get_offset_of__version_2() { return static_cast<int32_t>(offsetof(Enumerator_t4014815680, ____version_2)); }
+	inline static int32_t get_offset_of__version_2() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ____version_2)); }
 	inline int32_t get__version_2() const { return ____version_2; }
 	inline int32_t* get_address_of__version_2() { return &____version_2; }
 	inline void set__version_2(int32_t value)

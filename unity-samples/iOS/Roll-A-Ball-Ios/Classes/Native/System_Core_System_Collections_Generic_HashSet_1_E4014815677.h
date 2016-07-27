@@ -24,7 +24,7 @@ struct Il2CppObject;
 #endif
 
 // System.Collections.Generic.HashSet`1/Enumerator<System.Object>
-struct  Enumerator_t4014815678 
+struct  Enumerator_t4014815679 
 {
 public:
 	// System.Collections.Generic.HashSet`1<T> System.Collections.Generic.HashSet`1/Enumerator::hashset
@@ -37,7 +37,7 @@ public:
 	Il2CppObject * ___current_3;
 
 public:
-	inline static int32_t get_offset_of_hashset_0() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ___hashset_0)); }
+	inline static int32_t get_offset_of_hashset_0() { return static_cast<int32_t>(offsetof(Enumerator_t4014815679, ___hashset_0)); }
 	inline HashSet_1_t3535795091 * get_hashset_0() const { return ___hashset_0; }
 	inline HashSet_1_t3535795091 ** get_address_of_hashset_0() { return &___hashset_0; }
 	inline void set_hashset_0(HashSet_1_t3535795091 * value)
@@ -46,7 +46,7 @@ public:
 		Il2CppCodeGenWriteBarrier(&___hashset_0, value);
 	}
 
-	inline static int32_t get_offset_of_next_1() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ___next_1)); }
+	inline static int32_t get_offset_of_next_1() { return static_cast<int32_t>(offsetof(Enumerator_t4014815679, ___next_1)); }
 	inline int32_t get_next_1() const { return ___next_1; }
 	inline int32_t* get_address_of_next_1() { return &___next_1; }
 	inline void set_next_1(int32_t value)
@@ -54,7 +54,7 @@ public:
 		___next_1 = value;
 	}
 
-	inline static int32_t get_offset_of_stamp_2() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ___stamp_2)); }
+	inline static int32_t get_offset_of_stamp_2() { return static_cast<int32_t>(offsetof(Enumerator_t4014815679, ___stamp_2)); }
 	inline int32_t get_stamp_2() const { return ___stamp_2; }
 	inline int32_t* get_address_of_stamp_2() { return &___stamp_2; }
 	inline void set_stamp_2(int32_t value)
@@ -62,7 +62,7 @@ public:
 		___stamp_2 = value;
 	}
 
-	inline static int32_t get_offset_of_current_3() { return static_cast<int32_t>(offsetof(Enumerator_t4014815678, ___current_3)); }
+	inline static int32_t get_offset_of_current_3() { return static_cast<int32_t>(offsetof(Enumerator_t4014815679, ___current_3)); }
 	inline Il2CppObject * get_current_3() const { return ___current_3; }
 	inline Il2CppObject ** get_address_of_current_3() { return &___current_3; }
 	inline void set_current_3(Il2CppObject * value)

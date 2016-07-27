@@ -50,9 +50,6 @@ struct LayoutCache_t3653031512;
 struct GUILayoutEntry_t1011928986;
 // UnityEngine.GUIStyle
 struct GUIStyle_t1006925219;
-// UnityEngine.Event
-struct Event_t1590224583;
-struct Event_t1590224583_marshaled_pinvoke;
 // UnityEngine.DisallowMultipleComponent
 struct DisallowMultipleComponent_t3647875775;
 // UnityEngine.ExecuteInEditMode
@@ -77,8 +74,6 @@ struct Font_t1525081276;
 struct CanvasGroup_t1295922228;
 // UnityEngine.RectTransform
 struct RectTransform_t3317474837;
-// UnityEngine.MonoBehaviour
-struct MonoBehaviour_t3012272455;
 
 #include "mscorlib_System_Array2840145358.h"
 #include "UnityEngine_UnityEngine_Object3878351788.h"
@@ -93,7 +88,6 @@ struct MonoBehaviour_t3012272455;
 #include "UnityEngine_UnityEngine_Vector43525329790.h"
 #include "UnityEngine_UnityEngine_Vector23525329788.h"
 #include "UnityEngine_UnityEngine_Color324137084207.h"
-#include "UnityEngine_UnityEngine_Plane1600081545.h"
 #include "UnityEngine_UnityEngine_Keyframe2095052507.h"
 #include "UnityEngine_UnityEngine_Camera3533968274.h"
 #include "UnityEngine_UnityEngine_Behaviour3120504042.h"
@@ -112,8 +106,6 @@ struct MonoBehaviour_t3012272455;
 #include "UnityEngine_UnityEngine_GUILayoutUtility_LayoutCac3653031512.h"
 #include "UnityEngine_UnityEngine_GUILayoutEntry1011928986.h"
 #include "UnityEngine_UnityEngine_GUIStyle1006925219.h"
-#include "UnityEngine_UnityEngine_TextEditor_TextEditOp3429487928.h"
-#include "UnityEngine_UnityEngine_Event1590224583.h"
 #include "UnityEngine_UnityEngine_DisallowMultipleComponent3647875775.h"
 #include "UnityEngine_UnityEngine_ExecuteInEditMode2676812948.h"
 #include "UnityEngine_UnityEngine_RequireComponent3196495237.h"
@@ -127,8 +119,6 @@ struct MonoBehaviour_t3012272455;
 #include "UnityEngine_UnityEngine_Font1525081276.h"
 #include "UnityEngine_UnityEngine_CanvasGroup1295922228.h"
 #include "UnityEngine_UnityEngine_RectTransform3317474837.h"
-#include "UnityEngine_UnityEngine_MonoBehaviour3012272455.h"
-#include "UnityEngine_UnityEngine_RuntimePlatform1574985880.h"
 
 #pragma once
 // UnityEngine.Object[]
@@ -361,20 +351,6 @@ public:
 	inline Color32_t4137084207  GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
 	inline Color32_t4137084207 * GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
 	inline void SetAt(il2cpp_array_size_t index, Color32_t4137084207  value)
-	{
-		m_Items[index] = value;
-	}
-};
-// UnityEngine.Plane[]
-struct PlaneU5BU5D_t2483347764  : public Il2CppArray
-{
-public:
-	ALIGN_TYPE (8) Plane_t1600081545  m_Items[1];
-
-public:
-	inline Plane_t1600081545  GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
-	inline Plane_t1600081545 * GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
-	inline void SetAt(il2cpp_array_size_t index, Plane_t1600081545  value)
 	{
 		m_Items[index] = value;
 	}
@@ -641,35 +617,6 @@ public:
 		Il2CppCodeGenWriteBarrier(m_Items + index, value);
 	}
 };
-// UnityEngine.TextEditor/TextEditOp[]
-struct TextEditOpU5BU5D_t807851753  : public Il2CppArray
-{
-public:
-	ALIGN_TYPE (8) int32_t m_Items[1];
-
-public:
-	inline int32_t GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
-	inline int32_t* GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
-	inline void SetAt(il2cpp_array_size_t index, int32_t value)
-	{
-		m_Items[index] = value;
-	}
-};
-// UnityEngine.Event[]
-struct EventU5BU5D_t1513970238  : public Il2CppArray
-{
-public:
-	ALIGN_TYPE (8) Event_t1590224583 * m_Items[1];
-
-public:
-	inline Event_t1590224583 * GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
-	inline Event_t1590224583 ** GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
-	inline void SetAt(il2cpp_array_size_t index, Event_t1590224583 * value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier(m_Items + index, value);
-	}
-};
 // UnityEngine.DisallowMultipleComponent[]
 struct DisallowMultipleComponentU5BU5D_t1523674982  : public Il2CppArray
 {
@@ -862,34 +809,5 @@ public:
 	{
 		m_Items[index] = value;
 		Il2CppCodeGenWriteBarrier(m_Items + index, value);
-	}
-};
-// UnityEngine.MonoBehaviour[]
-struct MonoBehaviourU5BU5D_t936895934  : public Il2CppArray
-{
-public:
-	ALIGN_TYPE (8) MonoBehaviour_t3012272455 * m_Items[1];
-
-public:
-	inline MonoBehaviour_t3012272455 * GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
-	inline MonoBehaviour_t3012272455 ** GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
-	inline void SetAt(il2cpp_array_size_t index, MonoBehaviour_t3012272455 * value)
-	{
-		m_Items[index] = value;
-		Il2CppCodeGenWriteBarrier(m_Items + index, value);
-	}
-};
-// UnityEngine.RuntimePlatform[]
-struct RuntimePlatformU5BU5D_t1082315273  : public Il2CppArray
-{
-public:
-	ALIGN_TYPE (8) int32_t m_Items[1];
-
-public:
-	inline int32_t GetAt(il2cpp_array_size_t index) const { return m_Items[index]; }
-	inline int32_t* GetAddressAt(il2cpp_array_size_t index) { return m_Items + index; }
-	inline void SetAt(il2cpp_array_size_t index, int32_t value)
-	{
-		m_Items[index] = value;
 	}
 };

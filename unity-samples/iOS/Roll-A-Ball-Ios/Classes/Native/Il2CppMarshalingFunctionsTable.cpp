@@ -149,21 +149,36 @@ extern "C" void TimeSpan_t763862892_marshal_pinvoke_cleanup ();
 extern "C" void TypedReference_t1193563574_marshal_pinvoke ();
 extern "C" void TypedReference_t1193563574_marshal_pinvoke_back ();
 extern "C" void TypedReference_t1193563574_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU241024_t335950519_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU241024_t335950519_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU241024_t335950519_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU24120_t2366141819_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU24120_t2366141819_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU24120_t2366141819_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU24136_t2366141856_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU24136_t2366141856_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU24136_t2366141856_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke_cleanup ();
 extern "C" void U24ArrayTypeU2412_t214874487_marshal_pinvoke ();
 extern "C" void U24ArrayTypeU2412_t214874487_marshal_pinvoke_back ();
 extern "C" void U24ArrayTypeU2412_t214874487_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU2416_t214874491_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU2416_t214874491_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU2416_t214874491_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU2420_t214874516_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU2420_t214874516_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU2420_t214874516_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU243132_t336011091_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU243132_t336011091_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU243132_t336011091_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU2432_t214874549_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU2432_t214874549_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU2432_t214874549_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU244_t2777878079_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU244_t2777878079_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU244_t2777878079_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU2448_t214874586_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU2448_t214874586_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU2448_t214874586_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU2464_t214874644_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU2464_t214874644_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU2464_t214874644_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU2412_t214874488_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU2412_t214874488_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU2412_t214874488_marshal_pinvoke_cleanup ();
 extern "C" void U24ArrayTypeU24128_t2366141827_marshal_pinvoke ();
 extern "C" void U24ArrayTypeU24128_t2366141827_marshal_pinvoke_back ();
 extern "C" void U24ArrayTypeU24128_t2366141827_marshal_pinvoke_cleanup ();
@@ -185,33 +200,18 @@ extern "C" void Link_t2368538_marshal_pinvoke_cleanup ();
 extern "C" void UriScheme_t3266528785_marshal_pinvoke ();
 extern "C" void UriScheme_t3266528785_marshal_pinvoke_back ();
 extern "C" void UriScheme_t3266528785_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU2412_t214874488_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU2412_t214874488_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU2412_t214874488_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU2416_t214874491_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU2416_t214874491_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU2416_t214874491_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU2420_t214874516_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU2420_t214874516_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU2420_t214874516_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU241024_t335950519_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU241024_t335950519_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU241024_t335950519_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU24120_t2366141819_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU24120_t2366141819_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU24120_t2366141819_marshal_pinvoke_cleanup ();
+extern "C" void U24ArrayTypeU24136_t2366141856_marshal_pinvoke ();
+extern "C" void U24ArrayTypeU24136_t2366141856_marshal_pinvoke_back ();
+extern "C" void U24ArrayTypeU24136_t2366141856_marshal_pinvoke_cleanup ();
 extern "C" void U24ArrayTypeU24256_t2366142880_marshal_pinvoke ();
 extern "C" void U24ArrayTypeU24256_t2366142880_marshal_pinvoke_back ();
 extern "C" void U24ArrayTypeU24256_t2366142880_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU243132_t336011091_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU243132_t336011091_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU243132_t336011091_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU2432_t214874549_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU2432_t214874549_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU2432_t214874549_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU244_t2777878079_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU244_t2777878079_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU244_t2777878079_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU2448_t214874586_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU2448_t214874586_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU2448_t214874586_marshal_pinvoke_cleanup ();
-extern "C" void U24ArrayTypeU2464_t214874644_marshal_pinvoke ();
-extern "C" void U24ArrayTypeU2464_t214874644_marshal_pinvoke_back ();
-extern "C" void U24ArrayTypeU2464_t214874644_marshal_pinvoke_cleanup ();
 extern "C" void AnimationCurve_t3342907448_marshal_pinvoke ();
 extern "C" void AnimationCurve_t3342907448_marshal_pinvoke_back ();
 extern "C" void AnimationCurve_t3342907448_marshal_pinvoke_cleanup ();
@@ -311,9 +311,6 @@ extern "C" void Ray_t1522967639_marshal_pinvoke_cleanup ();
 extern "C" void Rect_t1525428817_marshal_pinvoke ();
 extern "C" void Rect_t1525428817_marshal_pinvoke_back ();
 extern "C" void Rect_t1525428817_marshal_pinvoke_cleanup ();
-extern "C" void Scene_t2772977204_marshal_pinvoke ();
-extern "C" void Scene_t2772977204_marshal_pinvoke_back ();
-extern "C" void Scene_t2772977204_marshal_pinvoke_cleanup ();
 extern "C" void ScriptableObject_t184905905_marshal_pinvoke ();
 extern "C" void ScriptableObject_t184905905_marshal_pinvoke_back ();
 extern "C" void ScriptableObject_t184905905_marshal_pinvoke_cleanup ();
@@ -374,7 +371,7 @@ extern "C" void U24ArrayTypeU2412_t214874489_marshal_pinvoke_cleanup ();
 extern "C" void ColorBlock_t2245020947_marshal_pinvoke ();
 extern "C" void ColorBlock_t2245020947_marshal_pinvoke_back ();
 extern "C" void ColorBlock_t2245020947_marshal_pinvoke_cleanup ();
-extern const Il2CppMarshalingFunctions g_MarshalingFunctions[122] = 
+extern const Il2CppMarshalingFunctions g_MarshalingFunctions[121] = 
 {
 	{ U24ArrayTypeU241024_t335950518_marshal_pinvoke, U24ArrayTypeU241024_t335950518_marshal_pinvoke_back, U24ArrayTypeU241024_t335950518_marshal_pinvoke_cleanup },
 	{ U24ArrayTypeU2412_t214874486_marshal_pinvoke, U24ArrayTypeU2412_t214874486_marshal_pinvoke_back, U24ArrayTypeU2412_t214874486_marshal_pinvoke_cleanup },
@@ -422,11 +419,16 @@ extern const Il2CppMarshalingFunctions g_MarshalingFunctions[122] =
 	{ RuntimeDeclSecurityEntry_t2302558261_marshal_pinvoke, RuntimeDeclSecurityEntry_t2302558261_marshal_pinvoke_back, RuntimeDeclSecurityEntry_t2302558261_marshal_pinvoke_cleanup },
 	{ TimeSpan_t763862892_marshal_pinvoke, TimeSpan_t763862892_marshal_pinvoke_back, TimeSpan_t763862892_marshal_pinvoke_cleanup },
 	{ TypedReference_t1193563574_marshal_pinvoke, TypedReference_t1193563574_marshal_pinvoke_back, TypedReference_t1193563574_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU241024_t335950519_marshal_pinvoke, U24ArrayTypeU241024_t335950519_marshal_pinvoke_back, U24ArrayTypeU241024_t335950519_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU24120_t2366141819_marshal_pinvoke, U24ArrayTypeU24120_t2366141819_marshal_pinvoke_back, U24ArrayTypeU24120_t2366141819_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU24136_t2366141856_marshal_pinvoke, U24ArrayTypeU24136_t2366141856_marshal_pinvoke_back, U24ArrayTypeU24136_t2366141856_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU24256_t2366142879_marshal_pinvoke, U24ArrayTypeU24256_t2366142879_marshal_pinvoke_back, U24ArrayTypeU24256_t2366142879_marshal_pinvoke_cleanup },
 	{ U24ArrayTypeU2412_t214874487_marshal_pinvoke, U24ArrayTypeU2412_t214874487_marshal_pinvoke_back, U24ArrayTypeU2412_t214874487_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU2416_t214874491_marshal_pinvoke, U24ArrayTypeU2416_t214874491_marshal_pinvoke_back, U24ArrayTypeU2416_t214874491_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU2420_t214874516_marshal_pinvoke, U24ArrayTypeU2420_t214874516_marshal_pinvoke_back, U24ArrayTypeU2420_t214874516_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU24256_t2366142879_marshal_pinvoke, U24ArrayTypeU24256_t2366142879_marshal_pinvoke_back, U24ArrayTypeU24256_t2366142879_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU243132_t336011091_marshal_pinvoke, U24ArrayTypeU243132_t336011091_marshal_pinvoke_back, U24ArrayTypeU243132_t336011091_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU2432_t214874549_marshal_pinvoke, U24ArrayTypeU2432_t214874549_marshal_pinvoke_back, U24ArrayTypeU2432_t214874549_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU244_t2777878079_marshal_pinvoke, U24ArrayTypeU244_t2777878079_marshal_pinvoke_back, U24ArrayTypeU244_t2777878079_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU2448_t214874586_marshal_pinvoke, U24ArrayTypeU2448_t214874586_marshal_pinvoke_back, U24ArrayTypeU2448_t214874586_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU2464_t214874644_marshal_pinvoke, U24ArrayTypeU2464_t214874644_marshal_pinvoke_back, U24ArrayTypeU2464_t214874644_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU2412_t214874488_marshal_pinvoke, U24ArrayTypeU2412_t214874488_marshal_pinvoke_back, U24ArrayTypeU2412_t214874488_marshal_pinvoke_cleanup },
 	{ U24ArrayTypeU24128_t2366141827_marshal_pinvoke, U24ArrayTypeU24128_t2366141827_marshal_pinvoke_back, U24ArrayTypeU24128_t2366141827_marshal_pinvoke_cleanup },
 	{ X509ChainStatus_t1122151684_marshal_pinvoke, X509ChainStatus_t1122151684_marshal_pinvoke_back, X509ChainStatus_t1122151684_marshal_pinvoke_cleanup },
 	{ IntStack_t618478585_marshal_pinvoke, IntStack_t618478585_marshal_pinvoke_back, IntStack_t618478585_marshal_pinvoke_cleanup },
@@ -434,15 +436,10 @@ extern const Il2CppMarshalingFunctions g_MarshalingFunctions[122] =
 	{ Mark_t3725932776_marshal_pinvoke, Mark_t3725932776_marshal_pinvoke_back, Mark_t3725932776_marshal_pinvoke_cleanup },
 	{ Link_t2368538_marshal_pinvoke, Link_t2368538_marshal_pinvoke_back, Link_t2368538_marshal_pinvoke_cleanup },
 	{ UriScheme_t3266528785_marshal_pinvoke, UriScheme_t3266528785_marshal_pinvoke_back, UriScheme_t3266528785_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU2412_t214874488_marshal_pinvoke, U24ArrayTypeU2412_t214874488_marshal_pinvoke_back, U24ArrayTypeU2412_t214874488_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU2416_t214874491_marshal_pinvoke, U24ArrayTypeU2416_t214874491_marshal_pinvoke_back, U24ArrayTypeU2416_t214874491_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU2420_t214874516_marshal_pinvoke, U24ArrayTypeU2420_t214874516_marshal_pinvoke_back, U24ArrayTypeU2420_t214874516_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU241024_t335950519_marshal_pinvoke, U24ArrayTypeU241024_t335950519_marshal_pinvoke_back, U24ArrayTypeU241024_t335950519_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU24120_t2366141819_marshal_pinvoke, U24ArrayTypeU24120_t2366141819_marshal_pinvoke_back, U24ArrayTypeU24120_t2366141819_marshal_pinvoke_cleanup },
+	{ U24ArrayTypeU24136_t2366141856_marshal_pinvoke, U24ArrayTypeU24136_t2366141856_marshal_pinvoke_back, U24ArrayTypeU24136_t2366141856_marshal_pinvoke_cleanup },
 	{ U24ArrayTypeU24256_t2366142880_marshal_pinvoke, U24ArrayTypeU24256_t2366142880_marshal_pinvoke_back, U24ArrayTypeU24256_t2366142880_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU243132_t336011091_marshal_pinvoke, U24ArrayTypeU243132_t336011091_marshal_pinvoke_back, U24ArrayTypeU243132_t336011091_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU2432_t214874549_marshal_pinvoke, U24ArrayTypeU2432_t214874549_marshal_pinvoke_back, U24ArrayTypeU2432_t214874549_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU244_t2777878079_marshal_pinvoke, U24ArrayTypeU244_t2777878079_marshal_pinvoke_back, U24ArrayTypeU244_t2777878079_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU2448_t214874586_marshal_pinvoke, U24ArrayTypeU2448_t214874586_marshal_pinvoke_back, U24ArrayTypeU2448_t214874586_marshal_pinvoke_cleanup },
-	{ U24ArrayTypeU2464_t214874644_marshal_pinvoke, U24ArrayTypeU2464_t214874644_marshal_pinvoke_back, U24ArrayTypeU2464_t214874644_marshal_pinvoke_cleanup },
 	{ AnimationCurve_t3342907448_marshal_pinvoke, AnimationCurve_t3342907448_marshal_pinvoke_back, AnimationCurve_t3342907448_marshal_pinvoke_cleanup },
 	{ AnimatorClipInfo_t4255364242_marshal_pinvoke, AnimatorClipInfo_t4255364242_marshal_pinvoke_back, AnimatorClipInfo_t4255364242_marshal_pinvoke_cleanup },
 	{ AnimatorStateInfo_t4162640357_marshal_pinvoke, AnimatorStateInfo_t4162640357_marshal_pinvoke_back, AnimatorStateInfo_t4162640357_marshal_pinvoke_cleanup },
@@ -476,7 +473,6 @@ extern const Il2CppMarshalingFunctions g_MarshalingFunctions[122] =
 	{ Quaternion_t1891715979_marshal_pinvoke, Quaternion_t1891715979_marshal_pinvoke_back, Quaternion_t1891715979_marshal_pinvoke_cleanup },
 	{ Ray_t1522967639_marshal_pinvoke, Ray_t1522967639_marshal_pinvoke_back, Ray_t1522967639_marshal_pinvoke_cleanup },
 	{ Rect_t1525428817_marshal_pinvoke, Rect_t1525428817_marshal_pinvoke_back, Rect_t1525428817_marshal_pinvoke_cleanup },
-	{ Scene_t2772977204_marshal_pinvoke, Scene_t2772977204_marshal_pinvoke_back, Scene_t2772977204_marshal_pinvoke_cleanup },
 	{ ScriptableObject_t184905905_marshal_pinvoke, ScriptableObject_t184905905_marshal_pinvoke_back, ScriptableObject_t184905905_marshal_pinvoke_cleanup },
 	{ SkeletonBone_t3129897246_marshal_pinvoke, SkeletonBone_t3129897246_marshal_pinvoke_back, SkeletonBone_t3129897246_marshal_pinvoke_cleanup },
 	{ GcAchievementData_t1317012096_marshal_pinvoke, GcAchievementData_t1317012096_marshal_pinvoke_back, GcAchievementData_t1317012096_marshal_pinvoke_cleanup },

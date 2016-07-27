@@ -19,17 +19,13 @@
 #include "UnityEngine_UnityEngine_Ray1522967639.h"
 
 // System.Void UnityEngine.Plane::.ctor(UnityEngine.Vector3,UnityEngine.Vector3)
-extern "C"  void Plane__ctor_m2201046863 (Plane_t1600081545 * __this, Vector3_t3525329789  ___inNormal, Vector3_t3525329789  ___inPoint, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Plane__ctor_m2201046863 (Plane_t1600081545 * __this, Vector3_t3525329789  ___inNormal0, Vector3_t3525329789  ___inPoint1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Vector3 UnityEngine.Plane::get_normal()
 extern "C"  Vector3_t3525329789  Plane_get_normal_m3534129213 (Plane_t1600081545 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.Plane::set_normal(UnityEngine.Vector3)
-extern "C"  void Plane_set_normal_m1918018446 (Plane_t1600081545 * __this, Vector3_t3525329789  ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Single UnityEngine.Plane::get_distance()
 extern "C"  float Plane_get_distance_m2612484153 (Plane_t1600081545 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void UnityEngine.Plane::set_distance(System.Single)
-extern "C"  void Plane_set_distance_m2271863058 (Plane_t1600081545 * __this, float ___value, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Plane::Raycast(UnityEngine.Ray,System.Single&)
-extern "C"  bool Plane_Raycast_m2829769106 (Plane_t1600081545 * __this, Ray_t1522967639  ___ray, float* ___enter, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool Plane_Raycast_m2829769106 (Plane_t1600081545 * __this, Ray_t1522967639  ___ray0, float* ___enter1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 
 // Methods for marshaling
 struct Plane_t1600081545;

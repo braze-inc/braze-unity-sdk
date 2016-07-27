@@ -19,10 +19,6 @@ struct Il2CppObject;
 #include "mscorlib_System_Object837106420.h"
 
 // System.Void System.Linq.Check::Source(System.Object)
-extern "C"  void Check_Source_m228347543 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Linq.Check::SourceAndSelector(System.Object,System.Object)
-extern "C"  void Check_SourceAndSelector_m3164339431 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, Il2CppObject * ___selector, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Check_Source_m228347543 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Linq.Check::SourceAndPredicate(System.Object,System.Object)
-extern "C"  void Check_SourceAndPredicate_m2252398949 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, Il2CppObject * ___predicate, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.Void System.Linq.Check::SourceAndKeySelector(System.Object,System.Object)
-extern "C"  void Check_SourceAndKeySelector_m1357342302 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, Il2CppObject * ___keySelector, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Check_SourceAndPredicate_m2252398949 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source0, Il2CppObject * ___predicate1, const MethodInfo* method) IL2CPP_METHOD_ATTR;

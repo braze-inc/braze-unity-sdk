@@ -20,4 +20,4 @@ struct ByteU5BU5D_t58506160;
 #include "codegen/il2cpp-codegen.h"
 
 // System.String Mono.Security.Cryptography.CryptoConvert::ToHex(System.Byte[])
-extern "C"  String_t* CryptoConvert_ToHex_m1331445157 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t58506160* ___input, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* CryptoConvert_ToHex_m1540445577 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t58506160* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;

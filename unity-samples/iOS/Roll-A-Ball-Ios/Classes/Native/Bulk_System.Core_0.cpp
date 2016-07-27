@@ -28,7 +28,7 @@ struct SymmetricAlgorithm_t839208017;
 // System.Object
 struct Il2CppObject;
 // System.MonoTODOAttribute
-struct MonoTODOAttribute_t1287393897;
+struct MonoTODOAttribute_t1287393898;
 // System.Runtime.CompilerServices.ExtensionAttribute
 struct ExtensionAttribute_t795512515;
 // System.Security.Cryptography.Aes
@@ -102,8 +102,6 @@ struct UInt32U5BU5D_t2133601851;
 #include "System_Core_System_Linq_Enumerable4285654829MethodDeclarations.h"
 #include "System_Core_System_Linq_Enumerable_Fallback825887490.h"
 #include "System_Core_System_Linq_Enumerable_Fallback825887490MethodDeclarations.h"
-#include "System_Core_System_Linq_SortDirection2805156518.h"
-#include "System_Core_System_Linq_SortDirection2805156518MethodDeclarations.h"
 #include "System_Core_System_MonoTODOAttribute1287393896.h"
 #include "System_Core_System_MonoTODOAttribute1287393896MethodDeclarations.h"
 #include "mscorlib_System_Attribute498693649MethodDeclarations.h"
@@ -193,39 +191,39 @@ extern "C" void U24ArrayTypeU24136_t2366141856_marshal_com_cleanup(U24ArrayTypeU
 {
 }
 // Conversion methods for marshalling of: <PrivateImplementationDetails>/$ArrayType$256
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke(const U24ArrayTypeU24256_t2366142879& unmarshaled, U24ArrayTypeU24256_t2366142879_marshaled_pinvoke& marshaled)
+extern "C" void U24ArrayTypeU24256_t2366142880_marshal_pinvoke(const U24ArrayTypeU24256_t2366142880& unmarshaled, U24ArrayTypeU24256_t2366142880_marshaled_pinvoke& marshaled)
 {
 }
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke_back(const U24ArrayTypeU24256_t2366142879_marshaled_pinvoke& marshaled, U24ArrayTypeU24256_t2366142879& unmarshaled)
+extern "C" void U24ArrayTypeU24256_t2366142880_marshal_pinvoke_back(const U24ArrayTypeU24256_t2366142880_marshaled_pinvoke& marshaled, U24ArrayTypeU24256_t2366142880& unmarshaled)
 {
 }
 // Conversion method for clean up from marshalling of: <PrivateImplementationDetails>/$ArrayType$256
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_pinvoke_cleanup(U24ArrayTypeU24256_t2366142879_marshaled_pinvoke& marshaled)
+extern "C" void U24ArrayTypeU24256_t2366142880_marshal_pinvoke_cleanup(U24ArrayTypeU24256_t2366142880_marshaled_pinvoke& marshaled)
 {
 }
 // Conversion methods for marshalling of: <PrivateImplementationDetails>/$ArrayType$256
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_com(const U24ArrayTypeU24256_t2366142879& unmarshaled, U24ArrayTypeU24256_t2366142879_marshaled_com& marshaled)
+extern "C" void U24ArrayTypeU24256_t2366142880_marshal_com(const U24ArrayTypeU24256_t2366142880& unmarshaled, U24ArrayTypeU24256_t2366142880_marshaled_com& marshaled)
 {
 }
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_com_back(const U24ArrayTypeU24256_t2366142879_marshaled_com& marshaled, U24ArrayTypeU24256_t2366142879& unmarshaled)
+extern "C" void U24ArrayTypeU24256_t2366142880_marshal_com_back(const U24ArrayTypeU24256_t2366142880_marshaled_com& marshaled, U24ArrayTypeU24256_t2366142880& unmarshaled)
 {
 }
 // Conversion method for clean up from marshalling of: <PrivateImplementationDetails>/$ArrayType$256
-extern "C" void U24ArrayTypeU24256_t2366142879_marshal_com_cleanup(U24ArrayTypeU24256_t2366142879_marshaled_com& marshaled)
+extern "C" void U24ArrayTypeU24256_t2366142880_marshal_com_cleanup(U24ArrayTypeU24256_t2366142880_marshaled_com& marshaled)
 {
 }
 // System.String Locale::GetText(System.String)
-extern "C"  String_t* Locale_GetText_m2031928403 (Il2CppObject * __this /* static, unused */, String_t* ___msg, const MethodInfo* method)
+extern "C"  String_t* Locale_GetText_m2031928403 (Il2CppObject * __this /* static, unused */, String_t* ___msg0, const MethodInfo* method)
 {
 	{
-		String_t* L_0 = ___msg;
+		String_t* L_0 = ___msg0;
 		return L_0;
 	}
 }
 // System.String Locale::GetText(System.String,System.Object[])
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern const uint32_t Locale_GetText_m2138526911_MetadataUsageId;
-extern "C"  String_t* Locale_GetText_m2138526911 (Il2CppObject * __this /* static, unused */, String_t* ___fmt, ObjectU5BU5D_t11523773* ___args, const MethodInfo* method)
+extern "C"  String_t* Locale_GetText_m2138526911 (Il2CppObject * __this /* static, unused */, String_t* ___fmt0, ObjectU5BU5D_t11523773* ___args1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -234,15 +232,15 @@ extern "C"  String_t* Locale_GetText_m2138526911 (Il2CppObject * __this /* stati
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		String_t* L_0 = ___fmt;
-		ObjectU5BU5D_t11523773* L_1 = ___args;
+		String_t* L_0 = ___fmt0;
+		ObjectU5BU5D_t11523773* L_1 = ___args1;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_2 = String_Format_m4050103162(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Security.Cryptography.RandomNumberGenerator Mono.Security.Cryptography.KeyBuilder::get_Rng()
-extern TypeInfo* KeyBuilder_t2049706642_il2cpp_TypeInfo_var;
+extern Il2CppClass* KeyBuilder_t2049706643_il2cpp_TypeInfo_var;
 extern const uint32_t KeyBuilder_get_Rng_m1224245225_MetadataUsageId;
 extern "C"  RandomNumberGenerator_t2174318432 * KeyBuilder_get_Rng_m1224245225 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -253,7 +251,7 @@ extern "C"  RandomNumberGenerator_t2174318432 * KeyBuilder_get_Rng_m1224245225 (
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		RandomNumberGenerator_t2174318432 * L_0 = ((KeyBuilder_t2049706642_StaticFields*)KeyBuilder_t2049706642_il2cpp_TypeInfo_var->static_fields)->get_rng_0();
+		RandomNumberGenerator_t2174318432 * L_0 = ((KeyBuilder_t2049706643_StaticFields*)KeyBuilder_t2049706643_il2cpp_TypeInfo_var->static_fields)->get_rng_0();
 		if (L_0)
 		{
 			goto IL_0014;
@@ -261,19 +259,19 @@ extern "C"  RandomNumberGenerator_t2174318432 * KeyBuilder_get_Rng_m1224245225 (
 	}
 	{
 		RandomNumberGenerator_t2174318432 * L_1 = RandomNumberGenerator_Create_m2029084057(NULL /*static, unused*/, /*hidden argument*/NULL);
-		((KeyBuilder_t2049706642_StaticFields*)KeyBuilder_t2049706642_il2cpp_TypeInfo_var->static_fields)->set_rng_0(L_1);
+		((KeyBuilder_t2049706643_StaticFields*)KeyBuilder_t2049706643_il2cpp_TypeInfo_var->static_fields)->set_rng_0(L_1);
 	}
 
 IL_0014:
 	{
-		RandomNumberGenerator_t2174318432 * L_2 = ((KeyBuilder_t2049706642_StaticFields*)KeyBuilder_t2049706642_il2cpp_TypeInfo_var->static_fields)->get_rng_0();
+		RandomNumberGenerator_t2174318432 * L_2 = ((KeyBuilder_t2049706643_StaticFields*)KeyBuilder_t2049706643_il2cpp_TypeInfo_var->static_fields)->get_rng_0();
 		return L_2;
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.KeyBuilder::Key(System.Int32)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t KeyBuilder_Key_m489708312_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* KeyBuilder_Key_m489708312 (Il2CppObject * __this /* static, unused */, int32_t ___size, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* KeyBuilder_Key_m489708312 (Il2CppObject * __this /* static, unused */, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -283,7 +281,7 @@ extern "C"  ByteU5BU5D_t58506160* KeyBuilder_Key_m489708312 (Il2CppObject * __th
 	}
 	ByteU5BU5D_t58506160* V_0 = NULL;
 	{
-		int32_t L_0 = ___size;
+		int32_t L_0 = ___size0;
 		V_0 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_0));
 		RandomNumberGenerator_t2174318432 * L_1 = KeyBuilder_get_Rng_m1224245225(NULL /*static, unused*/, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_2 = V_0;
@@ -294,9 +292,9 @@ extern "C"  ByteU5BU5D_t58506160* KeyBuilder_Key_m489708312 (Il2CppObject * __th
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.KeyBuilder::IV(System.Int32)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t KeyBuilder_IV_m3901719576_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* KeyBuilder_IV_m3901719576 (Il2CppObject * __this /* static, unused */, int32_t ___size, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* KeyBuilder_IV_m3901719576 (Il2CppObject * __this /* static, unused */, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -306,7 +304,7 @@ extern "C"  ByteU5BU5D_t58506160* KeyBuilder_IV_m3901719576 (Il2CppObject * __th
 	}
 	ByteU5BU5D_t58506160* V_0 = NULL;
 	{
-		int32_t L_0 = ___size;
+		int32_t L_0 = ___size0;
 		V_0 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_0));
 		RandomNumberGenerator_t2174318432 * L_1 = KeyBuilder_get_Rng_m1224245225(NULL /*static, unused*/, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_2 = V_0;
@@ -317,13 +315,13 @@ extern "C"  ByteU5BU5D_t58506160* KeyBuilder_IV_m3901719576 (Il2CppObject * __th
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::.ctor(System.Security.Cryptography.SymmetricAlgorithm,System.Boolean,System.Byte[])
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* ObjectU5BU5D_t11523773_il2cpp_TypeInfo_var;
-extern TypeInfo* Int32_t2847414787_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ObjectU5BU5D_t11523773_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral717243593;
 extern const uint32_t SymmetricTransform__ctor_m1205754880_MetadataUsageId;
-extern "C"  void SymmetricTransform__ctor_m1205754880 (SymmetricTransform_t3854241867 * __this, SymmetricAlgorithm_t839208017 * ___symmAlgo, bool ___encryption, ByteU5BU5D_t58506160* ___rgbIV, const MethodInfo* method)
+extern "C"  void SymmetricTransform__ctor_m1205754880 (SymmetricTransform_t3854241867 * __this, SymmetricAlgorithm_t839208017 * ___symmAlgo0, bool ___encryption1, ByteU5BU5D_t58506160* ___rgbIV2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -334,15 +332,15 @@ extern "C"  void SymmetricTransform__ctor_m1205754880 (SymmetricTransform_t38542
 	String_t* V_0 = NULL;
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		SymmetricAlgorithm_t839208017 * L_0 = ___symmAlgo;
+		SymmetricAlgorithm_t839208017 * L_0 = ___symmAlgo0;
 		__this->set_algo_0(L_0);
-		bool L_1 = ___encryption;
+		bool L_1 = ___encryption1;
 		__this->set_encrypt_1(L_1);
 		SymmetricAlgorithm_t839208017 * L_2 = __this->get_algo_0();
 		NullCheck(L_2);
 		int32_t L_3 = VirtFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 System.Security.Cryptography.SymmetricAlgorithm::get_BlockSize() */, L_2);
 		__this->set_BlockSizeByte_2(((int32_t)((int32_t)L_3>>(int32_t)3)));
-		ByteU5BU5D_t58506160* L_4 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_4 = ___rgbIV2;
 		if (L_4)
 		{
 			goto IL_003f;
@@ -351,21 +349,21 @@ extern "C"  void SymmetricTransform__ctor_m1205754880 (SymmetricTransform_t38542
 	{
 		int32_t L_5 = __this->get_BlockSizeByte_2();
 		ByteU5BU5D_t58506160* L_6 = KeyBuilder_IV_m3901719576(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
-		___rgbIV = L_6;
+		___rgbIV2 = L_6;
 		goto IL_004c;
 	}
 
 IL_003f:
 	{
-		ByteU5BU5D_t58506160* L_7 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_7 = ___rgbIV2;
 		NullCheck((Il2CppArray *)(Il2CppArray *)L_7);
 		Il2CppObject * L_8 = VirtFuncInvoker0< Il2CppObject * >::Invoke(5 /* System.Object System.Array::Clone() */, (Il2CppArray *)(Il2CppArray *)L_7);
-		___rgbIV = ((ByteU5BU5D_t58506160*)Castclass(L_8, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var));
+		___rgbIV2 = ((ByteU5BU5D_t58506160*)Castclass(L_8, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var));
 	}
 
 IL_004c:
 	{
-		ByteU5BU5D_t58506160* L_9 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_9 = ___rgbIV2;
 		NullCheck(L_9);
 		int32_t L_10 = __this->get_BlockSizeByte_2();
 		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_9)->max_length))))) >= ((int32_t)L_10)))
@@ -375,7 +373,7 @@ IL_004c:
 	}
 	{
 		ObjectU5BU5D_t11523773* L_11 = ((ObjectU5BU5D_t11523773*)SZArrayNew(ObjectU5BU5D_t11523773_il2cpp_TypeInfo_var, (uint32_t)2));
-		ByteU5BU5D_t58506160* L_12 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_12 = ___rgbIV2;
 		NullCheck(L_12);
 		int32_t L_13 = (((int32_t)((int32_t)(((Il2CppArray *)L_12)->max_length))));
 		Il2CppObject * L_14 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_13);
@@ -403,10 +401,10 @@ IL_008b:
 	{
 		int32_t L_22 = __this->get_BlockSizeByte_2();
 		__this->set_temp_3(((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_22)));
-		ByteU5BU5D_t58506160* L_23 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_23 = ___rgbIV2;
 		ByteU5BU5D_t58506160* L_24 = __this->get_temp_3();
 		int32_t L_25 = __this->get_BlockSizeByte_2();
-		ByteU5BU5D_t58506160* L_26 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_26 = ___rgbIV2;
 		NullCheck(L_26);
 		int32_t L_27 = Math_Min_m811624909(NULL /*static, unused*/, L_25, (((int32_t)((int32_t)(((Il2CppArray *)L_26)->max_length)))), /*hidden argument*/NULL);
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_23, 0, (Il2CppArray *)(Il2CppArray *)L_24, 0, L_27, /*hidden argument*/NULL);
@@ -485,7 +483,7 @@ IL_0013:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::Dispose(System.Boolean)
-extern "C"  void SymmetricTransform_Dispose_m2730879931 (SymmetricTransform_t3854241867 * __this, bool ___disposing, const MethodInfo* method)
+extern "C"  void SymmetricTransform_Dispose_m2730879931 (SymmetricTransform_t3854241867 * __this, bool ___disposing0, const MethodInfo* method)
 {
 	{
 		bool L_0 = __this->get_m_disposed_9();
@@ -495,7 +493,7 @@ extern "C"  void SymmetricTransform_Dispose_m2730879931 (SymmetricTransform_t385
 		}
 	}
 	{
-		bool L_1 = ___disposing;
+		bool L_1 = ___disposing0;
 		if (!L_1)
 		{
 			goto IL_0043;
@@ -530,12 +528,12 @@ extern "C"  bool SymmetricTransform_get_CanReuseTransform_m725989976 (SymmetricT
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[])
-extern TypeInfo* CipherMode_t3203384231_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* NotImplementedException_t1091014741_il2cpp_TypeInfo_var;
+extern Il2CppClass* CipherMode_t3203384231_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotImplementedException_t1091014741_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1591853210;
 extern const uint32_t SymmetricTransform_Transform_m3903574043_MetadataUsageId;
-extern "C"  void SymmetricTransform_Transform_m3903574043 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input, ByteU5BU5D_t58506160* ___output, const MethodInfo* method)
+extern "C"  void SymmetricTransform_Transform_m3903574043 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input0, ByteU5BU5D_t58506160* ___output1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -577,40 +575,40 @@ extern "C"  void SymmetricTransform_Transform_m3903574043 (SymmetricTransform_t3
 
 IL_002d:
 	{
-		ByteU5BU5D_t58506160* L_3 = ___input;
-		ByteU5BU5D_t58506160* L_4 = ___output;
+		ByteU5BU5D_t58506160* L_3 = ___input0;
+		ByteU5BU5D_t58506160* L_4 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_3, L_4);
 		goto IL_0093;
 	}
 
 IL_003a:
 	{
-		ByteU5BU5D_t58506160* L_5 = ___input;
-		ByteU5BU5D_t58506160* L_6 = ___output;
+		ByteU5BU5D_t58506160* L_5 = ___input0;
+		ByteU5BU5D_t58506160* L_6 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(12 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CBC(System.Byte[],System.Byte[]) */, __this, L_5, L_6);
 		goto IL_0093;
 	}
 
 IL_0047:
 	{
-		ByteU5BU5D_t58506160* L_7 = ___input;
-		ByteU5BU5D_t58506160* L_8 = ___output;
+		ByteU5BU5D_t58506160* L_7 = ___input0;
+		ByteU5BU5D_t58506160* L_8 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(13 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CFB(System.Byte[],System.Byte[]) */, __this, L_7, L_8);
 		goto IL_0093;
 	}
 
 IL_0054:
 	{
-		ByteU5BU5D_t58506160* L_9 = ___input;
-		ByteU5BU5D_t58506160* L_10 = ___output;
+		ByteU5BU5D_t58506160* L_9 = ___input0;
+		ByteU5BU5D_t58506160* L_10 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(14 /* System.Void Mono.Security.Cryptography.SymmetricTransform::OFB(System.Byte[],System.Byte[]) */, __this, L_9, L_10);
 		goto IL_0093;
 	}
 
 IL_0061:
 	{
-		ByteU5BU5D_t58506160* L_11 = ___input;
-		ByteU5BU5D_t58506160* L_12 = ___output;
+		ByteU5BU5D_t58506160* L_11 = ___input0;
+		ByteU5BU5D_t58506160* L_12 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(15 /* System.Void Mono.Security.Cryptography.SymmetricTransform::CTS(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
 		goto IL_0093;
 	}
@@ -637,7 +635,7 @@ IL_0093:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::CBC(System.Byte[],System.Byte[])
-extern "C"  void SymmetricTransform_CBC_m2217465763 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input, ByteU5BU5D_t58506160* ___output, const MethodInfo* method)
+extern "C"  void SymmetricTransform_CBC_m2217465763 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input0, ByteU5BU5D_t58506160* ___output1, const MethodInfo* method)
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
@@ -660,7 +658,7 @@ IL_0012:
 		NullCheck(L_1);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_1, L_2);
 		uint8_t* L_3 = ((L_1)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_2)));
-		ByteU5BU5D_t58506160* L_4 = ___input;
+		ByteU5BU5D_t58506160* L_4 = ___input0;
 		int32_t L_5 = V_0;
 		NullCheck(L_4);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_4, L_5);
@@ -681,9 +679,9 @@ IL_002a:
 	}
 	{
 		ByteU5BU5D_t58506160* L_10 = __this->get_temp_3();
-		ByteU5BU5D_t58506160* L_11 = ___output;
+		ByteU5BU5D_t58506160* L_11 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_10, L_11);
-		ByteU5BU5D_t58506160* L_12 = ___output;
+		ByteU5BU5D_t58506160* L_12 = ___output1;
 		ByteU5BU5D_t58506160* L_13 = __this->get_temp_3();
 		int32_t L_14 = __this->get_BlockSizeByte_2();
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_12, 0, (Il2CppArray *)(Il2CppArray *)L_13, 0, L_14, /*hidden argument*/NULL);
@@ -692,12 +690,12 @@ IL_002a:
 
 IL_005c:
 	{
-		ByteU5BU5D_t58506160* L_15 = ___input;
+		ByteU5BU5D_t58506160* L_15 = ___input0;
 		ByteU5BU5D_t58506160* L_16 = __this->get_temp2_4();
 		int32_t L_17 = __this->get_BlockSizeByte_2();
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_15, 0, (Il2CppArray *)(Il2CppArray *)L_16, 0, L_17, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_18 = ___input;
-		ByteU5BU5D_t58506160* L_19 = ___output;
+		ByteU5BU5D_t58506160* L_18 = ___input0;
+		ByteU5BU5D_t58506160* L_19 = ___output1;
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(11 /* System.Void Mono.Security.Cryptography.SymmetricTransform::ECB(System.Byte[],System.Byte[]) */, __this, L_18, L_19);
 		V_1 = 0;
 		goto IL_0097;
@@ -705,7 +703,7 @@ IL_005c:
 
 IL_007f:
 	{
-		ByteU5BU5D_t58506160* L_20 = ___output;
+		ByteU5BU5D_t58506160* L_20 = ___output1;
 		int32_t L_21 = V_1;
 		NullCheck(L_20);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_20, L_21);
@@ -742,7 +740,7 @@ IL_00bc:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::CFB(System.Byte[],System.Byte[])
-extern "C"  void SymmetricTransform_CFB_m3609349384 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input, ByteU5BU5D_t58506160* ___output, const MethodInfo* method)
+extern "C"  void SymmetricTransform_CFB_m3609349384 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input0, ByteU5BU5D_t58506160* ___output1, const MethodInfo* method)
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
@@ -771,7 +769,7 @@ IL_0012:
 
 IL_002b:
 	{
-		ByteU5BU5D_t58506160* L_3 = ___output;
+		ByteU5BU5D_t58506160* L_3 = ___output1;
 		int32_t L_4 = V_1;
 		int32_t L_5 = V_0;
 		ByteU5BU5D_t58506160* L_6 = __this->get_temp2_4();
@@ -779,7 +777,7 @@ IL_002b:
 		NullCheck(L_6);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, L_7);
 		int32_t L_8 = L_7;
-		ByteU5BU5D_t58506160* L_9 = ___input;
+		ByteU5BU5D_t58506160* L_9 = ___input0;
 		int32_t L_10 = V_1;
 		int32_t L_11 = V_0;
 		NullCheck(L_9);
@@ -808,7 +806,7 @@ IL_0043:
 		int32_t L_19 = __this->get_BlockSizeByte_2();
 		int32_t L_20 = __this->get_FeedBackByte_7();
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_16, L_17, (Il2CppArray *)(Il2CppArray *)L_18, 0, ((int32_t)((int32_t)L_19-(int32_t)L_20)), /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_21 = ___output;
+		ByteU5BU5D_t58506160* L_21 = ___output1;
 		int32_t L_22 = V_0;
 		ByteU5BU5D_t58506160* L_23 = __this->get_temp_3();
 		int32_t L_24 = __this->get_BlockSizeByte_2();
@@ -851,7 +849,7 @@ IL_00b0:
 		int32_t L_35 = __this->get_BlockSizeByte_2();
 		int32_t L_36 = __this->get_FeedBackByte_7();
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_32, L_33, (Il2CppArray *)(Il2CppArray *)L_34, 0, ((int32_t)((int32_t)L_35-(int32_t)L_36)), /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_37 = ___input;
+		ByteU5BU5D_t58506160* L_37 = ___input0;
 		int32_t L_38 = V_2;
 		ByteU5BU5D_t58506160* L_39 = __this->get_temp_3();
 		int32_t L_40 = __this->get_BlockSizeByte_2();
@@ -864,7 +862,7 @@ IL_00b0:
 
 IL_011c:
 	{
-		ByteU5BU5D_t58506160* L_43 = ___output;
+		ByteU5BU5D_t58506160* L_43 = ___output1;
 		int32_t L_44 = V_3;
 		int32_t L_45 = V_2;
 		ByteU5BU5D_t58506160* L_46 = __this->get_temp2_4();
@@ -872,7 +870,7 @@ IL_011c:
 		NullCheck(L_46);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_46, L_47);
 		int32_t L_48 = L_47;
-		ByteU5BU5D_t58506160* L_49 = ___input;
+		ByteU5BU5D_t58506160* L_49 = ___input0;
 		int32_t L_50 = V_3;
 		int32_t L_51 = V_2;
 		NullCheck(L_49);
@@ -915,10 +913,10 @@ IL_0150:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::OFB(System.Byte[],System.Byte[])
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral557596476;
 extern const uint32_t SymmetricTransform_OFB_m962939772_MetadataUsageId;
-extern "C"  void SymmetricTransform_OFB_m962939772 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input, ByteU5BU5D_t58506160* ___output, const MethodInfo* method)
+extern "C"  void SymmetricTransform_OFB_m962939772 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input0, ByteU5BU5D_t58506160* ___output1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -933,10 +931,10 @@ extern "C"  void SymmetricTransform_OFB_m962939772 (SymmetricTransform_t38542418
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::CTS(System.Byte[],System.Byte[])
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1564220773;
 extern const uint32_t SymmetricTransform_CTS_m122988069_MetadataUsageId;
-extern "C"  void SymmetricTransform_CTS_m122988069 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input, ByteU5BU5D_t58506160* ___output, const MethodInfo* method)
+extern "C"  void SymmetricTransform_CTS_m122988069 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___input0, ByteU5BU5D_t58506160* ___output1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -951,16 +949,16 @@ extern "C"  void SymmetricTransform_CTS_m122988069 (SymmetricTransform_t38542418
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::CheckInput(System.Byte[],System.Int32,System.Int32)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentOutOfRangeException_t3479058991_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentOutOfRangeException_t3479058991_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3502856362;
 extern Il2CppCodeGenString* _stringLiteral3861195005;
 extern Il2CppCodeGenString* _stringLiteral58700;
 extern Il2CppCodeGenString* _stringLiteral1360680805;
 extern Il2CppCodeGenString* _stringLiteral594286626;
 extern const uint32_t SymmetricTransform_CheckInput_m3506478922_MetadataUsageId;
-extern "C"  void SymmetricTransform_CheckInput_m3506478922 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer, int32_t ___inputOffset, int32_t ___inputCount, const MethodInfo* method)
+extern "C"  void SymmetricTransform_CheckInput_m3506478922 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -969,7 +967,7 @@ extern "C"  void SymmetricTransform_CheckInput_m3506478922 (SymmetricTransform_t
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		ByteU5BU5D_t58506160* L_0 = ___inputBuffer;
+		ByteU5BU5D_t58506160* L_0 = ___inputBuffer0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -983,7 +981,7 @@ extern "C"  void SymmetricTransform_CheckInput_m3506478922 (SymmetricTransform_t
 
 IL_0011:
 	{
-		int32_t L_2 = ___inputOffset;
+		int32_t L_2 = ___inputOffset1;
 		if ((((int32_t)L_2) >= ((int32_t)0)))
 		{
 			goto IL_0028;
@@ -997,7 +995,7 @@ IL_0011:
 
 IL_0028:
 	{
-		int32_t L_4 = ___inputCount;
+		int32_t L_4 = ___inputCount2;
 		if ((((int32_t)L_4) >= ((int32_t)0)))
 		{
 			goto IL_003f;
@@ -1011,10 +1009,10 @@ IL_0028:
 
 IL_003f:
 	{
-		int32_t L_6 = ___inputOffset;
-		ByteU5BU5D_t58506160* L_7 = ___inputBuffer;
+		int32_t L_6 = ___inputOffset1;
+		ByteU5BU5D_t58506160* L_7 = ___inputBuffer0;
 		NullCheck(L_7);
-		int32_t L_8 = ___inputCount;
+		int32_t L_8 = ___inputCount2;
 		if ((((int32_t)L_6) <= ((int32_t)((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_7)->max_length))))-(int32_t)L_8)))))
 		{
 			goto IL_005f;
@@ -1033,17 +1031,17 @@ IL_005f:
 	}
 }
 // System.Int32 Mono.Security.Cryptography.SymmetricTransform::TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)
-extern TypeInfo* ObjectDisposedException_t973246880_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentOutOfRangeException_t3479058991_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* ObjectDisposedException_t973246880_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentOutOfRangeException_t3479058991_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral783533338;
 extern Il2CppCodeGenString* _stringLiteral3678475425;
 extern Il2CppCodeGenString* _stringLiteral4036814068;
 extern Il2CppCodeGenString* _stringLiteral58700;
 extern Il2CppCodeGenString* _stringLiteral594286626;
 extern const uint32_t SymmetricTransform_TransformBlock_m1944043099_MetadataUsageId;
-extern "C"  int32_t SymmetricTransform_TransformBlock_m1944043099 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer, int32_t ___inputOffset, int32_t ___inputCount, ByteU5BU5D_t58506160* ___outputBuffer, int32_t ___outputOffset, const MethodInfo* method)
+extern "C"  int32_t SymmetricTransform_TransformBlock_m1944043099 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, ByteU5BU5D_t58506160* ___outputBuffer3, int32_t ___outputOffset4, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1067,11 +1065,11 @@ extern "C"  int32_t SymmetricTransform_TransformBlock_m1944043099 (SymmetricTran
 
 IL_0016:
 	{
-		ByteU5BU5D_t58506160* L_2 = ___inputBuffer;
-		int32_t L_3 = ___inputOffset;
-		int32_t L_4 = ___inputCount;
+		ByteU5BU5D_t58506160* L_2 = ___inputBuffer0;
+		int32_t L_3 = ___inputOffset1;
+		int32_t L_4 = ___inputCount2;
 		SymmetricTransform_CheckInput_m3506478922(__this, L_2, L_3, L_4, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_5 = ___outputBuffer;
+		ByteU5BU5D_t58506160* L_5 = ___outputBuffer3;
 		if (L_5)
 		{
 			goto IL_0031;
@@ -1085,7 +1083,7 @@ IL_0016:
 
 IL_0031:
 	{
-		int32_t L_7 = ___outputOffset;
+		int32_t L_7 = ___outputOffset4;
 		if ((((int32_t)L_7) >= ((int32_t)0)))
 		{
 			goto IL_0049;
@@ -1099,10 +1097,10 @@ IL_0031:
 
 IL_0049:
 	{
-		ByteU5BU5D_t58506160* L_9 = ___outputBuffer;
+		ByteU5BU5D_t58506160* L_9 = ___outputBuffer3;
 		NullCheck(L_9);
-		int32_t L_10 = ___inputCount;
-		int32_t L_11 = ___outputOffset;
+		int32_t L_10 = ___inputCount2;
+		int32_t L_11 = ___outputOffset4;
 		V_0 = ((int32_t)((int32_t)((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_9)->max_length))))-(int32_t)L_10))-(int32_t)L_11));
 		bool L_12 = __this->get_encrypt_1();
 		if (L_12)
@@ -1181,10 +1179,10 @@ IL_00cf:
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_26 = ___inputBuffer;
+		ByteU5BU5D_t58506160* L_26 = ___inputBuffer0;
 		NullCheck(L_26);
-		int32_t L_27 = ___inputOffset;
-		ByteU5BU5D_t58506160* L_28 = ___outputBuffer;
+		int32_t L_27 = ___inputOffset1;
+		ByteU5BU5D_t58506160* L_28 = ___outputBuffer3;
 		NullCheck(L_28);
 		int32_t L_29 = __this->get_BlockSizeByte_2();
 		if ((!(((uint32_t)((int32_t)((int32_t)((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_26)->max_length))))-(int32_t)L_27))-(int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_28)->max_length))))))) == ((uint32_t)L_29))))
@@ -1193,10 +1191,10 @@ IL_00cf:
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_30 = ___outputBuffer;
+		ByteU5BU5D_t58506160* L_30 = ___outputBuffer3;
 		NullCheck(L_30);
-		int32_t L_31 = ___outputOffset;
-		___inputCount = ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_30)->max_length))))-(int32_t)L_31));
+		int32_t L_31 = ___outputOffset4;
+		___inputCount2 = ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_30)->max_length))))-(int32_t)L_31));
 		goto IL_010e;
 	}
 
@@ -1210,11 +1208,11 @@ IL_00f9:
 
 IL_010e:
 	{
-		ByteU5BU5D_t58506160* L_34 = ___inputBuffer;
-		int32_t L_35 = ___inputOffset;
-		int32_t L_36 = ___inputCount;
-		ByteU5BU5D_t58506160* L_37 = ___outputBuffer;
-		int32_t L_38 = ___outputOffset;
+		ByteU5BU5D_t58506160* L_34 = ___inputBuffer0;
+		int32_t L_35 = ___inputOffset1;
+		int32_t L_36 = ___inputCount2;
+		ByteU5BU5D_t58506160* L_37 = ___outputBuffer3;
+		int32_t L_38 = ___outputOffset4;
 		int32_t L_39 = SymmetricTransform_InternalTransformBlock_m3380491768(__this, L_34, L_35, L_36, L_37, L_38, /*hidden argument*/NULL);
 		return L_39;
 	}
@@ -1258,10 +1256,10 @@ IL_0030:
 	}
 }
 // System.Int32 Mono.Security.Cryptography.SymmetricTransform::InternalTransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3566855579;
 extern const uint32_t SymmetricTransform_InternalTransformBlock_m3380491768_MetadataUsageId;
-extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m3380491768 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer, int32_t ___inputOffset, int32_t ___inputCount, ByteU5BU5D_t58506160* ___outputBuffer, int32_t ___outputOffset, const MethodInfo* method)
+extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m3380491768 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, ByteU5BU5D_t58506160* ___outputBuffer3, int32_t ___outputOffset4, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1274,9 +1272,9 @@ extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m3380491768 (Symme
 	int32_t V_2 = 0;
 	int32_t V_3 = 0;
 	{
-		int32_t L_0 = ___inputOffset;
+		int32_t L_0 = ___inputOffset1;
 		V_0 = L_0;
-		int32_t L_1 = ___inputCount;
+		int32_t L_1 = ___inputCount2;
 		int32_t L_2 = __this->get_BlockSizeByte_2();
 		if ((((int32_t)L_1) == ((int32_t)L_2)))
 		{
@@ -1284,7 +1282,7 @@ extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m3380491768 (Symme
 		}
 	}
 	{
-		int32_t L_3 = ___inputCount;
+		int32_t L_3 = ___inputCount2;
 		int32_t L_4 = __this->get_BlockSizeByte_2();
 		if (!((int32_t)((int32_t)L_3%(int32_t)L_4)))
 		{
@@ -1299,7 +1297,7 @@ extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m3380491768 (Symme
 
 IL_0026:
 	{
-		int32_t L_6 = ___inputCount;
+		int32_t L_6 = ___inputCount2;
 		int32_t L_7 = __this->get_BlockSizeByte_2();
 		V_1 = ((int32_t)((int32_t)L_6/(int32_t)L_7));
 		goto IL_0036;
@@ -1337,13 +1335,13 @@ IL_0045:
 		ByteU5BU5D_t58506160* L_12 = __this->get_workout_6();
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(10 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_11, L_12);
 		ByteU5BU5D_t58506160* L_13 = __this->get_workout_6();
-		ByteU5BU5D_t58506160* L_14 = ___outputBuffer;
-		int32_t L_15 = ___outputOffset;
+		ByteU5BU5D_t58506160* L_14 = ___outputBuffer3;
+		int32_t L_15 = ___outputOffset4;
 		int32_t L_16 = __this->get_BlockSizeByte_2();
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_13, 0, (Il2CppArray *)(Il2CppArray *)L_14, L_15, L_16, /*hidden argument*/NULL);
-		int32_t L_17 = ___outputOffset;
+		int32_t L_17 = ___outputOffset4;
 		int32_t L_18 = __this->get_BlockSizeByte_2();
-		___outputOffset = ((int32_t)((int32_t)L_17+(int32_t)L_18));
+		___outputOffset4 = ((int32_t)((int32_t)L_17+(int32_t)L_18));
 		int32_t L_19 = V_2;
 		int32_t L_20 = __this->get_BlockSizeByte_2();
 		V_2 = ((int32_t)((int32_t)L_19+(int32_t)L_20));
@@ -1358,7 +1356,7 @@ IL_0095:
 
 IL_009c:
 	{
-		ByteU5BU5D_t58506160* L_21 = ___inputBuffer;
+		ByteU5BU5D_t58506160* L_21 = ___inputBuffer0;
 		int32_t L_22 = V_0;
 		ByteU5BU5D_t58506160* L_23 = __this->get_workBuff_5();
 		int32_t L_24 = __this->get_BlockSizeByte_2();
@@ -1367,16 +1365,16 @@ IL_009c:
 		ByteU5BU5D_t58506160* L_26 = __this->get_workout_6();
 		VirtActionInvoker2< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160* >::Invoke(10 /* System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[]) */, __this, L_25, L_26);
 		ByteU5BU5D_t58506160* L_27 = __this->get_workout_6();
-		ByteU5BU5D_t58506160* L_28 = ___outputBuffer;
-		int32_t L_29 = ___outputOffset;
+		ByteU5BU5D_t58506160* L_28 = ___outputBuffer3;
+		int32_t L_29 = ___outputOffset4;
 		int32_t L_30 = __this->get_BlockSizeByte_2();
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_27, 0, (Il2CppArray *)(Il2CppArray *)L_28, L_29, L_30, /*hidden argument*/NULL);
 		int32_t L_31 = V_0;
 		int32_t L_32 = __this->get_BlockSizeByte_2();
 		V_0 = ((int32_t)((int32_t)L_31+(int32_t)L_32));
-		int32_t L_33 = ___outputOffset;
+		int32_t L_33 = ___outputOffset4;
 		int32_t L_34 = __this->get_BlockSizeByte_2();
-		___outputOffset = ((int32_t)((int32_t)L_33+(int32_t)L_34));
+		___outputOffset4 = ((int32_t)((int32_t)L_33+(int32_t)L_34));
 		int32_t L_35 = V_2;
 		int32_t L_36 = __this->get_BlockSizeByte_2();
 		V_2 = ((int32_t)((int32_t)L_35+(int32_t)L_36));
@@ -1401,7 +1399,7 @@ IL_00f9:
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_41 = ___inputBuffer;
+		ByteU5BU5D_t58506160* L_41 = ___inputBuffer0;
 		int32_t L_42 = V_0;
 		ByteU5BU5D_t58506160* L_43 = __this->get_workBuff_5();
 		int32_t L_44 = __this->get_BlockSizeByte_2();
@@ -1416,9 +1414,9 @@ IL_0126:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::Random(System.Byte[],System.Int32,System.Int32)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t SymmetricTransform_Random_m3415780681_MetadataUsageId;
-extern "C"  void SymmetricTransform_Random_m3415780681 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___buffer, int32_t ___start, int32_t ___length, const MethodInfo* method)
+extern "C"  void SymmetricTransform_Random_m3415780681 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___buffer0, int32_t ___start1, int32_t ___length2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1441,30 +1439,30 @@ extern "C"  void SymmetricTransform_Random_m3415780681 (SymmetricTransform_t3854
 
 IL_0016:
 	{
-		int32_t L_2 = ___length;
+		int32_t L_2 = ___length2;
 		V_0 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_2));
 		RandomNumberGenerator_t2174318432 * L_3 = __this->get__rng_11();
 		ByteU5BU5D_t58506160* L_4 = V_0;
 		NullCheck(L_3);
 		VirtActionInvoker1< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Void System.Security.Cryptography.RandomNumberGenerator::GetBytes(System.Byte[]) */, L_3, L_4);
 		ByteU5BU5D_t58506160* L_5 = V_0;
-		ByteU5BU5D_t58506160* L_6 = ___buffer;
-		int32_t L_7 = ___start;
-		int32_t L_8 = ___length;
+		ByteU5BU5D_t58506160* L_6 = ___buffer0;
+		int32_t L_7 = ___start1;
+		int32_t L_8 = ___length2;
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_5, 0, (Il2CppArray *)(Il2CppArray *)L_6, L_7, L_8, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::ThrowBadPaddingException(System.Security.Cryptography.PaddingMode,System.Int32,System.Int32)
-extern TypeInfo* PaddingMode_t1724215917_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* Int32_t2847414787_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* PaddingMode_t1724215917_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3665781680;
 extern Il2CppCodeGenString* _stringLiteral3275307319;
 extern Il2CppCodeGenString* _stringLiteral210489030;
 extern const uint32_t SymmetricTransform_ThrowBadPaddingException_m2083216889_MetadataUsageId;
-extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2083216889 (SymmetricTransform_t3854241867 * __this, int32_t ___padding, int32_t ___length, int32_t ___position, const MethodInfo* method)
+extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2083216889 (SymmetricTransform_t3854241867 * __this, int32_t ___padding0, int32_t ___length1, int32_t ___position2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1475,13 +1473,13 @@ extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2083216889 (Symmet
 	String_t* V_0 = NULL;
 	{
 		String_t* L_0 = Locale_GetText_m2031928403(NULL /*static, unused*/, _stringLiteral3665781680, /*hidden argument*/NULL);
-		int32_t L_1 = ___padding;
+		int32_t L_1 = ___padding0;
 		int32_t L_2 = L_1;
 		Il2CppObject * L_3 = Box(PaddingMode_t1724215917_il2cpp_TypeInfo_var, &L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_4 = String_Format_m2471250780(NULL /*static, unused*/, L_0, L_3, /*hidden argument*/NULL);
 		V_0 = L_4;
-		int32_t L_5 = ___length;
+		int32_t L_5 = ___length1;
 		if ((((int32_t)L_5) < ((int32_t)0)))
 		{
 			goto IL_0039;
@@ -1490,7 +1488,7 @@ extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2083216889 (Symmet
 	{
 		String_t* L_6 = V_0;
 		String_t* L_7 = Locale_GetText_m2031928403(NULL /*static, unused*/, _stringLiteral3275307319, /*hidden argument*/NULL);
-		int32_t L_8 = ___length;
+		int32_t L_8 = ___length1;
 		int32_t L_9 = L_8;
 		Il2CppObject * L_10 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_9);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -1501,7 +1499,7 @@ extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2083216889 (Symmet
 
 IL_0039:
 	{
-		int32_t L_13 = ___position;
+		int32_t L_13 = ___position2;
 		if ((((int32_t)L_13) < ((int32_t)0)))
 		{
 			goto IL_005c;
@@ -1510,7 +1508,7 @@ IL_0039:
 	{
 		String_t* L_14 = V_0;
 		String_t* L_15 = Locale_GetText_m2031928403(NULL /*static, unused*/, _stringLiteral210489030, /*hidden argument*/NULL);
-		int32_t L_16 = ___position;
+		int32_t L_16 = ___position2;
 		int32_t L_17 = L_16;
 		Il2CppObject * L_18 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_17);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -1528,11 +1526,11 @@ IL_005c:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.SymmetricTransform::FinalEncrypt(System.Byte[],System.Int32,System.Int32)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1719475554;
 extern const uint32_t SymmetricTransform_FinalEncrypt_m975601255_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalEncrypt_m975601255 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer, int32_t ___inputOffset, int32_t ___inputCount, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalEncrypt_m975601255 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1550,11 +1548,11 @@ extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalEncrypt_m975601255 (Sy
 	int32_t V_7 = 0;
 	int32_t V_8 = 0;
 	{
-		int32_t L_0 = ___inputCount;
+		int32_t L_0 = ___inputCount2;
 		int32_t L_1 = __this->get_BlockSizeByte_2();
 		int32_t L_2 = __this->get_BlockSizeByte_2();
 		V_0 = ((int32_t)((int32_t)((int32_t)((int32_t)L_0/(int32_t)L_1))*(int32_t)L_2));
-		int32_t L_3 = ___inputCount;
+		int32_t L_3 = ___inputCount2;
 		int32_t L_4 = V_0;
 		V_1 = ((int32_t)((int32_t)L_3-(int32_t)L_4));
 		int32_t L_5 = V_0;
@@ -1595,7 +1593,7 @@ IL_0041:
 
 IL_004f:
 	{
-		int32_t L_11 = ___inputCount;
+		int32_t L_11 = ___inputCount2;
 		if (L_11)
 		{
 			goto IL_005c;
@@ -1633,18 +1631,18 @@ IL_007e:
 		int32_t L_16 = V_0;
 		int32_t L_17 = __this->get_BlockSizeByte_2();
 		V_3 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)((int32_t)L_16+(int32_t)L_17))));
-		ByteU5BU5D_t58506160* L_18 = ___inputBuffer;
-		int32_t L_19 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_18 = ___inputBuffer0;
+		int32_t L_19 = ___inputOffset1;
 		ByteU5BU5D_t58506160* L_20 = V_3;
-		int32_t L_21 = ___inputCount;
+		int32_t L_21 = ___inputCount2;
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_18, L_19, (Il2CppArray *)(Il2CppArray *)L_20, 0, L_21, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_22 = V_3;
-		___inputBuffer = L_22;
-		___inputOffset = 0;
+		___inputBuffer0 = L_22;
+		___inputOffset1 = 0;
 		ByteU5BU5D_t58506160* L_23 = V_3;
 		NullCheck(L_23);
-		___inputCount = (((int32_t)((int32_t)(((Il2CppArray *)L_23)->max_length))));
-		int32_t L_24 = ___inputCount;
+		___inputCount2 = (((int32_t)((int32_t)(((Il2CppArray *)L_23)->max_length))));
+		int32_t L_24 = ___inputCount2;
 		V_2 = L_24;
 	}
 
@@ -1663,15 +1661,15 @@ IL_00a8:
 
 IL_00b8:
 	{
-		ByteU5BU5D_t58506160* L_26 = ___inputBuffer;
-		int32_t L_27 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_26 = ___inputBuffer0;
+		int32_t L_27 = ___inputOffset1;
 		int32_t L_28 = __this->get_BlockSizeByte_2();
 		ByteU5BU5D_t58506160* L_29 = V_4;
 		int32_t L_30 = V_5;
 		SymmetricTransform_InternalTransformBlock_m3380491768(__this, L_26, L_27, L_28, L_29, L_30, /*hidden argument*/NULL);
-		int32_t L_31 = ___inputOffset;
+		int32_t L_31 = ___inputOffset1;
 		int32_t L_32 = __this->get_BlockSizeByte_2();
-		___inputOffset = ((int32_t)((int32_t)L_31+(int32_t)L_32));
+		___inputOffset1 = ((int32_t)((int32_t)L_31+(int32_t)L_32));
 		int32_t L_33 = V_5;
 		int32_t L_34 = __this->get_BlockSizeByte_2();
 		V_5 = ((int32_t)((int32_t)L_33+(int32_t)L_34));
@@ -1728,8 +1726,8 @@ IL_012b:
 		NullCheck(L_44);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_44, ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_45)->max_length))))-(int32_t)1)));
 		(L_44)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_45)->max_length))))-(int32_t)1))), (uint8_t)L_46);
-		ByteU5BU5D_t58506160* L_47 = ___inputBuffer;
-		int32_t L_48 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_47 = ___inputBuffer0;
+		int32_t L_48 = ___inputOffset1;
 		ByteU5BU5D_t58506160* L_49 = V_4;
 		int32_t L_50 = V_0;
 		int32_t L_51 = V_1;
@@ -1758,8 +1756,8 @@ IL_0159:
 		NullCheck(L_61);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_61, ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_62)->max_length))))-(int32_t)1)));
 		(L_61)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_62)->max_length))))-(int32_t)1))), (uint8_t)L_63);
-		ByteU5BU5D_t58506160* L_64 = ___inputBuffer;
-		int32_t L_65 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_64 = ___inputBuffer0;
+		int32_t L_65 = ___inputOffset1;
 		ByteU5BU5D_t58506160* L_66 = V_4;
 		int32_t L_67 = V_0;
 		int32_t L_68 = V_1;
@@ -1805,8 +1803,8 @@ IL_01ac:
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_82 = ___inputBuffer;
-		int32_t L_83 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_82 = ___inputBuffer0;
+		int32_t L_83 = ___inputOffset1;
 		ByteU5BU5D_t58506160* L_84 = V_4;
 		int32_t L_85 = V_0;
 		int32_t L_86 = V_1;
@@ -1822,8 +1820,8 @@ IL_01ac:
 
 IL_01e2:
 	{
-		ByteU5BU5D_t58506160* L_92 = ___inputBuffer;
-		int32_t L_93 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_92 = ___inputBuffer0;
+		int32_t L_93 = ___inputOffset1;
 		int32_t L_94 = __this->get_BlockSizeByte_2();
 		ByteU5BU5D_t58506160* L_95 = V_4;
 		int32_t L_96 = V_5;
@@ -1838,11 +1836,11 @@ IL_01fa:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.SymmetricTransform::FinalDecrypt(System.Byte[],System.Int32,System.Int32)
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3566855579;
 extern const uint32_t SymmetricTransform_FinalDecrypt_m3742401599_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalDecrypt_m3742401599 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer, int32_t ___inputOffset, int32_t ___inputCount, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalDecrypt_m3742401599 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1861,7 +1859,7 @@ extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalDecrypt_m3742401599 (S
 	int32_t V_8 = 0;
 	int32_t G_B12_0 = 0;
 	{
-		int32_t L_0 = ___inputCount;
+		int32_t L_0 = ___inputCount2;
 		int32_t L_1 = __this->get_BlockSizeByte_2();
 		if ((((int32_t)((int32_t)((int32_t)L_0%(int32_t)L_1))) <= ((int32_t)0)))
 		{
@@ -1876,7 +1874,7 @@ extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_FinalDecrypt_m3742401599 (S
 
 IL_0019:
 	{
-		int32_t L_3 = ___inputCount;
+		int32_t L_3 = ___inputCount2;
 		V_0 = L_3;
 		bool L_4 = __this->get_lastBlock_10();
 		if (!L_4)
@@ -1900,27 +1898,27 @@ IL_002f:
 
 IL_003d:
 	{
-		ByteU5BU5D_t58506160* L_8 = ___inputBuffer;
-		int32_t L_9 = ___inputOffset;
+		ByteU5BU5D_t58506160* L_8 = ___inputBuffer0;
+		int32_t L_9 = ___inputOffset1;
 		int32_t L_10 = __this->get_BlockSizeByte_2();
 		ByteU5BU5D_t58506160* L_11 = V_1;
 		int32_t L_12 = V_2;
 		int32_t L_13 = SymmetricTransform_InternalTransformBlock_m3380491768(__this, L_8, L_9, L_10, L_11, L_12, /*hidden argument*/NULL);
 		V_3 = L_13;
-		int32_t L_14 = ___inputOffset;
+		int32_t L_14 = ___inputOffset1;
 		int32_t L_15 = __this->get_BlockSizeByte_2();
-		___inputOffset = ((int32_t)((int32_t)L_14+(int32_t)L_15));
+		___inputOffset1 = ((int32_t)((int32_t)L_14+(int32_t)L_15));
 		int32_t L_16 = V_2;
 		int32_t L_17 = V_3;
 		V_2 = ((int32_t)((int32_t)L_16+(int32_t)L_17));
-		int32_t L_18 = ___inputCount;
+		int32_t L_18 = ___inputCount2;
 		int32_t L_19 = __this->get_BlockSizeByte_2();
-		___inputCount = ((int32_t)((int32_t)L_18-(int32_t)L_19));
+		___inputCount2 = ((int32_t)((int32_t)L_18-(int32_t)L_19));
 	}
 
 IL_0066:
 	{
-		int32_t L_20 = ___inputCount;
+		int32_t L_20 = ___inputCount2;
 		if ((((int32_t)L_20) > ((int32_t)0)))
 		{
 			goto IL_003d;
@@ -2223,10 +2221,10 @@ IL_0229:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.SymmetricTransform::TransformFinalBlock(System.Byte[],System.Int32,System.Int32)
-extern TypeInfo* ObjectDisposedException_t973246880_il2cpp_TypeInfo_var;
+extern Il2CppClass* ObjectDisposedException_t973246880_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral783533338;
 extern const uint32_t SymmetricTransform_TransformFinalBlock_m2524388439_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_TransformFinalBlock_m2524388439 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer, int32_t ___inputOffset, int32_t ___inputCount, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_TransformFinalBlock_m2524388439 (SymmetricTransform_t3854241867 * __this, ByteU5BU5D_t58506160* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2249,9 +2247,9 @@ extern "C"  ByteU5BU5D_t58506160* SymmetricTransform_TransformFinalBlock_m252438
 
 IL_0016:
 	{
-		ByteU5BU5D_t58506160* L_2 = ___inputBuffer;
-		int32_t L_3 = ___inputOffset;
-		int32_t L_4 = ___inputCount;
+		ByteU5BU5D_t58506160* L_2 = ___inputBuffer0;
+		int32_t L_3 = ___inputOffset1;
+		int32_t L_4 = ___inputCount2;
 		SymmetricTransform_CheckInput_m3506478922(__this, L_2, L_3, L_4, /*hidden argument*/NULL);
 		bool L_5 = __this->get_encrypt_1();
 		if (!L_5)
@@ -2260,27 +2258,27 @@ IL_0016:
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_6 = ___inputBuffer;
-		int32_t L_7 = ___inputOffset;
-		int32_t L_8 = ___inputCount;
+		ByteU5BU5D_t58506160* L_6 = ___inputBuffer0;
+		int32_t L_7 = ___inputOffset1;
+		int32_t L_8 = ___inputCount2;
 		ByteU5BU5D_t58506160* L_9 = SymmetricTransform_FinalEncrypt_m975601255(__this, L_6, L_7, L_8, /*hidden argument*/NULL);
 		return L_9;
 	}
 
 IL_0034:
 	{
-		ByteU5BU5D_t58506160* L_10 = ___inputBuffer;
-		int32_t L_11 = ___inputOffset;
-		int32_t L_12 = ___inputCount;
+		ByteU5BU5D_t58506160* L_10 = ___inputBuffer0;
+		int32_t L_11 = ___inputOffset1;
+		int32_t L_12 = ___inputCount2;
 		ByteU5BU5D_t58506160* L_13 = SymmetricTransform_FinalDecrypt_m3742401599(__this, L_10, L_11, L_12, /*hidden argument*/NULL);
 		return L_13;
 	}
 }
 // System.Void System.Linq.Check::Source(System.Object)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3398461467;
 extern const uint32_t Check_Source_m228347543_MetadataUsageId;
-extern "C"  void Check_Source_m228347543 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, const MethodInfo* method)
+extern "C"  void Check_Source_m228347543 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2289,7 +2287,7 @@ extern "C"  void Check_Source_m228347543 (Il2CppObject * __this /* static, unuse
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		Il2CppObject * L_0 = ___source;
+		Il2CppObject * L_0 = ___source0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -2302,61 +2300,16 @@ extern "C"  void Check_Source_m228347543 (Il2CppObject * __this /* static, unuse
 	}
 
 IL_0011:
-	{
-		return;
-	}
-}
-// System.Void System.Linq.Check::SourceAndSelector(System.Object,System.Object)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3398461467;
-extern Il2CppCodeGenString* _stringLiteral1191572447;
-extern const uint32_t Check_SourceAndSelector_m3164339431_MetadataUsageId;
-extern "C"  void Check_SourceAndSelector_m3164339431 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, Il2CppObject * ___selector, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (Check_SourceAndSelector_m3164339431_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	{
-		Il2CppObject * L_0 = ___source;
-		if (L_0)
-		{
-			goto IL_0011;
-		}
-	}
-	{
-		ArgumentNullException_t3214793280 * L_1 = (ArgumentNullException_t3214793280 *)il2cpp_codegen_object_new(ArgumentNullException_t3214793280_il2cpp_TypeInfo_var);
-		ArgumentNullException__ctor_m135444188(L_1, _stringLiteral3398461467, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
-	}
-
-IL_0011:
-	{
-		Il2CppObject * L_2 = ___selector;
-		if (L_2)
-		{
-			goto IL_0022;
-		}
-	}
-	{
-		ArgumentNullException_t3214793280 * L_3 = (ArgumentNullException_t3214793280 *)il2cpp_codegen_object_new(ArgumentNullException_t3214793280_il2cpp_TypeInfo_var);
-		ArgumentNullException__ctor_m135444188(L_3, _stringLiteral1191572447, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3);
-	}
-
-IL_0022:
 	{
 		return;
 	}
 }
 // System.Void System.Linq.Check::SourceAndPredicate(System.Object,System.Object)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3398461467;
 extern Il2CppCodeGenString* _stringLiteral2946935223;
 extern const uint32_t Check_SourceAndPredicate_m2252398949_MetadataUsageId;
-extern "C"  void Check_SourceAndPredicate_m2252398949 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, Il2CppObject * ___predicate, const MethodInfo* method)
+extern "C"  void Check_SourceAndPredicate_m2252398949 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source0, Il2CppObject * ___predicate1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2365,7 +2318,7 @@ extern "C"  void Check_SourceAndPredicate_m2252398949 (Il2CppObject * __this /* 
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		Il2CppObject * L_0 = ___source;
+		Il2CppObject * L_0 = ___source0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -2379,7 +2332,7 @@ extern "C"  void Check_SourceAndPredicate_m2252398949 (Il2CppObject * __this /* 
 
 IL_0011:
 	{
-		Il2CppObject * L_2 = ___predicate;
+		Il2CppObject * L_2 = ___predicate1;
 		if (L_2)
 		{
 			goto IL_0022;
@@ -2396,53 +2349,8 @@ IL_0022:
 		return;
 	}
 }
-// System.Void System.Linq.Check::SourceAndKeySelector(System.Object,System.Object)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3398461467;
-extern Il2CppCodeGenString* _stringLiteral4224264030;
-extern const uint32_t Check_SourceAndKeySelector_m1357342302_MetadataUsageId;
-extern "C"  void Check_SourceAndKeySelector_m1357342302 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source, Il2CppObject * ___keySelector, const MethodInfo* method)
-{
-	static bool s_Il2CppMethodIntialized;
-	if (!s_Il2CppMethodIntialized)
-	{
-		il2cpp_codegen_initialize_method (Check_SourceAndKeySelector_m1357342302_MetadataUsageId);
-		s_Il2CppMethodIntialized = true;
-	}
-	{
-		Il2CppObject * L_0 = ___source;
-		if (L_0)
-		{
-			goto IL_0011;
-		}
-	}
-	{
-		ArgumentNullException_t3214793280 * L_1 = (ArgumentNullException_t3214793280 *)il2cpp_codegen_object_new(ArgumentNullException_t3214793280_il2cpp_TypeInfo_var);
-		ArgumentNullException__ctor_m135444188(L_1, _stringLiteral3398461467, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
-	}
-
-IL_0011:
-	{
-		Il2CppObject * L_2 = ___keySelector;
-		if (L_2)
-		{
-			goto IL_0022;
-		}
-	}
-	{
-		ArgumentNullException_t3214793280 * L_3 = (ArgumentNullException_t3214793280 *)il2cpp_codegen_object_new(ArgumentNullException_t3214793280_il2cpp_TypeInfo_var);
-		ArgumentNullException__ctor_m135444188(L_3, _stringLiteral4224264030, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3);
-	}
-
-IL_0022:
-	{
-		return;
-	}
-}
 // System.Void System.MonoTODOAttribute::.ctor()
-extern "C"  void MonoTODOAttribute__ctor_m1033053463 (MonoTODOAttribute_t1287393897 * __this, const MethodInfo* method)
+extern "C"  void MonoTODOAttribute__ctor_m1033053463 (MonoTODOAttribute_t1287393898 * __this, const MethodInfo* method)
 {
 	{
 		Attribute__ctor_m2985353781(__this, /*hidden argument*/NULL);
@@ -2458,8 +2366,8 @@ extern "C"  void ExtensionAttribute__ctor_m1242622322 (ExtensionAttribute_t79551
 	}
 }
 // System.Void System.Security.Cryptography.Aes::.ctor()
-extern TypeInfo* KeySizesU5BU5D_t1304982661_il2cpp_TypeInfo_var;
-extern TypeInfo* KeySizes_t2111859404_il2cpp_TypeInfo_var;
+extern Il2CppClass* KeySizesU5BU5D_t1304982661_il2cpp_TypeInfo_var;
+extern Il2CppClass* KeySizes_t2111859404_il2cpp_TypeInfo_var;
 extern const uint32_t Aes__ctor_m380511311_MetadataUsageId;
 extern "C"  void Aes__ctor_m380511311 (Aes_t1557549544 * __this, const MethodInfo* method)
 {
@@ -2521,9 +2429,9 @@ extern "C"  void AesManaged_GenerateKey_m1003425312 (AesManaged_t564372777 * __t
 	}
 }
 // System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.AesManaged::CreateDecryptor(System.Byte[],System.Byte[])
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
 extern const uint32_t AesManaged_CreateDecryptor_m1952358980_MetadataUsageId;
-extern "C"  Il2CppObject * AesManaged_CreateDecryptor_m1952358980 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___rgbKey, ByteU5BU5D_t58506160* ___rgbIV, const MethodInfo* method)
+extern "C"  Il2CppObject * AesManaged_CreateDecryptor_m1952358980 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___rgbKey0, ByteU5BU5D_t58506160* ___rgbIV1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2532,17 +2440,17 @@ extern "C"  Il2CppObject * AesManaged_CreateDecryptor_m1952358980 (AesManaged_t5
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		ByteU5BU5D_t58506160* L_0 = ___rgbKey;
-		ByteU5BU5D_t58506160* L_1 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_0 = ___rgbKey0;
+		ByteU5BU5D_t58506160* L_1 = ___rgbIV1;
 		AesTransform_t2186883254 * L_2 = (AesTransform_t2186883254 *)il2cpp_codegen_object_new(AesTransform_t2186883254_il2cpp_TypeInfo_var);
 		AesTransform__ctor_m2781154868(L_2, __this, (bool)0, L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.AesManaged::CreateEncryptor(System.Byte[],System.Byte[])
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
 extern const uint32_t AesManaged_CreateEncryptor_m2258087532_MetadataUsageId;
-extern "C"  Il2CppObject * AesManaged_CreateEncryptor_m2258087532 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___rgbKey, ByteU5BU5D_t58506160* ___rgbIV, const MethodInfo* method)
+extern "C"  Il2CppObject * AesManaged_CreateEncryptor_m2258087532 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___rgbKey0, ByteU5BU5D_t58506160* ___rgbIV1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2551,8 +2459,8 @@ extern "C"  Il2CppObject * AesManaged_CreateEncryptor_m2258087532 (AesManaged_t5
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		ByteU5BU5D_t58506160* L_0 = ___rgbKey;
-		ByteU5BU5D_t58506160* L_1 = ___rgbIV;
+		ByteU5BU5D_t58506160* L_0 = ___rgbKey0;
+		ByteU5BU5D_t58506160* L_1 = ___rgbIV1;
 		AesTransform_t2186883254 * L_2 = (AesTransform_t2186883254 *)il2cpp_codegen_object_new(AesTransform_t2186883254_il2cpp_TypeInfo_var);
 		AesTransform__ctor_m2781154868(L_2, __this, (bool)1, L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
@@ -2567,10 +2475,10 @@ extern "C"  ByteU5BU5D_t58506160* AesManaged_get_IV_m3771642968 (AesManaged_t564
 	}
 }
 // System.Void System.Security.Cryptography.AesManaged::set_IV(System.Byte[])
-extern "C"  void AesManaged_set_IV_m2456625939 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___value, const MethodInfo* method)
+extern "C"  void AesManaged_set_IV_m2456625939 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___value0, const MethodInfo* method)
 {
 	{
-		ByteU5BU5D_t58506160* L_0 = ___value;
+		ByteU5BU5D_t58506160* L_0 = ___value0;
 		SymmetricAlgorithm_set_IV_m870580644(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
@@ -2584,10 +2492,10 @@ extern "C"  ByteU5BU5D_t58506160* AesManaged_get_Key_m959186774 (AesManaged_t564
 	}
 }
 // System.Void System.Security.Cryptography.AesManaged::set_Key(System.Byte[])
-extern "C"  void AesManaged_set_Key_m1884561361 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___value, const MethodInfo* method)
+extern "C"  void AesManaged_set_Key_m1884561361 (AesManaged_t564372777 * __this, ByteU5BU5D_t58506160* ___value0, const MethodInfo* method)
 {
 	{
-		ByteU5BU5D_t58506160* L_0 = ___value;
+		ByteU5BU5D_t58506160* L_0 = ___value0;
 		SymmetricAlgorithm_set_Key_m4256764768(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
@@ -2601,10 +2509,10 @@ extern "C"  int32_t AesManaged_get_KeySize_m1856785595 (AesManaged_t564372777 * 
 	}
 }
 // System.Void System.Security.Cryptography.AesManaged::set_KeySize(System.Int32)
-extern "C"  void AesManaged_set_KeySize_m838068010 (AesManaged_t564372777 * __this, int32_t ___value, const MethodInfo* method)
+extern "C"  void AesManaged_set_KeySize_m838068010 (AesManaged_t564372777 * __this, int32_t ___value0, const MethodInfo* method)
 {
 	{
-		int32_t L_0 = ___value;
+		int32_t L_0 = ___value0;
 		SymmetricAlgorithm_set_KeySize_m1757877563(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
@@ -2630,25 +2538,25 @@ extern "C"  Il2CppObject * AesManaged_CreateEncryptor_m3462881952 (AesManaged_t5
 	}
 }
 // System.Void System.Security.Cryptography.AesManaged::Dispose(System.Boolean)
-extern "C"  void AesManaged_Dispose_m2950523276 (AesManaged_t564372777 * __this, bool ___disposing, const MethodInfo* method)
+extern "C"  void AesManaged_Dispose_m2950523276 (AesManaged_t564372777 * __this, bool ___disposing0, const MethodInfo* method)
 {
 	{
-		bool L_0 = ___disposing;
+		bool L_0 = ___disposing0;
 		SymmetricAlgorithm_Dispose_m3474384861(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::.ctor(System.Security.Cryptography.Aes,System.Boolean,System.Byte[],System.Byte[])
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* ObjectU5BU5D_t11523773_il2cpp_TypeInfo_var;
-extern TypeInfo* Int32_t2847414787_il2cpp_TypeInfo_var;
-extern TypeInfo* UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var;
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* ObjectU5BU5D_t11523773_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32_t2847414787_il2cpp_TypeInfo_var;
+extern Il2CppClass* UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral632339964;
 extern Il2CppCodeGenString* _stringLiteral1688174393;
 extern Il2CppCodeGenString* _stringLiteral3873498541;
 extern const uint32_t AesTransform__ctor_m2781154868_MetadataUsageId;
-extern "C"  void AesTransform__ctor_m2781154868 (AesTransform_t2186883254 * __this, Aes_t1557549544 * ___algo, bool ___encryption, ByteU5BU5D_t58506160* ___key, ByteU5BU5D_t58506160* ___iv, const MethodInfo* method)
+extern "C"  void AesTransform__ctor_m2781154868 (AesTransform_t2186883254 * __this, Aes_t1557549544 * ___algo0, bool ___encryption1, ByteU5BU5D_t58506160* ___key2, ByteU5BU5D_t58506160* ___iv3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2673,11 +2581,11 @@ extern "C"  void AesTransform__ctor_m2781154868 (AesTransform_t2186883254 * __th
 	uint32_t V_14 = 0;
 	int32_t V_15 = 0;
 	{
-		Aes_t1557549544 * L_0 = ___algo;
-		bool L_1 = ___encryption;
-		ByteU5BU5D_t58506160* L_2 = ___iv;
+		Aes_t1557549544 * L_0 = ___algo0;
+		bool L_1 = ___encryption1;
+		ByteU5BU5D_t58506160* L_2 = ___iv3;
 		SymmetricTransform__ctor_m1205754880(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_3 = ___key;
+		ByteU5BU5D_t58506160* L_3 = ___key2;
 		if (L_3)
 		{
 			goto IL_001b;
@@ -2691,16 +2599,16 @@ extern "C"  void AesTransform__ctor_m2781154868 (AesTransform_t2186883254 * __th
 
 IL_001b:
 	{
-		ByteU5BU5D_t58506160* L_5 = ___iv;
+		ByteU5BU5D_t58506160* L_5 = ___iv3;
 		if (!L_5)
 		{
 			goto IL_0067;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_6 = ___iv;
+		ByteU5BU5D_t58506160* L_6 = ___iv3;
 		NullCheck(L_6);
-		Aes_t1557549544 * L_7 = ___algo;
+		Aes_t1557549544 * L_7 = ___algo0;
 		NullCheck(L_7);
 		int32_t L_8 = VirtFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 System.Security.Cryptography.SymmetricAlgorithm::get_BlockSize() */, L_7);
 		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_6)->max_length))))) == ((int32_t)((int32_t)((int32_t)L_8>>(int32_t)3)))))
@@ -2710,7 +2618,7 @@ IL_001b:
 	}
 	{
 		ObjectU5BU5D_t11523773* L_9 = ((ObjectU5BU5D_t11523773*)SZArrayNew(ObjectU5BU5D_t11523773_il2cpp_TypeInfo_var, (uint32_t)2));
-		ByteU5BU5D_t58506160* L_10 = ___iv;
+		ByteU5BU5D_t58506160* L_10 = ___iv3;
 		NullCheck(L_10);
 		int32_t L_11 = (((int32_t)((int32_t)(((Il2CppArray *)L_10)->max_length))));
 		Il2CppObject * L_12 = Box(Int32_t2847414787_il2cpp_TypeInfo_var, &L_11);
@@ -2719,7 +2627,7 @@ IL_001b:
 		ArrayElementTypeCheck (L_9, L_12);
 		(L_9)->SetAt(static_cast<il2cpp_array_size_t>(0), (Il2CppObject *)L_12);
 		ObjectU5BU5D_t11523773* L_13 = L_9;
-		Aes_t1557549544 * L_14 = ___algo;
+		Aes_t1557549544 * L_14 = ___algo0;
 		NullCheck(L_14);
 		int32_t L_15 = VirtFuncInvoker0< int32_t >::Invoke(6 /* System.Int32 System.Security.Cryptography.SymmetricAlgorithm::get_BlockSize() */, L_14);
 		int32_t L_16 = ((int32_t)((int32_t)L_15>>(int32_t)3));
@@ -2738,7 +2646,7 @@ IL_001b:
 
 IL_0067:
 	{
-		ByteU5BU5D_t58506160* L_21 = ___key;
+		ByteU5BU5D_t58506160* L_21 = ___key2;
 		NullCheck(L_21);
 		V_1 = (((int32_t)((int32_t)(((Il2CppArray *)L_21)->max_length))));
 		int32_t L_22 = V_1;
@@ -2847,7 +2755,7 @@ IL_0109:
 
 IL_0127:
 	{
-		ByteU5BU5D_t58506160* L_47 = ___key;
+		ByteU5BU5D_t58506160* L_47 = ___key2;
 		int32_t L_48 = V_5;
 		int32_t L_49 = L_48;
 		V_5 = ((int32_t)((int32_t)L_49+(int32_t)1));
@@ -2856,7 +2764,7 @@ IL_0127:
 		int32_t L_50 = L_49;
 		V_7 = ((int32_t)((int32_t)((L_47)->GetAt(static_cast<il2cpp_array_size_t>(L_50)))<<(int32_t)((int32_t)24)));
 		uint32_t L_51 = V_7;
-		ByteU5BU5D_t58506160* L_52 = ___key;
+		ByteU5BU5D_t58506160* L_52 = ___key2;
 		int32_t L_53 = V_5;
 		int32_t L_54 = L_53;
 		V_5 = ((int32_t)((int32_t)L_54+(int32_t)1));
@@ -2865,7 +2773,7 @@ IL_0127:
 		int32_t L_55 = L_54;
 		V_7 = ((int32_t)((int32_t)L_51|(int32_t)((int32_t)((int32_t)((L_52)->GetAt(static_cast<il2cpp_array_size_t>(L_55)))<<(int32_t)((int32_t)16)))));
 		uint32_t L_56 = V_7;
-		ByteU5BU5D_t58506160* L_57 = ___key;
+		ByteU5BU5D_t58506160* L_57 = ___key2;
 		int32_t L_58 = V_5;
 		int32_t L_59 = L_58;
 		V_5 = ((int32_t)((int32_t)L_59+(int32_t)1));
@@ -2874,7 +2782,7 @@ IL_0127:
 		int32_t L_60 = L_59;
 		V_7 = ((int32_t)((int32_t)L_56|(int32_t)((int32_t)((int32_t)((L_57)->GetAt(static_cast<il2cpp_array_size_t>(L_60)))<<(int32_t)8))));
 		uint32_t L_61 = V_7;
-		ByteU5BU5D_t58506160* L_62 = ___key;
+		ByteU5BU5D_t58506160* L_62 = ___key2;
 		int32_t L_63 = V_5;
 		int32_t L_64 = L_63;
 		V_5 = ((int32_t)((int32_t)L_64+(int32_t)1));
@@ -2989,7 +2897,7 @@ IL_0212:
 		}
 	}
 	{
-		bool L_101 = ___encryption;
+		bool L_101 = ___encryption1;
 		if (L_101)
 		{
 			goto IL_02ef;
@@ -3152,20 +3060,20 @@ IL_02ef:
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::.cctor()
-extern TypeInfo* UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var;
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D1_1_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D2_2_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D3_3_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D4_4_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D5_5_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D6_6_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D7_7_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D8_8_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D9_9_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D10_10_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D11_11_FieldInfo_var;
+extern Il2CppClass* UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D1_1_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D2_2_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D3_3_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D4_4_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D5_5_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D6_6_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D7_7_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D8_8_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D9_9_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D10_10_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D11_11_FieldInfo_var;
 extern const uint32_t AesTransform__cctor_m1179286690_MetadataUsageId;
 extern "C"  void AesTransform__cctor_m1179286690 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -3177,43 +3085,43 @@ extern "C"  void AesTransform__cctor_m1179286690 (Il2CppObject * __this /* stati
 	}
 	{
 		UInt32U5BU5D_t2133601851* L_0 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)30)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_0, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D1_1_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_0, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D1_1_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_Rcon_15(L_0);
 		ByteU5BU5D_t58506160* L_1 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_1, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D2_2_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_1, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D2_2_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_SBox_16(L_1);
 		ByteU5BU5D_t58506160* L_2 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_2, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D3_3_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_2, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D3_3_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_iSBox_17(L_2);
 		UInt32U5BU5D_t2133601851* L_3 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_3, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D4_4_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_3, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D4_4_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_T0_18(L_3);
 		UInt32U5BU5D_t2133601851* L_4 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_4, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D5_5_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_4, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D5_5_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_T1_19(L_4);
 		UInt32U5BU5D_t2133601851* L_5 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_5, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D6_6_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_5, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D6_6_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_T2_20(L_5);
 		UInt32U5BU5D_t2133601851* L_6 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_6, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D7_7_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_6, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D7_7_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_T3_21(L_6);
 		UInt32U5BU5D_t2133601851* L_7 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_7, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D8_8_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_7, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D8_8_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_iT0_22(L_7);
 		UInt32U5BU5D_t2133601851* L_8 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_8, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D9_9_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_8, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D9_9_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_iT1_23(L_8);
 		UInt32U5BU5D_t2133601851* L_9 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_9, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D10_10_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_9, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D10_10_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_iT2_24(L_9);
 		UInt32U5BU5D_t2133601851* L_10 = ((UInt32U5BU5D_t2133601851*)SZArrayNew(UInt32U5BU5D_t2133601851_il2cpp_TypeInfo_var, (uint32_t)((int32_t)256)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_10, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D11_11_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_10, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D11_11_FieldInfo_var), /*hidden argument*/NULL);
 		((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->set_iT3_25(L_10);
 		return;
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::ECB(System.Byte[],System.Byte[])
-extern "C"  void AesTransform_ECB_m2589908703 (AesTransform_t2186883254 * __this, ByteU5BU5D_t58506160* ___input, ByteU5BU5D_t58506160* ___output, const MethodInfo* method)
+extern "C"  void AesTransform_ECB_m2589908703 (AesTransform_t2186883254 * __this, ByteU5BU5D_t58506160* ___input0, ByteU5BU5D_t58506160* ___output1, const MethodInfo* method)
 {
 	{
 		bool L_0 = ((SymmetricTransform_t3854241867 *)__this)->get_encrypt_1();
@@ -3223,8 +3131,8 @@ extern "C"  void AesTransform_ECB_m2589908703 (AesTransform_t2186883254 * __this
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_1 = ___input;
-		ByteU5BU5D_t58506160* L_2 = ___output;
+		ByteU5BU5D_t58506160* L_1 = ___input0;
+		ByteU5BU5D_t58506160* L_2 = ___output1;
 		UInt32U5BU5D_t2133601851* L_3 = __this->get_expandedKey_12();
 		AesTransform_Encrypt128_m3651261907(__this, L_1, L_2, L_3, /*hidden argument*/NULL);
 		goto IL_002c;
@@ -3232,8 +3140,8 @@ extern "C"  void AesTransform_ECB_m2589908703 (AesTransform_t2186883254 * __this
 
 IL_001e:
 	{
-		ByteU5BU5D_t58506160* L_4 = ___input;
-		ByteU5BU5D_t58506160* L_5 = ___output;
+		ByteU5BU5D_t58506160* L_4 = ___input0;
+		ByteU5BU5D_t58506160* L_5 = ___output1;
 		UInt32U5BU5D_t2133601851* L_6 = __this->get_expandedKey_12();
 		AesTransform_Decrypt128_m3310750971(__this, L_4, L_5, L_6, /*hidden argument*/NULL);
 	}
@@ -3244,9 +3152,9 @@ IL_002c:
 	}
 }
 // System.UInt32 System.Security.Cryptography.AesTransform::SubByte(System.UInt32)
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
 extern const uint32_t AesTransform_SubByte_m1214814958_MetadataUsageId;
-extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 * __this, uint32_t ___a, const MethodInfo* method)
+extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 * __this, uint32_t ___a0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -3257,7 +3165,7 @@ extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 
 	uint32_t V_0 = 0;
 	uint32_t V_1 = 0;
 	{
-		uint32_t L_0 = ___a;
+		uint32_t L_0 = ___a0;
 		V_0 = ((int32_t)((int32_t)((int32_t)255)&(int32_t)L_0));
 		IL2CPP_RUNTIME_CLASS_INIT(AesTransform_t2186883254_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_1 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
@@ -3266,7 +3174,7 @@ extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_1, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)L_2)));
 		uintptr_t L_3 = (((uintptr_t)L_2));
 		V_1 = ((L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3)));
-		uint32_t L_4 = ___a;
+		uint32_t L_4 = ___a0;
 		V_0 = ((int32_t)((int32_t)((int32_t)255)&(int32_t)((int32_t)((uint32_t)L_4>>8))));
 		uint32_t L_5 = V_1;
 		ByteU5BU5D_t58506160* L_6 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
@@ -3275,7 +3183,7 @@ extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)L_7)));
 		uintptr_t L_8 = (((uintptr_t)L_7));
 		V_1 = ((int32_t)((int32_t)L_5|(int32_t)((int32_t)((int32_t)((L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_8)))<<(int32_t)8))));
-		uint32_t L_9 = ___a;
+		uint32_t L_9 = ___a0;
 		V_0 = ((int32_t)((int32_t)((int32_t)255)&(int32_t)((int32_t)((uint32_t)L_9>>((int32_t)16)))));
 		uint32_t L_10 = V_1;
 		ByteU5BU5D_t58506160* L_11 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
@@ -3284,7 +3192,7 @@ extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_11, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)L_12)));
 		uintptr_t L_13 = (((uintptr_t)L_12));
 		V_1 = ((int32_t)((int32_t)L_10|(int32_t)((int32_t)((int32_t)((L_11)->GetAt(static_cast<il2cpp_array_size_t>(L_13)))<<(int32_t)((int32_t)16)))));
-		uint32_t L_14 = ___a;
+		uint32_t L_14 = ___a0;
 		V_0 = ((int32_t)((int32_t)((int32_t)255)&(int32_t)((int32_t)((uint32_t)L_14>>((int32_t)24)))));
 		uint32_t L_15 = V_1;
 		ByteU5BU5D_t58506160* L_16 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
@@ -3296,9 +3204,9 @@ extern "C"  uint32_t AesTransform_SubByte_m1214814958 (AesTransform_t2186883254 
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::Encrypt128(System.Byte[],System.Byte[],System.UInt32[])
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
 extern const uint32_t AesTransform_Encrypt128_m3651261907_MetadataUsageId;
-extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 * __this, ByteU5BU5D_t58506160* ___indata, ByteU5BU5D_t58506160* ___outdata, UInt32U5BU5D_t2133601851* ___ekey, const MethodInfo* method)
+extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 * __this, ByteU5BU5D_t58506160* ___indata0, ByteU5BU5D_t58506160* ___outdata1, UInt32U5BU5D_t2133601851* ___ekey2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -3317,86 +3225,86 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 	int32_t V_8 = 0;
 	{
 		V_8 = ((int32_t)40);
-		ByteU5BU5D_t58506160* L_0 = ___indata;
+		ByteU5BU5D_t58506160* L_0 = ___indata0;
 		NullCheck(L_0);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_0, 0);
 		int32_t L_1 = 0;
-		ByteU5BU5D_t58506160* L_2 = ___indata;
+		ByteU5BU5D_t58506160* L_2 = ___indata0;
 		NullCheck(L_2);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_2, 1);
 		int32_t L_3 = 1;
-		ByteU5BU5D_t58506160* L_4 = ___indata;
+		ByteU5BU5D_t58506160* L_4 = ___indata0;
 		NullCheck(L_4);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_4, 2);
 		int32_t L_5 = 2;
-		ByteU5BU5D_t58506160* L_6 = ___indata;
+		ByteU5BU5D_t58506160* L_6 = ___indata0;
 		NullCheck(L_6);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, 3);
 		int32_t L_7 = 3;
-		UInt32U5BU5D_t2133601851* L_8 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_8 = ___ekey2;
 		NullCheck(L_8);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_8, 0);
 		int32_t L_9 = 0;
 		V_0 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1)))<<(int32_t)((int32_t)24)))|(int32_t)((int32_t)((int32_t)((L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3)))<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)((L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_5)))<<(int32_t)8))))|(int32_t)((L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_7)))))^(int32_t)((L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_9)))));
-		ByteU5BU5D_t58506160* L_10 = ___indata;
+		ByteU5BU5D_t58506160* L_10 = ___indata0;
 		NullCheck(L_10);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_10, 4);
 		int32_t L_11 = 4;
-		ByteU5BU5D_t58506160* L_12 = ___indata;
+		ByteU5BU5D_t58506160* L_12 = ___indata0;
 		NullCheck(L_12);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_12, 5);
 		int32_t L_13 = 5;
-		ByteU5BU5D_t58506160* L_14 = ___indata;
+		ByteU5BU5D_t58506160* L_14 = ___indata0;
 		NullCheck(L_14);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_14, 6);
 		int32_t L_15 = 6;
-		ByteU5BU5D_t58506160* L_16 = ___indata;
+		ByteU5BU5D_t58506160* L_16 = ___indata0;
 		NullCheck(L_16);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_16, 7);
 		int32_t L_17 = 7;
-		UInt32U5BU5D_t2133601851* L_18 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_18 = ___ekey2;
 		NullCheck(L_18);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_18, 1);
 		int32_t L_19 = 1;
 		V_1 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_10)->GetAt(static_cast<il2cpp_array_size_t>(L_11)))<<(int32_t)((int32_t)24)))|(int32_t)((int32_t)((int32_t)((L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_13)))<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)((L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_15)))<<(int32_t)8))))|(int32_t)((L_16)->GetAt(static_cast<il2cpp_array_size_t>(L_17)))))^(int32_t)((L_18)->GetAt(static_cast<il2cpp_array_size_t>(L_19)))));
-		ByteU5BU5D_t58506160* L_20 = ___indata;
+		ByteU5BU5D_t58506160* L_20 = ___indata0;
 		NullCheck(L_20);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_20, 8);
 		int32_t L_21 = 8;
-		ByteU5BU5D_t58506160* L_22 = ___indata;
+		ByteU5BU5D_t58506160* L_22 = ___indata0;
 		NullCheck(L_22);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_22, ((int32_t)9));
 		int32_t L_23 = ((int32_t)9);
-		ByteU5BU5D_t58506160* L_24 = ___indata;
+		ByteU5BU5D_t58506160* L_24 = ___indata0;
 		NullCheck(L_24);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_24, ((int32_t)10));
 		int32_t L_25 = ((int32_t)10);
-		ByteU5BU5D_t58506160* L_26 = ___indata;
+		ByteU5BU5D_t58506160* L_26 = ___indata0;
 		NullCheck(L_26);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_26, ((int32_t)11));
 		int32_t L_27 = ((int32_t)11);
-		UInt32U5BU5D_t2133601851* L_28 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_28 = ___ekey2;
 		NullCheck(L_28);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_28, 2);
 		int32_t L_29 = 2;
 		V_2 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_20)->GetAt(static_cast<il2cpp_array_size_t>(L_21)))<<(int32_t)((int32_t)24)))|(int32_t)((int32_t)((int32_t)((L_22)->GetAt(static_cast<il2cpp_array_size_t>(L_23)))<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)((L_24)->GetAt(static_cast<il2cpp_array_size_t>(L_25)))<<(int32_t)8))))|(int32_t)((L_26)->GetAt(static_cast<il2cpp_array_size_t>(L_27)))))^(int32_t)((L_28)->GetAt(static_cast<il2cpp_array_size_t>(L_29)))));
-		ByteU5BU5D_t58506160* L_30 = ___indata;
+		ByteU5BU5D_t58506160* L_30 = ___indata0;
 		NullCheck(L_30);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_30, ((int32_t)12));
 		int32_t L_31 = ((int32_t)12);
-		ByteU5BU5D_t58506160* L_32 = ___indata;
+		ByteU5BU5D_t58506160* L_32 = ___indata0;
 		NullCheck(L_32);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_32, ((int32_t)13));
 		int32_t L_33 = ((int32_t)13);
-		ByteU5BU5D_t58506160* L_34 = ___indata;
+		ByteU5BU5D_t58506160* L_34 = ___indata0;
 		NullCheck(L_34);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_34, ((int32_t)14));
 		int32_t L_35 = ((int32_t)14);
-		ByteU5BU5D_t58506160* L_36 = ___indata;
+		ByteU5BU5D_t58506160* L_36 = ___indata0;
 		NullCheck(L_36);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_36, ((int32_t)15));
 		int32_t L_37 = ((int32_t)15);
-		UInt32U5BU5D_t2133601851* L_38 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_38 = ___ekey2;
 		NullCheck(L_38);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_38, 3);
 		int32_t L_39 = 3;
@@ -3422,7 +3330,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_49);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_49, (((int32_t)((uint8_t)L_50))));
 		int32_t L_51 = (((int32_t)((uint8_t)L_50)));
-		UInt32U5BU5D_t2133601851* L_52 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_52 = ___ekey2;
 		NullCheck(L_52);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_52, 4);
 		int32_t L_53 = 4;
@@ -3447,7 +3355,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_63);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_63, (((int32_t)((uint8_t)L_64))));
 		int32_t L_65 = (((int32_t)((uint8_t)L_64)));
-		UInt32U5BU5D_t2133601851* L_66 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_66 = ___ekey2;
 		NullCheck(L_66);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_66, 5);
 		int32_t L_67 = 5;
@@ -3472,7 +3380,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_77);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_77, (((int32_t)((uint8_t)L_78))));
 		int32_t L_79 = (((int32_t)((uint8_t)L_78)));
-		UInt32U5BU5D_t2133601851* L_80 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_80 = ___ekey2;
 		NullCheck(L_80);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_80, 6);
 		int32_t L_81 = 6;
@@ -3497,7 +3405,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_91);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_91, (((int32_t)((uint8_t)L_92))));
 		int32_t L_93 = (((int32_t)((uint8_t)L_92)));
-		UInt32U5BU5D_t2133601851* L_94 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_94 = ___ekey2;
 		NullCheck(L_94);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_94, 7);
 		int32_t L_95 = 7;
@@ -3522,7 +3430,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_105);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_105, (((int32_t)((uint8_t)L_106))));
 		int32_t L_107 = (((int32_t)((uint8_t)L_106)));
-		UInt32U5BU5D_t2133601851* L_108 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_108 = ___ekey2;
 		NullCheck(L_108);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_108, 8);
 		int32_t L_109 = 8;
@@ -3547,7 +3455,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_119);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_119, (((int32_t)((uint8_t)L_120))));
 		int32_t L_121 = (((int32_t)((uint8_t)L_120)));
-		UInt32U5BU5D_t2133601851* L_122 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_122 = ___ekey2;
 		NullCheck(L_122);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_122, ((int32_t)9));
 		int32_t L_123 = ((int32_t)9);
@@ -3572,7 +3480,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_133);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_133, (((int32_t)((uint8_t)L_134))));
 		int32_t L_135 = (((int32_t)((uint8_t)L_134)));
-		UInt32U5BU5D_t2133601851* L_136 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_136 = ___ekey2;
 		NullCheck(L_136);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_136, ((int32_t)10));
 		int32_t L_137 = ((int32_t)10);
@@ -3597,7 +3505,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_147);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_147, (((int32_t)((uint8_t)L_148))));
 		int32_t L_149 = (((int32_t)((uint8_t)L_148)));
-		UInt32U5BU5D_t2133601851* L_150 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_150 = ___ekey2;
 		NullCheck(L_150);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_150, ((int32_t)11));
 		int32_t L_151 = ((int32_t)11);
@@ -3622,7 +3530,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_161);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_161, (((int32_t)((uint8_t)L_162))));
 		int32_t L_163 = (((int32_t)((uint8_t)L_162)));
-		UInt32U5BU5D_t2133601851* L_164 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_164 = ___ekey2;
 		NullCheck(L_164);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_164, ((int32_t)12));
 		int32_t L_165 = ((int32_t)12);
@@ -3647,7 +3555,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_175);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_175, (((int32_t)((uint8_t)L_176))));
 		int32_t L_177 = (((int32_t)((uint8_t)L_176)));
-		UInt32U5BU5D_t2133601851* L_178 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_178 = ___ekey2;
 		NullCheck(L_178);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_178, ((int32_t)13));
 		int32_t L_179 = ((int32_t)13);
@@ -3672,7 +3580,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_189);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_189, (((int32_t)((uint8_t)L_190))));
 		int32_t L_191 = (((int32_t)((uint8_t)L_190)));
-		UInt32U5BU5D_t2133601851* L_192 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_192 = ___ekey2;
 		NullCheck(L_192);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_192, ((int32_t)14));
 		int32_t L_193 = ((int32_t)14);
@@ -3697,7 +3605,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_203);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_203, (((int32_t)((uint8_t)L_204))));
 		int32_t L_205 = (((int32_t)((uint8_t)L_204)));
-		UInt32U5BU5D_t2133601851* L_206 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_206 = ___ekey2;
 		NullCheck(L_206);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_206, ((int32_t)15));
 		int32_t L_207 = ((int32_t)15);
@@ -3722,7 +3630,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_217);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_217, (((int32_t)((uint8_t)L_218))));
 		int32_t L_219 = (((int32_t)((uint8_t)L_218)));
-		UInt32U5BU5D_t2133601851* L_220 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_220 = ___ekey2;
 		NullCheck(L_220);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_220, ((int32_t)16));
 		int32_t L_221 = ((int32_t)16);
@@ -3747,7 +3655,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_231);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_231, (((int32_t)((uint8_t)L_232))));
 		int32_t L_233 = (((int32_t)((uint8_t)L_232)));
-		UInt32U5BU5D_t2133601851* L_234 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_234 = ___ekey2;
 		NullCheck(L_234);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_234, ((int32_t)17));
 		int32_t L_235 = ((int32_t)17);
@@ -3772,7 +3680,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_245);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_245, (((int32_t)((uint8_t)L_246))));
 		int32_t L_247 = (((int32_t)((uint8_t)L_246)));
-		UInt32U5BU5D_t2133601851* L_248 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_248 = ___ekey2;
 		NullCheck(L_248);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_248, ((int32_t)18));
 		int32_t L_249 = ((int32_t)18);
@@ -3797,7 +3705,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_259);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_259, (((int32_t)((uint8_t)L_260))));
 		int32_t L_261 = (((int32_t)((uint8_t)L_260)));
-		UInt32U5BU5D_t2133601851* L_262 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_262 = ___ekey2;
 		NullCheck(L_262);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_262, ((int32_t)19));
 		int32_t L_263 = ((int32_t)19);
@@ -3822,7 +3730,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_273);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_273, (((int32_t)((uint8_t)L_274))));
 		int32_t L_275 = (((int32_t)((uint8_t)L_274)));
-		UInt32U5BU5D_t2133601851* L_276 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_276 = ___ekey2;
 		NullCheck(L_276);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_276, ((int32_t)20));
 		int32_t L_277 = ((int32_t)20);
@@ -3847,7 +3755,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_287);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_287, (((int32_t)((uint8_t)L_288))));
 		int32_t L_289 = (((int32_t)((uint8_t)L_288)));
-		UInt32U5BU5D_t2133601851* L_290 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_290 = ___ekey2;
 		NullCheck(L_290);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_290, ((int32_t)21));
 		int32_t L_291 = ((int32_t)21);
@@ -3872,7 +3780,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_301);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_301, (((int32_t)((uint8_t)L_302))));
 		int32_t L_303 = (((int32_t)((uint8_t)L_302)));
-		UInt32U5BU5D_t2133601851* L_304 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_304 = ___ekey2;
 		NullCheck(L_304);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_304, ((int32_t)22));
 		int32_t L_305 = ((int32_t)22);
@@ -3897,7 +3805,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_315);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_315, (((int32_t)((uint8_t)L_316))));
 		int32_t L_317 = (((int32_t)((uint8_t)L_316)));
-		UInt32U5BU5D_t2133601851* L_318 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_318 = ___ekey2;
 		NullCheck(L_318);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_318, ((int32_t)23));
 		int32_t L_319 = ((int32_t)23);
@@ -3922,7 +3830,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_329);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_329, (((int32_t)((uint8_t)L_330))));
 		int32_t L_331 = (((int32_t)((uint8_t)L_330)));
-		UInt32U5BU5D_t2133601851* L_332 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_332 = ___ekey2;
 		NullCheck(L_332);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_332, ((int32_t)24));
 		int32_t L_333 = ((int32_t)24);
@@ -3947,7 +3855,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_343);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_343, (((int32_t)((uint8_t)L_344))));
 		int32_t L_345 = (((int32_t)((uint8_t)L_344)));
-		UInt32U5BU5D_t2133601851* L_346 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_346 = ___ekey2;
 		NullCheck(L_346);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_346, ((int32_t)25));
 		int32_t L_347 = ((int32_t)25);
@@ -3972,7 +3880,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_357);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_357, (((int32_t)((uint8_t)L_358))));
 		int32_t L_359 = (((int32_t)((uint8_t)L_358)));
-		UInt32U5BU5D_t2133601851* L_360 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_360 = ___ekey2;
 		NullCheck(L_360);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_360, ((int32_t)26));
 		int32_t L_361 = ((int32_t)26);
@@ -3997,7 +3905,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_371);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_371, (((int32_t)((uint8_t)L_372))));
 		int32_t L_373 = (((int32_t)((uint8_t)L_372)));
-		UInt32U5BU5D_t2133601851* L_374 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_374 = ___ekey2;
 		NullCheck(L_374);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_374, ((int32_t)27));
 		int32_t L_375 = ((int32_t)27);
@@ -4022,7 +3930,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_385);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_385, (((int32_t)((uint8_t)L_386))));
 		int32_t L_387 = (((int32_t)((uint8_t)L_386)));
-		UInt32U5BU5D_t2133601851* L_388 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_388 = ___ekey2;
 		NullCheck(L_388);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_388, ((int32_t)28));
 		int32_t L_389 = ((int32_t)28);
@@ -4047,7 +3955,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_399);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_399, (((int32_t)((uint8_t)L_400))));
 		int32_t L_401 = (((int32_t)((uint8_t)L_400)));
-		UInt32U5BU5D_t2133601851* L_402 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_402 = ___ekey2;
 		NullCheck(L_402);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_402, ((int32_t)29));
 		int32_t L_403 = ((int32_t)29);
@@ -4072,7 +3980,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_413);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_413, (((int32_t)((uint8_t)L_414))));
 		int32_t L_415 = (((int32_t)((uint8_t)L_414)));
-		UInt32U5BU5D_t2133601851* L_416 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_416 = ___ekey2;
 		NullCheck(L_416);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_416, ((int32_t)30));
 		int32_t L_417 = ((int32_t)30);
@@ -4097,7 +4005,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_427);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_427, (((int32_t)((uint8_t)L_428))));
 		int32_t L_429 = (((int32_t)((uint8_t)L_428)));
-		UInt32U5BU5D_t2133601851* L_430 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_430 = ___ekey2;
 		NullCheck(L_430);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_430, ((int32_t)31));
 		int32_t L_431 = ((int32_t)31);
@@ -4122,7 +4030,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_441);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_441, (((int32_t)((uint8_t)L_442))));
 		int32_t L_443 = (((int32_t)((uint8_t)L_442)));
-		UInt32U5BU5D_t2133601851* L_444 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_444 = ___ekey2;
 		NullCheck(L_444);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_444, ((int32_t)32));
 		int32_t L_445 = ((int32_t)32);
@@ -4147,7 +4055,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_455);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_455, (((int32_t)((uint8_t)L_456))));
 		int32_t L_457 = (((int32_t)((uint8_t)L_456)));
-		UInt32U5BU5D_t2133601851* L_458 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_458 = ___ekey2;
 		NullCheck(L_458);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_458, ((int32_t)33));
 		int32_t L_459 = ((int32_t)33);
@@ -4172,7 +4080,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_469);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_469, (((int32_t)((uint8_t)L_470))));
 		int32_t L_471 = (((int32_t)((uint8_t)L_470)));
-		UInt32U5BU5D_t2133601851* L_472 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_472 = ___ekey2;
 		NullCheck(L_472);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_472, ((int32_t)34));
 		int32_t L_473 = ((int32_t)34);
@@ -4197,7 +4105,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_483);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_483, (((int32_t)((uint8_t)L_484))));
 		int32_t L_485 = (((int32_t)((uint8_t)L_484)));
-		UInt32U5BU5D_t2133601851* L_486 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_486 = ___ekey2;
 		NullCheck(L_486);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_486, ((int32_t)35));
 		int32_t L_487 = ((int32_t)35);
@@ -4222,7 +4130,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_497);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_497, (((int32_t)((uint8_t)L_498))));
 		int32_t L_499 = (((int32_t)((uint8_t)L_498)));
-		UInt32U5BU5D_t2133601851* L_500 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_500 = ___ekey2;
 		NullCheck(L_500);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_500, ((int32_t)36));
 		int32_t L_501 = ((int32_t)36);
@@ -4247,7 +4155,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_511);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_511, (((int32_t)((uint8_t)L_512))));
 		int32_t L_513 = (((int32_t)((uint8_t)L_512)));
-		UInt32U5BU5D_t2133601851* L_514 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_514 = ___ekey2;
 		NullCheck(L_514);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_514, ((int32_t)37));
 		int32_t L_515 = ((int32_t)37);
@@ -4272,7 +4180,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_525);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_525, (((int32_t)((uint8_t)L_526))));
 		int32_t L_527 = (((int32_t)((uint8_t)L_526)));
-		UInt32U5BU5D_t2133601851* L_528 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_528 = ___ekey2;
 		NullCheck(L_528);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_528, ((int32_t)38));
 		int32_t L_529 = ((int32_t)38);
@@ -4297,7 +4205,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_539);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_539, (((int32_t)((uint8_t)L_540))));
 		int32_t L_541 = (((int32_t)((uint8_t)L_540)));
-		UInt32U5BU5D_t2133601851* L_542 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_542 = ___ekey2;
 		NullCheck(L_542);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_542, ((int32_t)39));
 		int32_t L_543 = ((int32_t)39);
@@ -4330,7 +4238,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_554);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_554, (((int32_t)((uint8_t)L_555))));
 		int32_t L_556 = (((int32_t)((uint8_t)L_555)));
-		UInt32U5BU5D_t2133601851* L_557 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_557 = ___ekey2;
 		NullCheck(L_557);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_557, ((int32_t)40));
 		int32_t L_558 = ((int32_t)40);
@@ -4355,7 +4263,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_568);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_568, (((int32_t)((uint8_t)L_569))));
 		int32_t L_570 = (((int32_t)((uint8_t)L_569)));
-		UInt32U5BU5D_t2133601851* L_571 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_571 = ___ekey2;
 		NullCheck(L_571);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_571, ((int32_t)41));
 		int32_t L_572 = ((int32_t)41);
@@ -4380,7 +4288,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_582);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_582, (((int32_t)((uint8_t)L_583))));
 		int32_t L_584 = (((int32_t)((uint8_t)L_583)));
-		UInt32U5BU5D_t2133601851* L_585 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_585 = ___ekey2;
 		NullCheck(L_585);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_585, ((int32_t)42));
 		int32_t L_586 = ((int32_t)42);
@@ -4405,7 +4313,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_596);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_596, (((int32_t)((uint8_t)L_597))));
 		int32_t L_598 = (((int32_t)((uint8_t)L_597)));
-		UInt32U5BU5D_t2133601851* L_599 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_599 = ___ekey2;
 		NullCheck(L_599);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_599, ((int32_t)43));
 		int32_t L_600 = ((int32_t)43);
@@ -4430,7 +4338,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_610);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_610, (((int32_t)((uint8_t)L_611))));
 		int32_t L_612 = (((int32_t)((uint8_t)L_611)));
-		UInt32U5BU5D_t2133601851* L_613 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_613 = ___ekey2;
 		NullCheck(L_613);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_613, ((int32_t)44));
 		int32_t L_614 = ((int32_t)44);
@@ -4455,7 +4363,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_624);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_624, (((int32_t)((uint8_t)L_625))));
 		int32_t L_626 = (((int32_t)((uint8_t)L_625)));
-		UInt32U5BU5D_t2133601851* L_627 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_627 = ___ekey2;
 		NullCheck(L_627);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_627, ((int32_t)45));
 		int32_t L_628 = ((int32_t)45);
@@ -4480,7 +4388,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_638);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_638, (((int32_t)((uint8_t)L_639))));
 		int32_t L_640 = (((int32_t)((uint8_t)L_639)));
-		UInt32U5BU5D_t2133601851* L_641 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_641 = ___ekey2;
 		NullCheck(L_641);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_641, ((int32_t)46));
 		int32_t L_642 = ((int32_t)46);
@@ -4505,7 +4413,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_652);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_652, (((int32_t)((uint8_t)L_653))));
 		int32_t L_654 = (((int32_t)((uint8_t)L_653)));
-		UInt32U5BU5D_t2133601851* L_655 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_655 = ___ekey2;
 		NullCheck(L_655);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_655, ((int32_t)47));
 		int32_t L_656 = ((int32_t)47);
@@ -4539,7 +4447,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_667);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_667, (((int32_t)((uint8_t)L_668))));
 		int32_t L_669 = (((int32_t)((uint8_t)L_668)));
-		UInt32U5BU5D_t2133601851* L_670 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_670 = ___ekey2;
 		NullCheck(L_670);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_670, ((int32_t)48));
 		int32_t L_671 = ((int32_t)48);
@@ -4564,7 +4472,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_681);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_681, (((int32_t)((uint8_t)L_682))));
 		int32_t L_683 = (((int32_t)((uint8_t)L_682)));
-		UInt32U5BU5D_t2133601851* L_684 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_684 = ___ekey2;
 		NullCheck(L_684);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_684, ((int32_t)49));
 		int32_t L_685 = ((int32_t)49);
@@ -4589,7 +4497,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_695);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_695, (((int32_t)((uint8_t)L_696))));
 		int32_t L_697 = (((int32_t)((uint8_t)L_696)));
-		UInt32U5BU5D_t2133601851* L_698 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_698 = ___ekey2;
 		NullCheck(L_698);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_698, ((int32_t)50));
 		int32_t L_699 = ((int32_t)50);
@@ -4614,7 +4522,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_709);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_709, (((int32_t)((uint8_t)L_710))));
 		int32_t L_711 = (((int32_t)((uint8_t)L_710)));
-		UInt32U5BU5D_t2133601851* L_712 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_712 = ___ekey2;
 		NullCheck(L_712);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_712, ((int32_t)51));
 		int32_t L_713 = ((int32_t)51);
@@ -4639,7 +4547,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_723);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_723, (((int32_t)((uint8_t)L_724))));
 		int32_t L_725 = (((int32_t)((uint8_t)L_724)));
-		UInt32U5BU5D_t2133601851* L_726 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_726 = ___ekey2;
 		NullCheck(L_726);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_726, ((int32_t)52));
 		int32_t L_727 = ((int32_t)52);
@@ -4664,7 +4572,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_737);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_737, (((int32_t)((uint8_t)L_738))));
 		int32_t L_739 = (((int32_t)((uint8_t)L_738)));
-		UInt32U5BU5D_t2133601851* L_740 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_740 = ___ekey2;
 		NullCheck(L_740);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_740, ((int32_t)53));
 		int32_t L_741 = ((int32_t)53);
@@ -4689,7 +4597,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_751);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_751, (((int32_t)((uint8_t)L_752))));
 		int32_t L_753 = (((int32_t)((uint8_t)L_752)));
-		UInt32U5BU5D_t2133601851* L_754 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_754 = ___ekey2;
 		NullCheck(L_754);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_754, ((int32_t)54));
 		int32_t L_755 = ((int32_t)54);
@@ -4714,7 +4622,7 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 		NullCheck(L_765);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_765, (((int32_t)((uint8_t)L_766))));
 		int32_t L_767 = (((int32_t)((uint8_t)L_766)));
-		UInt32U5BU5D_t2133601851* L_768 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_768 = ___ekey2;
 		NullCheck(L_768);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_768, ((int32_t)55));
 		int32_t L_769 = ((int32_t)55);
@@ -4724,14 +4632,14 @@ extern "C"  void AesTransform_Encrypt128_m3651261907 (AesTransform_t2186883254 *
 
 IL_0b08:
 	{
-		ByteU5BU5D_t58506160* L_770 = ___outdata;
+		ByteU5BU5D_t58506160* L_770 = ___outdata1;
 		IL2CPP_RUNTIME_CLASS_INIT(AesTransform_t2186883254_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_771 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_772 = V_4;
 		NullCheck(L_771);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_771, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_772>>((int32_t)24))))));
 		uintptr_t L_773 = (((uintptr_t)((int32_t)((uint32_t)L_772>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_774 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_774 = ___ekey2;
 		int32_t L_775 = V_8;
 		NullCheck(L_774);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_774, L_775);
@@ -4739,13 +4647,13 @@ IL_0b08:
 		NullCheck(L_770);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_770, 0);
 		(L_770)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_771)->GetAt(static_cast<il2cpp_array_size_t>(L_773)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_774)->GetAt(static_cast<il2cpp_array_size_t>(L_776)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_777 = ___outdata;
+		ByteU5BU5D_t58506160* L_777 = ___outdata1;
 		ByteU5BU5D_t58506160* L_778 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_779 = V_5;
 		NullCheck(L_778);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_778, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_779>>((int32_t)16)))))));
 		int32_t L_780 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_779>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_781 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_781 = ___ekey2;
 		int32_t L_782 = V_8;
 		NullCheck(L_781);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_781, L_782);
@@ -4753,13 +4661,13 @@ IL_0b08:
 		NullCheck(L_777);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_777, 1);
 		(L_777)->SetAt(static_cast<il2cpp_array_size_t>(1), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_778)->GetAt(static_cast<il2cpp_array_size_t>(L_780)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_781)->GetAt(static_cast<il2cpp_array_size_t>(L_783)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_784 = ___outdata;
+		ByteU5BU5D_t58506160* L_784 = ___outdata1;
 		ByteU5BU5D_t58506160* L_785 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_786 = V_6;
 		NullCheck(L_785);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_785, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_786>>8))))));
 		int32_t L_787 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_786>>8)))));
-		UInt32U5BU5D_t2133601851* L_788 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_788 = ___ekey2;
 		int32_t L_789 = V_8;
 		NullCheck(L_788);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_788, L_789);
@@ -4767,13 +4675,13 @@ IL_0b08:
 		NullCheck(L_784);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_784, 2);
 		(L_784)->SetAt(static_cast<il2cpp_array_size_t>(2), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_785)->GetAt(static_cast<il2cpp_array_size_t>(L_787)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_788)->GetAt(static_cast<il2cpp_array_size_t>(L_790)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_791 = ___outdata;
+		ByteU5BU5D_t58506160* L_791 = ___outdata1;
 		ByteU5BU5D_t58506160* L_792 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_793 = V_7;
 		NullCheck(L_792);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_792, (((int32_t)((uint8_t)L_793))));
 		int32_t L_794 = (((int32_t)((uint8_t)L_793)));
-		UInt32U5BU5D_t2133601851* L_795 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_795 = ___ekey2;
 		int32_t L_796 = V_8;
 		int32_t L_797 = L_796;
 		V_8 = ((int32_t)((int32_t)L_797+(int32_t)1));
@@ -4783,13 +4691,13 @@ IL_0b08:
 		NullCheck(L_791);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_791, 3);
 		(L_791)->SetAt(static_cast<il2cpp_array_size_t>(3), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_792)->GetAt(static_cast<il2cpp_array_size_t>(L_794)))^(int32_t)(((int32_t)((uint8_t)((L_795)->GetAt(static_cast<il2cpp_array_size_t>(L_798))))))))))));
-		ByteU5BU5D_t58506160* L_799 = ___outdata;
+		ByteU5BU5D_t58506160* L_799 = ___outdata1;
 		ByteU5BU5D_t58506160* L_800 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_801 = V_5;
 		NullCheck(L_800);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_800, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_801>>((int32_t)24))))));
 		uintptr_t L_802 = (((uintptr_t)((int32_t)((uint32_t)L_801>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_803 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_803 = ___ekey2;
 		int32_t L_804 = V_8;
 		NullCheck(L_803);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_803, L_804);
@@ -4797,13 +4705,13 @@ IL_0b08:
 		NullCheck(L_799);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_799, 4);
 		(L_799)->SetAt(static_cast<il2cpp_array_size_t>(4), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_800)->GetAt(static_cast<il2cpp_array_size_t>(L_802)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_803)->GetAt(static_cast<il2cpp_array_size_t>(L_805)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_806 = ___outdata;
+		ByteU5BU5D_t58506160* L_806 = ___outdata1;
 		ByteU5BU5D_t58506160* L_807 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_808 = V_6;
 		NullCheck(L_807);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_807, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_808>>((int32_t)16)))))));
 		int32_t L_809 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_808>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_810 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_810 = ___ekey2;
 		int32_t L_811 = V_8;
 		NullCheck(L_810);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_810, L_811);
@@ -4811,13 +4719,13 @@ IL_0b08:
 		NullCheck(L_806);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_806, 5);
 		(L_806)->SetAt(static_cast<il2cpp_array_size_t>(5), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_807)->GetAt(static_cast<il2cpp_array_size_t>(L_809)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_810)->GetAt(static_cast<il2cpp_array_size_t>(L_812)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_813 = ___outdata;
+		ByteU5BU5D_t58506160* L_813 = ___outdata1;
 		ByteU5BU5D_t58506160* L_814 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_815 = V_7;
 		NullCheck(L_814);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_814, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_815>>8))))));
 		int32_t L_816 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_815>>8)))));
-		UInt32U5BU5D_t2133601851* L_817 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_817 = ___ekey2;
 		int32_t L_818 = V_8;
 		NullCheck(L_817);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_817, L_818);
@@ -4825,13 +4733,13 @@ IL_0b08:
 		NullCheck(L_813);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_813, 6);
 		(L_813)->SetAt(static_cast<il2cpp_array_size_t>(6), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_814)->GetAt(static_cast<il2cpp_array_size_t>(L_816)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_817)->GetAt(static_cast<il2cpp_array_size_t>(L_819)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_820 = ___outdata;
+		ByteU5BU5D_t58506160* L_820 = ___outdata1;
 		ByteU5BU5D_t58506160* L_821 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_822 = V_4;
 		NullCheck(L_821);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_821, (((int32_t)((uint8_t)L_822))));
 		int32_t L_823 = (((int32_t)((uint8_t)L_822)));
-		UInt32U5BU5D_t2133601851* L_824 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_824 = ___ekey2;
 		int32_t L_825 = V_8;
 		int32_t L_826 = L_825;
 		V_8 = ((int32_t)((int32_t)L_826+(int32_t)1));
@@ -4841,13 +4749,13 @@ IL_0b08:
 		NullCheck(L_820);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_820, 7);
 		(L_820)->SetAt(static_cast<il2cpp_array_size_t>(7), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_821)->GetAt(static_cast<il2cpp_array_size_t>(L_823)))^(int32_t)(((int32_t)((uint8_t)((L_824)->GetAt(static_cast<il2cpp_array_size_t>(L_827))))))))))));
-		ByteU5BU5D_t58506160* L_828 = ___outdata;
+		ByteU5BU5D_t58506160* L_828 = ___outdata1;
 		ByteU5BU5D_t58506160* L_829 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_830 = V_6;
 		NullCheck(L_829);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_829, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_830>>((int32_t)24))))));
 		uintptr_t L_831 = (((uintptr_t)((int32_t)((uint32_t)L_830>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_832 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_832 = ___ekey2;
 		int32_t L_833 = V_8;
 		NullCheck(L_832);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_832, L_833);
@@ -4855,13 +4763,13 @@ IL_0b08:
 		NullCheck(L_828);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_828, 8);
 		(L_828)->SetAt(static_cast<il2cpp_array_size_t>(8), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_829)->GetAt(static_cast<il2cpp_array_size_t>(L_831)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_832)->GetAt(static_cast<il2cpp_array_size_t>(L_834)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_835 = ___outdata;
+		ByteU5BU5D_t58506160* L_835 = ___outdata1;
 		ByteU5BU5D_t58506160* L_836 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_837 = V_7;
 		NullCheck(L_836);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_836, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_837>>((int32_t)16)))))));
 		int32_t L_838 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_837>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_839 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_839 = ___ekey2;
 		int32_t L_840 = V_8;
 		NullCheck(L_839);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_839, L_840);
@@ -4869,13 +4777,13 @@ IL_0b08:
 		NullCheck(L_835);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_835, ((int32_t)9));
 		(L_835)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)9)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_836)->GetAt(static_cast<il2cpp_array_size_t>(L_838)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_839)->GetAt(static_cast<il2cpp_array_size_t>(L_841)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_842 = ___outdata;
+		ByteU5BU5D_t58506160* L_842 = ___outdata1;
 		ByteU5BU5D_t58506160* L_843 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_844 = V_4;
 		NullCheck(L_843);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_843, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_844>>8))))));
 		int32_t L_845 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_844>>8)))));
-		UInt32U5BU5D_t2133601851* L_846 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_846 = ___ekey2;
 		int32_t L_847 = V_8;
 		NullCheck(L_846);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_846, L_847);
@@ -4883,13 +4791,13 @@ IL_0b08:
 		NullCheck(L_842);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_842, ((int32_t)10));
 		(L_842)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)10)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_843)->GetAt(static_cast<il2cpp_array_size_t>(L_845)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_846)->GetAt(static_cast<il2cpp_array_size_t>(L_848)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_849 = ___outdata;
+		ByteU5BU5D_t58506160* L_849 = ___outdata1;
 		ByteU5BU5D_t58506160* L_850 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_851 = V_5;
 		NullCheck(L_850);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_850, (((int32_t)((uint8_t)L_851))));
 		int32_t L_852 = (((int32_t)((uint8_t)L_851)));
-		UInt32U5BU5D_t2133601851* L_853 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_853 = ___ekey2;
 		int32_t L_854 = V_8;
 		int32_t L_855 = L_854;
 		V_8 = ((int32_t)((int32_t)L_855+(int32_t)1));
@@ -4899,13 +4807,13 @@ IL_0b08:
 		NullCheck(L_849);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_849, ((int32_t)11));
 		(L_849)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)11)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_850)->GetAt(static_cast<il2cpp_array_size_t>(L_852)))^(int32_t)(((int32_t)((uint8_t)((L_853)->GetAt(static_cast<il2cpp_array_size_t>(L_856))))))))))));
-		ByteU5BU5D_t58506160* L_857 = ___outdata;
+		ByteU5BU5D_t58506160* L_857 = ___outdata1;
 		ByteU5BU5D_t58506160* L_858 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_859 = V_7;
 		NullCheck(L_858);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_858, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_859>>((int32_t)24))))));
 		uintptr_t L_860 = (((uintptr_t)((int32_t)((uint32_t)L_859>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_861 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_861 = ___ekey2;
 		int32_t L_862 = V_8;
 		NullCheck(L_861);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_861, L_862);
@@ -4913,13 +4821,13 @@ IL_0b08:
 		NullCheck(L_857);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_857, ((int32_t)12));
 		(L_857)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)12)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_858)->GetAt(static_cast<il2cpp_array_size_t>(L_860)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_861)->GetAt(static_cast<il2cpp_array_size_t>(L_863)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_864 = ___outdata;
+		ByteU5BU5D_t58506160* L_864 = ___outdata1;
 		ByteU5BU5D_t58506160* L_865 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_866 = V_4;
 		NullCheck(L_865);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_865, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_866>>((int32_t)16)))))));
 		int32_t L_867 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_866>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_868 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_868 = ___ekey2;
 		int32_t L_869 = V_8;
 		NullCheck(L_868);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_868, L_869);
@@ -4927,13 +4835,13 @@ IL_0b08:
 		NullCheck(L_864);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_864, ((int32_t)13));
 		(L_864)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)13)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_865)->GetAt(static_cast<il2cpp_array_size_t>(L_867)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_868)->GetAt(static_cast<il2cpp_array_size_t>(L_870)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_871 = ___outdata;
+		ByteU5BU5D_t58506160* L_871 = ___outdata1;
 		ByteU5BU5D_t58506160* L_872 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_873 = V_5;
 		NullCheck(L_872);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_872, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_873>>8))))));
 		int32_t L_874 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_873>>8)))));
-		UInt32U5BU5D_t2133601851* L_875 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_875 = ___ekey2;
 		int32_t L_876 = V_8;
 		NullCheck(L_875);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_875, L_876);
@@ -4941,13 +4849,13 @@ IL_0b08:
 		NullCheck(L_871);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_871, ((int32_t)14));
 		(L_871)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)14)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_872)->GetAt(static_cast<il2cpp_array_size_t>(L_874)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_875)->GetAt(static_cast<il2cpp_array_size_t>(L_877)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_878 = ___outdata;
+		ByteU5BU5D_t58506160* L_878 = ___outdata1;
 		ByteU5BU5D_t58506160* L_879 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_SBox_16();
 		uint32_t L_880 = V_6;
 		NullCheck(L_879);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_879, (((int32_t)((uint8_t)L_880))));
 		int32_t L_881 = (((int32_t)((uint8_t)L_880)));
-		UInt32U5BU5D_t2133601851* L_882 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_882 = ___ekey2;
 		int32_t L_883 = V_8;
 		int32_t L_884 = L_883;
 		V_8 = ((int32_t)((int32_t)L_884+(int32_t)1));
@@ -4961,9 +4869,9 @@ IL_0b08:
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::Decrypt128(System.Byte[],System.Byte[],System.UInt32[])
-extern TypeInfo* AesTransform_t2186883254_il2cpp_TypeInfo_var;
+extern Il2CppClass* AesTransform_t2186883254_il2cpp_TypeInfo_var;
 extern const uint32_t AesTransform_Decrypt128_m3310750971_MetadataUsageId;
-extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 * __this, ByteU5BU5D_t58506160* ___indata, ByteU5BU5D_t58506160* ___outdata, UInt32U5BU5D_t2133601851* ___ekey, const MethodInfo* method)
+extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 * __this, ByteU5BU5D_t58506160* ___indata0, ByteU5BU5D_t58506160* ___outdata1, UInt32U5BU5D_t2133601851* ___ekey2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -4982,86 +4890,86 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 	int32_t V_8 = 0;
 	{
 		V_8 = ((int32_t)40);
-		ByteU5BU5D_t58506160* L_0 = ___indata;
+		ByteU5BU5D_t58506160* L_0 = ___indata0;
 		NullCheck(L_0);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_0, 0);
 		int32_t L_1 = 0;
-		ByteU5BU5D_t58506160* L_2 = ___indata;
+		ByteU5BU5D_t58506160* L_2 = ___indata0;
 		NullCheck(L_2);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_2, 1);
 		int32_t L_3 = 1;
-		ByteU5BU5D_t58506160* L_4 = ___indata;
+		ByteU5BU5D_t58506160* L_4 = ___indata0;
 		NullCheck(L_4);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_4, 2);
 		int32_t L_5 = 2;
-		ByteU5BU5D_t58506160* L_6 = ___indata;
+		ByteU5BU5D_t58506160* L_6 = ___indata0;
 		NullCheck(L_6);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, 3);
 		int32_t L_7 = 3;
-		UInt32U5BU5D_t2133601851* L_8 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_8 = ___ekey2;
 		NullCheck(L_8);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_8, 0);
 		int32_t L_9 = 0;
 		V_0 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_1)))<<(int32_t)((int32_t)24)))|(int32_t)((int32_t)((int32_t)((L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_3)))<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)((L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_5)))<<(int32_t)8))))|(int32_t)((L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_7)))))^(int32_t)((L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_9)))));
-		ByteU5BU5D_t58506160* L_10 = ___indata;
+		ByteU5BU5D_t58506160* L_10 = ___indata0;
 		NullCheck(L_10);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_10, 4);
 		int32_t L_11 = 4;
-		ByteU5BU5D_t58506160* L_12 = ___indata;
+		ByteU5BU5D_t58506160* L_12 = ___indata0;
 		NullCheck(L_12);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_12, 5);
 		int32_t L_13 = 5;
-		ByteU5BU5D_t58506160* L_14 = ___indata;
+		ByteU5BU5D_t58506160* L_14 = ___indata0;
 		NullCheck(L_14);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_14, 6);
 		int32_t L_15 = 6;
-		ByteU5BU5D_t58506160* L_16 = ___indata;
+		ByteU5BU5D_t58506160* L_16 = ___indata0;
 		NullCheck(L_16);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_16, 7);
 		int32_t L_17 = 7;
-		UInt32U5BU5D_t2133601851* L_18 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_18 = ___ekey2;
 		NullCheck(L_18);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_18, 1);
 		int32_t L_19 = 1;
 		V_1 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_10)->GetAt(static_cast<il2cpp_array_size_t>(L_11)))<<(int32_t)((int32_t)24)))|(int32_t)((int32_t)((int32_t)((L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_13)))<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)((L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_15)))<<(int32_t)8))))|(int32_t)((L_16)->GetAt(static_cast<il2cpp_array_size_t>(L_17)))))^(int32_t)((L_18)->GetAt(static_cast<il2cpp_array_size_t>(L_19)))));
-		ByteU5BU5D_t58506160* L_20 = ___indata;
+		ByteU5BU5D_t58506160* L_20 = ___indata0;
 		NullCheck(L_20);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_20, 8);
 		int32_t L_21 = 8;
-		ByteU5BU5D_t58506160* L_22 = ___indata;
+		ByteU5BU5D_t58506160* L_22 = ___indata0;
 		NullCheck(L_22);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_22, ((int32_t)9));
 		int32_t L_23 = ((int32_t)9);
-		ByteU5BU5D_t58506160* L_24 = ___indata;
+		ByteU5BU5D_t58506160* L_24 = ___indata0;
 		NullCheck(L_24);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_24, ((int32_t)10));
 		int32_t L_25 = ((int32_t)10);
-		ByteU5BU5D_t58506160* L_26 = ___indata;
+		ByteU5BU5D_t58506160* L_26 = ___indata0;
 		NullCheck(L_26);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_26, ((int32_t)11));
 		int32_t L_27 = ((int32_t)11);
-		UInt32U5BU5D_t2133601851* L_28 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_28 = ___ekey2;
 		NullCheck(L_28);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_28, 2);
 		int32_t L_29 = 2;
 		V_2 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_20)->GetAt(static_cast<il2cpp_array_size_t>(L_21)))<<(int32_t)((int32_t)24)))|(int32_t)((int32_t)((int32_t)((L_22)->GetAt(static_cast<il2cpp_array_size_t>(L_23)))<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)((L_24)->GetAt(static_cast<il2cpp_array_size_t>(L_25)))<<(int32_t)8))))|(int32_t)((L_26)->GetAt(static_cast<il2cpp_array_size_t>(L_27)))))^(int32_t)((L_28)->GetAt(static_cast<il2cpp_array_size_t>(L_29)))));
-		ByteU5BU5D_t58506160* L_30 = ___indata;
+		ByteU5BU5D_t58506160* L_30 = ___indata0;
 		NullCheck(L_30);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_30, ((int32_t)12));
 		int32_t L_31 = ((int32_t)12);
-		ByteU5BU5D_t58506160* L_32 = ___indata;
+		ByteU5BU5D_t58506160* L_32 = ___indata0;
 		NullCheck(L_32);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_32, ((int32_t)13));
 		int32_t L_33 = ((int32_t)13);
-		ByteU5BU5D_t58506160* L_34 = ___indata;
+		ByteU5BU5D_t58506160* L_34 = ___indata0;
 		NullCheck(L_34);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_34, ((int32_t)14));
 		int32_t L_35 = ((int32_t)14);
-		ByteU5BU5D_t58506160* L_36 = ___indata;
+		ByteU5BU5D_t58506160* L_36 = ___indata0;
 		NullCheck(L_36);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_36, ((int32_t)15));
 		int32_t L_37 = ((int32_t)15);
-		UInt32U5BU5D_t2133601851* L_38 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_38 = ___ekey2;
 		NullCheck(L_38);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_38, 3);
 		int32_t L_39 = 3;
@@ -5087,7 +4995,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_49);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_49, (((int32_t)((uint8_t)L_50))));
 		int32_t L_51 = (((int32_t)((uint8_t)L_50)));
-		UInt32U5BU5D_t2133601851* L_52 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_52 = ___ekey2;
 		NullCheck(L_52);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_52, 4);
 		int32_t L_53 = 4;
@@ -5112,7 +5020,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_63);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_63, (((int32_t)((uint8_t)L_64))));
 		int32_t L_65 = (((int32_t)((uint8_t)L_64)));
-		UInt32U5BU5D_t2133601851* L_66 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_66 = ___ekey2;
 		NullCheck(L_66);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_66, 5);
 		int32_t L_67 = 5;
@@ -5137,7 +5045,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_77);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_77, (((int32_t)((uint8_t)L_78))));
 		int32_t L_79 = (((int32_t)((uint8_t)L_78)));
-		UInt32U5BU5D_t2133601851* L_80 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_80 = ___ekey2;
 		NullCheck(L_80);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_80, 6);
 		int32_t L_81 = 6;
@@ -5162,7 +5070,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_91);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_91, (((int32_t)((uint8_t)L_92))));
 		int32_t L_93 = (((int32_t)((uint8_t)L_92)));
-		UInt32U5BU5D_t2133601851* L_94 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_94 = ___ekey2;
 		NullCheck(L_94);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_94, 7);
 		int32_t L_95 = 7;
@@ -5187,7 +5095,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_105);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_105, (((int32_t)((uint8_t)L_106))));
 		int32_t L_107 = (((int32_t)((uint8_t)L_106)));
-		UInt32U5BU5D_t2133601851* L_108 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_108 = ___ekey2;
 		NullCheck(L_108);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_108, 8);
 		int32_t L_109 = 8;
@@ -5212,7 +5120,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_119);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_119, (((int32_t)((uint8_t)L_120))));
 		int32_t L_121 = (((int32_t)((uint8_t)L_120)));
-		UInt32U5BU5D_t2133601851* L_122 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_122 = ___ekey2;
 		NullCheck(L_122);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_122, ((int32_t)9));
 		int32_t L_123 = ((int32_t)9);
@@ -5237,7 +5145,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_133);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_133, (((int32_t)((uint8_t)L_134))));
 		int32_t L_135 = (((int32_t)((uint8_t)L_134)));
-		UInt32U5BU5D_t2133601851* L_136 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_136 = ___ekey2;
 		NullCheck(L_136);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_136, ((int32_t)10));
 		int32_t L_137 = ((int32_t)10);
@@ -5262,7 +5170,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_147);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_147, (((int32_t)((uint8_t)L_148))));
 		int32_t L_149 = (((int32_t)((uint8_t)L_148)));
-		UInt32U5BU5D_t2133601851* L_150 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_150 = ___ekey2;
 		NullCheck(L_150);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_150, ((int32_t)11));
 		int32_t L_151 = ((int32_t)11);
@@ -5287,7 +5195,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_161);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_161, (((int32_t)((uint8_t)L_162))));
 		int32_t L_163 = (((int32_t)((uint8_t)L_162)));
-		UInt32U5BU5D_t2133601851* L_164 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_164 = ___ekey2;
 		NullCheck(L_164);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_164, ((int32_t)12));
 		int32_t L_165 = ((int32_t)12);
@@ -5312,7 +5220,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_175);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_175, (((int32_t)((uint8_t)L_176))));
 		int32_t L_177 = (((int32_t)((uint8_t)L_176)));
-		UInt32U5BU5D_t2133601851* L_178 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_178 = ___ekey2;
 		NullCheck(L_178);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_178, ((int32_t)13));
 		int32_t L_179 = ((int32_t)13);
@@ -5337,7 +5245,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_189);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_189, (((int32_t)((uint8_t)L_190))));
 		int32_t L_191 = (((int32_t)((uint8_t)L_190)));
-		UInt32U5BU5D_t2133601851* L_192 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_192 = ___ekey2;
 		NullCheck(L_192);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_192, ((int32_t)14));
 		int32_t L_193 = ((int32_t)14);
@@ -5362,7 +5270,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_203);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_203, (((int32_t)((uint8_t)L_204))));
 		int32_t L_205 = (((int32_t)((uint8_t)L_204)));
-		UInt32U5BU5D_t2133601851* L_206 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_206 = ___ekey2;
 		NullCheck(L_206);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_206, ((int32_t)15));
 		int32_t L_207 = ((int32_t)15);
@@ -5387,7 +5295,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_217);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_217, (((int32_t)((uint8_t)L_218))));
 		int32_t L_219 = (((int32_t)((uint8_t)L_218)));
-		UInt32U5BU5D_t2133601851* L_220 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_220 = ___ekey2;
 		NullCheck(L_220);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_220, ((int32_t)16));
 		int32_t L_221 = ((int32_t)16);
@@ -5412,7 +5320,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_231);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_231, (((int32_t)((uint8_t)L_232))));
 		int32_t L_233 = (((int32_t)((uint8_t)L_232)));
-		UInt32U5BU5D_t2133601851* L_234 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_234 = ___ekey2;
 		NullCheck(L_234);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_234, ((int32_t)17));
 		int32_t L_235 = ((int32_t)17);
@@ -5437,7 +5345,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_245);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_245, (((int32_t)((uint8_t)L_246))));
 		int32_t L_247 = (((int32_t)((uint8_t)L_246)));
-		UInt32U5BU5D_t2133601851* L_248 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_248 = ___ekey2;
 		NullCheck(L_248);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_248, ((int32_t)18));
 		int32_t L_249 = ((int32_t)18);
@@ -5462,7 +5370,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_259);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_259, (((int32_t)((uint8_t)L_260))));
 		int32_t L_261 = (((int32_t)((uint8_t)L_260)));
-		UInt32U5BU5D_t2133601851* L_262 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_262 = ___ekey2;
 		NullCheck(L_262);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_262, ((int32_t)19));
 		int32_t L_263 = ((int32_t)19);
@@ -5487,7 +5395,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_273);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_273, (((int32_t)((uint8_t)L_274))));
 		int32_t L_275 = (((int32_t)((uint8_t)L_274)));
-		UInt32U5BU5D_t2133601851* L_276 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_276 = ___ekey2;
 		NullCheck(L_276);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_276, ((int32_t)20));
 		int32_t L_277 = ((int32_t)20);
@@ -5512,7 +5420,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_287);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_287, (((int32_t)((uint8_t)L_288))));
 		int32_t L_289 = (((int32_t)((uint8_t)L_288)));
-		UInt32U5BU5D_t2133601851* L_290 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_290 = ___ekey2;
 		NullCheck(L_290);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_290, ((int32_t)21));
 		int32_t L_291 = ((int32_t)21);
@@ -5537,7 +5445,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_301);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_301, (((int32_t)((uint8_t)L_302))));
 		int32_t L_303 = (((int32_t)((uint8_t)L_302)));
-		UInt32U5BU5D_t2133601851* L_304 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_304 = ___ekey2;
 		NullCheck(L_304);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_304, ((int32_t)22));
 		int32_t L_305 = ((int32_t)22);
@@ -5562,7 +5470,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_315);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_315, (((int32_t)((uint8_t)L_316))));
 		int32_t L_317 = (((int32_t)((uint8_t)L_316)));
-		UInt32U5BU5D_t2133601851* L_318 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_318 = ___ekey2;
 		NullCheck(L_318);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_318, ((int32_t)23));
 		int32_t L_319 = ((int32_t)23);
@@ -5587,7 +5495,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_329);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_329, (((int32_t)((uint8_t)L_330))));
 		int32_t L_331 = (((int32_t)((uint8_t)L_330)));
-		UInt32U5BU5D_t2133601851* L_332 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_332 = ___ekey2;
 		NullCheck(L_332);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_332, ((int32_t)24));
 		int32_t L_333 = ((int32_t)24);
@@ -5612,7 +5520,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_343);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_343, (((int32_t)((uint8_t)L_344))));
 		int32_t L_345 = (((int32_t)((uint8_t)L_344)));
-		UInt32U5BU5D_t2133601851* L_346 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_346 = ___ekey2;
 		NullCheck(L_346);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_346, ((int32_t)25));
 		int32_t L_347 = ((int32_t)25);
@@ -5637,7 +5545,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_357);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_357, (((int32_t)((uint8_t)L_358))));
 		int32_t L_359 = (((int32_t)((uint8_t)L_358)));
-		UInt32U5BU5D_t2133601851* L_360 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_360 = ___ekey2;
 		NullCheck(L_360);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_360, ((int32_t)26));
 		int32_t L_361 = ((int32_t)26);
@@ -5662,7 +5570,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_371);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_371, (((int32_t)((uint8_t)L_372))));
 		int32_t L_373 = (((int32_t)((uint8_t)L_372)));
-		UInt32U5BU5D_t2133601851* L_374 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_374 = ___ekey2;
 		NullCheck(L_374);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_374, ((int32_t)27));
 		int32_t L_375 = ((int32_t)27);
@@ -5687,7 +5595,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_385);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_385, (((int32_t)((uint8_t)L_386))));
 		int32_t L_387 = (((int32_t)((uint8_t)L_386)));
-		UInt32U5BU5D_t2133601851* L_388 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_388 = ___ekey2;
 		NullCheck(L_388);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_388, ((int32_t)28));
 		int32_t L_389 = ((int32_t)28);
@@ -5712,7 +5620,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_399);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_399, (((int32_t)((uint8_t)L_400))));
 		int32_t L_401 = (((int32_t)((uint8_t)L_400)));
-		UInt32U5BU5D_t2133601851* L_402 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_402 = ___ekey2;
 		NullCheck(L_402);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_402, ((int32_t)29));
 		int32_t L_403 = ((int32_t)29);
@@ -5737,7 +5645,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_413);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_413, (((int32_t)((uint8_t)L_414))));
 		int32_t L_415 = (((int32_t)((uint8_t)L_414)));
-		UInt32U5BU5D_t2133601851* L_416 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_416 = ___ekey2;
 		NullCheck(L_416);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_416, ((int32_t)30));
 		int32_t L_417 = ((int32_t)30);
@@ -5762,7 +5670,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_427);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_427, (((int32_t)((uint8_t)L_428))));
 		int32_t L_429 = (((int32_t)((uint8_t)L_428)));
-		UInt32U5BU5D_t2133601851* L_430 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_430 = ___ekey2;
 		NullCheck(L_430);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_430, ((int32_t)31));
 		int32_t L_431 = ((int32_t)31);
@@ -5787,7 +5695,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_441);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_441, (((int32_t)((uint8_t)L_442))));
 		int32_t L_443 = (((int32_t)((uint8_t)L_442)));
-		UInt32U5BU5D_t2133601851* L_444 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_444 = ___ekey2;
 		NullCheck(L_444);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_444, ((int32_t)32));
 		int32_t L_445 = ((int32_t)32);
@@ -5812,7 +5720,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_455);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_455, (((int32_t)((uint8_t)L_456))));
 		int32_t L_457 = (((int32_t)((uint8_t)L_456)));
-		UInt32U5BU5D_t2133601851* L_458 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_458 = ___ekey2;
 		NullCheck(L_458);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_458, ((int32_t)33));
 		int32_t L_459 = ((int32_t)33);
@@ -5837,7 +5745,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_469);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_469, (((int32_t)((uint8_t)L_470))));
 		int32_t L_471 = (((int32_t)((uint8_t)L_470)));
-		UInt32U5BU5D_t2133601851* L_472 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_472 = ___ekey2;
 		NullCheck(L_472);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_472, ((int32_t)34));
 		int32_t L_473 = ((int32_t)34);
@@ -5862,7 +5770,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_483);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_483, (((int32_t)((uint8_t)L_484))));
 		int32_t L_485 = (((int32_t)((uint8_t)L_484)));
-		UInt32U5BU5D_t2133601851* L_486 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_486 = ___ekey2;
 		NullCheck(L_486);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_486, ((int32_t)35));
 		int32_t L_487 = ((int32_t)35);
@@ -5887,7 +5795,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_497);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_497, (((int32_t)((uint8_t)L_498))));
 		int32_t L_499 = (((int32_t)((uint8_t)L_498)));
-		UInt32U5BU5D_t2133601851* L_500 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_500 = ___ekey2;
 		NullCheck(L_500);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_500, ((int32_t)36));
 		int32_t L_501 = ((int32_t)36);
@@ -5912,7 +5820,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_511);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_511, (((int32_t)((uint8_t)L_512))));
 		int32_t L_513 = (((int32_t)((uint8_t)L_512)));
-		UInt32U5BU5D_t2133601851* L_514 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_514 = ___ekey2;
 		NullCheck(L_514);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_514, ((int32_t)37));
 		int32_t L_515 = ((int32_t)37);
@@ -5937,7 +5845,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_525);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_525, (((int32_t)((uint8_t)L_526))));
 		int32_t L_527 = (((int32_t)((uint8_t)L_526)));
-		UInt32U5BU5D_t2133601851* L_528 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_528 = ___ekey2;
 		NullCheck(L_528);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_528, ((int32_t)38));
 		int32_t L_529 = ((int32_t)38);
@@ -5962,7 +5870,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_539);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_539, (((int32_t)((uint8_t)L_540))));
 		int32_t L_541 = (((int32_t)((uint8_t)L_540)));
-		UInt32U5BU5D_t2133601851* L_542 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_542 = ___ekey2;
 		NullCheck(L_542);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_542, ((int32_t)39));
 		int32_t L_543 = ((int32_t)39);
@@ -5995,7 +5903,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_554);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_554, (((int32_t)((uint8_t)L_555))));
 		int32_t L_556 = (((int32_t)((uint8_t)L_555)));
-		UInt32U5BU5D_t2133601851* L_557 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_557 = ___ekey2;
 		NullCheck(L_557);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_557, ((int32_t)40));
 		int32_t L_558 = ((int32_t)40);
@@ -6020,7 +5928,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_568);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_568, (((int32_t)((uint8_t)L_569))));
 		int32_t L_570 = (((int32_t)((uint8_t)L_569)));
-		UInt32U5BU5D_t2133601851* L_571 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_571 = ___ekey2;
 		NullCheck(L_571);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_571, ((int32_t)41));
 		int32_t L_572 = ((int32_t)41);
@@ -6045,7 +5953,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_582);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_582, (((int32_t)((uint8_t)L_583))));
 		int32_t L_584 = (((int32_t)((uint8_t)L_583)));
-		UInt32U5BU5D_t2133601851* L_585 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_585 = ___ekey2;
 		NullCheck(L_585);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_585, ((int32_t)42));
 		int32_t L_586 = ((int32_t)42);
@@ -6070,7 +5978,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_596);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_596, (((int32_t)((uint8_t)L_597))));
 		int32_t L_598 = (((int32_t)((uint8_t)L_597)));
-		UInt32U5BU5D_t2133601851* L_599 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_599 = ___ekey2;
 		NullCheck(L_599);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_599, ((int32_t)43));
 		int32_t L_600 = ((int32_t)43);
@@ -6095,7 +6003,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_610);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_610, (((int32_t)((uint8_t)L_611))));
 		int32_t L_612 = (((int32_t)((uint8_t)L_611)));
-		UInt32U5BU5D_t2133601851* L_613 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_613 = ___ekey2;
 		NullCheck(L_613);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_613, ((int32_t)44));
 		int32_t L_614 = ((int32_t)44);
@@ -6120,7 +6028,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_624);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_624, (((int32_t)((uint8_t)L_625))));
 		int32_t L_626 = (((int32_t)((uint8_t)L_625)));
-		UInt32U5BU5D_t2133601851* L_627 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_627 = ___ekey2;
 		NullCheck(L_627);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_627, ((int32_t)45));
 		int32_t L_628 = ((int32_t)45);
@@ -6145,7 +6053,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_638);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_638, (((int32_t)((uint8_t)L_639))));
 		int32_t L_640 = (((int32_t)((uint8_t)L_639)));
-		UInt32U5BU5D_t2133601851* L_641 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_641 = ___ekey2;
 		NullCheck(L_641);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_641, ((int32_t)46));
 		int32_t L_642 = ((int32_t)46);
@@ -6170,7 +6078,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_652);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_652, (((int32_t)((uint8_t)L_653))));
 		int32_t L_654 = (((int32_t)((uint8_t)L_653)));
-		UInt32U5BU5D_t2133601851* L_655 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_655 = ___ekey2;
 		NullCheck(L_655);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_655, ((int32_t)47));
 		int32_t L_656 = ((int32_t)47);
@@ -6204,7 +6112,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_667);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_667, (((int32_t)((uint8_t)L_668))));
 		int32_t L_669 = (((int32_t)((uint8_t)L_668)));
-		UInt32U5BU5D_t2133601851* L_670 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_670 = ___ekey2;
 		NullCheck(L_670);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_670, ((int32_t)48));
 		int32_t L_671 = ((int32_t)48);
@@ -6229,7 +6137,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_681);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_681, (((int32_t)((uint8_t)L_682))));
 		int32_t L_683 = (((int32_t)((uint8_t)L_682)));
-		UInt32U5BU5D_t2133601851* L_684 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_684 = ___ekey2;
 		NullCheck(L_684);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_684, ((int32_t)49));
 		int32_t L_685 = ((int32_t)49);
@@ -6254,7 +6162,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_695);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_695, (((int32_t)((uint8_t)L_696))));
 		int32_t L_697 = (((int32_t)((uint8_t)L_696)));
-		UInt32U5BU5D_t2133601851* L_698 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_698 = ___ekey2;
 		NullCheck(L_698);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_698, ((int32_t)50));
 		int32_t L_699 = ((int32_t)50);
@@ -6279,7 +6187,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_709);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_709, (((int32_t)((uint8_t)L_710))));
 		int32_t L_711 = (((int32_t)((uint8_t)L_710)));
-		UInt32U5BU5D_t2133601851* L_712 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_712 = ___ekey2;
 		NullCheck(L_712);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_712, ((int32_t)51));
 		int32_t L_713 = ((int32_t)51);
@@ -6304,7 +6212,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_723);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_723, (((int32_t)((uint8_t)L_724))));
 		int32_t L_725 = (((int32_t)((uint8_t)L_724)));
-		UInt32U5BU5D_t2133601851* L_726 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_726 = ___ekey2;
 		NullCheck(L_726);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_726, ((int32_t)52));
 		int32_t L_727 = ((int32_t)52);
@@ -6329,7 +6237,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_737);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_737, (((int32_t)((uint8_t)L_738))));
 		int32_t L_739 = (((int32_t)((uint8_t)L_738)));
-		UInt32U5BU5D_t2133601851* L_740 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_740 = ___ekey2;
 		NullCheck(L_740);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_740, ((int32_t)53));
 		int32_t L_741 = ((int32_t)53);
@@ -6354,7 +6262,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_751);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_751, (((int32_t)((uint8_t)L_752))));
 		int32_t L_753 = (((int32_t)((uint8_t)L_752)));
-		UInt32U5BU5D_t2133601851* L_754 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_754 = ___ekey2;
 		NullCheck(L_754);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_754, ((int32_t)54));
 		int32_t L_755 = ((int32_t)54);
@@ -6379,7 +6287,7 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 		NullCheck(L_765);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_765, (((int32_t)((uint8_t)L_766))));
 		int32_t L_767 = (((int32_t)((uint8_t)L_766)));
-		UInt32U5BU5D_t2133601851* L_768 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_768 = ___ekey2;
 		NullCheck(L_768);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_768, ((int32_t)55));
 		int32_t L_769 = ((int32_t)55);
@@ -6389,14 +6297,14 @@ extern "C"  void AesTransform_Decrypt128_m3310750971 (AesTransform_t2186883254 *
 
 IL_0b08:
 	{
-		ByteU5BU5D_t58506160* L_770 = ___outdata;
+		ByteU5BU5D_t58506160* L_770 = ___outdata1;
 		IL2CPP_RUNTIME_CLASS_INIT(AesTransform_t2186883254_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_771 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_772 = V_4;
 		NullCheck(L_771);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_771, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_772>>((int32_t)24))))));
 		uintptr_t L_773 = (((uintptr_t)((int32_t)((uint32_t)L_772>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_774 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_774 = ___ekey2;
 		int32_t L_775 = V_8;
 		NullCheck(L_774);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_774, L_775);
@@ -6404,13 +6312,13 @@ IL_0b08:
 		NullCheck(L_770);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_770, 0);
 		(L_770)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_771)->GetAt(static_cast<il2cpp_array_size_t>(L_773)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_774)->GetAt(static_cast<il2cpp_array_size_t>(L_776)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_777 = ___outdata;
+		ByteU5BU5D_t58506160* L_777 = ___outdata1;
 		ByteU5BU5D_t58506160* L_778 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_779 = V_7;
 		NullCheck(L_778);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_778, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_779>>((int32_t)16)))))));
 		int32_t L_780 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_779>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_781 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_781 = ___ekey2;
 		int32_t L_782 = V_8;
 		NullCheck(L_781);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_781, L_782);
@@ -6418,13 +6326,13 @@ IL_0b08:
 		NullCheck(L_777);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_777, 1);
 		(L_777)->SetAt(static_cast<il2cpp_array_size_t>(1), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_778)->GetAt(static_cast<il2cpp_array_size_t>(L_780)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_781)->GetAt(static_cast<il2cpp_array_size_t>(L_783)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_784 = ___outdata;
+		ByteU5BU5D_t58506160* L_784 = ___outdata1;
 		ByteU5BU5D_t58506160* L_785 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_786 = V_6;
 		NullCheck(L_785);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_785, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_786>>8))))));
 		int32_t L_787 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_786>>8)))));
-		UInt32U5BU5D_t2133601851* L_788 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_788 = ___ekey2;
 		int32_t L_789 = V_8;
 		NullCheck(L_788);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_788, L_789);
@@ -6432,13 +6340,13 @@ IL_0b08:
 		NullCheck(L_784);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_784, 2);
 		(L_784)->SetAt(static_cast<il2cpp_array_size_t>(2), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_785)->GetAt(static_cast<il2cpp_array_size_t>(L_787)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_788)->GetAt(static_cast<il2cpp_array_size_t>(L_790)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_791 = ___outdata;
+		ByteU5BU5D_t58506160* L_791 = ___outdata1;
 		ByteU5BU5D_t58506160* L_792 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_793 = V_5;
 		NullCheck(L_792);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_792, (((int32_t)((uint8_t)L_793))));
 		int32_t L_794 = (((int32_t)((uint8_t)L_793)));
-		UInt32U5BU5D_t2133601851* L_795 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_795 = ___ekey2;
 		int32_t L_796 = V_8;
 		int32_t L_797 = L_796;
 		V_8 = ((int32_t)((int32_t)L_797+(int32_t)1));
@@ -6448,13 +6356,13 @@ IL_0b08:
 		NullCheck(L_791);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_791, 3);
 		(L_791)->SetAt(static_cast<il2cpp_array_size_t>(3), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_792)->GetAt(static_cast<il2cpp_array_size_t>(L_794)))^(int32_t)(((int32_t)((uint8_t)((L_795)->GetAt(static_cast<il2cpp_array_size_t>(L_798))))))))))));
-		ByteU5BU5D_t58506160* L_799 = ___outdata;
+		ByteU5BU5D_t58506160* L_799 = ___outdata1;
 		ByteU5BU5D_t58506160* L_800 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_801 = V_5;
 		NullCheck(L_800);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_800, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_801>>((int32_t)24))))));
 		uintptr_t L_802 = (((uintptr_t)((int32_t)((uint32_t)L_801>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_803 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_803 = ___ekey2;
 		int32_t L_804 = V_8;
 		NullCheck(L_803);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_803, L_804);
@@ -6462,13 +6370,13 @@ IL_0b08:
 		NullCheck(L_799);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_799, 4);
 		(L_799)->SetAt(static_cast<il2cpp_array_size_t>(4), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_800)->GetAt(static_cast<il2cpp_array_size_t>(L_802)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_803)->GetAt(static_cast<il2cpp_array_size_t>(L_805)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_806 = ___outdata;
+		ByteU5BU5D_t58506160* L_806 = ___outdata1;
 		ByteU5BU5D_t58506160* L_807 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_808 = V_4;
 		NullCheck(L_807);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_807, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_808>>((int32_t)16)))))));
 		int32_t L_809 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_808>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_810 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_810 = ___ekey2;
 		int32_t L_811 = V_8;
 		NullCheck(L_810);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_810, L_811);
@@ -6476,13 +6384,13 @@ IL_0b08:
 		NullCheck(L_806);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_806, 5);
 		(L_806)->SetAt(static_cast<il2cpp_array_size_t>(5), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_807)->GetAt(static_cast<il2cpp_array_size_t>(L_809)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_810)->GetAt(static_cast<il2cpp_array_size_t>(L_812)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_813 = ___outdata;
+		ByteU5BU5D_t58506160* L_813 = ___outdata1;
 		ByteU5BU5D_t58506160* L_814 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_815 = V_7;
 		NullCheck(L_814);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_814, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_815>>8))))));
 		int32_t L_816 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_815>>8)))));
-		UInt32U5BU5D_t2133601851* L_817 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_817 = ___ekey2;
 		int32_t L_818 = V_8;
 		NullCheck(L_817);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_817, L_818);
@@ -6490,13 +6398,13 @@ IL_0b08:
 		NullCheck(L_813);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_813, 6);
 		(L_813)->SetAt(static_cast<il2cpp_array_size_t>(6), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_814)->GetAt(static_cast<il2cpp_array_size_t>(L_816)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_817)->GetAt(static_cast<il2cpp_array_size_t>(L_819)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_820 = ___outdata;
+		ByteU5BU5D_t58506160* L_820 = ___outdata1;
 		ByteU5BU5D_t58506160* L_821 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_822 = V_6;
 		NullCheck(L_821);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_821, (((int32_t)((uint8_t)L_822))));
 		int32_t L_823 = (((int32_t)((uint8_t)L_822)));
-		UInt32U5BU5D_t2133601851* L_824 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_824 = ___ekey2;
 		int32_t L_825 = V_8;
 		int32_t L_826 = L_825;
 		V_8 = ((int32_t)((int32_t)L_826+(int32_t)1));
@@ -6506,13 +6414,13 @@ IL_0b08:
 		NullCheck(L_820);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_820, 7);
 		(L_820)->SetAt(static_cast<il2cpp_array_size_t>(7), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_821)->GetAt(static_cast<il2cpp_array_size_t>(L_823)))^(int32_t)(((int32_t)((uint8_t)((L_824)->GetAt(static_cast<il2cpp_array_size_t>(L_827))))))))))));
-		ByteU5BU5D_t58506160* L_828 = ___outdata;
+		ByteU5BU5D_t58506160* L_828 = ___outdata1;
 		ByteU5BU5D_t58506160* L_829 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_830 = V_6;
 		NullCheck(L_829);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_829, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_830>>((int32_t)24))))));
 		uintptr_t L_831 = (((uintptr_t)((int32_t)((uint32_t)L_830>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_832 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_832 = ___ekey2;
 		int32_t L_833 = V_8;
 		NullCheck(L_832);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_832, L_833);
@@ -6520,13 +6428,13 @@ IL_0b08:
 		NullCheck(L_828);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_828, 8);
 		(L_828)->SetAt(static_cast<il2cpp_array_size_t>(8), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_829)->GetAt(static_cast<il2cpp_array_size_t>(L_831)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_832)->GetAt(static_cast<il2cpp_array_size_t>(L_834)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_835 = ___outdata;
+		ByteU5BU5D_t58506160* L_835 = ___outdata1;
 		ByteU5BU5D_t58506160* L_836 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_837 = V_5;
 		NullCheck(L_836);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_836, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_837>>((int32_t)16)))))));
 		int32_t L_838 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_837>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_839 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_839 = ___ekey2;
 		int32_t L_840 = V_8;
 		NullCheck(L_839);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_839, L_840);
@@ -6534,13 +6442,13 @@ IL_0b08:
 		NullCheck(L_835);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_835, ((int32_t)9));
 		(L_835)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)9)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_836)->GetAt(static_cast<il2cpp_array_size_t>(L_838)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_839)->GetAt(static_cast<il2cpp_array_size_t>(L_841)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_842 = ___outdata;
+		ByteU5BU5D_t58506160* L_842 = ___outdata1;
 		ByteU5BU5D_t58506160* L_843 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_844 = V_4;
 		NullCheck(L_843);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_843, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_844>>8))))));
 		int32_t L_845 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_844>>8)))));
-		UInt32U5BU5D_t2133601851* L_846 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_846 = ___ekey2;
 		int32_t L_847 = V_8;
 		NullCheck(L_846);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_846, L_847);
@@ -6548,13 +6456,13 @@ IL_0b08:
 		NullCheck(L_842);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_842, ((int32_t)10));
 		(L_842)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)10)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_843)->GetAt(static_cast<il2cpp_array_size_t>(L_845)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_846)->GetAt(static_cast<il2cpp_array_size_t>(L_848)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_849 = ___outdata;
+		ByteU5BU5D_t58506160* L_849 = ___outdata1;
 		ByteU5BU5D_t58506160* L_850 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_851 = V_7;
 		NullCheck(L_850);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_850, (((int32_t)((uint8_t)L_851))));
 		int32_t L_852 = (((int32_t)((uint8_t)L_851)));
-		UInt32U5BU5D_t2133601851* L_853 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_853 = ___ekey2;
 		int32_t L_854 = V_8;
 		int32_t L_855 = L_854;
 		V_8 = ((int32_t)((int32_t)L_855+(int32_t)1));
@@ -6564,13 +6472,13 @@ IL_0b08:
 		NullCheck(L_849);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_849, ((int32_t)11));
 		(L_849)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)11)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_850)->GetAt(static_cast<il2cpp_array_size_t>(L_852)))^(int32_t)(((int32_t)((uint8_t)((L_853)->GetAt(static_cast<il2cpp_array_size_t>(L_856))))))))))));
-		ByteU5BU5D_t58506160* L_857 = ___outdata;
+		ByteU5BU5D_t58506160* L_857 = ___outdata1;
 		ByteU5BU5D_t58506160* L_858 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_859 = V_7;
 		NullCheck(L_858);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_858, (il2cpp_array_size_t)(uintptr_t)(((uintptr_t)((int32_t)((uint32_t)L_859>>((int32_t)24))))));
 		uintptr_t L_860 = (((uintptr_t)((int32_t)((uint32_t)L_859>>((int32_t)24)))));
-		UInt32U5BU5D_t2133601851* L_861 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_861 = ___ekey2;
 		int32_t L_862 = V_8;
 		NullCheck(L_861);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_861, L_862);
@@ -6578,13 +6486,13 @@ IL_0b08:
 		NullCheck(L_857);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_857, ((int32_t)12));
 		(L_857)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)12)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_858)->GetAt(static_cast<il2cpp_array_size_t>(L_860)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_861)->GetAt(static_cast<il2cpp_array_size_t>(L_863)))>>((int32_t)24))))))))))));
-		ByteU5BU5D_t58506160* L_864 = ___outdata;
+		ByteU5BU5D_t58506160* L_864 = ___outdata1;
 		ByteU5BU5D_t58506160* L_865 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_866 = V_6;
 		NullCheck(L_865);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_865, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_866>>((int32_t)16)))))));
 		int32_t L_867 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_866>>((int32_t)16))))));
-		UInt32U5BU5D_t2133601851* L_868 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_868 = ___ekey2;
 		int32_t L_869 = V_8;
 		NullCheck(L_868);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_868, L_869);
@@ -6592,13 +6500,13 @@ IL_0b08:
 		NullCheck(L_864);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_864, ((int32_t)13));
 		(L_864)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)13)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_865)->GetAt(static_cast<il2cpp_array_size_t>(L_867)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_868)->GetAt(static_cast<il2cpp_array_size_t>(L_870)))>>((int32_t)16))))))))))));
-		ByteU5BU5D_t58506160* L_871 = ___outdata;
+		ByteU5BU5D_t58506160* L_871 = ___outdata1;
 		ByteU5BU5D_t58506160* L_872 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_873 = V_5;
 		NullCheck(L_872);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_872, (((int32_t)((uint8_t)((int32_t)((uint32_t)L_873>>8))))));
 		int32_t L_874 = (((int32_t)((uint8_t)((int32_t)((uint32_t)L_873>>8)))));
-		UInt32U5BU5D_t2133601851* L_875 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_875 = ___ekey2;
 		int32_t L_876 = V_8;
 		NullCheck(L_875);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_875, L_876);
@@ -6606,13 +6514,13 @@ IL_0b08:
 		NullCheck(L_871);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_871, ((int32_t)14));
 		(L_871)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)14)), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((L_872)->GetAt(static_cast<il2cpp_array_size_t>(L_874)))^(int32_t)(((int32_t)((uint8_t)((int32_t)((uint32_t)((L_875)->GetAt(static_cast<il2cpp_array_size_t>(L_877)))>>8)))))))))));
-		ByteU5BU5D_t58506160* L_878 = ___outdata;
+		ByteU5BU5D_t58506160* L_878 = ___outdata1;
 		ByteU5BU5D_t58506160* L_879 = ((AesTransform_t2186883254_StaticFields*)AesTransform_t2186883254_il2cpp_TypeInfo_var->static_fields)->get_iSBox_17();
 		uint32_t L_880 = V_4;
 		NullCheck(L_879);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_879, (((int32_t)((uint8_t)L_880))));
 		int32_t L_881 = (((int32_t)((uint8_t)L_880)));
-		UInt32U5BU5D_t2133601851* L_882 = ___ekey;
+		UInt32U5BU5D_t2133601851* L_882 = ___ekey2;
 		int32_t L_883 = V_8;
 		int32_t L_884 = L_883;
 		V_8 = ((int32_t)((int32_t)L_884+(int32_t)1));

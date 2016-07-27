@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
-<AppboyConfig>
-  <ApiKey>a7b57f4a-cfab-4264-8f0b-5d10949aa908</ApiKey>
-  <AppboyServer>STAGING</AppboyServer>  <PushChannelName>testpushchannel</PushChannelName>
-  <PushServiceName>brianphonetest</PushServiceName>
-  <DisableLocationCollection>false</DisableLocationCollection>
-</AppboyConfig>

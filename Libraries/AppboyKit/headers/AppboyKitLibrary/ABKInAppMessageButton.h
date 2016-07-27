@@ -15,13 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * This property defines the button's background color.
  */
-@property (nonatomic, nullable) UIColor *buttonBackgroundColor;
+@property (nonatomic, strong, nullable) UIColor *buttonBackgroundColor;
 
 /*!
  * This property defines the button's title color in UIControlStateNormal. Setting this property will also change the
  * button title color.
  */
-@property (nonatomic, nullable) UIColor *buttonTextColor;
+@property (nonatomic, strong, nullable) UIColor *buttonTextColor;
 
 /*!
  * This property defines the action that will be performed when the button is clicked.
@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
  * buttonClickedURI. When clickActionType is ABKInAppMessageDisplayNewsFeed or ABKInAppMessageNoneClickAction, the
  * parameter uri will be ignored, and property uri  will be set to nil.
  */
-- (void) setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
+- (void)setButtonClickAction:(ABKInAppMessageClickActionType)clickActionType withURI:(nullable NSURL *)uri;
 
 @end
 NS_ASSUME_NONNULL_END

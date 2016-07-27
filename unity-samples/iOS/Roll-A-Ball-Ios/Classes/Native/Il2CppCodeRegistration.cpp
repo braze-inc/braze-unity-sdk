@@ -18,32 +18,40 @@
 #include "codegen/il2cpp-codegen.h"
 
 
-extern const methodPointerType g_MethodPointers[];
-extern const methodPointerType g_DelegateWrappersManagedToNative[];
+extern const Il2CppMethodPointer g_MethodPointers[];
+extern const Il2CppMethodPointer g_DelegateWrappersManagedToNative[];
 extern const Il2CppMarshalingFunctions g_MarshalingFunctions[];
-extern const methodPointerType g_Il2CppGenericMethodPointers[];
+extern const Il2CppMethodPointer g_Il2CppGenericMethodPointers[];
 extern const InvokerMethod g_Il2CppInvokerPointers[];
 extern const CustomAttributesCacheGenerator g_AttributeGenerators[];
 const Il2CppCodeRegistration g_CodeRegistration = 
 {
-	12182,
+	11025,
 	g_MethodPointers,
 	0,
 	NULL,
-	54,
+	49,
 	g_DelegateWrappersManagedToNative,
-	121,
+	120,
 	g_MarshalingFunctions,
-	4479,
+	0,
+	NULL,
+	3990,
 	g_Il2CppGenericMethodPointers,
-	1671,
+	1550,
 	g_Il2CppInvokerPointers,
-	3042,
+	2662,
 	g_AttributeGenerators,
+	0,
+	NULL,
 };
 extern const Il2CppMetadataRegistration g_MetadataRegistration;
+static const Il2CppCodeGenOptions s_Il2CppCodeGenOptions = 
+{
+	false,
+};
 static void s_Il2CppCodegenRegistration()
 {
-	il2cpp_codegen_register (&g_CodeRegistration, &g_MetadataRegistration);
+	il2cpp_codegen_register (&g_CodeRegistration, &g_MetadataRegistration, &s_Il2CppCodeGenOptions);
 }
 static il2cpp::utils::RegisterRuntimeInitializeAndCleanup s_Il2CppCodegenRegistrationVariable (&s_Il2CppCodegenRegistration, NULL);

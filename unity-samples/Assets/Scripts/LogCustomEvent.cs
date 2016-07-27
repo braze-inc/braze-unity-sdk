@@ -10,7 +10,7 @@ public class LogCustomEvent : MonoBehaviour {
   public InputField CustomEventField;
   public InputField CustomEventPropertiesKeyField;
   public InputField CustomEventPropertiesValueField;
-  public Dictionary<string, string> CustomEventProperties;
+  public Dictionary<string, object> CustomEventProperties;
   
   public void OnDoneButtonClick() {
     Debug.Log(String.Format("Logging custom event {0}", CustomEventField.text));
@@ -29,6 +29,21 @@ public class LogCustomEvent : MonoBehaviour {
     Application.LoadLevel(Constants.MainMenuScene);
   }
 
+  public void AddTestPropertiesButtonClick() {
+    if (CustomEventProperties == null) {
+      CustomEventProperties = new Dictionary<string, object> ();
+    }
+
+    CustomEventProperties["intprop"] = 1;
+    CustomEventProperties["doubleprop"] = 1.2D;
+    CustomEventProperties["floatprop"] = 1.2F;
+    CustomEventProperties["testcoercion"] = "11";
+    CustomEventProperties["dateprop"] = DateTime.Today;
+    CustomEventProperties["boolprop"] = true;
+    CustomEventProperties["nullprop"] = null;
+    CustomEventProperties["objprop"] = new object();
+  }
+
   public void AddPropertyButtonClick() {
     if (!UtilityMethods.textIsValid (CustomEventPropertiesKeyField.text) ||
         !UtilityMethods.textIsValid (CustomEventPropertiesValueField.text)) {
@@ -37,7 +52,7 @@ public class LogCustomEvent : MonoBehaviour {
     }
     Debug.Log(String.Format("Add Property {0} : {1}", CustomEventPropertiesKeyField.text, CustomEventPropertiesValueField.text));
     if (CustomEventProperties == null) {
-      CustomEventProperties = new Dictionary<string, string> ();
+      CustomEventProperties = new Dictionary<string, object> ();
     }
     CustomEventProperties.Add(CustomEventPropertiesKeyField.text, CustomEventPropertiesValueField.text);
   }

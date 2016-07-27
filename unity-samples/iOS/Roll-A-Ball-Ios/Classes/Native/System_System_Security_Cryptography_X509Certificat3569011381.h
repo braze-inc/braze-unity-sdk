@@ -22,14 +22,14 @@ struct IEnumerator_t287207039;
 #endif
 
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator
-struct  X509CertificateEnumerator_t3569011382  : public Il2CppObject
+struct  X509CertificateEnumerator_t3569011383  : public Il2CppObject
 {
 public:
 	// System.Collections.IEnumerator System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::enumerator
 	Il2CppObject * ___enumerator_0;
 
 public:
-	inline static int32_t get_offset_of_enumerator_0() { return static_cast<int32_t>(offsetof(X509CertificateEnumerator_t3569011382, ___enumerator_0)); }
+	inline static int32_t get_offset_of_enumerator_0() { return static_cast<int32_t>(offsetof(X509CertificateEnumerator_t3569011383, ___enumerator_0)); }
 	inline Il2CppObject * get_enumerator_0() const { return ___enumerator_0; }
 	inline Il2CppObject ** get_address_of_enumerator_0() { return &___enumerator_0; }
 	inline void set_enumerator_0(Il2CppObject * value)

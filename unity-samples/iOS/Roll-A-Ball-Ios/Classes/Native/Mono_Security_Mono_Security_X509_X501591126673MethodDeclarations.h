@@ -27,8 +27,8 @@ struct StringBuilder_t3822575854;
 // System.Void Mono.Security.X509.X501::.cctor()
 extern "C"  void X501__cctor_m2619822114 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.X509.X501::ToString(Mono.Security.ASN1)
-extern "C"  String_t* X501_ToString_m1957208426 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* X501_ToString_m1957208426 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.String Mono.Security.X509.X501::ToString(Mono.Security.ASN1,System.Boolean,System.String,System.Boolean)
-extern "C"  String_t* X501_ToString_m1526231602 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq, bool ___reversed, String_t* ___separator, bool ___quotes, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  String_t* X501_ToString_m3368169422 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq0, bool ___reversed1, String_t* ___separator2, bool ___quotes3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void Mono.Security.X509.X501::AppendEntry(System.Text.StringBuilder,Mono.Security.ASN1,System.Boolean)
-extern "C"  void X501_AppendEntry_m1741585464 (Il2CppObject * __this /* static, unused */, StringBuilder_t3822575854 * ___sb, ASN1_t1254135647 * ___entry, bool ___quotes, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void X501_AppendEntry_m1741585464 (Il2CppObject * __this /* static, unused */, StringBuilder_t3822575854 * ___sb0, ASN1_t1254135647 * ___entry1, bool ___quotes2, const MethodInfo* method) IL2CPP_METHOD_ATTR;

@@ -70,7 +70,7 @@ struct SerializationInfo_t2995724695;
 // System.Collections.IEnumerator
 struct IEnumerator_t287207039;
 // Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator
-struct X509CertificateEnumerator_t3569011383;
+struct X509CertificateEnumerator_t3569011382;
 // Mono.Security.X509.X509Chain
 struct X509Chain_t3968320430;
 // Mono.Security.X509.X509Crl
@@ -248,17 +248,17 @@ struct X509Stores_t2754714603;
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void Mono.Security.X509.Extensions.KeyUsageExtension::.ctor(Mono.Security.X509.X509Extension)
-extern "C"  void KeyUsageExtension__ctor_m2614086738 (KeyUsageExtension_t4108765760 * __this, X509Extension_t1510964269 * ___extension, const MethodInfo* method)
+extern "C"  void KeyUsageExtension__ctor_m2614086738 (KeyUsageExtension_t4108765760 * __this, X509Extension_t1510964269 * ___extension0, const MethodInfo* method)
 {
 	{
-		X509Extension_t1510964269 * L_0 = ___extension;
+		X509Extension_t1510964269 * L_0 = ___extension0;
 		X509Extension__ctor_m3298017424(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.Extensions.KeyUsageExtension::Decode()
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2753326378;
 extern const uint32_t KeyUsageExtension_Decode_m318383628_MetadataUsageId;
 extern "C"  void KeyUsageExtension_Decode_m318383628 (KeyUsageExtension_t4108765760 * __this, const MethodInfo* method)
@@ -274,13 +274,13 @@ extern "C"  void KeyUsageExtension_Decode_m318383628 (KeyUsageExtension_t4108765
 	{
 		ASN1_t1254135647 * L_0 = ((X509Extension_t1510964269 *)__this)->get_extnValue_2();
 		NullCheck(L_0);
-		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m390067040(L_0, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m4232529916(L_0, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_2, L_1, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_2, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		ASN1_t1254135647 * L_3 = V_0;
 		NullCheck(L_3);
-		uint8_t L_4 = ASN1_get_Tag_m442995239(L_3, /*hidden argument*/NULL);
+		uint8_t L_4 = ASN1_get_Tag_m1269404867(L_3, /*hidden argument*/NULL);
 		if ((((int32_t)L_4) == ((int32_t)3)))
 		{
 			goto IL_0028;
@@ -303,7 +303,7 @@ IL_002f:
 		int32_t L_6 = __this->get_kubits_3();
 		ASN1_t1254135647 * L_7 = V_0;
 		NullCheck(L_7);
-		ByteU5BU5D_t58506160* L_8 = ASN1_get_Value_m390067040(L_7, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_8 = ASN1_get_Value_m4232529916(L_7, /*hidden argument*/NULL);
 		int32_t L_9 = V_1;
 		int32_t L_10 = L_9;
 		V_1 = ((int32_t)((int32_t)L_10+(int32_t)1));
@@ -318,7 +318,7 @@ IL_004a:
 		int32_t L_12 = V_1;
 		ASN1_t1254135647 * L_13 = V_0;
 		NullCheck(L_13);
-		ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m390067040(L_13, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m4232529916(L_13, /*hidden argument*/NULL);
 		NullCheck(L_14);
 		if ((((int32_t)L_12) < ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_14)->max_length)))))))
 		{
@@ -330,8 +330,8 @@ IL_004a:
 	}
 }
 // System.Void Mono.Security.X509.Extensions.KeyUsageExtension::Encode()
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t KeyUsageExtension_Encode_m1458792500_MetadataUsageId;
 extern "C"  void KeyUsageExtension_Encode_m1458792500 (KeyUsageExtension_t4108765760 * __this, const MethodInfo* method)
 {
@@ -345,7 +345,7 @@ extern "C"  void KeyUsageExtension_Encode_m1458792500 (KeyUsageExtension_t410876
 	uint8_t V_1 = 0x0;
 	{
 		ASN1_t1254135647 * L_0 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_0, 4, /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_0, 4, /*hidden argument*/NULL);
 		((X509Extension_t1510964269 *)__this)->set_extnValue_2(L_0);
 		int32_t L_1 = __this->get_kubits_3();
 		V_0 = (((int32_t)((uint16_t)L_1)));
@@ -418,9 +418,9 @@ IL_004d:
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_14, 2);
 		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(2), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)L_15>>(int32_t)8))))));
 		ASN1_t1254135647 * L_16 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_16, 3, L_14, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_16, 3, L_14, /*hidden argument*/NULL);
 		NullCheck(L_9);
-		ASN1_Add_m1424422628(L_9, L_16, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_9, L_16, /*hidden argument*/NULL);
 		goto IL_00bf;
 	}
 
@@ -438,9 +438,9 @@ IL_0099:
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_20, 1);
 		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(1), (uint8_t)(((int32_t)((uint8_t)L_21))));
 		ASN1_t1254135647 * L_22 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_22, 3, L_20, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_22, 3, L_20, /*hidden argument*/NULL);
 		NullCheck(L_17);
-		ASN1_Add_m1424422628(L_17, L_22, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_17, L_22, /*hidden argument*/NULL);
 	}
 
 IL_00bf:
@@ -456,9 +456,9 @@ IL_00c4:
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_24, 0);
 		(L_24)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)7);
 		ASN1_t1254135647 * L_25 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_25, 3, L_24, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_25, 3, L_24, /*hidden argument*/NULL);
 		NullCheck(L_23);
-		ASN1_Add_m1424422628(L_23, L_25, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_23, L_25, /*hidden argument*/NULL);
 	}
 
 IL_00e0:
@@ -467,11 +467,11 @@ IL_00e0:
 	}
 }
 // System.Boolean Mono.Security.X509.Extensions.KeyUsageExtension::Support(Mono.Security.X509.Extensions.KeyUsages)
-extern TypeInfo* KeyUsages_t912788628_il2cpp_TypeInfo_var;
-extern TypeInfo* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
-extern TypeInfo* Convert_t1097883944_il2cpp_TypeInfo_var;
+extern Il2CppClass* KeyUsages_t912788628_il2cpp_TypeInfo_var;
+extern Il2CppClass* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
+extern Il2CppClass* Convert_t1097883944_il2cpp_TypeInfo_var;
 extern const uint32_t KeyUsageExtension_Support_m2695467029_MetadataUsageId;
-extern "C"  bool KeyUsageExtension_Support_m2695467029 (KeyUsageExtension_t4108765760 * __this, int32_t ___usage, const MethodInfo* method)
+extern "C"  bool KeyUsageExtension_Support_m2695467029 (KeyUsageExtension_t4108765760 * __this, int32_t ___usage0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -481,7 +481,7 @@ extern "C"  bool KeyUsageExtension_Support_m2695467029 (KeyUsageExtension_t41087
 	}
 	int32_t V_0 = 0;
 	{
-		int32_t L_0 = ___usage;
+		int32_t L_0 = ___usage0;
 		int32_t L_1 = L_0;
 		Il2CppObject * L_2 = Box(KeyUsages_t912788628_il2cpp_TypeInfo_var, &L_1);
 		IL2CPP_RUNTIME_CLASS_INIT(CultureInfo_t3603717042_il2cpp_TypeInfo_var);
@@ -496,8 +496,8 @@ extern "C"  bool KeyUsageExtension_Support_m2695467029 (KeyUsageExtension_t41087
 	}
 }
 // System.String Mono.Security.X509.Extensions.KeyUsageExtension::ToString()
-extern TypeInfo* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
-extern TypeInfo* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
+extern Il2CppClass* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3422178416;
 extern Il2CppCodeGenString* _stringLiteral32148;
 extern Il2CppCodeGenString* _stringLiteral4081702872;
@@ -804,17 +804,17 @@ IL_01a9:
 	}
 }
 // System.Void Mono.Security.X509.Extensions.NetscapeCertTypeExtension::.ctor(Mono.Security.X509.X509Extension)
-extern "C"  void NetscapeCertTypeExtension__ctor_m3785381751 (NetscapeCertTypeExtension_t1387961723 * __this, X509Extension_t1510964269 * ___extension, const MethodInfo* method)
+extern "C"  void NetscapeCertTypeExtension__ctor_m3785381751 (NetscapeCertTypeExtension_t1387961723 * __this, X509Extension_t1510964269 * ___extension0, const MethodInfo* method)
 {
 	{
-		X509Extension_t1510964269 * L_0 = ___extension;
+		X509Extension_t1510964269 * L_0 = ___extension0;
 		X509Extension__ctor_m3298017424(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.Extensions.NetscapeCertTypeExtension::Decode()
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral4118022223;
 extern const uint32_t NetscapeCertTypeExtension_Decode_m4024937351_MetadataUsageId;
 extern "C"  void NetscapeCertTypeExtension_Decode_m4024937351 (NetscapeCertTypeExtension_t1387961723 * __this, const MethodInfo* method)
@@ -830,13 +830,13 @@ extern "C"  void NetscapeCertTypeExtension_Decode_m4024937351 (NetscapeCertTypeE
 	{
 		ASN1_t1254135647 * L_0 = ((X509Extension_t1510964269 *)__this)->get_extnValue_2();
 		NullCheck(L_0);
-		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m390067040(L_0, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m4232529916(L_0, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_2, L_1, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_2, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		ASN1_t1254135647 * L_3 = V_0;
 		NullCheck(L_3);
-		uint8_t L_4 = ASN1_get_Tag_m442995239(L_3, /*hidden argument*/NULL);
+		uint8_t L_4 = ASN1_get_Tag_m1269404867(L_3, /*hidden argument*/NULL);
 		if ((((int32_t)L_4) == ((int32_t)3)))
 		{
 			goto IL_0028;
@@ -859,7 +859,7 @@ IL_002f:
 		int32_t L_6 = __this->get_ctbits_3();
 		ASN1_t1254135647 * L_7 = V_0;
 		NullCheck(L_7);
-		ByteU5BU5D_t58506160* L_8 = ASN1_get_Value_m390067040(L_7, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_8 = ASN1_get_Value_m4232529916(L_7, /*hidden argument*/NULL);
 		int32_t L_9 = V_1;
 		int32_t L_10 = L_9;
 		V_1 = ((int32_t)((int32_t)L_10+(int32_t)1));
@@ -874,7 +874,7 @@ IL_004a:
 		int32_t L_12 = V_1;
 		ASN1_t1254135647 * L_13 = V_0;
 		NullCheck(L_13);
-		ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m390067040(L_13, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m4232529916(L_13, /*hidden argument*/NULL);
 		NullCheck(L_14);
 		if ((((int32_t)L_12) < ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_14)->max_length)))))))
 		{
@@ -886,11 +886,11 @@ IL_004a:
 	}
 }
 // System.Boolean Mono.Security.X509.Extensions.NetscapeCertTypeExtension::Support(Mono.Security.X509.Extensions.NetscapeCertTypeExtension/CertTypes)
-extern TypeInfo* CertTypes_t588297365_il2cpp_TypeInfo_var;
-extern TypeInfo* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
-extern TypeInfo* Convert_t1097883944_il2cpp_TypeInfo_var;
+extern Il2CppClass* CertTypes_t588297365_il2cpp_TypeInfo_var;
+extern Il2CppClass* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
+extern Il2CppClass* Convert_t1097883944_il2cpp_TypeInfo_var;
 extern const uint32_t NetscapeCertTypeExtension_Support_m1416151043_MetadataUsageId;
-extern "C"  bool NetscapeCertTypeExtension_Support_m1416151043 (NetscapeCertTypeExtension_t1387961723 * __this, int32_t ___usage, const MethodInfo* method)
+extern "C"  bool NetscapeCertTypeExtension_Support_m1416151043 (NetscapeCertTypeExtension_t1387961723 * __this, int32_t ___usage0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -900,7 +900,7 @@ extern "C"  bool NetscapeCertTypeExtension_Support_m1416151043 (NetscapeCertType
 	}
 	int32_t V_0 = 0;
 	{
-		int32_t L_0 = ___usage;
+		int32_t L_0 = ___usage0;
 		int32_t L_1 = L_0;
 		Il2CppObject * L_2 = Box(CertTypes_t588297365_il2cpp_TypeInfo_var, &L_1);
 		IL2CPP_RUNTIME_CLASS_INIT(CultureInfo_t3603717042_il2cpp_TypeInfo_var);
@@ -915,8 +915,8 @@ extern "C"  bool NetscapeCertTypeExtension_Support_m1416151043 (NetscapeCertType
 	}
 }
 // System.String Mono.Security.X509.Extensions.NetscapeCertTypeExtension::ToString()
-extern TypeInfo* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
-extern TypeInfo* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
+extern Il2CppClass* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1288437817;
 extern Il2CppCodeGenString* _stringLiteral32148;
 extern Il2CppCodeGenString* _stringLiteral1887397313;
@@ -1161,18 +1161,18 @@ IL_0145:
 	}
 }
 // System.Void Mono.Security.X509.Extensions.SubjectAltNameExtension::.ctor(Mono.Security.X509.X509Extension)
-extern "C"  void SubjectAltNameExtension__ctor_m607242584 (SubjectAltNameExtension_t1663182458 * __this, X509Extension_t1510964269 * ___extension, const MethodInfo* method)
+extern "C"  void SubjectAltNameExtension__ctor_m607242584 (SubjectAltNameExtension_t1663182458 * __this, X509Extension_t1510964269 * ___extension0, const MethodInfo* method)
 {
 	{
-		X509Extension_t1510964269 * L_0 = ___extension;
+		X509Extension_t1510964269 * L_0 = ___extension0;
 		X509Extension__ctor_m3298017424(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.Extensions.SubjectAltNameExtension::Decode()
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
-extern TypeInfo* GeneralNames_t2474193379_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* GeneralNames_t2474193379_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1785103728;
 extern const uint32_t SubjectAltNameExtension_Decode_m3473224134_MetadataUsageId;
 extern "C"  void SubjectAltNameExtension_Decode_m3473224134 (SubjectAltNameExtension_t1663182458 * __this, const MethodInfo* method)
@@ -1187,13 +1187,13 @@ extern "C"  void SubjectAltNameExtension_Decode_m3473224134 (SubjectAltNameExten
 	{
 		ASN1_t1254135647 * L_0 = ((X509Extension_t1510964269 *)__this)->get_extnValue_2();
 		NullCheck(L_0);
-		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m390067040(L_0, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m4232529916(L_0, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_2, L_1, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_2, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		ASN1_t1254135647 * L_3 = V_0;
 		NullCheck(L_3);
-		uint8_t L_4 = ASN1_get_Tag_m442995239(L_3, /*hidden argument*/NULL);
+		uint8_t L_4 = ASN1_get_Tag_m1269404867(L_3, /*hidden argument*/NULL);
 		if ((((int32_t)L_4) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_0029;
@@ -1245,9 +1245,9 @@ extern "C"  String_t* SubjectAltNameExtension_ToString_m2980757505 (SubjectAltNa
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::.ctor()
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12__ctor_m2645615037_MetadataUsageId;
 extern "C"  void PKCS12__ctor_m2645615037 (PKCS12_t2950126080 * __this, const MethodInfo* method)
 {
@@ -1281,30 +1281,30 @@ extern "C"  void PKCS12__ctor_m2645615037 (PKCS12_t2950126080 * __this, const Me
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::.ctor(System.Byte[])
-extern "C"  void PKCS12__ctor_m1570997648 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern "C"  void PKCS12__ctor_m721197356 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___data0, const MethodInfo* method)
 {
 	{
 		PKCS12__ctor_m2645615037(__this, /*hidden argument*/NULL);
 		PKCS12_set_Password_m255122339(__this, (String_t*)NULL, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_0 = ___data;
+		ByteU5BU5D_t58506160* L_0 = ___data0;
 		PKCS12_Decode_m3657725204(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::.ctor(System.Byte[],System.String)
-extern "C"  void PKCS12__ctor_m3732648396 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___data, String_t* ___password, const MethodInfo* method)
+extern "C"  void PKCS12__ctor_m3870049384 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___data0, String_t* ___password1, const MethodInfo* method)
 {
 	{
 		PKCS12__ctor_m2645615037(__this, /*hidden argument*/NULL);
-		String_t* L_0 = ___password;
+		String_t* L_0 = ___password1;
 		PKCS12_set_Password_m255122339(__this, L_0, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_1 = ___data;
+		ByteU5BU5D_t58506160* L_1 = ___data0;
 		PKCS12_Decode_m3657725204(__this, L_1, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::.cctor()
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12__cctor_m4222558608_MetadataUsageId;
 extern "C"  void PKCS12__cctor_m4222558608 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -1321,15 +1321,15 @@ extern "C"  void PKCS12__cctor_m4222558608 (Il2CppObject * __this /* static, unu
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::Decode(System.Byte[])
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* EncryptedData_t636832623_il2cpp_TypeInfo_var;
-extern TypeInfo* NotImplementedException_t1091014741_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* EncryptedData_t636832623_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotImplementedException_t1091014741_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral468553779;
 extern Il2CppCodeGenString* _stringLiteral2184974129;
@@ -1346,7 +1346,7 @@ extern Il2CppCodeGenString* _stringLiteral2198968555;
 extern Il2CppCodeGenString* _stringLiteral551996364;
 extern Il2CppCodeGenString* _stringLiteral660695558;
 extern const uint32_t PKCS12_Decode_m3657725204_MetadataUsageId;
-extern "C"  void PKCS12_Decode_m3657725204 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern "C"  void PKCS12_Decode_m3657725204 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___data0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1380,13 +1380,13 @@ extern "C"  void PKCS12_Decode_m3657725204 (PKCS12_t2950126080 * __this, ByteU5B
 	Dictionary_2_t190145395 * V_23 = NULL;
 	int32_t V_24 = 0;
 	{
-		ByteU5BU5D_t58506160* L_0 = ___data;
+		ByteU5BU5D_t58506160* L_0 = ___data0;
 		ASN1_t1254135647 * L_1 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_1, L_0, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_1, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		ASN1_t1254135647 * L_2 = V_0;
 		NullCheck(L_2);
-		uint8_t L_3 = ASN1_get_Tag_m442995239(L_2, /*hidden argument*/NULL);
+		uint8_t L_3 = ASN1_get_Tag_m1269404867(L_2, /*hidden argument*/NULL);
 		if ((((int32_t)L_3) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_001f;
@@ -1402,11 +1402,11 @@ IL_001f:
 	{
 		ASN1_t1254135647 * L_5 = V_0;
 		NullCheck(L_5);
-		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3727278260(L_5, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3112983888(L_5, 0, /*hidden argument*/NULL);
 		V_1 = L_6;
 		ASN1_t1254135647 * L_7 = V_1;
 		NullCheck(L_7);
-		uint8_t L_8 = ASN1_get_Tag_m442995239(L_7, /*hidden argument*/NULL);
+		uint8_t L_8 = ASN1_get_Tag_m1269404867(L_7, /*hidden argument*/NULL);
 		if ((((int32_t)L_8) == ((int32_t)2)))
 		{
 			goto IL_003e;
@@ -1422,7 +1422,7 @@ IL_003e:
 	{
 		ASN1_t1254135647 * L_10 = V_0;
 		NullCheck(L_10);
-		ASN1_t1254135647 * L_11 = ASN1_get_Item_m3727278260(L_10, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_11 = ASN1_get_Item_m3112983888(L_10, 1, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_12 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m3021605653(L_12, L_11, /*hidden argument*/NULL);
 		V_2 = L_12;
@@ -1446,7 +1446,7 @@ IL_006b:
 	{
 		ASN1_t1254135647 * L_17 = V_0;
 		NullCheck(L_17);
-		int32_t L_18 = ASN1_get_Count_m2214472120(L_17, /*hidden argument*/NULL);
+		int32_t L_18 = ASN1_get_Count_m3031159196(L_17, /*hidden argument*/NULL);
 		if ((((int32_t)L_18) <= ((int32_t)2)))
 		{
 			goto IL_01a9;
@@ -1455,11 +1455,11 @@ IL_006b:
 	{
 		ASN1_t1254135647 * L_19 = V_0;
 		NullCheck(L_19);
-		ASN1_t1254135647 * L_20 = ASN1_get_Item_m3727278260(L_19, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_20 = ASN1_get_Item_m3112983888(L_19, 2, /*hidden argument*/NULL);
 		V_3 = L_20;
 		ASN1_t1254135647 * L_21 = V_3;
 		NullCheck(L_21);
-		uint8_t L_22 = ASN1_get_Tag_m442995239(L_21, /*hidden argument*/NULL);
+		uint8_t L_22 = ASN1_get_Tag_m1269404867(L_21, /*hidden argument*/NULL);
 		if ((((int32_t)L_22) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_0097;
@@ -1475,11 +1475,11 @@ IL_0097:
 	{
 		ASN1_t1254135647 * L_24 = V_3;
 		NullCheck(L_24);
-		ASN1_t1254135647 * L_25 = ASN1_get_Item_m3727278260(L_24, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_25 = ASN1_get_Item_m3112983888(L_24, 0, /*hidden argument*/NULL);
 		V_4 = L_25;
 		ASN1_t1254135647 * L_26 = V_4;
 		NullCheck(L_26);
-		uint8_t L_27 = ASN1_get_Tag_m442995239(L_26, /*hidden argument*/NULL);
+		uint8_t L_27 = ASN1_get_Tag_m1269404867(L_26, /*hidden argument*/NULL);
 		if ((((int32_t)L_27) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_00b9;
@@ -1495,12 +1495,12 @@ IL_00b9:
 	{
 		ASN1_t1254135647 * L_29 = V_4;
 		NullCheck(L_29);
-		ASN1_t1254135647 * L_30 = ASN1_get_Item_m3727278260(L_29, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_30 = ASN1_get_Item_m3112983888(L_29, 0, /*hidden argument*/NULL);
 		V_5 = L_30;
 		ASN1_t1254135647 * L_31 = V_5;
 		NullCheck(L_31);
-		ASN1_t1254135647 * L_32 = ASN1_get_Item_m3727278260(L_31, 0, /*hidden argument*/NULL);
-		String_t* L_33 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_32, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_32 = ASN1_get_Item_m3112983888(L_31, 0, /*hidden argument*/NULL);
+		String_t* L_33 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_32, /*hidden argument*/NULL);
 		V_6 = L_33;
 		String_t* L_34 = V_6;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -1520,17 +1520,17 @@ IL_00ee:
 	{
 		ASN1_t1254135647 * L_37 = V_4;
 		NullCheck(L_37);
-		ASN1_t1254135647 * L_38 = ASN1_get_Item_m3727278260(L_37, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_38 = ASN1_get_Item_m3112983888(L_37, 1, /*hidden argument*/NULL);
 		NullCheck(L_38);
-		ByteU5BU5D_t58506160* L_39 = ASN1_get_Value_m390067040(L_38, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_39 = ASN1_get_Value_m4232529916(L_38, /*hidden argument*/NULL);
 		V_7 = L_39;
 		ASN1_t1254135647 * L_40 = V_3;
 		NullCheck(L_40);
-		ASN1_t1254135647 * L_41 = ASN1_get_Item_m3727278260(L_40, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_41 = ASN1_get_Item_m3112983888(L_40, 1, /*hidden argument*/NULL);
 		V_8 = L_41;
 		ASN1_t1254135647 * L_42 = V_8;
 		NullCheck(L_42);
-		uint8_t L_43 = ASN1_get_Tag_m442995239(L_42, /*hidden argument*/NULL);
+		uint8_t L_43 = ASN1_get_Tag_m1269404867(L_42, /*hidden argument*/NULL);
 		if ((((int32_t)L_43) == ((int32_t)4)))
 		{
 			goto IL_011e;
@@ -1547,7 +1547,7 @@ IL_011e:
 		__this->set__iterations_8(1);
 		ASN1_t1254135647 * L_45 = V_3;
 		NullCheck(L_45);
-		int32_t L_46 = ASN1_get_Count_m2214472120(L_45, /*hidden argument*/NULL);
+		int32_t L_46 = ASN1_get_Count_m3031159196(L_45, /*hidden argument*/NULL);
 		if ((((int32_t)L_46) <= ((int32_t)2)))
 		{
 			goto IL_015f;
@@ -1556,11 +1556,11 @@ IL_011e:
 	{
 		ASN1_t1254135647 * L_47 = V_3;
 		NullCheck(L_47);
-		ASN1_t1254135647 * L_48 = ASN1_get_Item_m3727278260(L_47, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_48 = ASN1_get_Item_m3112983888(L_47, 2, /*hidden argument*/NULL);
 		V_9 = L_48;
 		ASN1_t1254135647 * L_49 = V_9;
 		NullCheck(L_49);
-		uint8_t L_50 = ASN1_get_Tag_m442995239(L_49, /*hidden argument*/NULL);
+		uint8_t L_50 = ASN1_get_Tag_m1269404867(L_49, /*hidden argument*/NULL);
 		if ((((int32_t)L_50) == ((int32_t)2)))
 		{
 			goto IL_0152;
@@ -1575,7 +1575,7 @@ IL_011e:
 IL_0152:
 	{
 		ASN1_t1254135647 * L_52 = V_9;
-		int32_t L_53 = ASN1Convert_ToInt32_m2275332600(NULL /*static, unused*/, L_52, /*hidden argument*/NULL);
+		int32_t L_53 = ASN1Convert_ToInt32_m1508411796(NULL /*static, unused*/, L_52, /*hidden argument*/NULL);
 		__this->set__iterations_8(L_53);
 	}
 
@@ -1585,14 +1585,14 @@ IL_015f:
 		NullCheck(L_54);
 		ASN1_t1254135647 * L_55 = ContentInfo_get_Content_m2793987994(L_54, /*hidden argument*/NULL);
 		NullCheck(L_55);
-		ASN1_t1254135647 * L_56 = ASN1_get_Item_m3727278260(L_55, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_56 = ASN1_get_Item_m3112983888(L_55, 0, /*hidden argument*/NULL);
 		NullCheck(L_56);
-		ByteU5BU5D_t58506160* L_57 = ASN1_get_Value_m390067040(L_56, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_57 = ASN1_get_Value_m4232529916(L_56, /*hidden argument*/NULL);
 		V_10 = L_57;
 		ByteU5BU5D_t58506160* L_58 = __this->get__password_1();
 		ASN1_t1254135647 * L_59 = V_8;
 		NullCheck(L_59);
-		ByteU5BU5D_t58506160* L_60 = ASN1_get_Value_m390067040(L_59, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_60 = ASN1_get_Value_m4232529916(L_59, /*hidden argument*/NULL);
 		int32_t L_61 = __this->get__iterations_8();
 		ByteU5BU5D_t58506160* L_62 = V_10;
 		ByteU5BU5D_t58506160* L_63 = PKCS12_MAC_m1203837730(__this, L_58, L_60, L_61, L_62, /*hidden argument*/NULL);
@@ -1617,11 +1617,11 @@ IL_01a9:
 		NullCheck(L_68);
 		ASN1_t1254135647 * L_69 = ContentInfo_get_Content_m2793987994(L_68, /*hidden argument*/NULL);
 		NullCheck(L_69);
-		ASN1_t1254135647 * L_70 = ASN1_get_Item_m3727278260(L_69, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_70 = ASN1_get_Item_m3112983888(L_69, 0, /*hidden argument*/NULL);
 		NullCheck(L_70);
-		ByteU5BU5D_t58506160* L_71 = ASN1_get_Value_m390067040(L_70, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_71 = ASN1_get_Value_m4232529916(L_70, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_72 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_72, L_71, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_72, L_71, /*hidden argument*/NULL);
 		V_12 = L_72;
 		V_13 = 0;
 		goto IL_0314;
@@ -1632,7 +1632,7 @@ IL_01c9:
 		ASN1_t1254135647 * L_73 = V_12;
 		int32_t L_74 = V_13;
 		NullCheck(L_73);
-		ASN1_t1254135647 * L_75 = ASN1_get_Item_m3727278260(L_73, L_74, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_75 = ASN1_get_Item_m3112983888(L_73, L_74, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_76 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m3021605653(L_76, L_75, /*hidden argument*/NULL);
 		V_14 = L_76;
@@ -1678,7 +1678,7 @@ IL_0229:
 		Dictionary_2_t190145395 * L_86 = ((PKCS12_t2950126080_StaticFields*)PKCS12_t2950126080_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map5_12();
 		String_t* L_87 = V_22;
 		NullCheck(L_86);
-		bool L_88 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_86, L_87, (&V_24));
+		bool L_88 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_86, L_87, (&V_24));
 		if (!L_88)
 		{
 			goto IL_0303;
@@ -1709,11 +1709,11 @@ IL_0254:
 		NullCheck(L_90);
 		ASN1_t1254135647 * L_91 = ContentInfo_get_Content_m2793987994(L_90, /*hidden argument*/NULL);
 		NullCheck(L_91);
-		ASN1_t1254135647 * L_92 = ASN1_get_Item_m3727278260(L_91, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_92 = ASN1_get_Item_m3112983888(L_91, 0, /*hidden argument*/NULL);
 		NullCheck(L_92);
-		ByteU5BU5D_t58506160* L_93 = ASN1_get_Value_m390067040(L_92, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_93 = ASN1_get_Value_m4232529916(L_92, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_94 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_94, L_93, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_94, L_93, /*hidden argument*/NULL);
 		V_15 = L_94;
 		V_16 = 0;
 		goto IL_028e;
@@ -1724,7 +1724,7 @@ IL_0275:
 		ASN1_t1254135647 * L_95 = V_15;
 		int32_t L_96 = V_16;
 		NullCheck(L_95);
-		ASN1_t1254135647 * L_97 = ASN1_get_Item_m3727278260(L_95, L_96, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_97 = ASN1_get_Item_m3112983888(L_95, L_96, /*hidden argument*/NULL);
 		V_17 = L_97;
 		ASN1_t1254135647 * L_98 = V_17;
 		PKCS12_ReadSafeBag_m4010108072(__this, L_98, /*hidden argument*/NULL);
@@ -1737,7 +1737,7 @@ IL_028e:
 		int32_t L_100 = V_16;
 		ASN1_t1254135647 * L_101 = V_15;
 		NullCheck(L_101);
-		int32_t L_102 = ASN1_get_Count_m2214472120(L_101, /*hidden argument*/NULL);
+		int32_t L_102 = ASN1_get_Count_m3031159196(L_101, /*hidden argument*/NULL);
 		if ((((int32_t)L_100) < ((int32_t)L_102)))
 		{
 			goto IL_0275;
@@ -1753,14 +1753,14 @@ IL_02a1:
 		NullCheck(L_103);
 		ASN1_t1254135647 * L_104 = ContentInfo_get_Content_m2793987994(L_103, /*hidden argument*/NULL);
 		NullCheck(L_104);
-		ASN1_t1254135647 * L_105 = ASN1_get_Item_m3727278260(L_104, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_105 = ASN1_get_Item_m3112983888(L_104, 0, /*hidden argument*/NULL);
 		EncryptedData_t636832623 * L_106 = (EncryptedData_t636832623 *)il2cpp_codegen_object_new(EncryptedData_t636832623_il2cpp_TypeInfo_var);
 		EncryptedData__ctor_m794340270(L_106, L_105, /*hidden argument*/NULL);
 		V_18 = L_106;
 		EncryptedData_t636832623 * L_107 = V_18;
 		ByteU5BU5D_t58506160* L_108 = PKCS12_Decrypt_m1699029656(__this, L_107, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_109 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_109, L_108, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_109, L_108, /*hidden argument*/NULL);
 		V_19 = L_109;
 		V_20 = 0;
 		goto IL_02e5;
@@ -1771,7 +1771,7 @@ IL_02cc:
 		ASN1_t1254135647 * L_110 = V_19;
 		int32_t L_111 = V_20;
 		NullCheck(L_110);
-		ASN1_t1254135647 * L_112 = ASN1_get_Item_m3727278260(L_110, L_111, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_112 = ASN1_get_Item_m3112983888(L_110, L_111, /*hidden argument*/NULL);
 		V_21 = L_112;
 		ASN1_t1254135647 * L_113 = V_21;
 		PKCS12_ReadSafeBag_m4010108072(__this, L_113, /*hidden argument*/NULL);
@@ -1784,7 +1784,7 @@ IL_02e5:
 		int32_t L_115 = V_20;
 		ASN1_t1254135647 * L_116 = V_19;
 		NullCheck(L_116);
-		int32_t L_117 = ASN1_get_Count_m2214472120(L_116, /*hidden argument*/NULL);
+		int32_t L_117 = ASN1_get_Count_m3031159196(L_116, /*hidden argument*/NULL);
 		if ((((int32_t)L_115) < ((int32_t)L_117)))
 		{
 			goto IL_02cc;
@@ -1819,7 +1819,7 @@ IL_0314:
 		int32_t L_121 = V_13;
 		ASN1_t1254135647 * L_122 = V_12;
 		NullCheck(L_122);
-		int32_t L_123 = ASN1_get_Count_m2214472120(L_122, /*hidden argument*/NULL);
+		int32_t L_123 = ASN1_get_Count_m3031159196(L_122, /*hidden argument*/NULL);
 		if ((((int32_t)L_121) < ((int32_t)L_123)))
 		{
 			goto IL_01c9;
@@ -1887,11 +1887,11 @@ IL_0032:
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::set_Password(System.String)
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* Encoding_t180559927_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* Encoding_t180559927_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12_set_Password_m255122339_MetadataUsageId;
-extern "C"  void PKCS12_set_Password_m255122339 (PKCS12_t2950126080 * __this, String_t* ___value, const MethodInfo* method)
+extern "C"  void PKCS12_set_Password_m255122339 (PKCS12_t2950126080 * __this, String_t* ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -1902,14 +1902,14 @@ extern "C"  void PKCS12_set_Password_m255122339 (PKCS12_t2950126080 * __this, St
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	{
-		String_t* L_0 = ___value;
+		String_t* L_0 = ___value0;
 		if (!L_0)
 		{
 			goto IL_007c;
 		}
 	}
 	{
-		String_t* L_1 = ___value;
+		String_t* L_1 = ___value0;
 		NullCheck(L_1);
 		int32_t L_2 = String_get_Length_m2979997331(L_1, /*hidden argument*/NULL);
 		if ((((int32_t)L_2) <= ((int32_t)0)))
@@ -1918,7 +1918,7 @@ extern "C"  void PKCS12_set_Password_m255122339 (PKCS12_t2950126080 * __this, St
 		}
 	}
 	{
-		String_t* L_3 = ___value;
+		String_t* L_3 = ___value0;
 		NullCheck(L_3);
 		int32_t L_4 = String_get_Length_m2979997331(L_3, /*hidden argument*/NULL);
 		V_0 = L_4;
@@ -1932,7 +1932,7 @@ extern "C"  void PKCS12_set_Password_m255122339 (PKCS12_t2950126080 * __this, St
 		}
 	}
 	{
-		String_t* L_7 = ___value;
+		String_t* L_7 = ___value0;
 		int32_t L_8 = V_0;
 		NullCheck(L_7);
 		uint16_t L_9 = String_get_Chars_m3015341861(L_7, ((int32_t)((int32_t)L_8-(int32_t)1)), /*hidden argument*/NULL);
@@ -1964,7 +1964,7 @@ IL_0041:
 		__this->set__password_1(((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_11+(int32_t)L_12))<<(int32_t)1)))));
 		IL2CPP_RUNTIME_CLASS_INIT(Encoding_t180559927_il2cpp_TypeInfo_var);
 		Encoding_t180559927 * L_13 = Encoding_get_BigEndianUnicode_m1578127592(NULL /*static, unused*/, /*hidden argument*/NULL);
-		String_t* L_14 = ___value;
+		String_t* L_14 = ___value0;
 		int32_t L_15 = V_0;
 		ByteU5BU5D_t58506160* L_16 = __this->get__password_1();
 		NullCheck(L_13);
@@ -2001,31 +2001,31 @@ extern "C"  int32_t PKCS12_get_IterationCount_m1936461050 (PKCS12_t2950126080 * 
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::set_IterationCount(System.Int32)
-extern "C"  void PKCS12_set_IterationCount_m4214894503 (PKCS12_t2950126080 * __this, int32_t ___value, const MethodInfo* method)
+extern "C"  void PKCS12_set_IterationCount_m4214894503 (PKCS12_t2950126080 * __this, int32_t ___value0, const MethodInfo* method)
 {
 	{
-		int32_t L_0 = ___value;
+		int32_t L_0 = ___value0;
 		__this->set__iterations_8(L_0);
 		return;
 	}
 }
 // System.Collections.ArrayList Mono.Security.X509.PKCS12::get_Keys()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
-extern TypeInfo* SafeBag_t4111116303_il2cpp_TypeInfo_var;
-extern TypeInfo* PrivateKeyInfo_t2184496331_il2cpp_TypeInfo_var;
-extern TypeInfo* DSAParameters_t2524359253_il2cpp_TypeInfo_var;
-extern TypeInfo* EncryptedPrivateKeyInfo_t785870703_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* SafeBag_t4111116303_il2cpp_TypeInfo_var;
+extern Il2CppClass* PrivateKeyInfo_t2184496331_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSAParameters_t2524359253_il2cpp_TypeInfo_var;
+extern Il2CppClass* EncryptedPrivateKeyInfo_t785870703_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3902436161;
 extern Il2CppCodeGenString* _stringLiteral3902436162;
-extern const uint32_t PKCS12_get_Keys_m3197281000_MetadataUsageId;
-extern "C"  ArrayList_t2121638921 * PKCS12_get_Keys_m3197281000 (PKCS12_t2950126080 * __this, const MethodInfo* method)
+extern const uint32_t PKCS12_get_Keys_m4003825612_MetadataUsageId;
+extern "C"  ArrayList_t2121638921 * PKCS12_get_Keys_m4003825612 (PKCS12_t2950126080 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (PKCS12_get_Keys_m3197281000_MetadataUsageId);
+		il2cpp_codegen_initialize_method (PKCS12_get_Keys_m4003825612_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	SafeBag_t4111116303 * V_0 = NULL;
@@ -2101,11 +2101,11 @@ IL_0048:
 			V_2 = L_10;
 			ASN1_t1254135647 * L_11 = V_2;
 			NullCheck(L_11);
-			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3727278260(L_11, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3112983888(L_11, 1, /*hidden argument*/NULL);
 			V_3 = L_12;
 			ASN1_t1254135647 * L_13 = V_3;
 			NullCheck(L_13);
-			ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m390067040(L_13, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m4232529916(L_13, /*hidden argument*/NULL);
 			PrivateKeyInfo_t2184496331 * L_15 = (PrivateKeyInfo_t2184496331 *)il2cpp_codegen_object_new(PrivateKeyInfo_t2184496331_il2cpp_TypeInfo_var);
 			PrivateKeyInfo__ctor_m3331527846(L_15, L_14, /*hidden argument*/NULL);
 			V_4 = L_15;
@@ -2196,11 +2196,11 @@ IL_00ee:
 			V_7 = L_35;
 			ASN1_t1254135647 * L_36 = V_7;
 			NullCheck(L_36);
-			ASN1_t1254135647 * L_37 = ASN1_get_Item_m3727278260(L_36, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_37 = ASN1_get_Item_m3112983888(L_36, 1, /*hidden argument*/NULL);
 			V_8 = L_37;
 			ASN1_t1254135647 * L_38 = V_8;
 			NullCheck(L_38);
-			ByteU5BU5D_t58506160* L_39 = ASN1_get_Value_m390067040(L_38, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_39 = ASN1_get_Value_m4232529916(L_38, /*hidden argument*/NULL);
 			EncryptedPrivateKeyInfo_t785870703 * L_40 = (EncryptedPrivateKeyInfo_t785870703 *)il2cpp_codegen_object_new(EncryptedPrivateKeyInfo_t785870703_il2cpp_TypeInfo_var);
 			EncryptedPrivateKeyInfo__ctor_m3104680606(L_40, L_39, /*hidden argument*/NULL);
 			V_9 = L_40;
@@ -2358,19 +2358,19 @@ IL_01e3:
 	}
 }
 // Mono.Security.X509.X509CertificateCollection Mono.Security.X509.PKCS12::get_Certificates()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
-extern TypeInfo* SafeBag_t4111116303_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* SafeBag_t4111116303_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3902436163;
-extern const uint32_t PKCS12_get_Certificates_m425759547_MetadataUsageId;
-extern "C"  X509CertificateCollection_t3336811651 * PKCS12_get_Certificates_m425759547 (PKCS12_t2950126080 * __this, const MethodInfo* method)
+extern const uint32_t PKCS12_get_Certificates_m1930169375_MetadataUsageId;
+extern "C"  X509CertificateCollection_t3336811651 * PKCS12_get_Certificates_m1930169375 (PKCS12_t2950126080 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (PKCS12_get_Certificates_m425759547_MetadataUsageId);
+		il2cpp_codegen_initialize_method (PKCS12_get_Certificates_m1930169375_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	SafeBag_t4111116303 * V_0 = NULL;
@@ -2434,11 +2434,11 @@ IL_0048:
 			V_2 = L_10;
 			ASN1_t1254135647 * L_11 = V_2;
 			NullCheck(L_11);
-			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3727278260(L_11, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3112983888(L_11, 1, /*hidden argument*/NULL);
 			V_3 = L_12;
 			ASN1_t1254135647 * L_13 = V_3;
 			NullCheck(L_13);
-			ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m390067040(L_13, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m4232529916(L_13, /*hidden argument*/NULL);
 			ContentInfo_t1278398632 * L_15 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 			ContentInfo__ctor_m2758504540(L_15, L_14, /*hidden argument*/NULL);
 			V_4 = L_15;
@@ -2447,11 +2447,11 @@ IL_0048:
 			NullCheck(L_17);
 			ASN1_t1254135647 * L_18 = ContentInfo_get_Content_m2793987994(L_17, /*hidden argument*/NULL);
 			NullCheck(L_18);
-			ASN1_t1254135647 * L_19 = ASN1_get_Item_m3727278260(L_18, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_19 = ASN1_get_Item_m3112983888(L_18, 0, /*hidden argument*/NULL);
 			NullCheck(L_19);
-			ByteU5BU5D_t58506160* L_20 = ASN1_get_Value_m390067040(L_19, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_20 = ASN1_get_Value_m4232529916(L_19, /*hidden argument*/NULL);
 			X509Certificate_t273828613 * L_21 = (X509Certificate_t273828613 *)il2cpp_codegen_object_new(X509Certificate_t273828613_il2cpp_TypeInfo_var);
-			X509Certificate__ctor_m1688356825(L_21, L_20, /*hidden argument*/NULL);
+			X509Certificate__ctor_m3683615677(L_21, L_20, /*hidden argument*/NULL);
 			NullCheck(L_16);
 			X509CertificateCollection_Add_m1585739833(L_16, L_21, /*hidden argument*/NULL);
 		}
@@ -2542,15 +2542,15 @@ IL_0016:
 	}
 }
 // System.Boolean Mono.Security.X509.PKCS12::Compare(System.Byte[],System.Byte[])
-extern "C"  bool PKCS12_Compare_m1707054334 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___expected, ByteU5BU5D_t58506160* ___actual, const MethodInfo* method)
+extern "C"  bool PKCS12_Compare_m1707054334 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___expected0, ByteU5BU5D_t58506160* ___actual1, const MethodInfo* method)
 {
 	bool V_0 = false;
 	int32_t V_1 = 0;
 	{
 		V_0 = (bool)0;
-		ByteU5BU5D_t58506160* L_0 = ___expected;
+		ByteU5BU5D_t58506160* L_0 = ___expected0;
 		NullCheck(L_0);
-		ByteU5BU5D_t58506160* L_1 = ___actual;
+		ByteU5BU5D_t58506160* L_1 = ___actual1;
 		NullCheck(L_1);
 		if ((!(((uint32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_0)->max_length))))) == ((uint32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_1)->max_length))))))))
 		{
@@ -2564,12 +2564,12 @@ extern "C"  bool PKCS12_Compare_m1707054334 (PKCS12_t2950126080 * __this, ByteU5
 
 IL_0014:
 	{
-		ByteU5BU5D_t58506160* L_2 = ___expected;
+		ByteU5BU5D_t58506160* L_2 = ___expected0;
 		int32_t L_3 = V_1;
 		NullCheck(L_2);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_2, L_3);
 		int32_t L_4 = L_3;
-		ByteU5BU5D_t58506160* L_5 = ___actual;
+		ByteU5BU5D_t58506160* L_5 = ___actual1;
 		int32_t L_6 = V_1;
 		NullCheck(L_5);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_5, L_6);
@@ -2592,7 +2592,7 @@ IL_0021:
 IL_0025:
 	{
 		int32_t L_9 = V_1;
-		ByteU5BU5D_t58506160* L_10 = ___expected;
+		ByteU5BU5D_t58506160* L_10 = ___expected0;
 		NullCheck(L_10);
 		if ((((int32_t)L_9) < ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_10)->max_length)))))))
 		{
@@ -2610,11 +2610,11 @@ IL_0030:
 	}
 }
 // System.Security.Cryptography.SymmetricAlgorithm Mono.Security.X509.PKCS12::GetSymmetricAlgorithm(System.String,System.Byte[],System.Int32)
-extern TypeInfo* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
+extern Il2CppClass* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2198966631;
 extern Il2CppCodeGenString* _stringLiteral2198966633;
@@ -2637,7 +2637,7 @@ extern Il2CppCodeGenString* _stringLiteral80931;
 extern Il2CppCodeGenString* _stringLiteral1617450676;
 extern Il2CppCodeGenString* _stringLiteral2917363116;
 extern const uint32_t PKCS12_GetSymmetricAlgorithm_m2527458883_MetadataUsageId;
-extern "C"  SymmetricAlgorithm_t839208017 * PKCS12_GetSymmetricAlgorithm_m2527458883 (PKCS12_t2950126080 * __this, String_t* ___algorithmOid, ByteU5BU5D_t58506160* ___salt, int32_t ___iterationCount, const MethodInfo* method)
+extern "C"  SymmetricAlgorithm_t839208017 * PKCS12_GetSymmetricAlgorithm_m2527458883 (PKCS12_t2950126080 * __this, String_t* ___algorithmOid0, ByteU5BU5D_t58506160* ___salt1, int32_t ___iterationCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2665,14 +2665,14 @@ extern "C"  SymmetricAlgorithm_t839208017 * PKCS12_GetSymmetricAlgorithm_m252745
 		NullCheck(L_1);
 		DeriveBytes_set_Password_m2839198645(L_1, L_2, /*hidden argument*/NULL);
 		DeriveBytes_t2715912549 * L_3 = V_3;
-		ByteU5BU5D_t58506160* L_4 = ___salt;
+		ByteU5BU5D_t58506160* L_4 = ___salt1;
 		NullCheck(L_3);
 		DeriveBytes_set_Salt_m801246362(L_3, L_4, /*hidden argument*/NULL);
 		DeriveBytes_t2715912549 * L_5 = V_3;
-		int32_t L_6 = ___iterationCount;
+		int32_t L_6 = ___iterationCount2;
 		NullCheck(L_5);
 		DeriveBytes_set_IterationCount_m35620668(L_5, L_6, /*hidden argument*/NULL);
-		String_t* L_7 = ___algorithmOid;
+		String_t* L_7 = ___algorithmOid0;
 		V_5 = L_7;
 		String_t* L_8 = V_5;
 		if (!L_8)
@@ -2739,7 +2739,7 @@ IL_00e9:
 		Dictionary_2_t190145395 * L_24 = ((PKCS12_t2950126080_StaticFields*)PKCS12_t2950126080_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map6_13();
 		String_t* L_25 = V_5;
 		NullCheck(L_24);
-		bool L_26 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_24, L_25, (&V_7));
+		bool L_26 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_24, L_25, (&V_7));
 		if (!L_26)
 		{
 			goto IL_025a;
@@ -2967,9 +2967,9 @@ IL_029e:
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12::Decrypt(System.String,System.Byte[],System.Int32,System.Byte[])
-extern TypeInfo* ICryptoTransform_t4226691419_il2cpp_TypeInfo_var;
+extern Il2CppClass* ICryptoTransform_t4226691419_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12_Decrypt_m2583016519_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* PKCS12_Decrypt_m2583016519 (PKCS12_t2950126080 * __this, String_t* ___algorithmOid, ByteU5BU5D_t58506160* ___salt, int32_t ___iterationCount, ByteU5BU5D_t58506160* ___encryptedData, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* PKCS12_Decrypt_m2583016519 (PKCS12_t2950126080 * __this, String_t* ___algorithmOid0, ByteU5BU5D_t58506160* ___salt1, int32_t ___iterationCount2, ByteU5BU5D_t58506160* ___encryptedData3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -2994,9 +2994,9 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_Decrypt_m2583016519 (PKCS12_t2950126080
 IL_0004:
 	try
 	{ // begin try (depth: 1)
-		String_t* L_0 = ___algorithmOid;
-		ByteU5BU5D_t58506160* L_1 = ___salt;
-		int32_t L_2 = ___iterationCount;
+		String_t* L_0 = ___algorithmOid0;
+		ByteU5BU5D_t58506160* L_1 = ___salt1;
+		int32_t L_2 = ___iterationCount2;
 		SymmetricAlgorithm_t839208017 * L_3 = PKCS12_GetSymmetricAlgorithm_m2527458883(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
 		V_0 = L_3;
 		SymmetricAlgorithm_t839208017 * L_4 = V_0;
@@ -3004,8 +3004,8 @@ IL_0004:
 		Il2CppObject * L_5 = VirtFuncInvoker0< Il2CppObject * >::Invoke(20 /* System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.SymmetricAlgorithm::CreateDecryptor() */, L_4);
 		V_2 = L_5;
 		Il2CppObject * L_6 = V_2;
-		ByteU5BU5D_t58506160* L_7 = ___encryptedData;
-		ByteU5BU5D_t58506160* L_8 = ___encryptedData;
+		ByteU5BU5D_t58506160* L_7 = ___encryptedData3;
+		ByteU5BU5D_t58506160* L_8 = ___encryptedData3;
 		NullCheck(L_8);
 		NullCheck(L_6);
 		ByteU5BU5D_t58506160* L_9 = InterfaceFuncInvoker3< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160*, int32_t, int32_t >::Invoke(2 /* System.Byte[] System.Security.Cryptography.ICryptoTransform::TransformFinalBlock(System.Byte[],System.Int32,System.Int32) */, ICryptoTransform_t4226691419_il2cpp_TypeInfo_var, L_6, L_7, 0, (((int32_t)((int32_t)(((Il2CppArray *)L_8)->max_length)))));
@@ -3053,32 +3053,32 @@ IL_0035:
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12::Decrypt(Mono.Security.PKCS7/EncryptedData)
-extern "C"  ByteU5BU5D_t58506160* PKCS12_Decrypt_m1699029656 (PKCS12_t2950126080 * __this, EncryptedData_t636832623 * ___ed, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* PKCS12_Decrypt_m1699029656 (PKCS12_t2950126080 * __this, EncryptedData_t636832623 * ___ed0, const MethodInfo* method)
 {
 	{
-		EncryptedData_t636832623 * L_0 = ___ed;
+		EncryptedData_t636832623 * L_0 = ___ed0;
 		NullCheck(L_0);
 		ContentInfo_t1278398632 * L_1 = EncryptedData_get_EncryptionAlgorithm_m3999045305(L_0, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		String_t* L_2 = ContentInfo_get_ContentType_m3252099384(L_1, /*hidden argument*/NULL);
-		EncryptedData_t636832623 * L_3 = ___ed;
+		EncryptedData_t636832623 * L_3 = ___ed0;
 		NullCheck(L_3);
 		ContentInfo_t1278398632 * L_4 = EncryptedData_get_EncryptionAlgorithm_m3999045305(L_3, /*hidden argument*/NULL);
 		NullCheck(L_4);
 		ASN1_t1254135647 * L_5 = ContentInfo_get_Content_m2793987994(L_4, /*hidden argument*/NULL);
 		NullCheck(L_5);
-		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3727278260(L_5, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3112983888(L_5, 0, /*hidden argument*/NULL);
 		NullCheck(L_6);
-		ByteU5BU5D_t58506160* L_7 = ASN1_get_Value_m390067040(L_6, /*hidden argument*/NULL);
-		EncryptedData_t636832623 * L_8 = ___ed;
+		ByteU5BU5D_t58506160* L_7 = ASN1_get_Value_m4232529916(L_6, /*hidden argument*/NULL);
+		EncryptedData_t636832623 * L_8 = ___ed0;
 		NullCheck(L_8);
 		ContentInfo_t1278398632 * L_9 = EncryptedData_get_EncryptionAlgorithm_m3999045305(L_8, /*hidden argument*/NULL);
 		NullCheck(L_9);
 		ASN1_t1254135647 * L_10 = ContentInfo_get_Content_m2793987994(L_9, /*hidden argument*/NULL);
 		NullCheck(L_10);
-		ASN1_t1254135647 * L_11 = ASN1_get_Item_m3727278260(L_10, 1, /*hidden argument*/NULL);
-		int32_t L_12 = ASN1Convert_ToInt32_m2275332600(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
-		EncryptedData_t636832623 * L_13 = ___ed;
+		ASN1_t1254135647 * L_11 = ASN1_get_Item_m3112983888(L_10, 1, /*hidden argument*/NULL);
+		int32_t L_12 = ASN1Convert_ToInt32_m1508411796(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
+		EncryptedData_t636832623 * L_13 = ___ed0;
 		NullCheck(L_13);
 		ByteU5BU5D_t58506160* L_14 = EncryptedData_get_EncryptedContent_m2775206546(L_13, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_15 = PKCS12_Decrypt_m2583016519(__this, L_2, L_7, L_12, L_14, /*hidden argument*/NULL);
@@ -3086,10 +3086,10 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_Decrypt_m1699029656 (PKCS12_t2950126080
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12::Encrypt(System.String,System.Byte[],System.Int32,System.Byte[])
-extern TypeInfo* ICryptoTransform_t4226691419_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* ICryptoTransform_t4226691419_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12_Encrypt_m3283559711_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* PKCS12_Encrypt_m3283559711 (PKCS12_t2950126080 * __this, String_t* ___algorithmOid, ByteU5BU5D_t58506160* ___salt, int32_t ___iterationCount, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* PKCS12_Encrypt_m3283559711 (PKCS12_t2950126080 * __this, String_t* ___algorithmOid0, ByteU5BU5D_t58506160* ___salt1, int32_t ___iterationCount2, ByteU5BU5D_t58506160* ___data3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -3108,9 +3108,9 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_Encrypt_m3283559711 (PKCS12_t2950126080
 	NO_UNUSED_WARNING (__leave_target);
 	{
 		V_0 = (ByteU5BU5D_t58506160*)NULL;
-		String_t* L_0 = ___algorithmOid;
-		ByteU5BU5D_t58506160* L_1 = ___salt;
-		int32_t L_2 = ___iterationCount;
+		String_t* L_0 = ___algorithmOid0;
+		ByteU5BU5D_t58506160* L_1 = ___salt1;
+		int32_t L_2 = ___iterationCount2;
 		SymmetricAlgorithm_t839208017 * L_3 = PKCS12_GetSymmetricAlgorithm_m2527458883(__this, L_0, L_1, L_2, /*hidden argument*/NULL);
 		V_1 = L_3;
 	}
@@ -3123,8 +3123,8 @@ IL_000c:
 		Il2CppObject * L_5 = VirtFuncInvoker0< Il2CppObject * >::Invoke(22 /* System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.SymmetricAlgorithm::CreateEncryptor() */, L_4);
 		V_2 = L_5;
 		Il2CppObject * L_6 = V_2;
-		ByteU5BU5D_t58506160* L_7 = ___data;
-		ByteU5BU5D_t58506160* L_8 = ___data;
+		ByteU5BU5D_t58506160* L_7 = ___data3;
+		ByteU5BU5D_t58506160* L_8 = ___data3;
 		NullCheck(L_8);
 		NullCheck(L_6);
 		ByteU5BU5D_t58506160* L_9 = InterfaceFuncInvoker3< ByteU5BU5D_t58506160*, ByteU5BU5D_t58506160*, int32_t, int32_t >::Invoke(2 /* System.Byte[] System.Security.Cryptography.ICryptoTransform::TransformFinalBlock(System.Byte[],System.Int32,System.Int32) */, ICryptoTransform_t4226691419_il2cpp_TypeInfo_var, L_6, L_7, 0, (((int32_t)((int32_t)(((Il2CppArray *)L_8)->max_length)))));
@@ -3172,10 +3172,10 @@ IL_0033:
 	}
 }
 // System.Security.Cryptography.DSAParameters Mono.Security.X509.PKCS12::GetExistingParameters(System.Boolean&)
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
-extern TypeInfo* DSAParameters_t2524359253_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSAParameters_t2524359253_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12_GetExistingParameters_m1851295361_MetadataUsageId;
-extern "C"  DSAParameters_t2524359253  PKCS12_GetExistingParameters_m1851295361 (PKCS12_t2950126080 * __this, bool* ___found, const MethodInfo* method)
+extern "C"  DSAParameters_t2524359253  PKCS12_GetExistingParameters_m1851295361 (PKCS12_t2950126080 * __this, bool* ___found0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -3184,7 +3184,7 @@ extern "C"  DSAParameters_t2524359253  PKCS12_GetExistingParameters_m1851295361 
 		s_Il2CppMethodIntialized = true;
 	}
 	X509Certificate_t273828613 * V_0 = NULL;
-	X509CertificateEnumerator_t3569011383 * V_1 = NULL;
+	X509CertificateEnumerator_t3569011382 * V_1 = NULL;
 	DSA_t1557551819 * V_2 = NULL;
 	DSAParameters_t2524359253  V_3;
 	memset(&V_3, 0, sizeof(V_3));
@@ -3198,9 +3198,9 @@ extern "C"  DSAParameters_t2524359253  PKCS12_GetExistingParameters_m1851295361 
 	int32_t __leave_target = 0;
 	NO_UNUSED_WARNING (__leave_target);
 	{
-		X509CertificateCollection_t3336811651 * L_0 = PKCS12_get_Certificates_m425759547(__this, /*hidden argument*/NULL);
+		X509CertificateCollection_t3336811651 * L_0 = PKCS12_get_Certificates_m1930169375(__this, /*hidden argument*/NULL);
 		NullCheck(L_0);
-		X509CertificateEnumerator_t3569011383 * L_1 = X509CertificateCollection_GetEnumerator_m2226643995(L_0, /*hidden argument*/NULL);
+		X509CertificateEnumerator_t3569011382 * L_1 = X509CertificateCollection_GetEnumerator_m1926496255(L_0, /*hidden argument*/NULL);
 		V_1 = L_1;
 	}
 
@@ -3213,9 +3213,9 @@ IL_000c:
 
 IL_0011:
 		{
-			X509CertificateEnumerator_t3569011383 * L_2 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_2 = V_1;
 			NullCheck(L_2);
-			X509Certificate_t273828613 * L_3 = X509CertificateEnumerator_get_Current_m1696796071(L_2, /*hidden argument*/NULL);
+			X509Certificate_t273828613 * L_3 = X509CertificateEnumerator_get_Current_m2126438283(L_2, /*hidden argument*/NULL);
 			V_0 = L_3;
 			X509Certificate_t273828613 * L_4 = V_0;
 			NullCheck(L_4);
@@ -3230,7 +3230,7 @@ IL_0023:
 		{
 			X509Certificate_t273828613 * L_6 = V_0;
 			NullCheck(L_6);
-			DSA_t1557551819 * L_7 = X509Certificate_get_DSA_m1952040247(L_6, /*hidden argument*/NULL);
+			DSA_t1557551819 * L_7 = X509Certificate_get_DSA_m937980955(L_6, /*hidden argument*/NULL);
 			V_2 = L_7;
 			DSA_t1557551819 * L_8 = V_2;
 			if (!L_8)
@@ -3241,7 +3241,7 @@ IL_0023:
 
 IL_0030:
 		{
-			bool* L_9 = ___found;
+			bool* L_9 = ___found0;
 			*((int8_t*)(L_9)) = (int8_t)1;
 			DSA_t1557551819 * L_10 = V_2;
 			NullCheck(L_10);
@@ -3252,7 +3252,7 @@ IL_0030:
 
 IL_0040:
 		{
-			X509CertificateEnumerator_t3569011383 * L_12 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_12 = V_1;
 			NullCheck(L_12);
 			bool L_13 = VirtFuncInvoker0< bool >::Invoke(7 /* System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext() */, L_12);
 			if (L_13)
@@ -3275,7 +3275,7 @@ IL_004b:
 FINALLY_0050:
 	{ // begin finally (depth: 1)
 		{
-			X509CertificateEnumerator_t3569011383 * L_14 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_14 = V_1;
 			V_4 = ((Il2CppObject *)IsInst(L_14, IDisposable_t1628921374_il2cpp_TypeInfo_var));
 			Il2CppObject * L_15 = V_4;
 			if (L_15)
@@ -3306,7 +3306,7 @@ IL_005d:
 
 IL_0065:
 	{
-		bool* L_17 = ___found;
+		bool* L_17 = ___found0;
 		*((int8_t*)(L_17)) = (int8_t)0;
 		Initobj (DSAParameters_t2524359253_il2cpp_TypeInfo_var, (&V_5));
 		DSAParameters_t2524359253  L_18 = V_5;
@@ -3320,10 +3320,10 @@ IL_0073:
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::AddPrivateKey(Mono.Security.Cryptography.PKCS8/PrivateKeyInfo)
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral966261579;
 extern const uint32_t PKCS12_AddPrivateKey_m3693882703_MetadataUsageId;
-extern "C"  void PKCS12_AddPrivateKey_m3693882703 (PKCS12_t2950126080 * __this, PrivateKeyInfo_t2184496331 * ___pki, const MethodInfo* method)
+extern "C"  void PKCS12_AddPrivateKey_m3693882703 (PKCS12_t2950126080 * __this, PrivateKeyInfo_t2184496331 * ___pki0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -3337,7 +3337,7 @@ extern "C"  void PKCS12_AddPrivateKey_m3693882703 (PKCS12_t2950126080 * __this, 
 	memset(&V_2, 0, sizeof(V_2));
 	uint8_t V_3 = 0x0;
 	{
-		PrivateKeyInfo_t2184496331 * L_0 = ___pki;
+		PrivateKeyInfo_t2184496331 * L_0 = ___pki0;
 		NullCheck(L_0);
 		ByteU5BU5D_t58506160* L_1 = PrivateKeyInfo_get_PrivateKey_m2153221404(L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
@@ -3418,16 +3418,16 @@ IL_0072:
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::ReadSafeBag(Mono.Security.ASN1)
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* PrivateKeyInfo_t2184496331_il2cpp_TypeInfo_var;
-extern TypeInfo* EncryptedPrivateKeyInfo_t785870703_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* SafeBag_t4111116303_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* PrivateKeyInfo_t2184496331_il2cpp_TypeInfo_var;
+extern Il2CppClass* EncryptedPrivateKeyInfo_t785870703_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* SafeBag_t4111116303_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral456827922;
 extern Il2CppCodeGenString* _stringLiteral2904264681;
@@ -3447,7 +3447,7 @@ extern Il2CppCodeGenString* _stringLiteral3743575364;
 extern Il2CppCodeGenString* _stringLiteral3743575365;
 extern Il2CppCodeGenString* _stringLiteral3045757943;
 extern const uint32_t PKCS12_ReadSafeBag_m4010108072_MetadataUsageId;
-extern "C"  void PKCS12_ReadSafeBag_m4010108072 (PKCS12_t2950126080 * __this, ASN1_t1254135647 * ___safeBag, const MethodInfo* method)
+extern "C"  void PKCS12_ReadSafeBag_m4010108072 (PKCS12_t2950126080 * __this, ASN1_t1254135647 * ___safeBag0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -3475,9 +3475,9 @@ extern "C"  void PKCS12_ReadSafeBag_m4010108072 (PKCS12_t2950126080 * __this, AS
 	Dictionary_2_t190145395 * V_17 = NULL;
 	int32_t V_18 = 0;
 	{
-		ASN1_t1254135647 * L_0 = ___safeBag;
+		ASN1_t1254135647 * L_0 = ___safeBag0;
 		NullCheck(L_0);
-		uint8_t L_1 = ASN1_get_Tag_m442995239(L_0, /*hidden argument*/NULL);
+		uint8_t L_1 = ASN1_get_Tag_m1269404867(L_0, /*hidden argument*/NULL);
 		if ((((int32_t)L_1) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_0018;
@@ -3491,13 +3491,13 @@ extern "C"  void PKCS12_ReadSafeBag_m4010108072 (PKCS12_t2950126080 * __this, AS
 
 IL_0018:
 	{
-		ASN1_t1254135647 * L_3 = ___safeBag;
+		ASN1_t1254135647 * L_3 = ___safeBag0;
 		NullCheck(L_3);
-		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3727278260(L_3, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3112983888(L_3, 0, /*hidden argument*/NULL);
 		V_0 = L_4;
 		ASN1_t1254135647 * L_5 = V_0;
 		NullCheck(L_5);
-		uint8_t L_6 = ASN1_get_Tag_m442995239(L_5, /*hidden argument*/NULL);
+		uint8_t L_6 = ASN1_get_Tag_m1269404867(L_5, /*hidden argument*/NULL);
 		if ((((int32_t)L_6) == ((int32_t)6)))
 		{
 			goto IL_0037;
@@ -3511,12 +3511,12 @@ IL_0018:
 
 IL_0037:
 	{
-		ASN1_t1254135647 * L_8 = ___safeBag;
+		ASN1_t1254135647 * L_8 = ___safeBag0;
 		NullCheck(L_8);
-		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3727278260(L_8, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3112983888(L_8, 1, /*hidden argument*/NULL);
 		V_1 = L_9;
 		ASN1_t1254135647 * L_10 = V_0;
-		String_t* L_11 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_10, /*hidden argument*/NULL);
+		String_t* L_11 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_10, /*hidden argument*/NULL);
 		V_2 = L_11;
 		String_t* L_12 = V_2;
 		V_16 = L_12;
@@ -3567,7 +3567,7 @@ IL_00b7:
 		Dictionary_2_t190145395 * L_23 = ((PKCS12_t2950126080_StaticFields*)PKCS12_t2950126080_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map7_14();
 		String_t* L_24 = V_16;
 		NullCheck(L_23);
-		bool L_25 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_23, L_24, (&V_18));
+		bool L_25 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_23, L_24, (&V_18));
 		if (!L_25)
 		{
 			goto IL_01cd;
@@ -3608,7 +3608,7 @@ IL_00ee:
 	{
 		ASN1_t1254135647 * L_27 = V_1;
 		NullCheck(L_27);
-		ByteU5BU5D_t58506160* L_28 = ASN1_get_Value_m390067040(L_27, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_28 = ASN1_get_Value_m4232529916(L_27, /*hidden argument*/NULL);
 		PrivateKeyInfo_t2184496331 * L_29 = (PrivateKeyInfo_t2184496331 *)il2cpp_codegen_object_new(PrivateKeyInfo_t2184496331_il2cpp_TypeInfo_var);
 		PrivateKeyInfo__ctor_m3331527846(L_29, L_28, /*hidden argument*/NULL);
 		PKCS12_AddPrivateKey_m3693882703(__this, L_29, /*hidden argument*/NULL);
@@ -3619,7 +3619,7 @@ IL_0104:
 	{
 		ASN1_t1254135647 * L_30 = V_1;
 		NullCheck(L_30);
-		ByteU5BU5D_t58506160* L_31 = ASN1_get_Value_m390067040(L_30, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_31 = ASN1_get_Value_m4232529916(L_30, /*hidden argument*/NULL);
 		EncryptedPrivateKeyInfo_t785870703 * L_32 = (EncryptedPrivateKeyInfo_t785870703 *)il2cpp_codegen_object_new(EncryptedPrivateKeyInfo_t785870703_il2cpp_TypeInfo_var);
 		EncryptedPrivateKeyInfo__ctor_m3104680606(L_32, L_31, /*hidden argument*/NULL);
 		V_3 = L_32;
@@ -3652,7 +3652,7 @@ IL_014e:
 	{
 		ASN1_t1254135647 * L_46 = V_1;
 		NullCheck(L_46);
-		ByteU5BU5D_t58506160* L_47 = ASN1_get_Value_m390067040(L_46, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_47 = ASN1_get_Value_m4232529916(L_46, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_48 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m2758504540(L_48, L_47, /*hidden argument*/NULL);
 		V_5 = L_48;
@@ -3678,11 +3678,11 @@ IL_017c:
 		NullCheck(L_53);
 		ASN1_t1254135647 * L_54 = ContentInfo_get_Content_m2793987994(L_53, /*hidden argument*/NULL);
 		NullCheck(L_54);
-		ASN1_t1254135647 * L_55 = ASN1_get_Item_m3727278260(L_54, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_55 = ASN1_get_Item_m3112983888(L_54, 0, /*hidden argument*/NULL);
 		NullCheck(L_55);
-		ByteU5BU5D_t58506160* L_56 = ASN1_get_Value_m390067040(L_55, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_56 = ASN1_get_Value_m4232529916(L_55, /*hidden argument*/NULL);
 		X509Certificate_t273828613 * L_57 = (X509Certificate_t273828613 *)il2cpp_codegen_object_new(X509Certificate_t273828613_il2cpp_TypeInfo_var);
-		X509Certificate__ctor_m1688356825(L_57, L_56, /*hidden argument*/NULL);
+		X509Certificate__ctor_m3683615677(L_57, L_56, /*hidden argument*/NULL);
 		V_6 = L_57;
 		X509CertificateCollection_t3336811651 * L_58 = __this->get__certs_4();
 		X509Certificate_t273828613 * L_59 = V_6;
@@ -3700,7 +3700,7 @@ IL_01ad:
 	{
 		ASN1_t1254135647 * L_60 = V_1;
 		NullCheck(L_60);
-		ByteU5BU5D_t58506160* L_61 = ASN1_get_Value_m390067040(L_60, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_61 = ASN1_get_Value_m4232529916(L_60, /*hidden argument*/NULL);
 		V_7 = L_61;
 		ArrayList_t2121638921 * L_62 = __this->get__secretBags_3();
 		ByteU5BU5D_t58506160* L_63 = V_7;
@@ -3723,22 +3723,22 @@ IL_01cd:
 
 IL_01d8:
 	{
-		ASN1_t1254135647 * L_65 = ___safeBag;
+		ASN1_t1254135647 * L_65 = ___safeBag0;
 		NullCheck(L_65);
-		int32_t L_66 = ASN1_get_Count_m2214472120(L_65, /*hidden argument*/NULL);
+		int32_t L_66 = ASN1_get_Count_m3031159196(L_65, /*hidden argument*/NULL);
 		if ((((int32_t)L_66) <= ((int32_t)2)))
 		{
 			goto IL_0347;
 		}
 	}
 	{
-		ASN1_t1254135647 * L_67 = ___safeBag;
+		ASN1_t1254135647 * L_67 = ___safeBag0;
 		NullCheck(L_67);
-		ASN1_t1254135647 * L_68 = ASN1_get_Item_m3727278260(L_67, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_68 = ASN1_get_Item_m3112983888(L_67, 2, /*hidden argument*/NULL);
 		V_8 = L_68;
 		ASN1_t1254135647 * L_69 = V_8;
 		NullCheck(L_69);
-		uint8_t L_70 = ASN1_get_Tag_m442995239(L_69, /*hidden argument*/NULL);
+		uint8_t L_70 = ASN1_get_Tag_m1269404867(L_69, /*hidden argument*/NULL);
 		if ((((int32_t)L_70) == ((int32_t)((int32_t)49))))
 		{
 			goto IL_0206;
@@ -3761,11 +3761,11 @@ IL_020e:
 		ASN1_t1254135647 * L_72 = V_8;
 		int32_t L_73 = V_9;
 		NullCheck(L_72);
-		ASN1_t1254135647 * L_74 = ASN1_get_Item_m3727278260(L_72, L_73, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_74 = ASN1_get_Item_m3112983888(L_72, L_73, /*hidden argument*/NULL);
 		V_10 = L_74;
 		ASN1_t1254135647 * L_75 = V_10;
 		NullCheck(L_75);
-		uint8_t L_76 = ASN1_get_Tag_m442995239(L_75, /*hidden argument*/NULL);
+		uint8_t L_76 = ASN1_get_Tag_m1269404867(L_75, /*hidden argument*/NULL);
 		if ((((int32_t)L_76) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_0232;
@@ -3781,11 +3781,11 @@ IL_0232:
 	{
 		ASN1_t1254135647 * L_78 = V_10;
 		NullCheck(L_78);
-		ASN1_t1254135647 * L_79 = ASN1_get_Item_m3727278260(L_78, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_79 = ASN1_get_Item_m3112983888(L_78, 0, /*hidden argument*/NULL);
 		V_11 = L_79;
 		ASN1_t1254135647 * L_80 = V_11;
 		NullCheck(L_80);
-		uint8_t L_81 = ASN1_get_Tag_m442995239(L_80, /*hidden argument*/NULL);
+		uint8_t L_81 = ASN1_get_Tag_m1269404867(L_80, /*hidden argument*/NULL);
 		if ((((int32_t)L_81) == ((int32_t)6)))
 		{
 			goto IL_0254;
@@ -3800,11 +3800,11 @@ IL_0232:
 IL_0254:
 	{
 		ASN1_t1254135647 * L_83 = V_11;
-		String_t* L_84 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_83, /*hidden argument*/NULL);
+		String_t* L_84 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_83, /*hidden argument*/NULL);
 		V_12 = L_84;
 		ASN1_t1254135647 * L_85 = V_10;
 		NullCheck(L_85);
-		ASN1_t1254135647 * L_86 = ASN1_get_Item_m3727278260(L_85, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_86 = ASN1_get_Item_m3112983888(L_85, 1, /*hidden argument*/NULL);
 		V_13 = L_86;
 		V_14 = 0;
 		goto IL_0325;
@@ -3815,7 +3815,7 @@ IL_026f:
 		ASN1_t1254135647 * L_87 = V_13;
 		int32_t L_88 = V_14;
 		NullCheck(L_87);
-		ASN1_t1254135647 * L_89 = ASN1_get_Item_m3727278260(L_87, L_88, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_89 = ASN1_get_Item_m3112983888(L_87, L_88, /*hidden argument*/NULL);
 		V_15 = L_89;
 		String_t* L_90 = V_12;
 		V_16 = L_90;
@@ -3854,7 +3854,7 @@ IL_02b8:
 		Dictionary_2_t190145395 * L_97 = ((PKCS12_t2950126080_StaticFields*)PKCS12_t2950126080_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map8_15();
 		String_t* L_98 = V_16;
 		NullCheck(L_97);
-		bool L_99 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_97, L_98, (&V_18));
+		bool L_99 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_97, L_98, (&V_18));
 		if (!L_99)
 		{
 			goto IL_031a;
@@ -3882,7 +3882,7 @@ IL_02df:
 	{
 		ASN1_t1254135647 * L_102 = V_15;
 		NullCheck(L_102);
-		uint8_t L_103 = ASN1_get_Tag_m442995239(L_102, /*hidden argument*/NULL);
+		uint8_t L_103 = ASN1_get_Tag_m1269404867(L_102, /*hidden argument*/NULL);
 		if ((((int32_t)L_103) == ((int32_t)((int32_t)30))))
 		{
 			goto IL_02f8;
@@ -3903,7 +3903,7 @@ IL_02fd:
 	{
 		ASN1_t1254135647 * L_105 = V_15;
 		NullCheck(L_105);
-		uint8_t L_106 = ASN1_get_Tag_m442995239(L_105, /*hidden argument*/NULL);
+		uint8_t L_106 = ASN1_get_Tag_m1269404867(L_105, /*hidden argument*/NULL);
 		if ((((int32_t)L_106) == ((int32_t)4)))
 		{
 			goto IL_0315;
@@ -3936,7 +3936,7 @@ IL_0325:
 		int32_t L_109 = V_14;
 		ASN1_t1254135647 * L_110 = V_13;
 		NullCheck(L_110);
-		int32_t L_111 = ASN1_get_Count_m2214472120(L_110, /*hidden argument*/NULL);
+		int32_t L_111 = ASN1_get_Count_m3031159196(L_110, /*hidden argument*/NULL);
 		if ((((int32_t)L_109) < ((int32_t)L_111)))
 		{
 			goto IL_026f;
@@ -3952,7 +3952,7 @@ IL_0339:
 		int32_t L_113 = V_9;
 		ASN1_t1254135647 * L_114 = V_8;
 		NullCheck(L_114);
-		int32_t L_115 = ASN1_get_Count_m2214472120(L_114, /*hidden argument*/NULL);
+		int32_t L_115 = ASN1_get_Count_m3031159196(L_114, /*hidden argument*/NULL);
 		if ((((int32_t)L_113) < ((int32_t)L_115)))
 		{
 			goto IL_020e;
@@ -3963,7 +3963,7 @@ IL_0347:
 	{
 		ArrayList_t2121638921 * L_116 = __this->get__safeBags_9();
 		String_t* L_117 = V_2;
-		ASN1_t1254135647 * L_118 = ___safeBag;
+		ASN1_t1254135647 * L_118 = ___safeBag0;
 		SafeBag_t4111116303 * L_119 = (SafeBag_t4111116303 *)il2cpp_codegen_object_new(SafeBag_t4111116303_il2cpp_TypeInfo_var);
 		SafeBag__ctor_m2711801934(L_119, L_117, L_118, /*hidden argument*/NULL);
 		NullCheck(L_116);
@@ -3972,24 +3972,24 @@ IL_0347:
 	}
 }
 // Mono.Security.ASN1 Mono.Security.X509.PKCS12::CertificateSafeBag(Mono.Security.X509.X509Certificate,System.Collections.IDictionary)
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* IDictionary_t1654916945_il2cpp_TypeInfo_var;
-extern TypeInfo* IDictionaryEnumerator_t1541724277_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDictionary_t1654916945_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDictionaryEnumerator_t1541724277_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2688301449;
 extern Il2CppCodeGenString* _stringLiteral3902436163;
 extern Il2CppCodeGenString* _stringLiteral3743575364;
 extern Il2CppCodeGenString* _stringLiteral3743575365;
 extern const uint32_t PKCS12_CertificateSafeBag_m2143586463_MetadataUsageId;
-extern "C"  ASN1_t1254135647 * PKCS12_CertificateSafeBag_m2143586463 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___x509, Il2CppObject * ___attributes, const MethodInfo* method)
+extern "C"  ASN1_t1254135647 * PKCS12_CertificateSafeBag_m2143586463 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___x5090, Il2CppObject * ___attributes1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -4028,11 +4028,11 @@ extern "C"  ASN1_t1254135647 * PKCS12_CertificateSafeBag_m2143586463 (PKCS12_t29
 	int32_t __leave_target = 0;
 	NO_UNUSED_WARNING (__leave_target);
 	{
-		X509Certificate_t273828613 * L_0 = ___x509;
+		X509Certificate_t273828613 * L_0 = ___x5090;
 		NullCheck(L_0);
 		ByteU5BU5D_t58506160* L_1 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(12 /* System.Byte[] Mono.Security.X509.X509Certificate::get_RawData() */, L_0);
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_2, 4, L_1, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_2, 4, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		ContentInfo_t1278398632 * L_3 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m3875806349(L_3, /*hidden argument*/NULL);
@@ -4045,28 +4045,28 @@ extern "C"  ASN1_t1254135647 * PKCS12_CertificateSafeBag_m2143586463 (PKCS12_t29
 		ASN1_t1254135647 * L_6 = ContentInfo_get_Content_m2793987994(L_5, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_7 = V_0;
 		NullCheck(L_6);
-		ASN1_Add_m1424422628(L_6, L_7, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_6, L_7, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_8 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_8, ((int32_t)160), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_8, ((int32_t)160), /*hidden argument*/NULL);
 		V_2 = L_8;
 		ASN1_t1254135647 * L_9 = V_2;
 		ContentInfo_t1278398632 * L_10 = V_1;
 		NullCheck(L_10);
 		ASN1_t1254135647 * L_11 = ContentInfo_get_ASN1_m2914115734(L_10, /*hidden argument*/NULL);
 		NullCheck(L_9);
-		ASN1_Add_m1424422628(L_9, L_11, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_9, L_11, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_12 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_12, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_12, ((int32_t)48), /*hidden argument*/NULL);
 		V_3 = L_12;
 		ASN1_t1254135647 * L_13 = V_3;
 		ASN1_t1254135647 * L_14 = ASN1Convert_FromOid_m1663059922(NULL /*static, unused*/, _stringLiteral3902436163, /*hidden argument*/NULL);
 		NullCheck(L_13);
-		ASN1_Add_m1424422628(L_13, L_14, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_13, L_14, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_15 = V_3;
 		ASN1_t1254135647 * L_16 = V_2;
 		NullCheck(L_15);
-		ASN1_Add_m1424422628(L_15, L_16, /*hidden argument*/NULL);
-		Il2CppObject * L_17 = ___attributes;
+		ASN1_Add_m3856133576(L_15, L_16, /*hidden argument*/NULL);
+		Il2CppObject * L_17 = ___attributes1;
 		if (!L_17)
 		{
 			goto IL_0287;
@@ -4074,11 +4074,11 @@ extern "C"  ASN1_t1254135647 * PKCS12_CertificateSafeBag_m2143586463 (PKCS12_t29
 	}
 	{
 		ASN1_t1254135647 * L_18 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_18, ((int32_t)49), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_18, ((int32_t)49), /*hidden argument*/NULL);
 		V_4 = L_18;
-		Il2CppObject * L_19 = ___attributes;
+		Il2CppObject * L_19 = ___attributes1;
 		NullCheck(L_19);
-		Il2CppObject * L_20 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(5 /* System.Collections.IDictionaryEnumerator System.Collections.IDictionary::GetEnumerator() */, IDictionary_t1654916945_il2cpp_TypeInfo_var, L_19);
+		Il2CppObject * L_20 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(4 /* System.Collections.IDictionaryEnumerator System.Collections.IDictionary::GetEnumerator() */, IDictionary_t1654916945_il2cpp_TypeInfo_var, L_19);
 		V_5 = L_20;
 		goto IL_0265;
 	}
@@ -4126,7 +4126,7 @@ IL_00cc:
 		Dictionary_2_t190145395 * L_30 = ((PKCS12_t2950126080_StaticFields*)PKCS12_t2950126080_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24mapC_16();
 		String_t* L_31 = V_19;
 		NullCheck(L_30);
-		bool L_32 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_30, L_31, (&V_21));
+		bool L_32 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_30, L_31, (&V_21));
 		if (!L_32)
 		{
 			goto IL_0260;
@@ -4166,14 +4166,14 @@ IL_00f3:
 	}
 	{
 		ASN1_t1254135647 * L_39 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_39, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_39, ((int32_t)48), /*hidden argument*/NULL);
 		V_8 = L_39;
 		ASN1_t1254135647 * L_40 = V_8;
 		ASN1_t1254135647 * L_41 = ASN1Convert_FromOid_m1663059922(NULL /*static, unused*/, _stringLiteral3743575364, /*hidden argument*/NULL);
 		NullCheck(L_40);
-		ASN1_Add_m1424422628(L_40, L_41, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_40, L_41, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_42 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_42, ((int32_t)49), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_42, ((int32_t)49), /*hidden argument*/NULL);
 		V_9 = L_42;
 		ArrayList_t2121638921 * L_43 = V_7;
 		NullCheck(L_43);
@@ -4195,7 +4195,7 @@ IL_0140:
 			Il2CppObject * L_46 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(0 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t287207039_il2cpp_TypeInfo_var, L_45);
 			V_10 = ((ByteU5BU5D_t58506160*)Castclass(L_46, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var));
 			ASN1_t1254135647 * L_47 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-			ASN1__ctor_m3086925575(L_47, ((int32_t)30), /*hidden argument*/NULL);
+			ASN1__ctor_m1084222443(L_47, ((int32_t)30), /*hidden argument*/NULL);
 			V_12 = L_47;
 			ASN1_t1254135647 * L_48 = V_12;
 			ByteU5BU5D_t58506160* L_49 = V_10;
@@ -4204,7 +4204,7 @@ IL_0140:
 			ASN1_t1254135647 * L_50 = V_9;
 			ASN1_t1254135647 * L_51 = V_12;
 			NullCheck(L_50);
-			ASN1_Add_m1424422628(L_50, L_51, /*hidden argument*/NULL);
+			ASN1_Add_m3856133576(L_50, L_51, /*hidden argument*/NULL);
 		}
 
 IL_016a:
@@ -4265,11 +4265,11 @@ IL_0191:
 		ASN1_t1254135647 * L_57 = V_8;
 		ASN1_t1254135647 * L_58 = V_9;
 		NullCheck(L_57);
-		ASN1_Add_m1424422628(L_57, L_58, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_57, L_58, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_59 = V_4;
 		ASN1_t1254135647 * L_60 = V_8;
 		NullCheck(L_59);
-		ASN1_Add_m1424422628(L_59, L_60, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_59, L_60, /*hidden argument*/NULL);
 	}
 
 IL_01a5:
@@ -4293,14 +4293,14 @@ IL_01aa:
 	}
 	{
 		ASN1_t1254135647 * L_65 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_65, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_65, ((int32_t)48), /*hidden argument*/NULL);
 		V_14 = L_65;
 		ASN1_t1254135647 * L_66 = V_14;
 		ASN1_t1254135647 * L_67 = ASN1Convert_FromOid_m1663059922(NULL /*static, unused*/, _stringLiteral3743575365, /*hidden argument*/NULL);
 		NullCheck(L_66);
-		ASN1_Add_m1424422628(L_66, L_67, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_66, L_67, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_68 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_68, ((int32_t)49), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_68, ((int32_t)49), /*hidden argument*/NULL);
 		V_15 = L_68;
 		ArrayList_t2121638921 * L_69 = V_13;
 		NullCheck(L_69);
@@ -4322,7 +4322,7 @@ IL_01f7:
 			Il2CppObject * L_72 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(0 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t287207039_il2cpp_TypeInfo_var, L_71);
 			V_16 = ((ByteU5BU5D_t58506160*)Castclass(L_72, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var));
 			ASN1_t1254135647 * L_73 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-			ASN1__ctor_m3086925575(L_73, 4, /*hidden argument*/NULL);
+			ASN1__ctor_m1084222443(L_73, 4, /*hidden argument*/NULL);
 			V_18 = L_73;
 			ASN1_t1254135647 * L_74 = V_18;
 			ByteU5BU5D_t58506160* L_75 = V_16;
@@ -4331,7 +4331,7 @@ IL_01f7:
 			ASN1_t1254135647 * L_76 = V_15;
 			ASN1_t1254135647 * L_77 = V_18;
 			NullCheck(L_76);
-			ASN1_Add_m1424422628(L_76, L_77, /*hidden argument*/NULL);
+			ASN1_Add_m3856133576(L_76, L_77, /*hidden argument*/NULL);
 		}
 
 IL_0220:
@@ -4392,11 +4392,11 @@ IL_0247:
 		ASN1_t1254135647 * L_83 = V_14;
 		ASN1_t1254135647 * L_84 = V_15;
 		NullCheck(L_83);
-		ASN1_Add_m1424422628(L_83, L_84, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_83, L_84, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_85 = V_4;
 		ASN1_t1254135647 * L_86 = V_14;
 		NullCheck(L_85);
-		ASN1_Add_m1424422628(L_85, L_86, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_85, L_86, /*hidden argument*/NULL);
 	}
 
 IL_025b:
@@ -4422,7 +4422,7 @@ IL_0265:
 	{
 		ASN1_t1254135647 * L_89 = V_4;
 		NullCheck(L_89);
-		int32_t L_90 = ASN1_get_Count_m2214472120(L_89, /*hidden argument*/NULL);
+		int32_t L_90 = ASN1_get_Count_m3031159196(L_89, /*hidden argument*/NULL);
 		if ((((int32_t)L_90) <= ((int32_t)0)))
 		{
 			goto IL_0287;
@@ -4432,7 +4432,7 @@ IL_0265:
 		ASN1_t1254135647 * L_91 = V_3;
 		ASN1_t1254135647 * L_92 = V_4;
 		NullCheck(L_91);
-		ASN1_Add_m1424422628(L_91, L_92, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_91, L_92, /*hidden argument*/NULL);
 	}
 
 IL_0287:
@@ -4442,11 +4442,11 @@ IL_0287:
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12::MAC(System.Byte[],System.Byte[],System.Int32,System.Byte[])
-extern TypeInfo* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
-extern TypeInfo* HMACSHA1_t4029397701_il2cpp_TypeInfo_var;
+extern Il2CppClass* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
+extern Il2CppClass* HMACSHA1_t4029397701_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2543909;
 extern const uint32_t PKCS12_MAC_m1203837730_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* PKCS12_MAC_m1203837730 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___password, ByteU5BU5D_t58506160* ___salt, int32_t ___iterations, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* PKCS12_MAC_m1203837730 (PKCS12_t2950126080 * __this, ByteU5BU5D_t58506160* ___password0, ByteU5BU5D_t58506160* ___salt1, int32_t ___iterations2, ByteU5BU5D_t58506160* ___data3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -4464,15 +4464,15 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_MAC_m1203837730 (PKCS12_t2950126080 * _
 		NullCheck(L_1);
 		DeriveBytes_set_HashName_m2086526224(L_1, _stringLiteral2543909, /*hidden argument*/NULL);
 		DeriveBytes_t2715912549 * L_2 = V_0;
-		ByteU5BU5D_t58506160* L_3 = ___password;
+		ByteU5BU5D_t58506160* L_3 = ___password0;
 		NullCheck(L_2);
 		DeriveBytes_set_Password_m2839198645(L_2, L_3, /*hidden argument*/NULL);
 		DeriveBytes_t2715912549 * L_4 = V_0;
-		ByteU5BU5D_t58506160* L_5 = ___salt;
+		ByteU5BU5D_t58506160* L_5 = ___salt1;
 		NullCheck(L_4);
 		DeriveBytes_set_Salt_m801246362(L_4, L_5, /*hidden argument*/NULL);
 		DeriveBytes_t2715912549 * L_6 = V_0;
-		int32_t L_7 = ___iterations;
+		int32_t L_7 = ___iterations2;
 		NullCheck(L_6);
 		DeriveBytes_set_IterationCount_m35620668(L_6, L_7, /*hidden argument*/NULL);
 		HMAC_t1559704864 * L_8 = HMAC_Create_m3219387469(NULL /*static, unused*/, /*hidden argument*/NULL);
@@ -4484,8 +4484,8 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_MAC_m1203837730 (PKCS12_t2950126080 * _
 		NullCheck(L_9);
 		VirtActionInvoker1< ByteU5BU5D_t58506160* >::Invoke(16 /* System.Void System.Security.Cryptography.HMAC::set_Key(System.Byte[]) */, L_9, L_11);
 		HMACSHA1_t4029397701 * L_12 = V_1;
-		ByteU5BU5D_t58506160* L_13 = ___data;
-		ByteU5BU5D_t58506160* L_14 = ___data;
+		ByteU5BU5D_t58506160* L_13 = ___data3;
+		ByteU5BU5D_t58506160* L_14 = ___data3;
 		NullCheck(L_14);
 		NullCheck(L_12);
 		ByteU5BU5D_t58506160* L_15 = HashAlgorithm_ComputeHash_m2755161132(L_12, L_13, 0, (((int32_t)((int32_t)(((Il2CppArray *)L_14)->max_length)))), /*hidden argument*/NULL);
@@ -4493,14 +4493,14 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_MAC_m1203837730 (PKCS12_t2950126080 * _
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12::GetBytes()
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
-extern TypeInfo* SafeBag_t4111116303_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* SafeBag_t4111116303_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3902436163;
 extern Il2CppCodeGenString* _stringLiteral2462842202;
 extern Il2CppCodeGenString* _stringLiteral3902436161;
@@ -4527,7 +4527,7 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_GetBytes_m1971373682 (PKCS12_t295012608
 	ArrayList_t2121638921 * V_7 = NULL;
 	ArrayList_t2121638921 * V_8 = NULL;
 	X509Certificate_t273828613 * V_9 = NULL;
-	X509CertificateEnumerator_t3569011383 * V_10 = NULL;
+	X509CertificateEnumerator_t3569011382 * V_10 = NULL;
 	bool V_11 = false;
 	X509Certificate_t273828613 * V_12 = NULL;
 	Il2CppObject * V_13 = NULL;
@@ -4535,7 +4535,7 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_GetBytes_m1971373682 (PKCS12_t295012608
 	Il2CppObject * V_15 = NULL;
 	bool V_16 = false;
 	X509Certificate_t273828613 * V_17 = NULL;
-	X509CertificateEnumerator_t3569011383 * V_18 = NULL;
+	X509CertificateEnumerator_t3569011382 * V_18 = NULL;
 	X509Certificate_t273828613 * V_19 = NULL;
 	Il2CppObject * V_20 = NULL;
 	X509Certificate_t273828613 * V_21 = NULL;
@@ -4581,7 +4581,7 @@ extern "C"  ByteU5BU5D_t58506160* PKCS12_GetBytes_m1971373682 (PKCS12_t295012608
 	NO_UNUSED_WARNING (__leave_target);
 	{
 		ASN1_t1254135647 * L_0 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_0, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_0, ((int32_t)48), /*hidden argument*/NULL);
 		V_0 = L_0;
 		ArrayList_t2121638921 * L_1 = (ArrayList_t2121638921 *)il2cpp_codegen_object_new(ArrayList_t2121638921_il2cpp_TypeInfo_var);
 		ArrayList__ctor_m1878432947(L_1, /*hidden argument*/NULL);
@@ -4624,11 +4624,11 @@ IL_0040:
 			V_4 = L_10;
 			ASN1_t1254135647 * L_11 = V_4;
 			NullCheck(L_11);
-			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3727278260(L_11, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3112983888(L_11, 1, /*hidden argument*/NULL);
 			V_5 = L_12;
 			ASN1_t1254135647 * L_13 = V_5;
 			NullCheck(L_13);
-			ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m390067040(L_13, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_14 = ASN1_get_Value_m4232529916(L_13, /*hidden argument*/NULL);
 			ContentInfo_t1278398632 * L_15 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 			ContentInfo__ctor_m2758504540(L_15, L_14, /*hidden argument*/NULL);
 			V_6 = L_15;
@@ -4637,11 +4637,11 @@ IL_0040:
 			NullCheck(L_17);
 			ASN1_t1254135647 * L_18 = ContentInfo_get_Content_m2793987994(L_17, /*hidden argument*/NULL);
 			NullCheck(L_18);
-			ASN1_t1254135647 * L_19 = ASN1_get_Item_m3727278260(L_18, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_19 = ASN1_get_Item_m3112983888(L_18, 0, /*hidden argument*/NULL);
 			NullCheck(L_19);
-			ByteU5BU5D_t58506160* L_20 = ASN1_get_Value_m390067040(L_19, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_20 = ASN1_get_Value_m4232529916(L_19, /*hidden argument*/NULL);
 			X509Certificate_t273828613 * L_21 = (X509Certificate_t273828613 *)il2cpp_codegen_object_new(X509Certificate_t273828613_il2cpp_TypeInfo_var);
-			X509Certificate__ctor_m1688356825(L_21, L_20, /*hidden argument*/NULL);
+			X509Certificate__ctor_m3683615677(L_21, L_20, /*hidden argument*/NULL);
 			NullCheck(L_16);
 			VirtFuncInvoker1< int32_t, Il2CppObject * >::Invoke(30 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_16, L_21);
 		}
@@ -4707,9 +4707,9 @@ IL_00a3:
 		ArrayList_t2121638921 * L_28 = (ArrayList_t2121638921 *)il2cpp_codegen_object_new(ArrayList_t2121638921_il2cpp_TypeInfo_var);
 		ArrayList__ctor_m1878432947(L_28, /*hidden argument*/NULL);
 		V_8 = L_28;
-		X509CertificateCollection_t3336811651 * L_29 = PKCS12_get_Certificates_m425759547(__this, /*hidden argument*/NULL);
+		X509CertificateCollection_t3336811651 * L_29 = PKCS12_get_Certificates_m1930169375(__this, /*hidden argument*/NULL);
 		NullCheck(L_29);
-		X509CertificateEnumerator_t3569011383 * L_30 = X509CertificateCollection_GetEnumerator_m2226643995(L_29, /*hidden argument*/NULL);
+		X509CertificateEnumerator_t3569011382 * L_30 = X509CertificateCollection_GetEnumerator_m1926496255(L_29, /*hidden argument*/NULL);
 		V_10 = L_30;
 	}
 
@@ -4722,9 +4722,9 @@ IL_00be:
 
 IL_00c3:
 		{
-			X509CertificateEnumerator_t3569011383 * L_31 = V_10;
+			X509CertificateEnumerator_t3569011382 * L_31 = V_10;
 			NullCheck(L_31);
-			X509Certificate_t273828613 * L_32 = X509CertificateEnumerator_get_Current_m1696796071(L_31, /*hidden argument*/NULL);
+			X509Certificate_t273828613 * L_32 = X509CertificateEnumerator_get_Current_m2126438283(L_31, /*hidden argument*/NULL);
 			V_9 = L_32;
 			V_11 = (bool)0;
 			ArrayList_t2121638921 * L_33 = V_1;
@@ -4836,7 +4836,7 @@ IL_0134:
 
 IL_013e:
 		{
-			X509CertificateEnumerator_t3569011383 * L_50 = V_10;
+			X509CertificateEnumerator_t3569011382 * L_50 = V_10;
 			NullCheck(L_50);
 			bool L_51 = VirtFuncInvoker0< bool >::Invoke(7 /* System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext() */, L_50);
 			if (L_51)
@@ -4859,7 +4859,7 @@ IL_014a:
 FINALLY_014f:
 	{ // begin finally (depth: 1)
 		{
-			X509CertificateEnumerator_t3569011383 * L_52 = V_10;
+			X509CertificateEnumerator_t3569011382 * L_52 = V_10;
 			V_48 = ((Il2CppObject *)IsInst(L_52, IDisposable_t1628921374_il2cpp_TypeInfo_var));
 			Il2CppObject * L_53 = V_48;
 			if (L_53)
@@ -4909,9 +4909,9 @@ IL_0172:
 			Il2CppObject * L_58 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(0 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t287207039_il2cpp_TypeInfo_var, L_57);
 			V_14 = ((X509Certificate_t273828613 *)CastclassClass(L_58, X509Certificate_t273828613_il2cpp_TypeInfo_var));
 			V_16 = (bool)0;
-			X509CertificateCollection_t3336811651 * L_59 = PKCS12_get_Certificates_m425759547(__this, /*hidden argument*/NULL);
+			X509CertificateCollection_t3336811651 * L_59 = PKCS12_get_Certificates_m1930169375(__this, /*hidden argument*/NULL);
 			NullCheck(L_59);
-			X509CertificateEnumerator_t3569011383 * L_60 = X509CertificateCollection_GetEnumerator_m2226643995(L_59, /*hidden argument*/NULL);
+			X509CertificateEnumerator_t3569011382 * L_60 = X509CertificateCollection_GetEnumerator_m1926496255(L_59, /*hidden argument*/NULL);
 			V_18 = L_60;
 		}
 
@@ -4924,9 +4924,9 @@ IL_0190:
 
 IL_0195:
 			{
-				X509CertificateEnumerator_t3569011383 * L_61 = V_18;
+				X509CertificateEnumerator_t3569011382 * L_61 = V_18;
 				NullCheck(L_61);
-				X509Certificate_t273828613 * L_62 = X509CertificateEnumerator_get_Current_m1696796071(L_61, /*hidden argument*/NULL);
+				X509Certificate_t273828613 * L_62 = X509CertificateEnumerator_get_Current_m2126438283(L_61, /*hidden argument*/NULL);
 				V_17 = L_62;
 				X509Certificate_t273828613 * L_63 = V_14;
 				NullCheck(L_63);
@@ -4948,7 +4948,7 @@ IL_01b7:
 
 IL_01ba:
 			{
-				X509CertificateEnumerator_t3569011383 * L_68 = V_18;
+				X509CertificateEnumerator_t3569011382 * L_68 = V_18;
 				NullCheck(L_68);
 				bool L_69 = VirtFuncInvoker0< bool >::Invoke(7 /* System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext() */, L_68);
 				if (L_69)
@@ -4971,7 +4971,7 @@ IL_01c6:
 FINALLY_01cb:
 		{ // begin finally (depth: 2)
 			{
-				X509CertificateEnumerator_t3569011383 * L_70 = V_18;
+				X509CertificateEnumerator_t3569011382 * L_70 = V_18;
 				V_49 = ((Il2CppObject *)IsInst(L_70, IDisposable_t1628921374_il2cpp_TypeInfo_var));
 				Il2CppObject * L_71 = V_49;
 				if (L_71)
@@ -5237,7 +5237,7 @@ IL_02af:
 	}
 	{
 		ASN1_t1254135647 * L_103 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_103, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_103, ((int32_t)48), /*hidden argument*/NULL);
 		V_23 = L_103;
 		ArrayList_t2121638921 * L_104 = __this->get__safeBags_9();
 		NullCheck(L_104);
@@ -5276,7 +5276,7 @@ IL_02ff:
 			NullCheck(L_112);
 			ASN1_t1254135647 * L_113 = SafeBag_get_ASN1_m3365953951(L_112, /*hidden argument*/NULL);
 			NullCheck(L_111);
-			ASN1_Add_m1424422628(L_111, L_113, /*hidden argument*/NULL);
+			ASN1_Add_m3856133576(L_111, L_113, /*hidden argument*/NULL);
 		}
 
 IL_030e:
@@ -5336,7 +5336,7 @@ IL_0335:
 	{
 		ASN1_t1254135647 * L_119 = V_23;
 		NullCheck(L_119);
-		int32_t L_120 = ASN1_get_Count_m2214472120(L_119, /*hidden argument*/NULL);
+		int32_t L_120 = ASN1_get_Count_m3031159196(L_119, /*hidden argument*/NULL);
 		if ((((int32_t)L_120) <= ((int32_t)0)))
 		{
 			goto IL_035f;
@@ -5351,7 +5351,7 @@ IL_0335:
 		NullCheck(L_124);
 		ASN1_t1254135647 * L_125 = ContentInfo_get_ASN1_m2914115734(L_124, /*hidden argument*/NULL);
 		NullCheck(L_123);
-		ASN1_Add_m1424422628(L_123, L_125, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_123, L_125, /*hidden argument*/NULL);
 	}
 
 IL_035f:
@@ -5366,7 +5366,7 @@ IL_035f:
 	}
 	{
 		ASN1_t1254135647 * L_128 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_128, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_128, ((int32_t)48), /*hidden argument*/NULL);
 		V_27 = L_128;
 		ArrayList_t2121638921 * L_129 = __this->get__safeBags_9();
 		NullCheck(L_129);
@@ -5418,7 +5418,7 @@ IL_03c5:
 			NullCheck(L_140);
 			ASN1_t1254135647 * L_141 = SafeBag_get_ASN1_m3365953951(L_140, /*hidden argument*/NULL);
 			NullCheck(L_139);
-			ASN1_Add_m1424422628(L_139, L_141, /*hidden argument*/NULL);
+			ASN1_Add_m3856133576(L_139, L_141, /*hidden argument*/NULL);
 		}
 
 IL_03d4:
@@ -5478,7 +5478,7 @@ IL_03fb:
 	{
 		ASN1_t1254135647 * L_147 = V_27;
 		NullCheck(L_147);
-		int32_t L_148 = ASN1_get_Count_m2214472120(L_147, /*hidden argument*/NULL);
+		int32_t L_148 = ASN1_get_Count_m3031159196(L_147, /*hidden argument*/NULL);
 		if ((((int32_t)L_148) <= ((int32_t)0)))
 		{
 			goto IL_044c;
@@ -5486,16 +5486,16 @@ IL_03fb:
 	}
 	{
 		ASN1_t1254135647 * L_149 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_149, ((int32_t)160), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_149, ((int32_t)160), /*hidden argument*/NULL);
 		V_30 = L_149;
 		ASN1_t1254135647 * L_150 = V_30;
 		ASN1_t1254135647 * L_151 = V_27;
 		NullCheck(L_151);
 		ByteU5BU5D_t58506160* L_152 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Byte[] Mono.Security.ASN1::GetBytes() */, L_151);
 		ASN1_t1254135647 * L_153 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_153, 4, L_152, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_153, 4, L_152, /*hidden argument*/NULL);
 		NullCheck(L_150);
-		ASN1_Add_m1424422628(L_150, L_153, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_150, L_153, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_154 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m521342869(L_154, _stringLiteral2198968553, /*hidden argument*/NULL);
 		V_31 = L_154;
@@ -5508,7 +5508,7 @@ IL_03fb:
 		NullCheck(L_158);
 		ASN1_t1254135647 * L_159 = ContentInfo_get_ASN1_m2914115734(L_158, /*hidden argument*/NULL);
 		NullCheck(L_157);
-		ASN1_Add_m1424422628(L_157, L_159, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_157, L_159, /*hidden argument*/NULL);
 	}
 
 IL_044c:
@@ -5523,7 +5523,7 @@ IL_044c:
 	}
 	{
 		ASN1_t1254135647 * L_162 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_162, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_162, ((int32_t)48), /*hidden argument*/NULL);
 		V_32 = L_162;
 		ArrayList_t2121638921 * L_163 = __this->get__safeBags_9();
 		NullCheck(L_163);
@@ -5562,7 +5562,7 @@ IL_049c:
 			NullCheck(L_171);
 			ASN1_t1254135647 * L_172 = SafeBag_get_ASN1_m3365953951(L_171, /*hidden argument*/NULL);
 			NullCheck(L_170);
-			ASN1_Add_m1424422628(L_170, L_172, /*hidden argument*/NULL);
+			ASN1_Add_m3856133576(L_170, L_172, /*hidden argument*/NULL);
 		}
 
 IL_04ab:
@@ -5622,7 +5622,7 @@ IL_04d2:
 	{
 		ASN1_t1254135647 * L_178 = V_32;
 		NullCheck(L_178);
-		int32_t L_179 = ASN1_get_Count_m2214472120(L_178, /*hidden argument*/NULL);
+		int32_t L_179 = ASN1_get_Count_m3031159196(L_178, /*hidden argument*/NULL);
 		if ((((int32_t)L_179) <= ((int32_t)0)))
 		{
 			goto IL_04fc;
@@ -5637,7 +5637,7 @@ IL_04d2:
 		NullCheck(L_183);
 		ASN1_t1254135647 * L_184 = ContentInfo_get_ASN1_m2914115734(L_183, /*hidden argument*/NULL);
 		NullCheck(L_182);
-		ASN1_Add_m1424422628(L_182, L_184, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_182, L_184, /*hidden argument*/NULL);
 	}
 
 IL_04fc:
@@ -5646,15 +5646,15 @@ IL_04fc:
 		NullCheck(L_185);
 		ByteU5BU5D_t58506160* L_186 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Byte[] Mono.Security.ASN1::GetBytes() */, L_185);
 		ASN1_t1254135647 * L_187 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_187, 4, L_186, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_187, 4, L_186, /*hidden argument*/NULL);
 		V_36 = L_187;
 		ASN1_t1254135647 * L_188 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_188, ((int32_t)160), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_188, ((int32_t)160), /*hidden argument*/NULL);
 		V_37 = L_188;
 		ASN1_t1254135647 * L_189 = V_37;
 		ASN1_t1254135647 * L_190 = V_36;
 		NullCheck(L_189);
-		ASN1_Add_m1424422628(L_189, L_190, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_189, L_190, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_191 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m521342869(L_191, _stringLiteral2198968553, /*hidden argument*/NULL);
 		V_38 = L_191;
@@ -5663,7 +5663,7 @@ IL_04fc:
 		NullCheck(L_192);
 		ContentInfo_set_Content_m2661678287(L_192, L_193, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_194 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_194, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_194, ((int32_t)48), /*hidden argument*/NULL);
 		V_39 = L_194;
 		ByteU5BU5D_t58506160* L_195 = __this->get__password_1();
 		if (!L_195)
@@ -5684,51 +5684,51 @@ IL_04fc:
 		NullCheck(L_201);
 		ASN1_t1254135647 * L_202 = ContentInfo_get_Content_m2793987994(L_201, /*hidden argument*/NULL);
 		NullCheck(L_202);
-		ASN1_t1254135647 * L_203 = ASN1_get_Item_m3727278260(L_202, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_203 = ASN1_get_Item_m3112983888(L_202, 0, /*hidden argument*/NULL);
 		NullCheck(L_203);
-		ByteU5BU5D_t58506160* L_204 = ASN1_get_Value_m390067040(L_203, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_204 = ASN1_get_Value_m4232529916(L_203, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_205 = PKCS12_MAC_m1203837730(__this, L_198, L_199, L_200, L_204, /*hidden argument*/NULL);
 		V_41 = L_205;
 		ASN1_t1254135647 * L_206 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_206, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_206, ((int32_t)48), /*hidden argument*/NULL);
 		V_42 = L_206;
 		ASN1_t1254135647 * L_207 = V_42;
 		ASN1_t1254135647 * L_208 = ASN1Convert_FromOid_m1663059922(NULL /*static, unused*/, _stringLiteral3986536014, /*hidden argument*/NULL);
 		NullCheck(L_207);
-		ASN1_Add_m1424422628(L_207, L_208, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_207, L_208, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_209 = V_42;
 		ASN1_t1254135647 * L_210 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_210, 5, /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_210, 5, /*hidden argument*/NULL);
 		NullCheck(L_209);
-		ASN1_Add_m1424422628(L_209, L_210, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_209, L_210, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_211 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_211, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_211, ((int32_t)48), /*hidden argument*/NULL);
 		V_43 = L_211;
 		ASN1_t1254135647 * L_212 = V_43;
 		ASN1_t1254135647 * L_213 = V_42;
 		NullCheck(L_212);
-		ASN1_Add_m1424422628(L_212, L_213, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_212, L_213, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_214 = V_43;
 		ByteU5BU5D_t58506160* L_215 = V_41;
 		ASN1_t1254135647 * L_216 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_216, 4, L_215, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_216, 4, L_215, /*hidden argument*/NULL);
 		NullCheck(L_214);
-		ASN1_Add_m1424422628(L_214, L_216, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_214, L_216, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_217 = V_39;
 		ASN1_t1254135647 * L_218 = V_43;
 		NullCheck(L_217);
-		ASN1_Add_m1424422628(L_217, L_218, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_217, L_218, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_219 = V_39;
 		ByteU5BU5D_t58506160* L_220 = V_40;
 		ASN1_t1254135647 * L_221 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_221, 4, L_220, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_221, 4, L_220, /*hidden argument*/NULL);
 		NullCheck(L_219);
-		ASN1_Add_m1424422628(L_219, L_221, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_219, L_221, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_222 = V_39;
 		int32_t L_223 = __this->get__iterations_8();
-		ASN1_t1254135647 * L_224 = ASN1Convert_FromInt32_m570537577(NULL /*static, unused*/, L_223, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_224 = ASN1Convert_FromInt32_m2294019845(NULL /*static, unused*/, L_223, /*hidden argument*/NULL);
 		NullCheck(L_222);
-		ASN1_Add_m1424422628(L_222, L_224, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_222, L_224, /*hidden argument*/NULL);
 	}
 
 IL_0600:
@@ -5738,24 +5738,24 @@ IL_0600:
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_225, 0);
 		(L_225)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)3);
 		ASN1_t1254135647 * L_226 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_226, 2, L_225, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_226, 2, L_225, /*hidden argument*/NULL);
 		V_44 = L_226;
 		ASN1_t1254135647 * L_227 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_227, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_227, ((int32_t)48), /*hidden argument*/NULL);
 		V_45 = L_227;
 		ASN1_t1254135647 * L_228 = V_45;
 		ASN1_t1254135647 * L_229 = V_44;
 		NullCheck(L_228);
-		ASN1_Add_m1424422628(L_228, L_229, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_228, L_229, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_230 = V_45;
 		ContentInfo_t1278398632 * L_231 = V_38;
 		NullCheck(L_231);
 		ASN1_t1254135647 * L_232 = ContentInfo_get_ASN1_m2914115734(L_231, /*hidden argument*/NULL);
 		NullCheck(L_230);
-		ASN1_Add_m1424422628(L_230, L_232, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_230, L_232, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_233 = V_39;
 		NullCheck(L_233);
-		int32_t L_234 = ASN1_get_Count_m2214472120(L_233, /*hidden argument*/NULL);
+		int32_t L_234 = ASN1_get_Count_m3031159196(L_233, /*hidden argument*/NULL);
 		if ((((int32_t)L_234) <= ((int32_t)0)))
 		{
 			goto IL_064b;
@@ -5765,7 +5765,7 @@ IL_0600:
 		ASN1_t1254135647 * L_235 = V_45;
 		ASN1_t1254135647 * L_236 = V_39;
 		NullCheck(L_235);
-		ASN1_Add_m1424422628(L_235, L_236, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_235, L_236, /*hidden argument*/NULL);
 	}
 
 IL_064b:
@@ -5777,13 +5777,13 @@ IL_064b:
 	}
 }
 // Mono.Security.PKCS7/ContentInfo Mono.Security.X509.PKCS12::EncryptedContentInfo(Mono.Security.ASN1,System.String)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2198968553;
 extern Il2CppCodeGenString* _stringLiteral2198968558;
 extern const uint32_t PKCS12_EncryptedContentInfo_m722640604_MetadataUsageId;
-extern "C"  ContentInfo_t1278398632 * PKCS12_EncryptedContentInfo_m722640604 (PKCS12_t2950126080 * __this, ASN1_t1254135647 * ___safeBags, String_t* ___algorithmOid, const MethodInfo* method)
+extern "C"  ContentInfo_t1278398632 * PKCS12_EncryptedContentInfo_m722640604 (PKCS12_t2950126080 * __this, ASN1_t1254135647 * ___safeBags0, String_t* ___algorithmOid1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -5808,79 +5808,79 @@ extern "C"  ContentInfo_t1278398632 * PKCS12_EncryptedContentInfo_m722640604 (PK
 		NullCheck(L_0);
 		VirtActionInvoker1< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Void System.Security.Cryptography.RandomNumberGenerator::GetBytes(System.Byte[]) */, L_0, L_1);
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_2, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_2, ((int32_t)48), /*hidden argument*/NULL);
 		V_1 = L_2;
 		ASN1_t1254135647 * L_3 = V_1;
 		ByteU5BU5D_t58506160* L_4 = V_0;
 		ASN1_t1254135647 * L_5 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_5, 4, L_4, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_5, 4, L_4, /*hidden argument*/NULL);
 		NullCheck(L_3);
-		ASN1_Add_m1424422628(L_3, L_5, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_3, L_5, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_6 = V_1;
 		int32_t L_7 = __this->get__iterations_8();
-		ASN1_t1254135647 * L_8 = ASN1Convert_FromInt32_m570537577(NULL /*static, unused*/, L_7, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_8 = ASN1Convert_FromInt32_m2294019845(NULL /*static, unused*/, L_7, /*hidden argument*/NULL);
 		NullCheck(L_6);
-		ASN1_Add_m1424422628(L_6, L_8, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_6, L_8, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_9 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_9, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_9, ((int32_t)48), /*hidden argument*/NULL);
 		V_2 = L_9;
 		ASN1_t1254135647 * L_10 = V_2;
-		String_t* L_11 = ___algorithmOid;
+		String_t* L_11 = ___algorithmOid1;
 		ASN1_t1254135647 * L_12 = ASN1Convert_FromOid_m1663059922(NULL /*static, unused*/, L_11, /*hidden argument*/NULL);
 		NullCheck(L_10);
-		ASN1_Add_m1424422628(L_10, L_12, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_10, L_12, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_13 = V_2;
 		ASN1_t1254135647 * L_14 = V_1;
 		NullCheck(L_13);
-		ASN1_Add_m1424422628(L_13, L_14, /*hidden argument*/NULL);
-		String_t* L_15 = ___algorithmOid;
+		ASN1_Add_m3856133576(L_13, L_14, /*hidden argument*/NULL);
+		String_t* L_15 = ___algorithmOid1;
 		ByteU5BU5D_t58506160* L_16 = V_0;
 		int32_t L_17 = __this->get__iterations_8();
-		ASN1_t1254135647 * L_18 = ___safeBags;
+		ASN1_t1254135647 * L_18 = ___safeBags0;
 		NullCheck(L_18);
 		ByteU5BU5D_t58506160* L_19 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Byte[] Mono.Security.ASN1::GetBytes() */, L_18);
 		ByteU5BU5D_t58506160* L_20 = PKCS12_Encrypt_m3283559711(__this, L_15, L_16, L_17, L_19, /*hidden argument*/NULL);
 		V_3 = L_20;
 		ByteU5BU5D_t58506160* L_21 = V_3;
 		ASN1_t1254135647 * L_22 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_22, ((int32_t)128), L_21, /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_22, ((int32_t)128), L_21, /*hidden argument*/NULL);
 		V_4 = L_22;
 		ASN1_t1254135647 * L_23 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_23, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_23, ((int32_t)48), /*hidden argument*/NULL);
 		V_5 = L_23;
 		ASN1_t1254135647 * L_24 = V_5;
 		ASN1_t1254135647 * L_25 = ASN1Convert_FromOid_m1663059922(NULL /*static, unused*/, _stringLiteral2198968553, /*hidden argument*/NULL);
 		NullCheck(L_24);
-		ASN1_Add_m1424422628(L_24, L_25, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_24, L_25, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_26 = V_5;
 		ASN1_t1254135647 * L_27 = V_2;
 		NullCheck(L_26);
-		ASN1_Add_m1424422628(L_26, L_27, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_26, L_27, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_28 = V_5;
 		ASN1_t1254135647 * L_29 = V_4;
 		NullCheck(L_28);
-		ASN1_Add_m1424422628(L_28, L_29, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_28, L_29, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_30 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m2727735242(L_30, 2, ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)1)), /*hidden argument*/NULL);
+		ASN1__ctor_m3139747246(L_30, 2, ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)1)), /*hidden argument*/NULL);
 		V_6 = L_30;
 		ASN1_t1254135647 * L_31 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_31, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_31, ((int32_t)48), /*hidden argument*/NULL);
 		V_7 = L_31;
 		ASN1_t1254135647 * L_32 = V_7;
 		ASN1_t1254135647 * L_33 = V_6;
 		NullCheck(L_32);
-		ASN1_Add_m1424422628(L_32, L_33, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_32, L_33, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_34 = V_7;
 		ASN1_t1254135647 * L_35 = V_5;
 		NullCheck(L_34);
-		ASN1_Add_m1424422628(L_34, L_35, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_34, L_35, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_36 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3086925575(L_36, ((int32_t)160), /*hidden argument*/NULL);
+		ASN1__ctor_m1084222443(L_36, ((int32_t)160), /*hidden argument*/NULL);
 		V_8 = L_36;
 		ASN1_t1254135647 * L_37 = V_8;
 		ASN1_t1254135647 * L_38 = V_7;
 		NullCheck(L_37);
-		ASN1_Add_m1424422628(L_37, L_38, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_37, L_38, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_39 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m521342869(L_39, _stringLiteral2198968558, /*hidden argument*/NULL);
 		V_9 = L_39;
@@ -5893,21 +5893,21 @@ extern "C"  ContentInfo_t1278398632 * PKCS12_EncryptedContentInfo_m722640604 (PK
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::AddCertificate(Mono.Security.X509.X509Certificate)
-extern "C"  void PKCS12_AddCertificate_m3895304625 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert, const MethodInfo* method)
+extern "C"  void PKCS12_AddCertificate_m3895304625 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert0, const MethodInfo* method)
 {
 	{
-		X509Certificate_t273828613 * L_0 = ___cert;
+		X509Certificate_t273828613 * L_0 = ___cert0;
 		PKCS12_AddCertificate_m710679726(__this, L_0, (Il2CppObject *)NULL, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::AddCertificate(Mono.Security.X509.X509Certificate,System.Collections.IDictionary)
-extern TypeInfo* SafeBag_t4111116303_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* SafeBag_t4111116303_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3902436163;
 extern const uint32_t PKCS12_AddCertificate_m710679726_MetadataUsageId;
-extern "C"  void PKCS12_AddCertificate_m710679726 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert, Il2CppObject * ___attributes, const MethodInfo* method)
+extern "C"  void PKCS12_AddCertificate_m710679726 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert0, Il2CppObject * ___attributes1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -5952,11 +5952,11 @@ IL_0009:
 		V_3 = L_7;
 		ASN1_t1254135647 * L_8 = V_3;
 		NullCheck(L_8);
-		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3727278260(L_8, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3112983888(L_8, 1, /*hidden argument*/NULL);
 		V_4 = L_9;
 		ASN1_t1254135647 * L_10 = V_4;
 		NullCheck(L_10);
-		ByteU5BU5D_t58506160* L_11 = ASN1_get_Value_m390067040(L_10, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_11 = ASN1_get_Value_m4232529916(L_10, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_12 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m2758504540(L_12, L_11, /*hidden argument*/NULL);
 		V_5 = L_12;
@@ -5964,13 +5964,13 @@ IL_0009:
 		NullCheck(L_13);
 		ASN1_t1254135647 * L_14 = ContentInfo_get_Content_m2793987994(L_13, /*hidden argument*/NULL);
 		NullCheck(L_14);
-		ASN1_t1254135647 * L_15 = ASN1_get_Item_m3727278260(L_14, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_15 = ASN1_get_Item_m3112983888(L_14, 0, /*hidden argument*/NULL);
 		NullCheck(L_15);
-		ByteU5BU5D_t58506160* L_16 = ASN1_get_Value_m390067040(L_15, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_16 = ASN1_get_Value_m4232529916(L_15, /*hidden argument*/NULL);
 		X509Certificate_t273828613 * L_17 = (X509Certificate_t273828613 *)il2cpp_codegen_object_new(X509Certificate_t273828613_il2cpp_TypeInfo_var);
-		X509Certificate__ctor_m1688356825(L_17, L_16, /*hidden argument*/NULL);
+		X509Certificate__ctor_m3683615677(L_17, L_16, /*hidden argument*/NULL);
 		V_6 = L_17;
-		X509Certificate_t273828613 * L_18 = ___cert;
+		X509Certificate_t273828613 * L_18 = ___cert0;
 		NullCheck(L_18);
 		ByteU5BU5D_t58506160* L_19 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(12 /* System.Byte[] Mono.Security.X509.X509Certificate::get_RawData() */, L_18);
 		X509Certificate_t273828613 * L_20 = V_6;
@@ -6021,8 +6021,8 @@ IL_009c:
 	}
 	{
 		ArrayList_t2121638921 * L_29 = __this->get__safeBags_9();
-		X509Certificate_t273828613 * L_30 = ___cert;
-		Il2CppObject * L_31 = ___attributes;
+		X509Certificate_t273828613 * L_30 = ___cert0;
+		Il2CppObject * L_31 = ___attributes1;
 		ASN1_t1254135647 * L_32 = PKCS12_CertificateSafeBag_m2143586463(__this, L_30, L_31, /*hidden argument*/NULL);
 		SafeBag_t4111116303 * L_33 = (SafeBag_t4111116303 *)il2cpp_codegen_object_new(SafeBag_t4111116303_il2cpp_TypeInfo_var);
 		SafeBag__ctor_m2711801934(L_33, _stringLiteral3902436163, L_32, /*hidden argument*/NULL);
@@ -6037,24 +6037,24 @@ IL_00c7:
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::RemoveCertificate(Mono.Security.X509.X509Certificate)
-extern "C"  void PKCS12_RemoveCertificate_m2867856866 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert, const MethodInfo* method)
+extern "C"  void PKCS12_RemoveCertificate_m2867856866 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert0, const MethodInfo* method)
 {
 	{
-		X509Certificate_t273828613 * L_0 = ___cert;
+		X509Certificate_t273828613 * L_0 = ___cert0;
 		PKCS12_RemoveCertificate_m2039050845(__this, L_0, (Il2CppObject *)NULL, /*hidden argument*/NULL);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12::RemoveCertificate(Mono.Security.X509.X509Certificate,System.Collections.IDictionary)
-extern TypeInfo* SafeBag_t4111116303_il2cpp_TypeInfo_var;
-extern TypeInfo* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* IDictionary_t1654916945_il2cpp_TypeInfo_var;
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* SafeBag_t4111116303_il2cpp_TypeInfo_var;
+extern Il2CppClass* ContentInfo_t1278398632_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDictionary_t1654916945_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3902436163;
 extern const uint32_t PKCS12_RemoveCertificate_m2039050845_MetadataUsageId;
-extern "C"  void PKCS12_RemoveCertificate_m2039050845 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert, Il2CppObject * ___attrs, const MethodInfo* method)
+extern "C"  void PKCS12_RemoveCertificate_m2039050845 (PKCS12_t2950126080 * __this, X509Certificate_t273828613 * ___cert0, Il2CppObject * ___attrs1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -6111,11 +6111,11 @@ IL_0009:
 		V_3 = L_7;
 		ASN1_t1254135647 * L_8 = V_3;
 		NullCheck(L_8);
-		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3727278260(L_8, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3112983888(L_8, 1, /*hidden argument*/NULL);
 		V_4 = L_9;
 		ASN1_t1254135647 * L_10 = V_4;
 		NullCheck(L_10);
-		ByteU5BU5D_t58506160* L_11 = ASN1_get_Value_m390067040(L_10, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_11 = ASN1_get_Value_m4232529916(L_10, /*hidden argument*/NULL);
 		ContentInfo_t1278398632 * L_12 = (ContentInfo_t1278398632 *)il2cpp_codegen_object_new(ContentInfo_t1278398632_il2cpp_TypeInfo_var);
 		ContentInfo__ctor_m2758504540(L_12, L_11, /*hidden argument*/NULL);
 		V_5 = L_12;
@@ -6123,13 +6123,13 @@ IL_0009:
 		NullCheck(L_13);
 		ASN1_t1254135647 * L_14 = ContentInfo_get_Content_m2793987994(L_13, /*hidden argument*/NULL);
 		NullCheck(L_14);
-		ASN1_t1254135647 * L_15 = ASN1_get_Item_m3727278260(L_14, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_15 = ASN1_get_Item_m3112983888(L_14, 0, /*hidden argument*/NULL);
 		NullCheck(L_15);
-		ByteU5BU5D_t58506160* L_16 = ASN1_get_Value_m390067040(L_15, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_16 = ASN1_get_Value_m4232529916(L_15, /*hidden argument*/NULL);
 		X509Certificate_t273828613 * L_17 = (X509Certificate_t273828613 *)il2cpp_codegen_object_new(X509Certificate_t273828613_il2cpp_TypeInfo_var);
-		X509Certificate__ctor_m1688356825(L_17, L_16, /*hidden argument*/NULL);
+		X509Certificate__ctor_m3683615677(L_17, L_16, /*hidden argument*/NULL);
 		V_6 = L_17;
-		X509Certificate_t273828613 * L_18 = ___cert;
+		X509Certificate_t273828613 * L_18 = ___cert0;
 		NullCheck(L_18);
 		ByteU5BU5D_t58506160* L_19 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(12 /* System.Byte[] Mono.Security.X509.X509Certificate::get_RawData() */, L_18);
 		X509Certificate_t273828613 * L_20 = V_6;
@@ -6142,7 +6142,7 @@ IL_0009:
 		}
 	}
 	{
-		Il2CppObject * L_23 = ___attrs;
+		Il2CppObject * L_23 = ___attrs1;
 		if (!L_23)
 		{
 			goto IL_0187;
@@ -6151,7 +6151,7 @@ IL_0009:
 	{
 		ASN1_t1254135647 * L_24 = V_3;
 		NullCheck(L_24);
-		int32_t L_25 = ASN1_get_Count_m2214472120(L_24, /*hidden argument*/NULL);
+		int32_t L_25 = ASN1_get_Count_m3031159196(L_24, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_25) == ((uint32_t)3))))
 		{
 			goto IL_0182;
@@ -6160,7 +6160,7 @@ IL_0009:
 	{
 		ASN1_t1254135647 * L_26 = V_3;
 		NullCheck(L_26);
-		ASN1_t1254135647 * L_27 = ASN1_get_Item_m3727278260(L_26, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_27 = ASN1_get_Item_m3112983888(L_26, 2, /*hidden argument*/NULL);
 		V_7 = L_27;
 		V_8 = 0;
 		V_9 = 0;
@@ -6172,16 +6172,16 @@ IL_00a5:
 		ASN1_t1254135647 * L_28 = V_7;
 		int32_t L_29 = V_9;
 		NullCheck(L_28);
-		ASN1_t1254135647 * L_30 = ASN1_get_Item_m3727278260(L_28, L_29, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_30 = ASN1_get_Item_m3112983888(L_28, L_29, /*hidden argument*/NULL);
 		V_10 = L_30;
 		ASN1_t1254135647 * L_31 = V_10;
 		NullCheck(L_31);
-		ASN1_t1254135647 * L_32 = ASN1_get_Item_m3727278260(L_31, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_32 = ASN1_get_Item_m3112983888(L_31, 0, /*hidden argument*/NULL);
 		V_11 = L_32;
 		ASN1_t1254135647 * L_33 = V_11;
-		String_t* L_34 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_33, /*hidden argument*/NULL);
+		String_t* L_34 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_33, /*hidden argument*/NULL);
 		V_12 = L_34;
-		Il2CppObject * L_35 = ___attrs;
+		Il2CppObject * L_35 = ___attrs1;
 		String_t* L_36 = V_12;
 		NullCheck(L_35);
 		Il2CppObject * L_37 = InterfaceFuncInvoker1< Il2CppObject *, Il2CppObject * >::Invoke(0 /* System.Object System.Collections.IDictionary::get_Item(System.Object) */, IDictionary_t1654916945_il2cpp_TypeInfo_var, L_35, L_36);
@@ -6195,14 +6195,14 @@ IL_00a5:
 	{
 		ASN1_t1254135647 * L_39 = V_10;
 		NullCheck(L_39);
-		ASN1_t1254135647 * L_40 = ASN1_get_Item_m3727278260(L_39, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_40 = ASN1_get_Item_m3112983888(L_39, 1, /*hidden argument*/NULL);
 		V_14 = L_40;
 		ArrayList_t2121638921 * L_41 = V_13;
 		NullCheck(L_41);
 		int32_t L_42 = VirtFuncInvoker0< int32_t >::Invoke(23 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_41);
 		ASN1_t1254135647 * L_43 = V_14;
 		NullCheck(L_43);
-		int32_t L_44 = ASN1_get_Count_m2214472120(L_43, /*hidden argument*/NULL);
+		int32_t L_44 = ASN1_get_Count_m3031159196(L_43, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_42) == ((uint32_t)L_44))))
 		{
 			goto IL_015e;
@@ -6219,7 +6219,7 @@ IL_0101:
 		ASN1_t1254135647 * L_45 = V_14;
 		int32_t L_46 = V_16;
 		NullCheck(L_45);
-		ASN1_t1254135647 * L_47 = ASN1_get_Item_m3727278260(L_45, L_46, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_47 = ASN1_get_Item_m3112983888(L_45, L_46, /*hidden argument*/NULL);
 		V_17 = L_47;
 		ArrayList_t2121638921 * L_48 = V_13;
 		int32_t L_49 = V_16;
@@ -6229,7 +6229,7 @@ IL_0101:
 		ByteU5BU5D_t58506160* L_51 = V_18;
 		ASN1_t1254135647 * L_52 = V_17;
 		NullCheck(L_52);
-		ByteU5BU5D_t58506160* L_53 = ASN1_get_Value_m390067040(L_52, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_53 = ASN1_get_Value_m4232529916(L_52, /*hidden argument*/NULL);
 		bool L_54 = PKCS12_Compare_m1707054334(__this, L_51, L_53, /*hidden argument*/NULL);
 		if (!L_54)
 		{
@@ -6252,7 +6252,7 @@ IL_013c:
 		int32_t L_57 = V_16;
 		ASN1_t1254135647 * L_58 = V_14;
 		NullCheck(L_58);
-		int32_t L_59 = ASN1_get_Count_m2214472120(L_58, /*hidden argument*/NULL);
+		int32_t L_59 = ASN1_get_Count_m3031159196(L_58, /*hidden argument*/NULL);
 		if ((((int32_t)L_57) < ((int32_t)L_59)))
 		{
 			goto IL_0101;
@@ -6262,7 +6262,7 @@ IL_013c:
 		int32_t L_60 = V_15;
 		ASN1_t1254135647 * L_61 = V_14;
 		NullCheck(L_61);
-		int32_t L_62 = ASN1_get_Count_m2214472120(L_61, /*hidden argument*/NULL);
+		int32_t L_62 = ASN1_get_Count_m3031159196(L_61, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_60) == ((uint32_t)L_62))))
 		{
 			goto IL_015e;
@@ -6284,7 +6284,7 @@ IL_0164:
 		int32_t L_65 = V_9;
 		ASN1_t1254135647 * L_66 = V_7;
 		NullCheck(L_66);
-		int32_t L_67 = ASN1_get_Count_m2214472120(L_66, /*hidden argument*/NULL);
+		int32_t L_67 = ASN1_get_Count_m3031159196(L_66, /*hidden argument*/NULL);
 		if ((((int32_t)L_65) < ((int32_t)L_67)))
 		{
 			goto IL_00a5;
@@ -6294,7 +6294,7 @@ IL_0164:
 		int32_t L_68 = V_8;
 		ASN1_t1254135647 * L_69 = V_7;
 		NullCheck(L_69);
-		int32_t L_70 = ASN1_get_Count_m2214472120(L_69, /*hidden argument*/NULL);
+		int32_t L_70 = ASN1_get_Count_m3031159196(L_69, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_68) == ((uint32_t)L_70))))
 		{
 			goto IL_0182;
@@ -6363,8 +6363,8 @@ IL_01bf:
 	}
 }
 // System.Object Mono.Security.X509.PKCS12::Clone()
-extern TypeInfo* Encoding_t180559927_il2cpp_TypeInfo_var;
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* Encoding_t180559927_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12_Clone_m668285869_MetadataUsageId;
 extern "C"  Il2CppObject * PKCS12_Clone_m668285869 (PKCS12_t2950126080 * __this, const MethodInfo* method)
 {
@@ -6391,7 +6391,7 @@ extern "C"  Il2CppObject * PKCS12_Clone_m668285869 (PKCS12_t2950126080 * __this,
 		NullCheck(L_2);
 		String_t* L_4 = VirtFuncInvoker1< String_t*, ByteU5BU5D_t58506160* >::Invoke(22 /* System.String System.Text.Encoding::GetString(System.Byte[]) */, L_2, L_3);
 		PKCS12_t2950126080 * L_5 = (PKCS12_t2950126080 *)il2cpp_codegen_object_new(PKCS12_t2950126080_il2cpp_TypeInfo_var);
-		PKCS12__ctor_m3732648396(L_5, L_1, L_4, /*hidden argument*/NULL);
+		PKCS12__ctor_m3870049384(L_5, L_1, L_4, /*hidden argument*/NULL);
 		V_0 = L_5;
 		goto IL_003a;
 	}
@@ -6400,7 +6400,7 @@ IL_002e:
 	{
 		ByteU5BU5D_t58506160* L_6 = PKCS12_GetBytes_m1971373682(__this, /*hidden argument*/NULL);
 		PKCS12_t2950126080 * L_7 = (PKCS12_t2950126080 *)il2cpp_codegen_object_new(PKCS12_t2950126080_il2cpp_TypeInfo_var);
-		PKCS12__ctor_m1570997648(L_7, L_6, /*hidden argument*/NULL);
+		PKCS12__ctor_m721197356(L_7, L_6, /*hidden argument*/NULL);
 		V_0 = L_7;
 	}
 
@@ -6415,7 +6415,7 @@ IL_003a:
 	}
 }
 // System.Int32 Mono.Security.X509.PKCS12::get_MaximumPasswordLength()
-extern TypeInfo* PKCS12_t2950126080_il2cpp_TypeInfo_var;
+extern Il2CppClass* PKCS12_t2950126080_il2cpp_TypeInfo_var;
 extern const uint32_t PKCS12_get_MaximumPasswordLength_m1083541051_MetadataUsageId;
 extern "C"  int32_t PKCS12_get_MaximumPasswordLength_m1083541051 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -6440,11 +6440,11 @@ extern "C"  void DeriveBytes__ctor_m4046501000 (DeriveBytes_t2715912549 * __this
 	}
 }
 // System.Void Mono.Security.X509.PKCS12/DeriveBytes::.cctor()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D11_6_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D12_7_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D13_8_FieldInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D11_6_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D12_7_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D13_8_FieldInfo_var;
 extern const uint32_t DeriveBytes__cctor_m405383205_MetadataUsageId;
 extern "C"  void DeriveBytes__cctor_m405383205 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -6456,39 +6456,39 @@ extern "C"  void DeriveBytes__cctor_m405383205 (Il2CppObject * __this /* static,
 	}
 	{
 		ByteU5BU5D_t58506160* L_0 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)64)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_0, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D11_6_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_0, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D11_6_FieldInfo_var), /*hidden argument*/NULL);
 		((DeriveBytes_t2715912549_StaticFields*)DeriveBytes_t2715912549_il2cpp_TypeInfo_var->static_fields)->set_keyDiversifier_0(L_0);
 		ByteU5BU5D_t58506160* L_1 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)64)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_1, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D12_7_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_1, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D12_7_FieldInfo_var), /*hidden argument*/NULL);
 		((DeriveBytes_t2715912549_StaticFields*)DeriveBytes_t2715912549_il2cpp_TypeInfo_var->static_fields)->set_ivDiversifier_1(L_1);
 		ByteU5BU5D_t58506160* L_2 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)64)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_2, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D13_8_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_2, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D13_8_FieldInfo_var), /*hidden argument*/NULL);
 		((DeriveBytes_t2715912549_StaticFields*)DeriveBytes_t2715912549_il2cpp_TypeInfo_var->static_fields)->set_macDiversifier_2(L_2);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12/DeriveBytes::set_HashName(System.String)
-extern "C"  void DeriveBytes_set_HashName_m2086526224 (DeriveBytes_t2715912549 * __this, String_t* ___value, const MethodInfo* method)
+extern "C"  void DeriveBytes_set_HashName_m2086526224 (DeriveBytes_t2715912549 * __this, String_t* ___value0, const MethodInfo* method)
 {
 	{
-		String_t* L_0 = ___value;
+		String_t* L_0 = ___value0;
 		__this->set__hashName_3(L_0);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12/DeriveBytes::set_IterationCount(System.Int32)
-extern "C"  void DeriveBytes_set_IterationCount_m35620668 (DeriveBytes_t2715912549 * __this, int32_t ___value, const MethodInfo* method)
+extern "C"  void DeriveBytes_set_IterationCount_m35620668 (DeriveBytes_t2715912549 * __this, int32_t ___value0, const MethodInfo* method)
 {
 	{
-		int32_t L_0 = ___value;
+		int32_t L_0 = ___value0;
 		__this->set__iterations_4(L_0);
 		return;
 	}
 }
 // System.Void Mono.Security.X509.PKCS12/DeriveBytes::set_Password(System.Byte[])
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t DeriveBytes_set_Password_m2839198645_MetadataUsageId;
-extern "C"  void DeriveBytes_set_Password_m2839198645 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___value, const MethodInfo* method)
+extern "C"  void DeriveBytes_set_Password_m2839198645 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -6497,7 +6497,7 @@ extern "C"  void DeriveBytes_set_Password_m2839198645 (DeriveBytes_t2715912549 *
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		ByteU5BU5D_t58506160* L_0 = ___value;
+		ByteU5BU5D_t58506160* L_0 = ___value0;
 		if (L_0)
 		{
 			goto IL_0017;
@@ -6510,7 +6510,7 @@ extern "C"  void DeriveBytes_set_Password_m2839198645 (DeriveBytes_t2715912549 *
 
 IL_0017:
 	{
-		ByteU5BU5D_t58506160* L_1 = ___value;
+		ByteU5BU5D_t58506160* L_1 = ___value0;
 		NullCheck((Il2CppArray *)(Il2CppArray *)L_1);
 		Il2CppObject * L_2 = VirtFuncInvoker0< Il2CppObject * >::Invoke(5 /* System.Object System.Array::Clone() */, (Il2CppArray *)(Il2CppArray *)L_1);
 		__this->set__password_5(((ByteU5BU5D_t58506160*)Castclass(L_2, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var)));
@@ -6522,9 +6522,9 @@ IL_0028:
 	}
 }
 // System.Void Mono.Security.X509.PKCS12/DeriveBytes::set_Salt(System.Byte[])
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t DeriveBytes_set_Salt_m801246362_MetadataUsageId;
-extern "C"  void DeriveBytes_set_Salt_m801246362 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___value, const MethodInfo* method)
+extern "C"  void DeriveBytes_set_Salt_m801246362 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -6533,14 +6533,14 @@ extern "C"  void DeriveBytes_set_Salt_m801246362 (DeriveBytes_t2715912549 * __th
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		ByteU5BU5D_t58506160* L_0 = ___value;
+		ByteU5BU5D_t58506160* L_0 = ___value0;
 		if (!L_0)
 		{
 			goto IL_001c;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_1 = ___value;
+		ByteU5BU5D_t58506160* L_1 = ___value0;
 		NullCheck((Il2CppArray *)(Il2CppArray *)L_1);
 		Il2CppObject * L_2 = VirtFuncInvoker0< Il2CppObject * >::Invoke(5 /* System.Object System.Array::Clone() */, (Il2CppArray *)(Il2CppArray *)L_1);
 		__this->set__salt_6(((ByteU5BU5D_t58506160*)Castclass(L_2, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var)));
@@ -6558,28 +6558,28 @@ IL_0023:
 	}
 }
 // System.Void Mono.Security.X509.PKCS12/DeriveBytes::Adjust(System.Byte[],System.Int32,System.Byte[])
-extern "C"  void DeriveBytes_Adjust_m1390246396 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___a, int32_t ___aOff, ByteU5BU5D_t58506160* ___b, const MethodInfo* method)
+extern "C"  void DeriveBytes_Adjust_m1390246396 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___a0, int32_t ___aOff1, ByteU5BU5D_t58506160* ___b2, const MethodInfo* method)
 {
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	{
-		ByteU5BU5D_t58506160* L_0 = ___b;
-		ByteU5BU5D_t58506160* L_1 = ___b;
+		ByteU5BU5D_t58506160* L_0 = ___b2;
+		ByteU5BU5D_t58506160* L_1 = ___b2;
 		NullCheck(L_1);
 		NullCheck(L_0);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_0, ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_1)->max_length))))-(int32_t)1)));
 		int32_t L_2 = ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_1)->max_length))))-(int32_t)1));
-		ByteU5BU5D_t58506160* L_3 = ___a;
-		int32_t L_4 = ___aOff;
-		ByteU5BU5D_t58506160* L_5 = ___b;
+		ByteU5BU5D_t58506160* L_3 = ___a0;
+		int32_t L_4 = ___aOff1;
+		ByteU5BU5D_t58506160* L_5 = ___b2;
 		NullCheck(L_5);
 		NullCheck(L_3);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_3, ((int32_t)((int32_t)((int32_t)((int32_t)L_4+(int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_5)->max_length))))))-(int32_t)1)));
 		int32_t L_6 = ((int32_t)((int32_t)((int32_t)((int32_t)L_4+(int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_5)->max_length))))))-(int32_t)1));
 		V_0 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_0)->GetAt(static_cast<il2cpp_array_size_t>(L_2)))&(int32_t)((int32_t)255)))+(int32_t)((int32_t)((int32_t)((L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_6)))&(int32_t)((int32_t)255)))))+(int32_t)1));
-		ByteU5BU5D_t58506160* L_7 = ___a;
-		int32_t L_8 = ___aOff;
-		ByteU5BU5D_t58506160* L_9 = ___b;
+		ByteU5BU5D_t58506160* L_7 = ___a0;
+		int32_t L_8 = ___aOff1;
+		ByteU5BU5D_t58506160* L_9 = ___b2;
 		NullCheck(L_9);
 		int32_t L_10 = V_0;
 		NullCheck(L_7);
@@ -6587,7 +6587,7 @@ extern "C"  void DeriveBytes_Adjust_m1390246396 (DeriveBytes_t2715912549 * __thi
 		(L_7)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)((int32_t)((int32_t)((int32_t)L_8+(int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_9)->max_length))))))-(int32_t)1))), (uint8_t)(((int32_t)((uint8_t)L_10))));
 		int32_t L_11 = V_0;
 		V_0 = ((int32_t)((int32_t)L_11>>(int32_t)8));
-		ByteU5BU5D_t58506160* L_12 = ___b;
+		ByteU5BU5D_t58506160* L_12 = ___b2;
 		NullCheck(L_12);
 		V_1 = ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_12)->max_length))))-(int32_t)2));
 		goto IL_0061;
@@ -6596,20 +6596,20 @@ extern "C"  void DeriveBytes_Adjust_m1390246396 (DeriveBytes_t2715912549 * __thi
 IL_003a:
 	{
 		int32_t L_13 = V_0;
-		ByteU5BU5D_t58506160* L_14 = ___b;
+		ByteU5BU5D_t58506160* L_14 = ___b2;
 		int32_t L_15 = V_1;
 		NullCheck(L_14);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_14, L_15);
 		int32_t L_16 = L_15;
-		ByteU5BU5D_t58506160* L_17 = ___a;
-		int32_t L_18 = ___aOff;
+		ByteU5BU5D_t58506160* L_17 = ___a0;
+		int32_t L_18 = ___aOff1;
 		int32_t L_19 = V_1;
 		NullCheck(L_17);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_17, ((int32_t)((int32_t)L_18+(int32_t)L_19)));
 		int32_t L_20 = ((int32_t)((int32_t)L_18+(int32_t)L_19));
 		V_0 = ((int32_t)((int32_t)L_13+(int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_16)))&(int32_t)((int32_t)255)))+(int32_t)((int32_t)((int32_t)((L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_20)))&(int32_t)((int32_t)255)))))));
-		ByteU5BU5D_t58506160* L_21 = ___a;
-		int32_t L_22 = ___aOff;
+		ByteU5BU5D_t58506160* L_21 = ___a0;
+		int32_t L_22 = ___aOff1;
 		int32_t L_23 = V_1;
 		int32_t L_24 = V_0;
 		NullCheck(L_21);
@@ -6634,9 +6634,9 @@ IL_0061:
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12/DeriveBytes::Derive(System.Byte[],System.Int32)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t DeriveBytes_Derive_m641766759_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* DeriveBytes_Derive_m641766759 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___diversifier, int32_t ___n, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* DeriveBytes_Derive_m641766759 (DeriveBytes_t2715912549 * __this, ByteU5BU5D_t58506160* ___diversifier0, int32_t ___n1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -6669,7 +6669,7 @@ extern "C"  ByteU5BU5D_t58506160* DeriveBytes_Derive_m641766759 (DeriveBytes_t27
 		int32_t L_3 = VirtFuncInvoker0< int32_t >::Invoke(12 /* System.Int32 System.Security.Cryptography.HashAlgorithm::get_HashSize() */, L_2);
 		V_1 = ((int32_t)((int32_t)L_3>>(int32_t)3));
 		V_2 = ((int32_t)64);
-		int32_t L_4 = ___n;
+		int32_t L_4 = ___n1;
 		V_3 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_4));
 		ByteU5BU5D_t58506160* L_5 = __this->get__salt_6();
 		if (!L_5)
@@ -6818,7 +6818,7 @@ IL_00f7:
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_40, 0, (Il2CppArray *)(Il2CppArray *)L_41, (((int32_t)((int32_t)(((Il2CppArray *)L_42)->max_length)))), (((int32_t)((int32_t)(((Il2CppArray *)L_43)->max_length)))), /*hidden argument*/NULL);
 		int32_t L_44 = V_2;
 		V_9 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_44));
-		int32_t L_45 = ___n;
+		int32_t L_45 = ___n1;
 		int32_t L_46 = V_1;
 		int32_t L_47 = V_1;
 		V_10 = ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_45+(int32_t)L_46))-(int32_t)1))/(int32_t)L_47));
@@ -6829,10 +6829,10 @@ IL_00f7:
 IL_0141:
 	{
 		HashAlgorithm_t24372250 * L_48 = V_0;
-		ByteU5BU5D_t58506160* L_49 = ___diversifier;
-		ByteU5BU5D_t58506160* L_50 = ___diversifier;
+		ByteU5BU5D_t58506160* L_49 = ___diversifier0;
+		ByteU5BU5D_t58506160* L_50 = ___diversifier0;
 		NullCheck(L_50);
-		ByteU5BU5D_t58506160* L_51 = ___diversifier;
+		ByteU5BU5D_t58506160* L_51 = ___diversifier0;
 		NullCheck(L_48);
 		VirtFuncInvoker5< int32_t, ByteU5BU5D_t58506160*, int32_t, int32_t, ByteU5BU5D_t58506160*, int32_t >::Invoke(6 /* System.Int32 System.Security.Cryptography.HashAlgorithm::TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32) */, L_48, L_49, 0, (((int32_t)((int32_t)(((Il2CppArray *)L_50)->max_length)))), L_51, 0);
 		HashAlgorithm_t24372250 * L_52 = V_0;
@@ -6987,9 +6987,9 @@ IL_0226:
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12/DeriveBytes::DeriveKey(System.Int32)
-extern TypeInfo* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
+extern Il2CppClass* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
 extern const uint32_t DeriveBytes_DeriveKey_m3484345305_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveKey_m3484345305 (DeriveBytes_t2715912549 * __this, int32_t ___size, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveKey_m3484345305 (DeriveBytes_t2715912549 * __this, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -7000,15 +7000,15 @@ extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveKey_m3484345305 (DeriveBytes
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(DeriveBytes_t2715912549_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_0 = ((DeriveBytes_t2715912549_StaticFields*)DeriveBytes_t2715912549_il2cpp_TypeInfo_var->static_fields)->get_keyDiversifier_0();
-		int32_t L_1 = ___size;
+		int32_t L_1 = ___size0;
 		ByteU5BU5D_t58506160* L_2 = DeriveBytes_Derive_m641766759(__this, L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12/DeriveBytes::DeriveIV(System.Int32)
-extern TypeInfo* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
+extern Il2CppClass* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
 extern const uint32_t DeriveBytes_DeriveIV_m1504468791_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveIV_m1504468791 (DeriveBytes_t2715912549 * __this, int32_t ___size, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveIV_m1504468791 (DeriveBytes_t2715912549 * __this, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -7019,15 +7019,15 @@ extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveIV_m1504468791 (DeriveBytes_
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(DeriveBytes_t2715912549_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_0 = ((DeriveBytes_t2715912549_StaticFields*)DeriveBytes_t2715912549_il2cpp_TypeInfo_var->static_fields)->get_ivDiversifier_1();
-		int32_t L_1 = ___size;
+		int32_t L_1 = ___size0;
 		ByteU5BU5D_t58506160* L_2 = DeriveBytes_Derive_m641766759(__this, L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Byte[] Mono.Security.X509.PKCS12/DeriveBytes::DeriveMAC(System.Int32)
-extern TypeInfo* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
+extern Il2CppClass* DeriveBytes_t2715912549_il2cpp_TypeInfo_var;
 extern const uint32_t DeriveBytes_DeriveMAC_m3291939529_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveMAC_m3291939529 (DeriveBytes_t2715912549 * __this, int32_t ___size, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveMAC_m3291939529 (DeriveBytes_t2715912549 * __this, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -7038,19 +7038,19 @@ extern "C"  ByteU5BU5D_t58506160* DeriveBytes_DeriveMAC_m3291939529 (DeriveBytes
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(DeriveBytes_t2715912549_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_0 = ((DeriveBytes_t2715912549_StaticFields*)DeriveBytes_t2715912549_il2cpp_TypeInfo_var->static_fields)->get_macDiversifier_2();
-		int32_t L_1 = ___size;
+		int32_t L_1 = ___size0;
 		ByteU5BU5D_t58506160* L_2 = DeriveBytes_Derive_m641766759(__this, L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Void Mono.Security.X509.SafeBag::.ctor(System.String,Mono.Security.ASN1)
-extern "C"  void SafeBag__ctor_m2711801934 (SafeBag_t4111116303 * __this, String_t* ___bagOID, ASN1_t1254135647 * ___asn1, const MethodInfo* method)
+extern "C"  void SafeBag__ctor_m2711801934 (SafeBag_t4111116303 * __this, String_t* ___bagOID0, ASN1_t1254135647 * ___asn11, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		String_t* L_0 = ___bagOID;
+		String_t* L_0 = ___bagOID0;
 		__this->set__bagOID_0(L_0);
-		ASN1_t1254135647 * L_1 = ___asn1;
+		ASN1_t1254135647 * L_1 = ___asn11;
 		__this->set__asn1_1(L_1);
 		return;
 	}
@@ -7072,11 +7072,11 @@ extern "C"  ASN1_t1254135647 * SafeBag_get_ASN1_m3365953951 (SafeBag_t4111116303
 	}
 }
 // System.Void Mono.Security.X509.X501::.cctor()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* X501_t591126674_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D14_9_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D15_10_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D16_11_FieldInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* X501_t591126674_il2cpp_TypeInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D14_9_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D15_10_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D16_11_FieldInfo_var;
 extern const uint32_t X501__cctor_m2619822114_MetadataUsageId;
 extern "C"  void X501__cctor_m2619822114 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -7179,13 +7179,13 @@ extern "C"  void X501__cctor_m2619822114 (Il2CppObject * __this /* static, unuse
 		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(2), (uint8_t)((int32_t)9));
 		((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->set_streetAddress_6(L_20);
 		ByteU5BU5D_t58506160* L_21 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)10)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_21, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D14_9_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_21, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D14_9_FieldInfo_var), /*hidden argument*/NULL);
 		((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->set_domainComponent_7(L_21);
 		ByteU5BU5D_t58506160* L_22 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)10)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_22, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D15_10_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_22, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D15_10_FieldInfo_var), /*hidden argument*/NULL);
 		((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->set_userid_8(L_22);
 		ByteU5BU5D_t58506160* L_23 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)9)));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_23, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D16_11_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_23, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D16_11_FieldInfo_var), /*hidden argument*/NULL);
 		((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->set_email_9(L_23);
 		ByteU5BU5D_t58506160* L_24 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)3));
 		NullCheck(L_24);
@@ -7256,11 +7256,11 @@ extern "C"  void X501__cctor_m2619822114 (Il2CppObject * __this /* static, unuse
 	}
 }
 // System.String Mono.Security.X509.X501::ToString(Mono.Security.ASN1)
-extern TypeInfo* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
-extern TypeInfo* X501_t591126674_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
+extern Il2CppClass* X501_t591126674_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1396;
 extern const uint32_t X501_ToString_m1957208426_MetadataUsageId;
-extern "C"  String_t* X501_ToString_m1957208426 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq, const MethodInfo* method)
+extern "C"  String_t* X501_ToString_m1957208426 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -7281,19 +7281,19 @@ extern "C"  String_t* X501_ToString_m1957208426 (Il2CppObject * __this /* static
 
 IL_000d:
 	{
-		ASN1_t1254135647 * L_1 = ___seq;
+		ASN1_t1254135647 * L_1 = ___seq0;
 		int32_t L_2 = V_1;
 		NullCheck(L_1);
-		ASN1_t1254135647 * L_3 = ASN1_get_Item_m3727278260(L_1, L_2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_3 = ASN1_get_Item_m3112983888(L_1, L_2, /*hidden argument*/NULL);
 		V_2 = L_3;
 		StringBuilder_t3822575854 * L_4 = V_0;
 		ASN1_t1254135647 * L_5 = V_2;
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		X501_AppendEntry_m1741585464(NULL /*static, unused*/, L_4, L_5, (bool)1, /*hidden argument*/NULL);
 		int32_t L_6 = V_1;
-		ASN1_t1254135647 * L_7 = ___seq;
+		ASN1_t1254135647 * L_7 = ___seq0;
 		NullCheck(L_7);
-		int32_t L_8 = ASN1_get_Count_m2214472120(L_7, /*hidden argument*/NULL);
+		int32_t L_8 = ASN1_get_Count_m3031159196(L_7, /*hidden argument*/NULL);
 		if ((((int32_t)L_6) >= ((int32_t)((int32_t)((int32_t)L_8-(int32_t)1)))))
 		{
 			goto IL_0037;
@@ -7314,9 +7314,9 @@ IL_0037:
 IL_003b:
 	{
 		int32_t L_11 = V_1;
-		ASN1_t1254135647 * L_12 = ___seq;
+		ASN1_t1254135647 * L_12 = ___seq0;
 		NullCheck(L_12);
-		int32_t L_13 = ASN1_get_Count_m2214472120(L_12, /*hidden argument*/NULL);
+		int32_t L_13 = ASN1_get_Count_m3031159196(L_12, /*hidden argument*/NULL);
 		if ((((int32_t)L_11) < ((int32_t)L_13)))
 		{
 			goto IL_000d;
@@ -7330,15 +7330,15 @@ IL_003b:
 	}
 }
 // System.String Mono.Security.X509.X501::ToString(Mono.Security.ASN1,System.Boolean,System.String,System.Boolean)
-extern TypeInfo* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
-extern TypeInfo* X501_t591126674_il2cpp_TypeInfo_var;
-extern const uint32_t X501_ToString_m1526231602_MetadataUsageId;
-extern "C"  String_t* X501_ToString_m1526231602 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq, bool ___reversed, String_t* ___separator, bool ___quotes, const MethodInfo* method)
+extern Il2CppClass* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
+extern Il2CppClass* X501_t591126674_il2cpp_TypeInfo_var;
+extern const uint32_t X501_ToString_m3368169422_MetadataUsageId;
+extern "C"  String_t* X501_ToString_m3368169422 (Il2CppObject * __this /* static, unused */, ASN1_t1254135647 * ___seq0, bool ___reversed1, String_t* ___separator2, bool ___quotes3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X501_ToString_m1526231602_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X501_ToString_m3368169422_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	StringBuilder_t3822575854 * V_0 = NULL;
@@ -7350,30 +7350,30 @@ extern "C"  String_t* X501_ToString_m1526231602 (Il2CppObject * __this /* static
 		StringBuilder_t3822575854 * L_0 = (StringBuilder_t3822575854 *)il2cpp_codegen_object_new(StringBuilder_t3822575854_il2cpp_TypeInfo_var);
 		StringBuilder__ctor_m135953004(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
-		bool L_1 = ___reversed;
+		bool L_1 = ___reversed1;
 		if (!L_1)
 		{
 			goto IL_0049;
 		}
 	}
 	{
-		ASN1_t1254135647 * L_2 = ___seq;
+		ASN1_t1254135647 * L_2 = ___seq0;
 		NullCheck(L_2);
-		int32_t L_3 = ASN1_get_Count_m2214472120(L_2, /*hidden argument*/NULL);
+		int32_t L_3 = ASN1_get_Count_m3031159196(L_2, /*hidden argument*/NULL);
 		V_1 = ((int32_t)((int32_t)L_3-(int32_t)1));
 		goto IL_003d;
 	}
 
 IL_001a:
 	{
-		ASN1_t1254135647 * L_4 = ___seq;
+		ASN1_t1254135647 * L_4 = ___seq0;
 		int32_t L_5 = V_1;
 		NullCheck(L_4);
-		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3727278260(L_4, L_5, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3112983888(L_4, L_5, /*hidden argument*/NULL);
 		V_2 = L_6;
 		StringBuilder_t3822575854 * L_7 = V_0;
 		ASN1_t1254135647 * L_8 = V_2;
-		bool L_9 = ___quotes;
+		bool L_9 = ___quotes3;
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		X501_AppendEntry_m1741585464(NULL /*static, unused*/, L_7, L_8, L_9, /*hidden argument*/NULL);
 		int32_t L_10 = V_1;
@@ -7384,7 +7384,7 @@ IL_001a:
 	}
 	{
 		StringBuilder_t3822575854 * L_11 = V_0;
-		String_t* L_12 = ___separator;
+		String_t* L_12 = ___separator2;
 		NullCheck(L_11);
 		StringBuilder_Append_m3898090075(L_11, L_12, /*hidden argument*/NULL);
 	}
@@ -7415,20 +7415,20 @@ IL_0049:
 
 IL_0050:
 	{
-		ASN1_t1254135647 * L_15 = ___seq;
+		ASN1_t1254135647 * L_15 = ___seq0;
 		int32_t L_16 = V_3;
 		NullCheck(L_15);
-		ASN1_t1254135647 * L_17 = ASN1_get_Item_m3727278260(L_15, L_16, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_17 = ASN1_get_Item_m3112983888(L_15, L_16, /*hidden argument*/NULL);
 		V_4 = L_17;
 		StringBuilder_t3822575854 * L_18 = V_0;
 		ASN1_t1254135647 * L_19 = V_4;
-		bool L_20 = ___quotes;
+		bool L_20 = ___quotes3;
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		X501_AppendEntry_m1741585464(NULL /*static, unused*/, L_18, L_19, L_20, /*hidden argument*/NULL);
 		int32_t L_21 = V_3;
-		ASN1_t1254135647 * L_22 = ___seq;
+		ASN1_t1254135647 * L_22 = ___seq0;
 		NullCheck(L_22);
-		int32_t L_23 = ASN1_get_Count_m2214472120(L_22, /*hidden argument*/NULL);
+		int32_t L_23 = ASN1_get_Count_m3031159196(L_22, /*hidden argument*/NULL);
 		if ((((int32_t)L_21) >= ((int32_t)((int32_t)((int32_t)L_23-(int32_t)1)))))
 		{
 			goto IL_0078;
@@ -7436,7 +7436,7 @@ IL_0050:
 	}
 	{
 		StringBuilder_t3822575854 * L_24 = V_0;
-		String_t* L_25 = ___separator;
+		String_t* L_25 = ___separator2;
 		NullCheck(L_24);
 		StringBuilder_Append_m3898090075(L_24, L_25, /*hidden argument*/NULL);
 	}
@@ -7450,9 +7450,9 @@ IL_0078:
 IL_007c:
 	{
 		int32_t L_27 = V_3;
-		ASN1_t1254135647 * L_28 = ___seq;
+		ASN1_t1254135647 * L_28 = ___seq0;
 		NullCheck(L_28);
-		int32_t L_29 = ASN1_get_Count_m2214472120(L_28, /*hidden argument*/NULL);
+		int32_t L_29 = ASN1_get_Count_m3031159196(L_28, /*hidden argument*/NULL);
 		if ((((int32_t)L_27) < ((int32_t)L_29)))
 		{
 			goto IL_0050;
@@ -7468,12 +7468,12 @@ IL_0088:
 	}
 }
 // System.Void Mono.Security.X509.X501::AppendEntry(System.Text.StringBuilder,Mono.Security.ASN1,System.Boolean)
-extern TypeInfo* X501_t591126674_il2cpp_TypeInfo_var;
-extern TypeInfo* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
-extern TypeInfo* Encoding_t180559927_il2cpp_TypeInfo_var;
-extern TypeInfo* CharU5BU5D_t3416858730_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D17_12_FieldInfo_var;
+extern Il2CppClass* X501_t591126674_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
+extern Il2CppClass* Encoding_t180559927_il2cpp_TypeInfo_var;
+extern Il2CppClass* CharU5BU5D_t3416858730_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D17_12_FieldInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2138;
 extern Il2CppCodeGenString* _stringLiteral2510;
 extern Il2CppCodeGenString* _stringLiteral78615;
@@ -7495,7 +7495,7 @@ extern Il2CppCodeGenString* _stringLiteral32;
 extern Il2CppCodeGenString* _stringLiteral34;
 extern Il2CppCodeGenString* _stringLiteral1396;
 extern const uint32_t X501_AppendEntry_m1741585464_MetadataUsageId;
-extern "C"  void X501_AppendEntry_m1741585464 (Il2CppObject * __this /* static, unused */, StringBuilder_t3822575854 * ___sb, ASN1_t1254135647 * ___entry, bool ___quotes, const MethodInfo* method)
+extern "C"  void X501_AppendEntry_m1741585464 (Il2CppObject * __this /* static, unused */, StringBuilder_t3822575854 * ___sb0, ASN1_t1254135647 * ___entry1, bool ___quotes2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -7518,14 +7518,14 @@ extern "C"  void X501_AppendEntry_m1741585464 (Il2CppObject * __this /* static, 
 
 IL_0007:
 	{
-		ASN1_t1254135647 * L_0 = ___entry;
+		ASN1_t1254135647 * L_0 = ___entry1;
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
-		ASN1_t1254135647 * L_2 = ASN1_get_Item_m3727278260(L_0, L_1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_2 = ASN1_get_Item_m3112983888(L_0, L_1, /*hidden argument*/NULL);
 		V_1 = L_2;
 		ASN1_t1254135647 * L_3 = V_1;
 		NullCheck(L_3);
-		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3727278260(L_3, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3112983888(L_3, 1, /*hidden argument*/NULL);
 		V_2 = L_4;
 		ASN1_t1254135647 * L_5 = V_2;
 		if (L_5)
@@ -7541,7 +7541,7 @@ IL_0022:
 	{
 		ASN1_t1254135647 * L_6 = V_1;
 		NullCheck(L_6);
-		ASN1_t1254135647 * L_7 = ASN1_get_Item_m3727278260(L_6, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_7 = ASN1_get_Item_m3112983888(L_6, 0, /*hidden argument*/NULL);
 		V_3 = L_7;
 		ASN1_t1254135647 * L_8 = V_3;
 		if (L_8)
@@ -7559,14 +7559,14 @@ IL_0035:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_10 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_countryName_0();
 		NullCheck(L_9);
-		bool L_11 = ASN1_CompareValue_m1123010439(L_9, L_10, /*hidden argument*/NULL);
+		bool L_11 = ASN1_CompareValue_m3554721387(L_9, L_10, /*hidden argument*/NULL);
 		if (!L_11)
 		{
 			goto IL_0056;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_12 = ___sb;
+		StringBuilder_t3822575854 * L_12 = ___sb0;
 		NullCheck(L_12);
 		StringBuilder_Append_m3898090075(L_12, _stringLiteral2138, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7578,14 +7578,14 @@ IL_0056:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_14 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_organizationName_1();
 		NullCheck(L_13);
-		bool L_15 = ASN1_CompareValue_m1123010439(L_13, L_14, /*hidden argument*/NULL);
+		bool L_15 = ASN1_CompareValue_m3554721387(L_13, L_14, /*hidden argument*/NULL);
 		if (!L_15)
 		{
 			goto IL_0077;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_16 = ___sb;
+		StringBuilder_t3822575854 * L_16 = ___sb0;
 		NullCheck(L_16);
 		StringBuilder_Append_m3898090075(L_16, _stringLiteral2510, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7597,14 +7597,14 @@ IL_0077:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_18 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_organizationalUnitName_2();
 		NullCheck(L_17);
-		bool L_19 = ASN1_CompareValue_m1123010439(L_17, L_18, /*hidden argument*/NULL);
+		bool L_19 = ASN1_CompareValue_m3554721387(L_17, L_18, /*hidden argument*/NULL);
 		if (!L_19)
 		{
 			goto IL_0098;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_20 = ___sb;
+		StringBuilder_t3822575854 * L_20 = ___sb0;
 		NullCheck(L_20);
 		StringBuilder_Append_m3898090075(L_20, _stringLiteral78615, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7616,14 +7616,14 @@ IL_0098:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_22 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_commonName_3();
 		NullCheck(L_21);
-		bool L_23 = ASN1_CompareValue_m1123010439(L_21, L_22, /*hidden argument*/NULL);
+		bool L_23 = ASN1_CompareValue_m3554721387(L_21, L_22, /*hidden argument*/NULL);
 		if (!L_23)
 		{
 			goto IL_00b9;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_24 = ___sb;
+		StringBuilder_t3822575854 * L_24 = ___sb0;
 		NullCheck(L_24);
 		StringBuilder_Append_m3898090075(L_24, _stringLiteral66866, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7635,14 +7635,14 @@ IL_00b9:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_26 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_localityName_4();
 		NullCheck(L_25);
-		bool L_27 = ASN1_CompareValue_m1123010439(L_25, L_26, /*hidden argument*/NULL);
+		bool L_27 = ASN1_CompareValue_m3554721387(L_25, L_26, /*hidden argument*/NULL);
 		if (!L_27)
 		{
 			goto IL_00da;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_28 = ___sb;
+		StringBuilder_t3822575854 * L_28 = ___sb0;
 		NullCheck(L_28);
 		StringBuilder_Append_m3898090075(L_28, _stringLiteral2417, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7654,14 +7654,14 @@ IL_00da:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_30 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_stateOrProvinceName_5();
 		NullCheck(L_29);
-		bool L_31 = ASN1_CompareValue_m1123010439(L_29, L_30, /*hidden argument*/NULL);
+		bool L_31 = ASN1_CompareValue_m3554721387(L_29, L_30, /*hidden argument*/NULL);
 		if (!L_31)
 		{
 			goto IL_00fb;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_32 = ___sb;
+		StringBuilder_t3822575854 * L_32 = ___sb0;
 		NullCheck(L_32);
 		StringBuilder_Append_m3898090075(L_32, _stringLiteral2634, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7673,14 +7673,14 @@ IL_00fb:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_34 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_streetAddress_6();
 		NullCheck(L_33);
-		bool L_35 = ASN1_CompareValue_m1123010439(L_33, L_34, /*hidden argument*/NULL);
+		bool L_35 = ASN1_CompareValue_m3554721387(L_33, L_34, /*hidden argument*/NULL);
 		if (!L_35)
 		{
 			goto IL_011c;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_36 = ___sb;
+		StringBuilder_t3822575854 * L_36 = ___sb0;
 		NullCheck(L_36);
 		StringBuilder_Append_m3898090075(L_36, _stringLiteral3131063450, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7692,14 +7692,14 @@ IL_011c:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_38 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_domainComponent_7();
 		NullCheck(L_37);
-		bool L_39 = ASN1_CompareValue_m1123010439(L_37, L_38, /*hidden argument*/NULL);
+		bool L_39 = ASN1_CompareValue_m3554721387(L_37, L_38, /*hidden argument*/NULL);
 		if (!L_39)
 		{
 			goto IL_013d;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_40 = ___sb;
+		StringBuilder_t3822575854 * L_40 = ___sb0;
 		NullCheck(L_40);
 		StringBuilder_Append_m3898090075(L_40, _stringLiteral67486, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7711,14 +7711,14 @@ IL_013d:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_42 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_userid_8();
 		NullCheck(L_41);
-		bool L_43 = ASN1_CompareValue_m1123010439(L_41, L_42, /*hidden argument*/NULL);
+		bool L_43 = ASN1_CompareValue_m3554721387(L_41, L_42, /*hidden argument*/NULL);
 		if (!L_43)
 		{
 			goto IL_015e;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_44 = ___sb;
+		StringBuilder_t3822575854 * L_44 = ___sb0;
 		NullCheck(L_44);
 		StringBuilder_Append_m3898090075(L_44, _stringLiteral2604557, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7730,14 +7730,14 @@ IL_015e:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_46 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_email_9();
 		NullCheck(L_45);
-		bool L_47 = ASN1_CompareValue_m1123010439(L_45, L_46, /*hidden argument*/NULL);
+		bool L_47 = ASN1_CompareValue_m3554721387(L_45, L_46, /*hidden argument*/NULL);
 		if (!L_47)
 		{
 			goto IL_017f;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_48 = ___sb;
+		StringBuilder_t3822575854 * L_48 = ___sb0;
 		NullCheck(L_48);
 		StringBuilder_Append_m3898090075(L_48, _stringLiteral2200, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7749,14 +7749,14 @@ IL_017f:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_50 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_dnQualifier_10();
 		NullCheck(L_49);
-		bool L_51 = ASN1_CompareValue_m1123010439(L_49, L_50, /*hidden argument*/NULL);
+		bool L_51 = ASN1_CompareValue_m3554721387(L_49, L_50, /*hidden argument*/NULL);
 		if (!L_51)
 		{
 			goto IL_01a0;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_52 = ___sb;
+		StringBuilder_t3822575854 * L_52 = ___sb0;
 		NullCheck(L_52);
 		StringBuilder_Append_m3898090075(L_52, _stringLiteral1889233149, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7768,14 +7768,14 @@ IL_01a0:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_54 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_title_11();
 		NullCheck(L_53);
-		bool L_55 = ASN1_CompareValue_m1123010439(L_53, L_54, /*hidden argument*/NULL);
+		bool L_55 = ASN1_CompareValue_m3554721387(L_53, L_54, /*hidden argument*/NULL);
 		if (!L_55)
 		{
 			goto IL_01c1;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_56 = ___sb;
+		StringBuilder_t3822575854 * L_56 = ___sb0;
 		NullCheck(L_56);
 		StringBuilder_Append_m3898090075(L_56, _stringLiteral2665, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7787,14 +7787,14 @@ IL_01c1:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_58 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_surname_12();
 		NullCheck(L_57);
-		bool L_59 = ASN1_CompareValue_m1123010439(L_57, L_58, /*hidden argument*/NULL);
+		bool L_59 = ASN1_CompareValue_m3554721387(L_57, L_58, /*hidden argument*/NULL);
 		if (!L_59)
 		{
 			goto IL_01e2;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_60 = ___sb;
+		StringBuilder_t3822575854 * L_60 = ___sb0;
 		NullCheck(L_60);
 		StringBuilder_Append_m3898090075(L_60, _stringLiteral82242, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7806,14 +7806,14 @@ IL_01e2:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_62 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_givenName_13();
 		NullCheck(L_61);
-		bool L_63 = ASN1_CompareValue_m1123010439(L_61, L_62, /*hidden argument*/NULL);
+		bool L_63 = ASN1_CompareValue_m3554721387(L_61, L_62, /*hidden argument*/NULL);
 		if (!L_63)
 		{
 			goto IL_0203;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_64 = ___sb;
+		StringBuilder_t3822575854 * L_64 = ___sb0;
 		NullCheck(L_64);
 		StringBuilder_Append_m3898090075(L_64, _stringLiteral2262, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7825,14 +7825,14 @@ IL_0203:
 		IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_66 = ((X501_t591126674_StaticFields*)X501_t591126674_il2cpp_TypeInfo_var->static_fields)->get_initial_14();
 		NullCheck(L_65);
-		bool L_67 = ASN1_CompareValue_m1123010439(L_65, L_66, /*hidden argument*/NULL);
+		bool L_67 = ASN1_CompareValue_m3554721387(L_65, L_66, /*hidden argument*/NULL);
 		if (!L_67)
 		{
 			goto IL_0224;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_68 = ___sb;
+		StringBuilder_t3822575854 * L_68 = ___sb0;
 		NullCheck(L_68);
 		StringBuilder_Append_m3898090075(L_68, _stringLiteral2324, /*hidden argument*/NULL);
 		goto IL_0249;
@@ -7840,15 +7840,15 @@ IL_0203:
 
 IL_0224:
 	{
-		StringBuilder_t3822575854 * L_69 = ___sb;
+		StringBuilder_t3822575854 * L_69 = ___sb0;
 		NullCheck(L_69);
 		StringBuilder_Append_m3898090075(L_69, _stringLiteral2425796, /*hidden argument*/NULL);
-		StringBuilder_t3822575854 * L_70 = ___sb;
+		StringBuilder_t3822575854 * L_70 = ___sb0;
 		ASN1_t1254135647 * L_71 = V_3;
-		String_t* L_72 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_71, /*hidden argument*/NULL);
+		String_t* L_72 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_71, /*hidden argument*/NULL);
 		NullCheck(L_70);
 		StringBuilder_Append_m3898090075(L_70, L_72, /*hidden argument*/NULL);
-		StringBuilder_t3822575854 * L_73 = ___sb;
+		StringBuilder_t3822575854 * L_73 = ___sb0;
 		NullCheck(L_73);
 		StringBuilder_Append_m3898090075(L_73, _stringLiteral61, /*hidden argument*/NULL);
 	}
@@ -7858,7 +7858,7 @@ IL_0249:
 		V_4 = (String_t*)NULL;
 		ASN1_t1254135647 * L_74 = V_2;
 		NullCheck(L_74);
-		uint8_t L_75 = ASN1_get_Tag_m442995239(L_74, /*hidden argument*/NULL);
+		uint8_t L_75 = ASN1_get_Tag_m1269404867(L_74, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_75) == ((uint32_t)((int32_t)30)))))
 		{
 			goto IL_029d;
@@ -7877,7 +7877,7 @@ IL_0268:
 		StringBuilder_t3822575854 * L_77 = V_5;
 		ASN1_t1254135647 * L_78 = V_2;
 		NullCheck(L_78);
-		ByteU5BU5D_t58506160* L_79 = ASN1_get_Value_m390067040(L_78, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_79 = ASN1_get_Value_m4232529916(L_78, /*hidden argument*/NULL);
 		int32_t L_80 = V_6;
 		NullCheck(L_79);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_79, L_80);
@@ -7893,7 +7893,7 @@ IL_0280:
 		int32_t L_83 = V_6;
 		ASN1_t1254135647 * L_84 = V_2;
 		NullCheck(L_84);
-		ByteU5BU5D_t58506160* L_85 = ASN1_get_Value_m390067040(L_84, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_85 = ASN1_get_Value_m4232529916(L_84, /*hidden argument*/NULL);
 		NullCheck(L_85);
 		if ((((int32_t)L_83) < ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_85)->max_length)))))))
 		{
@@ -7912,7 +7912,7 @@ IL_029d:
 	{
 		ASN1_t1254135647 * L_88 = V_2;
 		NullCheck(L_88);
-		uint8_t L_89 = ASN1_get_Tag_m442995239(L_88, /*hidden argument*/NULL);
+		uint8_t L_89 = ASN1_get_Tag_m1269404867(L_88, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_89) == ((uint32_t)((int32_t)20)))))
 		{
 			goto IL_02c1;
@@ -7923,7 +7923,7 @@ IL_029d:
 		Encoding_t180559927 * L_90 = Encoding_get_UTF7_m619557558(NULL /*static, unused*/, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_91 = V_2;
 		NullCheck(L_91);
-		ByteU5BU5D_t58506160* L_92 = ASN1_get_Value_m390067040(L_91, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_92 = ASN1_get_Value_m4232529916(L_91, /*hidden argument*/NULL);
 		NullCheck(L_90);
 		String_t* L_93 = VirtFuncInvoker1< String_t*, ByteU5BU5D_t58506160* >::Invoke(22 /* System.String System.Text.Encoding::GetString(System.Byte[]) */, L_90, L_92);
 		V_4 = L_93;
@@ -7936,7 +7936,7 @@ IL_02c1:
 		Encoding_t180559927 * L_94 = Encoding_get_UTF8_m619558519(NULL /*static, unused*/, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_95 = V_2;
 		NullCheck(L_95);
-		ByteU5BU5D_t58506160* L_96 = ASN1_get_Value_m390067040(L_95, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_96 = ASN1_get_Value_m4232529916(L_95, /*hidden argument*/NULL);
 		NullCheck(L_94);
 		String_t* L_97 = VirtFuncInvoker1< String_t*, ByteU5BU5D_t58506160* >::Invoke(22 /* System.String System.Text.Encoding::GetString(System.Byte[]) */, L_94, L_96);
 		V_4 = L_97;
@@ -7945,9 +7945,9 @@ IL_02c1:
 IL_02d3:
 	{
 		CharU5BU5D_t3416858730* L_98 = ((CharU5BU5D_t3416858730*)SZArrayNew(CharU5BU5D_t3416858730_il2cpp_TypeInfo_var, (uint32_t)7));
-		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_98, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238936____U24U24fieldU2D17_12_FieldInfo_var), /*hidden argument*/NULL);
+		RuntimeHelpers_InitializeArray_m2058365049(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_98, LoadFieldToken(U3CPrivateImplementationDetailsU3E_t3053238934____U24U24fieldU2D17_12_FieldInfo_var), /*hidden argument*/NULL);
 		V_7 = L_98;
-		bool L_99 = ___quotes;
+		bool L_99 = ___quotes2;
 		if (!L_99)
 		{
 			goto IL_0338;
@@ -7995,21 +7995,21 @@ IL_0325:
 
 IL_0338:
 	{
-		StringBuilder_t3822575854 * L_111 = ___sb;
+		StringBuilder_t3822575854 * L_111 = ___sb0;
 		String_t* L_112 = V_4;
 		NullCheck(L_111);
 		StringBuilder_Append_m3898090075(L_111, L_112, /*hidden argument*/NULL);
 		int32_t L_113 = V_0;
-		ASN1_t1254135647 * L_114 = ___entry;
+		ASN1_t1254135647 * L_114 = ___entry1;
 		NullCheck(L_114);
-		int32_t L_115 = ASN1_get_Count_m2214472120(L_114, /*hidden argument*/NULL);
+		int32_t L_115 = ASN1_get_Count_m3031159196(L_114, /*hidden argument*/NULL);
 		if ((((int32_t)L_113) >= ((int32_t)((int32_t)((int32_t)L_115-(int32_t)1)))))
 		{
 			goto IL_035b;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_116 = ___sb;
+		StringBuilder_t3822575854 * L_116 = ___sb0;
 		NullCheck(L_116);
 		StringBuilder_Append_m3898090075(L_116, _stringLiteral1396, /*hidden argument*/NULL);
 	}
@@ -8023,9 +8023,9 @@ IL_035b:
 IL_035f:
 	{
 		int32_t L_118 = V_0;
-		ASN1_t1254135647 * L_119 = ___entry;
+		ASN1_t1254135647 * L_119 = ___entry1;
 		NullCheck(L_119);
-		int32_t L_120 = ASN1_get_Count_m2214472120(L_119, /*hidden argument*/NULL);
+		int32_t L_120 = ASN1_get_Count_m3031159196(L_119, /*hidden argument*/NULL);
 		if ((((int32_t)L_118) < ((int32_t)L_120)))
 		{
 			goto IL_0007;
@@ -8036,17 +8036,17 @@ IL_035f:
 	}
 }
 // System.Void Mono.Security.X509.X509Certificate::.ctor(System.Byte[])
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* Exception_t1967233988_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* Exception_t1967233988_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral4105360759;
-extern const uint32_t X509Certificate__ctor_m1688356825_MetadataUsageId;
-extern "C"  void X509Certificate__ctor_m1688356825 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern const uint32_t X509Certificate__ctor_m3683615677_MetadataUsageId;
+extern "C"  void X509Certificate__ctor_m3683615677 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___data0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Certificate__ctor_m1688356825_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Certificate__ctor_m3683615677_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	Exception_t1967233988 * V_0 = NULL;
@@ -8058,14 +8058,14 @@ extern "C"  void X509Certificate__ctor_m1688356825 (X509Certificate_t273828613 *
 	NO_UNUSED_WARNING (__leave_target);
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_0 = ___data;
+		ByteU5BU5D_t58506160* L_0 = ___data0;
 		if (!L_0)
 		{
 			goto IL_004a;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_1 = ___data;
+		ByteU5BU5D_t58506160* L_1 = ___data0;
 		NullCheck(L_1);
 		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_1)->max_length))))) <= ((int32_t)0)))
 		{
@@ -8073,7 +8073,7 @@ extern "C"  void X509Certificate__ctor_m1688356825 (X509Certificate_t273828613 *
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_2 = ___data;
+		ByteU5BU5D_t58506160* L_2 = ___data0;
 		NullCheck(L_2);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_2, 0);
 		int32_t L_3 = 0;
@@ -8086,10 +8086,10 @@ extern "C"  void X509Certificate__ctor_m1688356825 (X509Certificate_t273828613 *
 IL_001f:
 	try
 	{ // begin try (depth: 1)
-		ByteU5BU5D_t58506160* L_4 = ___data;
+		ByteU5BU5D_t58506160* L_4 = ___data0;
 		IL2CPP_RUNTIME_CLASS_INIT(X509Certificate_t273828613_il2cpp_TypeInfo_var);
 		ByteU5BU5D_t58506160* L_5 = X509Certificate_PEM_m3879103085(NULL /*static, unused*/, _stringLiteral4105360759, L_4, /*hidden argument*/NULL);
-		___data = L_5;
+		___data0 = L_5;
 		goto IL_0043;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -8120,7 +8120,7 @@ IL_003e:
 
 IL_0043:
 	{
-		ByteU5BU5D_t58506160* L_9 = ___data;
+		ByteU5BU5D_t58506160* L_9 = ___data0;
 		X509Certificate_Parse_m1221896268(__this, L_9, /*hidden argument*/NULL);
 	}
 
@@ -8130,7 +8130,7 @@ IL_004a:
 	}
 }
 // System.Void Mono.Security.X509.X509Certificate::.cctor()
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2770949631;
 extern const uint32_t X509Certificate__cctor_m3957890465_MetadataUsageId;
 extern "C"  void X509Certificate__cctor_m3957890465 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
@@ -8148,15 +8148,15 @@ extern "C"  void X509Certificate__cctor_m3957890465 (Il2CppObject * __this /* st
 	}
 }
 // System.Void Mono.Security.X509.X509Certificate::Parse(System.Byte[])
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* X501_t591126674_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var;
-extern TypeInfo* Exception_t1967233988_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* X501_t591126674_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var;
+extern Il2CppClass* Exception_t1967233988_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_Parse_m1221896268_MetadataUsageId;
-extern "C"  void X509Certificate_Parse_m1221896268 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern "C"  void X509Certificate_Parse_m1221896268 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___data0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -8197,13 +8197,13 @@ IL_0000:
 	try
 	{ // begin try (depth: 1)
 		{
-			ByteU5BU5D_t58506160* L_0 = ___data;
+			ByteU5BU5D_t58506160* L_0 = ___data0;
 			ASN1_t1254135647 * L_1 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-			ASN1__ctor_m3008094309(L_1, L_0, /*hidden argument*/NULL);
+			ASN1__ctor_m2555733065(L_1, L_0, /*hidden argument*/NULL);
 			__this->set_decoder_0(L_1);
 			ASN1_t1254135647 * L_2 = __this->get_decoder_0();
 			NullCheck(L_2);
-			uint8_t L_3 = ASN1_get_Tag_m442995239(L_2, /*hidden argument*/NULL);
+			uint8_t L_3 = ASN1_get_Tag_m1269404867(L_2, /*hidden argument*/NULL);
 			if ((((int32_t)L_3) == ((int32_t)((int32_t)48))))
 			{
 				goto IL_0029;
@@ -8223,9 +8223,9 @@ IL_0029:
 		{
 			ASN1_t1254135647 * L_6 = __this->get_decoder_0();
 			NullCheck(L_6);
-			ASN1_t1254135647 * L_7 = ASN1_get_Item_m3727278260(L_6, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_7 = ASN1_get_Item_m3112983888(L_6, 0, /*hidden argument*/NULL);
 			NullCheck(L_7);
-			uint8_t L_8 = ASN1_get_Tag_m442995239(L_7, /*hidden argument*/NULL);
+			uint8_t L_8 = ASN1_get_Tag_m1269404867(L_7, /*hidden argument*/NULL);
 			if ((((int32_t)L_8) == ((int32_t)((int32_t)48))))
 			{
 				goto IL_004c;
@@ -8245,20 +8245,20 @@ IL_004c:
 		{
 			ASN1_t1254135647 * L_11 = __this->get_decoder_0();
 			NullCheck(L_11);
-			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3727278260(L_11, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_12 = ASN1_get_Item_m3112983888(L_11, 0, /*hidden argument*/NULL);
 			V_0 = L_12;
 			V_1 = 0;
 			ASN1_t1254135647 * L_13 = __this->get_decoder_0();
 			NullCheck(L_13);
-			ASN1_t1254135647 * L_14 = ASN1_get_Item_m3727278260(L_13, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_14 = ASN1_get_Item_m3112983888(L_13, 0, /*hidden argument*/NULL);
 			int32_t L_15 = V_1;
 			NullCheck(L_14);
-			ASN1_t1254135647 * L_16 = ASN1_get_Item_m3727278260(L_14, L_15, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_16 = ASN1_get_Item_m3112983888(L_14, L_15, /*hidden argument*/NULL);
 			V_2 = L_16;
 			__this->set_version_17(1);
 			ASN1_t1254135647 * L_17 = V_2;
 			NullCheck(L_17);
-			uint8_t L_18 = ASN1_get_Tag_m442995239(L_17, /*hidden argument*/NULL);
+			uint8_t L_18 = ASN1_get_Tag_m1269404867(L_17, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_18) == ((uint32_t)((int32_t)160)))))
 			{
 				goto IL_00b0;
@@ -8269,7 +8269,7 @@ IL_0085:
 		{
 			ASN1_t1254135647 * L_19 = V_2;
 			NullCheck(L_19);
-			int32_t L_20 = ASN1_get_Count_m2214472120(L_19, /*hidden argument*/NULL);
+			int32_t L_20 = ASN1_get_Count_m3031159196(L_19, /*hidden argument*/NULL);
 			if ((((int32_t)L_20) <= ((int32_t)0)))
 			{
 				goto IL_00b0;
@@ -8281,9 +8281,9 @@ IL_0091:
 			int32_t L_21 = __this->get_version_17();
 			ASN1_t1254135647 * L_22 = V_2;
 			NullCheck(L_22);
-			ASN1_t1254135647 * L_23 = ASN1_get_Item_m3727278260(L_22, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_23 = ASN1_get_Item_m3112983888(L_22, 0, /*hidden argument*/NULL);
 			NullCheck(L_23);
-			ByteU5BU5D_t58506160* L_24 = ASN1_get_Value_m390067040(L_23, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_24 = ASN1_get_Value_m4232529916(L_23, /*hidden argument*/NULL);
 			NullCheck(L_24);
 			IL2CPP_ARRAY_BOUNDS_CHECK(L_24, 0);
 			int32_t L_25 = 0;
@@ -8296,16 +8296,16 @@ IL_00b0:
 		{
 			ASN1_t1254135647 * L_27 = __this->get_decoder_0();
 			NullCheck(L_27);
-			ASN1_t1254135647 * L_28 = ASN1_get_Item_m3727278260(L_27, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_28 = ASN1_get_Item_m3112983888(L_27, 0, /*hidden argument*/NULL);
 			int32_t L_29 = V_1;
 			int32_t L_30 = L_29;
 			V_1 = ((int32_t)((int32_t)L_30+(int32_t)1));
 			NullCheck(L_28);
-			ASN1_t1254135647 * L_31 = ASN1_get_Item_m3727278260(L_28, L_30, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_31 = ASN1_get_Item_m3112983888(L_28, L_30, /*hidden argument*/NULL);
 			V_3 = L_31;
 			ASN1_t1254135647 * L_32 = V_3;
 			NullCheck(L_32);
-			uint8_t L_33 = ASN1_get_Tag_m442995239(L_32, /*hidden argument*/NULL);
+			uint8_t L_33 = ASN1_get_Tag_m1269404867(L_32, /*hidden argument*/NULL);
 			if ((((int32_t)L_33) == ((int32_t)2)))
 			{
 				goto IL_00de;
@@ -8325,7 +8325,7 @@ IL_00de:
 		{
 			ASN1_t1254135647 * L_36 = V_3;
 			NullCheck(L_36);
-			ByteU5BU5D_t58506160* L_37 = ASN1_get_Value_m390067040(L_36, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_37 = ASN1_get_Value_m4232529916(L_36, /*hidden argument*/NULL);
 			__this->set_serialnumber_18(L_37);
 			ByteU5BU5D_t58506160* L_38 = __this->get_serialnumber_18();
 			ByteU5BU5D_t58506160* L_39 = __this->get_serialnumber_18();
@@ -8353,14 +8353,14 @@ IL_00de:
 			V_4 = L_50;
 			ASN1_t1254135647 * L_51 = V_4;
 			NullCheck(L_51);
-			ASN1_t1254135647 * L_52 = ASN1_get_Item_m3727278260(L_51, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_52 = ASN1_get_Item_m3112983888(L_51, 0, /*hidden argument*/NULL);
 			V_5 = L_52;
 			ASN1_t1254135647 * L_53 = V_5;
 			DateTime_t339033936  L_54 = ASN1Convert_ToDateTime_m864003254(NULL /*static, unused*/, L_53, /*hidden argument*/NULL);
 			__this->set_m_from_2(L_54);
 			ASN1_t1254135647 * L_55 = V_4;
 			NullCheck(L_55);
-			ASN1_t1254135647 * L_56 = ASN1_get_Item_m3727278260(L_55, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_56 = ASN1_get_Item_m3112983888(L_55, 1, /*hidden argument*/NULL);
 			V_6 = L_56;
 			ASN1_t1254135647 * L_57 = V_6;
 			DateTime_t339033936  L_58 = ASN1Convert_ToDateTime_m864003254(NULL /*static, unused*/, L_57, /*hidden argument*/NULL);
@@ -8391,15 +8391,15 @@ IL_00de:
 			ASN1_t1254135647 * L_72 = ASN1_Element_m2786077841(L_71, 0, 6, /*hidden argument*/NULL);
 			V_9 = L_72;
 			ASN1_t1254135647 * L_73 = V_9;
-			String_t* L_74 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_73, /*hidden argument*/NULL);
+			String_t* L_74 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_73, /*hidden argument*/NULL);
 			__this->set_m_keyalgo_6(L_74);
 			ASN1_t1254135647 * L_75 = V_8;
 			NullCheck(L_75);
-			ASN1_t1254135647 * L_76 = ASN1_get_Item_m3727278260(L_75, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_76 = ASN1_get_Item_m3112983888(L_75, 1, /*hidden argument*/NULL);
 			V_10 = L_76;
 			ASN1_t1254135647 * L_77 = V_8;
 			NullCheck(L_77);
-			int32_t L_78 = ASN1_get_Count_m2214472120(L_77, /*hidden argument*/NULL);
+			int32_t L_78 = ASN1_get_Count_m3031159196(L_77, /*hidden argument*/NULL);
 			G_B10_0 = __this;
 			if ((((int32_t)L_78) <= ((int32_t)1)))
 			{
@@ -8434,21 +8434,21 @@ IL_01df:
 			V_11 = L_82;
 			ASN1_t1254135647 * L_83 = V_11;
 			NullCheck(L_83);
-			int32_t L_84 = ASN1_get_Length_m2237640703(L_83, /*hidden argument*/NULL);
+			int32_t L_84 = ASN1_get_Length_m1785136283(L_83, /*hidden argument*/NULL);
 			V_12 = ((int32_t)((int32_t)L_84-(int32_t)1));
 			int32_t L_85 = V_12;
 			__this->set_m_publickey_10(((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_85)));
 			ASN1_t1254135647 * L_86 = V_11;
 			NullCheck(L_86);
-			ByteU5BU5D_t58506160* L_87 = ASN1_get_Value_m390067040(L_86, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_87 = ASN1_get_Value_m4232529916(L_86, /*hidden argument*/NULL);
 			ByteU5BU5D_t58506160* L_88 = __this->get_m_publickey_10();
 			int32_t L_89 = V_12;
 			Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_87, 1, (Il2CppArray *)(Il2CppArray *)L_88, 0, L_89, /*hidden argument*/NULL);
 			ASN1_t1254135647 * L_90 = __this->get_decoder_0();
 			NullCheck(L_90);
-			ASN1_t1254135647 * L_91 = ASN1_get_Item_m3727278260(L_90, 2, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_91 = ASN1_get_Item_m3112983888(L_90, 2, /*hidden argument*/NULL);
 			NullCheck(L_91);
-			ByteU5BU5D_t58506160* L_92 = ASN1_get_Value_m390067040(L_91, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_92 = ASN1_get_Value_m4232529916(L_91, /*hidden argument*/NULL);
 			V_13 = L_92;
 			ByteU5BU5D_t58506160* L_93 = V_13;
 			NullCheck(L_93);
@@ -8460,18 +8460,18 @@ IL_01df:
 			Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_94, 1, (Il2CppArray *)(Il2CppArray *)L_95, 0, (((int32_t)((int32_t)(((Il2CppArray *)L_96)->max_length)))), /*hidden argument*/NULL);
 			ASN1_t1254135647 * L_97 = __this->get_decoder_0();
 			NullCheck(L_97);
-			ASN1_t1254135647 * L_98 = ASN1_get_Item_m3727278260(L_97, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_98 = ASN1_get_Item_m3112983888(L_97, 1, /*hidden argument*/NULL);
 			V_8 = L_98;
 			ASN1_t1254135647 * L_99 = V_8;
 			NullCheck(L_99);
 			ASN1_t1254135647 * L_100 = ASN1_Element_m2786077841(L_99, 0, 6, /*hidden argument*/NULL);
 			V_9 = L_100;
 			ASN1_t1254135647 * L_101 = V_9;
-			String_t* L_102 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_101, /*hidden argument*/NULL);
+			String_t* L_102 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_101, /*hidden argument*/NULL);
 			__this->set_m_signaturealgo_12(L_102);
 			ASN1_t1254135647 * L_103 = V_8;
 			NullCheck(L_103);
-			ASN1_t1254135647 * L_104 = ASN1_get_Item_m3727278260(L_103, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_104 = ASN1_get_Item_m3112983888(L_103, 1, /*hidden argument*/NULL);
 			V_10 = L_104;
 			ASN1_t1254135647 * L_105 = V_10;
 			if (!L_105)
@@ -8514,7 +8514,7 @@ IL_02bd:
 			V_1 = ((int32_t)((int32_t)L_112+(int32_t)1));
 			ASN1_t1254135647 * L_113 = V_14;
 			NullCheck(L_113);
-			ByteU5BU5D_t58506160* L_114 = ASN1_get_Value_m390067040(L_113, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_114 = ASN1_get_Value_m4232529916(L_113, /*hidden argument*/NULL);
 			__this->set_issuerUniqueID_19(L_114);
 		}
 
@@ -8538,7 +8538,7 @@ IL_02e3:
 			V_1 = ((int32_t)((int32_t)L_119+(int32_t)1));
 			ASN1_t1254135647 * L_120 = V_15;
 			NullCheck(L_120);
-			ByteU5BU5D_t58506160* L_121 = ASN1_get_Value_m390067040(L_120, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_121 = ASN1_get_Value_m4232529916(L_120, /*hidden argument*/NULL);
 			__this->set_subjectUniqueID_20(L_121);
 		}
 
@@ -8560,7 +8560,7 @@ IL_0309:
 		{
 			ASN1_t1254135647 * L_126 = V_16;
 			NullCheck(L_126);
-			int32_t L_127 = ASN1_get_Count_m2214472120(L_126, /*hidden argument*/NULL);
+			int32_t L_127 = ASN1_get_Count_m3031159196(L_126, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_127) == ((uint32_t)1))))
 			{
 				goto IL_032e;
@@ -8571,7 +8571,7 @@ IL_0316:
 		{
 			ASN1_t1254135647 * L_128 = V_16;
 			NullCheck(L_128);
-			ASN1_t1254135647 * L_129 = ASN1_get_Item_m3727278260(L_128, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_129 = ASN1_get_Item_m3112983888(L_128, 0, /*hidden argument*/NULL);
 			X509ExtensionCollection_t3528692651 * L_130 = (X509ExtensionCollection_t3528692651 *)il2cpp_codegen_object_new(X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var);
 			X509ExtensionCollection__ctor_m2115523054(L_130, L_129, /*hidden argument*/NULL);
 			__this->set_extensions_21(L_130);
@@ -8587,7 +8587,7 @@ IL_032e:
 
 IL_033a:
 		{
-			ByteU5BU5D_t58506160* L_132 = ___data;
+			ByteU5BU5D_t58506160* L_132 = ___data0;
 			NullCheck((Il2CppArray *)(Il2CppArray *)L_132);
 			Il2CppObject * L_133 = VirtFuncInvoker0< Il2CppObject * >::Invoke(5 /* System.Object System.Array::Clone() */, (Il2CppArray *)(Il2CppArray *)L_132);
 			__this->set_m_encodedcert_1(((ByteU5BU5D_t58506160*)Castclass(L_133, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var)));
@@ -8626,9 +8626,9 @@ IL_0364:
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::GetUnsignedBigInteger(System.Byte[])
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_GetUnsignedBigInteger_m3057380224_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* X509Certificate_GetUnsignedBigInteger_m3057380224 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___integer, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* X509Certificate_GetUnsignedBigInteger_m3057380224 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___integer0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -8639,7 +8639,7 @@ extern "C"  ByteU5BU5D_t58506160* X509Certificate_GetUnsignedBigInteger_m3057380
 	int32_t V_0 = 0;
 	ByteU5BU5D_t58506160* V_1 = NULL;
 	{
-		ByteU5BU5D_t58506160* L_0 = ___integer;
+		ByteU5BU5D_t58506160* L_0 = ___integer0;
 		NullCheck(L_0);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_0, 0);
 		int32_t L_1 = 0;
@@ -8649,12 +8649,12 @@ extern "C"  ByteU5BU5D_t58506160* X509Certificate_GetUnsignedBigInteger_m3057380
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_2 = ___integer;
+		ByteU5BU5D_t58506160* L_2 = ___integer0;
 		NullCheck(L_2);
 		V_0 = ((int32_t)((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_2)->max_length))))-(int32_t)1));
 		int32_t L_3 = V_0;
 		V_1 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)L_3));
-		ByteU5BU5D_t58506160* L_4 = ___integer;
+		ByteU5BU5D_t58506160* L_4 = ___integer0;
 		ByteU5BU5D_t58506160* L_5 = V_1;
 		int32_t L_6 = V_0;
 		Buffer_BlockCopy_m1580643184(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_4, 1, (Il2CppArray *)(Il2CppArray *)L_5, 0, L_6, /*hidden argument*/NULL);
@@ -8664,23 +8664,23 @@ extern "C"  ByteU5BU5D_t58506160* X509Certificate_GetUnsignedBigInteger_m3057380
 
 IL_0021:
 	{
-		ByteU5BU5D_t58506160* L_8 = ___integer;
+		ByteU5BU5D_t58506160* L_8 = ___integer0;
 		return L_8;
 	}
 }
 // System.Security.Cryptography.DSA Mono.Security.X509.X509Certificate::get_DSA()
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* DSAParameters_t2524359253_il2cpp_TypeInfo_var;
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* DSACryptoServiceProvider_t1493589900_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSAParameters_t2524359253_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSACryptoServiceProvider_t1493589900_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3821850616;
-extern const uint32_t X509Certificate_get_DSA_m1952040247_MetadataUsageId;
-extern "C"  DSA_t1557551819 * X509Certificate_get_DSA_m1952040247 (X509Certificate_t273828613 * __this, const MethodInfo* method)
+extern const uint32_t X509Certificate_get_DSA_m937980955_MetadataUsageId;
+extern "C"  DSA_t1557551819 * X509Certificate_get_DSA_m937980955 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Certificate_get_DSA_m1952040247_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Certificate_get_DSA_m937980955_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	DSAParameters_t2524359253  V_0;
@@ -8712,7 +8712,7 @@ IL_0016:
 		Initobj (DSAParameters_t2524359253_il2cpp_TypeInfo_var, (&V_0));
 		ByteU5BU5D_t58506160* L_3 = __this->get_m_publickey_10();
 		ASN1_t1254135647 * L_4 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_4, L_3, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_4, L_3, /*hidden argument*/NULL);
 		V_1 = L_4;
 		ASN1_t1254135647 * L_5 = V_1;
 		if (!L_5)
@@ -8723,7 +8723,7 @@ IL_0016:
 	{
 		ASN1_t1254135647 * L_6 = V_1;
 		NullCheck(L_6);
-		uint8_t L_7 = ASN1_get_Tag_m442995239(L_6, /*hidden argument*/NULL);
+		uint8_t L_7 = ASN1_get_Tag_m1269404867(L_6, /*hidden argument*/NULL);
 		if ((((int32_t)L_7) == ((int32_t)2)))
 		{
 			goto IL_0049;
@@ -8739,12 +8739,12 @@ IL_0049:
 	{
 		ASN1_t1254135647 * L_8 = V_1;
 		NullCheck(L_8);
-		ByteU5BU5D_t58506160* L_9 = ASN1_get_Value_m390067040(L_8, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_9 = ASN1_get_Value_m4232529916(L_8, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_10 = X509Certificate_GetUnsignedBigInteger_m3057380224(__this, L_9, /*hidden argument*/NULL);
 		(&V_0)->set_Y_7(L_10);
 		ByteU5BU5D_t58506160* L_11 = __this->get_m_keyalgoparams_7();
 		ASN1_t1254135647 * L_12 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_12, L_11, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_12, L_11, /*hidden argument*/NULL);
 		V_2 = L_12;
 		ASN1_t1254135647 * L_13 = V_2;
 		if (!L_13)
@@ -8755,7 +8755,7 @@ IL_0049:
 	{
 		ASN1_t1254135647 * L_14 = V_2;
 		NullCheck(L_14);
-		uint8_t L_15 = ASN1_get_Tag_m442995239(L_14, /*hidden argument*/NULL);
+		uint8_t L_15 = ASN1_get_Tag_m1269404867(L_14, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_15) == ((uint32_t)((int32_t)48)))))
 		{
 			goto IL_0087;
@@ -8764,7 +8764,7 @@ IL_0049:
 	{
 		ASN1_t1254135647 * L_16 = V_2;
 		NullCheck(L_16);
-		int32_t L_17 = ASN1_get_Count_m2214472120(L_16, /*hidden argument*/NULL);
+		int32_t L_17 = ASN1_get_Count_m3031159196(L_16, /*hidden argument*/NULL);
 		if ((((int32_t)L_17) >= ((int32_t)3)))
 		{
 			goto IL_0089;
@@ -8780,9 +8780,9 @@ IL_0089:
 	{
 		ASN1_t1254135647 * L_18 = V_2;
 		NullCheck(L_18);
-		ASN1_t1254135647 * L_19 = ASN1_get_Item_m3727278260(L_18, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_19 = ASN1_get_Item_m3112983888(L_18, 0, /*hidden argument*/NULL);
 		NullCheck(L_19);
-		uint8_t L_20 = ASN1_get_Tag_m442995239(L_19, /*hidden argument*/NULL);
+		uint8_t L_20 = ASN1_get_Tag_m1269404867(L_19, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_20) == ((uint32_t)2))))
 		{
 			goto IL_00bf;
@@ -8791,9 +8791,9 @@ IL_0089:
 	{
 		ASN1_t1254135647 * L_21 = V_2;
 		NullCheck(L_21);
-		ASN1_t1254135647 * L_22 = ASN1_get_Item_m3727278260(L_21, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_22 = ASN1_get_Item_m3112983888(L_21, 1, /*hidden argument*/NULL);
 		NullCheck(L_22);
-		uint8_t L_23 = ASN1_get_Tag_m442995239(L_22, /*hidden argument*/NULL);
+		uint8_t L_23 = ASN1_get_Tag_m1269404867(L_22, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_23) == ((uint32_t)2))))
 		{
 			goto IL_00bf;
@@ -8802,9 +8802,9 @@ IL_0089:
 	{
 		ASN1_t1254135647 * L_24 = V_2;
 		NullCheck(L_24);
-		ASN1_t1254135647 * L_25 = ASN1_get_Item_m3727278260(L_24, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_25 = ASN1_get_Item_m3112983888(L_24, 2, /*hidden argument*/NULL);
 		NullCheck(L_25);
-		uint8_t L_26 = ASN1_get_Tag_m442995239(L_25, /*hidden argument*/NULL);
+		uint8_t L_26 = ASN1_get_Tag_m1269404867(L_25, /*hidden argument*/NULL);
 		if ((((int32_t)L_26) == ((int32_t)2)))
 		{
 			goto IL_00c1;
@@ -8820,23 +8820,23 @@ IL_00c1:
 	{
 		ASN1_t1254135647 * L_27 = V_2;
 		NullCheck(L_27);
-		ASN1_t1254135647 * L_28 = ASN1_get_Item_m3727278260(L_27, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_28 = ASN1_get_Item_m3112983888(L_27, 0, /*hidden argument*/NULL);
 		NullCheck(L_28);
-		ByteU5BU5D_t58506160* L_29 = ASN1_get_Value_m390067040(L_28, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_29 = ASN1_get_Value_m4232529916(L_28, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_30 = X509Certificate_GetUnsignedBigInteger_m3057380224(__this, L_29, /*hidden argument*/NULL);
 		(&V_0)->set_P_3(L_30);
 		ASN1_t1254135647 * L_31 = V_2;
 		NullCheck(L_31);
-		ASN1_t1254135647 * L_32 = ASN1_get_Item_m3727278260(L_31, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_32 = ASN1_get_Item_m3112983888(L_31, 1, /*hidden argument*/NULL);
 		NullCheck(L_32);
-		ByteU5BU5D_t58506160* L_33 = ASN1_get_Value_m390067040(L_32, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_33 = ASN1_get_Value_m4232529916(L_32, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_34 = X509Certificate_GetUnsignedBigInteger_m3057380224(__this, L_33, /*hidden argument*/NULL);
 		(&V_0)->set_Q_4(L_34);
 		ASN1_t1254135647 * L_35 = V_2;
 		NullCheck(L_35);
-		ASN1_t1254135647 * L_36 = ASN1_get_Item_m3727278260(L_35, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_36 = ASN1_get_Item_m3112983888(L_35, 2, /*hidden argument*/NULL);
 		NullCheck(L_36);
-		ByteU5BU5D_t58506160* L_37 = ASN1_get_Value_m390067040(L_36, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_37 = ASN1_get_Value_m4232529916(L_36, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_38 = X509Certificate_GetUnsignedBigInteger_m3057380224(__this, L_37, /*hidden argument*/NULL);
 		(&V_0)->set_G_1(L_38);
 		ByteU5BU5D_t58506160* L_39 = (&V_0)->get_Y_7();
@@ -8857,12 +8857,12 @@ IL_012e:
 	}
 }
 // System.Void Mono.Security.X509.X509Certificate::set_DSA(System.Security.Cryptography.DSA)
-extern "C"  void X509Certificate_set_DSA_m1562150692 (X509Certificate_t273828613 * __this, DSA_t1557551819 * ___value, const MethodInfo* method)
+extern "C"  void X509Certificate_set_DSA_m225206720 (X509Certificate_t273828613 * __this, DSA_t1557551819 * ___value0, const MethodInfo* method)
 {
 	{
-		DSA_t1557551819 * L_0 = ___value;
+		DSA_t1557551819 * L_0 = ___value0;
 		__this->set__dsa_16(L_0);
-		DSA_t1557551819 * L_1 = ___value;
+		DSA_t1557551819 * L_1 = ___value0;
 		if (!L_1)
 		{
 			goto IL_0014;
@@ -8878,7 +8878,7 @@ IL_0014:
 	}
 }
 // Mono.Security.X509.X509ExtensionCollection Mono.Security.X509.X509Certificate::get_Extensions()
-extern "C"  X509ExtensionCollection_t3528692651 * X509Certificate_get_Extensions_m577630462 (X509Certificate_t273828613 * __this, const MethodInfo* method)
+extern "C"  X509ExtensionCollection_t3528692651 * X509Certificate_get_Extensions_m1715365530 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
 	{
 		X509ExtensionCollection_t3528692651 * L_0 = __this->get_extensions_21();
@@ -8886,9 +8886,9 @@ extern "C"  X509ExtensionCollection_t3528692651 * X509Certificate_get_Extensions
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::get_Hash()
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2198962788;
 extern Il2CppCodeGenString* _stringLiteral2198962790;
@@ -8968,7 +8968,7 @@ IL_0079:
 		Dictionary_2_t190145395 * L_12 = ((X509Certificate_t273828613_StaticFields*)X509Certificate_t273828613_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24mapF_23();
 		String_t* L_13 = V_2;
 		NullCheck(L_12);
-		bool L_14 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_12, L_13, (&V_4));
+		bool L_14 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_12, L_13, (&V_4));
 		if (!L_14)
 		{
 			goto IL_00d3;
@@ -9041,7 +9041,7 @@ IL_00d5:
 	{
 		ASN1_t1254135647 * L_21 = __this->get_decoder_0();
 		NullCheck(L_21);
-		int32_t L_22 = ASN1_get_Count_m2214472120(L_21, /*hidden argument*/NULL);
+		int32_t L_22 = ASN1_get_Count_m3031159196(L_21, /*hidden argument*/NULL);
 		if ((((int32_t)L_22) >= ((int32_t)1)))
 		{
 			goto IL_00f3;
@@ -9057,7 +9057,7 @@ IL_00f3:
 	{
 		ASN1_t1254135647 * L_23 = __this->get_decoder_0();
 		NullCheck(L_23);
-		ASN1_t1254135647 * L_24 = ASN1_get_Item_m3727278260(L_23, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_24 = ASN1_get_Item_m3112983888(L_23, 0, /*hidden argument*/NULL);
 		NullCheck(L_24);
 		ByteU5BU5D_t58506160* L_25 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Byte[] Mono.Security.ASN1::GetBytes() */, L_24);
 		V_1 = L_25;
@@ -9095,7 +9095,7 @@ extern "C"  String_t* X509Certificate_get_KeyAlgorithm_m3661706164 (X509Certific
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::get_KeyAlgorithmParameters()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_KeyAlgorithmParameters_m2708577349_MetadataUsageId;
 extern "C"  ByteU5BU5D_t58506160* X509Certificate_get_KeyAlgorithmParameters_m2708577349 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9125,16 +9125,16 @@ IL_000d:
 	}
 }
 // System.Void Mono.Security.X509.X509Certificate::set_KeyAlgorithmParameters(System.Byte[])
-extern "C"  void X509Certificate_set_KeyAlgorithmParameters_m769560986 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___value, const MethodInfo* method)
+extern "C"  void X509Certificate_set_KeyAlgorithmParameters_m769560986 (X509Certificate_t273828613 * __this, ByteU5BU5D_t58506160* ___value0, const MethodInfo* method)
 {
 	{
-		ByteU5BU5D_t58506160* L_0 = ___value;
+		ByteU5BU5D_t58506160* L_0 = ___value0;
 		__this->set_m_keyalgoparams_7(L_0);
 		return;
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::get_PublicKey()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_PublicKey_m835022733_MetadataUsageId;
 extern "C"  ByteU5BU5D_t58506160* X509Certificate_get_PublicKey_m835022733 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9164,9 +9164,9 @@ IL_000d:
 	}
 }
 // System.Security.Cryptography.RSA Mono.Security.X509.X509Certificate::get_RSA()
-extern TypeInfo* RSAParameters_t2711684451_il2cpp_TypeInfo_var;
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* RSACryptoServiceProvider_t555495358_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSAParameters_t2711684451_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSACryptoServiceProvider_t555495358_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_RSA_m842279223_MetadataUsageId;
 extern "C"  RSA_t1557565273 * X509Certificate_get_RSA_m842279223 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9193,11 +9193,11 @@ extern "C"  RSA_t1557565273 * X509Certificate_get_RSA_m842279223 (X509Certificat
 		Initobj (RSAParameters_t2711684451_il2cpp_TypeInfo_var, (&V_0));
 		ByteU5BU5D_t58506160* L_1 = __this->get_m_publickey_10();
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_2, L_1, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_2, L_1, /*hidden argument*/NULL);
 		V_1 = L_2;
 		ASN1_t1254135647 * L_3 = V_1;
 		NullCheck(L_3);
-		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3727278260(L_3, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3112983888(L_3, 0, /*hidden argument*/NULL);
 		V_2 = L_4;
 		ASN1_t1254135647 * L_5 = V_2;
 		if (!L_5)
@@ -9208,7 +9208,7 @@ extern "C"  RSA_t1557565273 * X509Certificate_get_RSA_m842279223 (X509Certificat
 	{
 		ASN1_t1254135647 * L_6 = V_2;
 		NullCheck(L_6);
-		uint8_t L_7 = ASN1_get_Tag_m442995239(L_6, /*hidden argument*/NULL);
+		uint8_t L_7 = ASN1_get_Tag_m1269404867(L_6, /*hidden argument*/NULL);
 		if ((((int32_t)L_7) == ((int32_t)2)))
 		{
 			goto IL_003b;
@@ -9224,11 +9224,11 @@ IL_003b:
 	{
 		ASN1_t1254135647 * L_8 = V_1;
 		NullCheck(L_8);
-		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3727278260(L_8, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_9 = ASN1_get_Item_m3112983888(L_8, 1, /*hidden argument*/NULL);
 		V_3 = L_9;
 		ASN1_t1254135647 * L_10 = V_3;
 		NullCheck(L_10);
-		uint8_t L_11 = ASN1_get_Tag_m442995239(L_10, /*hidden argument*/NULL);
+		uint8_t L_11 = ASN1_get_Tag_m1269404867(L_10, /*hidden argument*/NULL);
 		if ((((int32_t)L_11) == ((int32_t)2)))
 		{
 			goto IL_0051;
@@ -9242,12 +9242,12 @@ IL_0051:
 	{
 		ASN1_t1254135647 * L_12 = V_2;
 		NullCheck(L_12);
-		ByteU5BU5D_t58506160* L_13 = ASN1_get_Value_m390067040(L_12, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_13 = ASN1_get_Value_m4232529916(L_12, /*hidden argument*/NULL);
 		ByteU5BU5D_t58506160* L_14 = X509Certificate_GetUnsignedBigInteger_m3057380224(__this, L_13, /*hidden argument*/NULL);
 		(&V_0)->set_Modulus_6(L_14);
 		ASN1_t1254135647 * L_15 = V_3;
 		NullCheck(L_15);
-		ByteU5BU5D_t58506160* L_16 = ASN1_get_Value_m390067040(L_15, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_16 = ASN1_get_Value_m4232529916(L_15, /*hidden argument*/NULL);
 		(&V_0)->set_Exponent_7(L_16);
 		ByteU5BU5D_t58506160* L_17 = (&V_0)->get_Modulus_6();
 		NullCheck(L_17);
@@ -9269,10 +9269,10 @@ IL_0097:
 	}
 }
 // System.Void Mono.Security.X509.X509Certificate::set_RSA(System.Security.Cryptography.RSA)
-extern "C"  void X509Certificate_set_RSA_m547377152 (X509Certificate_t273828613 * __this, RSA_t1557565273 * ___value, const MethodInfo* method)
+extern "C"  void X509Certificate_set_RSA_m547377152 (X509Certificate_t273828613 * __this, RSA_t1557565273 * ___value0, const MethodInfo* method)
 {
 	{
-		RSA_t1557565273 * L_0 = ___value;
+		RSA_t1557565273 * L_0 = ___value0;
 		if (!L_0)
 		{
 			goto IL_000d;
@@ -9284,13 +9284,13 @@ extern "C"  void X509Certificate_set_RSA_m547377152 (X509Certificate_t273828613 
 
 IL_000d:
 	{
-		RSA_t1557565273 * L_1 = ___value;
+		RSA_t1557565273 * L_1 = ___value0;
 		__this->set__rsa_15(L_1);
 		return;
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::get_RawData()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_RawData_m2988459721_MetadataUsageId;
 extern "C"  ByteU5BU5D_t58506160* X509Certificate_get_RawData_m2988459721 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9320,7 +9320,7 @@ IL_000d:
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::get_SerialNumber()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_SerialNumber_m1906128776_MetadataUsageId;
 extern "C"  ByteU5BU5D_t58506160* X509Certificate_get_SerialNumber_m1906128776 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9350,12 +9350,12 @@ IL_000d:
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::get_Signature()
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2198962788;
 extern Il2CppCodeGenString* _stringLiteral2198962790;
@@ -9446,7 +9446,7 @@ IL_0083:
 		Dictionary_2_t190145395 * L_12 = ((X509Certificate_t273828613_StaticFields*)X509Certificate_t273828613_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map10_24();
 		String_t* L_13 = V_8;
 		NullCheck(L_12);
-		bool L_14 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_12, L_13, (&V_10));
+		bool L_14 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_12, L_13, (&V_10));
 		if (!L_14)
 		{
 			goto IL_015a;
@@ -9482,7 +9482,7 @@ IL_00bb:
 	{
 		ByteU5BU5D_t58506160* L_19 = __this->get_signature_11();
 		ASN1_t1254135647 * L_20 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_20, L_19, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_20, L_19, /*hidden argument*/NULL);
 		V_0 = L_20;
 		ASN1_t1254135647 * L_21 = V_0;
 		if (!L_21)
@@ -9493,7 +9493,7 @@ IL_00bb:
 	{
 		ASN1_t1254135647 * L_22 = V_0;
 		NullCheck(L_22);
-		int32_t L_23 = ASN1_get_Count_m2214472120(L_22, /*hidden argument*/NULL);
+		int32_t L_23 = ASN1_get_Count_m3031159196(L_22, /*hidden argument*/NULL);
 		if ((((int32_t)L_23) == ((int32_t)2)))
 		{
 			goto IL_00db;
@@ -9509,15 +9509,15 @@ IL_00db:
 	{
 		ASN1_t1254135647 * L_24 = V_0;
 		NullCheck(L_24);
-		ASN1_t1254135647 * L_25 = ASN1_get_Item_m3727278260(L_24, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_25 = ASN1_get_Item_m3112983888(L_24, 0, /*hidden argument*/NULL);
 		NullCheck(L_25);
-		ByteU5BU5D_t58506160* L_26 = ASN1_get_Value_m390067040(L_25, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_26 = ASN1_get_Value_m4232529916(L_25, /*hidden argument*/NULL);
 		V_1 = L_26;
 		ASN1_t1254135647 * L_27 = V_0;
 		NullCheck(L_27);
-		ASN1_t1254135647 * L_28 = ASN1_get_Item_m3727278260(L_27, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_28 = ASN1_get_Item_m3112983888(L_27, 1, /*hidden argument*/NULL);
 		NullCheck(L_28);
-		ByteU5BU5D_t58506160* L_29 = ASN1_get_Value_m390067040(L_28, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_29 = ASN1_get_Value_m4232529916(L_28, /*hidden argument*/NULL);
 		V_2 = L_29;
 		V_3 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)40)));
 		ByteU5BU5D_t58506160* L_30 = V_1;
@@ -9599,7 +9599,7 @@ extern "C"  DateTime_t339033936  X509Certificate_get_ValidUntil_m2484027100 (X50
 	}
 }
 // System.Int32 Mono.Security.X509.X509Certificate::get_Version()
-extern "C"  int32_t X509Certificate_get_Version_m1452122189 (X509Certificate_t273828613 * __this, const MethodInfo* method)
+extern "C"  int32_t X509Certificate_get_Version_m3883833137 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
 	{
 		int32_t L_0 = __this->get_version_17();
@@ -9607,7 +9607,7 @@ extern "C"  int32_t X509Certificate_get_Version_m1452122189 (X509Certificate_t27
 	}
 }
 // System.Boolean Mono.Security.X509.X509Certificate::get_IsCurrent()
-extern TypeInfo* DateTime_t339033936_il2cpp_TypeInfo_var;
+extern Il2CppClass* DateTime_t339033936_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_IsCurrent_m3064883298_MetadataUsageId;
 extern "C"  bool X509Certificate_get_IsCurrent_m3064883298 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9625,9 +9625,9 @@ extern "C"  bool X509Certificate_get_IsCurrent_m3064883298 (X509Certificate_t273
 	}
 }
 // System.Boolean Mono.Security.X509.X509Certificate::WasCurrent(System.DateTime)
-extern TypeInfo* DateTime_t339033936_il2cpp_TypeInfo_var;
+extern Il2CppClass* DateTime_t339033936_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_WasCurrent_m3800725474_MetadataUsageId;
-extern "C"  bool X509Certificate_WasCurrent_m3800725474 (X509Certificate_t273828613 * __this, DateTime_t339033936  ___instant, const MethodInfo* method)
+extern "C"  bool X509Certificate_WasCurrent_m3800725474 (X509Certificate_t273828613 * __this, DateTime_t339033936  ___instant0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -9637,7 +9637,7 @@ extern "C"  bool X509Certificate_WasCurrent_m3800725474 (X509Certificate_t273828
 	}
 	int32_t G_B3_0 = 0;
 	{
-		DateTime_t339033936  L_0 = ___instant;
+		DateTime_t339033936  L_0 = ___instant0;
 		DateTime_t339033936  L_1 = VirtFuncInvoker0< DateTime_t339033936  >::Invoke(17 /* System.DateTime Mono.Security.X509.X509Certificate::get_ValidFrom() */, __this);
 		IL2CPP_RUNTIME_CLASS_INIT(DateTime_t339033936_il2cpp_TypeInfo_var);
 		bool L_2 = DateTime_op_GreaterThan_m3846016869(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
@@ -9647,7 +9647,7 @@ extern "C"  bool X509Certificate_WasCurrent_m3800725474 (X509Certificate_t273828
 		}
 	}
 	{
-		DateTime_t339033936  L_3 = ___instant;
+		DateTime_t339033936  L_3 = ___instant0;
 		DateTime_t339033936  L_4 = VirtFuncInvoker0< DateTime_t339033936  >::Invoke(18 /* System.DateTime Mono.Security.X509.X509Certificate::get_ValidUntil() */, __this);
 		IL2CPP_RUNTIME_CLASS_INIT(DateTime_t339033936_il2cpp_TypeInfo_var);
 		bool L_5 = DateTime_op_LessThanOrEqual_m354447689(NULL /*static, unused*/, L_3, L_4, /*hidden argument*/NULL);
@@ -9666,10 +9666,10 @@ IL_0020:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Certificate::VerifySignature(System.Security.Cryptography.DSA)
-extern TypeInfo* DSASignatureDeformatter_t426713980_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSASignatureDeformatter_t426713980_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2543909;
 extern const uint32_t X509Certificate_VerifySignature_m120457372_MetadataUsageId;
-extern "C"  bool X509Certificate_VerifySignature_m120457372 (X509Certificate_t273828613 * __this, DSA_t1557551819 * ___dsa, const MethodInfo* method)
+extern "C"  bool X509Certificate_VerifySignature_m120457372 (X509Certificate_t273828613 * __this, DSA_t1557551819 * ___dsa0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -9679,7 +9679,7 @@ extern "C"  bool X509Certificate_VerifySignature_m120457372 (X509Certificate_t27
 	}
 	DSASignatureDeformatter_t426713980 * V_0 = NULL;
 	{
-		DSA_t1557551819 * L_0 = ___dsa;
+		DSA_t1557551819 * L_0 = ___dsa0;
 		DSASignatureDeformatter_t426713980 * L_1 = (DSASignatureDeformatter_t426713980 *)il2cpp_codegen_object_new(DSASignatureDeformatter_t426713980_il2cpp_TypeInfo_var);
 		DSASignatureDeformatter__ctor_m1067293596(L_1, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
@@ -9695,11 +9695,11 @@ extern "C"  bool X509Certificate_VerifySignature_m120457372 (X509Certificate_t27
 	}
 }
 // System.Boolean Mono.Security.X509.X509Certificate::VerifySignature(System.Security.Cryptography.RSA)
-extern TypeInfo* RSAPKCS1SignatureDeformatter_t1504052144_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSAPKCS1SignatureDeformatter_t1504052144_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2198962788;
 extern Il2CppCodeGenString* _stringLiteral2198962790;
@@ -9712,7 +9712,7 @@ extern Il2CppCodeGenString* _stringLiteral2543909;
 extern Il2CppCodeGenString* _stringLiteral2444699207;
 extern Il2CppCodeGenString* _stringLiteral3904661102;
 extern const uint32_t X509Certificate_VerifySignature_m120874446_MetadataUsageId;
-extern "C"  bool X509Certificate_VerifySignature_m120874446 (X509Certificate_t273828613 * __this, RSA_t1557565273 * ___rsa, const MethodInfo* method)
+extern "C"  bool X509Certificate_VerifySignature_m120874446 (X509Certificate_t273828613 * __this, RSA_t1557565273 * ___rsa0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -9725,7 +9725,7 @@ extern "C"  bool X509Certificate_VerifySignature_m120874446 (X509Certificate_t27
 	Dictionary_2_t190145395 * V_2 = NULL;
 	int32_t V_3 = 0;
 	{
-		RSA_t1557565273 * L_0 = ___rsa;
+		RSA_t1557565273 * L_0 = ___rsa0;
 		RSAPKCS1SignatureDeformatter_t1504052144 * L_1 = (RSAPKCS1SignatureDeformatter_t1504052144 *)il2cpp_codegen_object_new(RSAPKCS1SignatureDeformatter_t1504052144_il2cpp_TypeInfo_var);
 		RSAPKCS1SignatureDeformatter__ctor_m3465174692(L_1, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
@@ -9775,7 +9775,7 @@ IL_0067:
 		Dictionary_2_t190145395 * L_12 = ((X509Certificate_t273828613_StaticFields*)X509Certificate_t273828613_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map11_25();
 		String_t* L_13 = V_1;
 		NullCheck(L_12);
-		bool L_14 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_12, L_13, (&V_3));
+		bool L_14 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_12, L_13, (&V_3));
 		if (!L_14)
 		{
 			goto IL_00d4;
@@ -9857,24 +9857,24 @@ IL_00ea:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Certificate::VerifySignature(System.Security.Cryptography.AsymmetricAlgorithm)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* RSA_t1557565273_il2cpp_TypeInfo_var;
-extern TypeInfo* DSA_t1557551819_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSA_t1557565273_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSA_t1557551819_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3104;
 extern Il2CppCodeGenString* _stringLiteral1712030853;
-extern const uint32_t X509Certificate_VerifySignature_m1482842161_MetadataUsageId;
-extern "C"  bool X509Certificate_VerifySignature_m1482842161 (X509Certificate_t273828613 * __this, AsymmetricAlgorithm_t4236534322 * ___aa, const MethodInfo* method)
+extern const uint32_t X509Certificate_VerifySignature_m2925184021_MetadataUsageId;
+extern "C"  bool X509Certificate_VerifySignature_m2925184021 (X509Certificate_t273828613 * __this, AsymmetricAlgorithm_t4236534322 * ___aa0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Certificate_VerifySignature_m1482842161_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Certificate_VerifySignature_m2925184021_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		AsymmetricAlgorithm_t4236534322 * L_0 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_0 = ___aa0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -9888,35 +9888,35 @@ extern "C"  bool X509Certificate_VerifySignature_m1482842161 (X509Certificate_t2
 
 IL_0011:
 	{
-		AsymmetricAlgorithm_t4236534322 * L_2 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_2 = ___aa0;
 		if (!((RSA_t1557565273 *)IsInstClass(L_2, RSA_t1557565273_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0029;
 		}
 	}
 	{
-		AsymmetricAlgorithm_t4236534322 * L_3 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_3 = ___aa0;
 		bool L_4 = X509Certificate_VerifySignature_m120874446(__this, ((RSA_t1557565273 *)IsInstClass(L_3, RSA_t1557565273_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_4;
 	}
 
 IL_0029:
 	{
-		AsymmetricAlgorithm_t4236534322 * L_5 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_5 = ___aa0;
 		if (!((DSA_t1557551819 *)IsInstClass(L_5, DSA_t1557551819_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0041;
 		}
 	}
 	{
-		AsymmetricAlgorithm_t4236534322 * L_6 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_6 = ___aa0;
 		bool L_7 = X509Certificate_VerifySignature_m120457372(__this, ((DSA_t1557551819 *)IsInstClass(L_6, DSA_t1557551819_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_7;
 	}
 
 IL_0041:
 	{
-		AsymmetricAlgorithm_t4236534322 * L_8 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_8 = ___aa0;
 		NullCheck(L_8);
 		String_t* L_9 = VirtFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_8);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -9927,7 +9927,7 @@ IL_0041:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Certificate::get_IsSelfSigned()
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern const uint32_t X509Certificate_get_IsSelfSigned_m3915010913_MetadataUsageId;
 extern "C"  bool X509Certificate_get_IsSelfSigned_m3915010913 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
@@ -9959,7 +9959,7 @@ IL_0023:
 	}
 }
 // Mono.Security.ASN1 Mono.Security.X509.X509Certificate::GetIssuerName()
-extern "C"  ASN1_t1254135647 * X509Certificate_GetIssuerName_m3574279585 (X509Certificate_t273828613 * __this, const MethodInfo* method)
+extern "C"  ASN1_t1254135647 * X509Certificate_GetIssuerName_m1167655045 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
 	{
 		ASN1_t1254135647 * L_0 = __this->get_issuer_4();
@@ -9967,7 +9967,7 @@ extern "C"  ASN1_t1254135647 * X509Certificate_GetIssuerName_m3574279585 (X509Ce
 	}
 }
 // Mono.Security.ASN1 Mono.Security.X509.X509Certificate::GetSubjectName()
-extern "C"  ASN1_t1254135647 * X509Certificate_GetSubjectName_m1835981788 (X509Certificate_t273828613 * __this, const MethodInfo* method)
+extern "C"  ASN1_t1254135647 * X509Certificate_GetSubjectName_m245065080 (X509Certificate_t273828613 * __this, const MethodInfo* method)
 {
 	{
 		ASN1_t1254135647 * L_0 = __this->get_subject_8();
@@ -9977,7 +9977,7 @@ extern "C"  ASN1_t1254135647 * X509Certificate_GetSubjectName_m1835981788 (X509C
 // System.Void Mono.Security.X509.X509Certificate::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
 extern Il2CppCodeGenString* _stringLiteral112680;
 extern const uint32_t X509Certificate_GetObjectData_m2959679786_MetadataUsageId;
-extern "C"  void X509Certificate_GetObjectData_m2959679786 (X509Certificate_t273828613 * __this, SerializationInfo_t2995724695 * ___info, StreamingContext_t986364934  ___context, const MethodInfo* method)
+extern "C"  void X509Certificate_GetObjectData_m2959679786 (X509Certificate_t273828613 * __this, SerializationInfo_t2995724695 * ___info0, StreamingContext_t986364934  ___context1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -9986,7 +9986,7 @@ extern "C"  void X509Certificate_GetObjectData_m2959679786 (X509Certificate_t273
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		SerializationInfo_t2995724695 * L_0 = ___info;
+		SerializationInfo_t2995724695 * L_0 = ___info0;
 		ByteU5BU5D_t58506160* L_1 = __this->get_m_encodedcert_1();
 		NullCheck(L_0);
 		SerializationInfo_AddValue_m469120675(L_0, _stringLiteral112680, (Il2CppObject *)(Il2CppObject *)L_1, /*hidden argument*/NULL);
@@ -9994,13 +9994,13 @@ extern "C"  void X509Certificate_GetObjectData_m2959679786 (X509Certificate_t273
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Certificate::PEM(System.String,System.Byte[])
-extern TypeInfo* Encoding_t180559927_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* Convert_t1097883944_il2cpp_TypeInfo_var;
+extern Il2CppClass* Encoding_t180559927_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* Convert_t1097883944_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral332087753;
 extern Il2CppCodeGenString* _stringLiteral3387880727;
 extern const uint32_t X509Certificate_PEM_m3879103085_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* X509Certificate_PEM_m3879103085 (Il2CppObject * __this /* static, unused */, String_t* ___type, ByteU5BU5D_t58506160* ___data, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* X509Certificate_PEM_m3879103085 (Il2CppObject * __this /* static, unused */, String_t* ___type0, ByteU5BU5D_t58506160* ___data1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10017,15 +10017,15 @@ extern "C"  ByteU5BU5D_t58506160* X509Certificate_PEM_m3879103085 (Il2CppObject 
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(Encoding_t180559927_il2cpp_TypeInfo_var);
 		Encoding_t180559927 * L_0 = Encoding_get_ASCII_m1425378925(NULL /*static, unused*/, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_1 = ___data;
+		ByteU5BU5D_t58506160* L_1 = ___data1;
 		NullCheck(L_0);
 		String_t* L_2 = VirtFuncInvoker1< String_t*, ByteU5BU5D_t58506160* >::Invoke(22 /* System.String System.Text.Encoding::GetString(System.Byte[]) */, L_0, L_1);
 		V_0 = L_2;
-		String_t* L_3 = ___type;
+		String_t* L_3 = ___type0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		String_t* L_4 = String_Format_m2471250780(NULL /*static, unused*/, _stringLiteral332087753, L_3, /*hidden argument*/NULL);
 		V_1 = L_4;
-		String_t* L_5 = ___type;
+		String_t* L_5 = ___type0;
 		String_t* L_6 = String_Format_m2471250780(NULL /*static, unused*/, _stringLiteral3387880727, L_5, /*hidden argument*/NULL);
 		V_2 = L_6;
 		String_t* L_7 = V_0;
@@ -10064,11 +10064,11 @@ extern "C"  void X509CertificateCollection__ctor_m2517521230 (X509CertificateCol
 	}
 }
 // System.Void Mono.Security.X509.X509CertificateCollection::.ctor(Mono.Security.X509.X509CertificateCollection)
-extern "C"  void X509CertificateCollection__ctor_m1273937252 (X509CertificateCollection_t3336811651 * __this, X509CertificateCollection_t3336811651 * ___value, const MethodInfo* method)
+extern "C"  void X509CertificateCollection__ctor_m1273937252 (X509CertificateCollection_t3336811651 * __this, X509CertificateCollection_t3336811651 * ___value0, const MethodInfo* method)
 {
 	{
 		CollectionBase__ctor_m3181013581(__this, /*hidden argument*/NULL);
-		X509CertificateCollection_t3336811651 * L_0 = ___value;
+		X509CertificateCollection_t3336811651 * L_0 = ___value0;
 		X509CertificateCollection_AddRange_m2353463272(__this, L_0, /*hidden argument*/NULL);
 		return;
 	}
@@ -10084,29 +10084,29 @@ extern "C"  Il2CppObject * X509CertificateCollection_System_Collections_IEnumera
 	}
 }
 // Mono.Security.X509.X509Certificate Mono.Security.X509.X509CertificateCollection::get_Item(System.Int32)
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateCollection_get_Item_m1107000690_MetadataUsageId;
-extern "C"  X509Certificate_t273828613 * X509CertificateCollection_get_Item_m1107000690 (X509CertificateCollection_t3336811651 * __this, int32_t ___index, const MethodInfo* method)
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern const uint32_t X509CertificateCollection_get_Item_m1446680334_MetadataUsageId;
+extern "C"  X509Certificate_t273828613 * X509CertificateCollection_get_Item_m1446680334 (X509CertificateCollection_t3336811651 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509CertificateCollection_get_Item_m1107000690_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509CertificateCollection_get_Item_m1446680334_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
 		ArrayList_t2121638921 * L_0 = CollectionBase_get_InnerList_m2840879970(__this, /*hidden argument*/NULL);
-		int32_t L_1 = ___index;
+		int32_t L_1 = ___index0;
 		NullCheck(L_0);
 		Il2CppObject * L_2 = VirtFuncInvoker1< Il2CppObject *, int32_t >::Invoke(21 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_0, L_1);
 		return ((X509Certificate_t273828613 *)CastclassClass(L_2, X509Certificate_t273828613_il2cpp_TypeInfo_var));
 	}
 }
 // System.Int32 Mono.Security.X509.X509CertificateCollection::Add(Mono.Security.X509.X509Certificate)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral111972721;
 extern const uint32_t X509CertificateCollection_Add_m1585739833_MetadataUsageId;
-extern "C"  int32_t X509CertificateCollection_Add_m1585739833 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value, const MethodInfo* method)
+extern "C"  int32_t X509CertificateCollection_Add_m1585739833 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10115,7 +10115,7 @@ extern "C"  int32_t X509CertificateCollection_Add_m1585739833 (X509CertificateCo
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		X509Certificate_t273828613 * L_0 = ___value;
+		X509Certificate_t273828613 * L_0 = ___value0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -10130,17 +10130,17 @@ extern "C"  int32_t X509CertificateCollection_Add_m1585739833 (X509CertificateCo
 IL_0011:
 	{
 		ArrayList_t2121638921 * L_2 = CollectionBase_get_InnerList_m2840879970(__this, /*hidden argument*/NULL);
-		X509Certificate_t273828613 * L_3 = ___value;
+		X509Certificate_t273828613 * L_3 = ___value0;
 		NullCheck(L_2);
 		int32_t L_4 = VirtFuncInvoker1< int32_t, Il2CppObject * >::Invoke(30 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_2, L_3);
 		return L_4;
 	}
 }
 // System.Void Mono.Security.X509.X509CertificateCollection::AddRange(Mono.Security.X509.X509CertificateCollection)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral111972721;
 extern const uint32_t X509CertificateCollection_AddRange_m2353463272_MetadataUsageId;
-extern "C"  void X509CertificateCollection_AddRange_m2353463272 (X509CertificateCollection_t3336811651 * __this, X509CertificateCollection_t3336811651 * ___value, const MethodInfo* method)
+extern "C"  void X509CertificateCollection_AddRange_m2353463272 (X509CertificateCollection_t3336811651 * __this, X509CertificateCollection_t3336811651 * ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10150,7 +10150,7 @@ extern "C"  void X509CertificateCollection_AddRange_m2353463272 (X509Certificate
 	}
 	int32_t V_0 = 0;
 	{
-		X509CertificateCollection_t3336811651 * L_0 = ___value;
+		X509CertificateCollection_t3336811651 * L_0 = ___value0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -10171,10 +10171,10 @@ IL_0011:
 IL_0018:
 	{
 		ArrayList_t2121638921 * L_2 = CollectionBase_get_InnerList_m2840879970(__this, /*hidden argument*/NULL);
-		X509CertificateCollection_t3336811651 * L_3 = ___value;
+		X509CertificateCollection_t3336811651 * L_3 = ___value0;
 		int32_t L_4 = V_0;
 		NullCheck(L_3);
-		X509Certificate_t273828613 * L_5 = X509CertificateCollection_get_Item_m1107000690(L_3, L_4, /*hidden argument*/NULL);
+		X509Certificate_t273828613 * L_5 = X509CertificateCollection_get_Item_m1446680334(L_3, L_4, /*hidden argument*/NULL);
 		NullCheck(L_2);
 		VirtFuncInvoker1< int32_t, Il2CppObject * >::Invoke(30 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_2, L_5);
 		int32_t L_6 = V_0;
@@ -10184,7 +10184,7 @@ IL_0018:
 IL_002f:
 	{
 		int32_t L_7 = V_0;
-		X509CertificateCollection_t3336811651 * L_8 = ___value;
+		X509CertificateCollection_t3336811651 * L_8 = ___value0;
 		NullCheck(L_8);
 		ArrayList_t2121638921 * L_9 = CollectionBase_get_InnerList_m2840879970(L_8, /*hidden argument*/NULL);
 		NullCheck(L_9);
@@ -10199,27 +10199,27 @@ IL_002f:
 	}
 }
 // System.Boolean Mono.Security.X509.X509CertificateCollection::Contains(Mono.Security.X509.X509Certificate)
-extern "C"  bool X509CertificateCollection_Contains_m1747801975 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value, const MethodInfo* method)
+extern "C"  bool X509CertificateCollection_Contains_m1747801975 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value0, const MethodInfo* method)
 {
 	{
-		X509Certificate_t273828613 * L_0 = ___value;
+		X509Certificate_t273828613 * L_0 = ___value0;
 		int32_t L_1 = X509CertificateCollection_IndexOf_m2746488929(__this, L_0, /*hidden argument*/NULL);
 		return (bool)((((int32_t)((((int32_t)L_1) == ((int32_t)(-1)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
 // Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator Mono.Security.X509.X509CertificateCollection::GetEnumerator()
-extern TypeInfo* X509CertificateEnumerator_t3569011383_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateCollection_GetEnumerator_m2226643995_MetadataUsageId;
-extern "C"  X509CertificateEnumerator_t3569011383 * X509CertificateCollection_GetEnumerator_m2226643995 (X509CertificateCollection_t3336811651 * __this, const MethodInfo* method)
+extern Il2CppClass* X509CertificateEnumerator_t3569011382_il2cpp_TypeInfo_var;
+extern const uint32_t X509CertificateCollection_GetEnumerator_m1926496255_MetadataUsageId;
+extern "C"  X509CertificateEnumerator_t3569011382 * X509CertificateCollection_GetEnumerator_m1926496255 (X509CertificateCollection_t3336811651 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509CertificateCollection_GetEnumerator_m2226643995_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509CertificateCollection_GetEnumerator_m1926496255_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		X509CertificateEnumerator_t3569011383 * L_0 = (X509CertificateEnumerator_t3569011383 *)il2cpp_codegen_object_new(X509CertificateEnumerator_t3569011383_il2cpp_TypeInfo_var);
+		X509CertificateEnumerator_t3569011382 * L_0 = (X509CertificateEnumerator_t3569011382 *)il2cpp_codegen_object_new(X509CertificateEnumerator_t3569011382_il2cpp_TypeInfo_var);
 		X509CertificateEnumerator__ctor_m3786714110(L_0, __this, /*hidden argument*/NULL);
 		return L_0;
 	}
@@ -10235,11 +10235,11 @@ extern "C"  int32_t X509CertificateCollection_GetHashCode_m2363682709 (X509Certi
 	}
 }
 // System.Int32 Mono.Security.X509.X509CertificateCollection::IndexOf(Mono.Security.X509.X509Certificate)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral111972721;
 extern const uint32_t X509CertificateCollection_IndexOf_m2746488929_MetadataUsageId;
-extern "C"  int32_t X509CertificateCollection_IndexOf_m2746488929 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value, const MethodInfo* method)
+extern "C"  int32_t X509CertificateCollection_IndexOf_m2746488929 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10251,7 +10251,7 @@ extern "C"  int32_t X509CertificateCollection_IndexOf_m2746488929 (X509Certifica
 	int32_t V_1 = 0;
 	X509Certificate_t273828613 * V_2 = NULL;
 	{
-		X509Certificate_t273828613 * L_0 = ___value;
+		X509Certificate_t273828613 * L_0 = ___value0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -10265,7 +10265,7 @@ extern "C"  int32_t X509CertificateCollection_IndexOf_m2746488929 (X509Certifica
 
 IL_0011:
 	{
-		X509Certificate_t273828613 * L_2 = ___value;
+		X509Certificate_t273828613 * L_2 = ___value0;
 		NullCheck(L_2);
 		ByteU5BU5D_t58506160* L_3 = X509Certificate_get_Hash_m2925829113(L_2, /*hidden argument*/NULL);
 		V_0 = L_3;
@@ -10317,29 +10317,29 @@ IL_0049:
 	}
 }
 // System.Void Mono.Security.X509.X509CertificateCollection::Remove(Mono.Security.X509.X509Certificate)
-extern "C"  void X509CertificateCollection_Remove_m2746334158 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value, const MethodInfo* method)
+extern "C"  void X509CertificateCollection_Remove_m2746334158 (X509CertificateCollection_t3336811651 * __this, X509Certificate_t273828613 * ___value0, const MethodInfo* method)
 {
 	{
 		ArrayList_t2121638921 * L_0 = CollectionBase_get_InnerList_m2840879970(__this, /*hidden argument*/NULL);
-		X509Certificate_t273828613 * L_1 = ___value;
+		X509Certificate_t273828613 * L_1 = ___value0;
 		NullCheck(L_0);
 		VirtActionInvoker1< Il2CppObject * >::Invoke(38 /* System.Void System.Collections.ArrayList::Remove(System.Object) */, L_0, L_1);
 		return;
 	}
 }
 // System.Boolean Mono.Security.X509.X509CertificateCollection::Compare(System.Byte[],System.Byte[])
-extern "C"  bool X509CertificateCollection_Compare_m1507319785 (X509CertificateCollection_t3336811651 * __this, ByteU5BU5D_t58506160* ___array1, ByteU5BU5D_t58506160* ___array2, const MethodInfo* method)
+extern "C"  bool X509CertificateCollection_Compare_m1507319785 (X509CertificateCollection_t3336811651 * __this, ByteU5BU5D_t58506160* ___array10, ByteU5BU5D_t58506160* ___array21, const MethodInfo* method)
 {
 	int32_t V_0 = 0;
 	{
-		ByteU5BU5D_t58506160* L_0 = ___array1;
+		ByteU5BU5D_t58506160* L_0 = ___array10;
 		if (L_0)
 		{
 			goto IL_000e;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_1 = ___array2;
+		ByteU5BU5D_t58506160* L_1 = ___array21;
 		if (L_1)
 		{
 			goto IL_000e;
@@ -10351,14 +10351,14 @@ extern "C"  bool X509CertificateCollection_Compare_m1507319785 (X509CertificateC
 
 IL_000e:
 	{
-		ByteU5BU5D_t58506160* L_2 = ___array1;
+		ByteU5BU5D_t58506160* L_2 = ___array10;
 		if (!L_2)
 		{
 			goto IL_001a;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_3 = ___array2;
+		ByteU5BU5D_t58506160* L_3 = ___array21;
 		if (L_3)
 		{
 			goto IL_001c;
@@ -10372,9 +10372,9 @@ IL_001a:
 
 IL_001c:
 	{
-		ByteU5BU5D_t58506160* L_4 = ___array1;
+		ByteU5BU5D_t58506160* L_4 = ___array10;
 		NullCheck(L_4);
-		ByteU5BU5D_t58506160* L_5 = ___array2;
+		ByteU5BU5D_t58506160* L_5 = ___array21;
 		NullCheck(L_5);
 		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_4)->max_length))))) == ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_5)->max_length)))))))
 		{
@@ -10393,12 +10393,12 @@ IL_0029:
 
 IL_0030:
 	{
-		ByteU5BU5D_t58506160* L_6 = ___array1;
+		ByteU5BU5D_t58506160* L_6 = ___array10;
 		int32_t L_7 = V_0;
 		NullCheck(L_6);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, L_7);
 		int32_t L_8 = L_7;
-		ByteU5BU5D_t58506160* L_9 = ___array2;
+		ByteU5BU5D_t58506160* L_9 = ___array21;
 		int32_t L_10 = V_0;
 		NullCheck(L_9);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_9, L_10);
@@ -10421,7 +10421,7 @@ IL_003d:
 IL_0041:
 	{
 		int32_t L_13 = V_0;
-		ByteU5BU5D_t58506160* L_14 = ___array1;
+		ByteU5BU5D_t58506160* L_14 = ___array10;
 		NullCheck(L_14);
 		if ((((int32_t)L_13) < ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_14)->max_length)))))))
 		{
@@ -10433,9 +10433,9 @@ IL_0041:
 	}
 }
 // System.Void Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::.ctor(Mono.Security.X509.X509CertificateCollection)
-extern TypeInfo* IEnumerable_t287189635_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerable_t287189635_il2cpp_TypeInfo_var;
 extern const uint32_t X509CertificateEnumerator__ctor_m3786714110_MetadataUsageId;
-extern "C"  void X509CertificateEnumerator__ctor_m3786714110 (X509CertificateEnumerator_t3569011383 * __this, X509CertificateCollection_t3336811651 * ___mappings, const MethodInfo* method)
+extern "C"  void X509CertificateEnumerator__ctor_m3786714110 (X509CertificateEnumerator_t3569011382 * __this, X509CertificateCollection_t3336811651 * ___mappings0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10445,7 +10445,7 @@ extern "C"  void X509CertificateEnumerator__ctor_m3786714110 (X509CertificateEnu
 	}
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		X509CertificateCollection_t3336811651 * L_0 = ___mappings;
+		X509CertificateCollection_t3336811651 * L_0 = ___mappings0;
 		NullCheck(L_0);
 		Il2CppObject * L_1 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(0 /* System.Collections.IEnumerator System.Collections.IEnumerable::GetEnumerator() */, IEnumerable_t287189635_il2cpp_TypeInfo_var, L_0);
 		__this->set_enumerator_0(L_1);
@@ -10453,9 +10453,9 @@ extern "C"  void X509CertificateEnumerator__ctor_m3786714110 (X509CertificateEnu
 	}
 }
 // System.Object Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::System.Collections.IEnumerator.get_Current()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
 extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_get_Current_m974397704_MetadataUsageId;
-extern "C"  Il2CppObject * X509CertificateEnumerator_System_Collections_IEnumerator_get_Current_m974397704 (X509CertificateEnumerator_t3569011383 * __this, const MethodInfo* method)
+extern "C"  Il2CppObject * X509CertificateEnumerator_System_Collections_IEnumerator_get_Current_m974397704 (X509CertificateEnumerator_t3569011382 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10471,9 +10471,9 @@ extern "C"  Il2CppObject * X509CertificateEnumerator_System_Collections_IEnumera
 	}
 }
 // System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::System.Collections.IEnumerator.MoveNext()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
 extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_MoveNext_m1008796181_MetadataUsageId;
-extern "C"  bool X509CertificateEnumerator_System_Collections_IEnumerator_MoveNext_m1008796181 (X509CertificateEnumerator_t3569011383 * __this, const MethodInfo* method)
+extern "C"  bool X509CertificateEnumerator_System_Collections_IEnumerator_MoveNext_m1008796181 (X509CertificateEnumerator_t3569011382 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10489,9 +10489,9 @@ extern "C"  bool X509CertificateEnumerator_System_Collections_IEnumerator_MoveNe
 	}
 }
 // System.Void Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::System.Collections.IEnumerator.Reset()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
 extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_Reset_m2173605650_MetadataUsageId;
-extern "C"  void X509CertificateEnumerator_System_Collections_IEnumerator_Reset_m2173605650 (X509CertificateEnumerator_t3569011383 * __this, const MethodInfo* method)
+extern "C"  void X509CertificateEnumerator_System_Collections_IEnumerator_Reset_m2173605650 (X509CertificateEnumerator_t3569011382 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10507,15 +10507,15 @@ extern "C"  void X509CertificateEnumerator_System_Collections_IEnumerator_Reset_
 	}
 }
 // Mono.Security.X509.X509Certificate Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::get_Current()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_get_Current_m1696796071_MetadataUsageId;
-extern "C"  X509Certificate_t273828613 * X509CertificateEnumerator_get_Current_m1696796071 (X509CertificateEnumerator_t3569011383 * __this, const MethodInfo* method)
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern const uint32_t X509CertificateEnumerator_get_Current_m2126438283_MetadataUsageId;
+extern "C"  X509Certificate_t273828613 * X509CertificateEnumerator_get_Current_m2126438283 (X509CertificateEnumerator_t3569011382 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509CertificateEnumerator_get_Current_m1696796071_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509CertificateEnumerator_get_Current_m2126438283_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -10526,9 +10526,9 @@ extern "C"  X509Certificate_t273828613 * X509CertificateEnumerator_get_Current_m
 	}
 }
 // System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
 extern const uint32_t X509CertificateEnumerator_MoveNext_m4038787598_MetadataUsageId;
-extern "C"  bool X509CertificateEnumerator_MoveNext_m4038787598 (X509CertificateEnumerator_t3569011383 * __this, const MethodInfo* method)
+extern "C"  bool X509CertificateEnumerator_MoveNext_m4038787598 (X509CertificateEnumerator_t3569011382 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10544,9 +10544,9 @@ extern "C"  bool X509CertificateEnumerator_MoveNext_m4038787598 (X509Certificate
 	}
 }
 // System.Void Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::Reset()
-extern TypeInfo* IEnumerator_t287207039_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t287207039_il2cpp_TypeInfo_var;
 extern const uint32_t X509CertificateEnumerator_Reset_m2282105749_MetadataUsageId;
-extern "C"  void X509CertificateEnumerator_Reset_m2282105749 (X509CertificateEnumerator_t3569011383 * __this, const MethodInfo* method)
+extern "C"  void X509CertificateEnumerator_Reset_m2282105749 (X509CertificateEnumerator_t3569011382 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10562,7 +10562,7 @@ extern "C"  void X509CertificateEnumerator_Reset_m2282105749 (X509CertificateEnu
 	}
 }
 // System.Void Mono.Security.X509.X509Chain::.ctor()
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain__ctor_m4239706530_MetadataUsageId;
 extern "C"  void X509Chain__ctor_m4239706530 (X509Chain_t3968320430 * __this, const MethodInfo* method)
 {
@@ -10581,9 +10581,9 @@ extern "C"  void X509Chain__ctor_m4239706530 (X509Chain_t3968320430 * __this, co
 	}
 }
 // System.Void Mono.Security.X509.X509Chain::.ctor(Mono.Security.X509.X509CertificateCollection)
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain__ctor_m2818311608_MetadataUsageId;
-extern "C"  void X509Chain__ctor_m2818311608 (X509Chain_t3968320430 * __this, X509CertificateCollection_t3336811651 * ___chain, const MethodInfo* method)
+extern "C"  void X509Chain__ctor_m2818311608 (X509Chain_t3968320430 * __this, X509CertificateCollection_t3336811651 * ___chain0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10597,7 +10597,7 @@ extern "C"  void X509Chain__ctor_m2818311608 (X509Chain_t3968320430 * __this, X5
 		X509CertificateCollection__ctor_m2517521230(L_0, /*hidden argument*/NULL);
 		__this->set__chain_3(L_0);
 		X509CertificateCollection_t3336811651 * L_1 = __this->get__chain_3();
-		X509CertificateCollection_t3336811651 * L_2 = ___chain;
+		X509CertificateCollection_t3336811651 * L_2 = ___chain0;
 		NullCheck(L_1);
 		X509CertificateCollection_AddRange_m2353463272(L_1, L_2, /*hidden argument*/NULL);
 		return;
@@ -10612,7 +10612,7 @@ extern "C"  int32_t X509Chain_get_Status_m4000836433 (X509Chain_t3968320430 * __
 	}
 }
 // Mono.Security.X509.X509CertificateCollection Mono.Security.X509.X509Chain::get_TrustAnchors()
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain_get_TrustAnchors_m885238782_MetadataUsageId;
 extern "C"  X509CertificateCollection_t3336811651 * X509Chain_get_TrustAnchors_m885238782 (X509Chain_t3968320430 * __this, const MethodInfo* method)
 {
@@ -10648,10 +10648,10 @@ IL_002d:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Chain::Build(Mono.Security.X509.X509Certificate)
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain_Build_m2539190260_MetadataUsageId;
-extern "C"  bool X509Chain_Build_m2539190260 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___leaf, const MethodInfo* method)
+extern "C"  bool X509Chain_Build_m2539190260 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___leaf0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10664,7 +10664,7 @@ extern "C"  bool X509Chain_Build_m2539190260 (X509Chain_t3968320430 * __this, X5
 	int32_t V_2 = 0;
 	int32_t V_3 = 0;
 	X509Certificate_t273828613 * V_4 = NULL;
-	X509CertificateEnumerator_t3569011383 * V_5 = NULL;
+	X509CertificateEnumerator_t3569011382 * V_5 = NULL;
 	bool V_6 = false;
 	Il2CppObject * V_7 = NULL;
 	Exception_t1967233988 * __last_unhandled_exception = 0;
@@ -10685,7 +10685,7 @@ extern "C"  bool X509Chain_Build_m2539190260 (X509Chain_t3968320430 * __this, X5
 		X509CertificateCollection_t3336811651 * L_1 = (X509CertificateCollection_t3336811651 *)il2cpp_codegen_object_new(X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var);
 		X509CertificateCollection__ctor_m2517521230(L_1, /*hidden argument*/NULL);
 		__this->set__chain_3(L_1);
-		X509Certificate_t273828613 * L_2 = ___leaf;
+		X509Certificate_t273828613 * L_2 = ___leaf0;
 		V_0 = L_2;
 		X509Certificate_t273828613 * L_3 = V_0;
 		V_1 = L_3;
@@ -10744,10 +10744,10 @@ IL_0060:
 		}
 	}
 	{
-		X509Certificate_t273828613 * L_17 = ___leaf;
+		X509Certificate_t273828613 * L_17 = ___leaf0;
 		X509CertificateCollection_t3336811651 * L_18 = __this->get__chain_3();
 		NullCheck(L_18);
-		X509Certificate_t273828613 * L_19 = X509CertificateCollection_get_Item_m1107000690(L_18, 0, /*hidden argument*/NULL);
+		X509Certificate_t273828613 * L_19 = X509CertificateCollection_get_Item_m1446680334(L_18, 0, /*hidden argument*/NULL);
 		bool L_20 = X509Chain_IsParent_m3808002146(__this, L_17, L_19, /*hidden argument*/NULL);
 		if (!L_20)
 		{
@@ -10764,11 +10764,11 @@ IL_0092:
 		X509CertificateCollection_t3336811651 * L_21 = __this->get__chain_3();
 		int32_t L_22 = V_3;
 		NullCheck(L_21);
-		X509Certificate_t273828613 * L_23 = X509CertificateCollection_get_Item_m1107000690(L_21, ((int32_t)((int32_t)L_22-(int32_t)1)), /*hidden argument*/NULL);
+		X509Certificate_t273828613 * L_23 = X509CertificateCollection_get_Item_m1446680334(L_21, ((int32_t)((int32_t)L_22-(int32_t)1)), /*hidden argument*/NULL);
 		X509CertificateCollection_t3336811651 * L_24 = __this->get__chain_3();
 		int32_t L_25 = V_3;
 		NullCheck(L_24);
-		X509Certificate_t273828613 * L_26 = X509CertificateCollection_get_Item_m1107000690(L_24, L_25, /*hidden argument*/NULL);
+		X509Certificate_t273828613 * L_26 = X509CertificateCollection_get_Item_m1446680334(L_24, L_25, /*hidden argument*/NULL);
 		bool L_27 = X509Chain_IsParent_m3808002146(__this, L_23, L_26, /*hidden argument*/NULL);
 		if (L_27)
 		{
@@ -10808,7 +10808,7 @@ IL_00c7:
 		X509CertificateCollection_t3336811651 * L_33 = __this->get__chain_3();
 		int32_t L_34 = V_2;
 		NullCheck(L_33);
-		X509Certificate_t273828613 * L_35 = X509CertificateCollection_get_Item_m1107000690(L_33, ((int32_t)((int32_t)L_34-(int32_t)1)), /*hidden argument*/NULL);
+		X509Certificate_t273828613 * L_35 = X509CertificateCollection_get_Item_m1446680334(L_33, ((int32_t)((int32_t)L_34-(int32_t)1)), /*hidden argument*/NULL);
 		X509Certificate_t273828613 * L_36 = X509Chain_FindCertificateRoot_m3426389033(__this, L_35, /*hidden argument*/NULL);
 		__this->set__root_2(L_36);
 	}
@@ -10820,7 +10820,7 @@ IL_00e8:
 
 IL_00ed:
 	{
-		X509Certificate_t273828613 * L_37 = ___leaf;
+		X509Certificate_t273828613 * L_37 = ___leaf0;
 		X509Certificate_t273828613 * L_38 = X509Chain_FindCertificateRoot_m3426389033(__this, L_37, /*hidden argument*/NULL);
 		__this->set__root_2(L_38);
 	}
@@ -10843,7 +10843,7 @@ IL_00fa:
 	{
 		X509CertificateCollection_t3336811651 * L_41 = __this->get__chain_3();
 		NullCheck(L_41);
-		X509CertificateEnumerator_t3569011383 * L_42 = X509CertificateCollection_GetEnumerator_m2226643995(L_41, /*hidden argument*/NULL);
+		X509CertificateEnumerator_t3569011382 * L_42 = X509CertificateCollection_GetEnumerator_m1926496255(L_41, /*hidden argument*/NULL);
 		V_5 = L_42;
 	}
 
@@ -10856,9 +10856,9 @@ IL_011d:
 
 IL_0122:
 		{
-			X509CertificateEnumerator_t3569011383 * L_43 = V_5;
+			X509CertificateEnumerator_t3569011382 * L_43 = V_5;
 			NullCheck(L_43);
-			X509Certificate_t273828613 * L_44 = X509CertificateEnumerator_get_Current_m1696796071(L_43, /*hidden argument*/NULL);
+			X509Certificate_t273828613 * L_44 = X509CertificateEnumerator_get_Current_m2126438283(L_43, /*hidden argument*/NULL);
 			V_4 = L_44;
 			X509Certificate_t273828613 * L_45 = V_4;
 			bool L_46 = X509Chain_IsValid_m122831928(__this, L_45, /*hidden argument*/NULL);
@@ -10876,7 +10876,7 @@ IL_0138:
 
 IL_0140:
 		{
-			X509CertificateEnumerator_t3569011383 * L_47 = V_5;
+			X509CertificateEnumerator_t3569011382 * L_47 = V_5;
 			NullCheck(L_47);
 			bool L_48 = VirtFuncInvoker0< bool >::Invoke(7 /* System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext() */, L_47);
 			if (L_48)
@@ -10899,7 +10899,7 @@ IL_014c:
 FINALLY_0151:
 	{ // begin finally (depth: 1)
 		{
-			X509CertificateEnumerator_t3569011383 * L_49 = V_5;
+			X509CertificateEnumerator_t3569011382 * L_49 = V_5;
 			V_7 = ((Il2CppObject *)IsInst(L_49, IDisposable_t1628921374_il2cpp_TypeInfo_var));
 			Il2CppObject * L_50 = V_7;
 			if (L_50)
@@ -10930,7 +10930,7 @@ IL_015f:
 
 IL_0167:
 	{
-		X509Certificate_t273828613 * L_52 = ___leaf;
+		X509Certificate_t273828613 * L_52 = ___leaf0;
 		bool L_53 = X509Chain_IsValid_m122831928(__this, L_52, /*hidden argument*/NULL);
 		if (L_53)
 		{
@@ -10986,9 +10986,9 @@ IL_01b0:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Chain::IsValid(Mono.Security.X509.X509Certificate)
-extern TypeInfo* ServicePointManager_t3601037980_il2cpp_TypeInfo_var;
+extern Il2CppClass* ServicePointManager_t3601037980_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain_IsValid_m122831928_MetadataUsageId;
-extern "C"  bool X509Chain_IsValid_m122831928 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___cert, const MethodInfo* method)
+extern "C"  bool X509Chain_IsValid_m122831928 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___cert0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -10997,7 +10997,7 @@ extern "C"  bool X509Chain_IsValid_m122831928 (X509Chain_t3968320430 * __this, X
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		X509Certificate_t273828613 * L_0 = ___cert;
+		X509Certificate_t273828613 * L_0 = ___cert0;
 		NullCheck(L_0);
 		bool L_1 = X509Certificate_get_IsCurrent_m3064883298(L_0, /*hidden argument*/NULL);
 		if (L_1)
@@ -11013,7 +11013,7 @@ extern "C"  bool X509Chain_IsValid_m122831928 (X509Chain_t3968320430 * __this, X
 IL_0014:
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(ServicePointManager_t3601037980_il2cpp_TypeInfo_var);
-		bool L_2 = ServicePointManager_get_CheckCertificateRevocationList_m2088706324(NULL /*static, unused*/, /*hidden argument*/NULL);
+		bool L_2 = ServicePointManager_get_CheckCertificateRevocationList_m838738096(NULL /*static, unused*/, /*hidden argument*/NULL);
 		if (!L_2)
 		{
 			goto IL_001e;
@@ -11026,9 +11026,9 @@ IL_001e:
 	}
 }
 // Mono.Security.X509.X509Certificate Mono.Security.X509.X509Chain::FindCertificateParent(Mono.Security.X509.X509Certificate)
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain_FindCertificateParent_m3659377521_MetadataUsageId;
-extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateParent_m3659377521 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___child, const MethodInfo* method)
+extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateParent_m3659377521 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___child0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -11037,7 +11037,7 @@ extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateParent_m365937
 		s_Il2CppMethodIntialized = true;
 	}
 	X509Certificate_t273828613 * V_0 = NULL;
-	X509CertificateEnumerator_t3569011383 * V_1 = NULL;
+	X509CertificateEnumerator_t3569011382 * V_1 = NULL;
 	X509Certificate_t273828613 * V_2 = NULL;
 	Il2CppObject * V_3 = NULL;
 	Exception_t1967233988 * __last_unhandled_exception = 0;
@@ -11049,7 +11049,7 @@ extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateParent_m365937
 	{
 		X509CertificateCollection_t3336811651 * L_0 = __this->get_certs_1();
 		NullCheck(L_0);
-		X509CertificateEnumerator_t3569011383 * L_1 = X509CertificateCollection_GetEnumerator_m2226643995(L_0, /*hidden argument*/NULL);
+		X509CertificateEnumerator_t3569011382 * L_1 = X509CertificateCollection_GetEnumerator_m1926496255(L_0, /*hidden argument*/NULL);
 		V_1 = L_1;
 	}
 
@@ -11062,11 +11062,11 @@ IL_000c:
 
 IL_0011:
 		{
-			X509CertificateEnumerator_t3569011383 * L_2 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_2 = V_1;
 			NullCheck(L_2);
-			X509Certificate_t273828613 * L_3 = X509CertificateEnumerator_get_Current_m1696796071(L_2, /*hidden argument*/NULL);
+			X509Certificate_t273828613 * L_3 = X509CertificateEnumerator_get_Current_m2126438283(L_2, /*hidden argument*/NULL);
 			V_0 = L_3;
-			X509Certificate_t273828613 * L_4 = ___child;
+			X509Certificate_t273828613 * L_4 = ___child0;
 			X509Certificate_t273828613 * L_5 = V_0;
 			bool L_6 = X509Chain_IsParent_m3808002146(__this, L_4, L_5, /*hidden argument*/NULL);
 			if (!L_6)
@@ -11084,7 +11084,7 @@ IL_0025:
 
 IL_002c:
 		{
-			X509CertificateEnumerator_t3569011383 * L_8 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_8 = V_1;
 			NullCheck(L_8);
 			bool L_9 = VirtFuncInvoker0< bool >::Invoke(7 /* System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext() */, L_8);
 			if (L_9)
@@ -11107,7 +11107,7 @@ IL_0037:
 FINALLY_003c:
 	{ // begin finally (depth: 1)
 		{
-			X509CertificateEnumerator_t3569011383 * L_10 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_10 = V_1;
 			V_3 = ((Il2CppObject *)IsInst(L_10, IDisposable_t1628921374_il2cpp_TypeInfo_var));
 			Il2CppObject * L_11 = V_3;
 			if (L_11)
@@ -11148,9 +11148,9 @@ IL_0050:
 	}
 }
 // Mono.Security.X509.X509Certificate Mono.Security.X509.X509Chain::FindCertificateRoot(Mono.Security.X509.X509Certificate)
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern const uint32_t X509Chain_FindCertificateRoot_m3426389033_MetadataUsageId;
-extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateRoot_m3426389033 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___potentialRoot, const MethodInfo* method)
+extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateRoot_m3426389033 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___potentialRoot0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -11159,7 +11159,7 @@ extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateRoot_m34263890
 		s_Il2CppMethodIntialized = true;
 	}
 	X509Certificate_t273828613 * V_0 = NULL;
-	X509CertificateEnumerator_t3569011383 * V_1 = NULL;
+	X509CertificateEnumerator_t3569011382 * V_1 = NULL;
 	X509Certificate_t273828613 * V_2 = NULL;
 	Il2CppObject * V_3 = NULL;
 	Exception_t1967233988 * __last_unhandled_exception = 0;
@@ -11169,7 +11169,7 @@ extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateRoot_m34263890
 	int32_t __leave_target = 0;
 	NO_UNUSED_WARNING (__leave_target);
 	{
-		X509Certificate_t273828613 * L_0 = ___potentialRoot;
+		X509Certificate_t273828613 * L_0 = ___potentialRoot0;
 		if (L_0)
 		{
 			goto IL_0013;
@@ -11182,7 +11182,7 @@ extern "C"  X509Certificate_t273828613 * X509Chain_FindCertificateRoot_m34263890
 
 IL_0013:
 	{
-		X509Certificate_t273828613 * L_1 = ___potentialRoot;
+		X509Certificate_t273828613 * L_1 = ___potentialRoot0;
 		bool L_2 = X509Chain_IsTrusted_m622221811(__this, L_1, /*hidden argument*/NULL);
 		if (!L_2)
 		{
@@ -11190,7 +11190,7 @@ IL_0013:
 		}
 	}
 	{
-		X509Certificate_t273828613 * L_3 = ___potentialRoot;
+		X509Certificate_t273828613 * L_3 = ___potentialRoot0;
 		return L_3;
 	}
 
@@ -11198,7 +11198,7 @@ IL_0021:
 	{
 		X509CertificateCollection_t3336811651 * L_4 = X509Chain_get_TrustAnchors_m885238782(__this, /*hidden argument*/NULL);
 		NullCheck(L_4);
-		X509CertificateEnumerator_t3569011383 * L_5 = X509CertificateCollection_GetEnumerator_m2226643995(L_4, /*hidden argument*/NULL);
+		X509CertificateEnumerator_t3569011382 * L_5 = X509CertificateCollection_GetEnumerator_m1926496255(L_4, /*hidden argument*/NULL);
 		V_1 = L_5;
 	}
 
@@ -11211,11 +11211,11 @@ IL_002d:
 
 IL_0032:
 		{
-			X509CertificateEnumerator_t3569011383 * L_6 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_6 = V_1;
 			NullCheck(L_6);
-			X509Certificate_t273828613 * L_7 = X509CertificateEnumerator_get_Current_m1696796071(L_6, /*hidden argument*/NULL);
+			X509Certificate_t273828613 * L_7 = X509CertificateEnumerator_get_Current_m2126438283(L_6, /*hidden argument*/NULL);
 			V_0 = L_7;
-			X509Certificate_t273828613 * L_8 = ___potentialRoot;
+			X509Certificate_t273828613 * L_8 = ___potentialRoot0;
 			X509Certificate_t273828613 * L_9 = V_0;
 			bool L_10 = X509Chain_IsParent_m3808002146(__this, L_8, L_9, /*hidden argument*/NULL);
 			if (!L_10)
@@ -11233,7 +11233,7 @@ IL_0046:
 
 IL_004d:
 		{
-			X509CertificateEnumerator_t3569011383 * L_12 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_12 = V_1;
 			NullCheck(L_12);
 			bool L_13 = VirtFuncInvoker0< bool >::Invoke(7 /* System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext() */, L_12);
 			if (L_13)
@@ -11256,7 +11256,7 @@ IL_0058:
 FINALLY_005d:
 	{ // begin finally (depth: 1)
 		{
-			X509CertificateEnumerator_t3569011383 * L_14 = V_1;
+			X509CertificateEnumerator_t3569011382 * L_14 = V_1;
 			V_3 = ((Il2CppObject *)IsInst(L_14, IDisposable_t1628921374_il2cpp_TypeInfo_var));
 			Il2CppObject * L_15 = V_3;
 			if (L_15)
@@ -11287,7 +11287,7 @@ IL_0068:
 
 IL_006f:
 	{
-		X509Certificate_t273828613 * L_17 = ___potentialRoot;
+		X509Certificate_t273828613 * L_17 = ___potentialRoot0;
 		NullCheck(L_17);
 		bool L_18 = X509Certificate_get_IsSelfSigned_m3915010913(L_17, /*hidden argument*/NULL);
 		if (!L_18)
@@ -11297,7 +11297,7 @@ IL_006f:
 	}
 	{
 		__this->set__status_4(((int32_t)32));
-		X509Certificate_t273828613 * L_19 = ___potentialRoot;
+		X509Certificate_t273828613 * L_19 = ___potentialRoot0;
 		return L_19;
 	}
 
@@ -11314,22 +11314,22 @@ IL_0091:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Chain::IsTrusted(Mono.Security.X509.X509Certificate)
-extern "C"  bool X509Chain_IsTrusted_m622221811 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___potentialTrusted, const MethodInfo* method)
+extern "C"  bool X509Chain_IsTrusted_m622221811 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___potentialTrusted0, const MethodInfo* method)
 {
 	{
 		X509CertificateCollection_t3336811651 * L_0 = X509Chain_get_TrustAnchors_m885238782(__this, /*hidden argument*/NULL);
-		X509Certificate_t273828613 * L_1 = ___potentialTrusted;
+		X509Certificate_t273828613 * L_1 = ___potentialTrusted0;
 		NullCheck(L_0);
 		bool L_2 = X509CertificateCollection_Contains_m1747801975(L_0, L_1, /*hidden argument*/NULL);
 		return L_2;
 	}
 }
 // System.Boolean Mono.Security.X509.X509Chain::IsParent(Mono.Security.X509.X509Certificate,Mono.Security.X509.X509Certificate)
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* BasicConstraintsExtension_t455698010_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* BasicConstraintsExtension_t455698010_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3839369850;
 extern const uint32_t X509Chain_IsParent_m3808002146_MetadataUsageId;
-extern "C"  bool X509Chain_IsParent_m3808002146 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___child, X509Certificate_t273828613 * ___parent, const MethodInfo* method)
+extern "C"  bool X509Chain_IsParent_m3808002146 (X509Chain_t3968320430 * __this, X509Certificate_t273828613 * ___child0, X509Certificate_t273828613 * ___parent1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -11340,10 +11340,10 @@ extern "C"  bool X509Chain_IsParent_m3808002146 (X509Chain_t3968320430 * __this,
 	X509Extension_t1510964269 * V_0 = NULL;
 	BasicConstraintsExtension_t455698010 * V_1 = NULL;
 	{
-		X509Certificate_t273828613 * L_0 = ___child;
+		X509Certificate_t273828613 * L_0 = ___child0;
 		NullCheck(L_0);
 		String_t* L_1 = VirtFuncInvoker0< String_t* >::Invoke(5 /* System.String Mono.Security.X509.X509Certificate::get_IssuerName() */, L_0);
-		X509Certificate_t273828613 * L_2 = ___parent;
+		X509Certificate_t273828613 * L_2 = ___parent1;
 		NullCheck(L_2);
 		String_t* L_3 = VirtFuncInvoker0< String_t* >::Invoke(16 /* System.String Mono.Security.X509.X509Certificate::get_SubjectName() */, L_2);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -11359,16 +11359,16 @@ extern "C"  bool X509Chain_IsParent_m3808002146 (X509Chain_t3968320430 * __this,
 
 IL_0018:
 	{
-		X509Certificate_t273828613 * L_5 = ___parent;
+		X509Certificate_t273828613 * L_5 = ___parent1;
 		NullCheck(L_5);
-		int32_t L_6 = X509Certificate_get_Version_m1452122189(L_5, /*hidden argument*/NULL);
+		int32_t L_6 = X509Certificate_get_Version_m3883833137(L_5, /*hidden argument*/NULL);
 		if ((((int32_t)L_6) <= ((int32_t)2)))
 		{
 			goto IL_0074;
 		}
 	}
 	{
-		X509Certificate_t273828613 * L_7 = ___parent;
+		X509Certificate_t273828613 * L_7 = ___parent1;
 		bool L_8 = X509Chain_IsTrusted_m622221811(__this, L_7, /*hidden argument*/NULL);
 		if (L_8)
 		{
@@ -11376,11 +11376,11 @@ IL_0018:
 		}
 	}
 	{
-		X509Certificate_t273828613 * L_9 = ___parent;
+		X509Certificate_t273828613 * L_9 = ___parent1;
 		NullCheck(L_9);
-		X509ExtensionCollection_t3528692651 * L_10 = X509Certificate_get_Extensions_m577630462(L_9, /*hidden argument*/NULL);
+		X509ExtensionCollection_t3528692651 * L_10 = X509Certificate_get_Extensions_m1715365530(L_9, /*hidden argument*/NULL);
 		NullCheck(L_10);
-		X509Extension_t1510964269 * L_11 = X509ExtensionCollection_get_Item_m2008681985(L_10, _stringLiteral3839369850, /*hidden argument*/NULL);
+		X509Extension_t1510964269 * L_11 = X509ExtensionCollection_get_Item_m3340679653(L_10, _stringLiteral3839369850, /*hidden argument*/NULL);
 		V_0 = L_11;
 		X509Extension_t1510964269 * L_12 = V_0;
 		if (!L_12)
@@ -11417,8 +11417,8 @@ IL_0069:
 
 IL_0074:
 	{
-		X509Certificate_t273828613 * L_17 = ___child;
-		X509Certificate_t273828613 * L_18 = ___parent;
+		X509Certificate_t273828613 * L_17 = ___child0;
+		X509Certificate_t273828613 * L_18 = ___parent1;
 		NullCheck(L_18);
 		RSA_t1557565273 * L_19 = VirtFuncInvoker0< RSA_t1557565273 * >::Invoke(10 /* System.Security.Cryptography.RSA Mono.Security.X509.X509Certificate::get_RSA() */, L_18);
 		NullCheck(L_17);
@@ -11439,11 +11439,11 @@ IL_008e:
 	}
 }
 // System.Void Mono.Security.X509.X509Crl::.ctor(System.Byte[])
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral98781;
 extern const uint32_t X509Crl__ctor_m1270803331_MetadataUsageId;
-extern "C"  void X509Crl__ctor_m1270803331 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___crl, const MethodInfo* method)
+extern "C"  void X509Crl__ctor_m1270803331 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___crl0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -11453,7 +11453,7 @@ extern "C"  void X509Crl__ctor_m1270803331 (X509Crl_t2942805322 * __this, ByteU5
 	}
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		ByteU5BU5D_t58506160* L_0 = ___crl;
+		ByteU5BU5D_t58506160* L_0 = ___crl0;
 		if (L_0)
 		{
 			goto IL_0017;
@@ -11467,7 +11467,7 @@ extern "C"  void X509Crl__ctor_m1270803331 (X509Crl_t2942805322 * __this, ByteU5
 
 IL_0017:
 	{
-		ByteU5BU5D_t58506160* L_2 = ___crl;
+		ByteU5BU5D_t58506160* L_2 = ___crl0;
 		NullCheck((Il2CppArray *)(Il2CppArray *)L_2);
 		Il2CppObject * L_3 = VirtFuncInvoker0< Il2CppObject * >::Invoke(5 /* System.Object System.Array::Clone() */, (Il2CppArray *)(Il2CppArray *)L_2);
 		__this->set_encoded_8(((ByteU5BU5D_t58506160*)Castclass(L_3, ByteU5BU5D_t58506160_il2cpp_TypeInfo_var)));
@@ -11477,19 +11477,19 @@ IL_0017:
 	}
 }
 // System.Void Mono.Security.X509.X509Crl::Parse(System.Byte[])
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* X501_t591126674_il2cpp_TypeInfo_var;
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern TypeInfo* X509CrlEntry_t3291243611_il2cpp_TypeInfo_var;
-extern TypeInfo* X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* Il2CppObject_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* X501_t591126674_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CrlEntry_t3291243611_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3952156313;
 extern Il2CppCodeGenString* _stringLiteral2639820495;
 extern const uint32_t X509Crl_Parse_m3104051218_MetadataUsageId;
-extern "C"  void X509Crl_Parse_m3104051218 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___crl, const MethodInfo* method)
+extern "C"  void X509Crl_Parse_m3104051218 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___crl0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -11523,11 +11523,11 @@ IL_0006:
 		{
 			ByteU5BU5D_t58506160* L_0 = __this->get_encoded_8();
 			ASN1_t1254135647 * L_1 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-			ASN1__ctor_m3008094309(L_1, L_0, /*hidden argument*/NULL);
+			ASN1__ctor_m2555733065(L_1, L_0, /*hidden argument*/NULL);
 			V_1 = L_1;
 			ASN1_t1254135647 * L_2 = V_1;
 			NullCheck(L_2);
-			uint8_t L_3 = ASN1_get_Tag_m442995239(L_2, /*hidden argument*/NULL);
+			uint8_t L_3 = ASN1_get_Tag_m1269404867(L_2, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_3) == ((uint32_t)((int32_t)48)))))
 			{
 				goto IL_002b;
@@ -11538,7 +11538,7 @@ IL_001f:
 		{
 			ASN1_t1254135647 * L_4 = V_1;
 			NullCheck(L_4);
-			int32_t L_5 = ASN1_get_Count_m2214472120(L_4, /*hidden argument*/NULL);
+			int32_t L_5 = ASN1_get_Count_m3031159196(L_4, /*hidden argument*/NULL);
 			if ((((int32_t)L_5) == ((int32_t)3)))
 			{
 				goto IL_0032;
@@ -11557,11 +11557,11 @@ IL_0032:
 		{
 			ASN1_t1254135647 * L_8 = V_1;
 			NullCheck(L_8);
-			ASN1_t1254135647 * L_9 = ASN1_get_Item_m3727278260(L_8, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_9 = ASN1_get_Item_m3112983888(L_8, 0, /*hidden argument*/NULL);
 			V_2 = L_9;
 			ASN1_t1254135647 * L_10 = V_2;
 			NullCheck(L_10);
-			uint8_t L_11 = ASN1_get_Tag_m442995239(L_10, /*hidden argument*/NULL);
+			uint8_t L_11 = ASN1_get_Tag_m1269404867(L_10, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_11) == ((uint32_t)((int32_t)48)))))
 			{
 				goto IL_0053;
@@ -11572,7 +11572,7 @@ IL_0047:
 		{
 			ASN1_t1254135647 * L_12 = V_2;
 			NullCheck(L_12);
-			int32_t L_13 = ASN1_get_Count_m2214472120(L_12, /*hidden argument*/NULL);
+			int32_t L_13 = ASN1_get_Count_m3031159196(L_12, /*hidden argument*/NULL);
 			if ((((int32_t)L_13) >= ((int32_t)3)))
 			{
 				goto IL_005a;
@@ -11593,9 +11593,9 @@ IL_005a:
 			ASN1_t1254135647 * L_16 = V_2;
 			int32_t L_17 = V_3;
 			NullCheck(L_16);
-			ASN1_t1254135647 * L_18 = ASN1_get_Item_m3727278260(L_16, L_17, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_18 = ASN1_get_Item_m3112983888(L_16, L_17, /*hidden argument*/NULL);
 			NullCheck(L_18);
-			uint8_t L_19 = ASN1_get_Tag_m442995239(L_18, /*hidden argument*/NULL);
+			uint8_t L_19 = ASN1_get_Tag_m1269404867(L_18, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_19) == ((uint32_t)2))))
 			{
 				goto IL_008e;
@@ -11609,9 +11609,9 @@ IL_006e:
 			int32_t L_22 = L_21;
 			V_3 = ((int32_t)((int32_t)L_22+(int32_t)1));
 			NullCheck(L_20);
-			ASN1_t1254135647 * L_23 = ASN1_get_Item_m3727278260(L_20, L_22, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_23 = ASN1_get_Item_m3112983888(L_20, L_22, /*hidden argument*/NULL);
 			NullCheck(L_23);
-			ByteU5BU5D_t58506160* L_24 = ASN1_get_Value_m390067040(L_23, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_24 = ASN1_get_Value_m4232529916(L_23, /*hidden argument*/NULL);
 			NullCheck(L_24);
 			IL2CPP_ARRAY_BOUNDS_CHECK(L_24, 0);
 			int32_t L_25 = 0;
@@ -11631,17 +11631,17 @@ IL_0095:
 			int32_t L_28 = L_27;
 			V_3 = ((int32_t)((int32_t)L_28+(int32_t)1));
 			NullCheck(L_26);
-			ASN1_t1254135647 * L_29 = ASN1_get_Item_m3727278260(L_26, L_28, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_29 = ASN1_get_Item_m3112983888(L_26, L_28, /*hidden argument*/NULL);
 			NullCheck(L_29);
-			ASN1_t1254135647 * L_30 = ASN1_get_Item_m3727278260(L_29, 0, /*hidden argument*/NULL);
-			String_t* L_31 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_30, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_30 = ASN1_get_Item_m3112983888(L_29, 0, /*hidden argument*/NULL);
+			String_t* L_31 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_30, /*hidden argument*/NULL);
 			__this->set_signatureOID_5(L_31);
 			ASN1_t1254135647 * L_32 = V_2;
 			int32_t L_33 = V_3;
 			int32_t L_34 = L_33;
 			V_3 = ((int32_t)((int32_t)L_34+(int32_t)1));
 			NullCheck(L_32);
-			ASN1_t1254135647 * L_35 = ASN1_get_Item_m3727278260(L_32, L_34, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_35 = ASN1_get_Item_m3112983888(L_32, L_34, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(X501_t591126674_il2cpp_TypeInfo_var);
 			String_t* L_36 = X501_ToString_m1957208426(NULL /*static, unused*/, L_35, /*hidden argument*/NULL);
 			__this->set_issuer_0(L_36);
@@ -11650,7 +11650,7 @@ IL_0095:
 			int32_t L_39 = L_38;
 			V_3 = ((int32_t)((int32_t)L_39+(int32_t)1));
 			NullCheck(L_37);
-			ASN1_t1254135647 * L_40 = ASN1_get_Item_m3727278260(L_37, L_39, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_40 = ASN1_get_Item_m3112983888(L_37, L_39, /*hidden argument*/NULL);
 			DateTime_t339033936  L_41 = ASN1Convert_ToDateTime_m864003254(NULL /*static, unused*/, L_40, /*hidden argument*/NULL);
 			__this->set_thisUpdate_2(L_41);
 			ASN1_t1254135647 * L_42 = V_2;
@@ -11658,11 +11658,11 @@ IL_0095:
 			int32_t L_44 = L_43;
 			V_3 = ((int32_t)((int32_t)L_44+(int32_t)1));
 			NullCheck(L_42);
-			ASN1_t1254135647 * L_45 = ASN1_get_Item_m3727278260(L_42, L_44, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_45 = ASN1_get_Item_m3112983888(L_42, L_44, /*hidden argument*/NULL);
 			V_4 = L_45;
 			ASN1_t1254135647 * L_46 = V_4;
 			NullCheck(L_46);
-			uint8_t L_47 = ASN1_get_Tag_m442995239(L_46, /*hidden argument*/NULL);
+			uint8_t L_47 = ASN1_get_Tag_m1269404867(L_46, /*hidden argument*/NULL);
 			if ((((int32_t)L_47) == ((int32_t)((int32_t)23))))
 			{
 				goto IL_0106;
@@ -11673,7 +11673,7 @@ IL_00f8:
 		{
 			ASN1_t1254135647 * L_48 = V_4;
 			NullCheck(L_48);
-			uint8_t L_49 = ASN1_get_Tag_m442995239(L_48, /*hidden argument*/NULL);
+			uint8_t L_49 = ASN1_get_Tag_m1269404867(L_48, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_49) == ((uint32_t)((int32_t)24)))))
 			{
 				goto IL_0120;
@@ -11690,7 +11690,7 @@ IL_0106:
 			int32_t L_54 = L_53;
 			V_3 = ((int32_t)((int32_t)L_54+(int32_t)1));
 			NullCheck(L_52);
-			ASN1_t1254135647 * L_55 = ASN1_get_Item_m3727278260(L_52, L_54, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_55 = ASN1_get_Item_m3112983888(L_52, L_54, /*hidden argument*/NULL);
 			V_4 = L_55;
 		}
 
@@ -11710,7 +11710,7 @@ IL_0132:
 		{
 			ASN1_t1254135647 * L_58 = V_4;
 			NullCheck(L_58);
-			uint8_t L_59 = ASN1_get_Tag_m442995239(L_58, /*hidden argument*/NULL);
+			uint8_t L_59 = ASN1_get_Tag_m1269404867(L_58, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_59) == ((uint32_t)((int32_t)48)))))
 			{
 				goto IL_017f;
@@ -11731,7 +11731,7 @@ IL_014c:
 			ASN1_t1254135647 * L_62 = V_5;
 			int32_t L_63 = V_6;
 			NullCheck(L_62);
-			ASN1_t1254135647 * L_64 = ASN1_get_Item_m3727278260(L_62, L_63, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_64 = ASN1_get_Item_m3112983888(L_62, L_63, /*hidden argument*/NULL);
 			X509CrlEntry_t3291243611 * L_65 = (X509CrlEntry_t3291243611 *)il2cpp_codegen_object_new(X509CrlEntry_t3291243611_il2cpp_TypeInfo_var);
 			X509CrlEntry__ctor_m2720899934(L_65, L_64, /*hidden argument*/NULL);
 			NullCheck(L_61);
@@ -11745,7 +11745,7 @@ IL_016c:
 			int32_t L_67 = V_6;
 			ASN1_t1254135647 * L_68 = V_5;
 			NullCheck(L_68);
-			int32_t L_69 = ASN1_get_Count_m2214472120(L_68, /*hidden argument*/NULL);
+			int32_t L_69 = ASN1_get_Count_m3031159196(L_68, /*hidden argument*/NULL);
 			if ((((int32_t)L_67) < ((int32_t)L_69)))
 			{
 				goto IL_014c;
@@ -11768,7 +11768,7 @@ IL_0183:
 			ASN1_t1254135647 * L_71 = V_2;
 			int32_t L_72 = V_3;
 			NullCheck(L_71);
-			ASN1_t1254135647 * L_73 = ASN1_get_Item_m3727278260(L_71, L_72, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_73 = ASN1_get_Item_m3112983888(L_71, L_72, /*hidden argument*/NULL);
 			V_7 = L_73;
 			ASN1_t1254135647 * L_74 = V_7;
 			if (!L_74)
@@ -11781,7 +11781,7 @@ IL_0193:
 		{
 			ASN1_t1254135647 * L_75 = V_7;
 			NullCheck(L_75);
-			uint8_t L_76 = ASN1_get_Tag_m442995239(L_75, /*hidden argument*/NULL);
+			uint8_t L_76 = ASN1_get_Tag_m1269404867(L_75, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_76) == ((uint32_t)((int32_t)160)))))
 			{
 				goto IL_01c9;
@@ -11792,7 +11792,7 @@ IL_01a4:
 		{
 			ASN1_t1254135647 * L_77 = V_7;
 			NullCheck(L_77);
-			int32_t L_78 = ASN1_get_Count_m2214472120(L_77, /*hidden argument*/NULL);
+			int32_t L_78 = ASN1_get_Count_m3031159196(L_77, /*hidden argument*/NULL);
 			if ((!(((uint32_t)L_78) == ((uint32_t)1))))
 			{
 				goto IL_01c9;
@@ -11803,7 +11803,7 @@ IL_01b1:
 		{
 			ASN1_t1254135647 * L_79 = V_7;
 			NullCheck(L_79);
-			ASN1_t1254135647 * L_80 = ASN1_get_Item_m3727278260(L_79, 0, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_80 = ASN1_get_Item_m3112983888(L_79, 0, /*hidden argument*/NULL);
 			X509ExtensionCollection_t3528692651 * L_81 = (X509ExtensionCollection_t3528692651 *)il2cpp_codegen_object_new(X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var);
 			X509ExtensionCollection__ctor_m2115523054(L_81, L_80, /*hidden argument*/NULL);
 			__this->set_extensions_7(L_81);
@@ -11821,10 +11821,10 @@ IL_01d5:
 		{
 			ASN1_t1254135647 * L_83 = V_1;
 			NullCheck(L_83);
-			ASN1_t1254135647 * L_84 = ASN1_get_Item_m3727278260(L_83, 1, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_84 = ASN1_get_Item_m3112983888(L_83, 1, /*hidden argument*/NULL);
 			NullCheck(L_84);
-			ASN1_t1254135647 * L_85 = ASN1_get_Item_m3727278260(L_84, 0, /*hidden argument*/NULL);
-			String_t* L_86 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_85, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_85 = ASN1_get_Item_m3112983888(L_84, 0, /*hidden argument*/NULL);
+			String_t* L_86 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_85, /*hidden argument*/NULL);
 			V_8 = L_86;
 			String_t* L_87 = __this->get_signatureOID_5();
 			String_t* L_88 = V_8;
@@ -11850,9 +11850,9 @@ IL_020c:
 		{
 			ASN1_t1254135647 * L_93 = V_1;
 			NullCheck(L_93);
-			ASN1_t1254135647 * L_94 = ASN1_get_Item_m3727278260(L_93, 2, /*hidden argument*/NULL);
+			ASN1_t1254135647 * L_94 = ASN1_get_Item_m3112983888(L_93, 2, /*hidden argument*/NULL);
 			NullCheck(L_94);
-			ByteU5BU5D_t58506160* L_95 = ASN1_get_Value_m390067040(L_94, /*hidden argument*/NULL);
+			ByteU5BU5D_t58506160* L_95 = ASN1_get_Value_m4232529916(L_94, /*hidden argument*/NULL);
 			V_9 = L_95;
 			ByteU5BU5D_t58506160* L_96 = V_9;
 			NullCheck(L_96);
@@ -11894,7 +11894,7 @@ IL_0254:
 	}
 }
 // Mono.Security.X509.X509ExtensionCollection Mono.Security.X509.X509Crl::get_Extensions()
-extern "C"  X509ExtensionCollection_t3528692651 * X509Crl_get_Extensions_m2379703492 (X509Crl_t2942805322 * __this, const MethodInfo* method)
+extern "C"  X509ExtensionCollection_t3528692651 * X509Crl_get_Extensions_m1716860512 (X509Crl_t2942805322 * __this, const MethodInfo* method)
 {
 	{
 		X509ExtensionCollection_t3528692651 * L_0 = __this->get_extensions_7();
@@ -11902,7 +11902,7 @@ extern "C"  X509ExtensionCollection_t3528692651 * X509Crl_get_Extensions_m237970
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Crl::get_Hash()
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
 extern const uint32_t X509Crl_get_Hash_m2225876287_MetadataUsageId;
 extern "C"  ByteU5BU5D_t58506160* X509Crl_get_Hash_m2225876287 (X509Crl_t2942805322 * __this, const MethodInfo* method)
 {
@@ -11925,11 +11925,11 @@ extern "C"  ByteU5BU5D_t58506160* X509Crl_get_Hash_m2225876287 (X509Crl_t2942805
 	{
 		ByteU5BU5D_t58506160* L_1 = __this->get_encoded_8();
 		ASN1_t1254135647 * L_2 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_2, L_1, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_2, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		ASN1_t1254135647 * L_3 = V_0;
 		NullCheck(L_3);
-		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3727278260(L_3, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_4 = ASN1_get_Item_m3112983888(L_3, 0, /*hidden argument*/NULL);
 		NullCheck(L_4);
 		ByteU5BU5D_t58506160* L_5 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(4 /* System.Byte[] Mono.Security.ASN1::GetBytes() */, L_4);
 		V_1 = L_5;
@@ -11950,7 +11950,7 @@ IL_003d:
 	}
 }
 // System.String Mono.Security.X509.X509Crl::get_IssuerName()
-extern "C"  String_t* X509Crl_get_IssuerName_m3020541034 (X509Crl_t2942805322 * __this, const MethodInfo* method)
+extern "C"  String_t* X509Crl_get_IssuerName_m3685864782 (X509Crl_t2942805322 * __this, const MethodInfo* method)
 {
 	{
 		String_t* L_0 = __this->get_issuer_0();
@@ -11958,7 +11958,7 @@ extern "C"  String_t* X509Crl_get_IssuerName_m3020541034 (X509Crl_t2942805322 * 
 	}
 }
 // System.DateTime Mono.Security.X509.X509Crl::get_NextUpdate()
-extern "C"  DateTime_t339033936  X509Crl_get_NextUpdate_m1145701656 (X509Crl_t2942805322 * __this, const MethodInfo* method)
+extern "C"  DateTime_t339033936  X509Crl_get_NextUpdate_m571696380 (X509Crl_t2942805322 * __this, const MethodInfo* method)
 {
 	{
 		DateTime_t339033936  L_0 = __this->get_nextUpdate_3();
@@ -11966,18 +11966,18 @@ extern "C"  DateTime_t339033936  X509Crl_get_NextUpdate_m1145701656 (X509Crl_t29
 	}
 }
 // System.Boolean Mono.Security.X509.X509Crl::Compare(System.Byte[],System.Byte[])
-extern "C"  bool X509Crl_Compare_m1588393905 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___array1, ByteU5BU5D_t58506160* ___array2, const MethodInfo* method)
+extern "C"  bool X509Crl_Compare_m1588393905 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___array10, ByteU5BU5D_t58506160* ___array21, const MethodInfo* method)
 {
 	int32_t V_0 = 0;
 	{
-		ByteU5BU5D_t58506160* L_0 = ___array1;
+		ByteU5BU5D_t58506160* L_0 = ___array10;
 		if (L_0)
 		{
 			goto IL_000e;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_1 = ___array2;
+		ByteU5BU5D_t58506160* L_1 = ___array21;
 		if (L_1)
 		{
 			goto IL_000e;
@@ -11989,14 +11989,14 @@ extern "C"  bool X509Crl_Compare_m1588393905 (X509Crl_t2942805322 * __this, Byte
 
 IL_000e:
 	{
-		ByteU5BU5D_t58506160* L_2 = ___array1;
+		ByteU5BU5D_t58506160* L_2 = ___array10;
 		if (!L_2)
 		{
 			goto IL_001a;
 		}
 	}
 	{
-		ByteU5BU5D_t58506160* L_3 = ___array2;
+		ByteU5BU5D_t58506160* L_3 = ___array21;
 		if (L_3)
 		{
 			goto IL_001c;
@@ -12010,9 +12010,9 @@ IL_001a:
 
 IL_001c:
 	{
-		ByteU5BU5D_t58506160* L_4 = ___array1;
+		ByteU5BU5D_t58506160* L_4 = ___array10;
 		NullCheck(L_4);
-		ByteU5BU5D_t58506160* L_5 = ___array2;
+		ByteU5BU5D_t58506160* L_5 = ___array21;
 		NullCheck(L_5);
 		if ((((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_4)->max_length))))) == ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_5)->max_length)))))))
 		{
@@ -12031,12 +12031,12 @@ IL_0029:
 
 IL_0030:
 	{
-		ByteU5BU5D_t58506160* L_6 = ___array1;
+		ByteU5BU5D_t58506160* L_6 = ___array10;
 		int32_t L_7 = V_0;
 		NullCheck(L_6);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_6, L_7);
 		int32_t L_8 = L_7;
-		ByteU5BU5D_t58506160* L_9 = ___array2;
+		ByteU5BU5D_t58506160* L_9 = ___array21;
 		int32_t L_10 = V_0;
 		NullCheck(L_9);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_9, L_10);
@@ -12059,7 +12059,7 @@ IL_003d:
 IL_0041:
 	{
 		int32_t L_13 = V_0;
-		ByteU5BU5D_t58506160* L_14 = ___array1;
+		ByteU5BU5D_t58506160* L_14 = ___array10;
 		NullCheck(L_14);
 		if ((((int32_t)L_13) < ((int32_t)(((int32_t)((int32_t)(((Il2CppArray *)L_14)->max_length)))))))
 		{
@@ -12071,19 +12071,19 @@ IL_0041:
 	}
 }
 // Mono.Security.X509.X509Crl/X509CrlEntry Mono.Security.X509.X509Crl::GetCrlEntry(Mono.Security.X509.X509Certificate)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3627398;
-extern const uint32_t X509Crl_GetCrlEntry_m698190412_MetadataUsageId;
-extern "C"  X509CrlEntry_t3291243611 * X509Crl_GetCrlEntry_m698190412 (X509Crl_t2942805322 * __this, X509Certificate_t273828613 * ___x509, const MethodInfo* method)
+extern const uint32_t X509Crl_GetCrlEntry_m4208400872_MetadataUsageId;
+extern "C"  X509CrlEntry_t3291243611 * X509Crl_GetCrlEntry_m4208400872 (X509Crl_t2942805322 * __this, X509Certificate_t273828613 * ___x5090, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Crl_GetCrlEntry_m698190412_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Crl_GetCrlEntry_m4208400872_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		X509Certificate_t273828613 * L_0 = ___x509;
+		X509Certificate_t273828613 * L_0 = ___x5090;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -12097,7 +12097,7 @@ extern "C"  X509CrlEntry_t3291243611 * X509Crl_GetCrlEntry_m698190412 (X509Crl_t
 
 IL_0011:
 	{
-		X509Certificate_t273828613 * L_2 = ___x509;
+		X509Certificate_t273828613 * L_2 = ___x5090;
 		NullCheck(L_2);
 		ByteU5BU5D_t58506160* L_3 = VirtFuncInvoker0< ByteU5BU5D_t58506160* >::Invoke(13 /* System.Byte[] Mono.Security.X509.X509Certificate::get_SerialNumber() */, L_2);
 		X509CrlEntry_t3291243611 * L_4 = X509Crl_GetCrlEntry_m1555363125(__this, L_3, /*hidden argument*/NULL);
@@ -12105,11 +12105,11 @@ IL_0011:
 	}
 }
 // Mono.Security.X509.X509Crl/X509CrlEntry Mono.Security.X509.X509Crl::GetCrlEntry(System.Byte[])
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* X509CrlEntry_t3291243611_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CrlEntry_t3291243611_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral83787357;
 extern const uint32_t X509Crl_GetCrlEntry_m1555363125_MetadataUsageId;
-extern "C"  X509CrlEntry_t3291243611 * X509Crl_GetCrlEntry_m1555363125 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___serialNumber, const MethodInfo* method)
+extern "C"  X509CrlEntry_t3291243611 * X509Crl_GetCrlEntry_m1555363125 (X509Crl_t2942805322 * __this, ByteU5BU5D_t58506160* ___serialNumber0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12120,7 +12120,7 @@ extern "C"  X509CrlEntry_t3291243611 * X509Crl_GetCrlEntry_m1555363125 (X509Crl_
 	int32_t V_0 = 0;
 	X509CrlEntry_t3291243611 * V_1 = NULL;
 	{
-		ByteU5BU5D_t58506160* L_0 = ___serialNumber;
+		ByteU5BU5D_t58506160* L_0 = ___serialNumber0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -12145,7 +12145,7 @@ IL_0018:
 		NullCheck(L_2);
 		Il2CppObject * L_4 = VirtFuncInvoker1< Il2CppObject *, int32_t >::Invoke(21 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_2, L_3);
 		V_1 = ((X509CrlEntry_t3291243611 *)CastclassClass(L_4, X509CrlEntry_t3291243611_il2cpp_TypeInfo_var));
-		ByteU5BU5D_t58506160* L_5 = ___serialNumber;
+		ByteU5BU5D_t58506160* L_5 = ___serialNumber0;
 		X509CrlEntry_t3291243611 * L_6 = V_1;
 		NullCheck(L_6);
 		ByteU5BU5D_t58506160* L_7 = X509CrlEntry_get_SerialNumber_m2092313770(L_6, /*hidden argument*/NULL);
@@ -12182,10 +12182,10 @@ IL_0042:
 	}
 }
 // System.String Mono.Security.X509.X509Crl::GetHashName()
-extern TypeInfo* X509Crl_t2942805322_il2cpp_TypeInfo_var;
-extern TypeInfo* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Crl_t2942805322_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t190145395_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
 extern const MethodInfo* Dictionary_2__ctor_m1958628151_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2198962788;
 extern Il2CppCodeGenString* _stringLiteral2198962790;
@@ -12248,7 +12248,7 @@ IL_0054:
 		Dictionary_2_t190145395 * L_9 = ((X509Crl_t2942805322_StaticFields*)X509Crl_t2942805322_il2cpp_TypeInfo_var->static_fields)->get_U3CU3Ef__switchU24map13_10();
 		String_t* L_10 = V_0;
 		NullCheck(L_9);
-		bool L_11 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(33 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_9, L_10, (&V_2));
+		bool L_11 = VirtFuncInvoker2< bool, String_t*, int32_t* >::Invoke(32 /* System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&) */, L_9, L_10, (&V_2));
 		if (!L_11)
 		{
 			goto IL_008f;
@@ -12299,16 +12299,16 @@ IL_008f:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Crl::VerifySignature(System.Security.Cryptography.DSA)
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
-extern TypeInfo* DSASignatureDeformatter_t426713980_il2cpp_TypeInfo_var;
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3718270561_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSASignatureDeformatter_t426713980_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3392410245;
 extern Il2CppCodeGenString* _stringLiteral3904661102;
 extern Il2CppCodeGenString* _stringLiteral2543909;
 extern const uint32_t X509Crl_VerifySignature_m1549750422_MetadataUsageId;
-extern "C"  bool X509Crl_VerifySignature_m1549750422 (X509Crl_t2942805322 * __this, DSA_t1557551819 * ___dsa, const MethodInfo* method)
+extern "C"  bool X509Crl_VerifySignature_m1549750422 (X509Crl_t2942805322 * __this, DSA_t1557551819 * ___dsa0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12345,7 +12345,7 @@ extern "C"  bool X509Crl_VerifySignature_m1549750422 (X509Crl_t2942805322 * __th
 
 IL_002b:
 	{
-		DSA_t1557551819 * L_5 = ___dsa;
+		DSA_t1557551819 * L_5 = ___dsa0;
 		DSASignatureDeformatter_t426713980 * L_6 = (DSASignatureDeformatter_t426713980 *)il2cpp_codegen_object_new(DSASignatureDeformatter_t426713980_il2cpp_TypeInfo_var);
 		DSASignatureDeformatter__ctor_m1067293596(L_6, L_5, /*hidden argument*/NULL);
 		V_0 = L_6;
@@ -12354,7 +12354,7 @@ IL_002b:
 		VirtActionInvoker1< String_t* >::Invoke(4 /* System.Void System.Security.Cryptography.DSASignatureDeformatter::SetHashAlgorithm(System.String) */, L_7, _stringLiteral2543909);
 		ByteU5BU5D_t58506160* L_8 = __this->get_signature_6();
 		ASN1_t1254135647 * L_9 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_9, L_8, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_9, L_8, /*hidden argument*/NULL);
 		V_1 = L_9;
 		ASN1_t1254135647 * L_10 = V_1;
 		if (!L_10)
@@ -12365,7 +12365,7 @@ IL_002b:
 	{
 		ASN1_t1254135647 * L_11 = V_1;
 		NullCheck(L_11);
-		int32_t L_12 = ASN1_get_Count_m2214472120(L_11, /*hidden argument*/NULL);
+		int32_t L_12 = ASN1_get_Count_m3031159196(L_11, /*hidden argument*/NULL);
 		if ((((int32_t)L_12) == ((int32_t)2)))
 		{
 			goto IL_005d;
@@ -12381,15 +12381,15 @@ IL_005d:
 	{
 		ASN1_t1254135647 * L_13 = V_1;
 		NullCheck(L_13);
-		ASN1_t1254135647 * L_14 = ASN1_get_Item_m3727278260(L_13, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_14 = ASN1_get_Item_m3112983888(L_13, 0, /*hidden argument*/NULL);
 		NullCheck(L_14);
-		ByteU5BU5D_t58506160* L_15 = ASN1_get_Value_m390067040(L_14, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_15 = ASN1_get_Value_m4232529916(L_14, /*hidden argument*/NULL);
 		V_2 = L_15;
 		ASN1_t1254135647 * L_16 = V_1;
 		NullCheck(L_16);
-		ASN1_t1254135647 * L_17 = ASN1_get_Item_m3727278260(L_16, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_17 = ASN1_get_Item_m3112983888(L_16, 1, /*hidden argument*/NULL);
 		NullCheck(L_17);
-		ByteU5BU5D_t58506160* L_18 = ASN1_get_Value_m390067040(L_17, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_18 = ASN1_get_Value_m4232529916(L_17, /*hidden argument*/NULL);
 		V_3 = L_18;
 		V_4 = ((ByteU5BU5D_t58506160*)SZArrayNew(ByteU5BU5D_t58506160_il2cpp_TypeInfo_var, (uint32_t)((int32_t)40)));
 		ByteU5BU5D_t58506160* L_19 = V_2;
@@ -12433,9 +12433,9 @@ IL_005d:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Crl::VerifySignature(System.Security.Cryptography.RSA)
-extern TypeInfo* RSAPKCS1SignatureDeformatter_t1504052144_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSAPKCS1SignatureDeformatter_t1504052144_il2cpp_TypeInfo_var;
 extern const uint32_t X509Crl_VerifySignature_m1550167496_MetadataUsageId;
-extern "C"  bool X509Crl_VerifySignature_m1550167496 (X509Crl_t2942805322 * __this, RSA_t1557565273 * ___rsa, const MethodInfo* method)
+extern "C"  bool X509Crl_VerifySignature_m1550167496 (X509Crl_t2942805322 * __this, RSA_t1557565273 * ___rsa0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12445,7 +12445,7 @@ extern "C"  bool X509Crl_VerifySignature_m1550167496 (X509Crl_t2942805322 * __th
 	}
 	RSAPKCS1SignatureDeformatter_t1504052144 * V_0 = NULL;
 	{
-		RSA_t1557565273 * L_0 = ___rsa;
+		RSA_t1557565273 * L_0 = ___rsa0;
 		RSAPKCS1SignatureDeformatter_t1504052144 * L_1 = (RSAPKCS1SignatureDeformatter_t1504052144 *)il2cpp_codegen_object_new(RSAPKCS1SignatureDeformatter_t1504052144_il2cpp_TypeInfo_var);
 		RSAPKCS1SignatureDeformatter__ctor_m3465174692(L_1, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
@@ -12462,24 +12462,24 @@ extern "C"  bool X509Crl_VerifySignature_m1550167496 (X509Crl_t2942805322 * __th
 	}
 }
 // System.Boolean Mono.Security.X509.X509Crl::VerifySignature(System.Security.Cryptography.AsymmetricAlgorithm)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* RSA_t1557565273_il2cpp_TypeInfo_var;
-extern TypeInfo* DSA_t1557551819_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
-extern TypeInfo* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSA_t1557565273_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSA_t1557551819_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotSupportedException_t1374155497_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3104;
 extern Il2CppCodeGenString* _stringLiteral1712030853;
-extern const uint32_t X509Crl_VerifySignature_m4119089195_MetadataUsageId;
-extern "C"  bool X509Crl_VerifySignature_m4119089195 (X509Crl_t2942805322 * __this, AsymmetricAlgorithm_t4236534322 * ___aa, const MethodInfo* method)
+extern const uint32_t X509Crl_VerifySignature_m1677776911_MetadataUsageId;
+extern "C"  bool X509Crl_VerifySignature_m1677776911 (X509Crl_t2942805322 * __this, AsymmetricAlgorithm_t4236534322 * ___aa0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Crl_VerifySignature_m4119089195_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Crl_VerifySignature_m1677776911_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
-		AsymmetricAlgorithm_t4236534322 * L_0 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_0 = ___aa0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -12493,35 +12493,35 @@ extern "C"  bool X509Crl_VerifySignature_m4119089195 (X509Crl_t2942805322 * __th
 
 IL_0011:
 	{
-		AsymmetricAlgorithm_t4236534322 * L_2 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_2 = ___aa0;
 		if (!((RSA_t1557565273 *)IsInstClass(L_2, RSA_t1557565273_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0029;
 		}
 	}
 	{
-		AsymmetricAlgorithm_t4236534322 * L_3 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_3 = ___aa0;
 		bool L_4 = X509Crl_VerifySignature_m1550167496(__this, ((RSA_t1557565273 *)IsInstClass(L_3, RSA_t1557565273_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_4;
 	}
 
 IL_0029:
 	{
-		AsymmetricAlgorithm_t4236534322 * L_5 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_5 = ___aa0;
 		if (!((DSA_t1557551819 *)IsInstClass(L_5, DSA_t1557551819_il2cpp_TypeInfo_var)))
 		{
 			goto IL_0041;
 		}
 	}
 	{
-		AsymmetricAlgorithm_t4236534322 * L_6 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_6 = ___aa0;
 		bool L_7 = X509Crl_VerifySignature_m1549750422(__this, ((DSA_t1557551819 *)IsInstClass(L_6, DSA_t1557551819_il2cpp_TypeInfo_var)), /*hidden argument*/NULL);
 		return L_7;
 	}
 
 IL_0041:
 	{
-		AsymmetricAlgorithm_t4236534322 * L_8 = ___aa;
+		AsymmetricAlgorithm_t4236534322 * L_8 = ___aa0;
 		NullCheck(L_8);
 		String_t* L_9 = VirtFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_8);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -12532,9 +12532,9 @@ IL_0041:
 	}
 }
 // System.Void Mono.Security.X509.X509Crl/X509CrlEntry::.ctor(Mono.Security.ASN1)
-extern TypeInfo* X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var;
 extern const uint32_t X509CrlEntry__ctor_m2720899934_MetadataUsageId;
-extern "C"  void X509CrlEntry__ctor_m2720899934 (X509CrlEntry_t3291243611 * __this, ASN1_t1254135647 * ___entry, const MethodInfo* method)
+extern "C"  void X509CrlEntry__ctor_m2720899934 (X509CrlEntry_t3291243611 * __this, ASN1_t1254135647 * ___entry0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12544,22 +12544,22 @@ extern "C"  void X509CrlEntry__ctor_m2720899934 (X509CrlEntry_t3291243611 * __th
 	}
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		ASN1_t1254135647 * L_0 = ___entry;
+		ASN1_t1254135647 * L_0 = ___entry0;
 		NullCheck(L_0);
-		ASN1_t1254135647 * L_1 = ASN1_get_Item_m3727278260(L_0, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_1 = ASN1_get_Item_m3112983888(L_0, 0, /*hidden argument*/NULL);
 		NullCheck(L_1);
-		ByteU5BU5D_t58506160* L_2 = ASN1_get_Value_m390067040(L_1, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_2 = ASN1_get_Value_m4232529916(L_1, /*hidden argument*/NULL);
 		__this->set_sn_0(L_2);
 		ByteU5BU5D_t58506160* L_3 = __this->get_sn_0();
 		Array_Reverse_m3430038334(NULL /*static, unused*/, (Il2CppArray *)(Il2CppArray *)L_3, /*hidden argument*/NULL);
-		ASN1_t1254135647 * L_4 = ___entry;
+		ASN1_t1254135647 * L_4 = ___entry0;
 		NullCheck(L_4);
-		ASN1_t1254135647 * L_5 = ASN1_get_Item_m3727278260(L_4, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_5 = ASN1_get_Item_m3112983888(L_4, 1, /*hidden argument*/NULL);
 		DateTime_t339033936  L_6 = ASN1Convert_ToDateTime_m864003254(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 		__this->set_revocationDate_1(L_6);
-		ASN1_t1254135647 * L_7 = ___entry;
+		ASN1_t1254135647 * L_7 = ___entry0;
 		NullCheck(L_7);
-		ASN1_t1254135647 * L_8 = ASN1_get_Item_m3727278260(L_7, 2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_8 = ASN1_get_Item_m3112983888(L_7, 2, /*hidden argument*/NULL);
 		X509ExtensionCollection_t3528692651 * L_9 = (X509ExtensionCollection_t3528692651 *)il2cpp_codegen_object_new(X509ExtensionCollection_t3528692651_il2cpp_TypeInfo_var);
 		X509ExtensionCollection__ctor_m2115523054(L_9, L_8, /*hidden argument*/NULL);
 		__this->set_extensions_2(L_9);
@@ -12567,7 +12567,7 @@ extern "C"  void X509CrlEntry__ctor_m2720899934 (X509CrlEntry_t3291243611 * __th
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Crl/X509CrlEntry::get_SerialNumber()
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
 extern const uint32_t X509CrlEntry_get_SerialNumber_m2092313770_MetadataUsageId;
 extern "C"  ByteU5BU5D_t58506160* X509CrlEntry_get_SerialNumber_m2092313770 (X509CrlEntry_t3291243611 * __this, const MethodInfo* method)
 {
@@ -12585,7 +12585,7 @@ extern "C"  ByteU5BU5D_t58506160* X509CrlEntry_get_SerialNumber_m2092313770 (X50
 	}
 }
 // System.DateTime Mono.Security.X509.X509Crl/X509CrlEntry::get_RevocationDate()
-extern "C"  DateTime_t339033936  X509CrlEntry_get_RevocationDate_m1346115726 (X509CrlEntry_t3291243611 * __this, const MethodInfo* method)
+extern "C"  DateTime_t339033936  X509CrlEntry_get_RevocationDate_m3530161450 (X509CrlEntry_t3291243611 * __this, const MethodInfo* method)
 {
 	{
 		DateTime_t339033936  L_0 = __this->get_revocationDate_1();
@@ -12593,7 +12593,7 @@ extern "C"  DateTime_t339033936  X509CrlEntry_get_RevocationDate_m1346115726 (X5
 	}
 }
 // Mono.Security.X509.X509ExtensionCollection Mono.Security.X509.X509Crl/X509CrlEntry::get_Extensions()
-extern "C"  X509ExtensionCollection_t3528692651 * X509CrlEntry_get_Extensions_m3036329986 (X509CrlEntry_t3291243611 * __this, const MethodInfo* method)
+extern "C"  X509ExtensionCollection_t3528692651 * X509CrlEntry_get_Extensions_m73360358 (X509CrlEntry_t3291243611 * __this, const MethodInfo* method)
 {
 	{
 		X509ExtensionCollection_t3528692651 * L_0 = __this->get_extensions_2();
@@ -12601,12 +12601,12 @@ extern "C"  X509ExtensionCollection_t3528692651 * X509CrlEntry_get_Extensions_m3
 	}
 }
 // System.Void Mono.Security.X509.X509Extension::.ctor(Mono.Security.ASN1)
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
-extern TypeInfo* ASN1_t1254135647_il2cpp_TypeInfo_var;
-extern TypeInfo* Il2CppObject_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* ASN1_t1254135647_il2cpp_TypeInfo_var;
+extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2299733936;
 extern const uint32_t X509Extension__ctor_m2888521900_MetadataUsageId;
-extern "C"  void X509Extension__ctor_m2888521900 (X509Extension_t1510964269 * __this, ASN1_t1254135647 * ___asn1, const MethodInfo* method)
+extern "C"  void X509Extension__ctor_m2888521900 (X509Extension_t1510964269 * __this, ASN1_t1254135647 * ___asn10, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12627,18 +12627,18 @@ extern "C"  void X509Extension__ctor_m2888521900 (X509Extension_t1510964269 * __
 	X509Extension_t1510964269 * G_B8_1 = NULL;
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		ASN1_t1254135647 * L_0 = ___asn1;
+		ASN1_t1254135647 * L_0 = ___asn10;
 		NullCheck(L_0);
-		uint8_t L_1 = ASN1_get_Tag_m442995239(L_0, /*hidden argument*/NULL);
+		uint8_t L_1 = ASN1_get_Tag_m1269404867(L_0, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_1) == ((uint32_t)((int32_t)48)))))
 		{
 			goto IL_001f;
 		}
 	}
 	{
-		ASN1_t1254135647 * L_2 = ___asn1;
+		ASN1_t1254135647 * L_2 = ___asn10;
 		NullCheck(L_2);
-		int32_t L_3 = ASN1_get_Count_m2214472120(L_2, /*hidden argument*/NULL);
+		int32_t L_3 = ASN1_get_Count_m3031159196(L_2, /*hidden argument*/NULL);
 		if ((((int32_t)L_3) >= ((int32_t)2)))
 		{
 			goto IL_002f;
@@ -12655,11 +12655,11 @@ IL_001f:
 
 IL_002f:
 	{
-		ASN1_t1254135647 * L_6 = ___asn1;
+		ASN1_t1254135647 * L_6 = ___asn10;
 		NullCheck(L_6);
-		ASN1_t1254135647 * L_7 = ASN1_get_Item_m3727278260(L_6, 0, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_7 = ASN1_get_Item_m3112983888(L_6, 0, /*hidden argument*/NULL);
 		NullCheck(L_7);
-		uint8_t L_8 = ASN1_get_Tag_m442995239(L_7, /*hidden argument*/NULL);
+		uint8_t L_8 = ASN1_get_Tag_m1269404867(L_7, /*hidden argument*/NULL);
 		if ((((int32_t)L_8) == ((int32_t)6)))
 		{
 			goto IL_0051;
@@ -12674,16 +12674,16 @@ IL_002f:
 
 IL_0051:
 	{
-		ASN1_t1254135647 * L_11 = ___asn1;
+		ASN1_t1254135647 * L_11 = ___asn10;
 		NullCheck(L_11);
-		ASN1_t1254135647 * L_12 = ASN1_get_Item_m3727278260(L_11, 0, /*hidden argument*/NULL);
-		String_t* L_13 = ASN1Convert_ToOid_m581448231(NULL /*static, unused*/, L_12, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_12 = ASN1_get_Item_m3112983888(L_11, 0, /*hidden argument*/NULL);
+		String_t* L_13 = ASN1Convert_ToOid_m1387992843(NULL /*static, unused*/, L_12, /*hidden argument*/NULL);
 		__this->set_extnOid_0(L_13);
-		ASN1_t1254135647 * L_14 = ___asn1;
+		ASN1_t1254135647 * L_14 = ___asn10;
 		NullCheck(L_14);
-		ASN1_t1254135647 * L_15 = ASN1_get_Item_m3727278260(L_14, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_15 = ASN1_get_Item_m3112983888(L_14, 1, /*hidden argument*/NULL);
 		NullCheck(L_15);
-		uint8_t L_16 = ASN1_get_Tag_m442995239(L_15, /*hidden argument*/NULL);
+		uint8_t L_16 = ASN1_get_Tag_m1269404867(L_15, /*hidden argument*/NULL);
 		G_B6_0 = __this;
 		if ((!(((uint32_t)L_16) == ((uint32_t)1))))
 		{
@@ -12692,11 +12692,11 @@ IL_0051:
 		}
 	}
 	{
-		ASN1_t1254135647 * L_17 = ___asn1;
+		ASN1_t1254135647 * L_17 = ___asn10;
 		NullCheck(L_17);
-		ASN1_t1254135647 * L_18 = ASN1_get_Item_m3727278260(L_17, 1, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_18 = ASN1_get_Item_m3112983888(L_17, 1, /*hidden argument*/NULL);
 		NullCheck(L_18);
-		ByteU5BU5D_t58506160* L_19 = ASN1_get_Value_m390067040(L_18, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_19 = ASN1_get_Value_m4232529916(L_18, /*hidden argument*/NULL);
 		NullCheck(L_19);
 		IL2CPP_ARRAY_BOUNDS_CHECK(L_19, 0);
 		int32_t L_20 = 0;
@@ -12715,16 +12715,16 @@ IL_008e:
 	{
 		NullCheck(G_B8_1);
 		G_B8_1->set_extnCritical_1((bool)G_B8_0);
-		ASN1_t1254135647 * L_21 = ___asn1;
-		ASN1_t1254135647 * L_22 = ___asn1;
+		ASN1_t1254135647 * L_21 = ___asn10;
+		ASN1_t1254135647 * L_22 = ___asn10;
 		NullCheck(L_22);
-		int32_t L_23 = ASN1_get_Count_m2214472120(L_22, /*hidden argument*/NULL);
+		int32_t L_23 = ASN1_get_Count_m3031159196(L_22, /*hidden argument*/NULL);
 		NullCheck(L_21);
-		ASN1_t1254135647 * L_24 = ASN1_get_Item_m3727278260(L_21, ((int32_t)((int32_t)L_23-(int32_t)1)), /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_24 = ASN1_get_Item_m3112983888(L_21, ((int32_t)((int32_t)L_23-(int32_t)1)), /*hidden argument*/NULL);
 		__this->set_extnValue_2(L_24);
 		ASN1_t1254135647 * L_25 = __this->get_extnValue_2();
 		NullCheck(L_25);
-		uint8_t L_26 = ASN1_get_Tag_m442995239(L_25, /*hidden argument*/NULL);
+		uint8_t L_26 = ASN1_get_Tag_m1269404867(L_25, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_26) == ((uint32_t)4))))
 		{
 			goto IL_010e;
@@ -12733,7 +12733,7 @@ IL_008e:
 	{
 		ASN1_t1254135647 * L_27 = __this->get_extnValue_2();
 		NullCheck(L_27);
-		int32_t L_28 = ASN1_get_Length_m2237640703(L_27, /*hidden argument*/NULL);
+		int32_t L_28 = ASN1_get_Length_m1785136283(L_27, /*hidden argument*/NULL);
 		if ((((int32_t)L_28) <= ((int32_t)0)))
 		{
 			goto IL_010e;
@@ -12742,7 +12742,7 @@ IL_008e:
 	{
 		ASN1_t1254135647 * L_29 = __this->get_extnValue_2();
 		NullCheck(L_29);
-		int32_t L_30 = ASN1_get_Count_m2214472120(L_29, /*hidden argument*/NULL);
+		int32_t L_30 = ASN1_get_Count_m3031159196(L_29, /*hidden argument*/NULL);
 		if (L_30)
 		{
 			goto IL_010e;
@@ -12754,9 +12754,9 @@ IL_00d9:
 	{ // begin try (depth: 1)
 		ASN1_t1254135647 * L_31 = __this->get_extnValue_2();
 		NullCheck(L_31);
-		ByteU5BU5D_t58506160* L_32 = ASN1_get_Value_m390067040(L_31, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_32 = ASN1_get_Value_m4232529916(L_31, /*hidden argument*/NULL);
 		ASN1_t1254135647 * L_33 = (ASN1_t1254135647 *)il2cpp_codegen_object_new(ASN1_t1254135647_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3008094309(L_33, L_32, /*hidden argument*/NULL);
+		ASN1__ctor_m2555733065(L_33, L_32, /*hidden argument*/NULL);
 		V_0 = L_33;
 		ASN1_t1254135647 * L_34 = __this->get_extnValue_2();
 		NullCheck(L_34);
@@ -12764,7 +12764,7 @@ IL_00d9:
 		ASN1_t1254135647 * L_35 = __this->get_extnValue_2();
 		ASN1_t1254135647 * L_36 = V_0;
 		NullCheck(L_35);
-		ASN1_Add_m1424422628(L_35, L_36, /*hidden argument*/NULL);
+		ASN1_Add_m3856133576(L_35, L_36, /*hidden argument*/NULL);
 		goto IL_010e;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -12787,12 +12787,12 @@ IL_010e:
 	}
 }
 // System.Void Mono.Security.X509.X509Extension::.ctor(Mono.Security.X509.X509Extension)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* ArgumentException_t124305799_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t124305799_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3682409535;
 extern Il2CppCodeGenString* _stringLiteral2299733936;
 extern const uint32_t X509Extension__ctor_m3298017424_MetadataUsageId;
-extern "C"  void X509Extension__ctor_m3298017424 (X509Extension_t1510964269 * __this, X509Extension_t1510964269 * ___extension, const MethodInfo* method)
+extern "C"  void X509Extension__ctor_m3298017424 (X509Extension_t1510964269 * __this, X509Extension_t1510964269 * ___extension0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12802,7 +12802,7 @@ extern "C"  void X509Extension__ctor_m3298017424 (X509Extension_t1510964269 * __
 	}
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		X509Extension_t1510964269 * L_0 = ___extension;
+		X509Extension_t1510964269 * L_0 = ___extension0;
 		if (L_0)
 		{
 			goto IL_0017;
@@ -12816,31 +12816,31 @@ extern "C"  void X509Extension__ctor_m3298017424 (X509Extension_t1510964269 * __
 
 IL_0017:
 	{
-		X509Extension_t1510964269 * L_2 = ___extension;
+		X509Extension_t1510964269 * L_2 = ___extension0;
 		NullCheck(L_2);
-		ASN1_t1254135647 * L_3 = X509Extension_get_Value_m1722264871(L_2, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_3 = X509Extension_get_Value_m2134276875(L_2, /*hidden argument*/NULL);
 		if (!L_3)
 		{
 			goto IL_0044;
 		}
 	}
 	{
-		X509Extension_t1510964269 * L_4 = ___extension;
+		X509Extension_t1510964269 * L_4 = ___extension0;
 		NullCheck(L_4);
-		ASN1_t1254135647 * L_5 = X509Extension_get_Value_m1722264871(L_4, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_5 = X509Extension_get_Value_m2134276875(L_4, /*hidden argument*/NULL);
 		NullCheck(L_5);
-		uint8_t L_6 = ASN1_get_Tag_m442995239(L_5, /*hidden argument*/NULL);
+		uint8_t L_6 = ASN1_get_Tag_m1269404867(L_5, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_6) == ((uint32_t)4))))
 		{
 			goto IL_0044;
 		}
 	}
 	{
-		X509Extension_t1510964269 * L_7 = ___extension;
+		X509Extension_t1510964269 * L_7 = ___extension0;
 		NullCheck(L_7);
-		ASN1_t1254135647 * L_8 = X509Extension_get_Value_m1722264871(L_7, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_8 = X509Extension_get_Value_m2134276875(L_7, /*hidden argument*/NULL);
 		NullCheck(L_8);
-		int32_t L_9 = ASN1_get_Count_m2214472120(L_8, /*hidden argument*/NULL);
+		int32_t L_9 = ASN1_get_Count_m3031159196(L_8, /*hidden argument*/NULL);
 		if ((((int32_t)L_9) == ((int32_t)1)))
 		{
 			goto IL_0054;
@@ -12857,17 +12857,17 @@ IL_0044:
 
 IL_0054:
 	{
-		X509Extension_t1510964269 * L_12 = ___extension;
+		X509Extension_t1510964269 * L_12 = ___extension0;
 		NullCheck(L_12);
-		String_t* L_13 = X509Extension_get_Oid_m1309247492(L_12, /*hidden argument*/NULL);
+		String_t* L_13 = X509Extension_get_Oid_m915067552(L_12, /*hidden argument*/NULL);
 		__this->set_extnOid_0(L_13);
-		X509Extension_t1510964269 * L_14 = ___extension;
+		X509Extension_t1510964269 * L_14 = ___extension0;
 		NullCheck(L_14);
-		bool L_15 = X509Extension_get_Critical_m3010458874(L_14, /*hidden argument*/NULL);
+		bool L_15 = X509Extension_get_Critical_m1084086934(L_14, /*hidden argument*/NULL);
 		__this->set_extnCritical_1(L_15);
-		X509Extension_t1510964269 * L_16 = ___extension;
+		X509Extension_t1510964269 * L_16 = ___extension0;
 		NullCheck(L_16);
-		ASN1_t1254135647 * L_17 = X509Extension_get_Value_m1722264871(L_16, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_17 = X509Extension_get_Value_m2134276875(L_16, /*hidden argument*/NULL);
 		__this->set_extnValue_2(L_17);
 		VirtActionInvoker0::Invoke(4 /* System.Void Mono.Security.X509.X509Extension::Decode() */, __this);
 		return;
@@ -12888,7 +12888,7 @@ extern "C"  void X509Extension_Encode_m1112310710 (X509Extension_t1510964269 * _
 	}
 }
 // System.String Mono.Security.X509.X509Extension::get_Oid()
-extern "C"  String_t* X509Extension_get_Oid_m1309247492 (X509Extension_t1510964269 * __this, const MethodInfo* method)
+extern "C"  String_t* X509Extension_get_Oid_m915067552 (X509Extension_t1510964269 * __this, const MethodInfo* method)
 {
 	{
 		String_t* L_0 = __this->get_extnOid_0();
@@ -12896,7 +12896,7 @@ extern "C"  String_t* X509Extension_get_Oid_m1309247492 (X509Extension_t15109642
 	}
 }
 // System.Boolean Mono.Security.X509.X509Extension::get_Critical()
-extern "C"  bool X509Extension_get_Critical_m3010458874 (X509Extension_t1510964269 * __this, const MethodInfo* method)
+extern "C"  bool X509Extension_get_Critical_m1084086934 (X509Extension_t1510964269 * __this, const MethodInfo* method)
 {
 	{
 		bool L_0 = __this->get_extnCritical_1();
@@ -12904,7 +12904,7 @@ extern "C"  bool X509Extension_get_Critical_m3010458874 (X509Extension_t15109642
 	}
 }
 // Mono.Security.ASN1 Mono.Security.X509.X509Extension::get_Value()
-extern "C"  ASN1_t1254135647 * X509Extension_get_Value_m1722264871 (X509Extension_t1510964269 * __this, const MethodInfo* method)
+extern "C"  ASN1_t1254135647 * X509Extension_get_Value_m2134276875 (X509Extension_t1510964269 * __this, const MethodInfo* method)
 {
 	{
 		ASN1_t1254135647 * L_0 = __this->get_extnValue_2();
@@ -12924,10 +12924,10 @@ IL_0011:
 	}
 }
 // System.Boolean Mono.Security.X509.X509Extension::Equals(System.Object)
-extern TypeInfo* X509Extension_t1510964269_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Extension_t1510964269_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern const uint32_t X509Extension_Equals_m131878599_MetadataUsageId;
-extern "C"  bool X509Extension_Equals_m131878599 (X509Extension_t1510964269 * __this, Il2CppObject * ___obj, const MethodInfo* method)
+extern "C"  bool X509Extension_Equals_m131878599 (X509Extension_t1510964269 * __this, Il2CppObject * ___obj0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -12938,7 +12938,7 @@ extern "C"  bool X509Extension_Equals_m131878599 (X509Extension_t1510964269 * __
 	X509Extension_t1510964269 * V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		Il2CppObject * L_0 = ___obj;
+		Il2CppObject * L_0 = ___obj0;
 		if (L_0)
 		{
 			goto IL_0008;
@@ -12950,7 +12950,7 @@ extern "C"  bool X509Extension_Equals_m131878599 (X509Extension_t1510964269 * __
 
 IL_0008:
 	{
-		Il2CppObject * L_1 = ___obj;
+		Il2CppObject * L_1 = ___obj0;
 		V_0 = ((X509Extension_t1510964269 *)IsInstClass(L_1, X509Extension_t1510964269_il2cpp_TypeInfo_var));
 		X509Extension_t1510964269 * L_2 = V_0;
 		if (L_2)
@@ -12998,12 +12998,12 @@ IL_0042:
 	{
 		ASN1_t1254135647 * L_10 = __this->get_extnValue_2();
 		NullCheck(L_10);
-		int32_t L_11 = ASN1_get_Length_m2237640703(L_10, /*hidden argument*/NULL);
+		int32_t L_11 = ASN1_get_Length_m1785136283(L_10, /*hidden argument*/NULL);
 		X509Extension_t1510964269 * L_12 = V_0;
 		NullCheck(L_12);
 		ASN1_t1254135647 * L_13 = L_12->get_extnValue_2();
 		NullCheck(L_13);
-		int32_t L_14 = ASN1_get_Length_m2237640703(L_13, /*hidden argument*/NULL);
+		int32_t L_14 = ASN1_get_Length_m1785136283(L_13, /*hidden argument*/NULL);
 		if ((((int32_t)L_11) == ((int32_t)L_14)))
 		{
 			goto IL_005f;
@@ -13024,13 +13024,13 @@ IL_0066:
 		ASN1_t1254135647 * L_15 = __this->get_extnValue_2();
 		int32_t L_16 = V_1;
 		NullCheck(L_15);
-		ASN1_t1254135647 * L_17 = ASN1_get_Item_m3727278260(L_15, L_16, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_17 = ASN1_get_Item_m3112983888(L_15, L_16, /*hidden argument*/NULL);
 		X509Extension_t1510964269 * L_18 = V_0;
 		NullCheck(L_18);
 		ASN1_t1254135647 * L_19 = L_18->get_extnValue_2();
 		int32_t L_20 = V_1;
 		NullCheck(L_19);
-		ASN1_t1254135647 * L_21 = ASN1_get_Item_m3727278260(L_19, L_20, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_21 = ASN1_get_Item_m3112983888(L_19, L_20, /*hidden argument*/NULL);
 		if ((((Il2CppObject*)(ASN1_t1254135647 *)L_17) == ((Il2CppObject*)(ASN1_t1254135647 *)L_21)))
 		{
 			goto IL_0085;
@@ -13051,7 +13051,7 @@ IL_0089:
 		int32_t L_23 = V_1;
 		ASN1_t1254135647 * L_24 = __this->get_extnValue_2();
 		NullCheck(L_24);
-		int32_t L_25 = ASN1_get_Length_m2237640703(L_24, /*hidden argument*/NULL);
+		int32_t L_25 = ASN1_get_Length_m1785136283(L_24, /*hidden argument*/NULL);
 		if ((((int32_t)L_23) < ((int32_t)L_25)))
 		{
 			goto IL_0066;
@@ -13072,15 +13072,15 @@ extern "C"  int32_t X509Extension_GetHashCode_m1621273003 (X509Extension_t151096
 	}
 }
 // System.Void Mono.Security.X509.X509Extension::WriteLine(System.Text.StringBuilder,System.Int32,System.Int32)
-extern TypeInfo* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
-extern TypeInfo* Convert_t1097883944_il2cpp_TypeInfo_var;
+extern Il2CppClass* CultureInfo_t3603717042_il2cpp_TypeInfo_var;
+extern Il2CppClass* Convert_t1097883944_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral2778;
 extern Il2CppCodeGenString* _stringLiteral32;
 extern Il2CppCodeGenString* _stringLiteral31776;
 extern Il2CppCodeGenString* _stringLiteral1024;
 extern Il2CppCodeGenString* _stringLiteral46;
 extern const uint32_t X509Extension_WriteLine_m4265102453_MetadataUsageId;
-extern "C"  void X509Extension_WriteLine_m4265102453 (X509Extension_t1510964269 * __this, StringBuilder_t3822575854 * ___sb, int32_t ___n, int32_t ___pos, const MethodInfo* method)
+extern "C"  void X509Extension_WriteLine_m4265102453 (X509Extension_t1510964269 * __this, StringBuilder_t3822575854 * ___sb0, int32_t ___n1, int32_t ___pos2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13096,9 +13096,9 @@ extern "C"  void X509Extension_WriteLine_m4265102453 (X509Extension_t1510964269 
 	{
 		ASN1_t1254135647 * L_0 = __this->get_extnValue_2();
 		NullCheck(L_0);
-		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m390067040(L_0, /*hidden argument*/NULL);
+		ByteU5BU5D_t58506160* L_1 = ASN1_get_Value_m4232529916(L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
-		int32_t L_2 = ___pos;
+		int32_t L_2 = ___pos2;
 		V_1 = L_2;
 		V_2 = 0;
 		goto IL_005e;
@@ -13107,14 +13107,14 @@ extern "C"  void X509Extension_WriteLine_m4265102453 (X509Extension_t1510964269 
 IL_0015:
 	{
 		int32_t L_3 = V_2;
-		int32_t L_4 = ___n;
+		int32_t L_4 = ___n1;
 		if ((((int32_t)L_3) >= ((int32_t)L_4)))
 		{
 			goto IL_004e;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_5 = ___sb;
+		StringBuilder_t3822575854 * L_5 = ___sb0;
 		ByteU5BU5D_t58506160* L_6 = V_0;
 		int32_t L_7 = V_1;
 		int32_t L_8 = L_7;
@@ -13126,7 +13126,7 @@ IL_0015:
 		String_t* L_10 = Byte_ToString_m1210459538(((L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_8))), _stringLiteral2778, L_9, /*hidden argument*/NULL);
 		NullCheck(L_5);
 		StringBuilder_Append_m3898090075(L_5, L_10, /*hidden argument*/NULL);
-		StringBuilder_t3822575854 * L_11 = ___sb;
+		StringBuilder_t3822575854 * L_11 = ___sb0;
 		NullCheck(L_11);
 		StringBuilder_Append_m3898090075(L_11, _stringLiteral32, /*hidden argument*/NULL);
 		goto IL_005a;
@@ -13134,7 +13134,7 @@ IL_0015:
 
 IL_004e:
 	{
-		StringBuilder_t3822575854 * L_12 = ___sb;
+		StringBuilder_t3822575854 * L_12 = ___sb0;
 		NullCheck(L_12);
 		StringBuilder_Append_m3898090075(L_12, _stringLiteral31776, /*hidden argument*/NULL);
 	}
@@ -13154,10 +13154,10 @@ IL_005e:
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_15 = ___sb;
+		StringBuilder_t3822575854 * L_15 = ___sb0;
 		NullCheck(L_15);
 		StringBuilder_Append_m3898090075(L_15, _stringLiteral1024, /*hidden argument*/NULL);
-		int32_t L_16 = ___pos;
+		int32_t L_16 = ___pos2;
 		V_1 = L_16;
 		V_3 = 0;
 		goto IL_00af;
@@ -13180,7 +13180,7 @@ IL_007a:
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_22 = ___sb;
+		StringBuilder_t3822575854 * L_22 = ___sb0;
 		NullCheck(L_22);
 		StringBuilder_Append_m3898090075(L_22, _stringLiteral46, /*hidden argument*/NULL);
 		goto IL_00ab;
@@ -13188,7 +13188,7 @@ IL_007a:
 
 IL_009d:
 	{
-		StringBuilder_t3822575854 * L_23 = ___sb;
+		StringBuilder_t3822575854 * L_23 = ___sb0;
 		uint8_t L_24 = V_4;
 		IL2CPP_RUNTIME_CLASS_INIT(Convert_t1097883944_il2cpp_TypeInfo_var);
 		uint16_t L_25 = Convert_ToChar_m975090646(NULL /*static, unused*/, L_24, /*hidden argument*/NULL);
@@ -13205,14 +13205,14 @@ IL_00ab:
 IL_00af:
 	{
 		int32_t L_27 = V_3;
-		int32_t L_28 = ___n;
+		int32_t L_28 = ___n1;
 		if ((((int32_t)L_27) < ((int32_t)L_28)))
 		{
 			goto IL_007a;
 		}
 	}
 	{
-		StringBuilder_t3822575854 * L_29 = ___sb;
+		StringBuilder_t3822575854 * L_29 = ___sb0;
 		String_t* L_30 = Environment_get_NewLine_m1034655108(NULL /*static, unused*/, /*hidden argument*/NULL);
 		NullCheck(L_29);
 		StringBuilder_Append_m3898090075(L_29, L_30, /*hidden argument*/NULL);
@@ -13220,7 +13220,7 @@ IL_00af:
 	}
 }
 // System.String Mono.Security.X509.X509Extension::ToString()
-extern TypeInfo* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringBuilder_t3822575854_il2cpp_TypeInfo_var;
 extern const uint32_t X509Extension_ToString_m1923324847_MetadataUsageId;
 extern "C"  String_t* X509Extension_ToString_m1923324847 (X509Extension_t1510964269 * __this, const MethodInfo* method)
 {
@@ -13241,11 +13241,11 @@ extern "C"  String_t* X509Extension_ToString_m1923324847 (X509Extension_t1510964
 		V_0 = L_0;
 		ASN1_t1254135647 * L_1 = __this->get_extnValue_2();
 		NullCheck(L_1);
-		int32_t L_2 = ASN1_get_Length_m2237640703(L_1, /*hidden argument*/NULL);
+		int32_t L_2 = ASN1_get_Length_m1785136283(L_1, /*hidden argument*/NULL);
 		V_1 = ((int32_t)((int32_t)L_2>>(int32_t)3));
 		ASN1_t1254135647 * L_3 = __this->get_extnValue_2();
 		NullCheck(L_3);
-		int32_t L_4 = ASN1_get_Length_m2237640703(L_3, /*hidden argument*/NULL);
+		int32_t L_4 = ASN1_get_Length_m1785136283(L_3, /*hidden argument*/NULL);
 		int32_t L_5 = V_1;
 		V_2 = ((int32_t)((int32_t)L_4-(int32_t)((int32_t)((int32_t)L_5<<(int32_t)3))));
 		V_3 = 0;
@@ -13293,11 +13293,11 @@ extern "C"  void X509ExtensionCollection__ctor_m3777468326 (X509ExtensionCollect
 	}
 }
 // System.Void Mono.Security.X509.X509ExtensionCollection::.ctor(Mono.Security.ASN1)
-extern TypeInfo* Exception_t1967233988_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Extension_t1510964269_il2cpp_TypeInfo_var;
+extern Il2CppClass* Exception_t1967233988_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Extension_t1510964269_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1668520826;
 extern const uint32_t X509ExtensionCollection__ctor_m2115523054_MetadataUsageId;
-extern "C"  void X509ExtensionCollection__ctor_m2115523054 (X509ExtensionCollection_t3528692651 * __this, ASN1_t1254135647 * ___asn1, const MethodInfo* method)
+extern "C"  void X509ExtensionCollection__ctor_m2115523054 (X509ExtensionCollection_t3528692651 * __this, ASN1_t1254135647 * ___asn10, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13310,7 +13310,7 @@ extern "C"  void X509ExtensionCollection__ctor_m2115523054 (X509ExtensionCollect
 	{
 		X509ExtensionCollection__ctor_m3777468326(__this, /*hidden argument*/NULL);
 		__this->set_readOnly_1((bool)1);
-		ASN1_t1254135647 * L_0 = ___asn1;
+		ASN1_t1254135647 * L_0 = ___asn10;
 		if (L_0)
 		{
 			goto IL_0014;
@@ -13322,9 +13322,9 @@ extern "C"  void X509ExtensionCollection__ctor_m2115523054 (X509ExtensionCollect
 
 IL_0014:
 	{
-		ASN1_t1254135647 * L_1 = ___asn1;
+		ASN1_t1254135647 * L_1 = ___asn10;
 		NullCheck(L_1);
-		uint8_t L_2 = ASN1_get_Tag_m442995239(L_1, /*hidden argument*/NULL);
+		uint8_t L_2 = ASN1_get_Tag_m1269404867(L_1, /*hidden argument*/NULL);
 		if ((((int32_t)L_2) == ((int32_t)((int32_t)48))))
 		{
 			goto IL_002c;
@@ -13344,10 +13344,10 @@ IL_002c:
 
 IL_0033:
 	{
-		ASN1_t1254135647 * L_4 = ___asn1;
+		ASN1_t1254135647 * L_4 = ___asn10;
 		int32_t L_5 = V_0;
 		NullCheck(L_4);
-		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3727278260(L_4, L_5, /*hidden argument*/NULL);
+		ASN1_t1254135647 * L_6 = ASN1_get_Item_m3112983888(L_4, L_5, /*hidden argument*/NULL);
 		X509Extension_t1510964269 * L_7 = (X509Extension_t1510964269 *)il2cpp_codegen_object_new(X509Extension_t1510964269_il2cpp_TypeInfo_var);
 		X509Extension__ctor_m2888521900(L_7, L_6, /*hidden argument*/NULL);
 		V_1 = L_7;
@@ -13362,9 +13362,9 @@ IL_0033:
 IL_0051:
 	{
 		int32_t L_11 = V_0;
-		ASN1_t1254135647 * L_12 = ___asn1;
+		ASN1_t1254135647 * L_12 = ___asn10;
 		NullCheck(L_12);
-		int32_t L_13 = ASN1_get_Count_m2214472120(L_12, /*hidden argument*/NULL);
+		int32_t L_13 = ASN1_get_Count_m3031159196(L_12, /*hidden argument*/NULL);
 		if ((((int32_t)L_11) < ((int32_t)L_13)))
 		{
 			goto IL_0033;
@@ -13385,12 +13385,12 @@ extern "C"  Il2CppObject * X509ExtensionCollection_System_Collections_IEnumerabl
 	}
 }
 // System.Int32 Mono.Security.X509.X509ExtensionCollection::IndexOf(System.String)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Extension_t1510964269_il2cpp_TypeInfo_var;
-extern TypeInfo* String_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Extension_t1510964269_il2cpp_TypeInfo_var;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral110026;
 extern const uint32_t X509ExtensionCollection_IndexOf_m1626273533_MetadataUsageId;
-extern "C"  int32_t X509ExtensionCollection_IndexOf_m1626273533 (X509ExtensionCollection_t3528692651 * __this, String_t* ___oid, const MethodInfo* method)
+extern "C"  int32_t X509ExtensionCollection_IndexOf_m1626273533 (X509ExtensionCollection_t3528692651 * __this, String_t* ___oid0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13401,7 +13401,7 @@ extern "C"  int32_t X509ExtensionCollection_IndexOf_m1626273533 (X509ExtensionCo
 	int32_t V_0 = 0;
 	X509Extension_t1510964269 * V_1 = NULL;
 	{
-		String_t* L_0 = ___oid;
+		String_t* L_0 = ___oid0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -13428,8 +13428,8 @@ IL_0018:
 		V_1 = ((X509Extension_t1510964269 *)CastclassClass(L_4, X509Extension_t1510964269_il2cpp_TypeInfo_var));
 		X509Extension_t1510964269 * L_5 = V_1;
 		NullCheck(L_5);
-		String_t* L_6 = X509Extension_get_Oid_m1309247492(L_5, /*hidden argument*/NULL);
-		String_t* L_7 = ___oid;
+		String_t* L_6 = X509Extension_get_Oid_m915067552(L_5, /*hidden argument*/NULL);
+		String_t* L_7 = ___oid0;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
 		bool L_8 = String_op_Equality_m1260523650(NULL /*static, unused*/, L_6, L_7, /*hidden argument*/NULL);
 		if (!L_8)
@@ -13464,19 +13464,19 @@ IL_0041:
 	}
 }
 // Mono.Security.X509.X509Extension Mono.Security.X509.X509ExtensionCollection::get_Item(System.String)
-extern TypeInfo* X509Extension_t1510964269_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionCollection_get_Item_m2008681985_MetadataUsageId;
-extern "C"  X509Extension_t1510964269 * X509ExtensionCollection_get_Item_m2008681985 (X509ExtensionCollection_t3528692651 * __this, String_t* ___oid, const MethodInfo* method)
+extern Il2CppClass* X509Extension_t1510964269_il2cpp_TypeInfo_var;
+extern const uint32_t X509ExtensionCollection_get_Item_m3340679653_MetadataUsageId;
+extern "C"  X509Extension_t1510964269 * X509ExtensionCollection_get_Item_m3340679653 (X509ExtensionCollection_t3528692651 * __this, String_t* ___oid0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509ExtensionCollection_get_Item_m2008681985_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509ExtensionCollection_get_Item_m3340679653_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	int32_t V_0 = 0;
 	{
-		String_t* L_0 = ___oid;
+		String_t* L_0 = ___oid0;
 		int32_t L_1 = X509ExtensionCollection_IndexOf_m1626273533(__this, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
@@ -13499,19 +13499,19 @@ IL_0011:
 	}
 }
 // System.Void Mono.Security.X509.X509Store::.ctor(System.String,System.Boolean)
-extern "C"  void X509Store__ctor_m3740673213 (X509Store_t3983467982 * __this, String_t* ___path, bool ___crl, const MethodInfo* method)
+extern "C"  void X509Store__ctor_m3740673213 (X509Store_t3983467982 * __this, String_t* ___path0, bool ___crl1, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		String_t* L_0 = ___path;
+		String_t* L_0 = ___path0;
 		__this->set__storePath_0(L_0);
-		bool L_1 = ___crl;
+		bool L_1 = ___crl1;
 		__this->set__crl_3(L_1);
 		return;
 	}
 }
 // Mono.Security.X509.X509CertificateCollection Mono.Security.X509.X509Store::get_Certificates()
-extern "C"  X509CertificateCollection_t3336811651 * X509Store_get_Certificates_m3817753304 (X509Store_t3983467982 * __this, const MethodInfo* method)
+extern "C"  X509CertificateCollection_t3336811651 * X509Store_get_Certificates_m3707205492 (X509Store_t3983467982 * __this, const MethodInfo* method)
 {
 	{
 		X509CertificateCollection_t3336811651 * L_0 = __this->get__certificates_1();
@@ -13533,14 +13533,14 @@ IL_001d:
 	}
 }
 // System.Collections.ArrayList Mono.Security.X509.X509Store::get_Crls()
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern const uint32_t X509Store_get_Crls_m2221659197_MetadataUsageId;
-extern "C"  ArrayList_t2121638921 * X509Store_get_Crls_m2221659197 (X509Store_t3983467982 * __this, const MethodInfo* method)
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern const uint32_t X509Store_get_Crls_m3945141465_MetadataUsageId;
+extern "C"  ArrayList_t2121638921 * X509Store_get_Crls_m3945141465 (X509Store_t3983467982 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Store_get_Crls_m2221659197_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Store_get_Crls_m3945141465_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	{
@@ -13577,10 +13577,10 @@ IL_0033:
 	}
 }
 // System.Byte[] Mono.Security.X509.X509Store::Load(System.String)
-extern TypeInfo* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
-extern TypeInfo* IDisposable_t1628921374_il2cpp_TypeInfo_var;
+extern Il2CppClass* ByteU5BU5D_t58506160_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t1628921374_il2cpp_TypeInfo_var;
 extern const uint32_t X509Store_Load_m507057712_MetadataUsageId;
-extern "C"  ByteU5BU5D_t58506160* X509Store_Load_m507057712 (X509Store_t3983467982 * __this, String_t* ___filename, const MethodInfo* method)
+extern "C"  ByteU5BU5D_t58506160* X509Store_Load_m507057712 (X509Store_t3983467982 * __this, String_t* ___filename0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13598,7 +13598,7 @@ extern "C"  ByteU5BU5D_t58506160* X509Store_Load_m507057712 (X509Store_t39834679
 	NO_UNUSED_WARNING (__leave_target);
 	{
 		V_0 = (ByteU5BU5D_t58506160*)NULL;
-		String_t* L_0 = ___filename;
+		String_t* L_0 = ___filename0;
 		FileStream_t1527309539 * L_1 = File_OpenRead_m3104031109(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 		V_1 = L_1;
 	}
@@ -13663,9 +13663,9 @@ IL_003a:
 	}
 }
 // Mono.Security.X509.X509Certificate Mono.Security.X509.X509Store::LoadCertificate(System.String)
-extern TypeInfo* X509Certificate_t273828613_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate_t273828613_il2cpp_TypeInfo_var;
 extern const uint32_t X509Store_LoadCertificate_m2281266908_MetadataUsageId;
-extern "C"  X509Certificate_t273828613 * X509Store_LoadCertificate_m2281266908 (X509Store_t3983467982 * __this, String_t* ___filename, const MethodInfo* method)
+extern "C"  X509Certificate_t273828613 * X509Store_LoadCertificate_m2281266908 (X509Store_t3983467982 * __this, String_t* ___filename0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13676,21 +13676,21 @@ extern "C"  X509Certificate_t273828613 * X509Store_LoadCertificate_m2281266908 (
 	ByteU5BU5D_t58506160* V_0 = NULL;
 	X509Certificate_t273828613 * V_1 = NULL;
 	{
-		String_t* L_0 = ___filename;
+		String_t* L_0 = ___filename0;
 		ByteU5BU5D_t58506160* L_1 = X509Store_Load_m507057712(__this, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		ByteU5BU5D_t58506160* L_2 = V_0;
 		X509Certificate_t273828613 * L_3 = (X509Certificate_t273828613 *)il2cpp_codegen_object_new(X509Certificate_t273828613_il2cpp_TypeInfo_var);
-		X509Certificate__ctor_m1688356825(L_3, L_2, /*hidden argument*/NULL);
+		X509Certificate__ctor_m3683615677(L_3, L_2, /*hidden argument*/NULL);
 		V_1 = L_3;
 		X509Certificate_t273828613 * L_4 = V_1;
 		return L_4;
 	}
 }
 // Mono.Security.X509.X509Crl Mono.Security.X509.X509Store::LoadCrl(System.String)
-extern TypeInfo* X509Crl_t2942805322_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Crl_t2942805322_il2cpp_TypeInfo_var;
 extern const uint32_t X509Store_LoadCrl_m371472464_MetadataUsageId;
-extern "C"  X509Crl_t2942805322 * X509Store_LoadCrl_m371472464 (X509Store_t3983467982 * __this, String_t* ___filename, const MethodInfo* method)
+extern "C"  X509Crl_t2942805322 * X509Store_LoadCrl_m371472464 (X509Store_t3983467982 * __this, String_t* ___filename0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13701,7 +13701,7 @@ extern "C"  X509Crl_t2942805322 * X509Store_LoadCrl_m371472464 (X509Store_t39834
 	ByteU5BU5D_t58506160* V_0 = NULL;
 	X509Crl_t2942805322 * V_1 = NULL;
 	{
-		String_t* L_0 = ___filename;
+		String_t* L_0 = ___filename0;
 		ByteU5BU5D_t58506160* L_1 = X509Store_Load_m507057712(__this, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		ByteU5BU5D_t58506160* L_2 = V_0;
@@ -13713,9 +13713,9 @@ extern "C"  X509Crl_t2942805322 * X509Store_LoadCrl_m371472464 (X509Store_t39834
 	}
 }
 // System.Boolean Mono.Security.X509.X509Store::CheckStore(System.String,System.Boolean)
-extern TypeInfo* Il2CppObject_il2cpp_TypeInfo_var;
+extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
 extern const uint32_t X509Store_CheckStore_m4197144772_MetadataUsageId;
-extern "C"  bool X509Store_CheckStore_m4197144772 (X509Store_t3983467982 * __this, String_t* ___path, bool ___throwException, const MethodInfo* method)
+extern "C"  bool X509Store_CheckStore_m4197144772 (X509Store_t3983467982 * __this, String_t* ___path0, bool ___throwException1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13735,7 +13735,7 @@ IL_0000:
 	try
 	{ // begin try (depth: 1)
 		{
-			String_t* L_0 = ___path;
+			String_t* L_0 = ___path0;
 			bool L_1 = Directory_Exists_m4117375188(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
 			if (!L_1)
 			{
@@ -13751,9 +13751,9 @@ IL_000b:
 
 IL_0012:
 		{
-			String_t* L_2 = ___path;
+			String_t* L_2 = ___path0;
 			Directory_CreateDirectory_m677877474(NULL /*static, unused*/, L_2, /*hidden argument*/NULL);
-			String_t* L_3 = ___path;
+			String_t* L_3 = ___path0;
 			bool L_4 = Directory_Exists_m4117375188(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 			V_0 = L_4;
 			goto IL_003f;
@@ -13775,7 +13775,7 @@ IL_0025:
 CATCH_002a:
 	{ // begin catch(System.Object)
 		{
-			bool L_5 = ___throwException;
+			bool L_5 = ___throwException1;
 			if (!L_5)
 			{
 				goto IL_0033;
@@ -13806,12 +13806,12 @@ IL_003f:
 	}
 }
 // Mono.Security.X509.X509CertificateCollection Mono.Security.X509.X509Store::BuildCertificatesCollection(System.String)
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
-extern TypeInfo* Path_t2029632748_il2cpp_TypeInfo_var;
-extern TypeInfo* Il2CppObject_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* Path_t2029632748_il2cpp_TypeInfo_var;
+extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral40256652;
 extern const uint32_t X509Store_BuildCertificatesCollection_m1851273927_MetadataUsageId;
-extern "C"  X509CertificateCollection_t3336811651 * X509Store_BuildCertificatesCollection_m1851273927 (X509Store_t3983467982 * __this, String_t* ___storeName, const MethodInfo* method)
+extern "C"  X509CertificateCollection_t3336811651 * X509Store_BuildCertificatesCollection_m1851273927 (X509Store_t3983467982 * __this, String_t* ___storeName0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13837,7 +13837,7 @@ extern "C"  X509CertificateCollection_t3336811651 * X509Store_BuildCertificatesC
 		X509CertificateCollection__ctor_m2517521230(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
 		String_t* L_1 = __this->get__storePath_0();
-		String_t* L_2 = ___storeName;
+		String_t* L_2 = ___storeName0;
 		IL2CPP_RUNTIME_CLASS_INIT(Path_t2029632748_il2cpp_TypeInfo_var);
 		String_t* L_3 = Path_Combine_m4122812896(NULL /*static, unused*/, L_1, L_2, /*hidden argument*/NULL);
 		V_1 = L_3;
@@ -13938,12 +13938,12 @@ IL_007c:
 	}
 }
 // System.Collections.ArrayList Mono.Security.X509.X509Store::BuildCrlsCollection(System.String)
-extern TypeInfo* ArrayList_t2121638921_il2cpp_TypeInfo_var;
-extern TypeInfo* Path_t2029632748_il2cpp_TypeInfo_var;
-extern TypeInfo* Il2CppObject_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArrayList_t2121638921_il2cpp_TypeInfo_var;
+extern Il2CppClass* Path_t2029632748_il2cpp_TypeInfo_var;
+extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral40257049;
 extern const uint32_t X509Store_BuildCrlsCollection_m2551806712_MetadataUsageId;
-extern "C"  ArrayList_t2121638921 * X509Store_BuildCrlsCollection_m2551806712 (X509Store_t3983467982 * __this, String_t* ___storeName, const MethodInfo* method)
+extern "C"  ArrayList_t2121638921 * X509Store_BuildCrlsCollection_m2551806712 (X509Store_t3983467982 * __this, String_t* ___storeName0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
@@ -13969,7 +13969,7 @@ extern "C"  ArrayList_t2121638921 * X509Store_BuildCrlsCollection_m2551806712 (X
 		ArrayList__ctor_m1878432947(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
 		String_t* L_1 = __this->get__storePath_0();
-		String_t* L_2 = ___storeName;
+		String_t* L_2 = ___storeName0;
 		IL2CPP_RUNTIME_CLASS_INIT(Path_t2029632748_il2cpp_TypeInfo_var);
 		String_t* L_3 = Path_Combine_m4122812896(NULL /*static, unused*/, L_1, L_2, /*hidden argument*/NULL);
 		V_1 = L_3;
@@ -14070,18 +14070,18 @@ IL_007c:
 	}
 }
 // Mono.Security.X509.X509Stores Mono.Security.X509.X509StoreManager::get_CurrentUser()
-extern TypeInfo* X509StoreManager_t902433605_il2cpp_TypeInfo_var;
-extern TypeInfo* Path_t2029632748_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Stores_t2754714603_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509StoreManager_t902433605_il2cpp_TypeInfo_var;
+extern Il2CppClass* Path_t2029632748_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Stores_t2754714603_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral45839377;
 extern Il2CppCodeGenString* _stringLiteral94550735;
-extern const uint32_t X509StoreManager_get_CurrentUser_m856219042_MetadataUsageId;
-extern "C"  X509Stores_t2754714603 * X509StoreManager_get_CurrentUser_m856219042 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
+extern const uint32_t X509StoreManager_get_CurrentUser_m761909638_MetadataUsageId;
+extern "C"  X509Stores_t2754714603 * X509StoreManager_get_CurrentUser_m761909638 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509StoreManager_get_CurrentUser_m856219042_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509StoreManager_get_CurrentUser_m761909638_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	String_t* V_0 = NULL;
@@ -14113,18 +14113,18 @@ IL_0033:
 	}
 }
 // Mono.Security.X509.X509Stores Mono.Security.X509.X509StoreManager::get_LocalMachine()
-extern TypeInfo* X509StoreManager_t902433605_il2cpp_TypeInfo_var;
-extern TypeInfo* Path_t2029632748_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Stores_t2754714603_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509StoreManager_t902433605_il2cpp_TypeInfo_var;
+extern Il2CppClass* Path_t2029632748_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Stores_t2754714603_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral45839377;
 extern Il2CppCodeGenString* _stringLiteral94550735;
-extern const uint32_t X509StoreManager_get_LocalMachine_m3736537920_MetadataUsageId;
-extern "C"  X509Stores_t2754714603 * X509StoreManager_get_LocalMachine_m3736537920 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
+extern const uint32_t X509StoreManager_get_LocalMachine_m812946396_MetadataUsageId;
+extern "C"  X509Stores_t2754714603 * X509StoreManager_get_LocalMachine_m812946396 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509StoreManager_get_LocalMachine_m3736537920_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509StoreManager_get_LocalMachine_m812946396_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	String_t* V_0 = NULL;
@@ -14156,7 +14156,7 @@ IL_0033:
 	}
 }
 // Mono.Security.X509.X509CertificateCollection Mono.Security.X509.X509StoreManager::get_TrustedRootCertificates()
-extern TypeInfo* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509CertificateCollection_t3336811651_il2cpp_TypeInfo_var;
 extern const uint32_t X509StoreManager_get_TrustedRootCertificates_m2593128238_MetadataUsageId;
 extern "C"  X509CertificateCollection_t3336811651 * X509StoreManager_get_TrustedRootCertificates_m2593128238 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
@@ -14172,19 +14172,19 @@ extern "C"  X509CertificateCollection_t3336811651 * X509StoreManager_get_Trusted
 		X509CertificateCollection__ctor_m2517521230(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
 		X509CertificateCollection_t3336811651 * L_1 = V_0;
-		X509Stores_t2754714603 * L_2 = X509StoreManager_get_CurrentUser_m856219042(NULL /*static, unused*/, /*hidden argument*/NULL);
+		X509Stores_t2754714603 * L_2 = X509StoreManager_get_CurrentUser_m761909638(NULL /*static, unused*/, /*hidden argument*/NULL);
 		NullCheck(L_2);
 		X509Store_t3983467982 * L_3 = X509Stores_get_TrustedRoot_m4006515680(L_2, /*hidden argument*/NULL);
 		NullCheck(L_3);
-		X509CertificateCollection_t3336811651 * L_4 = X509Store_get_Certificates_m3817753304(L_3, /*hidden argument*/NULL);
+		X509CertificateCollection_t3336811651 * L_4 = X509Store_get_Certificates_m3707205492(L_3, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		X509CertificateCollection_AddRange_m2353463272(L_1, L_4, /*hidden argument*/NULL);
 		X509CertificateCollection_t3336811651 * L_5 = V_0;
-		X509Stores_t2754714603 * L_6 = X509StoreManager_get_LocalMachine_m3736537920(NULL /*static, unused*/, /*hidden argument*/NULL);
+		X509Stores_t2754714603 * L_6 = X509StoreManager_get_LocalMachine_m812946396(NULL /*static, unused*/, /*hidden argument*/NULL);
 		NullCheck(L_6);
 		X509Store_t3983467982 * L_7 = X509Stores_get_TrustedRoot_m4006515680(L_6, /*hidden argument*/NULL);
 		NullCheck(L_7);
-		X509CertificateCollection_t3336811651 * L_8 = X509Store_get_Certificates_m3817753304(L_7, /*hidden argument*/NULL);
+		X509CertificateCollection_t3336811651 * L_8 = X509Store_get_Certificates_m3707205492(L_7, /*hidden argument*/NULL);
 		NullCheck(L_5);
 		X509CertificateCollection_AddRange_m2353463272(L_5, L_8, /*hidden argument*/NULL);
 		X509CertificateCollection_t3336811651 * L_9 = V_0;
@@ -14192,18 +14192,18 @@ extern "C"  X509CertificateCollection_t3336811651 * X509StoreManager_get_Trusted
 	}
 }
 // System.Void Mono.Security.X509.X509Stores::.ctor(System.String)
-extern "C"  void X509Stores__ctor_m3067409489 (X509Stores_t2754714603 * __this, String_t* ___path, const MethodInfo* method)
+extern "C"  void X509Stores__ctor_m3067409489 (X509Stores_t2754714603 * __this, String_t* ___path0, const MethodInfo* method)
 {
 	{
 		Object__ctor_m1772956182(__this, /*hidden argument*/NULL);
-		String_t* L_0 = ___path;
+		String_t* L_0 = ___path0;
 		__this->set__storePath_0(L_0);
 		return;
 	}
 }
 // Mono.Security.X509.X509Store Mono.Security.X509.X509Stores::get_TrustedRoot()
-extern TypeInfo* Path_t2029632748_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Store_t3983467982_il2cpp_TypeInfo_var;
+extern Il2CppClass* Path_t2029632748_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Store_t3983467982_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral81088056;
 extern const uint32_t X509Stores_get_TrustedRoot_m4006515680_MetadataUsageId;
 extern "C"  X509Store_t3983467982 * X509Stores_get_TrustedRoot_m4006515680 (X509Stores_t2754714603 * __this, const MethodInfo* method)
@@ -14240,22 +14240,22 @@ IL_0029:
 	}
 }
 // Mono.Security.X509.X509Store Mono.Security.X509.X509Stores::Open(System.String,System.Boolean)
-extern TypeInfo* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
-extern TypeInfo* Path_t2029632748_il2cpp_TypeInfo_var;
-extern TypeInfo* X509Store_t3983467982_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentNullException_t3214793280_il2cpp_TypeInfo_var;
+extern Il2CppClass* Path_t2029632748_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Store_t3983467982_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral1691782924;
-extern const uint32_t X509Stores_Open_m3798926259_MetadataUsageId;
-extern "C"  X509Store_t3983467982 * X509Stores_Open_m3798926259 (X509Stores_t2754714603 * __this, String_t* ___storeName, bool ___create, const MethodInfo* method)
+extern const uint32_t X509Stores_Open_m371944087_MetadataUsageId;
+extern "C"  X509Store_t3983467982 * X509Stores_Open_m371944087 (X509Stores_t2754714603 * __this, String_t* ___storeName0, bool ___create1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodIntialized;
 	if (!s_Il2CppMethodIntialized)
 	{
-		il2cpp_codegen_initialize_method (X509Stores_Open_m3798926259_MetadataUsageId);
+		il2cpp_codegen_initialize_method (X509Stores_Open_m371944087_MetadataUsageId);
 		s_Il2CppMethodIntialized = true;
 	}
 	String_t* V_0 = NULL;
 	{
-		String_t* L_0 = ___storeName;
+		String_t* L_0 = ___storeName0;
 		if (L_0)
 		{
 			goto IL_0011;
@@ -14270,11 +14270,11 @@ extern "C"  X509Store_t3983467982 * X509Stores_Open_m3798926259 (X509Stores_t275
 IL_0011:
 	{
 		String_t* L_2 = __this->get__storePath_0();
-		String_t* L_3 = ___storeName;
+		String_t* L_3 = ___storeName0;
 		IL2CPP_RUNTIME_CLASS_INIT(Path_t2029632748_il2cpp_TypeInfo_var);
 		String_t* L_4 = Path_Combine_m4122812896(NULL /*static, unused*/, L_2, L_3, /*hidden argument*/NULL);
 		V_0 = L_4;
-		bool L_5 = ___create;
+		bool L_5 = ___create1;
 		if (L_5)
 		{
 			goto IL_0031;

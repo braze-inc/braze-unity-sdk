@@ -23,9 +23,9 @@ struct CaptureCollection_t1466462303;
 #include "mscorlib_System_String968488902.h"
 
 // System.Void System.Text.RegularExpressions.Group::.ctor(System.String,System.Int32,System.Int32,System.Int32)
-extern "C"  void Group__ctor_m3266526719 (Group_t3792618586 * __this, String_t* ___text, int32_t ___index, int32_t ___length, int32_t ___n_caps, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Group__ctor_m3266526719 (Group_t3792618586 * __this, String_t* ___text0, int32_t ___index1, int32_t ___length2, int32_t ___n_caps3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Group::.ctor(System.String,System.Int32,System.Int32)
-extern "C"  void Group__ctor_m3054050776 (Group_t3792618586 * __this, String_t* ___text, int32_t ___index, int32_t ___length, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  void Group__ctor_m3054050776 (Group_t3792618586 * __this, String_t* ___text0, int32_t ___index1, int32_t ___length2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Group::.ctor()
 extern "C"  void Group__ctor_m1893910730 (Group_t3792618586 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Text.RegularExpressions.Group::.cctor()
@@ -33,4 +33,4 @@ extern "C"  void Group__cctor_m2394561571 (Il2CppObject * __this /* static, unus
 // System.Text.RegularExpressions.CaptureCollection System.Text.RegularExpressions.Group::get_Captures()
 extern "C"  CaptureCollection_t1466462303 * Group_get_Captures_m3515423896 (Group_t3792618586 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean System.Text.RegularExpressions.Group::get_Success()
-extern "C"  bool Group_get_Success_m3627958764 (Group_t3792618586 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+extern "C"  bool Group_get_Success_m139536080 (Group_t3792618586 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;

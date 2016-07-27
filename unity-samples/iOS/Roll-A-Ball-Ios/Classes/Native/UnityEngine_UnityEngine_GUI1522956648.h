@@ -37,32 +37,28 @@ struct GUI_t1522956648_StaticFields
 public:
 	// System.Single UnityEngine.GUI::s_ScrollStepSize
 	float ___s_ScrollStepSize_0;
-	// System.Int32 UnityEngine.GUI::s_ScrollControlId
-	int32_t ___s_ScrollControlId_1;
 	// System.Int32 UnityEngine.GUI::s_HotTextField
-	int32_t ___s_HotTextField_2;
+	int32_t ___s_HotTextField_1;
 	// System.Int32 UnityEngine.GUI::s_BoxHash
-	int32_t ___s_BoxHash_3;
+	int32_t ___s_BoxHash_2;
 	// System.Int32 UnityEngine.GUI::s_RepeatButtonHash
-	int32_t ___s_RepeatButtonHash_4;
+	int32_t ___s_RepeatButtonHash_3;
 	// System.Int32 UnityEngine.GUI::s_ToggleHash
-	int32_t ___s_ToggleHash_5;
+	int32_t ___s_ToggleHash_4;
 	// System.Int32 UnityEngine.GUI::s_ButtonGridHash
-	int32_t ___s_ButtonGridHash_6;
+	int32_t ___s_ButtonGridHash_5;
 	// System.Int32 UnityEngine.GUI::s_SliderHash
-	int32_t ___s_SliderHash_7;
+	int32_t ___s_SliderHash_6;
 	// System.Int32 UnityEngine.GUI::s_BeginGroupHash
-	int32_t ___s_BeginGroupHash_8;
+	int32_t ___s_BeginGroupHash_7;
 	// System.Int32 UnityEngine.GUI::s_ScrollviewHash
-	int32_t ___s_ScrollviewHash_9;
+	int32_t ___s_ScrollviewHash_8;
 	// UnityEngine.GUISkin UnityEngine.GUI::s_Skin
-	GUISkin_t2614611333 * ___s_Skin_10;
+	GUISkin_t2614611333 * ___s_Skin_9;
 	// UnityEngineInternal.GenericStack UnityEngine.GUI::s_ScrollViewStates
-	GenericStack_t2344941421 * ___s_ScrollViewStates_11;
+	GenericStack_t2344941421 * ___s_ScrollViewStates_10;
 	// System.DateTime UnityEngine.GUI::<nextScrollStepTime>k__BackingField
-	DateTime_t339033936  ___U3CnextScrollStepTimeU3Ek__BackingField_12;
-	// System.Int32 UnityEngine.GUI::<scrollTroughSide>k__BackingField
-	int32_t ___U3CscrollTroughSideU3Ek__BackingField_13;
+	DateTime_t339033936  ___U3CnextScrollStepTimeU3Ek__BackingField_11;
 
 public:
 	inline static int32_t get_offset_of_s_ScrollStepSize_0() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ScrollStepSize_0)); }
@@ -73,110 +69,94 @@ public:
 		___s_ScrollStepSize_0 = value;
 	}
 
-	inline static int32_t get_offset_of_s_ScrollControlId_1() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ScrollControlId_1)); }
-	inline int32_t get_s_ScrollControlId_1() const { return ___s_ScrollControlId_1; }
-	inline int32_t* get_address_of_s_ScrollControlId_1() { return &___s_ScrollControlId_1; }
-	inline void set_s_ScrollControlId_1(int32_t value)
+	inline static int32_t get_offset_of_s_HotTextField_1() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_HotTextField_1)); }
+	inline int32_t get_s_HotTextField_1() const { return ___s_HotTextField_1; }
+	inline int32_t* get_address_of_s_HotTextField_1() { return &___s_HotTextField_1; }
+	inline void set_s_HotTextField_1(int32_t value)
 	{
-		___s_ScrollControlId_1 = value;
+		___s_HotTextField_1 = value;
 	}
 
-	inline static int32_t get_offset_of_s_HotTextField_2() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_HotTextField_2)); }
-	inline int32_t get_s_HotTextField_2() const { return ___s_HotTextField_2; }
-	inline int32_t* get_address_of_s_HotTextField_2() { return &___s_HotTextField_2; }
-	inline void set_s_HotTextField_2(int32_t value)
+	inline static int32_t get_offset_of_s_BoxHash_2() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_BoxHash_2)); }
+	inline int32_t get_s_BoxHash_2() const { return ___s_BoxHash_2; }
+	inline int32_t* get_address_of_s_BoxHash_2() { return &___s_BoxHash_2; }
+	inline void set_s_BoxHash_2(int32_t value)
 	{
-		___s_HotTextField_2 = value;
+		___s_BoxHash_2 = value;
 	}
 
-	inline static int32_t get_offset_of_s_BoxHash_3() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_BoxHash_3)); }
-	inline int32_t get_s_BoxHash_3() const { return ___s_BoxHash_3; }
-	inline int32_t* get_address_of_s_BoxHash_3() { return &___s_BoxHash_3; }
-	inline void set_s_BoxHash_3(int32_t value)
+	inline static int32_t get_offset_of_s_RepeatButtonHash_3() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_RepeatButtonHash_3)); }
+	inline int32_t get_s_RepeatButtonHash_3() const { return ___s_RepeatButtonHash_3; }
+	inline int32_t* get_address_of_s_RepeatButtonHash_3() { return &___s_RepeatButtonHash_3; }
+	inline void set_s_RepeatButtonHash_3(int32_t value)
 	{
-		___s_BoxHash_3 = value;
+		___s_RepeatButtonHash_3 = value;
 	}
 
-	inline static int32_t get_offset_of_s_RepeatButtonHash_4() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_RepeatButtonHash_4)); }
-	inline int32_t get_s_RepeatButtonHash_4() const { return ___s_RepeatButtonHash_4; }
-	inline int32_t* get_address_of_s_RepeatButtonHash_4() { return &___s_RepeatButtonHash_4; }
-	inline void set_s_RepeatButtonHash_4(int32_t value)
+	inline static int32_t get_offset_of_s_ToggleHash_4() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ToggleHash_4)); }
+	inline int32_t get_s_ToggleHash_4() const { return ___s_ToggleHash_4; }
+	inline int32_t* get_address_of_s_ToggleHash_4() { return &___s_ToggleHash_4; }
+	inline void set_s_ToggleHash_4(int32_t value)
 	{
-		___s_RepeatButtonHash_4 = value;
+		___s_ToggleHash_4 = value;
 	}
 
-	inline static int32_t get_offset_of_s_ToggleHash_5() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ToggleHash_5)); }
-	inline int32_t get_s_ToggleHash_5() const { return ___s_ToggleHash_5; }
-	inline int32_t* get_address_of_s_ToggleHash_5() { return &___s_ToggleHash_5; }
-	inline void set_s_ToggleHash_5(int32_t value)
+	inline static int32_t get_offset_of_s_ButtonGridHash_5() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ButtonGridHash_5)); }
+	inline int32_t get_s_ButtonGridHash_5() const { return ___s_ButtonGridHash_5; }
+	inline int32_t* get_address_of_s_ButtonGridHash_5() { return &___s_ButtonGridHash_5; }
+	inline void set_s_ButtonGridHash_5(int32_t value)
 	{
-		___s_ToggleHash_5 = value;
+		___s_ButtonGridHash_5 = value;
 	}
 
-	inline static int32_t get_offset_of_s_ButtonGridHash_6() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ButtonGridHash_6)); }
-	inline int32_t get_s_ButtonGridHash_6() const { return ___s_ButtonGridHash_6; }
-	inline int32_t* get_address_of_s_ButtonGridHash_6() { return &___s_ButtonGridHash_6; }
-	inline void set_s_ButtonGridHash_6(int32_t value)
+	inline static int32_t get_offset_of_s_SliderHash_6() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_SliderHash_6)); }
+	inline int32_t get_s_SliderHash_6() const { return ___s_SliderHash_6; }
+	inline int32_t* get_address_of_s_SliderHash_6() { return &___s_SliderHash_6; }
+	inline void set_s_SliderHash_6(int32_t value)
 	{
-		___s_ButtonGridHash_6 = value;
+		___s_SliderHash_6 = value;
 	}
 
-	inline static int32_t get_offset_of_s_SliderHash_7() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_SliderHash_7)); }
-	inline int32_t get_s_SliderHash_7() const { return ___s_SliderHash_7; }
-	inline int32_t* get_address_of_s_SliderHash_7() { return &___s_SliderHash_7; }
-	inline void set_s_SliderHash_7(int32_t value)
+	inline static int32_t get_offset_of_s_BeginGroupHash_7() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_BeginGroupHash_7)); }
+	inline int32_t get_s_BeginGroupHash_7() const { return ___s_BeginGroupHash_7; }
+	inline int32_t* get_address_of_s_BeginGroupHash_7() { return &___s_BeginGroupHash_7; }
+	inline void set_s_BeginGroupHash_7(int32_t value)
 	{
-		___s_SliderHash_7 = value;
+		___s_BeginGroupHash_7 = value;
 	}
 
-	inline static int32_t get_offset_of_s_BeginGroupHash_8() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_BeginGroupHash_8)); }
-	inline int32_t get_s_BeginGroupHash_8() const { return ___s_BeginGroupHash_8; }
-	inline int32_t* get_address_of_s_BeginGroupHash_8() { return &___s_BeginGroupHash_8; }
-	inline void set_s_BeginGroupHash_8(int32_t value)
+	inline static int32_t get_offset_of_s_ScrollviewHash_8() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ScrollviewHash_8)); }
+	inline int32_t get_s_ScrollviewHash_8() const { return ___s_ScrollviewHash_8; }
+	inline int32_t* get_address_of_s_ScrollviewHash_8() { return &___s_ScrollviewHash_8; }
+	inline void set_s_ScrollviewHash_8(int32_t value)
 	{
-		___s_BeginGroupHash_8 = value;
+		___s_ScrollviewHash_8 = value;
 	}
 
-	inline static int32_t get_offset_of_s_ScrollviewHash_9() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ScrollviewHash_9)); }
-	inline int32_t get_s_ScrollviewHash_9() const { return ___s_ScrollviewHash_9; }
-	inline int32_t* get_address_of_s_ScrollviewHash_9() { return &___s_ScrollviewHash_9; }
-	inline void set_s_ScrollviewHash_9(int32_t value)
+	inline static int32_t get_offset_of_s_Skin_9() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_Skin_9)); }
+	inline GUISkin_t2614611333 * get_s_Skin_9() const { return ___s_Skin_9; }
+	inline GUISkin_t2614611333 ** get_address_of_s_Skin_9() { return &___s_Skin_9; }
+	inline void set_s_Skin_9(GUISkin_t2614611333 * value)
 	{
-		___s_ScrollviewHash_9 = value;
+		___s_Skin_9 = value;
+		Il2CppCodeGenWriteBarrier(&___s_Skin_9, value);
 	}
 
-	inline static int32_t get_offset_of_s_Skin_10() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_Skin_10)); }
-	inline GUISkin_t2614611333 * get_s_Skin_10() const { return ___s_Skin_10; }
-	inline GUISkin_t2614611333 ** get_address_of_s_Skin_10() { return &___s_Skin_10; }
-	inline void set_s_Skin_10(GUISkin_t2614611333 * value)
+	inline static int32_t get_offset_of_s_ScrollViewStates_10() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ScrollViewStates_10)); }
+	inline GenericStack_t2344941421 * get_s_ScrollViewStates_10() const { return ___s_ScrollViewStates_10; }
+	inline GenericStack_t2344941421 ** get_address_of_s_ScrollViewStates_10() { return &___s_ScrollViewStates_10; }
+	inline void set_s_ScrollViewStates_10(GenericStack_t2344941421 * value)
 	{
-		___s_Skin_10 = value;
-		Il2CppCodeGenWriteBarrier(&___s_Skin_10, value);
+		___s_ScrollViewStates_10 = value;
+		Il2CppCodeGenWriteBarrier(&___s_ScrollViewStates_10, value);
 	}
 
-	inline static int32_t get_offset_of_s_ScrollViewStates_11() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___s_ScrollViewStates_11)); }
-	inline GenericStack_t2344941421 * get_s_ScrollViewStates_11() const { return ___s_ScrollViewStates_11; }
-	inline GenericStack_t2344941421 ** get_address_of_s_ScrollViewStates_11() { return &___s_ScrollViewStates_11; }
-	inline void set_s_ScrollViewStates_11(GenericStack_t2344941421 * value)
+	inline static int32_t get_offset_of_U3CnextScrollStepTimeU3Ek__BackingField_11() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___U3CnextScrollStepTimeU3Ek__BackingField_11)); }
+	inline DateTime_t339033936  get_U3CnextScrollStepTimeU3Ek__BackingField_11() const { return ___U3CnextScrollStepTimeU3Ek__BackingField_11; }
+	inline DateTime_t339033936 * get_address_of_U3CnextScrollStepTimeU3Ek__BackingField_11() { return &___U3CnextScrollStepTimeU3Ek__BackingField_11; }
+	inline void set_U3CnextScrollStepTimeU3Ek__BackingField_11(DateTime_t339033936  value)
 	{
-		___s_ScrollViewStates_11 = value;
-		Il2CppCodeGenWriteBarrier(&___s_ScrollViewStates_11, value);
-	}
-
-	inline static int32_t get_offset_of_U3CnextScrollStepTimeU3Ek__BackingField_12() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___U3CnextScrollStepTimeU3Ek__BackingField_12)); }
-	inline DateTime_t339033936  get_U3CnextScrollStepTimeU3Ek__BackingField_12() const { return ___U3CnextScrollStepTimeU3Ek__BackingField_12; }
-	inline DateTime_t339033936 * get_address_of_U3CnextScrollStepTimeU3Ek__BackingField_12() { return &___U3CnextScrollStepTimeU3Ek__BackingField_12; }
-	inline void set_U3CnextScrollStepTimeU3Ek__BackingField_12(DateTime_t339033936  value)
-	{
-		___U3CnextScrollStepTimeU3Ek__BackingField_12 = value;
-	}
-
-	inline static int32_t get_offset_of_U3CscrollTroughSideU3Ek__BackingField_13() { return static_cast<int32_t>(offsetof(GUI_t1522956648_StaticFields, ___U3CscrollTroughSideU3Ek__BackingField_13)); }
-	inline int32_t get_U3CscrollTroughSideU3Ek__BackingField_13() const { return ___U3CscrollTroughSideU3Ek__BackingField_13; }
-	inline int32_t* get_address_of_U3CscrollTroughSideU3Ek__BackingField_13() { return &___U3CscrollTroughSideU3Ek__BackingField_13; }
-	inline void set_U3CscrollTroughSideU3Ek__BackingField_13(int32_t value)
-	{
-		___U3CscrollTroughSideU3Ek__BackingField_13 = value;
+		___U3CnextScrollStepTimeU3Ek__BackingField_11 = value;
 	}
 };
 

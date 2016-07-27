@@ -17,7 +17,7 @@
 #include "mscorlib_System_Collections_Generic_List_1_Enumera4014815677MethodDeclarations.h"
 
 // System.Void System.Collections.Generic.List`1/Enumerator<System.String>::.ctor(System.Collections.Generic.List`1<T>)
-#define Enumerator__ctor_m3296812951(__this, ___l, method) ((  void (*) (Enumerator_t4146198159 *, List_1_t1765447871 *, const MethodInfo*))Enumerator__ctor_m1029849669_gshared)(__this, ___l, method)
+#define Enumerator__ctor_m3296812951(__this, ___l0, method) ((  void (*) (Enumerator_t4146198159 *, List_1_t1765447871 *, const MethodInfo*))Enumerator__ctor_m1029849669_gshared)(__this, ___l0, method)
 // System.Void System.Collections.Generic.List`1/Enumerator<System.String>::System.Collections.IEnumerator.Reset()
 #define Enumerator_System_Collections_IEnumerator_Reset_m1756893787(__this, method) ((  void (*) (Enumerator_t4146198159 *, const MethodInfo*))Enumerator_System_Collections_IEnumerator_Reset_m771996397_gshared)(__this, method)
 // System.Object System.Collections.Generic.List`1/Enumerator<System.String>::System.Collections.IEnumerator.get_Current()
@@ -27,6 +27,6 @@
 // System.Void System.Collections.Generic.List`1/Enumerator<System.String>::VerifyState()
 #define Enumerator_VerifyState_m620348533(__this, method) ((  void (*) (Enumerator_t4146198159 *, const MethodInfo*))Enumerator_VerifyState_m1522854819_gshared)(__this, method)
 // System.Boolean System.Collections.Generic.List`1/Enumerator<System.String>::MoveNext()
-#define Enumerator_MoveNext_m2014284926(__this, method) ((  bool (*) (Enumerator_t4146198159 *, const MethodInfo*))Enumerator_MoveNext_m844464217_gshared)(__this, method)
+#define Enumerator_MoveNext_m2869012679(__this, method) ((  bool (*) (Enumerator_t4146198159 *, const MethodInfo*))Enumerator_MoveNext_m844464217_gshared)(__this, method)
 // T System.Collections.Generic.List`1/Enumerator<System.String>::get_Current()
-#define Enumerator_get_Current_m3788713170(__this, method) ((  String_t* (*) (Enumerator_t4146198159 *, const MethodInfo*))Enumerator_get_Current_m4198990746_gshared)(__this, method)
+#define Enumerator_get_Current_m3296484460(__this, method) ((  String_t* (*) (Enumerator_t4146198159 *, const MethodInfo*))Enumerator_get_Current_m4198990746_gshared)(__this, method)

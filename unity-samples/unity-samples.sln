@@ -5,6 +5,8 @@ Project("{4C6E1EC2-D68C-848D-C176-0AD2ED11445C}") = "unity-samples", "Assembly-C
 EndProject
 Project("{4C6E1EC2-D68C-848D-C176-0AD2ED11445C}") = "unity-samples", "Assembly-CSharp.csproj", "{A6EE147D-A3DB-3F70-0CB0-C70A315EADBA}"
 EndProject
+Project("{4C6E1EC2-D68C-848D-C176-0AD2ED11445C}") = "unity-samples", "Assembly-CSharp-Editor-firstpass.csproj", "{0F6D633F-7A50-5D13-06F5-B83A245CE3E8}"
+EndProject
 Project("{4C6E1EC2-D68C-848D-C176-0AD2ED11445C}") = "unity-samples", "Assembly-CSharp-Editor.csproj", "{2E82FE5A-8020-7194-3CDF-515864A42A64}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{A6EE147D-A3DB-3F70-0CB0-C70A315EADBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6EE147D-A3DB-3F70-0CB0-C70A315EADBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6EE147D-A3DB-3F70-0CB0-C70A315EADBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6D633F-7A50-5D13-06F5-B83A245CE3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6D633F-7A50-5D13-06F5-B83A245CE3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6D633F-7A50-5D13-06F5-B83A245CE3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6D633F-7A50-5D13-06F5-B83A245CE3E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E82FE5A-8020-7194-3CDF-515864A42A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E82FE5A-8020-7194-3CDF-515864A42A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E82FE5A-8020-7194-3CDF-515864A42A64}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -2,7 +2,7 @@
 //  Appboy.h
 //  AppboySDK
 //
-//  Copyright (c) 2013 Appboy. All rights reserved.
+//  Copyright (c) 2016 Appboy. All rights reserved.
 
 /*!
   \mainpage
@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.19.1"
+#define APPBOY_SDK_VERSION @"2.21.0"
 #endif
 
 @class ABKInAppMessageController;
@@ -27,63 +27,17 @@
 @protocol ABKAppboyEndpointDelegate;
 @protocol ABKPushURIDelegate;
 
-/*
- * Appboy Public API: Appboy
- */
 NS_ASSUME_NONNULL_BEGIN
-@interface Appboy : NSObject
-
-/* ------------------------------------------------------------------------------------------------------
- * Initialization
- */
-
-/*!
- * Get the Appboy singleton.  Returns nil if accessed before startWithApiKey: called.
- */
-+ (nullable Appboy *) sharedInstance;
-
-/*!
- * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
- *
- * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
- * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
- * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
- * the appboy.com dashboard where you registered your app.
- */
-+ (void) startWithApiKey:(NSString *)apiKey
-           inApplication:(UIApplication *)application
-       withLaunchOptions:(nullable NSDictionary *)launchOptions;
-
-/*!
- * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
- * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
- * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
- * for more information.
- *
- * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
- * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
- * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
- * the appboy.com dashboard where you registered your app.
- */
-+ (void) startWithApiKey:(NSString *)apiKey
-           inApplication:(UIApplication *)application
-       withLaunchOptions:(nullable NSDictionary *)launchOptions
-       withAppboyOptions:(nullable NSDictionary *)appboyOptions;
-
 /* ------------------------------------------------------------------------------------------------------
  * Keys for Appboy startup options
  */
 
 /*!
-* If you want to set the request policy at app startup time (useful for avoiding any automatic data requests made by
-* Appboy at startup if you're looking to have full manual control). You can include one of the
-* ABKRequestProcessingPolicy enum values as the value for the ABKRequestProcessingPolicyOptionKey in the appboyOptions
-* dictionary.
-*/
+ * If you want to set the request policy at app startup time (useful for avoiding any automatic data requests made by
+ * Appboy at startup if you're looking to have full manual control). You can include one of the
+ * ABKRequestProcessingPolicy enum values as the value for the ABKRequestProcessingPolicyOptionKey in the appboyOptions
+ * dictionary.
+ */
 extern NSString *const ABKRequestProcessingPolicyOptionKey;
 
 /*!
@@ -95,7 +49,7 @@ extern NSString *const ABKFlushIntervalOptionKey;
 
 /*!
  * This key can be set to YES or NO and will configure whether Appboy will automatically collect location (if the user permits).
- * If set to YES,location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
+ * If set to YES, location will not be recorded for the user unless integrating apps manually call setUserLastKnownLocation on
  * ABKUser (i.e. you must manually set the location, Appboy will not).  If it is set to NO or omitted, Appboy will collect
  * location if authorized.
  */
@@ -103,7 +57,7 @@ extern NSString *const ABKDisableAutomaticLocationCollectionKey;
 
 /*!
  * This key can be set to YES or NO and will configure whether Appboy will automatically collect significant change location
- * events.  If this key isn't set and the server doesn't provide a value, it will defaul to false.
+ * events.  If this key isn't set and the server doesn't provide a value, it will default to false.
  */
 extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
 
@@ -116,7 +70,7 @@ extern NSString *const ABKSignificantChangeCollectionEnabledOptionKey;
 extern NSString *const ABKSignificantChangeCollectionDistanceFilterOptionKey;
 
 /*!
- * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Appboy.  
+ * This key can be set to an integer value that represents the minimum time in seconds between location events logged to Appboy.
  * If this value is set and significant change location is enabled, this value will be used to filter locations that are received from the significant
  * change location provider.  The default value is 3600 (1 hour); the minimum is 300 (5 minutes).
  */
@@ -124,10 +78,16 @@ extern NSString *const ABKSignificantChangeCollectionTimeFilterOptionKey;
 
 
 /*!
- * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modifying or substitute the API and Resource
+ * This key can be set to a class that extends ABKAppboyEndpointDelegate which can be used to modify or substitute the API and Resource
  * (e.g. image) URIs used by the Appboy SDK.
  */
 extern NSString *const ABKAppboyEndpointDelegateKey;
+
+/*!
+ * This key can be set to a class that extends ABKPushURIDelegate which can be used to handle deep linking 
+ * in push in a custom way.
+ */
+extern NSString *const ABKPushURIDelegateKey;
 
 /*!
  * Set the time interval for session time out (in seconds). This will affect the case when user has a session shorter than
@@ -147,29 +107,29 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
  */
 
 /*!
-* Possible values for the SDK's request processing policies:
-*   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
-*        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Appboy's
-*        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
-*        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
-*        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
-*   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
-*        custom attributes and triggering of custom events will not automatically flush to the server. Instead, you
-*        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
-*   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
-*        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
-*        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
-*        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
-*        the screen, for example, in response to a user click.
-*        You can direct Appboy to perform an immediate data flush as well as process any other
-*        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
-*        This mode is only recommended for advanced use cases. If you're merely trying to
-*        control the background flush behavior, consider using ABKAutomaticRequestProcessing
-*        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
-*
-* Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
-* requests and their combined payload.
-*/
+ * Possible values for the SDK's request processing policies:
+ *   ABKAutomaticRequestProcessing (default) - All server communication is handled automatically. This includes flushing
+ *        analytics data to the server, updating the feed, requesting new in-app messages and posting feedback. Appboy's
+ *        communication policy is to perform immediate server requests when user facing data is required (new in-app messages,
+ *        feed refreshes, etc.), and to otherwise perform periodic flushes of new analytics data every few seconds.
+ *        The interval between periodic flushes can be set explicitly using the ABKFlushInterval startup option.
+ *   ABKAutomaticRequestProcessingExceptForDataFlush - The same as ABKAutomaticRequestProcessing, except that updates to
+ *        custom attributes and triggering of custom events will not automatically flush to the server. Instead, you
+ *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
+ *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
+ *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
+ *        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
+ *        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
+ *        the screen, for example, in response to a user click.
+ *        You can direct Appboy to perform an immediate data flush as well as process any other
+ *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
+ *        This mode is only recommended for advanced use cases. If you're merely trying to
+ *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
+ *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
+ *
+ * Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
+ * requests and their combined payload.
+ */
 typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
   ABKAutomaticRequestProcessing,
   ABKAutomaticRequestProcessingExceptForDataFlush,
@@ -183,6 +143,52 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
   ABKSocialNetworkFacebook = 1 << 0,
   ABKSocialNetworkTwitter = 1 << 1
 };
+
+/*
+ * Appboy Public API: Appboy
+ */
+@interface Appboy : NSObject
+
+/* ------------------------------------------------------------------------------------------------------
+ * Initialization
+ */
+
+/*!
+ * Get the Appboy singleton.  Returns nil if accessed before startWithApiKey: called.
+ */
++ (nullable Appboy *)sharedInstance;
+
+/*!
+ * @param apiKey The app's API key
+ * @param inApplication The current app
+ * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ *
+ * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
+ * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
+ * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
+ * the appboy.com dashboard where you registered your app.
+ */
++ (void)startWithApiKey:(NSString *)apiKey
+          inApplication:(UIApplication *)application
+      withLaunchOptions:(nullable NSDictionary *)launchOptions;
+
+/*!
+ * @param apiKey The app's API key
+ * @param inApplication The current app
+ * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
+ * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
+ * for more information.
+ *
+ * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
+ * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
+ * accessing [Appboy sharedInstance] or otherwise rendering Appboy view controllers. Your apiKey comes from
+ * the appboy.com dashboard where you registered your app.
+ */
++ (void)startWithApiKey:(NSString *)apiKey
+          inApplication:(UIApplication *)application
+      withLaunchOptions:(nullable NSDictionary *)launchOptions
+      withAppboyOptions:(nullable NSDictionary *)appboyOptions;
 
 /* ------------------------------------------------------------------------------------------------------
  * Properties
@@ -244,13 +250,13 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 
 
 /*!
- * An class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
+ * A class extending ABKAppboyEndpointDelegate can be set to route Appboy API and Resource traffic in a custom way.
  * For example, one might proxy Appboy image downloads by having the getResourceEndpoint method return a proxy URI.
  */
 @property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
 /*!
- * An class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
+ * A class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
  */
 @property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate;
 
@@ -274,7 +280,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * If you're using ABKAutomaticRequestProcessingExceptForDataFlush, you only need to call this when you want to force
  * an immediate flush of updated user data.
  */
-- (void) flushDataAndProcessRequestQueue;
+- (void)flushDataAndProcessRequestQueue;
 
 /*!
  * Stops all in flight server communication and enables manual request processing control to ensure that no automatic
@@ -282,7 +288,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * background tasks upon exit of your application. To continue normal operation after calling this, you will need to
  * explicitly set the request processing mode back to your desired state.
  */
-- (void) shutdownServerCommunication;
+- (void)shutdownServerCommunication;
 
 /*!
  * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or 
@@ -291,14 +297,14 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * @discussion
  * Test a push notification to see if it came Appboy's servers.
  */
-- (BOOL) pushNotificationWasSentFromAppboy:(NSDictionary *)options;
+- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;
 
 /*!
  * @param token The device's push token.
  *
  * @discussion This method posts a token to Appboy's servers to associate the token with the current device.
  */
-- (void) registerPushToken:(NSString *)token;
+- (void)registerPushToken:(NSString *)token;
 
 /*!
  * @param application The app's UIApplication object
@@ -307,21 +313,20 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
  * method of your App Delegate.
  */
-- (void)  registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
+- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
 
 /*!
  * @param application The app's UIApplication object
  * @param notification An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
  *
- * @discussion This method forwards remote notifications to Appboy. When it's called in the background, Appboy will request
- * a refresh of the news feed and call the completionHandler when the request is finished; If it's called while the app
- * is in the foreground, Appboy won't fetch the news feed, and won't call the completionHandler.
+ * @discussion This method forwards remote notifications to Appboy. The SDK will call the completionHandler with 
+ * UIBackgroundFetchResultNoData.
  * Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate.
  */
-- (void) registerApplication:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)notification
-      fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
+- (void)registerApplication:(UIApplication *)application
+        didReceiveRemoteNotification:(NSDictionary *)notification
+        fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
 
 /*!
  * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.
@@ -331,9 +336,9 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * @discussion This method forwards remote notifications and the custom action chosen by user to Appboy. Call it from
  * the application:handleActionWithIdentifier:forRemoteNotification: method of your App Delegate.
  */
-- (void) getActionWithIdentifier:(NSString *)identifier
-           forRemoteNotification:(NSDictionary *)userInfo
-               completionHandler:(nullable void (^)())completionHandler;
+- (void)getActionWithIdentifier:(NSString *)identifier
+          forRemoteNotification:(NSDictionary *)userInfo
+              completionHandler:(nullable void (^)())completionHandler;
 
 /*!
 * @param userID The new user's ID (from the host application).
@@ -372,7 +377,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
 *  separately keeping track of the user ID you want to target while logged out and switching back to
 *  that user ID as part of your app's logout process.
 */
-- (void) changeUser:(NSString *)userID;
+- (void)changeUser:(NSString *)userID;
 
 /*!
  * @param eventName The name of the event to log.
@@ -386,7 +391,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * [[Appboy sharedInstance] logCustomEvent:@"clicked_button"];
  * </pre>
  */
-- (void) logCustomEvent:(NSString *)eventName;
+- (void)logCustomEvent:(NSString *)eventName;
 
 /*!
  * @param eventName The name of the event to log.
@@ -403,28 +408,28 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * [[Appboy sharedInstance] logCustomEvent:@"clicked_button" properties:@{@"key1":@"val"}];
  * </pre>
  */
-- (void) logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;
+- (void)logCustomEvent:(NSString *)eventName withProperties:(nullable NSDictionary *)properties;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties: with a quantity of 1 and nil properties.
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
+- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with a quantity of 1.
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;
+- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withProperties:(nullable NSDictionary *)properties;
 
 /*!
  * This method is equivalent to calling logPurchase:inCurrency:atPrice:withQuantity:andProperties with nil properties.
  * Please see logPurchase:inCurrency:atPrice:withQuantity:andProperties: for more information.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
+- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity;
 
 /*!
  * @param productIdentifier A String indicating the product that was purchased. Usually the product identifier in the
@@ -458,7 +463,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * be shown in the dashboard in USD based on the exchange rate at the date they were reported.
  *
  */
-- (void) logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
+- (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
 
 /*!
  * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
@@ -466,7 +471,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * @discussion Records that the current user shared something to social network. This is added to the event tracking log
  *   that's lazily pushed up to the server.
  */
-- (void) logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;
+- (void)logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;
 
 /*!
  * @param replyToEmail The email address to send feedback replies to.
@@ -479,20 +484,20 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * feedback request is placed on the network queue.
  *
  */
-- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
+- (BOOL)submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 
 /*!
  * If you're displaying cards on your own instead of using ABKFeedViewController, you should still report impressions of
  * the news feed back to Appboy with this method so that your campaign reporting features still work in the dashboard.
  */
-- (void) logFeedDisplayed;
+- (void)logFeedDisplayed;
 
 /*!
  * If you're displaying feedback page on your own instead of using ABKFeedbackViewController, you should still report
  * impressions of the feedback page back to Appboy with this method so that your campaign reporting features still work
  * in the dashboard.
  */
-- (void) logFeedbackDisplayed;
+- (void)logFeedbackDisplayed;
 
 /*!
  * Enqueues a news feed request for the current user. Note that if the queue already contains another request for the
@@ -503,15 +508,16 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  * ABKFeedUpdatedIsSuccessfulKey in the notification's userInfo dictionary to indicate if the news feed request is successful
  * or not. For more detail about the ABKFeedUpdatedNotification and the ABKFeedUpdatedIsSuccessfulKey, please check ABKFeedController.
  */
-- (void) requestFeedRefresh;
+- (void)requestFeedRefresh;
 
 /*!
  * Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the
  * current user, that the in-app message request will be merged into the already existing request and only one will execute
  * for that user.
  */
-- (void) requestInAppMessageRefresh;
+- (void)requestInAppMessageRefresh;
 
-- (BOOL) handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
+- (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
+
 @end
 NS_ASSUME_NONNULL_END

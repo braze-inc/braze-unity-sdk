@@ -1,3 +1,14 @@
+## 1.8.0
+* Updates the iOS plugin to use Appboy iOS SDK 2.21.0, which drops support for iOS 6.
+* Updates the Android plugin to use Appboy Android SDK 1.13.5.
+* Drops support for Windows Phone 8.
+* Adds support for passing triggered in-app messages to Unity.
+* Bundles the Android and iOS plugins, along with Appboy’s native Unity functionality, as a Unity package.
+* Adds a native Unity solution for automating the iOS SDK integration.
+* Adds object handling for custom event and purchase properties. 
+* Exposes the extras on the News Feed Card model in Unity.
+* Updates the Unity sample project to Unity v.5.3.5.
+
 ## 1.7.0
 * Updates the Android plugin to use Appboy Android SDK 1.13.2.
 * Updates the iOS plugin to use Appboy iOS SDK 2.19.1.

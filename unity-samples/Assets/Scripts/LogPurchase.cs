@@ -12,7 +12,7 @@ public class LogPurchase : MonoBehaviour {
   public InputField ProductQuantityField;
   public InputField PurchasePropertiesKeyField;
   public InputField PurchasePropertiesValueField;
-  public Dictionary<string, string> PurchaseProperties;
+  public Dictionary<string, object> PurchaseProperties;
 
   
   public void OnDoneButtonClick() {
@@ -41,6 +41,21 @@ public class LogPurchase : MonoBehaviour {
     Application.LoadLevel(Constants.MainMenuScene);
   }
 
+  public void AddTestPropertiesButtonClick() {
+    if (PurchaseProperties == null) {
+      PurchaseProperties = new Dictionary<string, object> ();
+    }
+
+    PurchaseProperties["intprop"] = 1;
+    PurchaseProperties["doubleprop"] = 1.2D;
+    PurchaseProperties["floatprop"] = 1.2F;
+    PurchaseProperties["testcoercion"] = "11";
+    PurchaseProperties["dateprop"] = DateTime.Today;
+    PurchaseProperties["boolprop"] = true;
+    PurchaseProperties["nullprop"] = null;
+    PurchaseProperties["objprop"] = new object();
+  }
+
   public void AddPropertyButtonClick() {
     if (!UtilityMethods.textIsValid (PurchasePropertiesKeyField.text) ||
       !UtilityMethods.textIsValid (PurchasePropertiesValueField.text)) {
@@ -49,7 +64,7 @@ public class LogPurchase : MonoBehaviour {
     }
     Debug.Log(String.Format("Add Property {0} : {1}", PurchasePropertiesKeyField.text, PurchasePropertiesValueField.text));
     if (PurchaseProperties == null) {
-      PurchaseProperties = new Dictionary<string, string> ();
+      PurchaseProperties = new Dictionary<string, object> ();
     }
     PurchaseProperties.Add(PurchasePropertiesKeyField.text, PurchasePropertiesValueField.text);
   }
