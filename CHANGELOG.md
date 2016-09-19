@@ -1,3 +1,6 @@
+## 1.8.1
+* Updates SDK to modify delegate usage to fix an issue with push-click handling introduced in iOS 10 - see https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md for details.
+
 ## 1.8.0
 * Updates the iOS plugin to use Appboy iOS SDK 2.21.0, which drops support for iOS 6.
 * Updates the Android plugin to use Appboy Android SDK 1.13.5.

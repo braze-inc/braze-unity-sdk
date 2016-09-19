@@ -39,9 +39,18 @@
   [[AppboyUnityManager sharedInstance] registerPushToken:deviceToken];
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+  [super application:application didReceiveRemoteNotification:userInfo];
+  NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
+  
+  // Pass notification to Appboy
+  [[AppboyUnityManager sharedInstance] registerApplication:application
+                              didReceiveRemoteNotification:userInfo];
+}
+
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
   [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
-  NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
+  NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
   
   // Pass notification to Appboy
   [[AppboyUnityManager sharedInstance] registerApplication:application
