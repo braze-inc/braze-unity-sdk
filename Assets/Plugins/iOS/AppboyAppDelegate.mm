@@ -33,14 +33,18 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  [super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+  if ([UnityAppController instancesRespondToSelector:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:)]) {
+    [super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+  }
   NSLog(@"AppboyAppDelegate called from application:didRegisterForRemoteNotificationsWithDeviceToken with token %@", deviceToken);
   // Register push token with Appboy
   [[AppboyUnityManager sharedInstance] registerPushToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-  [super application:application didReceiveRemoteNotification:userInfo];
+  if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:)]) {
+    [super application:application didReceiveRemoteNotification:userInfo];
+  }
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
   
   // Pass notification to Appboy
@@ -49,7 +53,9 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
-  [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
+  if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)]) {
+    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
+  }
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
   
   // Pass notification to Appboy

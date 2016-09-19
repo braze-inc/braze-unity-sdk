@@ -1,3 +1,6 @@
+## 1.8.2
+* Updates the SDK to be compatible with unity 5.4+.  In 5.4.0 Unity stopped implementing push delegates in UnityAppController in certain conditions, causing a crash when the Appboy SDK tried to call them.
+
 ## 1.8.1
 * Updates SDK to modify delegate usage to fix an issue with push-click handling introduced in iOS 10 - see https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md for details.
 
