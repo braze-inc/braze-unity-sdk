@@ -1,5 +1,10 @@
+## 1.9.0
+* Update the SDK to require XCode 8.
+* Updates the iOS plugin to use Appboy iOS SDK 2.24.0, which supports iOS 10 and has the new in-app message V2 feature. The new in-app message V2 feature includes new in-app message UI change, event property trigger and templated in-app message.
+* Updates the Android plugin to use Appboy Android SDK 1.15.0 with the new triggered in-app message feature.
+
 ## 1.8.2
-* Updates the SDK to be compatible with unity 5.4+.  In 5.4.0 Unity stopped implementing push delegates in UnityAppController in certain conditions, causing a crash when the Appboy SDK tried to call them.
+* Updates the SDK to be compatible with Unity 5.4+.  In 5.4.0 Unity stopped implementing push delegates in UnityAppController in certain conditions, causing a crash when the Appboy SDK tried to call them.
 
 ## 1.8.1
 * Updates SDK to modify delegate usage to fix an issue with push-click handling introduced in iOS 10 - see https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md for details.
