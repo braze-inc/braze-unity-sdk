@@ -12,16 +12,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.21.0"
+#define APPBOY_SDK_VERSION @"2.24.1"
 #endif
 
+#if !TARGET_OS_TV
 @class ABKInAppMessageController;
-@class ABKFeedController;
-@class ABKUser;
 @class ABKInAppMessage;
 @class ABKInAppMessageViewController;
+#endif
+
+@class ABKUser;
+@class ABKFeedController;
 @class ABKLocationManager;
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKAppboyEndpointDelegate;
@@ -136,14 +140,6 @@ typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
   ABKManualRequestProcessing
 };
 
-/*!
- * Values representing the Social Networks recognized by the SDK.
- */
-typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
-  ABKSocialNetworkFacebook = 1 << 0,
-  ABKSocialNetworkTwitter = 1 << 1
-};
-
 /*
  * Appboy Public API: Appboy
  */
@@ -194,45 +190,13 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * Properties
  */
 
-@property (readonly) ABKFeedController *feedController;
-
 /*!
- * The current in-app message manager.
- * See ABKInAppMessageController.h.
- */
-@property (readonly) ABKInAppMessageController *inAppMessageController;
-
-/*!
- * The current app user. 
+ * The current app user.
  * See ABKUser.h and changeUser:userId below.
  */
 @property (readonly) ABKUser *user;
 
-/*!
- * The Appboy location manager provides access to location related functionality in the Appboy SDK.
- * See ABKLocationManager.h.
- */
-@property (nonatomic, readonly) ABKLocationManager *locationManager;
-
-/*!
- * Appboy UI elements can be themed using the NUI framework. See https://github.com/tombenner/nui and the Appboy docs.
- * To enable NUI, take the following steps:
- *
- * - If your app uses ARC: Get NUI from https://github.com/tombenner/nui
- *
- * - If your app does not use ARC: Get NUI from https://github.com/Appboy/nui which is our fork of NUI that manages its
- *   own memory
- *
- * - Follow the instructions in either repo above to integrate NUI
- *
- * - Create a style sheet called NUIStyle.nss
- * 
- * - Set the property below to YES
- *
- * If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app.  Note that
- * you can theme your app and Appboy differently -- Appboy uses NUI independently of your app's use of NUI.
- */
-@property (nonatomic) BOOL useNUITheming;
+@property (readonly) ABKFeedController *feedController;
 
 /*!
 * The policy regarding processing of network requests by the SDK. See the enumeration values for more information on
@@ -255,10 +219,44 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  */
 @property (nonatomic, weak, nullable) id<ABKAppboyEndpointDelegate> appboyEndpointDelegate;
 
+#if !TARGET_OS_TV
+/*!
+ * The current in-app message manager.
+ * See ABKInAppMessageController.h.
+ */
+@property (readonly) ABKInAppMessageController *inAppMessageController;
+
+/*!
+ * The Appboy location manager provides access to location related functionality in the Appboy SDK.
+ * See ABKLocationManager.h.
+ */
+@property (nonatomic, readonly) ABKLocationManager *locationManager;
+
+/*!
+ * Appboy UI elements can be themed using the NUI framework. See https://github.com/tombenner/nui and the Appboy docs.
+ * To enable NUI, take the following steps:
+ *
+ * - If your app uses ARC: Get NUI from https://github.com/tombenner/nui
+ *
+ * - If your app does not use ARC: Get NUI from https://github.com/Appboy/nui which is our fork of NUI that manages its
+ *   own memory
+ *
+ * - Follow the instructions in either repo above to integrate NUI
+ *
+ * - Create a style sheet called NUIStyle.nss
+ *
+ * - Set the property below to YES
+ *
+ * If useNUITheming is NO, NUI is ignored completely whether or not it's integrated into your app.  Note that
+ * you can theme your app and Appboy differently -- Appboy uses NUI independently of your app's use of NUI.
+ */
+@property (nonatomic) BOOL useNUITheming;
+
 /*!
  * A class extending ABKPushURIDelegate can be set to handle deep linking in push in a custom way.
  */
 @property (nonatomic, weak, nullable) id<ABKPushURIDelegate> appboyPushURIDelegate;
+#endif
 
 /* ------------------------------------------------------------------------------------------------------
  * Methods
@@ -289,56 +287,6 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  * explicitly set the request processing mode back to your desired state.
  */
 - (void)shutdownServerCommunication;
-
-/*!
- * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or 
- * application:didReceiveRemoteNotification in your App Delegate.
- *
- * @discussion
- * Test a push notification to see if it came Appboy's servers.
- */
-- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;
-
-/*!
- * @param token The device's push token.
- *
- * @discussion This method posts a token to Appboy's servers to associate the token with the current device.
- */
-- (void)registerPushToken:(NSString *)token;
-
-/*!
- * @param application The app's UIApplication object
- * @param notification An NSDictionary passed in from the didReceiveRemoteNotification call
- *
- * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
- * method of your App Delegate.
- */
-- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification;
-
-/*!
- * @param application The app's UIApplication object
- * @param notification An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
- * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
- *
- * @discussion This method forwards remote notifications to Appboy. The SDK will call the completionHandler with 
- * UIBackgroundFetchResultNoData.
- * Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate.
- */
-- (void)registerApplication:(UIApplication *)application
-        didReceiveRemoteNotification:(NSDictionary *)notification
-        fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
-
-/*!
- * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.
- * @param userInfo An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call.
- * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
- *
- * @discussion This method forwards remote notifications and the custom action chosen by user to Appboy. Call it from
- * the application:handleActionWithIdentifier:forRemoteNotification: method of your App Delegate.
- */
-- (void)getActionWithIdentifier:(NSString *)identifier
-          forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler;
 
 /*!
 * @param userID The new user's ID (from the host application).
@@ -466,14 +414,6 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
 - (void)logPurchase:(NSString *)productIdentifier inCurrency:(NSString *)currencyCode atPrice:(NSDecimalNumber *)price withQuantity:(NSUInteger)quantity andProperties:(nullable NSDictionary *)properties;
 
 /*!
- * @param socialNetwork An ABKSocialNetwork indicating the network that you wish to access.
- *
- * @discussion Records that the current user shared something to social network. This is added to the event tracking log
- *   that's lazily pushed up to the server.
- */
-- (void)logSocialShare:(ABKSocialNetwork)socialNetwork __deprecated;
-
-/*!
  * @param replyToEmail The email address to send feedback replies to.
  * @param message The message input by the user. Must be non-null and non-empty.
  * @param isReportingABug Flag indicating whether or not the feedback describes a bug, or is merely a suggestion/question.
@@ -510,6 +450,7 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  */
 - (void)requestFeedRefresh;
 
+#if !TARGET_OS_TV
 /*!
  * Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the
  * current user, that the in-app message request will be merged into the already existing request and only one will execute
@@ -517,7 +458,72 @@ typedef NS_OPTIONS(NSUInteger, ABKSocialNetwork) {
  */
 - (void)requestInAppMessageRefresh;
 
+/*!
+ * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or
+ * application:didReceiveRemoteNotification in your App Delegate.
+ *
+ * @discussion
+ * Test a push notification to see if it came Appboy's servers.
+ */
+- (BOOL)pushNotificationWasSentFromAppboy:(NSDictionary *)options;
+
+/*!
+ * @param token The device's push token.
+ *
+ * @discussion This method posts a token to Appboy's servers to associate the token with the current device.
+ */
+- (void)registerPushToken:(NSString *)token;
+
+/*!
+ * @param application The app's UIApplication object
+ * @param notification An NSDictionary passed in from the didReceiveRemoteNotification call
+ *
+ * @discussion This method forwards remote notifications to Appboy. Call it from the application:didReceiveRemoteNotification
+ * method of your App Delegate.
+ */
+- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification __deprecated_msg("`registerApplication:didReceiveRemoteNotification:` is deprecated in iOS 10, please use `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` instead.");
+
+/*!
+ * @param application The app's UIApplication object
+ * @param notification An NSDictionary passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
+ * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
+ *
+ * @discussion This method forwards remote notifications to Appboy. When it's called in the background, Appboy will request
+ * a refresh of the news feed and call the completionHandler when the request is finished; If it's called while the app
+ * is in the foreground, Appboy won't fetch the news feed, and won't call the completionHandler.
+ * Call it from the application:didReceiveRemoteNotification:fetchCompletionHandler: method of your App Delegate.
+ */
+- (void)registerApplication:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)notification
+     fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
+
+/*!
+ * @param identifier The action identifier passed in from the handleActionWithIdentifier:forRemoteNotification:.
+ * @param userInfo An NSDictionary passed in from the handleActionWithIdentifier:forRemoteNotification: call.
+ * @param completionHandler A block passed in from the didReceiveRemoteNotification:fetchCompletionHandler: call
+ *
+ * @discussion This method forwards remote notifications and the custom action chosen by user to Appboy. Call it from
+ * the application:handleActionWithIdentifier:forRemoteNotification: method of your App Delegate.
+ */
+- (void)getActionWithIdentifier:(NSString *)identifier
+          forRemoteNotification:(NSDictionary *)userInfo
+              completionHandler:(nullable void (^)())completionHandler __deprecated_msg("`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+
+/*!
+ * @param center The app's current UNUserNotificationCenter object
+ * @param response The UNNotificationResponse object passed in from the didReceiveNotificationResponse:withCompletionHandler: call
+ * @param completionHandler A block passed in from the didReceiveNotificationResponse:withCompletionHandler: call. Appboy will call
+ * it at the end of the method if one is passed in. If you prefer to handle the completionHandler youself, please pass nil to Appboy.
+ *
+ * @discussion This method forwards the response of the notification to Appboy after user interacted with the notification.
+ * Call it from the userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: method of your App Delegate.
+ */
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+      withCompletionHandler:(nullable void (^)())completionHandler;
+
 - (BOOL)handleWatchKitExtensionRequest:(nullable NSDictionary *)userInfo reply:(void (^)(NSDictionary * _Nullable replyInfo))reply;
+#endif
 
 @end
 NS_ASSUME_NONNULL_END

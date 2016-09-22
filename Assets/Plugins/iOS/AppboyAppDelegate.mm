@@ -46,7 +46,7 @@
     [super application:application didReceiveRemoteNotification:userInfo];
   }
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
-  
+
   // Pass notification to Appboy
   [[AppboyUnityManager sharedInstance] registerApplication:application
                               didReceiveRemoteNotification:userInfo];
