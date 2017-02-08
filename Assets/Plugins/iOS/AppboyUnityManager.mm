@@ -525,4 +525,12 @@
   [[Appboy sharedInstance] requestInAppMessageRefresh];
 }
 
+- (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate {
+  ABKInAppMessageController *delegate = nil;
+  if (withDelegate) {
+    delegate = [Appboy sharedInstance].inAppMessageController.delegate;
+  }
+  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:delegate];
+}
+
 @end

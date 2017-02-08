@@ -201,3 +201,7 @@ void _logFeedbackDisplayed() {
 void _requestInAppMessage() {
   [[AppboyUnityManager sharedInstance] requestInAppMessageRefresh];
 }
+
+void _displayNextInAppMessage(bool withDelegate) {
+  [[AppboyUnityManager sharedInstance] displayNextInAppMessageWithDelegate:withDelegate];
+}
