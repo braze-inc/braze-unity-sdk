@@ -1,5 +1,12 @@
+## 1.10.0
+* Adds a new method `DisplayNextInAppMessage(bool withDelegate)` in iOS plugin to display next in-app message from the in-app message stack, if there is one.
+  * When the withDelegate is false, the in-app message will be displayed in Appboy's default UI. Otherwise, it will follow the normal in-app message displaying path by going through the `- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp` in `AppboyUnityManager.m`.
+* updates the Android plugin to use Appboy Android SDK 1.18.0.
+* Updates the iOS plugin to user Appboy iOS SDK 2.25.0.
+* Updates the SDK to be compatible with Unity 5.5+.
+
 ## 1.9.0
-* Update the SDK to require XCode 8.
+* Updates the SDK to require XCode 8.
 * Updates the iOS plugin to use Appboy iOS SDK 2.24.0, which supports iOS 10 and has the new in-app message V2 feature. The new in-app message V2 feature includes new in-app message UI change, event property trigger and templated in-app message.
 * Updates the Android plugin to use Appboy Android SDK 1.15.0 with the new triggered in-app message feature.
 

@@ -52,12 +52,5 @@
         <category android:name="com.appboy.unity.AppboySample" />
       </intent-filter>
     </receiver>
-
-    <!-- Register an optional notification receiver here -->
-    <receiver android:name="com.appboy.unity.AppboyUnityGcmReceiver" android:exported="false" >
-      <intent-filter>
-        <action android:name="com.appboy.unity.AppboySample.intent.APPBOY_NOTIFICATION_OPENED" />
-      </intent-filter>
-    </receiver>
   </application>
 </manifest>

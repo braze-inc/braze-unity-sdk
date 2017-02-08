@@ -48,12 +48,11 @@ public class MainMenu : MonoBehaviour {
   }
 
   public void OnSocialDataTest() {
-
 #if (UNITY_ANDROID || UNITY_IOS)
     Appboy.AppboyBinding.setUserFacebookData("briancaw", "brian", "wheeler", "brian@tryappboy.com", "funny guy", "belmar", Gender.Male, 12, "09-09-1917");
     Appboy.AppboyBinding.setUserTwitterData(2342, "handle", "name", "description", 1, 2, 3, "https://www.gravatar.com/avatar/397167253b1109ef4da30c86eb7782f5?d=https://sweeney.appboy.com/assets/dashboard/profile-default.png");
 #endif
-}
+  }
 
   public void OnNullSocialDataTest() {
     Appboy.AppboyBinding.setUserFacebookData(null, null, null, null, null, null, null, null, null);

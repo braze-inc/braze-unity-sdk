@@ -156,6 +156,9 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _requestInAppMessage();
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _displayNextInAppMessage(bool withDelegate);
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -292,6 +295,10 @@ namespace Appboy {
     
     public static void RequestInAppMessage() {
       _requestInAppMessage();
+    }
+
+    public static void DisplayNextInAppMessage(bool withDelegate) {
+      _displayNextInAppMessage(withDelegate);
     }
 
     [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]

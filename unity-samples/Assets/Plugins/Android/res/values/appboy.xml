@@ -10,8 +10,12 @@
 
   <!-- ADM Push Notification configuration (optional) -->
   <bool name="com_appboy_push_adm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive ADM push notifications. Default is false. -->
-  
-  <bool name="com_appboy_inapp_show_inapp_messages_automatically">true</bool> <!-- Whether to display in-app messages from Appboy using the Appboy native UI. -->
+
+  <!-- Push deep link configuration (optional) -->
+  <bool name="com_appboy_handle_push_deep_links_automatically">true</bool> <!-- Whether to open push deep links from Appboy automatically. Default is false. -->
+
+  <!-- In-app message configuration (optional) -->
+  <bool name="com_appboy_inapp_show_inapp_messages_automatically">true</bool> <!-- Whether to display in-app messages from Appboy using the Appboy native UI. Default is true. -->
 
   <!-- Optional -->
   <string name="com_appboy_push_notification_received_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive push notification received messages. -->
