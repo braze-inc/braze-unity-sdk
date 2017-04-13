@@ -2,6 +2,7 @@
 
 APPBOY_IOS_SDK="AppboyKit"
 SD_WEB_IMAGE="SDWebImage.framework"
+FL_ANIMATED_IMAGE="FLAnimatedImage.framework"
 PROJECT_ROOT=$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )
 LIBRARIES_PATH=$PROJECT_ROOT/Libraries
 IOS_PLUGINS_PATH=$PROJECT_ROOT/Assets/Plugins/iOS
@@ -18,11 +19,14 @@ fi
 echo "Deleting iOS libraries from Assets/Plugins/iOS/"
 [ -e $IOS_PLUGINS_PATH/$APPBOY_IOS_SDK ] && rm -rf $IOS_PLUGINS_PATH/$APPBOY_IOS_SDK*
 [ -e $IOS_PLUGINS_PATH/$SD_WEB_IMAGE ] && rm -rf $IOS_PLUGINS_PATH/$SD_WEB_IMAGE*
+[ -e $IOS_PLUGINS_PATH/$FL_ANIMATED_IMAGE ] && rm -rf $IOS_PLUGINS_PATH/$FL_ANIMATED_IMAGE*
+
 
 echo "Copying iOS libraries from Libraries/ to Assets/Plugins/iOS/"
 cp -R $LIBRARIES_PATH/$APPBOY_IOS_SDK/ $IOS_PLUGINS_PATH/$APPBOY_IOS_SDK/ &
 if [ "$EXCLUDE_DEPENDENCIES" = false ]; then
   cp -R $LIBRARIES_PATH/$SD_WEB_IMAGE $IOS_PLUGINS_PATH/$SD_WEB_IMAGE
+  cp -R $LIBRARIES_PATH/$FL_ANIMATED_IMAGE $IOS_PLUGINS_PATH/$FL_ANIMATED_IMAGE
 fi &
 wait
 

@@ -2,6 +2,7 @@
 <resources>
   <!-- General configuration -->
   <string name="com_appboy_api_key">REPLACE_WITH_YOUR_APPBOY_API_KEY</string>
+  <string translatable="false" name="com_appboy_sdk_flavor">UNITY</string>
 
   <!-- GCM Push Notification configuration (optional) -->
   <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive GCM push notifications. Default is false. -->
@@ -9,7 +10,11 @@
 
   <!-- ADM Push Notification configuration (optional) -->
   <bool name="com_appboy_push_adm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive ADM push notifications. Default is false. -->
-  
+
+  <!-- Push deep link configuration (optional) -->
+  <bool name="com_appboy_handle_push_deep_links_automatically">true</bool> <!-- Whether to open push deep links from Appboy automatically. -->
+
+  <!-- In-app message configuration (optional) -->
   <bool name="com_appboy_inapp_show_inapp_messages_automatically">true</bool> <!-- Whether to display in-app messages from Appboy using the Appboy native UI. -->
 
   <!-- Optional -->
@@ -17,4 +22,7 @@
   <!-- <string name="com_appboy_inapp_listener_callback_method_name"></string> --> <!-- The callback method to be called when an inapp message is received. -->
   <!-- <string name="com_appboy_feed_listener_game_object_name"></string> --> <!-- The Unity game object to receive the news feed. -->
   <!-- <string name="com_appboy_feed_listener_callback_method_name"></string> --> <!-- The callback method to be called when the news feed is received. -->
+
+  <!--- Internal Appboy Usage -->
+  <string name="com_appboy_sdk_flavor">UNITY</string>
 </resources>
