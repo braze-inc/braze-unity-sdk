@@ -58,9 +58,6 @@ namespace Appboy {
     private static extern void _setUserAvatarImageURL(string imageURL);
     
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _setUserBio(string bio);
-    
-    [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserGender(int gender);
     
     [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -74,9 +71,6 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserHomeCity(string city);
-
-    [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _setUserIsSubscribedToEmails(bool isSubscribedToEmails);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserEmailNotificationSubscriptionType(int emailNotificationSubscriptionType);
@@ -192,10 +186,6 @@ namespace Appboy {
     public static void SetUserEmail(string email) {
       _setUserEmail(email);
     }
-
-    public static void SetUserBio(string bio) {
-      _setUserBio(bio);
-    }
  
     public static void SetUserGender(Gender gender) {
       _setUserGender((int)gender);
@@ -211,10 +201,6 @@ namespace Appboy {
 
     public static void SetUserHomeCity(string city) {
       _setUserHomeCity(city);
-    }
-
-    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
-      _setUserIsSubscribedToEmails(isSubscribedToEmails);
     }
 
     public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
@@ -448,10 +434,6 @@ namespace Appboy {
     public static void SetUserEmail(string email) {
       GetCurrentUser().Call<bool>("setEmail", email);
     }
-
-    public static void SetUserBio(string bio) {
-      GetCurrentUser().Call<bool>("setBio", bio);
-    }
  
     /// <summary>
     /// Sets the gender field for the current user.
@@ -541,10 +523,6 @@ namespace Appboy {
 
     public static void SetUserHomeCity(string city) {
       GetCurrentUser().Call<bool>("setHomeCity", city);
-    }
-
-    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
-      GetCurrentUser().Call<bool>("setIsSubscribedToEmails", isSubscribedToEmails);
     }
 
     public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {

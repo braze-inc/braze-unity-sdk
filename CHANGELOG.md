@@ -1,3 +1,8 @@
+## 1.11.0
+* Updates the iOS plugin to use Appboy iOS SDK 2.29.0, which drops support for iOS 7.
+* Updates the Android plugin to use Appboy Android SDK 2.0.0.
+* Removes methods `SetUserIsSubscribedToEmails` and `SetUserBio` as they are removed in the Appboy native SDKs.
+
 ## 1.10.0
 * Adds a new method `DisplayNextInAppMessage(bool withDelegate)` in iOS plugin to display next in-app message from the in-app message stack, if there is one.
   * When the withDelegate is false, the in-app message will be displayed in Appboy's default UI. Otherwise, it will follow the normal in-app message displaying path by going through the `- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp` in `AppboyUnityManager.m`.

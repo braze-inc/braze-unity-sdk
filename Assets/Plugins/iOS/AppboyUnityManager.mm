@@ -72,10 +72,6 @@
   [Appboy sharedInstance].user.email = email;
 }
 
-- (void) setUserBio:(NSString *)bio {
-  [Appboy sharedInstance].user.bio = bio;
-}
-
 - (void) setUserGender:(NSInteger)gender {
   [[Appboy sharedInstance].user setGender:(ABKUserGenderType)gender];
 }
@@ -97,10 +93,6 @@
 
 - (void) setUserHomeCity:(NSString *)city {
   [Appboy sharedInstance].user.homeCity = city;
-}
-
-- (void) setUserIsSubscribedToEmails:(BOOL)subscribedToEmail {
-  [[Appboy sharedInstance].user setIsSubscribedToEmails:subscribedToEmail];
 }
 
 - (void) setUserEmailNotificationSubscriptionType:(NSInteger)emailNotificationSubscriptionType {

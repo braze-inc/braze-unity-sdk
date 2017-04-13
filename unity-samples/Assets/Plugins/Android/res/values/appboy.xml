@@ -16,6 +16,7 @@
 
   <!-- In-app message configuration (optional) -->
   <bool name="com_appboy_inapp_show_inapp_messages_automatically">true</bool> <!-- Whether to display in-app messages from Appboy using the Appboy native UI. Default is true. -->
+  <string translatable="false" name="com_appboy_sdk_flavor">UNITY</string>
 
   <!-- Optional -->
   <string name="com_appboy_push_notification_received_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive push notification received messages. -->

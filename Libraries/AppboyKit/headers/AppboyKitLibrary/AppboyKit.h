@@ -1,8 +1,10 @@
 #import "Appboy.h"
 #import "ABKUser.h"
+#import "ABKIDFADelegate.h"
 #import "ABKAppboyEndpointDelegate.h"
 #import "ABKFacebookUser.h"
 #import "ABKTwitterUser.h"
+#import "ABKURLDelegate.h"
 
 // Cards
 #import "ABKCard.h"
@@ -52,4 +54,7 @@
 
 // IDFA
 #import "ABKIdentifierForAdvertisingProvider.h"
+
+// SDWebImage
+#import "ABKSDWebImageProxy.h"
 #endif

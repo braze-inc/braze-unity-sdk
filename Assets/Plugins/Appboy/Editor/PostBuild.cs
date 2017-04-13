@@ -67,7 +67,9 @@ namespace Appboy.Editor {
           "AdSupport.framework",
           "StoreKit.framework",
           "CoreLocation.framework", // optional for location tracking
-          "ImageIO.framework" // required by SDWebImage
+          "ImageIO.framework", // required by SDWebImage
+          "MobileCoreServices.framework", // required by FLAnimatedImage
+          "CoreGraphics.framework" // required by FLAnimatedImage
         };
 
         foreach (string target in targets) {

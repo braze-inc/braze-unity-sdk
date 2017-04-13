@@ -9,7 +9,6 @@ public class SetUserField : MonoBehaviour {
   public InputField FirstNameField;
   public InputField LastNameField;
   public InputField EmailField;
-  public InputField BiolField;
   public InputField BirthdayMonthField;
   public InputField BirthdayDayField;
   public InputField BirthdayYearField;
@@ -26,10 +25,10 @@ public class SetUserField : MonoBehaviour {
   }
     
   public void OnDoneButtonClick() {
-    Debug.Log(String.Format("Setting User Fields: First name:{0}, Last name:{1}, Email:{2}, Bio:{3}, Gender:{4}, " +
-                            "Date of birth:{5}/{6}/{7}, Country:{8}, Home city:{9}, Email subscription:{10}, " +
-                            "Push subscription:{11}, phone:{12}", FirstNameField.text, LastNameField.text, EmailField.text, 
-                            BiolField.text, gender, BirthdayMonthField.text, BirthdayDayField.text, BirthdayYearField.text, 
+    Debug.Log(String.Format("Setting User Fields: First name:{0}, Last name:{1}, Email:{2}, Gender:{3}, " +
+                            "Date of birth:{4}/{5}/{6}, Country:{7}, Home city:{8}, Email subscription:{9}, " +
+                            "Push subscription:{10}, phone:{11}", FirstNameField.text, LastNameField.text, EmailField.text, 
+                            gender, BirthdayMonthField.text, BirthdayDayField.text, BirthdayYearField.text, 
                             CountryField.text, HomeCityField.text, emailSubscription, pushSubscription, PhoneField.text));
     
     if (UtilityMethods.textIsValid(FirstNameField.text)) {
@@ -41,13 +40,7 @@ public class SetUserField : MonoBehaviour {
     if (UtilityMethods.textIsValid(EmailField.text)) {
       Appboy.AppboyBinding.SetUserEmail(EmailField.text);
     }
-    if (UtilityMethods.textIsValid(BiolField.text)) {
-      Appboy.AppboyBinding.SetUserBio(BiolField.text);
-    }
     Appboy.AppboyBinding.SetUserGender(gender);  
-    if (UtilityMethods.textIsValid(BiolField.text)) {
-      Appboy.AppboyBinding.SetUserBio(BiolField.text);
-    }
     if (UtilityMethods.textIsValid(BirthdayDayField.text) && 
         UtilityMethods.textIsValid(BirthdayMonthField.text) && 
         UtilityMethods.textIsValid(BirthdayYearField.text)) {

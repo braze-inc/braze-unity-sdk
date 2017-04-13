@@ -21,7 +21,8 @@
   // Initialize Appboy
   [Appboy startWithApiKey:[[AppboyUnityManager sharedInstance] getApiKeyFromUnity]
             inApplication:application
-        withLaunchOptions:launchOptions];
+        withLaunchOptions:launchOptions
+        withAppboyOptions:@{ABKSDKFlavorKey: @(UNITY)}];
   
   // Set listeners
   [[AppboyUnityManager sharedInstance] setListeners];
