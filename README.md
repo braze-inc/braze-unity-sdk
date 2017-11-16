@@ -1,8 +1,8 @@
-This repository contains the the C# interface and native Unity functionality for the Unity plugins derived from the Appboy Android, iOS, and Windows SDKs. Since version 1.5.0, Appboy's Unity plugins require Unity 5. Unity 4 users may integrate Appboy Unity SDK release 1.4.0, but full Appboy functionality will not be supported. See the CHANGELOG for more information.
+This repository contains the the C# interface and native Unity functionality for the Unity plugins derived from the Braze Android, iOS, and Windows SDKs. Since version 1.5.0, Braze's Unity plugins require Unity 5. Unity 4 users may integrate Braze Unity SDK release 1.4.0, but full Braze functionality will not be supported. See the CHANGELOG for more information.
 
 ## Plugin Setup
 
-Before you can start using Appboy in Unity scripts, you'll need to import the plugin files to your Unity project.
+Before you can start using Braze in Unity scripts, you'll need to import the plugin files to your Unity project.
 
 **Recommended:** The Android and iOS plugins are bundled as a Unity package available for download from the [SDK release page][1].
 
@@ -13,21 +13,21 @@ Before you can start using Appboy in Unity scripts, you'll need to import the pl
 
 ## Android Setup
 
-To integrate Appboy into your Android Unity application, complete our [Android Unity integration instructions][3].
+To integrate Braze into your Android Unity application, complete our [Android Unity integration instructions][3].
 
 ## iOS Setup
 
-To integrate Appboy into your iOS Unity application, complete our [iOS Unity integration instructions][2].
+To integrate Braze into your iOS Unity application, complete our [iOS Unity integration instructions][2].
 
 
 ## Windows Universal Setup
 
-Once you have placed the plugin DLLs in the proper location in your Unity project, build your Windows Store or Phone 8.1 application from your Unity project.  You will then have a working XAML application with the required Appboy plugin DLLs referenced from your project.  
+Once you have placed the plugin DLLs in the proper location in your Unity project, build your Windows Store or Phone 8.1 application from your Unity project.  You will then have a working XAML application with the required Braze plugin DLLs referenced from your project.  
 
 You can then follow the normal integration instructions found [here][4].  
 
 
 [1]: https://github.com/Appboy/appboy-unity-sdk/releases
-[2]: https://www.appboy.com/documentation/Unity/iOS/
-[3]: https://documentation.appboy.com/SDK_Integration/Unity/Android
-[4]: https://documentation.appboy.com/SDK_Integration/Windows/Universal
+[2]: https://www.braze.com/documentation/Unity/iOS/
+[3]: https://documentation.braze.com/SDK_Integration/Unity/Android
+[4]: https://documentation.braze.com/SDK_Integration/Windows/Universal
