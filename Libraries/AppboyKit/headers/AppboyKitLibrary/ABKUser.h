@@ -1,8 +1,6 @@
 //
 //  ABKUser.h
 //  AppboySDK
-//
-//  Copyright (c) 2016 Appboy. All rights reserved.
 
 #import <Foundation/Foundation.h>
 
@@ -16,11 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /*!
- * Values representing the gender recognized by the SDK.
+ * Genders recognized by the SDK.
  */
-typedef NS_ENUM(NSInteger , ABKUserGenderType) {
+typedef NS_ENUM(NSInteger, ABKUserGenderType) {
   ABKUserGenderMale,
-  ABKUserGenderFemale
+  ABKUserGenderFemale,
+  ABKUserGenderOther,
+  ABKUserGenderUnknown,
+  ABKUserGenderNotApplicable,
+  ABKUserGenderPreferNotToSay
 };
 
 /*!
@@ -38,30 +40,8 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 
 /*!
  * When setting the custom attributes with custom keys:
- *
- * 1. Attempting to set a custom attribute with the same key as one of our reserved keys is prohibited. To set values
- *    for reserved keys, please find and set the corresponding property in this class. The reserved key list is:
- *      email
- *      facebook
- *      twitter
- *      first_name
- *      last_name
- *      dob
- *      external_id
- *      country
- *      home_city
- *      bio
- *      gender
- *      phone
- *      email_subscribe
- *      foursquare_access_token
- *      image_url
- *      push_subscribe
- *      attribution_data
- *
- * 2. The maximum key length is 255 characters; longer keys are truncated.
- *
- * 3. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
+ * 1. The maximum key length is 255 characters; longer keys are truncated.
+ * 2. The maximum length for a string value in a custom attribute is 255 characters; longer values are truncated.
  */
 
 /*
@@ -100,14 +80,19 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
 @property (nonatomic, copy, nullable) NSString *homeCity;
 
 /*!
+ * The User's language (String)
+ *
+ * Language Strings should be valid ISO 639-1 language codes.
+ * See https://www.loc.gov/standards/iso639-2/php/code_list.php.
+ *
+ * If not set here, user language will be inferred from the device language.
+ */
+@property (nonatomic, copy, nullable) NSString *language;
+
+/*!
  * The User's phone number (String)
  */
 @property (nonatomic, copy, nullable) NSString *phone;
-
-/*!
- * The User's foursquare access token (String)
- */
-@property (nonatomic, copy, nullable) NSString *foursquareAccessToken;
 
 @property (nonatomic, copy, readonly) NSString *userID;
 
@@ -132,6 +117,18 @@ typedef NS_ENUM(NSInteger, ABKNotificationSubscriptionType) {
  * For more information, please refer to ABKAttributionData.h.
  */
 @property (strong, nullable) ABKAttributionData *attributionData;
+
+/*!
+ * Adds an an alias for the current user.  Individual (alias, label) pairs can exist on one and only one user.
+ * If a different user already has this alias or external user id, the alias attempt will be rejected
+ * on the server.
+ *
+ * @param alias The alias of the current user.
+ * @param label The label of the alias; used to differentiate it from other aliases for the user.
+ * @return Whether or not the alias and label are valid. Does not guarantee they won't collide with
+ *         an existing pair.
+ */
+- (BOOL)addAlias:(NSString *)alias withLabel:(NSString *)label;
 
 /*!
  * @param gender ABKUserGender enum representing the user's gender.

@@ -1,8 +1,6 @@
 //
 //  Appboy.h
 //  AppboySDK
-//
-//  Copyright (c) 2016 Appboy. All rights reserved.
 
 /*!
   \mainpage
@@ -15,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"2.29.0"
+#define APPBOY_SDK_VERSION @"3.3.1"
 #endif
 
 #if !TARGET_OS_TV
@@ -128,6 +126,13 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
  */
 extern NSString *const ABKSDKFlavorKey;
 
+/*!
+ * This key can be set to a string value representing the app group name for the Push Story Notification
+ * Content extension. This is required for the SDK to fetch data from and handle user interactions
+ * with the Push Story app extension.
+ */
+extern NSString *const ABKPushStoryAppGroupKey;
+
 /* ------------------------------------------------------------------------------------------------------
  * Enums
  */
@@ -144,16 +149,20 @@ extern NSString *const ABKSDKFlavorKey;
  *        must call flushDataAndProcessRequestQueue when you want to synchronize newly updated user data with Appboy.
  *   ABKManualRequestProcessing - Appboy will automatically add appropriate network requests (feed updates, user
  *        attribute flushes, feedback posts, etc.) to its network queue, but doesn't process
- *        network requests except when feedback requests are made via a FeedbackViewController, or a feed request is made
- *        via a FeedViewController. The latter typically occurs when a ABKFeedViewController is loaded and displayed on
- *        the screen, for example, in response to a user click.
+ *        network requests. Appboy will make an exception and process requests in the following cases:
+ *        - Feedback requests are made via Appboy::submitFeedback:message:isReportingABug:,
+ *          Appboy::submitFeedback:withCompletionHandler:, or a FeedbackViewController.
+ *        - Feed requests are made via Appboy::requestFeedRefresh or an ABKFeedViewController. The latter typically 
+ *          occurs when an ABKFeedViewController is loaded and displayed on the screen or on a pull to refresh.
+ *        - Network requests are required for internal features, such as templated in-app messages
+ *          and certain location-based features.
  *        You can direct Appboy to perform an immediate data flush as well as process any other
  *        requests on its queue by calling <pre>[[Appboy sharedInstance] flushDataAndProcessRequestQueue];</pre>
  *        This mode is only recommended for advanced use cases. If you're merely trying to
  *        control the background flush behavior, consider using ABKAutomaticRequestProcessing
  *        with a custom flush interval or ABKAutomaticRequestProcessingExceptForDataFlush.
  *
- * Regardless of policy, Appboy will intelligently combine requests on the queue to minimize the total number of
+ * Regardless of policy, Appboy will intelligently combine requests on the request queue to minimize the total number of
  * requests and their combined payload.
  */
 typedef NS_ENUM(NSInteger, ABKRequestProcessingPolicy) {
@@ -208,8 +217,8 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 /*!
  * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param application the current app
+ * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  *
  * @discussion Starts up Appboy and tells it that your app is done launching. You should call this
  * method in your App Delegate application:didFinishLaunchingWithOptions method before calling makeKeyAndVisible,
@@ -222,8 +231,8 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
 
 /*!
  * @param apiKey The app's API key
- * @param inApplication The current app
- * @param withLaunchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
+ * @param application The current app
+ * @param launchOptions The options NSDictionary that you get from application:didFinishLaunchingWithOptions
  * @param appboyOptions An optional NSDictionary with startup configuration values for Appboy. This currently supports
  * ABKRequestProcessingPolicyOptionKey, ABKSocialAccountAcquisitionPolicyOptionKey and ABKFlushIntervalOptionKey. See below
  * for more information.
@@ -323,6 +332,7 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  * Property for internal reporting of SDK flavor.
  */
 @property (nonatomic) ABKSDKFlavor sdkFlavor;
+
 #endif
 
 /* ------------------------------------------------------------------------------------------------------
@@ -529,20 +539,21 @@ typedef NS_ENUM(NSInteger, ABKFeedbackSentResult) {
  */
 - (void)requestFeedRefresh;
 
-#if !TARGET_OS_TV
 /*!
- * Enqueues an in-app message request for the current user. Note that if the queue already contains another request for the
- * current user, that the in-app message request will be merged into the already existing request and only one will execute
- * for that user.
+ * Get the device ID - the IDFV - which will reset if all apps for a given vendor are removed from the device.
+ *
+ * @return The device ID.
  */
-- (void)requestInAppMessageRefresh;
+- (NSString *)getDeviceId;
 
+
+#if !TARGET_OS_TV
 /*!
  * @param response The response passed in from userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:.
  *
  * @discussion This method returns whether or not a UNNotification was sent from Appboy's servers.
  */
-- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.");
+- (BOOL)userNotificationWasSentFromAppboy:(UNNotificationResponse *)response __deprecated_msg("Use [ABKPushUtils isAppboyUserNotification:] instead.") NS_AVAILABLE_IOS(10.0);
 
 /*!
  * @param options The NSDictionary you get from application:didFinishLaunchingWithOptions or
@@ -593,7 +604,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)getActionWithIdentifier:(NSString *)identifier
           forRemoteNotification:(NSDictionary *)userInfo
-              completionHandler:(nullable void (^)())completionHandler NS_DEPRECATED_IOS(8_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
+              completionHandler:(nullable void (^)(void))completionHandler NS_DEPRECATED_IOS(8_0, 10_0,"`getActionWithIdentifier:forRemoteNotification:completionHandler:` is deprecated in iOS 10, please use `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` instead.");
 
 /*!
  * @param center The app's current UNUserNotificationCenter object
@@ -606,7 +617,7 @@ didReceiveRemoteNotification:(NSDictionary *)notification
  */
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
-      withCompletionHandler:(nullable void (^)())completionHandler;
+         withCompletionHandler:(nullable void (^)(void))completionHandler NS_AVAILABLE_IOS(10_0);
 
 /*!
  * @param pushAuthGranted The boolean value passed in from completionHandler in UNUserNotificationCenter's 

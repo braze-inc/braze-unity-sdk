@@ -34,7 +34,6 @@ public class MainMenu : MonoBehaviour {
   }
   
   public void OnRequestInAppMessageButtonClick() {
-    Appboy.AppboyBinding.RequestInAppMessage();
     Appboy.AppboyBinding.RequestFeedRefresh ();
   }
 

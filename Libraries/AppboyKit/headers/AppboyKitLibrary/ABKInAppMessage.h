@@ -52,6 +52,15 @@ typedef NS_ENUM(NSInteger, ABKInAppMessageOrientation) {
   ABKInAppMessageOrientationLandscape
 };
 
+/*!
+ * Default icon and in-app message button background colors.
+ * These are used in the in-app message view controllers.
+ */
+static CGFloat const RedValueOfDefaultIconColorAndButtonBgColor = 0.0f;
+static CGFloat const GreenValueOfDefaultIconColorAndButtonBgColor = 115.0f / 255.0f;
+static CGFloat const BlueValueOfDefaultIconColorAndButtonBgColor = 213.0f / 255.0f;
+static CGFloat const AlphaValueOfDefaultIconColorAndButtonBgColor = 1.0f;
+
 /*
  * Appboy Public API: ABKInAppMessage
  */
@@ -178,7 +187,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL animateOut;
 
 /*!
- * If you're handling in-app messages completely on your own (returning YES from onInAppMessageReceived), you should still report
+ * If you're handling in-app messages completely on your own, you should still report
  * impressions and clicks on the in-app message back to Appboy with these methods so that your campaign reporting features
  * still work in the dashboard.
  *

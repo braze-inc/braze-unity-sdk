@@ -1,6 +1,6 @@
 #import "AppboyUnityManager.h"
 #import "AppboyKit.h"
-#import "ABKFeedbackViewControllerModalContext.h"
+#import "ABKModalFeedbackViewController.h"
 #import "ABKFeedViewControllerModalContext.h"
 #import "ABKCard.h"
 #import "ABKFacebookUser.h"
@@ -26,7 +26,7 @@
 }
 
 - (void) showFeedbackForm {
-  ABKFeedbackViewControllerModalContext *feedbackViewController = [[ABKFeedbackViewControllerModalContext alloc] init];
+  ABKModalFeedbackViewController *feedbackViewController = [[ABKModalFeedbackViewController alloc] init];
   [UnityGetGLViewController() presentViewController:feedbackViewController animated:YES completion:nil];
 }
 
@@ -197,37 +197,7 @@
 }
 
 // ABKInAppMessageDelegate methods
-- (BOOL) onInAppMessageReceived:(ABKInAppMessage *)inAppMessage {
-  if (self.unityInAppMessageGameObjectName == nil) {
-    NSLog(@"Not sending a Unity message in response to an in-app message being received because "
-          "no message receiver was defined. To implement custom behavior in response to a in-app"
-          "message being received, you must register a GameObject and method name with Appboy "
-          "by calling [[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName: callbackMethodName:].");
-    return NO;
-  }
-  if (self.unityInAppMessageCallbackFunctionName == nil) {
-    NSLog(@"Not sending a Unity message in response to a in-app message being received because "
-          "no method name was defined for the %@. To implement custom behavior in response to a in-app "
-          "message being received, you must register a GameObject and method name with Appboy "
-          "[[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName: callbackMethodName:].",
-          self.unityInAppMessageGameObjectName);
-    return NO;
-  }
-  NSLog(@"Sending an in-app message to %@:%@.", self.unityInAppMessageGameObjectName, self.unityInAppMessageCallbackFunctionName);
-  
-  NSData *inAppMessageData = [inAppMessage serializeToData];
-  NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
-  NSLog(@"dataString is %@.", dataString);
-  UnitySendMessage([self.unityInAppMessageGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                   [self.unityInAppMessageCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                   [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-  if ([self.appboyUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
-    return NO;
-  }
-  return YES;
-}
-
-- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage withKeyboardIsUp:(BOOL)keyboardIsUp {
+- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
   if (self.unityInAppMessageGameObjectName == nil) {
     NSLog(@"Not sending a Unity message in response to an in-app message being received because "
           "no message receiver was defined. To implement custom behavior in response to a in-app"
@@ -511,10 +481,6 @@
 
 - (void) logFeedbackDisplayed {
   [[Appboy sharedInstance] logFeedbackDisplayed];
-}
-
-- (void) requestInAppMessageRefresh {
-  [[Appboy sharedInstance] requestInAppMessageRefresh];
 }
 
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate {

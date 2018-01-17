@@ -76,7 +76,6 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) logInAppMessageImpression:(NSString *)inAppMessageJSONString;
 - (void) logCardImpression:(NSString *)cardJSONString;
 - (void) logCardClicked:(NSString *)cardJSONString;
-- (void) requestInAppMessageRefresh;
 - (void) requestFeedRefresh;
 - (void) requestFeedFromCache:(NSNotification *)notification;
 - (void) logFeedDisplayed;

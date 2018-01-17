@@ -1,5 +1,5 @@
 framework module FLAnimatedImage {
-  umbrella header "FLAnimatedImage.h"
+  umbrella header "FLAnimatedImage-umbrella.h"
 
   export *
   module * { export * }
