@@ -146,9 +146,6 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logFeedbackDisplayed();
-    
-    [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _requestInAppMessage();
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _displayNextInAppMessage(bool withDelegate);
@@ -278,10 +275,6 @@ namespace Appboy {
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       _submitFeedback(replyToEmail, message, isReportingABug);
     }
-    
-    public static void RequestInAppMessage() {
-      _requestInAppMessage();
-    }
 
     public static void DisplayNextInAppMessage(bool withDelegate) {
       _displayNextInAppMessage(withDelegate);
@@ -369,7 +362,7 @@ namespace Appboy {
     }
 
     public static void LogCustomEvent(string eventName) {
-      Appboy.Call<bool>("logCustomEvent", eventName);
+      Appboy.Call("logCustomEvent", eventName);
     }
 
     public static AndroidJavaObject ParsePropertiesToAppboyProperties(Dictionary<string, object> properties) {
@@ -405,22 +398,22 @@ namespace Appboy {
     /// </param>
     public static void LogCustomEvent(string eventName, Dictionary<string, object> properties) {
       AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
-      Appboy.Call<bool>("logCustomEvent", eventName, appboyProperties);
+      Appboy.Call("logCustomEvent", eventName, appboyProperties);
     }
 
     public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
       var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
-      Appboy.Call<bool>("logPurchase", productId, currencyCode, javaPrice, quantity);
+      Appboy.Call("logPurchase", productId, currencyCode, javaPrice, quantity);
     }
 
     public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, object> properties) {
       var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
       AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
-      Appboy.Call<bool>("logPurchase", productId, currencyCode, javaPrice, quantity, appboyProperties);
+      Appboy.Call("logPurchase", productId, currencyCode, javaPrice, quantity, appboyProperties);
     }
  
     public static void ChangeUser(string userId) {
-      Appboy.Call<AndroidJavaObject>("changeUser", userId);
+      Appboy.Call("changeUser", userId);
     }
   
     public static void SetUserFirstName(string firstName) {
@@ -672,19 +665,11 @@ namespace Appboy {
     
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       object[] args = new object[] { replyToEmail, message, isReportingABug };
-      Appboy.Call<bool>("submitFeedback", args);
+      Appboy.Call("submitFeedback", args);
     }
 
     public static void RegisterAppboyPushMessages(string registrationId) {
       Appboy.Call("registerAppboyPushMessages", new object[] { registrationId });
-    }
-
-    public static void RequestSlideup() {
-      Appboy.Call("requestInAppMessageRefresh");
-    }
-
-    public static void RequestInAppMessage() {
-      Appboy.Call("requestInAppMessageRefresh");
     }
 
     public static void RequestFeedRefresh() {
@@ -718,11 +703,11 @@ namespace Appboy {
     }
 
     public static void LogFeedDisplayed() {
-      Appboy.Call<bool>("logFeedDisplayed");
+      Appboy.Call("logFeedDisplayed");
     }
 
     public static void LogFeedbackDisplayed() {
-      Appboy.Call<bool>("logFeedbackDisplayed");
+      Appboy.Call("logFeedbackDisplayed");
     }
     
 #elif UNITY_METRO
@@ -858,10 +843,6 @@ namespace Appboy {
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       WindowsUniversalUnityAdapter.AppboyAdapter.SubmitFeedback(replyToEmail, message, isReportingABug);
     }
-   
-    public static void RequestSlideup() {
-      WindowsUniversalUnityAdapter.AppboyAdapter.RequestSlideup();
-    }
 
     public static void RequestFeedRefresh() {
       WindowsUniversalUnityAdapter.AppboyAdapter.RequestFeedRefresh();
@@ -992,12 +973,6 @@ namespace Appboy {
     }
 
     public static void RegisterAppboyPushMessages(string registrationId) {
-    }
-
-    public static void RequestSlideup() {
-    }
-        
-    public static void RequestInAppMessage() {
     }
 
     public static void RequestFeedRefresh() {

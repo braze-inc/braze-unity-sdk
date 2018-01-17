@@ -48,13 +48,5 @@
         <category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" />
       </intent-filter>
     </receiver>
-
-    <!-- Register an optional notification receiver here -->
-    <receiver android:name="com.appboy.unity.AppboyUnityGcmReceiver" android:exported="false" >
-      <intent-filter>
-        <action android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.intent.APPBOY_PUSH_RECEIVED" />
-        <action android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.intent.APPBOY_NOTIFICATION_OPENED" />
-      </intent-filter>
-    </receiver>
   </application>
 </manifest>

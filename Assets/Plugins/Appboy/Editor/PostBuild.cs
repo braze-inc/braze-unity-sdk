@@ -57,7 +57,8 @@ namespace Appboy.Editor {
           "QuartzCore.framework",
           "libz.tbd",
           "CoreImage.framework",
-          "CoreText.framework"
+          "CoreText.framework",
+          "WebKit.framework"
         };
 
         string[] optionalFrameworks = {
@@ -77,7 +78,8 @@ namespace Appboy.Editor {
           project.AddBuildProperty(target, "OTHER_LDFLAGS", "-ObjC");
           project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Frameworks/Plugins/iOS");
           project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries/Plugins/iOS");
-          project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries");        
+          project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries");  
+          project.SetBuildProperty(target, "GCC_ENABLE_OBJC_EXCEPTIONS", "Yes");        
 
           // Add required frameworks
           // Note: Unity's documentation for PBXProject.AddFrameworkToProject says that the boolean parameter 
