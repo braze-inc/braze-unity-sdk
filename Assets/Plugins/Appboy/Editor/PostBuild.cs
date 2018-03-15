@@ -1,4 +1,5 @@
-﻿using System;
+#if UNITY_IOS
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.iOS.Xcode;
 using UnityEditor.iOS.Xcode.Extensions;
+#endif
 
 namespace Appboy.Editor {
   public class PostBuild {
