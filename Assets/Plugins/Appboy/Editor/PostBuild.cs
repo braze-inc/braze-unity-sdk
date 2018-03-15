@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.iOS.Xcode;
+using UnityEditor.iOS.Xcode.Extensions;
 #endif
 
 namespace Appboy.Editor {
@@ -80,11 +81,11 @@ namespace Appboy.Editor {
           project.AddBuildProperty(target, "OTHER_LDFLAGS", "-ObjC");
           project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Frameworks/Plugins/iOS");
           project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries/Plugins/iOS");
-          project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries");  
-          project.SetBuildProperty(target, "GCC_ENABLE_OBJC_EXCEPTIONS", "Yes");        
+          project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries");
+          project.SetBuildProperty(target, "GCC_ENABLE_OBJC_EXCEPTIONS", "Yes");
 
           // Add required frameworks
-          // Note: Unity's documentation for PBXProject.AddFrameworkToProject says that the boolean parameter 
+          // Note: Unity's documentation for PBXProject.AddFrameworkToProject says that the boolean parameter
           // should be true if required and false if optional, but actual behavior appears to be the exact opposite.
           foreach (string framework in requiredFrameworks) {
             project.AddFrameworkToProject(target, framework, false);
@@ -93,11 +94,22 @@ namespace Appboy.Editor {
           foreach (string framework in optionalFrameworks) {
             project.AddFrameworkToProject(target, framework, true);
           }
+
+          AddFileToEmbedFrameworks(project, target, Application.dataPath + "/Plugins/iOS/SDWebImage.framework", "Frameworks/Plugins/iOS/SDWebImage.framework");
+          AddFileToEmbedFrameworks(project, target, Application.dataPath + "/Plugins/iOS/FLAnimatedImage.framework", "Frameworks/Plugins/iOS/FLAnimatedImage.framework");
+
+          project.AddBuildProperty(target, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
         }
       }
 
       // Write changes to XCode project
       File.WriteAllText(projectPath, project.WriteToString());
+    }
+
+    private static void AddFileToEmbedFrameworks(PBXProject project, string target, string unityPath, string xcodePath) {
+      string frameworkPath = project.AddFile(unityPath, xcodePath, PBXSourceTree.Source);
+      project.AddFileToBuild(target, frameworkPath);
+      project.AddFileToEmbedFrameworks(target, frameworkPath);
     }
 
     private static void ModifyPlist(string plistPath) {
@@ -128,20 +140,20 @@ namespace Appboy.Editor {
         }
 
         // Set push listeners
-        if (ValidateListenerFields(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName, 
+        if (ValidateListenerFields(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName,
           ABKUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName)) {
           appboyUnityDict.SetString(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName.Trim());
           appboyUnityDict.SetString(ABKUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName.Trim());
         }
-        
-        if (ValidateListenerFields(ABKUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName, 
+
+        if (ValidateListenerFields(ABKUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName,
           ABKUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName)) {
           appboyUnityDict.SetString(ABKUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName.Trim());
           appboyUnityDict.SetString(ABKUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName.Trim());
         }
 
         // Set in-app message listener
-        if (ValidateListenerFields(ABKUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName, 
+        if (ValidateListenerFields(ABKUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName,
           ABKUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName)) {
           appboyUnityDict.SetString(ABKUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName.Trim());
           appboyUnityDict.SetString(ABKUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName.Trim());
@@ -149,7 +161,7 @@ namespace Appboy.Editor {
         }
 
         // Set feed listener
-        if (ValidateListenerFields(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName, 
+        if (ValidateListenerFields(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName,
           ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName)) {
           appboyUnityDict.SetString(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName.Trim());
           appboyUnityDict.SetString(ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName.Trim());
@@ -177,7 +189,7 @@ namespace Appboy.Editor {
       bool value2isValid = !String.IsNullOrEmpty(value2.Trim());
       string invalidKey;
       if (value1isValid && value2isValid) {
-        return true;  
+        return true;
       } else if (value1isValid || value2isValid) {
         // Display invalid listener field alert
         invalidKey = value1isValid ? key2 : key1;
