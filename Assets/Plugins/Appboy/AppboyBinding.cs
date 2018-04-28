@@ -328,6 +328,7 @@ namespace Appboy {
 #elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
     private static AndroidJavaObject appboy;
+    private static AndroidJavaObject inAppMessageUtils;
   
     void Start() {
       Debug.Log("Starting Appboy binding for Android clients.");
@@ -355,6 +356,18 @@ namespace Appboy {
         return appboy;
       }
     }
+
+    public static AndroidJavaObject InAppMessageUtils {
+      get {
+        if (inAppMessageUtils != null) return inAppMessageUtils;
+
+        inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");
+        inAppMessageUtils.CallStatic("setContext", AppboyUnityActivity);
+
+        return inAppMessageUtils;
+      }
+    }
+
     #endregion
   
     private static AndroidJavaObject GetCurrentUser() {
@@ -681,25 +694,25 @@ namespace Appboy {
     }
 
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { inAppMessageJSONString });
+      InAppMessageUtils.CallStatic("logInAppMessageClick", new object[] { inAppMessageJSONString });
     }
 
     public static void LogInAppMessageImpression(string inAppMessageJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { inAppMessageJSONString });
+      InAppMessageUtils.CallStatic("logInAppMessageImpression", new object[] { inAppMessageJSONString });
     }
     
     public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
-      AppboyUnityActivity.Call("logInAppMessageButtonClick", new object[] { inAppMessageJSONString, buttonID });
+      InAppMessageUtils.CallStatic("logInAppMessageButtonClick", new object[] { inAppMessageJSONString, buttonID });
     }
 
     [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
     public static void LogSlideupClicked(string slideupJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { slideupJSONString });
+      InAppMessageUtils.CallStatic("logInAppMessageClick", new object[] { slideupJSONString });
     }
 
     [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
     public static void LogSlideupImpression(string slideupJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { slideupJSONString });
+      InAppMessageUtils.CallStatic("logInAppMessageImpression", new object[] { slideupJSONString });
     }
 
     public static void LogFeedDisplayed() {
