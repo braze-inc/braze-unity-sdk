@@ -359,11 +359,9 @@ namespace Appboy {
 
     public static AndroidJavaObject InAppMessageUtils {
       get {
-        if (inAppMessageUtils != null) return inAppMessageUtils;
-
-        inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");
-        inAppMessageUtils.CallStatic("setContext", AppboyUnityActivity);
-
+        if (inAppMessageUtils == null) {
+          inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");  
+        }
         return inAppMessageUtils;
       }
     }
@@ -694,25 +692,30 @@ namespace Appboy {
     }
 
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
-      InAppMessageUtils.CallStatic("logInAppMessageClick", new object[] { inAppMessageJSONString });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
     }
 
     public static void LogInAppMessageImpression(string inAppMessageJSONString) {
-      InAppMessageUtils.CallStatic("logInAppMessageImpression", new object[] { inAppMessageJSONString });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
     }
     
     public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
-      InAppMessageUtils.CallStatic("logInAppMessageButtonClick", new object[] { inAppMessageJSONString, buttonID });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageButtonClick", inAppMessage, buttonID);
     }
 
     [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
     public static void LogSlideupClicked(string slideupJSONString) {
-      InAppMessageUtils.CallStatic("logInAppMessageClick", new object[] { slideupJSONString });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, slideupJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
     }
 
     [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
     public static void LogSlideupImpression(string slideupJSONString) {
-      InAppMessageUtils.CallStatic("logInAppMessageImpression", new object[] { slideupJSONString });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, slideupJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
     }
 
     public static void LogFeedDisplayed() {
