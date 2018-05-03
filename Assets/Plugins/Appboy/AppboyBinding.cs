@@ -708,14 +708,12 @@ namespace Appboy {
 
     [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
     public static void LogSlideupClicked(string slideupJSONString) {
-      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, slideupJSONString);
-      InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
+      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { slideupJSONString });
     }
 
     [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
     public static void LogSlideupImpression(string slideupJSONString) {
-      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, slideupJSONString);
-      InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
+      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { slideupJSONString });
     }
 
     public static void LogFeedDisplayed() {
