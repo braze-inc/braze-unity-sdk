@@ -23,5 +23,5 @@
   <!-- <string name="com_appboy_feed_listener_callback_method_name"></string> --> <!-- The callback method to be called when the news feed is received. -->
 
   <!--- Internal Braze Usage -->
-  <string translatable="false" name="com_appboy_sdk_flavor">UNITY</string>
+  <string name="com_appboy_sdk_flavor">UNITY</string>
 </resources>

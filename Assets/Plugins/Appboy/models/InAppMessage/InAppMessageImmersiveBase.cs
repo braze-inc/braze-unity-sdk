@@ -50,9 +50,7 @@ namespace Appboy.Models.InAppMessage {
     public void LogButtonClicked(int buttonID) {
       if (!_buttonClickLogged) {
         _buttonClickLogged = true;
-        #if (UNITY_IOS || UNITY_ANDROID)
         AppboyBinding.LogInAppMessageButtonClicked(_jsonString, buttonID);
-        #endif
       } else {
         Debug.Log("The in-app message already log a button clicked.");
       }

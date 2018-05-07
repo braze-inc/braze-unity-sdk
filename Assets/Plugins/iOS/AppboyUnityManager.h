@@ -81,4 +81,7 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) logFeedDisplayed;
 - (void) logFeedbackDisplayed;
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
++ (void) wipeDataAndDisableForAppRun;
++ (void) disableSDK;
++ (void) requestEnableSDKOnNextAppRun;
 @end
