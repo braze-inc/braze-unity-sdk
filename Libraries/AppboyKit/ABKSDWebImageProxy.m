@@ -15,6 +15,7 @@
   [imageView sd_setShowActivityIndicatorView:showActivityIndicator];
   [imageView sd_setImageWithURL:imageURL
                placeholderImage:placeHolder
+                        options: (SDWebImageQueryDataWhenInMemory | SDWebImageQueryDiskSync)
                       completed:completion];
 }
 
@@ -49,6 +50,11 @@
   return [[SDImageCache sharedImageCache] imageFromCacheForKey:key];
 }
 
++ (void)clearCache {
+  [[SDImageCache sharedImageCache] clearMemory];
+  [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+}
+
 + (BOOL)isSupportedSDWebImageVersion {
   BOOL imageViewMethodsExist = [UIImageView instancesRespondToSelector:@selector(sd_setShowActivityIndicatorView:)] &&
                                [UIImageView instancesRespondToSelector:@selector(sd_setImageWithURL:placeholderImage:completed:)];
@@ -63,6 +69,8 @@
   
   SDImageCache *imageCache = [SDImageCache sharedImageCache];
   BOOL imageCacheMethodsExist = [imageCache respondsToSelector:@selector(removeImageForKey:withCompletion:)] &&
+                                [imageCache respondsToSelector:@selector(clearDiskOnCompletion:)] &&
+                                [imageCache respondsToSelector:@selector(clearMemory)] &&
                                 [imageCache respondsToSelector:@selector(imageFromCacheForKey:)];
   
   return imageViewMethodsExist && prefetcherMethodsExist && managerMethodsExist && imageCacheMethodsExist;

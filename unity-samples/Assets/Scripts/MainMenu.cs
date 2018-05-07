@@ -37,6 +37,18 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.RequestFeedRefresh ();
   }
 
+  public void OnWipeDataButtonClick() {
+    Appboy.AppboyBinding.WipeData ();
+  }
+
+  public void OnEnableSDKButtonClick() {
+    Appboy.AppboyBinding.EnableSDK ();
+  }
+
+  public void OnDisableSDKButtonClick() {
+    Appboy.AppboyBinding.DisableSDK ();
+  }
+
   // Not connecting this to the main menu as setting a push token like that
   // would break push on the device.  But leaving here in case this method needs
   // to be tested again in the future.
@@ -47,10 +59,8 @@ public class MainMenu : MonoBehaviour {
   }
 
   public void OnSocialDataTest() {
-#if (UNITY_ANDROID || UNITY_IOS)
     Appboy.AppboyBinding.setUserFacebookData("briancaw", "brian", "wheeler", "brian@tryappboy.com", "funny guy", "belmar", Gender.Male, 12, "09-09-1917");
     Appboy.AppboyBinding.setUserTwitterData(2342, "handle", "name", "description", 1, 2, 3, "https://www.gravatar.com/avatar/397167253b1109ef4da30c86eb7782f5?d=https://sweeney.appboy.com/assets/dashboard/profile-default.png");
-#endif
   }
 
   public void OnNullSocialDataTest() {

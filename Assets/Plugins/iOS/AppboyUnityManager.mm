@@ -491,4 +491,16 @@
   [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:delegate];
 }
 
++ (void) wipeDataAndDisableForAppRun {
+  [Appboy wipeDataAndDisableForAppRun];
+}
+
++ (void) disableSDK {
+  [Appboy disableSDK];
+}
+
++ (void) requestEnableSDKOnNextAppRun {
+  [Appboy requestEnableSDKOnNextAppRun];
+}
+
 @end

@@ -201,3 +201,15 @@ void _logFeedbackDisplayed() {
 void _displayNextInAppMessage(bool withDelegate) {
   [[AppboyUnityManager sharedInstance] displayNextInAppMessageWithDelegate:withDelegate];
 }
+
+void _wipeData() {
+  [AppboyUnityManager wipeDataAndDisableForAppRun];
+}
+
+void _enableSDK() {
+  [AppboyUnityManager requestEnableSDKOnNextAppRun];
+}
+
+void _disableSDK() {
+  [AppboyUnityManager disableSDK];
+}

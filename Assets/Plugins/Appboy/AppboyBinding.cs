@@ -150,6 +150,15 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _displayNextInAppMessage(bool withDelegate);
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _wipeData();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _enableSDK();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _disableSDK();
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -280,16 +289,6 @@ namespace Appboy {
       _displayNextInAppMessage(withDelegate);
     }
 
-    [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
-    public static void LogSlideupClicked(string slideupJSONString) {
-      _logInAppMessageClicked(slideupJSONString);
-    }
-
-    [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
-    public static void LogSlideupImpression(string slideupJSONString) {
-      _logInAppMessageImpression(slideupJSONString);
-    }
-
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
       _logInAppMessageClicked(inAppMessageJSONString);
     }
@@ -323,6 +322,18 @@ namespace Appboy {
 
     public static void LogFeedbackDisplayed() {
       _logFeedbackDisplayed();
+    }
+
+    public static void WipeData() {
+      _wipeData();
+    }
+
+    public static void EnableSDK() {
+      _enableSDK();
+    }
+
+    public static void DisableSDK() {
+      _disableSDK();
     }
 
 #elif UNITY_ANDROID
@@ -692,16 +703,6 @@ namespace Appboy {
       AppboyUnityActivity.Call("logInAppMessageButtonClick", new object[] { inAppMessageJSONString, buttonID });
     }
 
-    [System.Obsolete("LogSlideupClicked is deprecated, please use LogInAppMessageClicked instead.")]
-    public static void LogSlideupClicked(string slideupJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { slideupJSONString });
-    }
-
-    [System.Obsolete("LogSlideupImpression is deprecated, please use LogInAppMessageImpression instead.")]
-    public static void LogSlideupImpression(string slideupJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { slideupJSONString });
-    }
-
     public static void LogFeedDisplayed() {
       Appboy.Call("logFeedDisplayed");
     }
@@ -709,163 +710,17 @@ namespace Appboy {
     public static void LogFeedbackDisplayed() {
       Appboy.Call("logFeedbackDisplayed");
     }
-    
-#elif UNITY_METRO
-    void Start() {
-      Debug.Log("Starting Appboy binding for Windows Metro clients.");
+
+    public static void WipeData() {
+      Appboy.CallStatic("wipeData", appboyUnityActivity);
     }
 
-    public static void LogCustomEvent(string eventName) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.LogCustomEvent(eventName);
+    public static void EnableSDK() {
+      Appboy.CallStatic("enableSdk", appboyUnityActivity);
     }
 
-    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.LogPurchase(productId, currencyCode, price, quantity);
-    }
-
-    public static void ChangeUser(string userId) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.ChangeUser(userId);
-    }
-
-    public static void SetUserFirstName(string firstName) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserFirstName(firstName);
-    }
-
-    public static void SetUserLastName(string lastName) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserLastName(lastName);
-    }
-
-    public static void SetUserEmail(string email) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserEmail(email);
-    }
-
-    public static void SetUserBio(string bio) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserBio(bio);
-    }
-
-    public static void SetUserGender(Gender gender) {
-      if (gender == Gender.Female) {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserGender("FEMALE");
-
-      } else {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserGender("MALE");
-      }
-    }
-
-    public static void SetUserDateOfBirth(int year, int month, int day) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserDateOfBirth(year, month, day);
-    }
-
-    public static void SetUserCountry(string country) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserCountry(country);
-    }
-
-    public static void SetUserHomeCity(string city) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserHomeCity(city);
-    }
-
-    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserIsSubscribedToEmails(isSubscribedToEmails);
-    }
-
-    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
-      if (emailNotificationSubscriptionType == AppboyNotificationSubscriptionType.OPTED_IN) {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("OPTED_IN");
-      } else if (emailNotificationSubscriptionType == AppboyNotificationSubscriptionType.SUBSCRIBED) {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("SUBSCRIBED");
-      } else {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("UNSUBSCRIBED");
-      }
-    }
-
-    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
-      if (pushNotificationSubscriptionType == AppboyNotificationSubscriptionType.OPTED_IN) {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("OPTED_IN");
-      } else if (pushNotificationSubscriptionType == AppboyNotificationSubscriptionType.SUBSCRIBED) {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("SUBSCRIBED");
-      } else {
-        WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPushNotificationSubscriptionType("UNSUBSCRIBED");
-      }
-    }
-
-    public static void SetUserPhoneNumber(string phoneNumber) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserPhoneNumber(phoneNumber);
-    }
-
-    public static void SetUserAvatarImageURL(string imageURL) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetUserAvatarImageURL(imageURL);
-    }
-
-    public static void SetCustomUserAttribute(string key, bool value) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
-    }
-
-    public static void SetCustomUserAttribute(string key, int value) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
-    }
-
-    public static void SetCustomUserAttribute(string key, float value) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
-    }
-
-    public static void SetCustomUserAttribute(string key, string value) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttribute(key, value);
-    }
-
-    public static void SetCustomUserAttributeToNow(string key) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttributeToNow(key);
-    }
-
-    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttributeToSecondsFromEpoch(key, secondsFromEpoch);
-    }
-
-    public static void UnsetCustomUserAttribute(string key) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.UnsetCustomUserAttribute(key);
-    }
-
-    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.IncrementCustomUserAttribute(key, incrementValue);
-    }
-
-    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SetCustomUserAttributeArray(key, array, size);
-    }
-
-    public static void AddToCustomUserAttributeArray(string key, string value) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.AddToCustomUserAttributeArray(key, value);
-    }
-
-    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.RemoveFromCustomUserAttributeArray(key, value);
-    }
-
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.SubmitFeedback(replyToEmail, message, isReportingABug);
-    }
-
-    public static void RequestFeedRefresh() {
-      WindowsUniversalUnityAdapter.AppboyAdapter.RequestFeedRefresh();
-    }
-
-    public static void RequestFeedRefreshFromCache() {
-      WindowsUniversalUnityAdapter.AppboyAdapter.RequestFeedRefreshFromCache();
-    }
-
-    public static void LogSlideupClicked(string slideupJSONString) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.LogSlideupClicked(slideupJSONString);
-    }
-
-    public static void LogSlideupImpression(string slideupJSONString) {
-      WindowsUniversalUnityAdapter.AppboyAdapter.LogSlideupImpression(slideupJSONString);
-    }
-
-    public static void LogFeedDisplayed() {
-      WindowsUniversalUnityAdapter.AppboyAdapter.LogFeedDisplayed();
-    }
-
-    public static void LogFeedbackDisplayed() {
-      WindowsUniversalUnityAdapter.AppboyAdapter.LogFeedbackDisplayed();
+    public static void DisableSDK() {
+      Appboy.CallStatic("disableSdk", appboyUnityActivity);
     }
 
 #else
@@ -981,22 +836,28 @@ namespace Appboy {
     public static void RequestFeedRefreshFromCache() {
     }
 
-    public static void LogSlideupClicked(string slideupJSONString) {
-    }
-
-    public static void LogSlideupImpression(string slideupJSONString) {
-    }
-
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
     }
 
     public static void LogInAppMessageImpression(string inAppMessageJSONString) {
     }
 
+    public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
+    }
+
     public static void LogFeedDisplayed() {
     }
 
     public static void LogFeedbackDisplayed() {
+    }
+
+    public static void WipeData() {
+    }
+
+    public static void EnableSDK() {
+    }
+
+    public static void DisableSDK() {
     }
 #endif
   }

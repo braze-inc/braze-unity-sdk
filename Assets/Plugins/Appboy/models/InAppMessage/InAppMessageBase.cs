@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Appboy.Models.InAppMessage {
 
-  // Use InAppMssageFactory.BuildInAppMessage(InAppMessageString) to get the in-app message with correct type from
+  // Use InAppMessageFactory.BuildInAppMessage(InAppMessageString) to get the in-app message with correct type from
   // Appboy SDK.
   public abstract class InAppMessageBase : IInAppMessage {
     private const int DefaultDuration = 5000;
@@ -107,11 +107,7 @@ namespace Appboy.Models.InAppMessage {
     public void LogClicked() {
       if (!_clickLogged) {
         _clickLogged = true;
-        #if (UNITY_IOS || UNITY_ANDROID)
         AppboyBinding.LogInAppMessageClicked(_jsonString);
-        #else
-        AppboyBinding.LogSlideupClicked(_jsonString);
-        #endif
       } else {
         Debug.Log("The in-app message already logged a click.");
       }
@@ -120,11 +116,7 @@ namespace Appboy.Models.InAppMessage {
     public void LogImpression() {
       if (!_impressionLogged) {
         _impressionLogged = true;
-        #if (UNITY_IOS || UNITY_ANDROID)
         AppboyBinding.LogInAppMessageImpression(_jsonString);
-        #else
-        AppboyBinding.LogSlideupImpression(_jsonString);
-        #endif
       } else {
         Debug.Log("The in-app message already logged an impression.");
       }

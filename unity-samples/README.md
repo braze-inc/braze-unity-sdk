@@ -18,8 +18,3 @@ To Run the Android apk on a device:
 `adb install /path/to/app.apk` (Device doesn't have the app installed)     
 
 `adb install -r /path/to/app.apk` (Device already has the app installed)
-
-#### Known Issues
-
-* In the sample app, we need to have at least one camera for each scene. If we don't do that, when running in windows, the sample app won't be able to clear pages when switching scence.
-  Reference: http://forum.unity3d.com/threads/solved-gui-elements-not-clearing-as-anticipated.31616/

@@ -17,9 +17,7 @@ public class LogCustomEvent : MonoBehaviour {
     if (CustomEventProperties == null) {
       Appboy.AppboyBinding.LogCustomEvent(CustomEventField.text);
     } else {
-      #if (UNITY_IOS || UNITY_ANDROID)
       Appboy.AppboyBinding.LogCustomEvent(CustomEventField.text, CustomEventProperties);
-      #endif
     }
     Application.LoadLevel(Constants.MainMenuScene);
   }
