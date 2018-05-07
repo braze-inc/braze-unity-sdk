@@ -339,6 +339,7 @@ namespace Appboy {
 #elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
     private static AndroidJavaObject appboy;
+    private static AndroidJavaObject inAppMessageUtils;
   
     void Start() {
       Debug.Log("Starting Appboy binding for Android clients.");
@@ -366,6 +367,16 @@ namespace Appboy {
         return appboy;
       }
     }
+
+    public static AndroidJavaObject InAppMessageUtils {
+      get {
+        if (inAppMessageUtils == null) {
+          inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");  
+        }
+        return inAppMessageUtils;
+      }
+    }
+
     #endregion
   
     private static AndroidJavaObject GetCurrentUser() {
@@ -692,15 +703,18 @@ namespace Appboy {
     }
 
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageClick", new object[] { inAppMessageJSONString });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
     }
 
     public static void LogInAppMessageImpression(string inAppMessageJSONString) {
-      AppboyUnityActivity.Call("logInAppMessageImpression", new object[] { inAppMessageJSONString });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
     }
     
     public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
-      AppboyUnityActivity.Call("logInAppMessageButtonClick", new object[] { inAppMessageJSONString, buttonID });
+      var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+      InAppMessageUtils.CallStatic("logInAppMessageButtonClick", inAppMessage, buttonID);
     }
 
     public static void LogFeedDisplayed() {
