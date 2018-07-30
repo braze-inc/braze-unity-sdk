@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using UnityEditor.iOS.Xcode;
-using UnityEditor.iOS.Xcode.Extensions;
+using UnityEditor.iOS.Xcode.Custom;
+using UnityEditor.iOS.Xcode.Custom.Extensions;
 #endif
 
 namespace Appboy.Editor {
