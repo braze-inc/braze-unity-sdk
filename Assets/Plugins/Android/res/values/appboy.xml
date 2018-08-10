@@ -3,9 +3,9 @@
   <!-- General configuration -->
   <string name="com_appboy_api_key">REPLACE_WITH_YOUR_BRAZE_API_KEY</string>
 
-  <!-- GCM Push Notification configuration (optional) -->
-  <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool> <!-- Whether or not Braze should handle registering the device to receive GCM push notifications. Default is false. -->
-  <string name="com_appboy_push_gcm_sender_id">REPLACE_WITH_YOUR_GCM_SENDER_ID</string> <!-- Replace with your gcm sender ID. The sender ID is your Google API project number. -->
+  <!-- FCM Push Notification configuration (optional) -->
+  <bool translatable="false" name="com_appboy_firebase_cloud_messaging_registration_enabled">true</bool>
+  <string translatable="false" name="com_appboy_firebase_cloud_messaging_sender_id">REPLACE_WITH_YOUR_FCM_SENDER_ID</string>
 
   <!-- ADM Push Notification configuration (optional) -->
   <bool name="com_appboy_push_adm_messaging_registration_enabled">true</bool> <!-- Whether or not Braze should handle registering the device to receive ADM push notifications. Default is false. -->

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "AppboyKit.h"
+#import <Appboy_iOS_SDK/AppboyKit.h>
 
 static NSString *const ABKUnityApiKey = @"ApiKey";
 static NSString *const ABKUnityAutomaticPushIntegrationKey = @"IntegratesPush";

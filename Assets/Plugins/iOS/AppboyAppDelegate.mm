@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UnityAppController.h"
-#import "AppboyKit.h"
+#import <Appboy_iOS_SDK/AppboyKit.h>
 #import "AppboyUnityManager.h"
 
 @interface AppboyAppDelegate : UnityAppController
@@ -15,21 +15,21 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
   [super application:application didFinishLaunchingWithOptions:launchOptions];
   NSLog(@"AppboyAppDelegate called from application:didFinishLaunchingWithOptions:");
-  
+
   [[AppboyUnityManager sharedInstance] parsePlist];
-  
+
   // Initialize Appboy
   [Appboy startWithApiKey:[[AppboyUnityManager sharedInstance] getApiKeyFromUnity]
             inApplication:application
         withLaunchOptions:launchOptions
         withAppboyOptions:@{ABKSDKFlavorKey: @(UNITY)}];
-  
+
   // Set listeners
   [[AppboyUnityManager sharedInstance] setListeners];
-  
+
   // Register for push notifications
   [[AppboyUnityManager sharedInstance] registerForRemoteNotifications];
-  
+
   return YES;
 }
 
@@ -58,7 +58,7 @@
     [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
   }
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
-  
+
   // Pass notification to Appboy
   [[AppboyUnityManager sharedInstance] registerApplication:application
                               didReceiveRemoteNotification:userInfo];

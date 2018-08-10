@@ -1,10 +1,9 @@
 #import "AppboyUnityManager.h"
-#import "AppboyKit.h"
-#import "ABKModalFeedbackViewController.h"
-#import "ABKFeedViewControllerModalContext.h"
-#import "ABKCard.h"
-#import "ABKFacebookUser.h"
-#import "ABKTwitterUser.h"
+#import <Appboy_iOS_SDK/AppboyKit.h>
+#import <Appboy_iOS_SDK/ABKModalFeedbackViewController.h>
+#import <Appboy_iOS_SDK/ABKCard.h>
+#import <Appboy_iOS_SDK/ABKFacebookUser.h>
+#import <Appboy_iOS_SDK/ABKTwitterUser.h>
 
 @interface ABKCard(proxy)
 - (NSMutableDictionary *) proxyForJson;
@@ -18,21 +17,16 @@
 
 + (AppboyUnityManager*)sharedInstance {
   static AppboyUnityManager *sharedInstance = nil;
-  
+
   if(!sharedInstance)
     sharedInstance = [[AppboyUnityManager alloc] init];
-  
+
   return sharedInstance;
 }
 
 - (void) showFeedbackForm {
   ABKModalFeedbackViewController *feedbackViewController = [[ABKModalFeedbackViewController alloc] init];
   [UnityGetGLViewController() presentViewController:feedbackViewController animated:YES completion:nil];
-}
-
-- (void) showStreamView {
-  ABKFeedViewControllerModalContext *feedViewController = [[ABKFeedViewControllerModalContext alloc] init];
-  [UnityGetGLViewController() presentViewController:feedViewController animated:YES completion:nil];
 }
 
 - (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties {
@@ -214,7 +208,7 @@
     return ABKDisplayInAppMessageNow;
   }
   NSLog(@"Sending an in-app message to %@:%@.", self.unityInAppMessageGameObjectName, self.unityInAppMessageCallbackFunctionName);
-  
+
   NSData *inAppMessageData = [inAppMessage serializeToData];
   NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
   NSLog(@"dataString is %@.", dataString);
@@ -301,31 +295,31 @@
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   if (self.appboyUnityPlist == nil || [self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
     [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification];
-    
+
     // generate a new dictionary that rearrange the notification elements
     NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
-    
+
     // check if the object for key alert is a string; if it is, then convert it to a dictionary
     id alert = [aps objectForKey:@"alert"];
     if ([alert isKindOfClass:[NSString class]]) {
       NSDictionary *alertDictionary = [NSDictionary dictionaryWithObject:alert forKey:@"body"];
       [aps setObject:alertDictionary forKey:@"alert"];
     }
-    
+
     // move all other dictionarys other than aps in payload to key extra in aps dictionary
     NSMutableDictionary *extraDictionary = [NSMutableDictionary dictionaryWithDictionary:notification];
     [extraDictionary removeObjectForKey:@"aps"];
     if ([extraDictionary count] > 0) {
       [aps setObject:extraDictionary forKey:@"extra"];
     }
-    
+
     if ([NSJSONSerialization isValidJSONObject:aps]) {
       NSError *pushParsingError = nil;
       NSData *data = [NSJSONSerialization dataWithJSONObject:aps options:0 error:&pushParsingError];
-      
+
       if (pushParsingError == nil) {
         NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        
+
         if (application.applicationState == UIApplicationStateActive) {
           if (self.unityPushReceivedGameObjectName == nil) {
             NSLog(@"Not sending a Unity message in response to a push notification being received because "
@@ -343,7 +337,7 @@
             return;
           }
           NSLog(@"Sending a notification received message to %@:%@.", self.unityPushReceivedGameObjectName, self.unityPushReceivedCallbackFunctionName);
-          
+
           UnitySendMessage([self.unityPushReceivedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
                            [self.unityPushReceivedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
                            [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
@@ -364,7 +358,7 @@
             return;
           }
           NSLog(@"Sending a notification opened message to %@:%@.", self.unityPushOpenedGameObjectName, self.unityPushOpenedCallbackFunctionName);
-          
+
           UnitySendMessage([self.unityPushOpenedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
                            [self.unityPushOpenedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
                            [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
@@ -443,16 +437,16 @@
           self.unityFeedGameObjectName);
   }
   NSLog(@"Sending cards to %@:%@.", self.unityFeedGameObjectName, self.unityFeedCallbackFunctionName);
-  
+
   // Parse cards to
   NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
   NSArray *cards = [[Appboy sharedInstance].feedController getCardsInCategories:ABKCardCategoryAll];
   for (ABKCard *card in cards) {
-    
+
     NSMutableDictionary *cardDictionary = [card proxyForJson];
     [cardsDictionaryArray addObject:cardDictionary];
   }
-  
+
   NSTimeInterval timestamp = [[Appboy sharedInstance].feedController.lastUpdate timeIntervalSince1970];
   NSDictionary *feedDictionary = @{@"mFeedCards" : cardsDictionaryArray,
                                    @"mTimestamp" : [NSNumber numberWithDouble:timestamp],

@@ -97,6 +97,7 @@ namespace Appboy.Editor {
 
           AddFileToEmbedFrameworks(project, target, Application.dataPath + "/Plugins/iOS/SDWebImage.framework", "Frameworks/Plugins/iOS/SDWebImage.framework");
           AddFileToEmbedFrameworks(project, target, Application.dataPath + "/Plugins/iOS/FLAnimatedImage.framework", "Frameworks/Plugins/iOS/FLAnimatedImage.framework");
+          AddFileToEmbedFrameworks(project, target, Application.dataPath + "/Plugins/iOS/Appboy_iOS_SDK.framework", "Frameworks/Plugins/iOS/Appboy_iOS_SDK.framework");
 
           project.AddBuildProperty(target, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
         }
