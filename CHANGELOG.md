@@ -4,7 +4,7 @@
 - Updates the iOS plugin to use Braze iOS SDK 3.7.1.
   - Updates the iOS plugin to use the Braze iOS SDK framework instead of local files.
   - As a result, imports using local file syntax (e.g. `"AppboyKit.h"`) must change to framework (e.g.`<Appboy_iOS_SDK/AppboyKit.h>`) syntax.
-- Updates the Android plugin to use Braze Android SDK 2.5.1.
+- Updates the Android plugin to use Braze Android SDK 2.6.0.
 - Removes Android Support Library artifacts from the Braze Unity Plugin. This is to avoid duplicating the Android Support Library artifacts that are automatically included as part of the Firebase Unity SDK, our recommended push integration. Integrators not using Firebase or importing Android Support Library artifacts through another SDK must include the Android Support Library manually (v4 only).
 
 ##### Fixed
