@@ -1,3 +1,26 @@
+## 1.14.0
+
+##### Breaking
+- Updates the iOS plugin to use Braze iOS SDK 3.7.1.
+  - Updates the iOS plugin to use the Braze iOS SDK framework instead of local files.
+  - As a result, imports using local file syntax (e.g. `"AppboyKit.h"`) must change to framework (e.g.`<Appboy_iOS_SDK/AppboyKit.h>`) syntax.
+- Updates the Android plugin to use Braze Android SDK 2.5.1.
+- Removes Android Support Library artifacts from the Braze Unity Plugin. This is to avoid duplicating the Android Support Library artifacts that are automatically included as part of the Firebase Unity SDK, our recommended push integration. Integrators not using Firebase or importing Android Support Library artifacts through another SDK must include the Android Support Library manually (v4 only).
+
+##### Fixed
+- Fixed an issue that required manual import of non-xib Braze iOS SDK resources into Unity-generated Xcode projects.
+
+##### Added
+- Added `GetInstallTrackingId` to the Appboy interface. This method is currently only implemented on Android and is a no-op on iOS.
+- Updated the Unity Samples sample app to use FCM instead of GCM.
+
+##### Changed
+- In-app message analytics events on the Appboy interface no longer require using an Appboy Unity player subclass.
+  - See https://github.com/Appboy/appboy-unity-sdk/pull/38/files. Thanks @MartinGonzalez!
+
+##### Removed
+- Removes `showStreamView:` from the `AppboyUnityManager.h` interface.
+
 ## 1.13.0
 
 ##### Breaking
@@ -70,7 +93,7 @@
 - Adds support for passing triggered in-app messages to Unity.
 - Bundles the Android and iOS plugins, along with Braze's native Unity functionality, as a Unity package.
 - Adds a native Unity solution for automating the iOS SDK integration.
-- Adds object handling for custom event and purchase properties. 
+- Adds object handling for custom event and purchase properties.
 - Exposes the extras on the News Feed Card model in Unity.
 - Updates the Unity sample project to Unity v.5.3.5.
 
@@ -143,7 +166,7 @@
 - Updates the plugin libraries to Braze Android SDK 1.5.1 and Braze iOS SDK 2.9.1 (without Facebook iOS SDK Support).
 
 ##### Added
-- Adds quantity parameter as an option when logging purchase. The quantity should be an unsigned interger greater than 0 and no larger than 100. 
+- Adds quantity parameter as an option when logging purchase. The quantity should be an unsigned interger greater than 0 and no larger than 100.
 - New Custom Attribute Data Type (Array): Braze now supports custom attributes which contain an array of string elements. In addition, we also provide methods for adding or removing an string element from an array type custom attribute.
 
 ## 1.2

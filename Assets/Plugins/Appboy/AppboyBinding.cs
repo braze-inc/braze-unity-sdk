@@ -1,4 +1,4 @@
-// When developing, you can place #define UNITY_ANDROID or #define UNITY_IOS above this line 
+// When developing, you can place #define UNITY_ANDROID or #define UNITY_IOS above this line
 // in order to get correct syntax highlighting in the region you are working on.
 using Appboy.Models;
 using UnityEngine;
@@ -8,8 +8,8 @@ using Appboy.Utilities;
 using System;
 
 /// <summary>
-/// These methods can be called by Unity applications using iOS or Android in order to report 
-/// events and set user attributes. Please see the Appboy Android JavaDocs for more 
+/// These methods can be called by Unity applications using iOS or Android in order to report
+/// events and set user attributes. Please see the Appboy Android JavaDocs for more
 /// detailed guidance on usage (note that only a subset of the functions in the JavaDocs
 /// are availabe in the Unity API):
 /// http://appboy.github.io/appboy-android-sdk/javadocs/com/appboy/IAppboy.html
@@ -35,7 +35,7 @@ namespace Appboy {
     void Start() {
       Debug.Log("Starting Appboy binding for iOS clients.");
     }
-  
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logCustomEvent(string eventName, string properties);
 
@@ -47,25 +47,25 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserFirstName(string firstName);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserLastName(string lastName);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserPhoneNumber(string phoneNumber);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserAvatarImageURL(string imageURL);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserGender(int gender);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserEmail(string email);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserDateOfBirth(int year, int month, int day);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserCountry(string country);
 
@@ -77,25 +77,25 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserPushNotificationSubscriptionType(int pushNotificationSubscriptionType);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeBool(string key, bool val);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeInt(string key, int val);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeFloat(string key, float val);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeString(string key, string val);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeToNow(string key);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setCustomUserAttributeToSecondsFromEpoch(string key, long seconds);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _unsetCustomUserAttribute(string key);
 
@@ -116,7 +116,7 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setUserTwitterData(int twitterUserId, string twitterHandle, string name, string description, int followerCount, int followingCount, int tweetCount, string profileImageUrl);
-        
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
 
@@ -125,7 +125,7 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logInAppMessageImpression(string inAppMessageJSONString);
-    
+
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID);
 
@@ -176,27 +176,27 @@ namespace Appboy {
       var propertiesString = Json.Serialize(properties);
       _logPurchase(productId, currencyCode, price.ToString(), quantity, propertiesString);
     }
-  
+
     public static void ChangeUser(string userId) {
       _changeUser(userId);
     }
-  
+
     public static void SetUserFirstName(string firstName) {
       _setUserFirstName(firstName);
-    }  
-  
+    }
+
     public static void SetUserLastName(string lastName) {
       _setUserLastName(lastName);
     }
- 
+
     public static void SetUserEmail(string email) {
       _setUserEmail(email);
     }
- 
+
     public static void SetUserGender(Gender gender) {
       _setUserGender((int)gender);
     }
- 
+
     public static void SetUserDateOfBirth(int year, int month, int day) {
       _setUserDateOfBirth(year, month, day);
     }
@@ -240,15 +240,15 @@ namespace Appboy {
     public static void SetCustomUserAttribute(string key, string value) {
       _setCustomUserAttributeString(key, value);
     }
-  
+
     public static void SetCustomUserAttributeToNow(string key) {
       _setCustomUserAttributeToNow(key);
     }
-  
+
     public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
       _setCustomUserAttributeToSecondsFromEpoch(key, secondsFromEpoch);
     }
-  
+
     public static void UnsetCustomUserAttribute(string key) {
       _unsetCustomUserAttribute(key);
     }
@@ -296,7 +296,7 @@ namespace Appboy {
     public static void LogInAppMessageImpression(string inAppMessageJSONString) {
       _logInAppMessageImpression(inAppMessageJSONString);
     }
-    
+
     public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
       _logInAppMessageButtonClicked(inAppMessageJSONString, buttonID);
     }
@@ -336,15 +336,20 @@ namespace Appboy {
       _disableSDK();
     }
 
+    public static string GetInstallTrackingId() {
+      // no-op
+      return null;
+    }
+
 #elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
     private static AndroidJavaObject appboy;
     private static AndroidJavaObject inAppMessageUtils;
-  
+
     void Start() {
       Debug.Log("Starting Appboy binding for Android clients.");
     }
-    
+
     #region Properties
     public static AndroidJavaObject AppboyUnityActivity {
       get {
@@ -371,14 +376,14 @@ namespace Appboy {
     public static AndroidJavaObject InAppMessageUtils {
       get {
         if (inAppMessageUtils == null) {
-          inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");  
+          inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");
         }
         return inAppMessageUtils;
       }
     }
 
     #endregion
-  
+
     private static AndroidJavaObject GetCurrentUser() {
       return Appboy.Call<AndroidJavaObject>("getCurrentUser");
     }
@@ -397,7 +402,7 @@ namespace Appboy {
 
           // Public API only supports int/string/double/bool/DateTime.  Other values can't get mapped
           // to Android AppboyProperty methods without casting.
-          if (entry.Value.GetType() == typeof(int) || entry.Value.GetType() == typeof(string) || 
+          if (entry.Value.GetType() == typeof(int) || entry.Value.GetType() == typeof(string) ||
               entry.Value.GetType() == typeof(double) || entry.Value.GetType() == typeof(bool)) {
             appboyProperties.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value);
           } else {
@@ -433,23 +438,23 @@ namespace Appboy {
       AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
       Appboy.Call("logPurchase", productId, currencyCode, javaPrice, quantity, appboyProperties);
     }
- 
+
     public static void ChangeUser(string userId) {
       Appboy.Call("changeUser", userId);
     }
-  
+
     public static void SetUserFirstName(string firstName) {
       GetCurrentUser().Call<bool>("setFirstName", firstName);
-    }  
-  
+    }
+
     public static void SetUserLastName(string lastName) {
       GetCurrentUser().Call<bool>("setLastName", lastName);
     }
- 
+
     public static void SetUserEmail(string email) {
       GetCurrentUser().Call<bool>("setEmail", email);
     }
- 
+
     /// <summary>
     /// Sets the gender field for the current user.
     /// </summary>
@@ -601,15 +606,15 @@ namespace Appboy {
     public static void SetCustomUserAttribute(string key, string value) {
       GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
     }
-  
+
     public static void SetCustomUserAttributeToNow(string key) {
       GetCurrentUser().Call<bool>("setCustomUserAttributeToNow", key);
     }
-  
+
     public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
       GetCurrentUser().Call<bool>("setCustomUserAttributeToSecondsFromEpoch", key, secondsFromEpoch);
     }
-  
+
     public static void UnsetCustomUserAttribute(string key) {
       GetCurrentUser().Call<bool>("unsetCustomUserAttribute", key);
     }
@@ -625,7 +630,7 @@ namespace Appboy {
         GetCurrentUser().Call<bool>("setCustomAttributeArray", key, array.ToArray());
       }
     }
-    
+
     public static void AddToCustomUserAttributeArray(string key, string value) {
       GetCurrentUser().Call<bool>("addToCustomAttributeArray", key, value);
     }
@@ -647,44 +652,44 @@ namespace Appboy {
         }
       }
 
-      var facebookUser = new AndroidJavaObject("com.appboy.models.outgoing.FacebookUser", new object[] 
+      var facebookUser = new AndroidJavaObject("com.appboy.models.outgoing.FacebookUser", new object[]
         {
-        facebookId, 
+        facebookId,
         firstName,
-        lastName, 
-        email, 
-        bio, 
-        cityName, 
-        genderEnum, 
-        numberOfFriends == null ? null : new AndroidJavaObject("java.lang.Integer", numberOfFriends), 
-        null, 
+        lastName,
+        email,
+        bio,
+        cityName,
+        genderEnum,
+        numberOfFriends == null ? null : new AndroidJavaObject("java.lang.Integer", numberOfFriends),
+        null,
         birthday
         }
       );
 
       GetCurrentUser().Call<bool>("setFacebookData", facebookUser);
     }
-    
+
     public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
-      var twitterUser = new AndroidJavaObject("com.appboy.models.outgoing.TwitterUser", new object[] 
+      var twitterUser = new AndroidJavaObject("com.appboy.models.outgoing.TwitterUser", new object[]
         {
           twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", twitterUserId),
           twitterHandle,
-          name, 
+          name,
           description,
-          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followerCount), 
-          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followingCount), 
-          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", tweetCount), 
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followerCount),
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followingCount),
+          twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", tweetCount),
           profileImageUrl
         }
       );
       GetCurrentUser().Call<bool>("setTwitterData", twitterUser);
     }
-    
+
     public static void RemoveFromCustomUserAttributeArray(string key, string value) {
       GetCurrentUser().Call<bool>("removeFromCustomAttributeArray", key, value);
     }
-    
+
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
       object[] args = new object[] { replyToEmail, message, isReportingABug };
       Appboy.Call("submitFeedback", args);
@@ -711,7 +716,7 @@ namespace Appboy {
       var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
       InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
     }
-    
+
     public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
       var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
       InAppMessageUtils.CallStatic("logInAppMessageButtonClick", inAppMessage, buttonID);
@@ -735,6 +740,10 @@ namespace Appboy {
 
     public static void DisableSDK() {
       Appboy.CallStatic("disableSdk", appboyUnityActivity);
+    }
+
+    public static string GetInstallTrackingId() {
+      return Appboy.Call<string>("getInstallTrackingId");
     }
 
 #else
@@ -872,6 +881,10 @@ namespace Appboy {
     }
 
     public static void DisableSDK() {
+    }
+
+    public static string GetInstallTrackingId() {
+      return null;
     }
 #endif
   }
