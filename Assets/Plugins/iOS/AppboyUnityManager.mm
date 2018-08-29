@@ -141,6 +141,15 @@
   [[Appboy sharedInstance].user removeFromCustomAttributeArrayWithKey:key value:value];
 }
 
+- (void) setAttributionData:(NSString *)network campaign:(NSString *)campaign adgroup:(NSString *)adgroup creative:(NSString *)creative {
+  ABKAttributionData *attributionData = [[ABKAttributionData alloc]
+                                       initWithNetwork:network
+                                       campaign:campaign
+                                       adGroup:adgroup
+                                       creative:creative];
+  [[Appboy sharedInstance].user setAttributionData:attributionData];
+}
+
 - (void) setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName  lastName:(NSString *)lastName  email:(NSString *)email  bio:(NSString *)bio  cityName:(NSString *)cityName  gender:(NSInteger)gender  numberOfFriends:(NSInteger)numberOfFriends  birthday:(NSString *)birthday {
   NSMutableDictionary *facebookData = [NSMutableDictionary dictionary];
   facebookData[@"id"] = facebookId;

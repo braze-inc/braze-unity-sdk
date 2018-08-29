@@ -1,3 +1,12 @@
+## 1.15.0
+
+##### Breaking
+- Updated the Android plugin to use [Braze Android SDK 2.7.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#270).
+  - __Important:__ Note that in Braze Android SDK 2.7.0, `AppboyGcmReceiver` was renamed to `AppboyFcmReceiver`. This receiver is intended to be used for Firebase integrations. Please update the `AppboyGcmReceiver` declaration in your `AndroidManifest.xml` to reference `AppboyFcmReceiver` and remove the `com.google.android.c2dm.intent.REGISTRATION` intent filter action.
+
+##### Added
+- Added `SetAttributionData` to the Appboy interface.
+
 ## 1.14.0
 
 ##### Breaking

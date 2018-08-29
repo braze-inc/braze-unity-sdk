@@ -213,3 +213,7 @@ void _enableSDK() {
 void _disableSDK() {
   [AppboyUnityManager disableSDK];
 }
+
+void _setAttributionData(const char* network, const char* campaign,const char* adgroup, const char* creative) {
+  [[AppboyUnityManager sharedInstance] setAttributionData:GetStringParam(network) campaign:GetStringParam(campaign) adgroup:GetStringParam(adgroup) creative:GetStringParam(creative)];
+}
