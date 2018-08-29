@@ -159,6 +159,9 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _disableSDK();
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _setAttributionData(string network, string campaign, string adgroup, string creative);
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -339,6 +342,10 @@ namespace Appboy {
     public static string GetInstallTrackingId() {
       // no-op
       return null;
+    }
+
+    public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
+      _setAttributionData(network, campaign, adgroup, creative);
     }
 
 #elif UNITY_ANDROID
@@ -746,6 +753,11 @@ namespace Appboy {
       return Appboy.Call<string>("getInstallTrackingId");
     }
 
+    public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
+      var attributionData = new AndroidJavaObject("com.appboy.models.outgoing.AttributionData", network, campaign, adgroup, creative);
+      GetCurrentUser().Call<bool>("setAttributionData", attributionData);
+    }
+
 #else
 
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
@@ -885,6 +897,9 @@ namespace Appboy {
 
     public static string GetInstallTrackingId() {
       return null;
+    }
+
+    public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
     }
 #endif
   }
