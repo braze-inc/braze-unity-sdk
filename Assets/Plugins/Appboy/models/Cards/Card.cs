@@ -47,10 +47,13 @@ namespace Appboy.Models.Cards {
           Categories.Add(CardCategory.NO_CATEGORY);
         } else {
           for (int i = 0; i < jsonArray.Count; i++) {
-            CardCategory category = (CardCategory)EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, null);
-            if (category != null) {
+            CardCategory category = (CardCategory)EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, CardCategory.NO_CATEGORY);
+            if (category != CardCategory.NO_CATEGORY) {
               Categories.Add(category);
             }
+          }
+          if (Categories.Count == 0) {
+            Categories.Add(CardCategory.NO_CATEGORY);
           }
         }
       }
