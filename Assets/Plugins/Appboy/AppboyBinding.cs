@@ -350,7 +350,6 @@ namespace Appboy {
 
 #elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
-    private static AndroidJavaObject appboy;
     private static AndroidJavaObject inAppMessageUtils;
 
     void Start() {
@@ -371,12 +370,9 @@ namespace Appboy {
 
     public static AndroidJavaObject Appboy {
       get {
-        if (appboy == null) {
-          using (var appboyClass = new AndroidJavaClass("com.appboy.Appboy")) {
-            appboy = appboyClass.CallStatic<AndroidJavaObject>("getInstance", AppboyUnityActivity);
-          }
+        using (var appboyClass = new AndroidJavaClass("com.appboy.Appboy")) {
+          return appboyClass.CallStatic<AndroidJavaObject>("getInstance", AppboyUnityActivity);
         }
-        return appboy;
       }
     }
 

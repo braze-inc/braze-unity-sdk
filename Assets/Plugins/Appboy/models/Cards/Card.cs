@@ -57,12 +57,12 @@ namespace Appboy.Models.Cards {
           }
         }
       }
-      
+
     }
 
     public override string ToString() {
       return String.Format("{0}: ID={1}, Type={2}, Viewed={3}, Created={4}, Extras={5}, Updated={6}" +
-                           "Categories={7}", 
+                           "Categories={7}",
                            this.GetType().Name, ID, Type, Viewed, Created, CollectionUtils.DictionaryToString(Extras),
                            Updated, CategoriesToString());
     }
@@ -96,4 +96,3 @@ namespace Appboy.Models.Cards {
     }
   }
 }
-
