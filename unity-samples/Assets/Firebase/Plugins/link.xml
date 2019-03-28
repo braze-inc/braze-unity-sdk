@@ -4,7 +4,7 @@
     <namespace fullname="Firebase.Internal" preserve="all"/>
     <namespace fullname="Firebase" preserve="all"/>
 </assembly>
- <assembly fullname="mscorlib" ignoreIfMissing="1">
+<assembly fullname="mscorlib" ignoreIfMissing="1">
   <namespace fullname="Mono.Security.Cryptography" preserve="all"/>
   <namespace fullname="System.Security" preserve="all"/>
   <namespace fullname="System.Security.Cryptography" preserve="all" />
