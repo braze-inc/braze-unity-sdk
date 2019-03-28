@@ -28,12 +28,11 @@
 
     <activity android:name="com.appboy.unity.AppboyOverlayActivity" android:theme="@style/Appboy.Theme.Transparent" />
 
-    <receiver android:name="com.appboy.AppboyFcmReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+    <service android:name="com.appboy.AppboyFirebaseMessagingService">
       <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" />
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
       </intent-filter>
-    </receiver>
+    </service>
 
     <receiver android:name="com.appboy.AppboyAdmReceiver" android:permission="com.amazon.device.messaging.permission.SEND">
       <intent-filter>
