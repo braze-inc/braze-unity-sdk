@@ -1,3 +1,8 @@
+## 1.19.0
+
+##### Breaking
+- Updated the iOS plugin to use [Braze iOS SDK 3.16.0](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.16.0).
+
 ## 1.18.0
 
 ##### Breaking
