@@ -158,10 +158,6 @@ void _setUserTwitterData(int twitterUserId, const char* twitterHandle, const cha
   [[AppboyUnityManager sharedInstance] setUserTwitterData:twitterUserId twitterHandle:GetStringParam(twitterHandle) name:GetStringParam(name) description:GetStringParam(description) followerCount:followerCount followingCount:followingCount tweetCount:tweetCount profileImageUrl:GetStringParam(profileImageUrl)];
 }
 
-void _submitFeedback(const char* replyToEmail, const char* message, bool isReportingABug) {
-  [[AppboyUnityManager sharedInstance] submitFeedback:GetStringParam(replyToEmail) message:GetStringParam(message) isReportingABug:isReportingABug];
-}
-
 void _logInAppMessageClicked(const char* inAppMessageJSONString) {
   [[AppboyUnityManager sharedInstance] logInAppMessageClicked:GetStringParam(inAppMessageJSONString)];
 }
@@ -192,10 +188,6 @@ void _requestFeedRefreshFromCache() {
 
 void _logFeedDisplayed() {
   [[AppboyUnityManager sharedInstance] logFeedDisplayed];
-}
-
-void _logFeedbackDisplayed() {
-  [[AppboyUnityManager sharedInstance] logFeedbackDisplayed];
 }
 
 void _displayNextInAppMessage(bool withDelegate) {

@@ -1,6 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Appboy;
 using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Utilities;
 
 public class SubmitFeedback : MonoBehaviour {
@@ -12,10 +14,10 @@ public class SubmitFeedback : MonoBehaviour {
   public void OnSubmitButtonClick() {
     Debug.Log(String.Format("Submitting feedback {0} with email {1} and isBug {2}", FeedbackField.text, EmailField.text, IssueToggle.isOn));
     Appboy.AppboyBinding.SubmitFeedback(EmailField.text, FeedbackField.text, IssueToggle.isOn);
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
   
   public void OnCancelButtonClick() {
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
 }

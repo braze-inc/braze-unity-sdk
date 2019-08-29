@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Appboy;
 using System;
-using Utilities;
-using Appboy;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Utilities;
 
 public class LogPurchase : MonoBehaviour {
 
@@ -29,14 +30,14 @@ public class LogPurchase : MonoBehaviour {
         } else {
           Appboy.AppboyBinding.LogPurchase(ProductNameField.text, "USD", price, quantity, PurchaseProperties);
         }
-        Application.LoadLevel(Constants.MainMenuScene);
+        SceneManager.LoadScene(Constants.MainMenuScene);
       }
     }
   }
   
   public void OnCancelButtonClick() {
     Debug.Log(String.Format(Constants.PurchaseCancelLog));
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
 
   public void AddTestPropertiesButtonClick() {

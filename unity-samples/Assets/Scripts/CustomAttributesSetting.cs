@@ -1,8 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Appboy;
 using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Utilities;
-using Appboy;
 
 public class CustomAttributesSetting : MonoBehaviour {
   
@@ -16,20 +17,20 @@ public class CustomAttributesSetting : MonoBehaviour {
       int increment;
       if(UtilityMethods.ParseStringToInt(IncrementValueField.text, Constants.IncrementValueParseErrorDescription, out increment)) {
         Appboy.AppboyBinding.IncrementCustomUserAttribute(IncrementKeyField.text, increment);
-        Application.LoadLevel(Constants.MainMenuScene);
-      }      
+        SceneManager.LoadScene(Constants.MainMenuScene);
+      }
     }
   }
   
   public void OnSetCustomAttributesButtonClick() {
-    Application.LoadLevel(Constants.SetCustomAttributesScene);
+    SceneManager.LoadScene(Constants.SetCustomAttributesScene);
   }
   
   public void OnSetCustomAttributesArrayButtonClick() {
-    Application.LoadLevel(Constants.SetCustomAttributesArrayScene);
+    SceneManager.LoadScene(Constants.SetCustomAttributesArrayScene);
   }
   
   public void OnBackButtonClick() {
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
 }

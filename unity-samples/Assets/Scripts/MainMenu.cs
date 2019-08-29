@@ -1,36 +1,34 @@
-﻿using UnityEngine;
-using System.Collections;
-using Appboy;
-using Appboy.Models.InAppMessage;
-using System.Collections.Generic;
-using Utilities;
+﻿using Appboy;
 using Appboy.Models;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using Utilities;
 
 
 public class MainMenu : MonoBehaviour {
 
   public void OnChangeUserButtonClick() {
-    Application.LoadLevel(Constants.ChangeUserScene);
+    SceneManager.LoadScene(Constants.ChangeUserScene);
   }
   
   public void OnLogCustomEventButtonClick() {
-    Application.LoadLevel(Constants.LogCustomEventScene);
+    SceneManager.LoadScene(Constants.LogCustomEventScene);
   }
   
   public void OnLogPurchaseButtonClick() {
-    Application.LoadLevel(Constants.LogPurchaseScene);
+    SceneManager.LoadScene(Constants.LogPurchaseScene);
   }
   
   public void OnSetUserFieldsButtonClick() {
-    Application.LoadLevel(Constants.SetUserFieldScene);
+    SceneManager.LoadScene(Constants.SetUserFieldScene);
   }
   
   public void OnSetCustomAttributeButtonClick() {
-    Application.LoadLevel(Constants.CustomAttributesSettingScene);
+    SceneManager.LoadScene(Constants.CustomAttributesSettingScene);
   }
   
   public void OnSubmitFeedbackButtonClick() {
-    Application.LoadLevel(Constants.SubmitFeedbackScene);
+    SceneManager.LoadScene(Constants.SubmitFeedbackScene);
   }
   
   public void OnRequestInAppMessageButtonClick() {

@@ -1,3 +1,12 @@
+## 1.20.0
+
+##### Breaking
+- Updated the iOS plugin to use [Braze iOS SDK 3.18.0](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.18.0).
+  - Braze iOS SDK 3.18.0 removed the Feedback feature. As a result, all Feedback methods on the Appboy interface are now a no-op on iOS.
+
+##### Added
+- Added `RequestLocationInitialization` to the Appboy interface, which wraps `AppboyLocationService.requestInitialization(context)` on the Android SDK.
+
 ## 1.19.0
 
 ##### Breaking

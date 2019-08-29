@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-using Appboy;
+﻿using Appboy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Utilities;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utilities;
 
 public class SetCustomAttributesArray : MonoBehaviour {
 
@@ -17,7 +17,7 @@ public class SetCustomAttributesArray : MonoBehaviour {
   public InputField RemoveStringFromArrayStringField;
 
   public void OnBackButtonClick() {
-    Application.LoadLevel(Constants.CustomAttributesSettingScene);
+    SceneManager.LoadScene(Constants.CustomAttributesSettingScene);
   }
   
   public void OnSetArrayButtonClick() {
