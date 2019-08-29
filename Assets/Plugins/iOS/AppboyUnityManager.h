@@ -29,7 +29,6 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 
 + (AppboyUnityManager *) sharedInstance;
 - (void) showStreamView;
-- (void) showFeedbackForm;
 - (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties;
 - (void) changeUser:(NSString *)userId;
 - (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode
@@ -61,7 +60,6 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) setAttributionData:(NSString *)network campaign:(NSString *)campaign adgroup:(NSString *)adgroup creative:(NSString *)creative;
 - (void) setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName  lastName:(NSString *)lastName  email:(NSString *)email  bio:(NSString *)bio  cityName:(NSString *)cityName  gender:(NSInteger)gender  numberOfFriends:(NSInteger)numberOfFriends  birthday:(NSString *)birthday;
 - (void) setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl;
-- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug;
 - (void) parsePlist;
 - (NSString *) getApiKeyFromUnity;
 - (void) setListeners;
@@ -80,7 +78,6 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) requestFeedRefresh;
 - (void) requestFeedFromCache:(NSNotification *)notification;
 - (void) logFeedDisplayed;
-- (void) logFeedbackDisplayed;
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
 + (void) wipeDataAndDisableForAppRun;
 + (void) disableSDK;

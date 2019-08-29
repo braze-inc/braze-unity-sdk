@@ -118,9 +118,6 @@ namespace Appboy {
     private static extern void _setUserTwitterData(int twitterUserId, string twitterHandle, string name, string description, int followerCount, int followingCount, int tweetCount, string profileImageUrl);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _submitFeedback(string replyToEmail, string message, bool isReportingABug);
-
-    [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logInAppMessageClicked(string inAppMessageJSONString);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -143,9 +140,6 @@ namespace Appboy {
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _logFeedDisplayed();
-
-    [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern void _logFeedbackDisplayed();
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _displayNextInAppMessage(bool withDelegate);
@@ -285,7 +279,7 @@ namespace Appboy {
     }
 
     public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-      _submitFeedback(replyToEmail, message, isReportingABug);
+      // no-op
     }
 
     public static void DisplayNextInAppMessage(bool withDelegate) {
@@ -324,7 +318,7 @@ namespace Appboy {
     }
 
     public static void LogFeedbackDisplayed() {
-      _logFeedbackDisplayed();
+      // no-op
     }
 
     public static void WipeData() {
@@ -348,9 +342,14 @@ namespace Appboy {
       _setAttributionData(network, campaign, adgroup, creative);
     }
 
+    public static void RequestLocationInitialization() {
+      // no-op
+    }
+
 #elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
     private static AndroidJavaObject inAppMessageUtils;
+    private static AndroidJavaObject appboyLocationService;
 
     void Start() {
       Debug.Log("Starting Appboy binding for Android clients.");
@@ -382,6 +381,15 @@ namespace Appboy {
           inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");
         }
         return inAppMessageUtils;
+      }
+    }
+
+    public static AndroidJavaObject AppboyLocationService {
+      get {
+        if (appboyLocationService == null) {
+          appboyLocationService = new AndroidJavaClass("com.appboy.services.AppboyLocationService");
+        }
+        return appboyLocationService;
       }
     }
 
@@ -754,6 +762,14 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("setAttributionData", attributionData);
     }
 
+    /// <summary>
+    /// When location permissions are granted, client app can call this method to request immediate
+    /// initialization of Braze geofences and also request a single location update.
+    /// </summary>
+    public static void RequestLocationInitialization() {
+      AppboyLocationService.CallStatic("requestInitialization", appboyUnityActivity);
+    }
+
 #else
 
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
@@ -896,6 +912,9 @@ namespace Appboy {
     }
 
     public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
+    }
+
+    public static void RequestLocationInitialization() {
     }
 #endif
   }

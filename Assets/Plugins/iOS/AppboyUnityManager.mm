@@ -1,6 +1,5 @@
 #import "AppboyUnityManager.h"
 #import <Appboy_iOS_SDK/AppboyKit.h>
-#import <Appboy_iOS_SDK/ABKModalFeedbackViewController.h>
 #import <Appboy_iOS_SDK/ABKCard.h>
 #import <Appboy_iOS_SDK/ABKFacebookUser.h>
 #import <Appboy_iOS_SDK/ABKTwitterUser.h>
@@ -22,11 +21,6 @@
     sharedInstance = [[AppboyUnityManager alloc] init];
 
   return sharedInstance;
-}
-
-- (void) showFeedbackForm {
-  ABKModalFeedbackViewController *feedbackViewController = [[ABKModalFeedbackViewController alloc] init];
-  [UnityGetGLViewController() presentViewController:feedbackViewController animated:YES completion:nil];
 }
 
 - (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties {
@@ -193,10 +187,6 @@
     twitterUser.statusesCount = tweetCount;
   }
   [Appboy sharedInstance].user.twitterUser = twitterUser;
-}
-
-- (BOOL) submitFeedback:(NSString *)replyToEmail message:(NSString *)message isReportingABug:(BOOL)isReportingABug {
-  return [[Appboy sharedInstance] submitFeedback:replyToEmail message:message isReportingABug:isReportingABug];
 }
 
 // ABKInAppMessageDelegate methods
@@ -480,10 +470,6 @@
 
 - (void) logFeedDisplayed {
   [[Appboy sharedInstance] logFeedDisplayed];
-}
-
-- (void) logFeedbackDisplayed {
-  [[Appboy sharedInstance] logFeedbackDisplayed];
 }
 
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate {
