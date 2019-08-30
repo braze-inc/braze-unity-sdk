@@ -4,9 +4,9 @@
   <string name="com_appboy_api_key">fce0e7a5-0497-4e9f-8ee4-5b32352c0aa9</string>
   <string translatable="false" name="com_appboy_server_target">STAGING</string>
 
-  <!-- GCM Push Notification configuration (optional) -->
-  <bool name="com_appboy_push_gcm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive GCM push notifications. Default is false. -->
-  <string name="com_appboy_push_gcm_sender_id">139792940222</string> <!-- Replace with your gcm sender ID. The sender ID is your Google API project number. -->
+  <!-- FCM Push Notification configuration (optional) -->
+  <bool translatable="false" name="com_appboy_firebase_cloud_messaging_registration_enabled">true</bool>
+  <string translatable="false" name="com_appboy_firebase_cloud_messaging_sender_id">901477453852</string>
 
   <!-- ADM Push Notification configuration (optional) -->
   <bool name="com_appboy_push_adm_messaging_registration_enabled">true</bool> <!-- Whether or not Appboy should handle registering the device to receive ADM push notifications. Default is false. -->

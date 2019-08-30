@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using Appboy;
+﻿using Appboy;
 using System;
-using Utilities;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Utilities;
 
 public class LogCustomEvent : MonoBehaviour {
   
@@ -17,16 +18,14 @@ public class LogCustomEvent : MonoBehaviour {
     if (CustomEventProperties == null) {
       Appboy.AppboyBinding.LogCustomEvent(CustomEventField.text);
     } else {
-      #if (UNITY_IOS || UNITY_ANDROID)
       Appboy.AppboyBinding.LogCustomEvent(CustomEventField.text, CustomEventProperties);
-      #endif
     }
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
   
   public void OnCancelButtonClick() {
     Debug.Log(String.Format(Constants.CustomEventCancelLog));
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
 
   public void AddTestPropertiesButtonClick() {

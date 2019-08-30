@@ -47,19 +47,22 @@ namespace Appboy.Models.Cards {
           Categories.Add(CardCategory.NO_CATEGORY);
         } else {
           for (int i = 0; i < jsonArray.Count; i++) {
-            CardCategory category = (CardCategory)EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, null);
-            if (category != null) {
+            CardCategory category = (CardCategory)EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, CardCategory.NO_CATEGORY);
+            if (category != CardCategory.NO_CATEGORY) {
               Categories.Add(category);
             }
           }
+          if (Categories.Count == 0) {
+            Categories.Add(CardCategory.NO_CATEGORY);
+          }
         }
       }
-      
+
     }
 
     public override string ToString() {
       return String.Format("{0}: ID={1}, Type={2}, Viewed={3}, Created={4}, Extras={5}, Updated={6}" +
-                           "Categories={7}", 
+                           "Categories={7}",
                            this.GetType().Name, ID, Type, Viewed, Created, CollectionUtils.DictionaryToString(Extras),
                            Updated, CategoriesToString());
     }
@@ -93,4 +96,3 @@ namespace Appboy.Models.Cards {
     }
   }
 }
-

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using Appboy;
+﻿using Appboy;
 using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Utilities;
 
 public class SetCustomAttributes : MonoBehaviour {
@@ -21,7 +22,7 @@ public class SetCustomAttributes : MonoBehaviour {
   public InputField UnsetKeyField;
   
   public void OnBackButtonClick() {
-    Application.LoadLevel(Constants.CustomAttributesSettingScene);
+    SceneManager.LoadScene(Constants.CustomAttributesSettingScene);
   }
   
   public void OnSetBoolButtonClick() {

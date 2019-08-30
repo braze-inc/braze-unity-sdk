@@ -10,8 +10,8 @@ namespace Appboy.Editor {
     private bool showInAppMessageListener = true;
     private bool showFeedListener = true;
     private Vector2 scrollPosition;
-    
-    [MenuItem("Appboy/Appboy Configuration")]
+
+    [MenuItem("Braze/Braze Configuration")]
     static void Init() {
       AppboyConfigEditor editor = (AppboyConfigEditor)EditorWindow.GetWindow(typeof (AppboyConfigEditor));
       editor.Show();
@@ -26,7 +26,7 @@ namespace Appboy.Editor {
 
     private void ApiKeyGUI() {
       EditorGUILayout.BeginVertical();
-      AppboyConfig.ApiKey = EditorGUILayout.TextField("Appboy API Key", AppboyConfig.ApiKey);
+      AppboyConfig.ApiKey = EditorGUILayout.TextField("Braze API Key", AppboyConfig.ApiKey);
       EditorGUILayout.EndVertical();
     }
 
@@ -36,7 +36,7 @@ namespace Appboy.Editor {
 
       if (AppboyConfig.IOSAutomatesIntegration) {
         EditorGUI.indentLevel++;
-        
+
         // API Key
         ApiKeyGUI();
         EditorGUILayout.Separator();
@@ -46,8 +46,8 @@ namespace Appboy.Editor {
         EditorGUILayout.LabelField("Push Notifications", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
 
-        AppboyConfig.IOSIntegratesPush = EditorGUILayout.ToggleLeft(" Integrate Push With Appboy", AppboyConfig.IOSIntegratesPush);
-        EditorGUILayout.LabelField("Registers users for push notifications, passes push tokens to Appboy and tracks push opens.", EditorStyles.wordWrappedMiniLabel);
+        AppboyConfig.IOSIntegratesPush = EditorGUILayout.ToggleLeft(" Integrate Push With Braze", AppboyConfig.IOSIntegratesPush);
+        EditorGUILayout.LabelField("Registers users for push notifications, passes push tokens to Braze and tracks push opens.", EditorStyles.wordWrappedMiniLabel);
 
         AppboyConfig.IOSDisableAutomaticPushRegistration = EditorGUILayout.ToggleLeft(" Disable Automatic Push Registration", AppboyConfig.IOSDisableAutomaticPushRegistration);
         if (AppboyConfig.IOSDisableAutomaticPushRegistration) {
@@ -76,7 +76,7 @@ namespace Appboy.Editor {
         }
         EditorGUI.indentLevel--;
         EditorGUILayout.Separator();
-        
+
         // In-App Messages
         EditorGUILayout.LabelField("In-App Messages", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
@@ -86,7 +86,7 @@ namespace Appboy.Editor {
           AppboyConfig.IOSInAppMessageGameObjectName = EditorGUILayout.TextField("Game Object Name", AppboyConfig.IOSInAppMessageGameObjectName);
           AppboyConfig.IOSInAppMessageCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.IOSInAppMessageCallbackMethodName);
           if (!String.IsNullOrEmpty(AppboyConfig.IOSInAppMessageGameObjectName.Trim()) && !String.IsNullOrEmpty(AppboyConfig.IOSInAppMessageCallbackMethodName.Trim())) {
-            AppboyConfig.IOSDisplayInAppMessages = EditorGUILayout.ToggleLeft(" Appboy Displays In-App Messages", AppboyConfig.IOSDisplayInAppMessages);
+            AppboyConfig.IOSDisplayInAppMessages = EditorGUILayout.ToggleLeft(" Braze Displays In-App Messages", AppboyConfig.IOSDisplayInAppMessages);
           }
           EditorGUI.indentLevel--;
         }
@@ -104,7 +104,7 @@ namespace Appboy.Editor {
           EditorGUI.indentLevel--;
         }
         EditorGUI.indentLevel--;
-        EditorGUILayout.EndVertical();      
+        EditorGUILayout.EndVertical();
       }
     }
   }

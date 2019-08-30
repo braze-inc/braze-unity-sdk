@@ -1,7 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Appboy;
 using System;
 using Appboy.Models;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Utilities;
 
 public class SetUserField : MonoBehaviour {
@@ -21,7 +23,7 @@ public class SetUserField : MonoBehaviour {
   AppboyNotificationSubscriptionType pushSubscription = AppboyNotificationSubscriptionType.SUBSCRIBED;
 
   public void OnCancelButtonClick() {
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
     
   public void OnDoneButtonClick() {
@@ -63,7 +65,7 @@ public class SetUserField : MonoBehaviour {
       Appboy.AppboyBinding.SetUserPhoneNumber(PhoneField.text);
     }
     
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
   
   public void OnMaleToggleValueChange(bool IsOn) {

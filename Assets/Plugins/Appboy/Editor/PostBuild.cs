@@ -101,24 +101,22 @@ namespace Appboy.Editor {
           var flAnimatedImageFrameworkPath = Directory.GetDirectories(".", "*.framework", SearchOption.AllDirectories).FirstOrDefault(path => path.Contains("FLAnimatedImage.framework"));
           var appboyiOSSdkFrameworkPath = Directory.GetDirectories(".", "*.framework", SearchOption.AllDirectories).FirstOrDefault(path => path.Contains("Appboy_iOS_SDK.framework"));
 
-          if (string.IsNullOrEmpty(sdwebImageFrameworkPath))
-          {
+          if (string.IsNullOrEmpty(sdwebImageFrameworkPath)) {
             throw new Exception("SDWebImage.framework could not be found.");
           }
           
-          if (string.IsNullOrEmpty(flAnimatedImageFrameworkPath))
-          {
+          if (string.IsNullOrEmpty(flAnimatedImageFrameworkPath)) {
             throw new Exception("FLAnimatedImage.framework could not be found.");
           }
           
-          if (string.IsNullOrEmpty(appboyiOSSdkFrameworkPath))
-          {
+          if (string.IsNullOrEmpty(appboyiOSSdkFrameworkPath)) {
             throw new Exception("Appboy_iOS_SDK.framework could not be found.");
           }
           
           AddFileToEmbedFrameworks(project, target, Path.GetFullPath(sdwebImageFrameworkPath), "Frameworks/Plugins/iOS/SDWebImage.framework");
           AddFileToEmbedFrameworks(project, target, Path.GetFullPath(flAnimatedImageFrameworkPath), "Frameworks/Plugins/iOS/FLAnimatedImage.framework");
           AddFileToEmbedFrameworks(project, target, Path.GetFullPath(appboyiOSSdkFrameworkPath), "Frameworks/Plugins/iOS/Appboy_iOS_SDK.framework");
+          AddFileToEmbedFrameworks(project, target, Application.dataPath + "/Plugins/iOS/Appboy_iOS_SDK.framework", "Frameworks/Plugins/iOS/Appboy_iOS_SDK.framework");
 
           project.AddBuildProperty(target, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
         }

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Appboy;
 using System;
-using Utilities;
-using Appboy;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Utilities;
 
 public class LogPurchase : MonoBehaviour {
 
@@ -25,20 +26,18 @@ public class LogPurchase : MonoBehaviour {
           UtilityMethods.ParseStringToInt(ProductQuantityField.text, Constants.PurchaseQuantityParseErrorDescription, out quantity)) {
         Debug.Log(String.Format("Logging purchase {0} with price {1} and quantity {2}", ProductNameField.text, price, quantity));
         if (PurchaseProperties == null) {
-          Appboy.AppboyBinding.LogPurchase (ProductNameField.text, "USD", price, quantity);
+          Appboy.AppboyBinding.LogPurchase(ProductNameField.text, "USD", price, quantity);
         } else {
-          #if (UNITY_IOS || UNITY_ANDROID)
-          Appboy.AppboyBinding.LogPurchase (ProductNameField.text, "USD", price, quantity, PurchaseProperties);
-          #endif
+          Appboy.AppboyBinding.LogPurchase(ProductNameField.text, "USD", price, quantity, PurchaseProperties);
         }
-        Application.LoadLevel(Constants.MainMenuScene);
+        SceneManager.LoadScene(Constants.MainMenuScene);
       }
     }
   }
   
   public void OnCancelButtonClick() {
     Debug.Log(String.Format(Constants.PurchaseCancelLog));
-    Application.LoadLevel(Constants.MainMenuScene);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
 
   public void AddTestPropertiesButtonClick() {
