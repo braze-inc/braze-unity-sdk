@@ -41,5 +41,13 @@
         <category android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER" />
       </intent-filter>
     </receiver>
+
+    <receiver android:name="com.appboy.unity.AppboyUnityPushBroadcastReceiver" android:exported="false" >
+      <intent-filter>
+        <action android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.intent.APPBOY_PUSH_RECEIVED" />
+        <action android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.intent.APPBOY_NOTIFICATION_OPENED" />
+        <action android:name="REPLACE_WITH_YOUR_BUNDLE_IDENTIFIER.intent.APPBOY_PUSH_DELETED" />
+      </intent-filter>
+    </receiver>
   </application>
 </manifest>
