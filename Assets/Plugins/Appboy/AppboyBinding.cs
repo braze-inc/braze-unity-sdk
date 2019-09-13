@@ -278,10 +278,6 @@ namespace Appboy {
     _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
     }
 
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-      // no-op
-    }
-
     public static void DisplayNextInAppMessage(bool withDelegate) {
       _displayNextInAppMessage(withDelegate);
     }
@@ -315,10 +311,6 @@ namespace Appboy {
 
     public static void LogFeedDisplayed() {
       _logFeedDisplayed();
-    }
-
-    public static void LogFeedbackDisplayed() {
-      // no-op
     }
 
     public static void WipeData() {
@@ -701,11 +693,6 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("removeFromCustomAttributeArray", key, value);
     }
 
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-      object[] args = new object[] { replyToEmail, message, isReportingABug };
-      Appboy.Call("submitFeedback", args);
-    }
-
     public static void RegisterAppboyPushMessages(string registrationId) {
       Appboy.Call("registerAppboyPushMessages", new object[] { registrationId });
     }
@@ -735,10 +722,6 @@ namespace Appboy {
 
     public static void LogFeedDisplayed() {
       Appboy.Call("logFeedDisplayed");
-    }
-
-    public static void LogFeedbackDisplayed() {
-      Appboy.Call("logFeedbackDisplayed");
     }
 
     public static void WipeData() {
@@ -871,9 +854,6 @@ namespace Appboy {
     public static void RemoveFromCustomUserAttributeArray(string key, string value) {
     }
 
-    public static void SubmitFeedback(string replyToEmail, string message, bool isReportingABug) {
-    }
-
     public static void RegisterAppboyPushMessages(string registrationId) {
     }
 
@@ -893,9 +873,6 @@ namespace Appboy {
     }
 
     public static void LogFeedDisplayed() {
-    }
-
-    public static void LogFeedbackDisplayed() {
     }
 
     public static void WipeData() {

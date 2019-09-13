@@ -287,7 +287,7 @@
 
 - (void) registerPushToken:(NSData *)deviceToken {
   if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[Appboy sharedInstance] registerPushToken:[NSString stringWithFormat:@"%@", deviceToken]];
+    [[Appboy sharedInstance] registerDeviceToken:deviceToken];
   }
 }
 

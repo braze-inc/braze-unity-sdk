@@ -17,7 +17,7 @@
         <action android:name="com.google.firebase.MESSAGING_EVENT" />
       </intent-filter>
     </service>
-    
+
     <activity android:name="com.appboy.unity.AppboyUnityPlayerActivity" android:label="@string/app_name" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:screenOrientation="sensor">
       <meta-data android:name="android.app.lib_name" android:value="unity" />
       <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
@@ -28,5 +28,13 @@
     </activity>
 
     <activity android:name="com.appboy.unity.AppboyOverlayActivity" android:theme="@style/Appboy.Theme.Transparent" />
+
+    <receiver android:name="com.appboy.unity.AppboyUnityPushBroadcastReceiver" android:exported="false" >
+      <intent-filter>
+        <action android:name="com.appboy.unity.AppboySample.intent.APPBOY_PUSH_RECEIVED" />
+        <action android:name="com.appboy.unity.AppboySample.intent.APPBOY_NOTIFICATION_OPENED" />
+        <action android:name="com.appboy.unity.AppboySample.intent.APPBOY_PUSH_DELETED" />
+      </intent-filter>
+    </receiver>
   </application>
 </manifest>

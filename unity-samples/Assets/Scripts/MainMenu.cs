@@ -27,10 +27,6 @@ public class MainMenu : MonoBehaviour {
     SceneManager.LoadScene(Constants.CustomAttributesSettingScene);
   }
   
-  public void OnSubmitFeedbackButtonClick() {
-    SceneManager.LoadScene(Constants.SubmitFeedbackScene);
-  }
-  
   public void OnRequestInAppMessageButtonClick() {
     Appboy.AppboyBinding.RequestFeedRefresh ();
   }

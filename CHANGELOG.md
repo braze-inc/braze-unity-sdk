@@ -1,11 +1,28 @@
+## 1.21.0
+
+##### Breaking
+- Updated the iOS plugin to use [Braze iOS SDK 3.20.0](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.20.0).
+- **Important:** Braze iOS SDK 3.20.0 contains updated push token registration methods. We recommend upgrading to these methods as soon as possible to ensure a smooth transition as devices upgrade to iOS 13. In `application:didRegisterForRemoteNotificationsWithDeviceToken:`, replace
+```
+[[Appboy sharedInstance] registerPushToken:
+                [NSString stringWithFormat:@"%@", deviceToken]];
+```
+with
+```
+[[Appboy sharedInstance] registerDeviceToken:deviceToken]];
+```
+- Updated the Android plugin to use [Braze Android SDK 3.7.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#370).
+- Note: This Braze Unity SDK release updates to a Braze Android SDK dependency which no longer enables automatic Braze location collection by default. Please consult the changelogs for information on how to continue to enable automatic Braze location collection, as well as further information on breaking changes.
+- Removes the Feedback feature and all associated methods, classes, and interfaces.
+
 ## 1.20.0
 
 ##### Breaking
 - Updated the iOS plugin to use [Braze iOS SDK 3.18.0](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.18.0).
-  - Braze iOS SDK 3.18.0 removed the Feedback feature. As a result, all Feedback methods on the Appboy interface are now a no-op on iOS.
+- Note: This Braze Unity SDK release updates to a Braze iOS SDK dependency which no longer enables automatic Braze location collection by default. Please consult the changelogs for information on how to continue to enable automatic Braze location collection, as well as further information on breaking changes.
 
 ##### Added
-- Added `RequestLocationInitialization` to the Appboy interface, which wraps `AppboyLocationService.requestInitialization(context)` on the Android SDK.
+- Added `RequestLocationInitialization` to the Appboy interface for requesting Braze geofences and a single location update.
 
 ## 1.19.0
 

@@ -51,7 +51,6 @@ namespace Utilities {
     public static string LogPurchaseScene = "LogPurchase";
     public static string SetUserFieldScene = "SetUserField";
     public static string CustomAttributesSettingScene = "CustomAttributesSetting";
-    public static string SubmitFeedbackScene = "SubmitFeedback";
     
     // Change User
     public static string ChangeUserCancelLog = "Cancel changing User ID.";
