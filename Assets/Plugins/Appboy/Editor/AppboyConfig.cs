@@ -51,6 +51,12 @@ namespace Appboy.Editor {
     [SerializeField]
     private string iOSFeedCallbackMethodName = string.Empty;
 
+    // Content Cards
+    [SerializeField]
+    private string iOSContentCardsGameObjectName = string.Empty;
+    [SerializeField]
+    private string iOSContentCardsCallbackMethodName = string.Empty;
+
     public static bool IOSAutomatesIntegration {
       get { return Instance.iOSAutomatesIntegration; }
       set { SetProperty(ref Instance.iOSAutomatesIntegration, value); }
@@ -122,6 +128,17 @@ namespace Appboy.Editor {
     public static string IOSFeedCallbackMethodName {
       get { return Instance.iOSFeedCallbackMethodName; }
       set { SetProperty(ref Instance.iOSFeedCallbackMethodName, value); }
+    }
+
+    // Content Cards
+    public static string IOSContentCardsGameObjectName {
+      get { return Instance.iOSContentCardsGameObjectName; }
+      set { SetProperty(ref Instance.iOSContentCardsGameObjectName, value); }
+    }
+
+    public static string IOSContentCardsCallbackMethodName {
+      get { return Instance.iOSContentCardsCallbackMethodName; }
+      set { SetProperty(ref Instance.iOSContentCardsCallbackMethodName, value); }
     }
 
     // Setter utility method

@@ -142,6 +142,21 @@ namespace Appboy {
     private static extern void _logFeedDisplayed();
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logContentCardImpression(string cardJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logContentCardClicked(string cardJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestContentCardsRefresh();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestContentCardsRefreshFromCache();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logContentCardsDisplayed();
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _displayNextInAppMessage(bool withDelegate);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -311,6 +326,25 @@ namespace Appboy {
 
     public static void LogFeedDisplayed() {
       _logFeedDisplayed();
+    }
+
+    public static void LogContentCardImpression(string cardJSONString) {
+      _logContentCardImpression(cardJSONString);
+    }
+
+    public static void LogContentCardClicked(string cardJSONString) {
+      _logContentCardClicked(cardJSONString);
+    }
+
+    public static void RequestContentCardsRefresh() {
+      _requestContentCardsRefresh();
+    }
+    public static void RequestContentCardsRefreshFromCache() {
+      _requestContentCardsRefreshFromCache();
+    }
+
+    public static void LogContentCardsDisplayed() {
+      _logContentCardsDisplayed();
     }
 
     public static void WipeData() {
@@ -697,14 +731,6 @@ namespace Appboy {
       Appboy.Call("registerAppboyPushMessages", new object[] { registrationId });
     }
 
-    public static void RequestFeedRefresh() {
-      Appboy.Call("requestFeedRefresh");
-    }
-
-    public static void RequestFeedRefreshFromCache() {
-      Appboy.Call("requestFeedRefreshFromCache");
-    }
-
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
       var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
       InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
@@ -720,8 +746,38 @@ namespace Appboy {
       InAppMessageUtils.CallStatic("logInAppMessageButtonClick", inAppMessage, buttonID);
     }
 
+    public static void RequestFeedRefresh() {
+      Appboy.Call("requestFeedRefresh");
+    }
+
+    public static void RequestFeedRefreshFromCache() {
+      Appboy.Call("requestFeedRefreshFromCache");
+    }
+
     public static void LogFeedDisplayed() {
       Appboy.Call("logFeedDisplayed");
+    }
+
+    public static void LogContentCardImpression(string contentCardString) {
+      var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
+      contentCard.Call<bool>("logImpression");
+    }
+
+    public static void LogContentCardClicked(string contentCardString) {
+      var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
+      contentCard.Call<bool>("logClick");
+    }
+
+    public static void LogContentCardsDisplayed() {
+      Appboy.Call("logContentCardsDisplayed");
+    }
+
+    public static void RequestContentCardsRefresh() {
+      Appboy.Call("requestContentCardsRefresh", false);
+    }
+
+    public static void RequestContentCardsRefreshFromCache() {
+      Appboy.Call("requestContentCardsRefresh", true);
     }
 
     public static void WipeData() {
@@ -857,12 +913,6 @@ namespace Appboy {
     public static void RegisterAppboyPushMessages(string registrationId) {
     }
 
-    public static void RequestFeedRefresh() {
-    }
-
-    public static void RequestFeedRefreshFromCache() {
-    }
-
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
     }
 
@@ -872,7 +922,28 @@ namespace Appboy {
     public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
     }
 
+    public static void RequestFeedRefresh() {
+    }
+
+    public static void RequestFeedRefreshFromCache() {
+    }
+
     public static void LogFeedDisplayed() {
+    }
+
+    public static void RequestContentCardsRefresh() {
+    }
+
+    public static void RequestContentCardsRefreshFromCache() {
+    }
+
+    public static void LogContentCardsDisplayed() {
+    }
+
+    public static void LogContentCardClicked(string contentCardString) {
+    }
+
+    public static void LogContentCardImpression(string contentCardString) {
     }
 
     public static void WipeData() {

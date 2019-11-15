@@ -13,6 +13,8 @@ static NSString *const ABKUnityInAppMessageGameObjectKey = @"InAppMessageGameObj
 static NSString *const ABKUnityInAppMessageCallbackKey = @"InAppMessageCallbackMethodName";
 static NSString *const ABKUnityFeedGameObjectKey = @"FeedGameObjectName";
 static NSString *const ABKUnityFeedCallbackKey = @"FeedCallbackMethodName";
+static NSString *const ABKUnityContentCardsGameObjectKey = @"ContentCardsGameObjectName";
+static NSString *const ABKUnityContentCardsCallbackKey = @"ContentCardsCallbackMethodName";
 static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMessages";
 
 @interface AppboyUnityManager : NSObject <ABKInAppMessageControllerDelegate>
@@ -20,6 +22,8 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 @property (nonatomic,copy) NSDictionary *appboyUnityPlist;
 @property (nonatomic, copy) NSString *unityFeedGameObjectName;
 @property (nonatomic, copy) NSString *unityFeedCallbackFunctionName;
+@property (nonatomic, copy) NSString *unityContentCardsGameObjectName;
+@property (nonatomic, copy) NSString *unityContentCardsCallbackFunctionName;
 @property (nonatomic, copy) NSString *unityInAppMessageGameObjectName;
 @property (nonatomic, copy) NSString *unityInAppMessageCallbackFunctionName;
 @property (nonatomic, copy) NSString *unityPushReceivedGameObjectName;
@@ -65,6 +69,7 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) setListeners;
 - (void) addInAppMessageListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void) addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) registerForRemoteNotifications;
@@ -78,6 +83,11 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) requestFeedRefresh;
 - (void) requestFeedFromCache:(NSNotification *)notification;
 - (void) logFeedDisplayed;
+- (void) requestContentCardsRefresh;
+- (void) requestContentCardsFromCache:(NSNotification *)notification;
+- (void) logContentCardsDisplayed;
+- (void) logContentCardImpression:(NSString *)cardJSONString;
+- (void) logContentCardClicked:(NSString *)cardJSONString;
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
 + (void) wipeDataAndDisableForAppRun;
 + (void) disableSDK;

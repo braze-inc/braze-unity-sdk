@@ -28,6 +28,8 @@ namespace Appboy.Editor {
     private const string ABKUnityInAppMessageCallbackKey = "InAppMessageCallbackMethodName";
     private const string ABKUnityFeedGameObjectKey = "FeedGameObjectName";
     private const string ABKUnityFeedCallbackKey = "FeedCallbackMethodName";
+    private const string ABKUnityContentCardsGameObjectKey = "ContentCardsGameObjectName";
+    private const string ABKUnityContentCardsCallbackKey = "ContentCardsCallbackMethodName";
     private const string ABKUnityHandleInAppMessageDisplayKey = "DisplayInAppMessages";
 
     [PostProcessBuildAttribute(1)]
@@ -165,6 +167,13 @@ namespace Appboy.Editor {
           ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName)) {
           appboyUnityDict.SetString(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName.Trim());
           appboyUnityDict.SetString(ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName.Trim());
+        }
+
+        // Set content card listener
+        if (ValidateListenerFields(ABKUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName,
+          ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName)) {
+          appboyUnityDict.SetString(ABKUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName.Trim());
+          appboyUnityDict.SetString(ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName.Trim());
         }
       }
 

@@ -1,8 +1,10 @@
+using Appboy;
 using Appboy.Models;
 using Appboy.Models.Cards;
 using Appboy.Models.InAppMessage;
 using Appboy.Utilities;
 using UnityEngine;
+using System;
 using System.Collections;
 
 namespace Appboy {
@@ -60,10 +62,31 @@ namespace Appboy {
       foreach (Card card in feed.Cards) {
         Debug.Log("Card: " + card);
       }
-      // Here we are testing the Unity SDK by manually logging the first card's click and impression in the news feed.
-      // We should only log the card's click and impression when the news feed isn't displayed by Appboy but in Unity.
-      //feed.Cards[0].LogImpression();
-      //feed.Cards[0].LogClick();
+    }
+
+    void ContentCardsReceivedCallback(string message) {
+      Debug.Log("ContentCardsReceivedCallback message: " + message);
+      AppboyBinding.LogContentCardsDisplayed();
+      try {
+        JSONClass json = (JSONClass)JSON.Parse(message);
+        if (json["mContentCards"] != null) {
+          JSONArray jsonArray = (JSONArray)JSON.Parse(json["mContentCards"].ToString());
+          Debug.Log(String.Format("Parsed content cards array with {0} cards", jsonArray.Count));
+          for (int i = 0; i < jsonArray.Count; i++) {
+            JSONClass cardJson = jsonArray[i].AsObject;
+            try {
+              ContentCard card = new ContentCard(cardJson);
+              Debug.Log(String.Format("Created card object for card: {0}", card));
+              card.LogImpression();
+              card.LogClick();
+            } catch {
+              Debug.Log(String.Format("Unable to create and log analytics for card {0}", cardJson));
+            }
+          }
+        }
+      } catch {
+        throw new ArgumentException("Could not parse content card JSON message.");
+      }
     }
   }
 }

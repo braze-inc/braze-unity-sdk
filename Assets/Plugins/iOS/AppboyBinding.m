@@ -186,8 +186,28 @@ void _requestFeedRefreshFromCache() {
   [[AppboyUnityManager sharedInstance] requestFeedFromCache:nil];
 }
 
+void _logContentCardImpression(const char* cardJSONString) {
+  [[AppboyUnityManager sharedInstance] logContentCardImpression:GetStringParam(cardJSONString)];
+}
+
+void _logContentCardClicked(const char* cardJSONString) {
+  [[AppboyUnityManager sharedInstance] logContentCardClicked:GetStringParam(cardJSONString)];
+}
+
 void _logFeedDisplayed() {
   [[AppboyUnityManager sharedInstance] logFeedDisplayed];
+}
+
+void _requestContentCardsRefresh() {
+  [[AppboyUnityManager sharedInstance] requestContentCardsRefresh];
+}
+
+void _requestContentCardsRefreshFromCache() {
+  [[AppboyUnityManager sharedInstance] requestContentCardsFromCache:nil];
+}
+
+void _logContentCardsDisplayed() {
+  [[AppboyUnityManager sharedInstance] logContentCardsDisplayed];
 }
 
 void _displayNextInAppMessage(bool withDelegate) {
