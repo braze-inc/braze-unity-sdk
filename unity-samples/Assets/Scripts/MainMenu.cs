@@ -29,6 +29,7 @@ public class MainMenu : MonoBehaviour {
   
   public void OnRequestInAppMessageButtonClick() {
     Appboy.AppboyBinding.RequestFeedRefresh ();
+    Appboy.AppboyBinding.RequestContentCardsRefresh ();
   }
 
   public void OnWipeDataButtonClick() {

@@ -338,6 +338,7 @@
     <Compile Include="Assets\Plugins\Appboy\models\Cards\CaptionedImageCard.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\Cards\Card.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\Cards\ClassicCard.cs" />
+    <Compile Include="Assets\Plugins\Appboy\models\Cards\ContentCard.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\Cards\CrossPromotionSmall.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\Cards\TextAnnouncementCard.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\ClickAction.cs" />

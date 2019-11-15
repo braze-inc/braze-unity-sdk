@@ -229,6 +229,7 @@
   [self addPushReceivedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushReceivedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushReceivedCallbackKey]];
   [self addPushOpenedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushOpenedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushOpenedCallbackKey]];
   [self addInAppMessageListenerWithObjectName:self.appboyUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityInAppMessageCallbackKey]];
+  [self addContentCardsListenerWithObjectName:self.appboyUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityContentCardsCallbackKey]];
   [self addFeedListenerWithObjectName:self.appboyUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityFeedCallbackKey]];
 }
 
@@ -248,6 +249,13 @@
   if (gameObject != nil && callbackMethod != nil) {
     self.unityFeedGameObjectName = gameObject;
     self.unityFeedCallbackFunctionName = callbackMethod;
+  }
+}
+
+- (void) addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    self.unityContentCardsGameObjectName = gameObject;
+    self.unityContentCardsCallbackFunctionName = callbackMethod;
   }
 }
 
@@ -416,6 +424,10 @@
   [[Appboy sharedInstance] requestFeedRefresh];
 }
 
+- (void) logFeedDisplayed {
+  [[Appboy sharedInstance] logFeedDisplayed];
+}
+
 - (void) requestFeedFromCache:(NSNotification *)notification {
   BOOL fromOfflineStorage = YES;
   if (notification != nil) {
@@ -423,7 +435,7 @@
     fromOfflineStorage = NO;
   }
   if (self.unityFeedGameObjectName == nil) {
-    NSLog(@"Not sending a Unity message in response to a feed cards requrest because "
+    NSLog(@"Not sending a Unity message in response to a feed cards request because "
           "no message receiver was defined. To implement custom behavior in response to a feed"
           "being received, you must register a GameObject and method name with Appboy "
           "by calling [[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName: callbackMethodName:].");
@@ -437,11 +449,9 @@
   }
   NSLog(@"Sending cards to %@:%@.", self.unityFeedGameObjectName, self.unityFeedCallbackFunctionName);
 
-  // Parse cards to
   NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
   NSArray *cards = [[Appboy sharedInstance].feedController getCardsInCategories:ABKCardCategoryAll];
   for (ABKCard *card in cards) {
-
     NSMutableDictionary *cardDictionary = [card proxyForJson];
     [cardsDictionaryArray addObject:cardDictionary];
   }
@@ -468,8 +478,82 @@
   }
 }
 
-- (void) logFeedDisplayed {
-  [[Appboy sharedInstance] logFeedDisplayed];
+- (void) requestContentCardsFromCache:(NSNotification *)notification {
+  BOOL fromOfflineStorage = YES;
+  if (notification != nil) {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ABKContentCardsProcessedNotification object:nil];
+    fromOfflineStorage = NO;
+  }
+  if (self.unityContentCardsGameObjectName == nil) {
+    NSLog(@"Not sending a Unity message in response to a content cards request because "
+          "no message receiver was defined. To implement custom behavior in response to a cards"
+          "being received, you must register a GameObject and method name with Appboy "
+          "by calling [[AppboyUnityManager sharedInstance] addContentCardsListenerWithObjectName: callbackMethodName:].");
+  }
+  if (self.unityContentCardsCallbackFunctionName == nil) {
+    NSLog(@"Not sending a Unity message in response to a content cards request because "
+          "no method name was defined for the %@. To implement custom behavior in response to cards "
+          "being received, you must register a GameObject and method name with Appboy "
+          "[[AppboyUnityManager sharedInstance] addContentCardsListenerWithObjectName: callbackMethodName:].",
+          self.unityContentCardsGameObjectName);
+  }
+  NSLog(@"Sending cards to %@:%@.", self.unityContentCardsGameObjectName, self.unityContentCardsCallbackFunctionName);
+
+  NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
+  NSArray *cards = [[Appboy sharedInstance].contentCardsController getContentCards];
+  for (ABKCard *card in cards) {
+    NSMutableDictionary *cardDictionary = [card proxyForJson];
+    [cardsDictionaryArray addObject:cardDictionary];
+  }
+
+  NSTimeInterval timestamp = [[Appboy sharedInstance].contentCardsController.lastUpdate timeIntervalSince1970];
+  NSDictionary *contentCardsDictionary = @{@"mContentCards" : cardsDictionaryArray,
+                                   @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
+                                   @"mFromOfflineStorage" : [NSNumber numberWithBool:fromOfflineStorage]};
+  NSError *error;
+  NSString *contentCardsString;
+  NSData *contentCardsData = [NSJSONSerialization dataWithJSONObject:contentCardsDictionary
+                                                     options:0
+                                                       error:&error];
+  if (!contentCardsData) {
+    NSLog(@"Got an error %@ when parsing Appboy feed to json data.", error);
+  } else {
+    contentCardsString = [[NSString alloc] initWithData:contentCardsData encoding:NSUTF8StringEncoding];
+  }
+  if (contentCardsString != nil) {
+    NSLog(@"the message that's going to pass to Unity is: \n %@", contentCardsString);
+    UnitySendMessage([self.unityContentCardsGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                     [self.unityContentCardsCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                     [contentCardsString cStringUsingEncoding:NSUTF8StringEncoding]);
+  }
+}
+
+- (void) logContentCardsDisplayed {
+  [[Appboy sharedInstance] logContentCardsDisplayed];
+}
+
+- (void) requestContentCardsRefresh {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(requestContentCardsFromCache:)
+                                               name:ABKContentCardsProcessedNotification
+                                             object:nil];
+  [[Appboy sharedInstance] requestContentCardsRefresh];
+}
+
+- (void) logContentCardImpression:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
+  [card logContentCardImpression];
+}
+
+- (void) logContentCardClicked:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
+  [card logContentCardClicked];
 }
 
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate {

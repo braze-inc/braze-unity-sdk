@@ -1,3 +1,11 @@
+## 1.22.0
+
+##### Added
+- Added the ability to receive Content Cards data within a Unity Game Object or method in C#.
+  - On Android, set `com_appboy_content_cards_updated_listener_game_object_name` and `com_appboy_content_cards_updated_listener_callback_method_name` in your `appboy.xml` to set your Game Object and Callback Method for receiving Content Cards updates.
+  - On iOS, set `ContentCardsCallbackMethodName` and `ContentCardsGameObjectName` inside of a dictionary named `Unity` set inside a dictionary named `Appboy` within your `Info.plist`. Alternatively, use the configuration UI under the `Braze` menu added when integrating the Braze Unity package.
+  - Our [Callback example class](https://github.com/Appboy/appboy-unity-sdk/blob/master/Assets/Plugins/Appboy/Tests/AppboyBindingTester.cs) contains an example of parsing the received Content Cards json as well as using our provided convenience model class, `ContentCard.cs` to wrap the data and log analytics. Currently, `ContentCard.cs` supports logging clicks and impressions.
+
 ## 1.21.2
 
 **Important:** This patch updates the Braze iOS SDK Dependency from 3.20.1 to 3.20.2, which contains important bugfixes. Integrators should upgrade to this patch version. Please see the [Braze iOS SDK Changelog](https://github.com/Appboy/appboy-ios-sdk/blob/master/CHANGELOG.md) for more information.

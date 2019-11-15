@@ -9,6 +9,7 @@ namespace Appboy.Editor {
     private bool showPushReceivedListener = true;
     private bool showInAppMessageListener = true;
     private bool showFeedListener = true;
+    private bool showContentCardsListener = true;
     private Vector2 scrollPosition;
 
     [MenuItem("Braze/Braze Configuration")]
@@ -101,6 +102,19 @@ namespace Appboy.Editor {
           EditorGUI.indentLevel++;
           AppboyConfig.IOSFeedGameObjectName = EditorGUILayout.TextField("Game Object Name", AppboyConfig.IOSFeedGameObjectName);
           AppboyConfig.IOSFeedCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.IOSFeedCallbackMethodName);
+          EditorGUI.indentLevel--;
+        }
+        EditorGUI.indentLevel--;
+        EditorGUILayout.Separator();
+
+        // Content Cards
+        EditorGUILayout.LabelField("Content Cards", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        showContentCardsListener = EditorGUILayout.Foldout(showContentCardsListener, "Set Content Cards Listener");
+        if (showContentCardsListener) {
+          EditorGUI.indentLevel++;
+          AppboyConfig.IOSContentCardsGameObjectName = EditorGUILayout.TextField("Game Object Name", AppboyConfig.IOSContentCardsGameObjectName);
+          AppboyConfig.IOSContentCardsCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.IOSContentCardsCallbackMethodName);
           EditorGUI.indentLevel--;
         }
         EditorGUI.indentLevel--;

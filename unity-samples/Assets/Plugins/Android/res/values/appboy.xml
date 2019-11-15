@@ -22,6 +22,8 @@
   <!-- <string name="com_appboy_inapp_listener_callback_method_name"></string> --> <!-- The callback method to be called when an inapp message is received. -->
   <!-- <string name="com_appboy_feed_listener_game_object_name"></string> --> <!-- The Unity game object to receive the news feed. -->
   <!-- <string name="com_appboy_feed_listener_callback_method_name"></string> --> <!-- The callback method to be called when the news feed is received. -->
+  <string name="com_appboy_content_cards_updated_listener_game_object_name">AppboyCallback</string> <!-- The Unity game object to receive Content Cards. -->
+  <string name="com_appboy_content_cards_updated_listener_callback_method_name">ContentCardsReceivedCallback</string> <!-- The callback method to be called when Content Cards are received. -->
   <!-- <string name="com_appboy_push_received_game_object_name"></string> --> <!-- The Unity game object to receive push received messages. -->
   <!-- <string name="com_appboy_push_received_callback_method_name"></string> --> <!-- The callback method to be called when a push received message is received. -->
   <!-- <string name="com_appboy_push_opened_game_object_name"></string> --> <!-- The Unity game object to receive push opened messages. -->
