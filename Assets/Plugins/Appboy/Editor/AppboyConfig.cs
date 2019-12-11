@@ -20,6 +20,10 @@ namespace Appboy.Editor {
     // App Startup
     [SerializeField]
     private string apiKey = string.Empty;
+    [SerializeField]
+    private string endpoint = string.Empty;
+    [SerializeField]
+    private string logLevel = string.Empty;
 
     // Push Notifications
     [SerializeField]
@@ -36,7 +40,7 @@ namespace Appboy.Editor {
     private string iOSPushOpenedGameObjectName = string.Empty;
     [SerializeField]
     private string iOSPushOpenedCallbackMethodName = string.Empty;
-    
+
     // In-App Messages
     [SerializeField]
     private string iOSInAppMessageGameObjectName = string.Empty;
@@ -67,12 +71,22 @@ namespace Appboy.Editor {
       set { SetProperty(ref Instance.apiKey, value); }
     }
 
+    public static string Endpoint {
+        get { return Instance.endpoint; }
+        set { SetProperty(ref Instance.endpoint, value); }
+    }
+
+    public static string LogLevel {
+        get { return Instance.logLevel; }
+        set { SetProperty(ref Instance.logLevel, value); }
+    }
+
     // Push
     public static bool IOSIntegratesPush {
       get { return Instance.iOSIntegratesPush; }
       set { SetProperty(ref Instance.iOSIntegratesPush, value); }
     }
-    
+
     public static bool IOSDisableAutomaticPushRegistration {
       get { return Instance.iOSDisableAutomaticPushRegistration; }
       set { SetProperty(ref Instance.iOSDisableAutomaticPushRegistration, value); }
@@ -108,7 +122,7 @@ namespace Appboy.Editor {
       get { return Instance.iOSInAppMessageGameObjectName; }
       set { SetProperty(ref Instance.iOSInAppMessageGameObjectName, value); }
     }
-    
+
     public static string IOSInAppMessageCallbackMethodName {
       get { return Instance.iOSInAppMessageCallbackMethodName; }
       set { SetProperty(ref Instance.iOSInAppMessageCallbackMethodName, value); }

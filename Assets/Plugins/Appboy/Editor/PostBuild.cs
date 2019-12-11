@@ -16,6 +16,8 @@ namespace Appboy.Editor {
     private const string AppboyAppDelegatePath = "Libraries/Plugins/iOS/AppboyAppDelegate.mm";
     private const string PlistSubpath = "/Info.plist";
 
+    private const string ABKEndpointKey = "Endpoint";
+    private const string ABKLogLevelKey = "LogLevel";
     private const string ABKUnityApiKey = "ApiKey";
     private const string ABKUnityAutomaticPushIntegrationKey = "IntegratesPush";
     private const string ABKUnityDisableAutomaticPushRegistrationKey = "DisableAutomaticPushRegistration";
@@ -127,8 +129,24 @@ namespace Appboy.Editor {
 
       // Add Appboy Unity keys to Plist
       if (AppboyConfig.IOSAutomatesIntegration) {
+        // The Appboy dictionary
+        PlistElementDict appboyDict = (rootDict["Appboy"] == null) ? rootDict.CreateDict("Appboy") : rootDict["Appboy"].AsDict();
         // The Appboy Unity dictionary
-        PlistElementDict appboyUnityDict = (rootDict["Appboy"] == null) ? rootDict.CreateDict("Appboy").CreateDict("Unity") : rootDict["Appboy"].AsDict().CreateDict("Unity");
+        PlistElementDict appboyUnityDict = appboyDict.CreateDict("Unity");
+
+        // Add iOS SDK keys to Plist
+        if (string.IsNullOrEmpty(AppboyConfig.Endpoint.Trim())) {
+            appboyDict.values.Remove(ABKEndpointKey);
+        }
+        else {
+            appboyDict.SetString(ABKEndpointKey, AppboyConfig.Endpoint.Trim());
+        }
+        if (string.IsNullOrEmpty(AppboyConfig.LogLevel.Trim())) {
+            appboyDict.values.Remove(ABKLogLevelKey);
+        }
+        else {
+            appboyDict.SetString(ABKLogLevelKey, AppboyConfig.LogLevel.Trim());
+        }
 
         // Add iOS automated integration build keys to Plist
         if (ValidateField(ABKUnityApiKey, AppboyConfig.ApiKey, "Appboy will not be initialized.")) {

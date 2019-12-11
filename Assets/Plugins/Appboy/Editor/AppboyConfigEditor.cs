@@ -26,9 +26,17 @@ namespace Appboy.Editor {
     }
 
     private void ApiKeyGUI() {
-      EditorGUILayout.BeginVertical();
-      AppboyConfig.ApiKey = EditorGUILayout.TextField("Braze API Key", AppboyConfig.ApiKey);
-      EditorGUILayout.EndVertical();
+        AppboyConfig.ApiKey = EditorGUILayout.TextField("Braze API Key", AppboyConfig.ApiKey);
+    }
+
+    private void EndpointGUI() {
+        AppboyConfig.Endpoint = EditorGUILayout.TextField("Braze SDK Endpoint", AppboyConfig.Endpoint);
+        EditorGUILayout.LabelField("If you are on the default Braze SDK Endpoint, you can leave this blank.", EditorStyles.wordWrappedMiniLabel);
+    }
+
+    private void LogLevelGUI() {
+        AppboyConfig.LogLevel = EditorGUILayout.TextField("SDK Log Level", AppboyConfig.LogLevel);
+        EditorGUILayout.LabelField("Leaving this blank will use the default log level, setting it to \"0\" will enable verbose logging.", EditorStyles.wordWrappedMiniLabel);
     }
 
     private void IOSBuildGUI() {
@@ -38,8 +46,11 @@ namespace Appboy.Editor {
       if (AppboyConfig.IOSAutomatesIntegration) {
         EditorGUI.indentLevel++;
 
-        // API Key
+        // API Key and Endpoint
+        EditorGUILayout.BeginVertical();
         ApiKeyGUI();
+        EndpointGUI();
+        EditorGUILayout.EndVertical();
         EditorGUILayout.Separator();
 
         // Push Notifications
@@ -117,6 +128,14 @@ namespace Appboy.Editor {
           AppboyConfig.IOSContentCardsCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.IOSContentCardsCallbackMethodName);
           EditorGUI.indentLevel--;
         }
+        EditorGUI.indentLevel--;
+        EditorGUILayout.Separator();
+
+        // SDK Debugging
+        EditorGUILayout.LabelField("SDK Debugging", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        LogLevelGUI();
+
         EditorGUI.indentLevel--;
         EditorGUILayout.EndVertical();
       }
