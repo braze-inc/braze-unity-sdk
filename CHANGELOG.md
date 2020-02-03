@@ -1,3 +1,20 @@
+## 2.0.0
+
+##### ⚠ Breaking
+- The structure of the Android plugin (i.e. found under `Assets/Plugins/Android/`) has been changed to only include AAR artifacts. All other folders have been removed.
+  - Additionally, depending on the `.unitypackage` chosen, you can import jetified Braze AAR artifacts. These artifacts were transformed using the [`jetifier`](https://developer.android.com/studio/command-line/jetifier) tool to be compatible with `androidX` support libraries instead of the `v4` support libraries. This is particularly relevant if you wish to update your [`unity firebase messaging`](https://firebase.google.com/docs/unity/setup) dependencies to the latest versions, which use and require `androidX` support libraries. Please see our documentation for more information.
+
+##### Added
+- Added `AppboyBinding.RequestImmediateDataFlush()` to immediately request a data flush.
+- Added `AppboyBinding.RequestGeofences(latitude, longitude)` to manually request Braze Geofences.
+- Adds an option to disable automatic geofence requests on session start. Note that this is required in order to manually request geofences.
+  - iOS - You can do this in the plist by adding the Appboy dictionary to your Info.plist file. Inside the Appboy dictionary, add the `DisableAutomaticGeofenceRequests` boolean subentry and set the value to `YES`.
+  - Android - You can do this by configuring the boolean value for `com_appboy_automatic_geofence_requests_enabled` to `false` in your `appboy.xml`.
+
+##### Changed
+- Updated the Android plugin to use [Braze Android SDK 5.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#500).
+- Updated the native iOS bridge to [Braze iOS SDK 3.21.3](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.21.3).
+
 ## 1.22.0
 
 ##### Added

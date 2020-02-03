@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
 
-
 public class MainMenu : MonoBehaviour {
 
   public void OnChangeUserButtonClick() {
@@ -28,20 +27,24 @@ public class MainMenu : MonoBehaviour {
   }
   
   public void OnRequestInAppMessageButtonClick() {
-    Appboy.AppboyBinding.RequestFeedRefresh ();
-    Appboy.AppboyBinding.RequestContentCardsRefresh ();
+    Appboy.AppboyBinding.RequestFeedRefresh();
+    Appboy.AppboyBinding.RequestContentCardsRefresh();
   }
 
   public void OnWipeDataButtonClick() {
-    Appboy.AppboyBinding.WipeData ();
+    Appboy.AppboyBinding.WipeData();
   }
 
   public void OnEnableSDKButtonClick() {
-    Appboy.AppboyBinding.EnableSDK ();
+    Appboy.AppboyBinding.EnableSDK();
   }
 
   public void OnDisableSDKButtonClick() {
-    Appboy.AppboyBinding.DisableSDK ();
+    Appboy.AppboyBinding.DisableSDK();
+  }
+
+  public void OnRequestFlushButtonClick() {
+    Appboy.AppboyBinding.RequestImmediateDataFlush();
   }
 
   // Not connecting this to the main menu as setting a push token like that
@@ -53,13 +56,25 @@ public class MainMenu : MonoBehaviour {
 #endif
   }
 
-  public void OnSocialDataTest() {
-    Appboy.AppboyBinding.setUserFacebookData("briancaw", "brian", "wheeler", "brian@tryappboy.com", "funny guy", "belmar", Gender.Male, 12, "09-09-1917");
-    Appboy.AppboyBinding.setUserTwitterData(2342, "handle", "name", "description", 1, 2, 3, "https://www.gravatar.com/avatar/397167253b1109ef4da30c86eb7782f5?d=https://sweeney.appboy.com/assets/dashboard/profile-default.png");
-  }
-
   public void OnNullSocialDataTest() {
     Appboy.AppboyBinding.setUserFacebookData(null, null, null, null, null, null, null, null, null);
     Appboy.AppboyBinding.setUserTwitterData(null, null, null, null, null, null, null, null);
+  }
+
+  public void OnPresetUserDataClick() {
+    Appboy.AppboyBinding.SetUserFirstName("jared");
+    Appboy.AppboyBinding.SetUserLastName("contreras");
+    Appboy.AppboyBinding.SetUserGender(Gender.Male);
+    Appboy.AppboyBinding.SetUserEmail("unity@braze.com");
+    Appboy.AppboyBinding.SetUserDateOfBirth(1994, 5, 2);
+    Appboy.AppboyBinding.SetUserCountry("dominica");
+    Appboy.AppboyBinding.SetUserHomeCity("Julian, CA");
+    Appboy.AppboyBinding.SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType.OPTED_IN);
+    Appboy.AppboyBinding.SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType.SUBSCRIBED);
+    Appboy.AppboyBinding.SetUserPhoneNumber("8675309");
+    Appboy.AppboyBinding.SetCustomUserAttribute("funny", false);
+    Appboy.AppboyBinding.SetCustomUserAttribute("times laughed", -1);
+    Appboy.AppboyBinding.SetCustomUserAttribute("grins cracked", 0.5F);
+    Appboy.AppboyBinding.SetCustomUserAttribute("knock knock", "who's there");
   }
 }

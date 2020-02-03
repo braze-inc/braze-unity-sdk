@@ -16,8 +16,10 @@
 
   <!-- In-app message configuration (optional) -->
   <bool name="com_appboy_inapp_show_inapp_messages_automatically">true</bool> <!-- Whether to display in-app messages from Appboy using the Appboy native UI. -->
+  <bool name="com_appboy_in_app_message_push_test_eager_display_enabled">true</bool> <!-- Whether to display test in-app messages immediately. -->
 
   <!-- Optional -->
+  <integer name="com_appboy_logger_initial_log_level">0</integer> <!-- The log level for Braze SDK log messages. 0 is VERBOSE. -->
   <!-- <string name="com_appboy_inapp_listener_game_object_name"></string> --> <!-- The Unity game object to receive inapp messages. -->
   <!-- <string name="com_appboy_inapp_listener_callback_method_name"></string> --> <!-- The callback method to be called when an inapp message is received. -->
   <!-- <string name="com_appboy_feed_listener_game_object_name"></string> --> <!-- The Unity game object to receive the news feed. -->

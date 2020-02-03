@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:amazon="http://schemas.amazon.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +18,10 @@
       </intent-filter>
     </service>
 
-    <activity android:name="com.appboy.unity.AppboyUnityPlayerActivity" android:label="@string/app_name" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:screenOrientation="sensor">
+    <activity android:name="com.appboy.unity.AppboyUnityPlayerActivity" 
+      android:label="@string/app_name" 
+      android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" 
+      android:screenOrientation="sensor">
       <meta-data android:name="android.app.lib_name" android:value="unity" />
       <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
       <intent-filter>

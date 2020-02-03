@@ -1,42 +1,37 @@
 {
-  "project_info": {
-    "project_number": "1026849392724",
-    "firebase_url": "https://unity-sample-8e358.firebaseio.com",
-    "project_id": "unity-sample-8e358",
-    "storage_bucket": "unity-sample-8e358.appspot.com"
-  },
   "client": [
     {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "523313722967-j3g1ha142hgr57dg9qmuk9vp20v4epf4.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyARGytGF2tbv_7breS-qAXTTqdp-39QXbo"
+        }
+      ], 
       "client_info": {
-        "mobilesdk_app_id": "1:1026849392724:android:3a4cdbda4ed5232a",
+        "mobilesdk_app_id": "1:523313722967:ios:b545b7f459c982976c5512", 
         "android_client_info": {
           "package_name": "com.appboy.unity.AppboySample"
         }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1026849392724-ocom6mnnshua58fnt4s9io921iqn860f.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCmlUmq4bF-z34JAMVRVWCC8U4tYZSSVwg"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
       }
     }
-  ],
-  "configuration_version": "1"
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "kitchen-sink-cbc5d.appspot.com", 
+    "project_id": "kitchen-sink-cbc5d", 
+    "firebase_url": "https://kitchen-sink-cbc5d.firebaseio.com", 
+    "project_number": "523313722967"
+  }
 }

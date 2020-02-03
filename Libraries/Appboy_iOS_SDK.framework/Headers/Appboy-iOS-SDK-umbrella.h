@@ -40,6 +40,8 @@
 #import "ABKInAppMessageControl.h"
 #import "ABKInAppMessageController.h"
 #import "ABKInAppMessageControllerDelegate.h"
+#import "ABKInAppMessageDarkButtonTheme.h"
+#import "ABKInAppMessageDarkTheme.h"
 #import "ABKInAppMessageFull.h"
 #import "ABKInAppMessageHTML.h"
 #import "ABKInAppMessageHTMLFull.h"

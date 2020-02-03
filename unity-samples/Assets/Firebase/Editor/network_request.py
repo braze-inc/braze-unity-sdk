@@ -1,4 +1,16 @@
-# Copyright 2019 Google Inc. All Rights Reserved.
+# Copyright 2019 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 """Wrapper script which makes a network request.
 
 Basic Usage: network_request.py post
@@ -10,12 +22,28 @@ Basic Usage: network_request.py post
 """
 
 import argparse
-import httplib
 import inspect
 import logging
 import socket
 import sys
-import urlparse
+
+# pylint: disable=g-import-not-at-top
+# pylint: disable=g-importing-member
+try:
+  from httplib import HTTPSConnection
+  from httplib import HTTPConnection
+  from httplib import HTTPException
+except ImportError:
+  from http.client import HTTPSConnection
+  from http.client import HTTPConnection
+  from http.client import HTTPException
+
+try:
+  from urlparse import urlparse
+except ImportError:
+  from urllib.parse import urlparse
+# pylint: enable=g-import-not-at-top
+# pylint: enable=g-importing-member
 
 # Set up logger as soon as possible
 formatter = logging.Formatter('[%(levelname)s] %(message)s')
@@ -122,7 +150,7 @@ class NetworkRequest(object):
 
   def __init__(self, url, method, headers, body, timeout):
     self.url = url.lower()
-    self.parsed_url = urlparse.urlparse(self.url)
+    self.parsed_url = urlparse(self.url)
     self.method = method
     self.headers = headers
     self.body = body
@@ -136,9 +164,9 @@ class NetworkRequest(object):
       an HttpResponse object from httplib
     """
     if self.is_secure_connection:
-      conn = httplib.HTTPSConnection(self.get_hostname(), timeout=self.timeout)
+      conn = HTTPSConnection(self.get_hostname(), timeout=self.timeout)
     else:
-      conn = httplib.HTTPConnection(self.get_hostname(), timeout=self.timeout)
+      conn = HTTPConnection(self.get_hostname(), timeout=self.timeout)
 
     conn.request(self.method, self.url, self.body, self.headers)
     response = conn.getresponse()
@@ -222,7 +250,7 @@ def make_request(request):
         'Timed out post request to %s in %d seconds for request body: %s',
         request.url, request.timeout, request.body)
     return EXIT_CODE_HTTP_TIMEOUT
-  except (httplib.HTTPException, socket.error):
+  except (HTTPException, socket.error):
     logger.exception(
         'Encountered generic exception in posting to %s with request body %s',
         request.url, request.body)

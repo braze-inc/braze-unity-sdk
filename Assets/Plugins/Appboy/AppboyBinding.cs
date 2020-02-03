@@ -171,6 +171,12 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _setAttributionData(string network, string campaign, string adgroup, string creative);
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestGeofences(decimal latitude, decimal longitude);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _requestImmediateDataFlush();
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -320,6 +326,7 @@ namespace Appboy {
     public static void RequestFeedRefresh() {
       _requestFeedRefresh();
     }
+
     public static void RequestFeedRefreshFromCache() {
       _requestFeedRefreshFromCache();
     }
@@ -339,6 +346,7 @@ namespace Appboy {
     public static void RequestContentCardsRefresh() {
       _requestContentCardsRefresh();
     }
+
     public static void RequestContentCardsRefreshFromCache() {
       _requestContentCardsRefreshFromCache();
     }
@@ -370,6 +378,24 @@ namespace Appboy {
 
     public static void RequestLocationInitialization() {
       // no-op
+    }
+
+    /// <summary>
+    /// Requests a refresh of Braze Geofences for the specified GPS coordinate.
+    /// </summary>
+    /// <param name='latitude'>
+    /// A valid GPS latitude in range (-90, 90).
+    /// </param>
+    /// <param name='longitude'>
+    /// A valid GPS longitude in range (-180, 180).
+    /// </param>
+    /// </summary>
+    public static void RequestGeofences(decimal latitude, decimal longitude) {
+      _requestGeofences(latitude, longitude);
+    }
+
+    public static void RequestImmediateDataFlush() {
+      _requestImmediateDataFlush();
     }
 
 #elif UNITY_ANDROID
@@ -809,6 +835,24 @@ namespace Appboy {
       AppboyLocationService.CallStatic("requestInitialization", appboyUnityActivity);
     }
 
+    /// <summary>
+    /// Requests a refresh of Braze Geofences for the specified GPS coordinate.
+    /// </summary>
+    /// <param name='latitude'>
+    /// A valid GPS latitude in range (-90, 90).
+    /// </param>
+    /// <param name='longitude'>
+    /// A valid GPS longitude in range (-180, 180).
+    /// </param>
+    /// </summary>
+    public static void RequestGeofences(decimal latitude, decimal longitude) {
+      Appboy.Call("requestGeofences", latitude, longitude);
+    }
+
+    public static void RequestImmediateDataFlush() {
+      Appboy.Call("requestImmediateDataFlush");
+    }
+
 #else
 
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
@@ -963,6 +1007,12 @@ namespace Appboy {
     }
 
     public static void RequestLocationInitialization() {
+    }
+
+    public static void RequestGeofences(decimal latitude, decimal longitude) {
+    }
+
+    public static void RequestImmediateDataFlush() {
     }
 #endif
   }

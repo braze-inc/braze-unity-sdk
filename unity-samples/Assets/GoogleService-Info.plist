@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>523313722967-j3g1ha142hgr57dg9qmuk9vp20v4epf4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.523313722967-j3g1ha142hgr57dg9qmuk9vp20v4epf4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyARGytGF2tbv_7breS-qAXTTqdp-39QXbo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>523313722967</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.appboy.unity.AppboySample</string>
+	<key>PROJECT_ID</key>
+	<string>kitchen-sink-cbc5d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kitchen-sink-cbc5d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:523313722967:ios:b545b7f459c982976c5512</string>
+	<key>DATABASE_URL</key>
+	<string>https://kitchen-sink-cbc5d.firebaseio.com</string>
+</dict>
+</plist>
