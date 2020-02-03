@@ -1,35 +1,32 @@
 #!/bin/bash
 
-APPBOY_IOS_SDK="Appboy_iOS_SDK.framework"
-SD_WEB_IMAGE="SDWebImage.framework"
 PROJECT_ROOT=$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )
-LIBRARIES_PATH=$PROJECT_ROOT/Libraries
-IOS_PLUGINS_PATH=$PROJECT_ROOT/Assets/Plugins/iOS
 
-UNITY_PATH="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
-# 64 bit Windows - "C:\Program Files\Unity\Editor\Unity.exe"
-# 32 bit Windows - "C:\Program Files (x86)\Unity\Editor\Unity.exe"
+# https://unix.stackexchange.com/questions/196690/best-and-short-way-to-run-a-program-if-another-is-not-installed
+function unity_app_cmd {
+  # Ask MacOS for the path of the currently running Unity process
+  RUNNING_UNITY_APP="$(osascript -e 'tell application "System Events" to POSIX path of (file of process "Unity" as alias)')/Contents/MacOS/Unity"
+  UNITY_HUB_2018="/Applications/Unity/Hub/Editor/2018.3.10f1/Unity.app/Contents/MacOS/Unity"
+  UNITY_STANDALONE="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
 
-EXCLUDE_DEPENDENCIES=false # Include dependencies from the Appboy iOS SDK in Unity package
-if [[ $1 = "--nodeps" ]]; then
-  EXCLUDE_DEPENDENCIES=true
-fi
+  if [ -f $RUNNING_UNITY_APP ]
+  then
+    echo "Using Unity $RUNNING_UNITY_APP"
+    $RUNNING_UNITY_APP "$@"
 
-echo "Deleting iOS libraries from Assets/Plugins/iOS/"
-[ -e $IOS_PLUGINS_PATH/$APPBOY_IOS_SDK ] && rm -rf $IOS_PLUGINS_PATH/$APPBOY_IOS_SDK*
-[ -e $IOS_PLUGINS_PATH/$SD_WEB_IMAGE ] && rm -rf $IOS_PLUGINS_PATH/$SD_WEB_IMAGE*
+  elif [ -f $UNITY_HUB_2018 ]
+  then
+    echo "Using Unity $UNITY_HUB_2018"
+    $UNITY_HUB_2018 "$@"
 
+  else 
+    echo "Using Unity $UNITY_STANDALONE"
+    $UNITY_STANDALONE "$@"
+  fi
+}
 
-echo "Copying iOS libraries from Libraries/ to Assets/Plugins/iOS/"
-cp -R $LIBRARIES_PATH/$APPBOY_IOS_SDK/ $IOS_PLUGINS_PATH/$APPBOY_IOS_SDK/ &
-if [ "$EXCLUDE_DEPENDENCIES" = false ]; then
-  cp -R $LIBRARIES_PATH/$SD_WEB_IMAGE $IOS_PLUGINS_PATH/$SD_WEB_IMAGE
-fi &
-wait
+rm -rf ../unity-package
+mkdir ../unity-package
 
-echo "Generating Unity package..."
-if [ "$EXCLUDE_DEPENDENCIES" = false ]; then
-	$UNITY_PATH -batchmode -nographics -projectPath $PROJECT_ROOT -executeMethod Appboy.Editor.Build.ExportPackage -quit && echo "Unity Package exported to $PROJECT_ROOT/unity-package/Appboy.unity-package" || echo "Failed to export package"
-else
-	$UNITY_PATH -batchmode -nographics -projectPath $PROJECT_ROOT -executeMethod Appboy.Editor.Build.ExportPackageWithoutDependencies -quit && echo "Unity Package exported to $PROJECT_ROOT/unity-package/Appboy-nodeps.unity-package" || echo "Failed to export package"
-fi
+unity_app_cmd -batchmode -nographics -projectPath $PROJECT_ROOT -executeMethod Appboy.Editor.Build.ExportAllPackages -quit \
+  && echo "Unity Packages exported to $PROJECT_ROOT/unity-package/" || echo "Failed to export package. Please have your Unity instance running next time!"

@@ -89,6 +89,8 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) logContentCardImpression:(NSString *)cardJSONString;
 - (void) logContentCardClicked:(NSString *)cardJSONString;
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
+- (void) requestGeofences;
+- (void) requestImmediateDataFlush;
 + (void) wipeDataAndDisableForAppRun;
 + (void) disableSDK;
 + (void) requestEnableSDKOnNextAppRun;
