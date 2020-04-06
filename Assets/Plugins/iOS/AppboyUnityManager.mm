@@ -275,18 +275,23 @@
 
 // Push related  methods
 - (void) registerForRemoteNotifications {
-  if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]
-      && self.appboyUnityPlist[ABKUnityDisableAutomaticPushRegistrationKey]
-      && ![self.appboyUnityPlist[ABKUnityDisableAutomaticPushRegistrationKey] boolValue]) {
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-      NSLog(@"Calling UIApplication registerForRemoteNotificationTypes");
-      [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-       (UIRemoteNotificationTypeAlert |
-        UIRemoteNotificationTypeBadge |
-        UIRemoteNotificationTypeSound)];
+  if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue] && ![self.appboyUnityPlist[ABKUnityDisableAutomaticPushRegistrationKey] boolValue]) {
+    UIUserNotificationType notificationSettingTypes = (UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound);
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+      UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+      center.delegate = self;
+      UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
+      if (@available(iOS 12.0, *)) {
+        options = options | UNAuthorizationOptionProvisional;
+      }
+      [center requestAuthorizationWithOptions:options
+                            completionHandler:^(BOOL granted, NSError *_Nullable error) {
+                              NSLog(@"pushAuthorizationFromUserNotificationCenter permission granted.");
+                              [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
+                            }];
+      [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
-      NSLog(@"Calling UIApplication registerForRemoteNotifications");
-      UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
+      UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationSettingTypes categories:nil];
       [[UIApplication sharedApplication] registerForRemoteNotifications];
       [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     }
@@ -299,9 +304,11 @@
   }
 }
 
-- (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
+- (void) registerApplication:(UIApplication *)application 
+         didReceiveRemoteNotification:(NSDictionary *)notification 
+         fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   if (self.appboyUnityPlist == nil || [self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification];
+    [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
 
     // generate a new dictionary that rearrange the notification elements
     NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
@@ -372,6 +379,15 @@
         }
       }
     }
+  }
+}
+
+- (void) userNotificationCenter:(UNUserNotificationCenter *)center
+         didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)(void))completionHandler {
+  [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+  if (completionHandler) {
+    completionHandler();
   }
 }
 
@@ -554,6 +570,14 @@
   id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
   ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
   [card logContentCardClicked];
+}
+
+- (void) logContentCardDismissed:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
+  [card logContentCardDismissed];
 }
 
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate {

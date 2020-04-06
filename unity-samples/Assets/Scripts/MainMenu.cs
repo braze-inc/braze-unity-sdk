@@ -64,7 +64,7 @@ public class MainMenu : MonoBehaviour {
   public void OnPresetUserDataClick() {
     Appboy.AppboyBinding.SetUserFirstName("jared");
     Appboy.AppboyBinding.SetUserLastName("contreras");
-    Appboy.AppboyBinding.SetUserGender(Gender.Male);
+    Appboy.AppboyBinding.SetUserGender(Gender.PreferNotToSay);
     Appboy.AppboyBinding.SetUserEmail("unity@braze.com");
     Appboy.AppboyBinding.SetUserDateOfBirth(1994, 5, 2);
     Appboy.AppboyBinding.SetUserCountry("dominica");
