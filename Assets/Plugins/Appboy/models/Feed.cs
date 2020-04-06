@@ -52,8 +52,6 @@ namespace Appboy.Models {
           return new BannerCard(json);
         case "captioned_image":
           return new CaptionedImageCard(json);
-        case "cross_promotion_small":
-          return new CrossPromotionSmallCard(json);
         case "short_news":
           return new ClassicCard(json);
         case "text_announcement":

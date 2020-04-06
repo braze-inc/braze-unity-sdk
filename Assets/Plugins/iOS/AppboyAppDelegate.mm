@@ -12,7 +12,7 @@
 
 # pragma mark - UIApplicationDelegate methods
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+- (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
   [super application:application didFinishLaunchingWithOptions:launchOptions];
   NSLog(@"AppboyAppDelegate called from application:didFinishLaunchingWithOptions:");
 
@@ -33,7 +33,7 @@
   return YES;
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   if ([UnityAppController instancesRespondToSelector:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:)]) {
     [super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
   }
@@ -42,7 +42,7 @@
   [[AppboyUnityManager sharedInstance] registerPushToken:deviceToken];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
   if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:)]) {
     [super application:application didReceiveRemoteNotification:userInfo];
   }
@@ -50,18 +50,22 @@
 
   // Pass notification to Appboy
   [[AppboyUnityManager sharedInstance] registerApplication:application
-                              didReceiveRemoteNotification:userInfo];
+                              didReceiveRemoteNotification:userInfo
+                              fetchCompletionHandler:nil];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
+- (void) application:(UIApplication *)application 
+         didReceiveRemoteNotification:(NSDictionary *)userInfo 
+         fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
   if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)]) {
-    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
+    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
   }
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
 
   // Pass notification to Appboy
   [[AppboyUnityManager sharedInstance] registerApplication:application
-                              didReceiveRemoteNotification:userInfo];
+                              didReceiveRemoteNotification:userInfo
+                              fetchCompletionHandler:completionHandler];
 }
 
 @end

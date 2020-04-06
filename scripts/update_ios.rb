@@ -1,7 +1,7 @@
 require 'fileutils'
 
 class AppboyUnityReleaseHelper
-  attr_accessor :libraries_directory
+  attr_accessor :ios_assets_plugin_directory
   attr_accessor :build_directory
   attr_accessor :appboy_ios_sdk_framework_name
   attr_accessor :sd_webimage_artifact_name
@@ -14,7 +14,7 @@ class AppboyUnityReleaseHelper
     @unity_sdk_root_directory = File.expand_path("..", Dir.pwd)
 
     @build_directory = File.join(@unity_sdk_root_directory, "scripts/build")
-    @libraries_directory = File.join(@unity_sdk_root_directory, "Libraries")
+    @ios_assets_plugin_directory = File.join(@unity_sdk_root_directory, "Assets/Plugins/iOS")
     
     # The framework name (pre .zip) as it appears on https://github.com/Appboy/appboy-ios-sdk/releases
     @appboy_ios_sdk_artifact_name = "Appboy_iOS_SDK"
@@ -25,8 +25,8 @@ class AppboyUnityReleaseHelper
     @framework_lipo_removal_directory = File.join(@build_directory, "lipo_removed_frameworks")
 
     # Check if the current directory this scriptis running from is valid
-    if !File.exist?(libraries_directory)
-      abort("This script expects the libraries folder to be found at #{libraries_directory}")
+    if !File.exist?(ios_assets_plugin_directory)
+      abort("This script expects the ios assets plugin folder to be found at #{ios_assets_plugin_directory}")
     end
 
     create_build_directories()  
@@ -124,10 +124,10 @@ class AppboyUnityReleaseHelper
     remove_simulator_architecture(@appboy_ios_sdk_artifact_name, framework_unzipped_directory, @framework_lipo_removal_directory)
     remove_simulator_architecture(@sd_webimage_artifact_name, framework_unzipped_directory, @framework_lipo_removal_directory)
 
-    # Move the files over to the Libraries folder
-    pretty_puts("Moving the lipo'd frameworks to the Libraries folder")
-    overwrite_framework(@appboy_ios_sdk_artifact_name, @framework_lipo_removal_directory, @libraries_directory)
-    overwrite_framework(@sd_webimage_artifact_name, @framework_lipo_removal_directory, @libraries_directory)
+    # Move the files over to the ios_assets_plugin_directory folder
+    pretty_puts("Moving the lipo'd frameworks to the #{ios_assets_plugin_directory} folder")
+    overwrite_framework(@appboy_ios_sdk_artifact_name, @framework_lipo_removal_directory, @ios_assets_plugin_directory)
+    overwrite_framework(@sd_webimage_artifact_name, @framework_lipo_removal_directory, @ios_assets_plugin_directory)
   end
 end
 

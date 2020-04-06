@@ -148,6 +148,9 @@ namespace Appboy {
     private static extern void _logContentCardClicked(string cardJSONString);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _logContentCardDismissed(string cardJSONString);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _requestContentCardsRefresh();
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -343,6 +346,10 @@ namespace Appboy {
       _logContentCardClicked(cardJSONString);
     }
 
+    public static void LogContentCardDismissed(string cardJSONString) {
+      _logContentCardDismissed(cardJSONString);
+    }
+
     public static void RequestContentCardsRefresh() {
       _requestContentCardsRefresh();
     }
@@ -522,7 +529,7 @@ namespace Appboy {
     /// Sets the gender field for the current user.
     /// </summary>
     /// <param name='gender'>
-    /// The gender of the user. Should be either 'M', 'F', 'MALE', or 'FEMALE'.
+    /// The gender of the user. See `Appboy/models/Gender.cs` for options.
     /// </param>
     public static void SetUserGender(Gender gender) {
       using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
@@ -532,6 +539,18 @@ namespace Appboy {
             break;
           case Gender.Female:
             GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("FEMALE"));
+            break;
+          case Gender.Other:
+            GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("OTHER"));
+            break;
+          case Gender.Unknown:
+            GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("UNKNOWN"));
+            break;
+          case Gender.NotApplicable:
+            GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("NOT_APPLICABLE"));
+            break;
+          case Gender.PreferNotToSay:
+            GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("PREFER_NOT_TO_SAY"));
             break;
           default:
             Debug.Log("Unknown gender received: " + gender);
@@ -794,6 +813,11 @@ namespace Appboy {
       contentCard.Call<bool>("logClick");
     }
 
+    public static void LogContentCardDismissed(string contentCardString) {
+      var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
+      contentCard.Call<bool>("setIsDismissed", true);
+    }
+
     public static void LogContentCardsDisplayed() {
       Appboy.Call("logContentCardsDisplayed");
     }
@@ -950,7 +974,6 @@ namespace Appboy {
     public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount,
       int? followingCount, int? tweetCount, string profileImageUrl) {}
 
-
     public static void RemoveFromCustomUserAttributeArray(string key, string value) {
     }
 
@@ -988,6 +1011,9 @@ namespace Appboy {
     }
 
     public static void LogContentCardImpression(string contentCardString) {
+    }
+
+    public static void LogContentCardDismissed(string contentCardString) {
     }
 
     public static void WipeData() {

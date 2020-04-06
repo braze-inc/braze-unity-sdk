@@ -16,6 +16,8 @@ namespace Appboy.Editor {
     private const string AppboyAppDelegatePath = "Libraries/Plugins/iOS/AppboyAppDelegate.mm";
     private const string PlistSubpath = "/Info.plist";
 
+    private const string ABKEndpointKey = "Endpoint";
+    private const string ABKLogLevelKey = "LogLevel";
     private const string ABKUnityApiKey = "ApiKey";
     private const string ABKUnityAutomaticPushIntegrationKey = "IntegratesPush";
     private const string ABKUnityDisableAutomaticPushRegistrationKey = "DisableAutomaticPushRegistration";
@@ -127,12 +129,26 @@ namespace Appboy.Editor {
 
       // Add Appboy Unity keys to Plist
       if (AppboyConfig.IOSAutomatesIntegration) {
-        // The Appboy Unity dictionary
-        PlistElementDict appboyUnityDict = (rootDict["Appboy"] == null) ? rootDict.CreateDict("Appboy").CreateDict("Unity") : rootDict["Appboy"].AsDict().CreateDict("Unity");
+        // The Appboy dictionary
+        PlistElementDict appboyDict = (rootDict["Appboy"] == null) ? rootDict.CreateDict("Appboy") : rootDict["Appboy"].AsDict();
+        // The Appboy Unity dictionary under the Appboy dictionary
+        PlistElementDict appboyUnityDict = appboyDict.CreateDict("Unity");
+
+        // Add the iOS Endpoint to Plist
+        if (string.IsNullOrEmpty(AppboyConfig.IOSEndpoint.Trim())) {
+          appboyDict.values.Remove(ABKEndpointKey);
+        } else {
+          appboyDict.SetString(ABKEndpointKey, AppboyConfig.IOSEndpoint.Trim());
+        }
+        if (string.IsNullOrEmpty(AppboyConfig.IOSLogLevel.Trim())) {
+          appboyDict.values.Remove(ABKLogLevelKey);
+        } else {
+          appboyDict.SetString(ABKLogLevelKey, AppboyConfig.IOSLogLevel.Trim());
+        }
 
         // Add iOS automated integration build keys to Plist
-        if (ValidateField(ABKUnityApiKey, AppboyConfig.ApiKey, "Appboy will not be initialized.")) {
-          appboyUnityDict.SetString(ABKUnityApiKey, AppboyConfig.ApiKey.Trim());
+        if (ValidateField(ABKUnityApiKey, AppboyConfig.IOSApiKey, "Appboy will not be initialized.")) {
+          appboyUnityDict.SetString(ABKUnityApiKey, AppboyConfig.IOSApiKey.Trim());
         }
         appboyUnityDict.SetBoolean(ABKUnityAutomaticPushIntegrationKey, AppboyConfig.IOSIntegratesPush);
         appboyUnityDict.SetBoolean(ABKUnityDisableAutomaticPushRegistrationKey, AppboyConfig.IOSDisableAutomaticPushRegistration);
@@ -182,7 +198,7 @@ namespace Appboy.Editor {
     }
 
     private static void DisplayInvalidSettingsWarning(string key, string details) {
-      EditorUtility.DisplayDialog("Invalid Appboy Settings", "The " + Regex.Replace(key, @"\B[A-Z]", " $0") + " is blank. " + details + " Set this field in Appboy > Appboy Configuration.", "OK");
+      EditorUtility.DisplayDialog("Invalid Appboy Settings", "The " + Regex.Replace(key, @"\B[A-Z]", " $0") + " is blank. " + details + " Set this field in Braze > Braze Configuration.", "OK");
     }
 
     private static bool ValidateField(string key, string value, string errorDetails) {

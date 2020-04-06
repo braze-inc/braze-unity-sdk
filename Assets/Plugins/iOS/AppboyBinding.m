@@ -194,6 +194,10 @@ void _logContentCardClicked(const char* cardJSONString) {
   [[AppboyUnityManager sharedInstance] logContentCardClicked:GetStringParam(cardJSONString)];
 }
 
+void _logContentCardDismissed(const char* cardJSONString) {
+  [[AppboyUnityManager sharedInstance] logContentCardDismissed:GetStringParam(cardJSONString)];
+}
+
 void _logFeedDisplayed() {
   [[AppboyUnityManager sharedInstance] logFeedDisplayed];
 }
