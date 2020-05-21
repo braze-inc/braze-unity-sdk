@@ -2,6 +2,9 @@
 xcuserdata
 !xcshareddata
 
+# Logs
+Logs/
+
 # Release folder
 Public/unity-samples/
 Public/Libraries/
@@ -15,11 +18,17 @@ UnityPackageManager/
 /Packages
 /Temp
 /Library
+## https://stackoverflow.com/a/57728803/3745724
+#Ignore all .meta file
 *.meta
-// All the .meta file in the Assets folder of sample app needs to be saved, or everytime we change branch/platform all the scripts are missing.
-!unity-samples/Assets/**/*.meta
-// Also need to keep the .meta file for the AppboyBindingTester.cs file
-!Plugins/Appboy/Tests/AppboyBindingTester.cs.meta
+#But not source file with postfix. which is everything but a folder
+!*.*.meta
+
+# Firebase
+/unity-samples/Assets/Plugins/Android/*.aar
+!/unity-samples/Assets/Plugins/Android/appboy*.aar
+*.jar
+*.so
 
 # Generated resources
 /unity-package
@@ -27,11 +36,8 @@ UnityPackageManager/
 /Assembly*csproj
 /*sln
 
-# Copied libraries
-Assets/Plugins/iOS/AppboyKit*
-Assets/Plugins/iOS/SDWebImage*
-Assets/Plugins/iOS/FLAnimatedImage*
-Assets/Plugins/iOS/AppboyUI*
+# Scripts
+scripts/build
 
 # Sample app
 unity-samples/*.sln
@@ -41,7 +47,8 @@ unity-samples/Temp/
 unity-samples/Obj/
 unity-samples/UnityGenerated/
 unity-samples/Library/
-unity-sample/Builds/
+unity-samples/Builds/
+unity-samples/build/
 # Only keep one file in the Data and Libraries to keep the Data folder.
 # Unity won't append the built project if there isn't a Data and Libraries folders.
 unity-samples/iOS/Auto-Integrate-Sample/*
@@ -51,6 +58,7 @@ unity-samples/iOS/Manual-Integrate-Sample/*
 !unity-samples/iOS/Manual-Integrate-Sample/Classes/UnityAppController.mm
 *.apk
 unity-samples/UnityPackageManager/
+unity-samples/Logs/
 
 # OS generated
 .DS_Store
@@ -64,9 +72,6 @@ Thumbs.db
 
 # emacs temporary files
 *~
-
-# jars
-!*.jar
 
 # Tests
 unity-samples/Assets/test-results/
