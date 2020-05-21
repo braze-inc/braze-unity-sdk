@@ -3,8 +3,6 @@
 ##### Added
 - Added an implementation for `AppboyBinding.GetInstallTrackingId()` for iOS.
 
-## 2.2.0
-
 ##### Changed
 - Updated the Android plugin to use [Braze Android SDK 7.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#700).
 
