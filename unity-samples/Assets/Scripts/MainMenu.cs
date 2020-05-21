@@ -76,5 +76,9 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.SetCustomUserAttribute("times laughed", -1);
     Appboy.AppboyBinding.SetCustomUserAttribute("grins cracked", 0.5F);
     Appboy.AppboyBinding.SetCustomUserAttribute("knock knock", "who's there");
+
+    Appboy.AppboyBinding.LogCustomEvent("union of unity uniters");
+    Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);
+    Debug.Log("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
   }
 }

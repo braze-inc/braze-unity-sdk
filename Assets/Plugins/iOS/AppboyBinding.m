@@ -3,6 +3,8 @@
 // Converts C style string to NSString
 #define GetStringParam( _x_ ) ( _x_ != NULL ) ? [NSString stringWithUTF8String:_x_] : [NSString stringWithUTF8String:""]
 
+char* convertNSStringToCString(const NSString* nsString);
+
 void _logCustomEvent(const char* eventName, const char* properties) {
   NSMutableDictionary *eventProperties = [NSMutableDictionary dictionaryWithCapacity:1];
   if (properties != NULL && properties != nil) {
@@ -241,4 +243,21 @@ void _requestGeofences(int latitude, int longitude) {
 
 void _requestImmediateDataFlush() {
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+}
+
+char* _getInstallTrackingId() {
+  NSString* deviceId = [[Appboy sharedInstance] getDeviceId];
+  return convertNSStringToCString(deviceId);
+}
+
+char* convertNSStringToCString(const NSString* nsString) {
+  if (nsString == NULL) {
+    return NULL;
+  }
+
+  const char* nsStringUtf8 = [nsString UTF8String];
+  char* cString = (char*)malloc(strlen(nsStringUtf8) + 1);
+  strcpy(cString, nsStringUtf8);
+
+  return cString;
 }

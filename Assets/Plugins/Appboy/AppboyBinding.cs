@@ -180,6 +180,9 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _requestImmediateDataFlush();
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern string _getInstallTrackingId();
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -375,8 +378,7 @@ namespace Appboy {
     }
 
     public static string GetInstallTrackingId() {
-      // no-op
-      return null;
+      return _getInstallTrackingId();
     }
 
     public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
