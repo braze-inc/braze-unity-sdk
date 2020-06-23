@@ -304,6 +304,11 @@
   }
 }
 
+- (void) registerPushTokenBase64:(NSString *)deviceTokenBase64 {
+  NSData *data = [[NSData alloc] initWithBase64EncodedString:deviceTokenBase64 options:0];
+  [[Appboy sharedInstance] registerDeviceToken:data];
+} 
+
 - (void) registerApplication:(UIApplication *)application 
          didReceiveRemoteNotification:(NSDictionary *)notification 
          fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {

@@ -3,6 +3,7 @@ using Appboy.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using System.Text;
 
 public class MainMenu : MonoBehaviour {
 
@@ -50,9 +51,12 @@ public class MainMenu : MonoBehaviour {
   // Not connecting this to the main menu as setting a push token like that
   // would break push on the device.  But leaving here in case this method needs
   // to be tested again in the future.
-  public void OnRegisterAppboyAndroidPushMessages() {
+  public void OnRegisterAppboyPushMessages() {
 #if UNITY_ANDROID
     Appboy.AppboyBinding.RegisterAppboyPushMessages("testPushToken");
+#elif UNITY_IOS
+    // On iOS, the token comes as a byte array from Unity 
+    Appboy.AppboyBinding.RegisterAppboyPushMessages(Encoding.UTF8.GetBytes("testPushToken"));
 #endif
   }
 

@@ -74,6 +74,7 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void) registerForRemoteNotifications;
 - (void) registerPushToken:(NSData *)deviceToken;
+- (void) registerPushTokenBase64:(NSString *)deviceTokenBase64;
 - (void) registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 - (void) logInAppMessageClicked:(NSString *)inAppMessageJSONString;
 - (void) logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID;
