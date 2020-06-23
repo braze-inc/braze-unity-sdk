@@ -6,12 +6,13 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Appboy.Utilities;
 using System;
+using System.Text;
 
 /// <summary>
 /// These methods can be called by Unity applications using iOS or Android in order to report
 /// events and set user attributes. Please see the Appboy Android JavaDocs for more
 /// detailed guidance on usage (note that only a subset of the functions in the JavaDocs
-/// are availabe in the Unity API):
+/// are available in the Unity API):
 /// http://appboy.github.io/appboy-android-sdk/javadocs/com/appboy/IAppboy.html
 /// http://appboy.github.io/appboy-android-sdk/javadocs/index.html
 /// </summary>
@@ -183,6 +184,9 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern string _getInstallTrackingId();
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern string _registerAppboyPushMessages(string registrationTokenBase64);
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -298,11 +302,11 @@ namespace Appboy {
     }
 
     public static void setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {
-    _setUserFacebookData(facebookId, firstName, lastName, email, bio, cityName, gender == null ? -1 : (int)gender, numberOfFriends == null ? -1 : (int)numberOfFriends, birthday);
+      _setUserFacebookData(facebookId, firstName, lastName, email, bio, cityName, gender == null ? -1 : (int)gender, numberOfFriends == null ? -1 : (int)numberOfFriends, birthday);
     }
 
     public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
-    _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
+      _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
     }
 
     public static void DisplayNextInAppMessage(bool withDelegate) {
@@ -387,6 +391,19 @@ namespace Appboy {
 
     public static void RequestLocationInitialization() {
       // no-op
+    }
+
+    /// <summary>
+    /// Registers a device token with Braze. See 
+    /// https://docs.unity3d.com/2018.4/Documentation/ScriptReference/iOS.NotificationServices.RegisterForNotifications.html
+    /// </summary>
+    /// <param name='registrationDeviceToken'>
+    /// https://docs.unity3d.com/2018.4/Documentation/ScriptReference/iOS.NotificationServices-deviceToken.html
+    /// </param>
+    /// </summary>
+    public static void RegisterAppboyPushMessages(byte[] registrationDeviceToken) {
+      string registrationTokenBase64 = Convert.ToBase64String(registrationDeviceToken);
+      _registerAppboyPushMessages(registrationTokenBase64);
     }
 
     /// <summary>

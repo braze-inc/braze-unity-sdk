@@ -245,6 +245,10 @@ void _requestImmediateDataFlush() {
   [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
 }
 
+void _registerAppboyPushMessages(const char* tokenBase64) {
+  [[AppboyUnityManager sharedInstance] registerPushTokenBase64:GetStringParam(tokenBase64)];
+}
+
 char* _getInstallTrackingId() {
   NSString* deviceId = [[Appboy sharedInstance] getDeviceId];
   return convertNSStringToCString(deviceId);

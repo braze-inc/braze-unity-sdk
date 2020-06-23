@@ -1,3 +1,13 @@
+## 2.2.2
+
+##### Added
+- Added a method for manually providing a push registration token via `AppboyBinding.RegisterAppboyPushMessages()` for iOS.
+  - Note that the Android implementation accepts `string`.
+  - The iOS implementation accepts `byte[]`.
+  
+##### Fixed
+- Fixed an issue which caused the extras dictionary to not be populated in JSON push payloads sent by the SDK to Unity listeners.
+
 ## 2.2.1
 
 ##### Added

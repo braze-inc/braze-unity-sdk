@@ -30,8 +30,8 @@ namespace Appboy.Models {
       if (json["content"] != null) {
         Content = json["content"];
       }
-      if (json["extras"] != null) {
-        Extras = JsonUtils.JSONClassToDictionary(json["extras"].AsObject);
+      if (json["extra"] != null) {
+        Extras = JsonUtils.JSONClassToDictionary(json["extra"].AsObject);
       } else {
         Extras = new Dictionary<string, string>();
       }
