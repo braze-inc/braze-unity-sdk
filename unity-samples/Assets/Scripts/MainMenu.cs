@@ -85,4 +85,26 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);
     Debug.Log("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
   }
+
+  void PushNotificationReceivedCallback(string message) {
+#if UNITY_ANDROID
+    Debug.Log("PushNotificationReceivedCallback message: " + message);
+    PushNotification pushNotification = new PushNotification(message);
+    Debug.Log("Push Notification received: " + pushNotification);   
+#elif UNITY_IOS
+    ApplePushNotification pushNotification = new ApplePushNotification(message);
+    Debug.Log("Push received Notification event: " + pushNotification);   
+#endif  
+  }
+
+  void PushNotificationOpenedCallback(string message) {
+#if UNITY_ANDROID
+    Debug.Log("PushNotificationOpenedCallback message: " + message);
+    PushNotification pushNotification = new PushNotification(message);
+    Debug.Log("Push Notification opened: " + pushNotification);  
+#elif UNITY_IOS
+    ApplePushNotification pushNotification = new ApplePushNotification(message);
+    Debug.Log("Push opened Notification event: " + pushNotification);   
+#endif  
+  }
 }

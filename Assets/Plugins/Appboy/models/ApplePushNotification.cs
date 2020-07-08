@@ -21,6 +21,10 @@ namespace Appboy.Models {
     // https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW10
     public IDictionary<string, object> Extra { get; set; }
 
+    public ApplePushNotification(string jsonString) : this((JSONClass) JSON.Parse(jsonString)) {
+    
+    }
+
     public ApplePushNotification(JSONClass json) {
       Alert = new ApplePushNotificationAlert(json["alert"].AsObject);
       Badge = json["badge"].AsInt;

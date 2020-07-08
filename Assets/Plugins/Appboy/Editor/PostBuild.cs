@@ -21,7 +21,6 @@ namespace Appboy.Editor {
     private const string ABKUnityApiKey = "ApiKey";
     private const string ABKUnityAutomaticPushIntegrationKey = "IntegratesPush";
     private const string ABKUnityDisableAutomaticPushRegistrationKey = "DisableAutomaticPushRegistration";
-    private const string ABKUnitySetPushListenerKey = "SetPushListener";
     private const string ABKUnityPushReceivedGameObjectKey = "PushReceivedGameObjectName";
     private const string ABKUnityPushReceivedCallbackKey = "PushReceivedCallbackMethodName";
     private const string ABKUnityPushOpenedGameObjectKey = "PushOpenedGameObjectName";

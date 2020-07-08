@@ -1,3 +1,12 @@
+## 2.3.0
+
+##### Changed
+- Updated the Android plugin to use [Braze Android SDK 8.0.1](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#801).
+- Updated the native iOS bridge to [Braze iOS SDK 3.25.0](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.25.0).
+
+##### Added
+- Added functionality to apps using the UserNotification framework to forward via `UnitySendMessage` push notification opens to game object methods on iOS.
+
 ## 2.2.2
 
 ##### Added
