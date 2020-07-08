@@ -2,6 +2,8 @@
 #import "AppboyKit.h"
 #import "ABKBaseContentCardCell.h"
 
+@protocol ABKContentCardsTableViewControllerDelegate;
+
 @interface ABKContentCardsTableViewController : UITableViewController
 
 /*!
@@ -9,6 +11,11 @@
  */
 @property (strong, nonatomic) IBOutlet UIView *emptyFeedView;
 @property (weak, nonatomic) IBOutlet UILabel *emptyFeedLabel;
+
+/*!
+ * The ABKContentCardsTableViewController delegate
+ */
+@property (weak, nonatomic) id<ABKContentCardsTableViewControllerDelegate> delegate;
 
 /*!
  * This property stores the cards displayed in the Content Cards feed. By default, the view controller
@@ -34,8 +41,22 @@
 @property NSTimeInterval cacheTimeout;
 
 /*!
+ * If set, this property overrides the maximum width of Content Cards set by the storyboard.
+ */
+@property (assign, nonatomic) CGFloat maxContentCardWidth;
+
+/*!
+ * This boolean determines if the Content Card will attempt to use dark theme colors, granted the device
+ * is in dark mode.
+ *
+ * @discussion The default of this value is YES but can be overriden before the view controller is presented
+ *             to ensure that the dark theme is disabled for any Content Card displayed.
+ */
+@property (assign, nonatomic) BOOL enableDarkTheme;
+
+/*!
  * @discussion This method returns an instance of ABKContentCardsTableViewController. You can call it
- * to get a Content  view controller for your navigation controller.
+ * to get a Content Cards view controller for your navigation controller.
  */
 + (instancetype)getNavigationContentCardsViewController;
 
@@ -64,17 +85,57 @@
 /*!
  * @discussion This method handles the user's click on the card.
  *
- * To do custom handling with the card clicks, you can override this method in a
- * subclass. You also need to call [card logContentCardClicked] manually inside of your new method
- * to send the click event to the Braze server.
+ * If you wish to handle card clicks yourself, refer to ABKContentCardsTableViewControllerDelegate's
+ * contentCardTableViewController:shouldHandleCardClick: method.
+ *
+ * @warning Overriding handleCardClick: yourself might prevent
+ * ABKContentCardsTableViewControllerDelegate's contentCardTableViewController:shouldHandleCardClick:
+ * and contentCardTableViewController:didHandleCardClick: from firing properly.
+ *
+ * If you decide to override this method, you must call [card logContentCardClicked] manually inside of your
+ * new method to send the click event to the Braze server.
  */
 - (void)handleCardClick:(ABKContentCard *)card;
 
 - (void)requestNewCardsIfTimeout;
 
 /*!
-* @discussion This method is called when the cards stored in the cards property should be refreshed.
-*/
+ * @discussion This method is called when the cards stored in the cards property should be refreshed.
+ */
 - (void)populateContentCards;
+
+@end
+
+
+@protocol ABKContentCardsTableViewControllerDelegate <NSObject>
+
+@optional
+
+/*!
+ * Asks the delegate if the Appboy SDK should handle the content card click action.
+ *
+ * @warning This method might not be called if you overrode handleCardClick:
+ *
+ * @param viewController The view controller displaying the content card.
+ * @param url The content card's url.
+ * @return YES to let the Appboy SDK handle the click action, NO if you wish to handle the click action
+ *         yourself.
+ */
+- (BOOL)contentCardTableViewController:(ABKContentCardsTableViewController *)viewController
+                 shouldHandleCardClick:(NSURL *)url;
+
+/*!
+ * Informs the delegate that the content card click action was handled by the Appboy SDK.
+ *
+ * This method is not called if the delegate method `contentCardTableViewController:shouldHandleCardClick:`
+ * returns NO.
+ *
+ * @warning This method might not be called if you overrode handleCardClick:
+ *
+ * @param viewController The view controller displaying the content card.
+ * @param url The content card's url.
+ */
+- (void)contentCardTableViewController:(ABKContentCardsTableViewController *)viewController
+                    didHandleCardClick:(NSURL *)url;
 
 @end

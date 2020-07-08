@@ -273,7 +273,7 @@
   }
 }
 
-// Push related  methods
+// Push related methods
 - (void) registerForRemoteNotifications {
   if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue] && ![self.appboyUnityPlist[ABKUnityDisableAutomaticPushRegistrationKey] boolValue]) {
     UIUserNotificationType notificationSettingTypes = (UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound);
@@ -314,85 +314,20 @@
          fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   if (self.appboyUnityPlist == nil || [self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
     [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
-
-    // generate a new dictionary that rearrange the notification elements
-    NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
-
-    // check if the object for key alert is a string; if it is, then convert it to a dictionary
-    id alert = [aps objectForKey:@"alert"];
-    if ([alert isKindOfClass:[NSString class]]) {
-      NSDictionary *alertDictionary = [NSDictionary dictionaryWithObject:alert forKey:@"body"];
-      [aps setObject:alertDictionary forKey:@"alert"];
-    }
-
-    // move all other dictionarys other than aps in payload to key extra in aps dictionary
-    NSMutableDictionary *extraDictionary = [NSMutableDictionary dictionaryWithDictionary:notification];
-    [extraDictionary removeObjectForKey:@"aps"];
-    if ([extraDictionary count] > 0) {
-      [aps setObject:extraDictionary forKey:@"extra"];
-    }
-
-    if ([NSJSONSerialization isValidJSONObject:aps]) {
-      NSError *pushParsingError = nil;
-      NSData *data = [NSJSONSerialization dataWithJSONObject:aps options:0 error:&pushParsingError];
-
-      if (pushParsingError == nil) {
-        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
-        if (application.applicationState == UIApplicationStateActive) {
-          if (self.unityPushReceivedGameObjectName == nil) {
-            NSLog(@"Not sending a Unity message in response to a push notification being received because "
-                  "no message receiver was defined. To implement custom behavior in response to a push "
-                  "notification being received, you must register a GameObject and method name with Appboy "
-                  "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].");
-            return;
-          }
-          if (self.unityPushReceivedCallbackFunctionName == nil) {
-            NSLog(@"Not sending a Unity message in response to a push notification being received because "
-                  "no method name was defined for the %@. To implement custom behavior in response to a push "
-                  "notification being received, you must register a GameObject and method name with Appboy "
-                  "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].",
-                  self.unityPushReceivedGameObjectName);
-            return;
-          }
-          NSLog(@"Sending a notification received message to %@:%@.", self.unityPushReceivedGameObjectName, self.unityPushReceivedCallbackFunctionName);
-
-          UnitySendMessage([self.unityPushReceivedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                           [self.unityPushReceivedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                           [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-        } else {
-          if (self.unityPushOpenedGameObjectName == nil) {
-            NSLog(@"Not sending a Unity message in response to a push notification being opened because "
-                  "no message receiver was defined. To implement custom behavior in response to a push "
-                  "notification being opened, you must register a GameObject and method name with Appboy "
-                  "by calling [AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].");
-            return;
-          }
-          if (self.unityPushOpenedCallbackFunctionName == nil) {
-            NSLog(@"Not sending a Unity message in response to a push notification being opened because "
-                  "no method name was defined for the %@. To implement custom behavior in response to a push "
-                  "notification being opened, you must register a GameObject and method name with Appboy "
-                  "[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].",
-                  self.unityPushOpenedGameObjectName);
-            return;
-          }
-          NSLog(@"Sending a notification opened message to %@:%@.", self.unityPushOpenedGameObjectName, self.unityPushOpenedCallbackFunctionName);
-
-          UnitySendMessage([self.unityPushOpenedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                           [self.unityPushOpenedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                           [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-        }
-      }
-    }
+    [self forwardNotification:notification];
   }
 }
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center
          didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler {
-  [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
   if (completionHandler) {
     completionHandler();
+  }
+
+  if (self.appboyUnityPlist == nil || [self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
+    [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+    [self forwardNotification:response.notification.request.content.userInfo];
   }
 }
 
@@ -603,6 +538,79 @@
 
 + (void) requestEnableSDKOnNextAppRun {
   [Appboy requestEnableSDKOnNextAppRun];
+}
+
+- (void) forwardNotification:(NSDictionary *)notification {
+  // generate a new dictionary that rearrange the notification elements
+  NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
+
+  // check if the object for key alert is a string; if it is, then convert it to a dictionary
+  id alert = [aps objectForKey:@"alert"];
+  if ([alert isKindOfClass:[NSString class]]) {
+    NSDictionary *alertDictionary = [NSDictionary dictionaryWithObject:alert forKey:@"body"];
+    [aps setObject:alertDictionary forKey:@"alert"];
+  }
+
+  // move all other dictionaries other than aps in payload to key extra in aps dictionary
+  NSMutableDictionary *extraDictionary = [NSMutableDictionary dictionaryWithDictionary:notification];
+  [extraDictionary removeObjectForKey:@"aps"];
+  if ([extraDictionary count] > 0) {
+    [aps setObject:extraDictionary forKey:@"extra"];
+  }
+
+  if ([NSJSONSerialization isValidJSONObject:aps]) {
+    NSError *pushParsingError = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:aps options:0 error:&pushParsingError];
+
+    if (pushParsingError == nil) {
+      NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+      UIApplication *application = [UIApplication sharedApplication];
+      if (application.applicationState == UIApplicationStateActive) {
+        if (self.unityPushReceivedGameObjectName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being received because "
+                "no message receiver was defined. To implement custom behavior in response to a push "
+                "notification being received, you must register a GameObject and method name with Appboy "
+                "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].");
+          return;
+        }
+        if (self.unityPushReceivedCallbackFunctionName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being received because "
+                "no method name was defined for the %@. To implement custom behavior in response to a push "
+                "notification being received, you must register a GameObject and method name with Appboy "
+                "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].",
+                self.unityPushReceivedGameObjectName);
+          return;
+        }
+        NSLog(@"Sending a notification received message to %@:%@.", self.unityPushReceivedGameObjectName, self.unityPushReceivedCallbackFunctionName);
+
+        UnitySendMessage([self.unityPushReceivedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                          [self.unityPushReceivedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                          [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+      } else {
+        if (self.unityPushOpenedGameObjectName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being opened because "
+                "no message receiver was defined. To implement custom behavior in response to a push "
+                "notification being opened, you must register a GameObject and method name with Appboy "
+                "by calling [AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].");
+          return;
+        }
+        if (self.unityPushOpenedCallbackFunctionName == nil) {
+          NSLog(@"Not sending a Unity message in response to a push notification being opened because "
+                "no method name was defined for the %@. To implement custom behavior in response to a push "
+                "notification being opened, you must register a GameObject and method name with Appboy "
+                "[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].",
+                self.unityPushOpenedGameObjectName);
+          return;
+        }
+        NSLog(@"Sending a notification opened message to %@:%@.", self.unityPushOpenedGameObjectName, self.unityPushOpenedCallbackFunctionName);
+
+        UnitySendMessage([self.unityPushOpenedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
+                          [self.unityPushOpenedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
+                          [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
+      }
+    }
+  }
 }
 
 @end

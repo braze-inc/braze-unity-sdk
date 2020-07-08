@@ -19,8 +19,6 @@ using System.Text;
 
 namespace Appboy {
   public class AppboyBinding : MonoBehaviour {
-    public const string Version = "1.2.1";
-
     // Overloads
     // These will call the associated binding method for the current live platform
     public static void LogPurchase(string productId, string currencyCode, decimal price) {
