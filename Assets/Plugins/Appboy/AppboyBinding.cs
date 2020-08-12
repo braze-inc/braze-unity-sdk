@@ -183,7 +183,7 @@ namespace Appboy {
     private static extern string _getInstallTrackingId();
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
-    private static extern string _registerAppboyPushMessages(string registrationTokenBase64);
+    private static extern void _registerAppboyPushMessages(string registrationTokenBase64);
 
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);

@@ -1,3 +1,13 @@
+## 2.4.0
+
+##### Changed
+- Updated the Android plugin to use [Braze Android SDK 8.1.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#810).
+- Updated the native iOS bridge to [Braze iOS SDK 3.26.1](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.26.1).
+
+##### Fixed
+- Fixed return type of `AppboyBinding.RegisterAppboyPushMessages()` for iOS to be `void`.
+- Fixed the automatic config for Android push icons to correctly used `drawable` instead of `string`.
+
 ## 2.3.0
 
 ##### Changed
