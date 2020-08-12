@@ -57,8 +57,8 @@ namespace Appboy.Editor {
       cfg = AddHexColorIntegerKey(cfg, "com_appboy_default_notification_accent_color", AppboyConfig.AndroidPushDefaultNotificationAccentColor);
       cfg = AddStringKey(cfg, "com_appboy_default_notification_channel_name", AppboyConfig.AndroidPushDefaultNotificationChannelName);
       cfg = AddStringKey(cfg, "com_appboy_default_notification_channel_description", AppboyConfig.AndroidPushDefaultNotificationChannelDescription);
-      cfg = AddStringKey(cfg, "com_appboy_push_small_notification_icon", AppboyConfig.AndroidPushSmallNotificationIcon);
-      cfg = AddStringKey(cfg, "com_appboy_push_large_notification_icon", AppboyConfig.AndroidPushLargeNotificationIcon);
+      cfg = AddDrawableKey(cfg, "com_appboy_push_small_notification_icon", AppboyConfig.AndroidPushSmallNotificationIcon);
+      cfg = AddDrawableKey(cfg, "com_appboy_push_large_notification_icon", AppboyConfig.AndroidPushLargeNotificationIcon);
 
       // In App Messages
       cfg = AddStringKey(cfg, "com_appboy_inapp_listener_game_object_name", AppboyConfig.AndroidInAppMessageListenerGameObjectName);
@@ -103,6 +103,13 @@ namespace Appboy.Editor {
     private static string AddStringKey(string buffer, string key, string value) {
       if (!string.IsNullOrEmpty(value.Trim())) {
         buffer += "\n  <string translatable=\"false\" name=\"" + key + "\">" + value + "</string>";
+      }
+      return buffer;
+    }
+
+    private static string AddDrawableKey(string buffer, string key, string value) {
+      if (!string.IsNullOrEmpty(value.Trim())) {
+        buffer += "\n  <drawable name=\"" + key + "\">" + value + "</drawable>";
       }
       return buffer;
     }
