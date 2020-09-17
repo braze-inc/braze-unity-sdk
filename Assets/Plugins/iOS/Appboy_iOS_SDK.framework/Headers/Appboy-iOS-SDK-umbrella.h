@@ -33,7 +33,6 @@
 #import "ABKContentCardsController.h"
 #import "ABKFacebookUser.h"
 #import "ABKFeedController.h"
-#import "ABKIdentifierForAdvertisingProvider.h"
 #import "ABKIDFADelegate.h"
 #import "ABKInAppMessage.h"
 #import "ABKInAppMessageButton.h"
