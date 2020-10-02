@@ -110,6 +110,8 @@ namespace Appboy.Editor {
     private string androidInAppMessageListenerCallbackMethodName = string.Empty;
     [SerializeField]
     private string androidTriggerActionMinimumTimeSeconds = string.Empty;
+    [SerializeField]
+    private bool androidDisplayInAppMessagesAutomatically = true;
 
     // News Feed
     [SerializeField]
@@ -363,6 +365,11 @@ namespace Appboy.Editor {
     public static string AndroidTriggerActionMinimumTimeSeconds {
       get { return Instance.androidTriggerActionMinimumTimeSeconds; }
       set { SetProperty(ref Instance.androidTriggerActionMinimumTimeSeconds, value); }
+    }
+
+    public static bool AndroidDisplayInAppMessagesAutomatically {
+      get { return Instance.androidDisplayInAppMessagesAutomatically; }
+      set { SetProperty(ref Instance.androidDisplayInAppMessagesAutomatically, value); }
     }
 
     // Content Cards

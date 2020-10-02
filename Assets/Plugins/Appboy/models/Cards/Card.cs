@@ -89,7 +89,7 @@ namespace Appboy.Models.Cards {
       if (!string.IsNullOrEmpty(ID)) {
 #if UNITY_ANDROID
         AppboyBinding.Appboy.Call("logFeedCardClick", ID);
-#elif UNITY_IPHONE
+#elif UNITY_IOS
         AppboyBinding.LogCardClicked(JsonString);
 #endif
       }
