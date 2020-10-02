@@ -16,11 +16,8 @@ puts "ROOT_DIRECTORY #{ROOT_DIRECTORY}"
 
 ANDROID_MODULES = [
   ArtifactModulePair.new("android-sdk-base", "appboy"),
-  ArtifactModulePair.new("android-sdk-base-jetified", "appboy-jetified"),
   ArtifactModulePair.new("android-sdk-ui", "appboy-ui"),
-  ArtifactModulePair.new("android-sdk-ui-jetified", "appboy-ui-jetified"),
   ArtifactModulePair.new("android-sdk-unity", "appboy-unity"),
-  ArtifactModulePair.new("android-sdk-unity-jetified", "appboy-unity-jetified")
 ]
 
 BUILD_DIR = File.join(ROOT_DIRECTORY, "scripts/build")

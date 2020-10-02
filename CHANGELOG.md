@@ -1,3 +1,21 @@
+## 2.6.0
+
+##### Breaking
+- Updated the Android plugin to use [Braze Android SDK 10.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#1000).
+  - Note that this SDK release internally uses AndroidX depdendences. See the linked SDK changelog entry for more information.
+  - All "jetified" packages are removed since the android artifacts are now fully on AndroidX.
+- Removed `PushNotification.cs#CollapseKey`.
+
+##### Changed
+- Added `PushNotification.cs#RawJsonString`, `PushNotification.cs#AndroidPushReceivedTimestamp`.
+
+##### Added
+- Added Braze configuration option for Android to toggle automatically displaying In-App Messages.
+  
+##### Fixed
+- Fixed push notification parsing for Android in `PushNotification.cs`.
+- Fixed use of outdated `UNITY_IPHONE` directive in `Card.cs`.
+  
 ## 2.5.0
 
 ##### Breaking

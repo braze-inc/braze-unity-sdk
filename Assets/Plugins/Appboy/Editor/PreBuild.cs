@@ -64,6 +64,7 @@ namespace Appboy.Editor {
       cfg = AddStringKey(cfg, "com_appboy_inapp_listener_game_object_name", AppboyConfig.AndroidInAppMessageListenerGameObjectName);
       cfg = AddStringKey(cfg, "com_appboy_inapp_listener_callback_method_name", AppboyConfig.AndroidInAppMessageListenerCallbackMethodName);
       cfg = AddIntegerKey(cfg, "com_appboy_trigger_action_minimum_time_interval_seconds", AppboyConfig.AndroidTriggerActionMinimumTimeSeconds);
+      cfg = AddBooleanKey(cfg, "com_appboy_inapp_show_inapp_messages_automatically", AppboyConfig.AndroidDisplayInAppMessagesAutomatically);
 
       // Content Cards
       cfg = AddStringKey(cfg, "com_appboy_content_cards_updated_listener_game_object_name", AppboyConfig.AndroidContentCardsUpdatedListenerGameObjectName);

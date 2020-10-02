@@ -258,6 +258,7 @@ namespace Appboy.Editor {
     }
 
     private void AndroidBuildGUIInAppMessages() {
+      AppboyConfig.AndroidDisplayInAppMessagesAutomatically = EditorGUILayout.ToggleLeft(" Automatically Display In-App Messages", AppboyConfig.AndroidDisplayInAppMessagesAutomatically);
       androidShowInAppMessageListener = EditorGUILayout.Foldout(androidShowInAppMessageListener, "Set In App Message Listener");
       if (androidShowInAppMessageListener) {
         EditorGUI.indentLevel++;
