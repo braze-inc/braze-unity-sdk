@@ -1,3 +1,12 @@
+## 2.7.0
+
+##### Breaking
+- Updated the native iOS bridge to [Braze iOS SDK 3.29.1](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.29.1).
+- Updated the Android plugin to use [Braze Android SDK 11.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#1100).
+
+##### Fixed
+- Fixed a metadata issue for Android artifacts.
+
 ## 2.6.0
 
 ##### Breaking

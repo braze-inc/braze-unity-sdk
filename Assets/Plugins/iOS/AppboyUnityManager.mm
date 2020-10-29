@@ -286,7 +286,6 @@
       }
       [center requestAuthorizationWithOptions:options
                             completionHandler:^(BOOL granted, NSError *_Nullable error) {
-                              NSLog(@"pushAuthorizationFromUserNotificationCenter permission granted.");
                               [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
                             }];
       [[UIApplication sharedApplication] registerForRemoteNotifications];
