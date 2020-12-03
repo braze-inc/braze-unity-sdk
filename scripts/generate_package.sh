@@ -6,18 +6,12 @@ PROJECT_ROOT=$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )
 function unity_app_cmd {
   # Ask MacOS for the path of the currently running Unity process
   RUNNING_UNITY_APP="$(osascript -e 'tell application "System Events" to POSIX path of (file of process "Unity" as alias)')/Contents/MacOS/Unity"
-  UNITY_HUB="/Applications/Unity/Hub/Editor/2019.2.20f1/Unity.app/Contents/MacOS/Unity"
   UNITY_STANDALONE="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
 
   if [ -f $RUNNING_UNITY_APP ]
   then
     echo "Using Unity $RUNNING_UNITY_APP"
     $RUNNING_UNITY_APP "$@"
-
-  elif [ -f $UNITY_HUB ]
-  then
-    echo "Using Unity $UNITY_HUB"
-    $UNITY_HUB "$@"
 
   else 
     echo "Using Unity $UNITY_STANDALONE"

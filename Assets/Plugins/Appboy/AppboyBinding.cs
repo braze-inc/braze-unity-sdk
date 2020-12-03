@@ -832,7 +832,7 @@ namespace Appboy {
 
     public static void LogContentCardDismissed(string contentCardString) {
       var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
-      contentCard.Call<bool>("setIsDismissed", true);
+      contentCard.Call("setIsDismissed", true);
     }
 
     public static void LogContentCardsDisplayed() {

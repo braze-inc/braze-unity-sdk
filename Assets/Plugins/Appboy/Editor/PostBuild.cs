@@ -53,10 +53,17 @@ namespace Appboy.Editor {
         project.RemoveFile(appboyAppDelegateGuid);
       } else {
         // Get project targets using Unity's default app target names
+#if UNITY_2019_3_OR_NEWER
+        string[] targets = {
+          project.GetUnityMainTargetGuid(),
+          project.TargetGuidByName(PBXProject.GetUnityTestTargetName())
+        };
+#else
         string[] targets = {
           project.TargetGuidByName(PBXProject.GetUnityTargetName()),
           project.TargetGuidByName(PBXProject.GetUnityTestTargetName())
         };
+#endif
 
         string[] requiredFrameworks = {
           "SystemConfiguration.framework",
