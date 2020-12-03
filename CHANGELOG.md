@@ -1,3 +1,9 @@
+## 2.7.1
+
+##### Fixed
+- Fixed an issue where the return type for the Android implementation of `setIsDismissed` in `AppboyBinding` was incorrectly set to `bool`.
+- Removed a deprecated usage of `PBXProject.GetUnityTargetName()`.
+
 ## 2.7.0
 
 ##### Breaking
