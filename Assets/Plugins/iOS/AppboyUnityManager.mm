@@ -103,6 +103,10 @@
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDoubleValue:value];
 }
 
+- (void) addAlias:(NSString *)alias withLabel:(NSString *)label {
+  [[Appboy sharedInstance].user addAlias:alias withLabel:label];
+}
+
 - (void) setUserCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value {
   [[Appboy sharedInstance].user setCustomAttributeWithKey:key andStringValue:value];
 }

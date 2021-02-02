@@ -93,6 +93,7 @@ static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMess
 - (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
 - (void) requestGeofences;
 - (void) requestImmediateDataFlush;
+- (void) addAlias:(NSString *)alias withLabel:(NSString *)label;
 + (void) wipeDataAndDisableForAppRun;
 + (void) disableSDK;
 + (void) requestEnableSDKOnNextAppRun;

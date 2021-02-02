@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #ifndef APPBOY_SDK_VERSION
-#define APPBOY_SDK_VERSION @"3.29.1"
+#define APPBOY_SDK_VERSION @"3.31.2"
 #endif
 
 #if !TARGET_OS_TV
@@ -29,6 +29,7 @@
 @protocol ABKInAppMessageControllerDelegate;
 @protocol ABKIDFADelegate;
 @protocol ABKURLDelegate;
+@protocol ABKImageDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 /* ------------------------------------------------------------------------------------------------------
@@ -89,6 +90,11 @@ extern NSString *const ABKEndpointKey;
 extern NSString *const ABKURLDelegateKey;
 
 /*!
+ * This can can be set to an instance of a class that conforms to the ABKImageDelegate protocol, allowing flexibility for using custom image libraries.
+ */
+extern NSString *const ABKImageDelegateKey;
+
+/*!
  * This key can be set to an instance of a class that conforms to the ABKInAppMessageControllerDelegate protocol, allowing it to handle in-app messages in a custom way.
  */
 extern NSString *const ABKInAppMessageControllerDelegateKey;
@@ -120,13 +126,18 @@ extern NSString *const ABKMinimumTriggerTimeIntervalKey;
 extern NSString *const ABKSDKFlavorKey;
 
 /*!
- * Key to specify a whitelist for device fields that are collected by the Braze SDK.
+ * Key to specify an allowlist for device fields that are collected by the Braze SDK.
  *
- * To specify whitelisted device fields, assign the bitwise `OR` of desired fields to this key. Fields are defined
+ * To specify allowlisted device fields, assign the bitwise `OR` of desired fields to this key. Fields are defined
  * in `ABKDeviceOptions`. To turn off all fields, set the value of this key to `ABKDeviceOptionNone`. By default,
  * all fields are collected.
  */
-extern NSString *const ABKDeviceWhitelistKey;
+extern NSString *const ABKDeviceAllowlistKey;
+
+/*!
+ * This key is deprecated in favor of ABKDeviceAllowlistKey. See ABKDeviceAllowlistKey for more details.
+ */
+extern NSString *const ABKDeviceWhitelistKey __deprecated_msg("ABKDeviceWhitelistKey is deprecated. Please use ABKDeviceAllowlistKey instead.");
 
 /*!
  * This key can be set to a string value representing the app group name for the Push Story Notification
@@ -183,8 +194,8 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
   ABKDeviceOptionLocale = (1 << 2),
   ABKDeviceOptionModel = (1 << 3),
   ABKDeviceOptionOSVersion = (1 << 4),
-  // Note: The ABKDeviceOptionIDFV whitelist key currently has no effect.
-  // IDFV is read regardless of whitelist settings due to its
+  // Note: The ABKDeviceOptionIDFV allowlist key currently has no effect.
+  // IDFV is read regardless of allowlist settings due to its
   // role as the primary device identifier within the Braze system.
   ABKDeviceOptionIDFV = (1 << 5),
   ABKDeviceOptionIDFA = (1 << 6),
@@ -194,6 +205,19 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
   ABKDeviceOptionAdTrackingEnabled = (1 << 10),
   ABKDeviceOptionPushDisplayOptions = (1 << 11),
   ABKDeviceOptionAll = ~ABKDeviceOptionNone
+};
+
+/*!
+ * Possible channels supported by the SDK.
+ */
+typedef NS_ENUM(NSInteger, ABKChannel) {
+  ABKPushNotificationChannel,
+  ABKInAppMessageChannel,
+  ABKNewsFeedChannel,
+  ABKContentCardChannel,
+  
+  // Note: Compatibility value for old internal APIs
+  ABKUnknownChannel
 };
 
 /*
@@ -297,6 +321,11 @@ typedef NS_OPTIONS(NSUInteger, ABKDeviceOptions) {
  * A class conforming to the ABKURLDelegate protocol can be set to handle URLs in a custom way.
  */
 @property (nonatomic, weak, nullable) id<ABKURLDelegate> appboyUrlDelegate;
+
+/*!
+ * A class conforming to ABKImageDelegate can be set to use a custom image library.
+ */
+@property (nonatomic, strong, nullable) id<ABKImageDelegate> imageDelegate;
 
 /*!
  * Property for internal reporting of SDK flavor.

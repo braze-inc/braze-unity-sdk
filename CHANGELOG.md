@@ -1,3 +1,12 @@
+## 2.8.0
+
+##### Breaking
+- Updated the Android plugin to use [Braze Android SDK 12.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#1200).
+- Updated the native iOS bridge to [Braze iOS SDK 3.31.2](https://github.com/Appboy/appboy-ios-sdk/releases/tag/3.31.2).
+
+##### Added
+- Added `AppboyBinding.AddAlias()` to the binding.
+
 ## 2.7.1
 
 ##### Fixed

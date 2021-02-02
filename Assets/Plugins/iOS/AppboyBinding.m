@@ -254,6 +254,10 @@ char* _getInstallTrackingId() {
   return convertNSStringToCString(deviceId);
 }
 
+void _addAlias(const char* alias, const char* label) {
+  [[AppboyUnityManager sharedInstance] addAlias:GetStringParam(alias) withLabel:GetStringParam(label)];
+}
+
 char* convertNSStringToCString(const NSString* nsString) {
   if (nsString == NULL) {
     return NULL;
