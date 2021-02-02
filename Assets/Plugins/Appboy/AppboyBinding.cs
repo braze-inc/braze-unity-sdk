@@ -185,6 +185,9 @@ namespace Appboy {
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _registerAppboyPushMessages(string registrationTokenBase64);
 
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _addAlias(string label, string alias);
+
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
     }
@@ -420,6 +423,10 @@ namespace Appboy {
 
     public static void RequestImmediateDataFlush() {
       _requestImmediateDataFlush();
+    }
+
+    public static void AddAlias(string alias, string label) {
+      _addAlias(alias, label);
     }
 
 #elif UNITY_ANDROID
@@ -894,6 +901,10 @@ namespace Appboy {
       Appboy.Call("requestImmediateDataFlush");
     }
 
+    public static void AddAlias(string alias, string label) {
+      GetCurrentUser().Call<bool>("addAlias", alias, label);
+    }
+
 #else
 
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
@@ -1056,6 +1067,9 @@ namespace Appboy {
     }
 
     public static void RequestImmediateDataFlush() {
+    }
+
+    public static void AddAlias(string alias, string label) {
     }
 #endif
   }

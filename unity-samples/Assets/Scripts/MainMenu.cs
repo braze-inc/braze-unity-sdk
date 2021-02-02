@@ -83,6 +83,7 @@ public class MainMenu : MonoBehaviour {
 
     Appboy.AppboyBinding.LogCustomEvent("union of unity uniters");
     Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);
+    Appboy.AppboyBinding.AddAlias("aliasHere", "labelHere");
     Debug.Log("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
   }
 

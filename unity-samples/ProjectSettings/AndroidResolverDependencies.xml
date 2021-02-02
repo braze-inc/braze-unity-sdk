@@ -60,11 +60,10 @@
     <file>Assets/Plugins/Android/com.google.firebase.firebase-iid-interop-17.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-measurement-connector-18.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-messaging-20.1.0.aar</file>
-    <file>Assets/Plugins/Android/com.google.firebase.firebase-messaging-unity-6.9.0.aar</file>
     <file>Assets/Plugins/Android/javax.inject.javax.inject-1.jar</file>
   </files>
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a,x86" />
+    <setting name="androidAbis" value="armeabi-v7a" />
     <setting name="bundleId" value="com.appboy.unity.AppboySample" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
