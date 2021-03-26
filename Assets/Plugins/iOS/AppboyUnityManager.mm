@@ -4,12 +4,20 @@
 #import <Appboy_iOS_SDK/ABKFacebookUser.h>
 #import <Appboy_iOS_SDK/ABKTwitterUser.h>
 
+static NSString *const ABKInternalCallback = @"BrazeInternalCallback";
+static NSString *const ABKInternalPushPermissionsPromptResponse = @"onPushPromptResponseReceived";
+static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenReceivedFromSystem";
+
 @interface ABKCard(proxy)
-- (NSMutableDictionary *) proxyForJson;
+- (NSMutableDictionary *)proxyForJson;
 @end
 
 @interface ABKInAppMessage(proxy)
-- (NSMutableDictionary *) proxyForJson;
+- (NSMutableDictionary *)proxyForJson;
+@end
+
+@interface AppboyUnityManager()
++ (NSString *)hexStringFromNSData:(NSData *)data;
 @end
 
 @implementation AppboyUnityManager
@@ -23,132 +31,21 @@
   return sharedInstance;
 }
 
-- (void) logCustomEvent:(NSString *)eventName withProperties:(NSDictionary *)properties {
-  [[Appboy sharedInstance] logCustomEvent:eventName withProperties:properties];
+# pragma mark - Config
+
+- (NSString *)getApiKeyFromUnity {
+  return self.appboyUnityPlist[ABKUnityApiKey];
 }
 
-- (void) changeUser:(NSString *)userId {
-  [[Appboy sharedInstance] changeUser:userId];
+- (NSDictionary *)parsePlist {
+  NSDictionary* appboyUnityPlist = [[NSBundle mainBundle] infoDictionary][@"Appboy"][@"Unity"];
+  self.appboyUnityPlist = appboyUnityPlist;
+  return appboyUnityPlist;
 }
 
-- (void) logPurchase:(NSString *)productId inCurrency:(NSString *)currencyCode
-             atPrice:(NSString *)price withQuantity:(NSUInteger)quantity withProperties:(NSDictionary *)properties {
-  [[Appboy sharedInstance] logPurchase:productId
-                            inCurrency:currencyCode
-                               atPrice:[NSDecimalNumber decimalNumberWithString:price]
-                          withQuantity:quantity
-                         andProperties:(NSDictionary *)properties];
-}
+# pragma mark - Social Media
 
-- (void) setUserFirstName:(NSString *)firstName {
-  [Appboy sharedInstance].user.firstName = firstName;
-}
-
-- (void) setUserLastName:(NSString *)lastName {
-  [Appboy sharedInstance].user.lastName = lastName;
-}
-
-- (void) setUserPhoneNumber:(NSString *)number {
-  [Appboy sharedInstance].user.phone = number;
-}
-
-- (void) setUserAvatarImageURL:(NSString *)imageURL {
-  [Appboy sharedInstance].user.avatarImageURL = imageURL;
-}
-
-- (void) setUserEmail:(NSString *)email {
-  [Appboy sharedInstance].user.email = email;
-}
-
-- (void) setUserGender:(NSInteger)gender {
-  [[Appboy sharedInstance].user setGender:(ABKUserGenderType)gender];
-}
-
-- (void) setUserDateOfBirthToYear:(NSInteger)year Month:(NSInteger)month andDay:(NSInteger)day {
-  NSDateComponents *comps = [[NSDateComponents alloc] init];
-  [comps setDay:day];
-  [comps setMonth:month];
-  [comps setYear:year];
-  NSCalendar *gregorian = [[NSCalendar alloc]
-                           initWithCalendarIdentifier:NSGregorianCalendar];
-  NSDate *date = [gregorian dateFromComponents:comps];
-  [Appboy sharedInstance].user.dateOfBirth = date;
-}
-
-- (void) setUserCountry:(NSString *)country {
-  [Appboy sharedInstance].user.country = country;
-}
-
-- (void) setUserHomeCity:(NSString *)city {
-  [Appboy sharedInstance].user.homeCity = city;
-}
-
-- (void) setUserEmailNotificationSubscriptionType:(NSInteger)emailNotificationSubscriptionType {
-  [[Appboy sharedInstance].user setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType];
-}
-
-- (void) setUserPushNotificationSubscriptionType:(NSInteger)pushNotificationSubscriptionType {
-  [[Appboy sharedInstance].user setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType];
-}
-
-- (void) setUserCustomAttributeWithKey:(NSString *)key andBOOLValue:(BOOL)value {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:key andBOOLValue:value];
-}
-
-- (void) setUserCustomAttributeWithKey:(NSString *)key andIntegerValue:(NSInteger)value {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:key andIntegerValue:value];
-}
-
-- (void) setUserCustomAttributeWithKey:(NSString *)key andDoubleValue:(double)value {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDoubleValue:value];
-}
-
-- (void) addAlias:(NSString *)alias withLabel:(NSString *)label {
-  [[Appboy sharedInstance].user addAlias:alias withLabel:label];
-}
-
-- (void) setUserCustomAttributeWithKey:(NSString *)key andStringValue:(NSString *)value {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:key andStringValue:value];
-}
-
-- (void) setUserCustomAttributeToNowWithKey:(NSString *)key {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDateValue:[NSDate date]];
-}
-
-- (void) setUserCustomAttributeWithKey:(NSString *)key toDateAsSecondsFromEpoch:(NSTimeInterval)seconds {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:key andDateValue:[NSDate dateWithTimeIntervalSince1970:seconds]];
-}
-
-- (void) unsetUserCustomAttributeWithKey:(NSString *)key {
-  [[Appboy sharedInstance].user unsetCustomAttributeWithKey:key];
-}
-
-- (void) incrementCustomUserAttributeWithKey:(NSString *)key by:(NSInteger)incrementValue {
-  [[Appboy sharedInstance].user incrementCustomUserAttribute:key by:incrementValue];
-}
-
-- (void) setCustomAttributeArrayWithKey:(NSString *)key array:(NSArray *)valueArray {
-  [[Appboy sharedInstance].user setCustomAttributeArrayWithKey:key array:valueArray];
-}
-
-- (void) addToCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value {
-  [[Appboy sharedInstance].user addToCustomAttributeArrayWithKey:key value:value];
-}
-
-- (void) removeFromCustomAttributeArrayWithKey:(NSString *)key value:(NSString *)value {
-  [[Appboy sharedInstance].user removeFromCustomAttributeArrayWithKey:key value:value];
-}
-
-- (void) setAttributionData:(NSString *)network campaign:(NSString *)campaign adgroup:(NSString *)adgroup creative:(NSString *)creative {
-  ABKAttributionData *attributionData = [[ABKAttributionData alloc]
-                                       initWithNetwork:network
-                                       campaign:campaign
-                                       adGroup:adgroup
-                                       creative:creative];
-  [[Appboy sharedInstance].user setAttributionData:attributionData];
-}
-
-- (void) setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName  lastName:(NSString *)lastName  email:(NSString *)email  bio:(NSString *)bio  cityName:(NSString *)cityName  gender:(NSInteger)gender  numberOfFriends:(NSInteger)numberOfFriends  birthday:(NSString *)birthday {
+- (void)setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email bio:(NSString *)bio cityName:(NSString *)cityName  gender:(NSInteger)gender numberOfFriends:(NSInteger)numberOfFriends birthday:(NSString *)birthday {
   NSMutableDictionary *facebookData = [NSMutableDictionary dictionary];
   facebookData[@"id"] = facebookId;
   facebookData[@"first_name"] = firstName;
@@ -172,7 +69,7 @@
   [Appboy sharedInstance].user.facebookUser = facebookUser;
 }
 
-- (void) setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl {
+- (void)setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl {
   ABKTwitterUser *twitterUser = [[ABKTwitterUser alloc] init];
   twitterUser.userDescription = description;
   if (twitterUserId > 0) {
@@ -193,173 +90,46 @@
   [Appboy sharedInstance].user.twitterUser = twitterUser;
 }
 
-// ABKInAppMessageDelegate methods
-- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
-  if (self.unityInAppMessageGameObjectName == nil) {
-    NSLog(@"Not sending a Unity message in response to an in-app message being received because "
-          "no message receiver was defined. To implement custom behavior in response to a in-app"
-          "message being received, you must register a GameObject and method name with Appboy "
-          "by calling [[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName: callbackMethodName:].");
-    return ABKDisplayInAppMessageNow;
-  }
-  if (self.unityInAppMessageCallbackFunctionName == nil) {
-    NSLog(@"Not sending a Unity message in response to a in-app message being received because "
-          "no method name was defined for the %@. To implement custom behavior in response to a in-app "
-          "message being received, you must register a GameObject and method name with Appboy "
-          "[[AppboyUnityManager sharedInstance] addInAppMessageListenerWithObjectName: callbackMethodName:].",
-          self.unityInAppMessageGameObjectName);
-    return ABKDisplayInAppMessageNow;
-  }
-  NSLog(@"Sending an in-app message to %@:%@.", self.unityInAppMessageGameObjectName, self.unityInAppMessageCallbackFunctionName);
+# pragma mark - In-app message analytics
 
-  NSData *inAppMessageData = [inAppMessage serializeToData];
-  NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
-  NSLog(@"dataString is %@.", dataString);
-  UnitySendMessage([self.unityInAppMessageGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                   [self.unityInAppMessageCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                   [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-  if ([self.appboyUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
-    return ABKDisplayInAppMessageNow;
-  }
-  return ABKDiscardInAppMessage;
-}
-
-// Internal methods for communications between Appboy and Unity
-- (void) parsePlist {
-  self.appboyUnityPlist = [[NSBundle mainBundle] infoDictionary][@"Appboy"][@"Unity"];
-}
-
-- (void) setListeners {
-  [self addPushReceivedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushReceivedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushReceivedCallbackKey]];
-  [self addPushOpenedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushOpenedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushOpenedCallbackKey]];
-  [self addInAppMessageListenerWithObjectName:self.appboyUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityInAppMessageCallbackKey]];
-  [self addContentCardsListenerWithObjectName:self.appboyUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityContentCardsCallbackKey]];
-  [self addFeedListenerWithObjectName:self.appboyUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityFeedCallbackKey]];
-}
-
-- (NSString *) getApiKeyFromUnity {
-  return self.appboyUnityPlist[ABKUnityApiKey];
-}
-
-- (void) addInAppMessageListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  if (gameObject != nil && callbackMethod != nil) {
-    [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
-    self.unityInAppMessageGameObjectName = gameObject;
-    self.unityInAppMessageCallbackFunctionName = callbackMethod;
-  }
-}
-
-- (void) addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  if (gameObject != nil && callbackMethod != nil) {
-    self.unityFeedGameObjectName = gameObject;
-    self.unityFeedCallbackFunctionName = callbackMethod;
-  }
-}
-
-- (void) addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  if (gameObject != nil && callbackMethod != nil) {
-    self.unityContentCardsGameObjectName = gameObject;
-    self.unityContentCardsCallbackFunctionName = callbackMethod;
-  }
-}
-
-- (void) addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  if (gameObject != nil && callbackMethod != nil) {
-    self.unityPushReceivedGameObjectName = gameObject;
-    self.unityPushReceivedCallbackFunctionName = callbackMethod;
-  }
-}
-
-- (void) addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  if (gameObject != nil && callbackMethod != nil) {
-    self.unityPushOpenedGameObjectName = gameObject;
-    self.unityPushOpenedCallbackFunctionName = callbackMethod;
-  }
-}
-
-// Push related methods
-- (void) registerForRemoteNotifications {
-  if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue] && ![self.appboyUnityPlist[ABKUnityDisableAutomaticPushRegistrationKey] boolValue]) {
-    UIUserNotificationType notificationSettingTypes = (UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound);
-    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-      UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-      center.delegate = self;
-      UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
-      if (@available(iOS 12.0, *)) {
-        options = options | UNAuthorizationOptionProvisional;
-      }
-      [center requestAuthorizationWithOptions:options
-                            completionHandler:^(BOOL granted, NSError *_Nullable error) {
-                              [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
-                            }];
-      [[UIApplication sharedApplication] registerForRemoteNotifications];
-    } else {
-      UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationSettingTypes categories:nil];
-      [[UIApplication sharedApplication] registerForRemoteNotifications];
-      [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
-  }
-}
-
-- (void) registerPushToken:(NSData *)deviceToken {
-  if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[Appboy sharedInstance] registerDeviceToken:deviceToken];
-  }
-}
-
-- (void) registerPushTokenBase64:(NSString *)deviceTokenBase64 {
-  NSData *data = [[NSData alloc] initWithBase64EncodedString:deviceTokenBase64 options:0];
-  [[Appboy sharedInstance] registerDeviceToken:data];
-} 
-
-- (void) registerApplication:(UIApplication *)application 
-         didReceiveRemoteNotification:(NSDictionary *)notification 
-         fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-  if (self.appboyUnityPlist == nil || [self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
-    [self forwardNotification:notification];
-  }
-}
-
-- (void) userNotificationCenter:(UNUserNotificationCenter *)center
-         didReceiveNotificationResponse:(UNNotificationResponse *)response
-         withCompletionHandler:(void (^)(void))completionHandler {
-  if (completionHandler) {
-    completionHandler();
-  }
-
-  if (self.appboyUnityPlist == nil || [self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-    [self forwardNotification:response.notification.request.content.userInfo];
-  }
-}
-
-- (void) logInAppMessageClicked:(NSString *)inAppMessageJSONString {
-  ABKInAppMessage *inAppMessage = [[ABKInAppMessage alloc] init];
-  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessage];
-  [inAppMessage logInAppMessageClicked];
-}
-
-- (void) logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID {
-  ABKInAppMessageImmersive *inAppMessageImmersive = [[ABKInAppMessageImmersive alloc] init];
-  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessageImmersive];
-  [inAppMessageImmersive logInAppMessageClickedWithButtonID:buttonID];
-}
-
-- (void) logInAppMessageImpression:(NSString *)inAppMessageJSONString {
+- (void)logInAppMessageImpression:(NSString *)inAppMessageJSONString {
   ABKInAppMessage *inAppMessage = [[ABKInAppMessage alloc] init];
   [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessage];
   [inAppMessage logInAppMessageImpression];
 }
 
-- (void) getInAppMessageFromString:(NSString *)inAppMessageJSONString withInAppMessage:(ABKInAppMessage *)inAppMessage {
+- (void)logInAppMessageClicked:(NSString *)inAppMessageJSONString {
+  ABKInAppMessage *inAppMessage = [[ABKInAppMessage alloc] init];
+  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessage];
+  [inAppMessage logInAppMessageClicked];
+}
+
+- (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID {
+  ABKInAppMessageImmersive *inAppMessageImmersive = [[ABKInAppMessageImmersive alloc] init];
+  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessageImmersive];
+  [inAppMessageImmersive logInAppMessageClickedWithButtonID:buttonID];
+}
+
+- (void)getInAppMessageFromString:(NSString *)inAppMessageJSONString withInAppMessage:(ABKInAppMessage *)inAppMessage {
   NSData *inAppMessageData = [inAppMessageJSONString dataUsingEncoding:NSUTF8StringEncoding];
   NSError *e = nil;
   id deserializedInAppMessageDict = [NSJSONSerialization JSONObjectWithData:inAppMessageData options:NSJSONReadingMutableContainers error:&e];
   [inAppMessage setValuesForKeysWithDictionary:deserializedInAppMessageDict];
 }
 
-- (void) logCardImpression:(NSString *)cardJSONString {
+# pragma mark - In-app message display
+
+- (void)displayNextInAppMessageWithDelegate:(BOOL)withDelegate {
+  ABKInAppMessageController *delegate = nil;
+  if (withDelegate) {
+    delegate = [Appboy sharedInstance].inAppMessageController.delegate;
+  }
+  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:delegate];
+}
+
+# pragma mark - News Feed analytics
+
+- (void)logCardImpression:(NSString *)cardJSONString {
   NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
   NSError *e = nil;
   id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
@@ -367,7 +137,7 @@
   [card logCardImpression];
 }
 
-- (void) logCardClicked:(NSString *)cardJSONString {
+- (void)logCardClicked:(NSString *)cardJSONString {
   NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
   NSError *e = nil;
   id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
@@ -375,7 +145,9 @@
   [card logCardClicked];
 }
 
-- (void) requestFeedRefresh {
+# pragma mark - News Feed refresh
+
+- (void)requestFeedRefresh {
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(requestFeedFromCache:)
                                                name:ABKFeedUpdatedNotification
@@ -383,30 +155,16 @@
   [[Appboy sharedInstance] requestFeedRefresh];
 }
 
-- (void) logFeedDisplayed {
-  [[Appboy sharedInstance] logFeedDisplayed];
-}
-
-- (void) requestFeedFromCache:(NSNotification *)notification {
+- (void)requestFeedFromCache:(NSNotification *)notification {
   BOOL fromOfflineStorage = YES;
   if (notification != nil) {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ABKFeedUpdatedNotification object:nil];
     fromOfflineStorage = NO;
   }
-  if (self.unityFeedGameObjectName == nil) {
-    NSLog(@"Not sending a Unity message in response to a feed cards request because "
-          "no message receiver was defined. To implement custom behavior in response to a feed"
-          "being received, you must register a GameObject and method name with Appboy "
-          "by calling [[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName: callbackMethodName:].");
+  if (self.unityFeedCallbackFunctionName == nil || self.unityFeedGameObjectName == nil) {
+    NSLog(@"No properly configured game object. Not forwarding News Feed message.");
+    return;
   }
-  if (self.unityFeedCallbackFunctionName == nil) {
-    NSLog(@"Not sending a Unity message in response to a feed cards request because "
-          "no method name was defined for the %@. To implement custom behavior in response to a feed "
-          "being received, you must register a GameObject and method name with Appboy "
-          "[[AppboyUnityManager sharedInstance] addFeedListenerWithObjectName: callbackMethodName:].",
-          self.unityFeedGameObjectName);
-  }
-  NSLog(@"Sending cards to %@:%@.", self.unityFeedGameObjectName, self.unityFeedCallbackFunctionName);
 
   NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
   NSArray *cards = [[Appboy sharedInstance].feedController getCardsInCategories:ABKCardCategoryAll];
@@ -420,43 +178,67 @@
                                    @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
                                    @"mFromOfflineStorage" : [NSNumber numberWithBool:fromOfflineStorage]};
   NSError *error;
-  NSString *feedString;
   NSData *feedData = [NSJSONSerialization dataWithJSONObject:feedDictionary
                                                      options:0
                                                        error:&error];
   if (!feedData) {
-    NSLog(@"Got an error %@ when parsing Appboy feed to json data.", error);
-  } else {
-    feedString = [[NSString alloc] initWithData:feedData encoding:NSUTF8StringEncoding];
+    NSLog(@"Error parsing News Feed to json: %@", error);
+    return;
   }
-  if (feedString != nil) {
-    NSLog(@"the message that's going to pass to Unity is: \n %@", feedString);
-    UnitySendMessage([self.unityFeedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                     [self.unityFeedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                     [feedString cStringUsingEncoding:NSUTF8StringEncoding]);
+  NSString *feedString = [[NSString alloc] initWithData:feedData encoding:NSUTF8StringEncoding];
+  if (feedString == nil) {
+    NSLog(@"Error parsing News Feed json to string");
+    return;
   }
+  [self unitySendMessageTo:self.unityFeedGameObjectName withMethod:self.unityFeedCallbackFunctionName withMessage:feedString];
 }
 
-- (void) requestContentCardsFromCache:(NSNotification *)notification {
+# pragma mark - Content Card analytics
+
+- (void)logContentCardImpression:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
+  [card logContentCardImpression];
+}
+
+- (void)logContentCardClicked:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
+  [card logContentCardClicked];
+}
+
+- (void)logContentCardDismissed:(NSString *)cardJSONString {
+  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
+  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
+  [card logContentCardDismissed];
+}
+
+# pragma mark - Content Card refresh
+
+- (void)requestContentCardsRefresh {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(requestContentCardsFromCache:)
+                                               name:ABKContentCardsProcessedNotification
+                                             object:nil];
+  [[Appboy sharedInstance] requestContentCardsRefresh];
+}
+
+- (void)requestContentCardsFromCache:(NSNotification *)notification {
   BOOL fromOfflineStorage = YES;
   if (notification != nil) {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ABKContentCardsProcessedNotification object:nil];
     fromOfflineStorage = NO;
   }
-  if (self.unityContentCardsGameObjectName == nil) {
-    NSLog(@"Not sending a Unity message in response to a content cards request because "
-          "no message receiver was defined. To implement custom behavior in response to a cards"
-          "being received, you must register a GameObject and method name with Appboy "
-          "by calling [[AppboyUnityManager sharedInstance] addContentCardsListenerWithObjectName: callbackMethodName:].");
+  if (self.unityContentCardsCallbackFunctionName == nil || self.unityContentCardsGameObjectName == nil) {
+    NSLog(@"No properly configured game object. Not forwarding Content Cards message.");
+    return;
   }
-  if (self.unityContentCardsCallbackFunctionName == nil) {
-    NSLog(@"Not sending a Unity message in response to a content cards request because "
-          "no method name was defined for the %@. To implement custom behavior in response to cards "
-          "being received, you must register a GameObject and method name with Appboy "
-          "[[AppboyUnityManager sharedInstance] addContentCardsListenerWithObjectName: callbackMethodName:].",
-          self.unityContentCardsGameObjectName);
-  }
-  NSLog(@"Sending cards to %@:%@.", self.unityContentCardsGameObjectName, self.unityContentCardsCallbackFunctionName);
 
   NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
   NSArray *cards = [[Appboy sharedInstance].contentCardsController getContentCards];
@@ -470,80 +252,83 @@
                                    @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
                                    @"mFromOfflineStorage" : [NSNumber numberWithBool:fromOfflineStorage]};
   NSError *error;
-  NSString *contentCardsString;
   NSData *contentCardsData = [NSJSONSerialization dataWithJSONObject:contentCardsDictionary
                                                      options:0
                                                        error:&error];
   if (!contentCardsData) {
-    NSLog(@"Got an error %@ when parsing Appboy feed to json data.", error);
+    NSLog(@"Error parsing Content Cards to json: %@", error);
+    return;
+  }
+  NSString *contentCardsString = [[NSString alloc] initWithData:contentCardsData encoding:NSUTF8StringEncoding];
+  if (contentCardsString == nil) {
+    NSLog(@"Error parsing Content Cards json to string");
+    return;
+  }
+  [self unitySendMessageTo:self.unityContentCardsGameObjectName withMethod:self.unityContentCardsCallbackFunctionName withMessage:contentCardsString];
+}
+
+# pragma mark - Push
+
+- (void)registerPushToken:(NSData *)data {
+  [[Appboy sharedInstance] registerDeviceToken:data];
+  NSString *token = [AppboyUnityManager hexStringFromNSData:data];
+  if (self.unityPushTokenReceivedFromSystemGameObjectName != nil && self.unityPushTokenReceivedFromSystemFunctionName != nil) {
+    [self unitySendMessageTo:self.unityPushTokenReceivedFromSystemGameObjectName withMethod:self.unityPushTokenReceivedFromSystemFunctionName withMessage:token];
+  }
+  if (self.sendPushTokenReceivedFromSystem) {
+    [self unitySendMessageTo:ABKInternalCallback withMethod:ABKInternalPushTokenReceivedFromSystem withMessage:token];
+  }
+}
+
+- (void)registerPushTokenBase64:(NSString *)deviceTokenBase64 {
+  NSData *data = [[NSData alloc] initWithBase64EncodedString:deviceTokenBase64 options:0];
+  [self registerPushToken:data];
+}
+
++ (NSString *)hexStringFromNSData:(NSData *)data {
+  NSUInteger dataLength = data.length;
+  if (dataLength == 0) {
+    return nil;
+  }
+
+  const unsigned char *dataBuffer = (const unsigned char *)data.bytes;
+  NSMutableString *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+  for (int i = 0; i < dataLength; ++i) {
+    [hexString appendFormat:@"%02.2hhx", dataBuffer[i]];
+  }
+  return [hexString copy];
+}
+
+- (void)registerForRemoteNotificationsWithProvisional:(BOOL)provisional {
+  UIUserNotificationType notificationSettingTypes = (UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound);
+  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
+    if (@available(iOS 12.0, *)) {
+      if (provisional) {
+        options = options | UNAuthorizationOptionProvisional;
+      }
+    }
+    [center requestAuthorizationWithOptions:options
+                          completionHandler:^(BOOL granted, NSError *_Nullable error) {
+                            [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
+                            if (self.unityPushPermissionsPromptResponseGameObjectName != nil && self.unityPushPermissionsPromptResponseFunctionName != nil) {
+                              [self unitySendMessageTo:self.unityPushPermissionsPromptResponseGameObjectName withMethod:self.unityPushPermissionsPromptResponseFunctionName withMessage:(granted ? @"true" : @"false")];
+                            }
+                            if (self.sendInternalPushPermissionsPromptResponse) {
+                              [self unitySendMessageTo:ABKInternalCallback withMethod:ABKInternalPushPermissionsPromptResponse withMessage:(granted ? @"true" : @"false")];
+                            }
+                          }];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
   } else {
-    contentCardsString = [[NSString alloc] initWithData:contentCardsData encoding:NSUTF8StringEncoding];
-  }
-  if (contentCardsString != nil) {
-    NSLog(@"the message that's going to pass to Unity is: \n %@", contentCardsString);
-    UnitySendMessage([self.unityContentCardsGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                     [self.unityContentCardsCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                     [contentCardsString cStringUsingEncoding:NSUTF8StringEncoding]);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationSettingTypes categories:nil];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
   }
 }
 
-- (void) logContentCardsDisplayed {
-  [[Appboy sharedInstance] logContentCardsDisplayed];
-}
-
-- (void) requestContentCardsRefresh {
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(requestContentCardsFromCache:)
-                                               name:ABKContentCardsProcessedNotification
-                                             object:nil];
-  [[Appboy sharedInstance] requestContentCardsRefresh];
-}
-
-- (void) logContentCardImpression:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logContentCardImpression];
-}
-
-- (void) logContentCardClicked:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logContentCardClicked];
-}
-
-- (void) logContentCardDismissed:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logContentCardDismissed];
-}
-
-- (void) displayNextInAppMessageWithDelegate:(BOOL)withDelegate {
-  ABKInAppMessageController *delegate = nil;
-  if (withDelegate) {
-    delegate = [Appboy sharedInstance].inAppMessageController.delegate;
-  }
-  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:delegate];
-}
-
-+ (void) wipeDataAndDisableForAppRun {
-  [Appboy wipeDataAndDisableForAppRun];
-}
-
-+ (void) disableSDK {
-  [Appboy disableSDK];
-}
-
-+ (void) requestEnableSDKOnNextAppRun {
-  [Appboy requestEnableSDKOnNextAppRun];
-}
-
-- (void) forwardNotification:(NSDictionary *)notification {
+- (void)forwardNotification:(NSDictionary *)notification {
   // generate a new dictionary that rearrange the notification elements
   NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
 
@@ -561,58 +346,190 @@
     [aps setObject:extraDictionary forKey:@"extra"];
   }
 
-  if ([NSJSONSerialization isValidJSONObject:aps]) {
-    NSError *pushParsingError = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:aps options:0 error:&pushParsingError];
+  if (![NSJSONSerialization isValidJSONObject:aps]) {
+    NSLog(@"Invalid json received. Not forwarding push message.");
+    return;
+  }
 
-    if (pushParsingError == nil) {
-      NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  NSError *error = nil;
+  NSData *data = [NSJSONSerialization dataWithJSONObject:aps options:0 error:&error];
+  if (error != nil) {
+    NSLog(@"Error serializing json. Not forwarding push message: %@", [error localizedDescription]);
+  }
 
-      UIApplication *application = [UIApplication sharedApplication];
-      if (application.applicationState == UIApplicationStateActive) {
-        if (self.unityPushReceivedGameObjectName == nil) {
-          NSLog(@"Not sending a Unity message in response to a push notification being received because "
-                "no message receiver was defined. To implement custom behavior in response to a push "
-                "notification being received, you must register a GameObject and method name with Appboy "
-                "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].");
-          return;
-        }
-        if (self.unityPushReceivedCallbackFunctionName == nil) {
-          NSLog(@"Not sending a Unity message in response to a push notification being received because "
-                "no method name was defined for the %@. To implement custom behavior in response to a push "
-                "notification being received, you must register a GameObject and method name with Appboy "
-                "by calling [AppboyUnityManager sharedInstance] addPushReceivedListenerWithObjectName: callbackMethodName].",
-                self.unityPushReceivedGameObjectName);
-          return;
-        }
-        NSLog(@"Sending a notification received message to %@:%@.", self.unityPushReceivedGameObjectName, self.unityPushReceivedCallbackFunctionName);
+  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
-        UnitySendMessage([self.unityPushReceivedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                          [self.unityPushReceivedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                          [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-      } else {
-        if (self.unityPushOpenedGameObjectName == nil) {
-          NSLog(@"Not sending a Unity message in response to a push notification being opened because "
-                "no message receiver was defined. To implement custom behavior in response to a push "
-                "notification being opened, you must register a GameObject and method name with Appboy "
-                "by calling [AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].");
-          return;
-        }
-        if (self.unityPushOpenedCallbackFunctionName == nil) {
-          NSLog(@"Not sending a Unity message in response to a push notification being opened because "
-                "no method name was defined for the %@. To implement custom behavior in response to a push "
-                "notification being opened, you must register a GameObject and method name with Appboy "
-                "[AppboyUnityManager sharedInstance] addPushOpenedListenerWithObjectName: callbackMethodName].",
-                self.unityPushOpenedGameObjectName);
-          return;
-        }
-        NSLog(@"Sending a notification opened message to %@:%@.", self.unityPushOpenedGameObjectName, self.unityPushOpenedCallbackFunctionName);
-
-        UnitySendMessage([self.unityPushOpenedGameObjectName cStringUsingEncoding:NSUTF8StringEncoding],
-                          [self.unityPushOpenedCallbackFunctionName cStringUsingEncoding:NSUTF8StringEncoding],
-                          [dataString cStringUsingEncoding:NSUTF8StringEncoding]);
-      }
+  UIApplication *application = [UIApplication sharedApplication];
+  if (application.applicationState == UIApplicationStateActive) {
+    if (self.unityPushReceivedGameObjectName == nil || self.unityPushReceivedCallbackFunctionName == nil) {
+      NSLog(@"No properly configured game object. Not forwarding push received message.");
+      return;
     }
+    [self unitySendMessageTo:self.unityPushReceivedGameObjectName withMethod:self.unityPushReceivedCallbackFunctionName withMessage:dataString];
+  } else {
+    if (self.unityPushOpenedGameObjectName == nil || self.unityPushOpenedCallbackFunctionName == nil) {
+      NSLog(@"No properly configured game object. Not forwarding push opened message.");
+      return;
+    }
+    [self unitySendMessageTo:self.unityPushOpenedGameObjectName withMethod:self.unityPushOpenedCallbackFunctionName withMessage:dataString];
+  }
+}
+
+# pragma mark - Gameobject callbacks
+
+- (void)configureListenerFor:(NSInteger)messageType withGameObject:(NSString *)gameobject withMethod:(NSString *)method {
+  switch ((ABKUnityMessageType)messageType) {
+    case ABKPushPermissionsPromptResponse:
+      NSLog(@"Setting push permissions prompt response listener to object %@, method %@", gameobject, method);
+      self.unityPushPermissionsPromptResponseGameObjectName = gameobject;
+      self.unityPushPermissionsPromptResponseFunctionName = method;
+      break;
+    case ABKPushTokenReceivedFromSystem:
+      NSLog(@"Setting push token received from system listener to object %@, method %@", gameobject, method);
+      self.unityPushTokenReceivedFromSystemGameObjectName = gameobject;
+      self.unityPushTokenReceivedFromSystemFunctionName = method;
+      break;
+    case ABKPushReceived:
+      NSLog(@"Setting push received listener to object %@, method %@", gameobject, method);
+      [self addPushReceivedListenerWithObjectName:gameobject callbackMethodName:method];
+      break;
+    case ABKPushOpened:
+      NSLog(@"Setting push opened listener to object %@, method %@", gameobject, method);
+      [self addPushOpenedListenerWithObjectName:gameobject callbackMethodName:method];
+      break;
+    case ABKPushDeleted:
+      NSLog(@"Push opened not supported.");
+      break;
+    case ABKInAppMessageReceived:
+      NSLog(@"Setting in-app message received listener to object %@, method %@", gameobject, method);
+      [self addInAppMessageListenerWithObjectNameAndSetDelegate:gameobject callbackMethodName:method];
+      break;
+    case ABKNewsFeedUpdated:
+      NSLog(@"Setting News Feed updated listener to object %@, method %@", gameobject, method);
+      [self addFeedListenerWithObjectName:gameobject callbackMethodName:method];
+      break;
+    case ABKContentCardsUpdated:
+      NSLog(@"Setting Content Cards updated listener to object %@, method %@", gameobject, method);
+      [self addContentCardsListenerWithObjectName:gameobject callbackMethodName:method];
+      break;
+    default:
+      NSLog(@"Unknown message type received.");
+      return;
+  }
+}
+
+- (void)setListenersFromPList {
+  [self addPushReceivedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushReceivedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushReceivedCallbackKey]];
+  [self addPushOpenedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushOpenedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushOpenedCallbackKey]];
+  [self addInAppMessageListenerWithObjectNameAndSetDelegate:self.appboyUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityInAppMessageCallbackKey]];
+  [self addContentCardsListenerWithObjectName:self.appboyUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityContentCardsCallbackKey]];
+  [self addFeedListenerWithObjectName:self.appboyUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityFeedCallbackKey]];
+}
+
+- (void)addInAppMessageListenerWithObjectNameAndSetDelegate:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
+    self.unityInAppMessageGameObjectName = gameObject;
+    self.unityInAppMessageCallbackFunctionName = callbackMethod;
+  }
+}
+
+- (void)addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    self.unityFeedGameObjectName = gameObject;
+    self.unityFeedCallbackFunctionName = callbackMethod;
+  }
+}
+
+- (void)addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    self.unityContentCardsGameObjectName = gameObject;
+    self.unityContentCardsCallbackFunctionName = callbackMethod;
+  }
+}
+
+- (void)addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    self.unityPushReceivedGameObjectName = gameObject;
+    self.unityPushReceivedCallbackFunctionName = callbackMethod;
+  }
+}
+
+- (void)addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    self.unityPushOpenedGameObjectName = gameObject;
+    self.unityPushOpenedCallbackFunctionName = callbackMethod;
+  }
+}
+
+# pragma mark - UIApplicationDelegate
+
+- (void)registerApplication:(UIApplication *)application
+         didReceiveRemoteNotification:(NSDictionary *)notification
+         fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+  [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
+  [self forwardNotification:notification];
+}
+
+# pragma mark - UNUserNotificationCenterDelegate
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+         didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void (^)(void))completionHandler {
+  if (completionHandler) {
+    completionHandler();
+  }
+
+  if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
+    [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+    [self forwardNotification:response.notification.request.content.userInfo];
+  }
+}
+
+# pragma mark - ABKInAppMessageControllerDelegate
+
+/**
+ * @discussion Set on the shared Appboy instance when a game object is configured to receive in-app messages.
+ */
+- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
+  if (self.unityInAppMessageCallbackFunctionName == nil || self.unityInAppMessageGameObjectName == nil) {
+    NSLog(@"No properly configured game object for in-app messages. Returning ABKDisplayInAppMessageNow.",
+          self.unityInAppMessageGameObjectName);
+    return ABKDisplayInAppMessageNow;
+  }
+
+  NSData *inAppMessageData = [inAppMessage serializeToData];
+  NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
+  [self unitySendMessageTo:self.unityInAppMessageGameObjectName withMethod:self.unityInAppMessageCallbackFunctionName withMessage:dataString];
+  if ([self.appboyUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
+    NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Returning ABKDisplayInAppMessageNow.");
+    return ABKDisplayInAppMessageNow;
+  }
+  return ABKDiscardInAppMessage;
+}
+
+# pragma mark - Internal Communication
+
+- (void)unitySendMessageTo:(NSString *)gameObjectName withMethod:(NSString *)methodName withMessage:(NSString *)message {
+  NSLog(@"Sending message to %@:%@.", gameObjectName, methodName);
+  UnitySendMessage([gameObjectName UTF8String],
+                   [methodName UTF8String],
+                   [message UTF8String]);
+}
+
+- (void)configureInternalListenerFor:(NSInteger)messageType {
+  switch ((ABKUnityMessageType)messageType) {
+    case ABKPushPermissionsPromptResponse:
+      NSLog(@"Enabling internal push permissions prompt response listener.");
+      self.sendInternalPushPermissionsPromptResponse = YES;
+      break;
+    case ABKPushTokenReceivedFromSystem:
+      NSLog(@"Enabling push token received from system listener.");
+      self.sendPushTokenReceivedFromSystem = YES;
+      break;
+    default:
+      NSLog(@"Unknown internal message type received.");
+      return;
   }
 }
 

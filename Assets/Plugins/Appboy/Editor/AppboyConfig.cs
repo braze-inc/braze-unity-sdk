@@ -52,6 +52,10 @@ namespace Appboy.Editor {
     [SerializeField]
     private bool iOSDisableAutomaticPushRegistration = false;
     [SerializeField]
+    private bool iOSDisableProvisionalAuth = false;
+    [SerializeField]
+    private bool iOSDisableAutomaticPushCapability = false;
+    [SerializeField]
     private bool iOSPushIsBackgroundEnabled = false;
     [SerializeField]
     private string iOSPushReceivedGameObjectName = string.Empty;
@@ -171,6 +175,16 @@ namespace Appboy.Editor {
     public static bool IOSDisableAutomaticPushRegistration {
       get { return Instance.iOSDisableAutomaticPushRegistration; }
       set { SetProperty(ref Instance.iOSDisableAutomaticPushRegistration, value); }
+    }
+
+    public static bool IOSDisableProvisionalAuth {
+      get { return Instance.iOSDisableProvisionalAuth; }
+      set { SetProperty(ref Instance.iOSDisableProvisionalAuth, value); }
+    }
+
+    public static bool IOSDisableAutomaticPushCapability {
+      get { return Instance.iOSDisableAutomaticPushCapability; }
+      set { SetProperty(ref Instance.iOSDisableAutomaticPushCapability, value); }
     }
 
     public static string IOSPushReceivedGameObjectName {

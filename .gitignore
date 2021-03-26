@@ -19,10 +19,6 @@ UnityPackageManager/
 /Temp
 /Library
 ## https://stackoverflow.com/a/57728803/3745724
-#Ignore all .meta file
-*.meta
-#But not source file with postfix. which is everything but a folder
-!*.*.meta
 
 # Firebase
 /unity-samples/Assets/Plugins/Android/*.aar
@@ -87,3 +83,5 @@ unity-samples/iOS/Roll-A-Ball-Ios/fastlane/report.xml
 # Visual Studio
 .vs/
 obj/
+.vscode/
+
