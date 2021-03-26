@@ -30,8 +30,6 @@
       </intent-filter>
     </activity>
 
-    <activity android:name="com.appboy.unity.AppboyOverlayActivity" android:theme="@style/Appboy.Theme.Transparent" />
-
     <receiver android:name="com.appboy.unity.AppboyUnityPushBroadcastReceiver" android:exported="false" >
       <intent-filter>
         <action android:name="com.appboy.unity.AppboySample.intent.APPBOY_PUSH_RECEIVED" />

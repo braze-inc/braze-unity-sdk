@@ -129,6 +129,20 @@ namespace Appboy.Editor {
         EditorGUILayout.LabelField("Disables automatic user registration for push notifications upon app startup.", EditorStyles.wordWrappedMiniLabel);
       }
 
+      AppboyConfig.IOSDisableProvisionalAuth = EditorGUILayout.ToggleLeft(" Disable Provisional Authorization", AppboyConfig.IOSDisableProvisionalAuth);
+      if (AppboyConfig.IOSDisableProvisionalAuth) {
+        EditorGUILayout.LabelField("Users will see the native push prompt dialog at app startup.", EditorStyles.miniBoldLabel);
+      } else {
+        EditorGUILayout.LabelField("Disables provisional (quiet) authorization. If disabled, users will see the native push prompt dialog at app startup.", EditorStyles.wordWrappedMiniLabel);
+      }
+
+      AppboyConfig.IOSDisableAutomaticPushCapability = EditorGUILayout.ToggleLeft(" Disable Automatic Push Capability", AppboyConfig.IOSDisableAutomaticPushCapability);
+      if (AppboyConfig.IOSDisableAutomaticPushCapability) {
+        EditorGUILayout.LabelField("You will need to manually add the Push Capability to your Xcode project.", EditorStyles.miniBoldLabel);
+      } else {
+        EditorGUILayout.LabelField("Disables adding the Xcode Push Capability automatically.", EditorStyles.wordWrappedMiniLabel);
+      }
+
       AppboyConfig.IOSPushIsBackgroundEnabled = EditorGUILayout.ToggleLeft(" Enable Background Push", AppboyConfig.IOSPushIsBackgroundEnabled);
       EditorGUILayout.LabelField("Allows the system to wake your app from suspension when a push notification arrives.", EditorStyles.wordWrappedMiniLabel);
 

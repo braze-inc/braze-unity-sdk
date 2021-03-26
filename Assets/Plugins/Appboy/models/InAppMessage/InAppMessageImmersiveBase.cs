@@ -31,7 +31,7 @@ namespace Appboy.Models.InAppMessage {
       if (json[InAppMessageConstants.ButtonsKey] != null) {
         Buttons = new List<InAppMessageButton>();
         JSONArray jsonArray = (JSONArray)JSON.Parse(json[InAppMessageConstants.ButtonsKey].ToString());
-        Debug.Log(String.Format("parse in-app message with {0} buttons", jsonArray.Count));
+        Debug.Log(String.Format("Parsing in-app message with {0} buttons", jsonArray.Count));
         for (int i = 0; i < jsonArray.Count; i++) {
           JSONClass buttonJson = jsonArray[i].AsObject;
           try {
@@ -52,7 +52,7 @@ namespace Appboy.Models.InAppMessage {
         _buttonClickLogged = true;
         AppboyBinding.LogInAppMessageButtonClicked(_jsonString, buttonID);
       } else {
-        Debug.Log("The in-app message already log a button clicked.");
+        Debug.Log("Already logged a button click. Doing nothing.");
       }
     }
   }

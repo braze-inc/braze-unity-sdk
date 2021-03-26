@@ -85,6 +85,8 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);
     Appboy.AppboyBinding.AddAlias("aliasHere", "labelHere");
     Debug.Log("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
+
+    Appboy.AppboyBinding.ConfigureListener(Appboy.BrazeUnityMessageType.PUSH_RECEIVED, "AppboyCallback", "PushNotificationReceivedRuntimeCallback");
   }
 
   void PushNotificationReceivedCallback(string message) {
@@ -99,6 +101,19 @@ public class MainMenu : MonoBehaviour {
   }
 
   void PushNotificationOpenedCallback(string message) {
+#if UNITY_ANDROID
+    Debug.Log("PushNotificationOpenedCallback message: " + message);
+    PushNotification pushNotification = new PushNotification(message);
+    Debug.Log("Push Notification opened: " + pushNotification);  
+#elif UNITY_IOS
+    ApplePushNotification pushNotification = new ApplePushNotification(message);
+    Debug.Log("Push opened Notification event: " + pushNotification);   
+#endif  
+  }
+
+  void PushNotificationReceivedRuntimeCallback(string message) {
+    Debug.Log("Runtime push received callback called " + message);   
+
 #if UNITY_ANDROID
     Debug.Log("PushNotificationOpenedCallback message: " + message);
     PushNotification pushNotification = new PushNotification(message);

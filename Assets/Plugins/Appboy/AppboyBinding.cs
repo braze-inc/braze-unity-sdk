@@ -1,23 +1,82 @@
 // When developing, you can place #define UNITY_ANDROID or #define UNITY_IOS above this line
 // in order to get correct syntax highlighting in the region you are working on.
+using Appboy.Internal;
 using Appboy.Models;
-using UnityEngine;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Appboy.Utilities;
 using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
+using UnityEngine;
 
 /// <summary>
 /// These methods can be called by Unity applications using iOS or Android in order to report
-/// events and set user attributes. Please see the Appboy Android JavaDocs for more
-/// detailed guidance on usage (note that only a subset of the functions in the JavaDocs
-/// are available in the Unity API):
-/// http://appboy.github.io/appboy-android-sdk/javadocs/com/appboy/IAppboy.html
-/// http://appboy.github.io/appboy-android-sdk/javadocs/index.html
+/// events, set user attributes, and control messaging
 /// </summary>
-
 namespace Appboy {
+
+  public delegate void PushPromptResponseReceived(bool granted);
+  public delegate void PushTokenReceivedFromSystem(string token);
+
+  /// <summary>
+  /// Types of messages that Braze can be configured to send to a GameObject method at runtime.
+  ///
+  /// Use <see cref="ConfigureListener"/> to set up a listener.
+  /// </summary>
+  public enum BrazeUnityMessageType {
+    /// <summary>
+    /// Sent when Braze receives a response from the user after displaying a push prompt via
+    /// <see cref="PromptUserForPushPermissions"/>, or if Braze is automatically configured
+    /// to register for push. Currently only sent for iOS.
+    /// </summary>
+    PUSH_PERMISSIONS_PROMPT_RESPONSE = 0,
+
+    /// <summary>
+    /// Sent when Braze receives a push token from the OS. Currently only sent for iOS.
+    ///
+    /// On iOS, only sent if Braze is configured to automatically integrate push.
+    /// </summary>
+    PUSH_TOKEN_RECEIVED_FROM_SYSTEM = 1,
+
+    /// <summary>
+    /// Sent when the user receives a push notification.
+    ///
+    /// On iOS, only sent if Braze is configured to automatically integrate push. On iOS, we recommend
+    /// configuring this value before application:didFinishLaunchingWithOptions: returns to ensure your
+    /// callback is set before iOS push delegates are called.
+    /// </summary>
+    PUSH_RECEIVED = 2,
+
+    /// <summary>
+    /// Sent when the user opens a push notification.
+    ///
+    /// On iOS, only sent if Braze is configured to automatically integrate push. On iOS, we recommend
+    /// configuring this value before application:didFinishLaunchingWithOptions: returns to ensure your
+    /// callback is set before iOS push delegates are called.
+    /// </summary>
+    PUSH_OPENED = 3,
+
+    /// <summary>
+    /// Sent when the user has swiped away a push notification. Currently only sent for Android.
+    /// </summary>
+    PUSH_DELETED = 4,
+
+    /// <summary>
+    /// Sent when the SDK has a new In-App Message.
+    /// </summary>
+    IN_APP_MESSAGE = 5,
+
+    /// <summary>
+    /// Sent when the SDK has an update for the News Feed.
+    /// </summary>
+    NEWS_FEED_UPDATED = 6,
+
+    /// <summary>
+    /// Sent when the SDK has an update for Content Cards.
+    /// </summary>
+    CONTENT_CARDS_UPDATED = 7
+  }
+
   public class AppboyBinding : MonoBehaviour {
     // Overloads
     // These will call the associated binding method for the current live platform
@@ -32,7 +91,7 @@ namespace Appboy {
 
 #if UNITY_IOS
     void Start() {
-      Debug.Log("Starting Appboy binding for iOS clients.");
+      Debug.Log("Starting Braze binding for iOS clients.");
     }
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -186,7 +245,16 @@ namespace Appboy {
     private static extern void _registerAppboyPushMessages(string registrationTokenBase64);
 
     [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _promptUserForPushPermissions(bool provisional);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void _addAlias(string label, string alias);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _configureListener(int messageType, string gameobject, string method);
+
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void _configureInternalListener(int messageType);
 
     public static void LogCustomEvent(string eventName) {
       _logCustomEvent(eventName, null);
@@ -206,6 +274,11 @@ namespace Appboy {
       _logPurchase(productId, currencyCode, price.ToString(), quantity, propertiesString);
     }
 
+    /// <summary>
+    /// When you first start using Braze on a device, the user is considered "anonymous". You can use this
+    /// method to optionally identify a user with a unique ID.
+    /// </summary>
+    /// <param name="userId"></param>
     public static void ChangeUser(string userId) {
       _changeUser(userId);
     }
@@ -238,10 +311,18 @@ namespace Appboy {
       _setUserHomeCity(city);
     }
 
+    /// <summary>
+    /// Configures the user's opt-in status for email within Braze.
+    /// </summary>
+    /// <param name="emailNotificationSubscriptionType"></param>
     public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
       _setUserEmailNotificationSubscriptionType((int)emailNotificationSubscriptionType);
     }
 
+    /// <summary>
+    /// Configures the user's opt-in status for push within Braze.
+    /// </summary>
+    /// <param name="pushNotificationSubscriptionType"></param>
     public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
       _setUserPushNotificationSubscriptionType((int)pushNotificationSubscriptionType);
     }
@@ -395,16 +476,54 @@ namespace Appboy {
     }
 
     /// <summary>
-    /// Registers a device token with Braze. See 
-    /// https://docs.unity3d.com/2018.4/Documentation/ScriptReference/iOS.NotificationServices.RegisterForNotifications.html
+    /// Registers a device token (the term for push token on iOS) with Braze.
     /// </summary>
     /// <param name='registrationDeviceToken'>
-    /// https://docs.unity3d.com/2018.4/Documentation/ScriptReference/iOS.NotificationServices-deviceToken.html
+    /// The device token
     /// </param>
-    /// </summary>
     public static void RegisterAppboyPushMessages(byte[] registrationDeviceToken) {
       string registrationTokenBase64 = Convert.ToBase64String(registrationDeviceToken);
       _registerAppboyPushMessages(registrationTokenBase64);
+    }
+
+    /// <summary>
+    /// Prompts the user for push permissions and registers the user to receive push notifications.
+    /// 
+    /// To subscribe to the result, set a Game Object to listen for 
+    /// <see cref="BrazeUnityMessageType.PUSH_PERMISSIONS_PROMPT_RESPONSE"/> events using 
+    /// <see cref="ConfigureListener"/>, or pass in a delegate instance of <see cref="PushPromptResponseReceived"/>.
+    /// </summary>
+    /// <param name='provisional'>
+    /// If set to true, on iOS 12 and above, the user will be provisionally (silently) authorized 
+    /// to receive quiet push.
+    /// Otherwise, the user will be shown the native push prompt.
+    /// </param>
+    /// <param name='reponseDelegate'>
+    /// An optional delegate instance to receive the user's response to the prompt.
+    /// </param>
+    public static void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null) {
+      if (reponseDelegate != null) {
+        _configureInternalListener((int)BrazeUnityMessageType.PUSH_PERMISSIONS_PROMPT_RESPONSE);
+        BrazeInternalGameObject.setPushPromptResponseReceivedDelegate(reponseDelegate);
+      }
+      _promptUserForPushPermissions(provisional);
+    }
+
+    /// <summary>
+    /// Configures Braze to send push tokens from the OS to the provided delegate. Braze will only listen for push tokens
+    /// from the OS if automatic push registration is enabled.
+    ///
+    /// Tokens passed to Braze via <see cref="RegisterAppboyPushMessages"/> will also cause the delegate to be called.
+    /// </param>
+    /// <param name='tokenDelegate'>
+    /// A delegate instance to receive push tokens.
+    /// </param>
+    public static void SetPushTokenReceivedFromSystemDelegate(PushTokenReceivedFromSystem tokenDelegate) {
+      if (tokenDelegate == null) {
+        return;
+      }
+      BrazeInternalGameObject.setPushTokenReceivedFromSystemDelegate(tokenDelegate);
+      _configureInternalListener((int)BrazeUnityMessageType.PUSH_TOKEN_RECEIVED_FROM_SYSTEM);
     }
 
     /// <summary>
@@ -429,13 +548,35 @@ namespace Appboy {
       _addAlias(alias, label);
     }
 
+    /// <summary>
+    /// Used to configure Braze to send messages to GameObjects based
+    /// on lifecycle events. See <see cref="BrazeUnityMessageType"/> for
+    /// available message types.
+    ///
+    /// Any previous configured game object callback will be overwritten.
+    /// There can only be one active callback per message type.
+    /// </summary>
+    /// <param name="messageType">
+    /// The type of message to send to the target GameObject.
+    /// </param>
+    /// <param name="gameobject">
+    /// The target GameObject.
+    /// </param>
+    /// <param name="method">
+    /// The script method to call on the GameObject.
+    /// </param>
+    public static void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {
+      _configureListener((int)messageType, gameobject, method);
+    }
+
 #elif UNITY_ANDROID
     private static AndroidJavaObject appboyUnityActivity;
     private static AndroidJavaObject inAppMessageUtils;
     private static AndroidJavaObject appboyLocationService;
+    private static AndroidJavaObject unityConfigurationProvider;
 
     void Start() {
-      Debug.Log("Starting Appboy binding for Android clients.");
+      Debug.Log("Starting Braze binding for Android clients.");
     }
 
     #region Properties
@@ -473,6 +614,15 @@ namespace Appboy {
           appboyLocationService = new AndroidJavaClass("com.appboy.services.AppboyLocationService");
         }
         return appboyLocationService;
+      }
+    }
+
+    public static AndroidJavaObject UnityConfigurationProvider {
+      get {
+        if (unityConfigurationProvider == null) {
+          unityConfigurationProvider = new AndroidJavaObject("com.appboy.unity.configuration.UnityConfigurationProvider", AppboyUnityActivity);
+        }
+        return unityConfigurationProvider;
       }
     }
 
@@ -533,6 +683,11 @@ namespace Appboy {
       Appboy.Call("logPurchase", productId, currencyCode, javaPrice, quantity, appboyProperties);
     }
 
+    /// <summary>
+    /// When you first start using Braze on a device, the user is considered "anonymous". You can use this
+    /// method to optionally identify a user with a unique ID.
+    /// </summary>
+    /// <param name="userId"></param>
     public static void ChangeUser(string userId) {
       Appboy.Call("changeUser", userId);
     }
@@ -651,6 +806,10 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("setHomeCity", city);
     }
 
+    /// <summary>
+    /// Configures the user's opt-in status for email within Braze.
+    /// </summary>
+    /// <param name="emailNotificationSubscriptionType"></param>
     public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
       using (var notificationTypeClass = new AndroidJavaClass("com.appboy.enums.NotificationSubscriptionType")) {
         switch (emailNotificationSubscriptionType) {
@@ -670,6 +829,10 @@ namespace Appboy {
       }
     }
 
+    /// <summary>
+    /// Configures the user's opt-in status for push within Braze.
+    /// </summary>
+    /// <param name="pushNotificationSubscriptionType"></param>
     public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
       using (var notificationTypeClass = new AndroidJavaClass("com.appboy.enums.NotificationSubscriptionType")) {
         switch (pushNotificationSubscriptionType) {
@@ -796,9 +959,29 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("removeFromCustomAttributeArray", key, value);
     }
 
+    /// <summary>
+    /// Registers a push token with Braze.
+    /// </summary>
+    /// <param name='registrationId'>
+    /// The push token
+    /// </param>
     public static void RegisterAppboyPushMessages(string registrationId) {
       Appboy.Call("registerAppboyPushMessages", new object[] { registrationId });
     }
+
+    /// <summary>
+    /// No-op on Android.
+    /// </summary>
+    /// <param name='provisional'>
+    /// </param>
+    public static void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null) {}
+
+    /// <summary>
+    /// No-op on Android.
+    /// </summary>
+    /// <param name='tokenDelegate'>
+    /// </param>
+    public static void SetPushTokenReceivedFromSystemDelegate(PushTokenReceivedFromSystem tokenDelegate) {}
 
     public static void LogInAppMessageClicked(string inAppMessageJSONString) {
       var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
@@ -905,96 +1088,61 @@ namespace Appboy {
       GetCurrentUser().Call<bool>("addAlias", alias, label);
     }
 
+    /// <summary>
+    /// Used to configure Braze to send messages to GameObjects based
+    /// on lifecycle events. See <see cref="BrazeUnityMessageType"/> for
+    /// available message types.
+    /// </summary>
+    /// <param name="messageType">
+    /// The type of message to send to the target GameObject.
+    /// </param>
+    /// <param name="gameobject">
+    /// The target GameObject.
+    /// </param>
+    /// <param name="method">
+    /// The script method to call on the GameObject.
+    /// </param>
+    public static void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {
+      UnityConfigurationProvider.Call("configureListener", (int)messageType, gameobject, method);
+    }
+
 #else
 
     // Empty implementations of the API, in case the application is being compiled for a platform other than iOS or Android.
     void Start() {
-      Debug.Log("Starting no-op Appboy binding for non iOS/Android clients.");
+      Debug.Log("Starting no-op Braze binding for non iOS/Android clients.");
     }
 
-    public static void LogCustomEvent(string eventName) {
-    }
+    public static void LogCustomEvent(string eventName) {}
+    public static void LogCustomEvent(string eventName, Dictionary<string, object> properties) {}
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {}
+    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, object> properties) {}
 
-    public static void LogCustomEvent(string eventName, Dictionary<string, object> properties) {
-    }
+    public static void ChangeUser(string userId) {}
 
-    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
-    }
+    public static void SetUserFirstName(string firstName) {}
+    public static void SetUserLastName(string lastName) {}
+    public static void SetUserEmail(string email) {}
+    public static void SetUserGender(Gender gender) {}
+    public static void SetUserDateOfBirth(int year, int month, int day) {}
+    public static void SetUserCountry(string country) {}
+    public static void SetUserHomeCity(string city) {}
+    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {}
+    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {}
+    public static void SetUserPhoneNumber(string phoneNumber) {}
+    public static void SetUserAvatarImageURL(string imageURL) {}
 
-    public static void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, object> properties) {
-    }
-
-    public static void ChangeUser(string userId) {
-    }
-
-    public static void SetUserFirstName(string firstName) {
-    }
-
-    public static void SetUserLastName(string lastName) {
-    }
-
-    public static void SetUserEmail(string email) {
-    }
-
-    public static void SetUserBio(string bio) {
-    }
-
-    public static void SetUserGender(Gender gender) {
-    }
-
-    public static void SetUserDateOfBirth(int year, int month, int day) {
-    }
-
-    public static void SetUserCountry(string country) {
-    }
-
-    public static void SetUserHomeCity(string city) {
-    }
-
-    public static void SetUserIsSubscribedToEmails(bool isSubscribedToEmails) {
-    }
-
-    public static void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
-    }
-
-    public static void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
-    }
-
-    public static void SetUserPhoneNumber(string phoneNumber) {
-    }
-
-    public static void SetUserAvatarImageURL(string imageURL) {
-    }
-
-    public static void SetCustomUserAttribute(string key, bool value) {
-    }
-
-    public static void SetCustomUserAttribute(string key, int value) {
-    }
-
-    public static void SetCustomUserAttribute(string key, float value) {
-    }
-
-    public static void SetCustomUserAttribute(string key, string value) {
-    }
-
-    public static void SetCustomUserAttributeToNow(string key) {
-    }
-
-    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {
-    }
-
-    public static void UnsetCustomUserAttribute(string key) {
-    }
-
-    public static void IncrementCustomUserAttribute(string key, int incrementValue) {
-    }
-
-    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {
-    }
-
-    public static void AddToCustomUserAttributeArray(string key, string value) {
-    }
+    public static void SetCustomUserAttribute(string key, bool value) {}
+    public static void SetCustomUserAttribute(string key, int value) {}
+    public static void SetCustomUserAttribute(string key, float value) {}
+    public static void SetCustomUserAttribute(string key, string value) {}
+    public static void SetCustomUserAttributeToNow(string key) {}
+    public static void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch) {}
+    public static void UnsetCustomUserAttribute(string key) {}
+    public static void IncrementCustomUserAttribute(string key, int incrementValue) {}
+    public static void SetCustomUserAttributeArray(string key, List<string> array, int size) {}
+    public static void AddToCustomUserAttributeArray(string key, string value) {}
+    public static void RemoveFromCustomUserAttributeArray(string key, string value) {}
 
     public static void setUserFacebookData(string facebookId, string firstName, string lastName, string email,
       string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {}
@@ -1002,75 +1150,43 @@ namespace Appboy {
     public static void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount,
       int? followingCount, int? tweetCount, string profileImageUrl) {}
 
-    public static void RemoveFromCustomUserAttributeArray(string key, string value) {
-    }
+    public static void RegisterAppboyPushMessages(string registrationId) {}
+    public static void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null) {}
+    public static void SetPushTokenReceivedFromSystemDelegate(PushTokenReceivedFromSystem tokenDelegate) {}
 
-    public static void RegisterAppboyPushMessages(string registrationId) {
-    }
+    public static void LogInAppMessageClicked(string inAppMessageJSONString) {}
+    public static void LogInAppMessageImpression(string inAppMessageJSONString) {}
+    public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {}
 
-    public static void LogInAppMessageClicked(string inAppMessageJSONString) {
-    }
+    public static void RequestFeedRefresh() {}
+    public static void RequestFeedRefreshFromCache() {}
+    public static void LogFeedDisplayed() {}
 
-    public static void LogInAppMessageImpression(string inAppMessageJSONString) {
-    }
+    public static void RequestContentCardsRefresh() {}
+    public static void RequestContentCardsRefreshFromCache() {}
+    public static void LogContentCardsDisplayed() {}
+    public static void LogContentCardClicked(string contentCardString) {}
+    public static void LogContentCardImpression(string contentCardString) { }
+    public static void LogContentCardDismissed(string contentCardString) { }
 
-    public static void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
-    }
-
-    public static void RequestFeedRefresh() {
-    }
-
-    public static void RequestFeedRefreshFromCache() {
-    }
-
-    public static void LogFeedDisplayed() {
-    }
-
-    public static void RequestContentCardsRefresh() {
-    }
-
-    public static void RequestContentCardsRefreshFromCache() {
-    }
-
-    public static void LogContentCardsDisplayed() {
-    }
-
-    public static void LogContentCardClicked(string contentCardString) {
-    }
-
-    public static void LogContentCardImpression(string contentCardString) {
-    }
-
-    public static void LogContentCardDismissed(string contentCardString) {
-    }
-
-    public static void WipeData() {
-    }
-
-    public static void EnableSDK() {
-    }
-
-    public static void DisableSDK() {
-    }
+    public static void WipeData() {}
+    public static void EnableSDK() {}
+    public static void DisableSDK() {}
 
     public static string GetInstallTrackingId() {
       return null;
     }
 
-    public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
-    }
+    public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {}
 
-    public static void RequestLocationInitialization() {
-    }
+    public static void RequestLocationInitialization() {}
+    public static void RequestGeofences(decimal latitude, decimal longitude) {}
 
-    public static void RequestGeofences(decimal latitude, decimal longitude) {
-    }
+    public static void RequestImmediateDataFlush() {}
 
-    public static void RequestImmediateDataFlush() {
-    }
+    public static void AddAlias(string alias, string label) {}
 
-    public static void AddAlias(string alias, string label) {
-    }
+    public static void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {}
 #endif
   }
 }

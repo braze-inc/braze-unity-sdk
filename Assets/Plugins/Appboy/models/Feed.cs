@@ -24,22 +24,22 @@ namespace Appboy.Models {
         json = (JSONClass)JSON.Parse(message);
         if (json["mFeedCards"] != null) {
           JSONArray jsonArray = (JSONArray)JSON.Parse(json["mFeedCards"].ToString());
-          Debug.Log(String.Format("parsed cards array with {0} of cards", jsonArray.Count));
+          Debug.Log(String.Format("Parsing News Feed card array of size {0}.", jsonArray.Count));
           for (int i = 0; i < jsonArray.Count; i++) {
             JSONClass cardJson = jsonArray[i].AsObject;
             try {
-              Debug.Log(String.Format("Card NO. {0} json string is {1}", i, cardJson));
+              Debug.Log(String.Format("Parsing card with json: {0}", cardJson));
               Card card = Feed.CreateCardFromJson(cardJson);
               if (card != null) {
                 Cards.Add(card);
               }
             } catch {
-              Debug.Log(String.Format("Unable to parse card from {0}", cardJson));
+              Debug.Log(String.Format("Unable to parse card from json: {0}", cardJson));
             }
           }
         }
       } catch {
-        throw new ArgumentException("Cannot parse feed JSON message.");
+        throw new ArgumentException("Could not parse News Feed json.");
       }
 
       IsFromOfflineStorage = json["mFromOfflineStorage"].AsBool;

@@ -11,48 +11,47 @@ namespace Appboy {
   public class AppboyBindingTester : MonoBehaviour {
 
     void Start() {
+      Debug.Log("AppboyBindingTester starting with component name: " + this.name);
     }
 
     void InAppMessageReceivedCallback(string message) {
       Debug.Log("InAppMessageReceivedCallback message: " + message);
       IInAppMessage inApp = InAppMessageFactory.BuildInAppMessage(message);
       Debug.Log("In-app message received: " + inApp);
-      // Here we are testing the Unity SDK by manually logging the in-app message's click and impression.
-      // We should only log the click and impression when the in-app message isn't displayed by Appboy but in Unity.
-      //inApp.LogClicked();
-      //inApp.LogImpression();
-      if (inApp is IInAppMessageImmersive) {
-        IInAppMessageImmersive inAppImmersive = inApp as IInAppMessageImmersive;
-        if (inAppImmersive.Buttons != null && inAppImmersive.Buttons.Count > 0) {
-          // Here we are testing the Unity SDK by manually logging the in-app message's first button's click.
-          // We should only log the button click when the in-app message isn't displayed by Appboy but in Unity.
-          //inAppImmersive.LogButtonClicked(inAppImmersive.Buttons[0].ButtonID);
-        }
-      }
+    }
+
+    void PromptUserForPushPermissionsCallback(string message) {
+      Debug.Log("User push permission prompt result was: " + message);
+    }
+
+    void PushTokenReceivedCallback(string message) {
+      Debug.Log("Push token received: " + message);
     }
 
     void PushNotificationReceivedCallback(string message) {
-      Debug.Log("PushNotificationReceivedCallback message: " + message);
+      Debug.Log("Push received callback for Android received: " + message);
       PushNotification pushNotification = new PushNotification(message);
-      Debug.Log("Push Notification received: " + pushNotification);     
+      Debug.Log("Push received message parsed into json: " + pushNotification);
     }
 
     void PushNotificationOpenedCallback(string message) {
-      Debug.Log("PushNotificationOpenedCallback message: " + message);
+      Debug.Log("Push opened callback for Android received: " + message);
       PushNotification pushNotification = new PushNotification(message);
-      Debug.Log("Push Notification opened: " + pushNotification);
+      Debug.Log("Push opened message parsed into json: " + pushNotification);
     }
 
     void PushNotificationReceivedCallbackForiOS(string message) {
+      Debug.Log("Push received callback for iOS received: " + message);
       JSONClass pushNotificationJson = (JSONClass)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
-      Debug.Log("Push received Notification event: " + pushNotification);     
+      Debug.Log("Push received message parsed into json: " + pushNotification);
     }
 
     void PushNotificationOpenedCallbackForiOS(string message) {
+      Debug.Log("Push opened callback for iOS received: " + message);
       JSONClass pushNotificationJson = (JSONClass)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
-      Debug.Log("Push opened Notification event: " + pushNotification);      
+      Debug.Log("Push opened message parsed into json: " + pushNotification);
     }
 
     void FeedReceivedCallback(string message) {
@@ -71,7 +70,7 @@ namespace Appboy {
         JSONClass json = (JSONClass)JSON.Parse(message);
         if (json["mContentCards"] != null) {
           JSONArray jsonArray = (JSONArray)JSON.Parse(json["mContentCards"].ToString());
-          Debug.Log(String.Format("Parsed content cards array with {0} cards", jsonArray.Count));
+          Debug.Log(String.Format("Parsing Content Cards array of size {0}", jsonArray.Count));
           for (int i = 0; i < jsonArray.Count; i++) {
             JSONClass cardJson = jsonArray[i].AsObject;
             try {

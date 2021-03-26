@@ -28,7 +28,7 @@ namespace Appboy.Models.InAppMessage {
       URI = json[InAppMessageConstants.ButtonURIKey];
       ButtonClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ButtonClickActionKey], true, ClickAction.NEWS_FEED);
       if (ButtonClickAction == ClickAction.URI && URI == null) {
-        Debug.Log("The click action cannot be set to URI because the uri is null. Setting click action to NONE.");
+        Debug.Log("Required URI not present for URI click action type. Setting click action to NONE.");
         ButtonClickAction = ClickAction.NONE;
       }
     }
@@ -39,7 +39,7 @@ namespace Appboy.Models.InAppMessage {
         URI = null;
         return true;
       } else {
-        Debug.LogError("A non-null URI is required in order to set the ButtonClickAction to URI.");
+        Debug.Log("A non-null URI is required for ClickAction.URI.");
         return false;
       }
     }

@@ -1,3 +1,36 @@
+## 3.0.0
+
+##### Important
+- This release contains several minor changes to our iOS push code. Most integrations will be unaffected, however, we recommend additional testing.
+
+##### Breaking
+- Updated the Android plugin to use [Braze Android SDK 13.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#1300).
+- If automatic iOS push integration is enabled, Braze will now automatically add the Xcode Push Capability in `OnPostprocessBuild()`.
+  - To disable this, check "Disable Automatic Push Capability" in the Braze configuration editor.
+- In `AppboyUnityManager.mm`:
+  - `registerForRemoteNotifications:` has been replaced with `registerForRemoteNotificationsWithProvisional:(BOOL)provisional`. If using this method, note that the new method calls Apple's APIs directly and does not respect Braze configuration's settings for automatic push integration and registration.
+  - `registerApplication:didReceiveRemoteNotification:fetchCompletionHandler:` and `registerPushToken` have also been updated to no longer internally read Braze config.
+  - Several obsolete methods were removed, including methods where the manager trivially wrapped the native `Appboy` instance.
+  - Most integrations will not be affected by these changes.
+
+##### Added
+- Added the option to disable iOS provisional push authorization when automatic iOS push integration is enabled.
+  - To use, check "Disable Provisional Authorization" in the Braze configuration editor.
+  - When provisional push authorization is disabled, users will see the native push prompt dialog at app startup.
+- Added `AppboyBinding.ConfigureListener()` as an alternative method for configuring GameObject listeners for push, in-app messages, Content Cards, and News Feed. Use the new `BrazeUnityMessageType` enum to specify the desired message type.
+  - On iOS, to receive push opened and received callbacks, `Integrate Push With Braze` must be enabled.
+- Added `AppboyBinding.PromptUserForPushPermissions(bool provisional)` to request authorization and register for push notifications on iOS.
+  - Set `provisional` to `true` to request provisional authorization, or `false` to show the push prompt directly.
+  - If you would like to read the user response, pass an instance of `PushPromptResponseReceived` into the method.
+  - We recommend using this method with the following settings:
+    - `Integrate Push With Braze` enabled.
+    - `Disable Automatic Push Registration` enabled.
+- Added `AppboyBinding.SetPushTokenReceivedFromSystemDelegate()` to receive push tokens Braze receives from the OS (iOS only).
+
+##### Fixed
+- Braze push delegates are no longer called automatically in fully manual integrations.
+  - Automatic push integration must be enabled for Braze push delegates to function.
+
 ## 2.8.0
 
 ##### Breaking

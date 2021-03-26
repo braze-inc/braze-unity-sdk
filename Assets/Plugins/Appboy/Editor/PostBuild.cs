@@ -12,15 +12,16 @@ using UnityEditor.iOS.Xcode.Extensions;
 namespace Appboy.Editor {
   public class PostBuild {
 #if UNITY_IOS
-    private const string ProjectSubpath = "/Unity-iPhone.xcodeproj/project.pbxproj";
     private const string AppboyAppDelegatePath = "Libraries/Plugins/iOS/AppboyAppDelegate.mm";
     private const string PlistSubpath = "/Info.plist";
+    private const string MainTargetName = "Unity-iPhone";
 
     private const string ABKEndpointKey = "Endpoint";
     private const string ABKLogLevelKey = "LogLevel";
     private const string ABKUnityApiKey = "ApiKey";
     private const string ABKUnityAutomaticPushIntegrationKey = "IntegratesPush";
     private const string ABKUnityDisableAutomaticPushRegistrationKey = "DisableAutomaticPushRegistration";
+    private const string ABKUnityDisableProvisionalAuthKey = "DisableProvisionalAuth";
     private const string ABKUnityPushReceivedGameObjectKey = "PushReceivedGameObjectName";
     private const string ABKUnityPushReceivedCallbackKey = "PushReceivedCallbackMethodName";
     private const string ABKUnityPushOpenedGameObjectKey = "PushOpenedGameObjectName";
@@ -34,15 +35,15 @@ namespace Appboy.Editor {
     private const string ABKUnityHandleInAppMessageDisplayKey = "DisplayInAppMessages";
 
     [PostProcessBuildAttribute(1)]
-    public static void OnPostprocessBuild(BuildTarget target, string buildPath) {
+    public static void OnPostprocessBuild(BuildTarget target, string path) {
       if (target == BuildTarget.iOS) {
-        ModifyProject(buildPath + ProjectSubpath);
-        ModifyPlist(buildPath + PlistSubpath);
+        ModifyPlist(path + PlistSubpath);
+        ModifyProject(path);
       }
     }
 
-    private static void ModifyProject(string projectPath) {
-      // Create PBXProject
+    private static void ModifyProject(string path) {
+      var projectPath = PBXProject.GetPBXProjectPath(path);
       PBXProject project = new PBXProject();
       project.ReadFromString(File.ReadAllText(projectPath));
 
@@ -78,8 +79,6 @@ namespace Appboy.Editor {
           "CoreTelephony.framework",
           "Social.framework",
           "Accounts.framework",
-          "AdSupport.framework",
-          "StoreKit.framework",
           "CoreLocation.framework", // optional for location tracking
           "ImageIO.framework", // required by SDWebImage
           "MobileCoreServices.framework", // required by FLAnimatedImage
@@ -110,10 +109,40 @@ namespace Appboy.Editor {
 
           project.AddBuildProperty(target, "LD_RUNPATH_SEARCH_PATHS", "@executable_path/Frameworks");
         }
+
+        if (AppboyConfig.IOSIntegratesPush && !AppboyConfig.IOSDisableAutomaticPushCapability) {
+          AddPushEntitlement(
+            path,
+            project,
+            targets[0] // the main target
+          );
+        }
       }
 
-      // Write changes to XCode project
       File.WriteAllText(projectPath, project.WriteToString());
+    }
+
+    private static void AddPushEntitlement(string path, PBXProject project, string target) {
+      var entitlements = new PlistDocument();
+
+      string entitlementsFilename = MainTargetName + ".entitlements";
+      string entitlementsRelativePath = MainTargetName + "/" + entitlementsFilename;
+      string entitlementsPath = path + "/" + entitlementsRelativePath;
+
+      if (File.Exists(entitlementsPath)) {
+        entitlements.ReadFromFile(entitlementsPath);
+      }
+
+      if (entitlements.root["aps-environment"] != null) {
+        return;
+      } else {
+        entitlements.root.SetString("aps-environment", "development");
+      }
+
+      project.AddFile(entitlementsRelativePath, entitlementsFilename);
+      entitlements.WriteToFile(entitlementsPath);
+
+      project.AddBuildProperty(target, "CODE_SIGN_ENTITLEMENTS", entitlementsRelativePath);
     }
 
     private static void AddFileToEmbedFrameworks(PBXProject project, string target, string unityPath, string xcodePath) {
@@ -162,6 +191,7 @@ namespace Appboy.Editor {
           PlistElementArray backgroundModes = (rootDict["UIBackgroundModes"] == null) ? rootDict.CreateArray("UIBackgroundModes") : rootDict["UIBackgroundModes"].AsArray();
           backgroundModes.AddString("remote-notification");
         }
+        appboyUnityDict.SetBoolean(ABKUnityDisableProvisionalAuthKey, AppboyConfig.IOSDisableProvisionalAuth);
 
         // Set push listeners
         if (ValidateListenerFields(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName,
@@ -204,7 +234,7 @@ namespace Appboy.Editor {
     }
 
     private static void DisplayInvalidSettingsWarning(string key, string details) {
-      EditorUtility.DisplayDialog("Invalid Appboy Settings", "The " + Regex.Replace(key, @"\B[A-Z]", " $0") + " is blank. " + details + " Set this field in Braze > Braze Configuration.", "OK");
+      EditorUtility.DisplayDialog("Invalid Braze Settings", "The " + Regex.Replace(key, @"\B[A-Z]", " $0") + " is blank. " + details + " Set this field in Braze > Braze Configuration.", "OK");
     }
 
     private static bool ValidateField(string key, string value, string errorDetails) {

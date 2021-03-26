@@ -48,9 +48,7 @@ namespace Appboy.Models.Cards {
         } else {
           for (int i = 0; i < jsonArray.Count; i++) {
             CardCategory category = (CardCategory)EnumUtils.TryParse(typeof(CardCategory), jsonArray[i], true, CardCategory.NO_CATEGORY);
-            if (category != CardCategory.NO_CATEGORY) {
-              Categories.Add(category);
-            }
+            Categories.Add(category);
           }
           if (Categories.Count == 0) {
             Categories.Add(CardCategory.NO_CATEGORY);

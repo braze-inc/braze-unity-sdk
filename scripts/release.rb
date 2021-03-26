@@ -10,7 +10,7 @@ TMP_STAGING_DIRECTORY = File.join(Dir.tmpdir, "appboy-unity-sdk")
 
 def check_and_remove_directory(directory)
 	if File.exists?(directory)
-      `rm -rf #{directory}`
+    `rm -rf #{directory}`
   end
 end
 
@@ -83,6 +83,7 @@ check_and_remove_directory("Public/Libraries")
 check_and_remove_directory("Public/Plugins")
 check_and_remove_directory("Public/Assets")
 check_and_remove_directory("Public/scripts")
+check_and_remove_directory("unity-samples/build")
 
 pretty_puts("Copying sample app, scripts and Assets folder into Public")
 puts `cp -vR "Assets" "Public"`
