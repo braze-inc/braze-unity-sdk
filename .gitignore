@@ -84,4 +84,4 @@ unity-samples/iOS/Roll-A-Ball-Ios/fastlane/report.xml
 .vs/
 obj/
 .vscode/
-
+.vsconfig

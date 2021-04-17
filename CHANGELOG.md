@@ -1,3 +1,8 @@
+## 3.1.0
+
+##### Changed
+- Updated the Android plugin to use [Braze Android SDK 13.1.2](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#1312).
+
 ## 3.0.0
 
 ##### Important
