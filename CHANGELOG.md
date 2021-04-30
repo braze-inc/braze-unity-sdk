@@ -1,4 +1,15 @@
+## 3.2.0
+
+##### Breaking
+- Updated the Android plugin to use Braze Android SDK 14.0.0.1.
+
+##### Fixed
+- Fixed an issue introduced in 3.1.0 on Android where push opens could fail to launch the application on certain devices.
+- Fixed an issue introduced in 3.0.0 in the iOS binding where `enableSDK()` and `disableSDK()` had swapped behaviors.
+  
 ## 3.1.0
+
+**Important:** This release has known issues with push notifications on Android. This is fixed in version 3.2.0.
 
 ##### Changed
 - Updated the Android plugin to use [Braze Android SDK 13.1.2](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#1312).

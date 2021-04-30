@@ -277,11 +277,11 @@ void _wipeData() {
 }
 
 void _enableSDK() {
-  [Appboy disableSDK];
+  [Appboy requestEnableSDKOnNextAppRun];
 }
 
 void _disableSDK() {
-  [Appboy requestEnableSDKOnNextAppRun];
+  [Appboy disableSDK];
 }
 
 # pragma mark - Push
