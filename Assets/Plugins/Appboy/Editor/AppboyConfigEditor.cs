@@ -319,6 +319,9 @@ namespace Appboy.Editor {
         AppboyConfig.AndroidPushDefaultNotificationAccentColor = EditorGUILayout.TextField(" Default Notification Accent Color", AppboyConfig.AndroidPushDefaultNotificationAccentColor);
         EditorGUILayout.LabelField(" Enter a valid hex value, e.g. \"0xFF00FF00\"", EditorStyles.wordWrappedMiniLabel);
 
+        AppboyConfig.AndroidPushNotificationDelayedSendingEnabled = EditorGUILayout.ToggleLeft(" Delay Sending Push Notification Intents", AppboyConfig.AndroidPushNotificationDelayedSendingEnabled);
+        EditorGUILayout.LabelField(" Delay sending push notification data until the Unity native libraries have finished loading", EditorStyles.wordWrappedMiniLabel);
+
         EditorGUI.indentLevel--;
       }
 

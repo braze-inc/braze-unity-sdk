@@ -59,6 +59,7 @@ namespace Appboy.Editor {
       cfg = AddStringKey(cfg, "com_appboy_default_notification_channel_description", AppboyConfig.AndroidPushDefaultNotificationChannelDescription);
       cfg = AddDrawableKey(cfg, "com_appboy_push_small_notification_icon", AppboyConfig.AndroidPushSmallNotificationIcon);
       cfg = AddDrawableKey(cfg, "com_appboy_push_large_notification_icon", AppboyConfig.AndroidPushLargeNotificationIcon);
+      cfg = AddBooleanKey(cfg, "com_braze_delay_sending_push_intents", AppboyConfig.AndroidPushNotificationDelayedSendingEnabled);
 
       // In App Messages
       cfg = AddStringKey(cfg, "com_appboy_inapp_listener_game_object_name", AppboyConfig.AndroidInAppMessageListenerGameObjectName);

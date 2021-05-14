@@ -1,3 +1,20 @@
+## 3.3.0
+
+##### Breaking
+- Updated the Android plugin to use Braze Android SDK 14.0.0.
+
+##### Added
+- Added the ability to delay sending Android push notification data to the Unity layer until the native libraries have finished loading and any AppboyBinding method has been called.
+  - Configured under "Braze Configuration -> Automate Unity Android Integration -> Push Configuration -> Delay Sending Push Notification Intents".
+  - Pending Android push notification intents are flushed automatically after the first call to any method on the Android binding is made.
+  - To optionally have finer control over when these push notification intents are flushed, call the following from Unity:
+  ```
+  #if UNITY_ANDROID
+    BrazeAndroidPlatform binding = (BrazeAndroidPlatform) Appboy.AppboyBinding.mBinding;
+    binding.FlushAndroidPendingPushIntents();
+  #endif
+  ```
+
 ## 3.2.0
 
 ##### Breaking

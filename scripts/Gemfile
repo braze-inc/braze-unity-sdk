@@ -1,5 +1,0 @@
-source 'http://rubygems.org'
-
-# gem 'nokogiri'
-gem 'fastlane'
-gem 'appboy_sdk_release_utils', :git => 'git@github.com:Appboy/sdk-utils.git'

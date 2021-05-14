@@ -98,6 +98,8 @@ namespace Appboy.Editor {
     private string androidPushSmallNotificationIcon = string.Empty;
     [SerializeField]
     private string androidPushLargeNotificationIcon = string.Empty;
+    [SerializeField]
+    private bool androidDelaySendingPushIntents = false;
 
     // In-App Messages
     // iOS
@@ -363,6 +365,11 @@ namespace Appboy.Editor {
     public static string AndroidPushLargeNotificationIcon {
       get { return Instance.androidPushLargeNotificationIcon; }
       set { SetProperty(ref Instance.androidPushLargeNotificationIcon, value); }
+    }
+
+    public static bool AndroidPushNotificationDelayedSendingEnabled {
+      get { return Instance.androidDelaySendingPushIntents; }
+      set { SetProperty(ref Instance.androidDelaySendingPushIntents, value); }
     }
 
     // In-App Messages
