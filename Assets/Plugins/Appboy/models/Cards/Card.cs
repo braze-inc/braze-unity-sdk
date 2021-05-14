@@ -68,7 +68,7 @@ namespace Appboy.Models.Cards {
     public void LogImpression() {
       if (!string.IsNullOrEmpty(ID)) {
 #if UNITY_ANDROID
-        AppboyBinding.Appboy.Call("logFeedCardImpression", ID);
+        AppboyBinding.LogCardImpression(ID);
 #elif UNITY_IOS
         AppboyBinding.LogCardImpression(JsonString);
 #endif
@@ -86,7 +86,7 @@ namespace Appboy.Models.Cards {
     public void LogClick() {
       if (!string.IsNullOrEmpty(ID)) {
 #if UNITY_ANDROID
-        AppboyBinding.Appboy.Call("logFeedCardClick", ID);
+        AppboyBinding.LogCardClicked(ID);
 #elif UNITY_IOS
         AppboyBinding.LogCardClicked(JsonString);
 #endif

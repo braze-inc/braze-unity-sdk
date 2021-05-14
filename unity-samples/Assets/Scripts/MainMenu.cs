@@ -3,9 +3,17 @@ using Appboy.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using System.Collections.Generic;
 using System.Text;
 
 public class MainMenu : MonoBehaviour {
+
+  void Start() {
+    #if UNITY_ANDROID
+      BrazeAndroidPlatform binding = (BrazeAndroidPlatform) Appboy.AppboyBinding.mBinding;
+      binding.FlushAndroidPendingPushIntents();
+    #endif
+  }
 
   public void OnChangeUserButtonClick() {
     SceneManager.LoadScene(Constants.ChangeUserScene);
@@ -81,12 +89,17 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.SetCustomUserAttribute("grins cracked", 0.5F);
     Appboy.AppboyBinding.SetCustomUserAttribute("knock knock", "who's there");
 
+    Dictionary<string, object> properties = new Dictionary<string, object>();
+    properties.Add("key1", 2);
+    properties.Add("key 2", "second value");
     Appboy.AppboyBinding.LogCustomEvent("union of unity uniters");
+    Appboy.AppboyBinding.LogCustomEvent("custom event with properties", properties);
     Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);
+    Appboy.AppboyBinding.LogPurchase("purchase with properties", "USD", 20.21m, 1, properties);
     Appboy.AppboyBinding.AddAlias("aliasHere", "labelHere");
     Debug.Log("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
 
-    Appboy.AppboyBinding.ConfigureListener(Appboy.BrazeUnityMessageType.PUSH_RECEIVED, "AppboyCallback", "PushNotificationReceivedRuntimeCallback");
+    Appboy.AppboyBinding.ConfigureListener(Appboy.BrazeUnityMessageType.PUSH_RECEIVED, "BrazeCallback", "PushNotificationReceivedRuntimeCallback");
   }
 
   void PushNotificationReceivedCallback(string message) {
@@ -109,6 +122,14 @@ public class MainMenu : MonoBehaviour {
     ApplePushNotification pushNotification = new ApplePushNotification(message);
     Debug.Log("Push opened Notification event: " + pushNotification);   
 #endif  
+  }
+
+  void PushNotificationDeletedCallback(string message) {
+#if UNITY_ANDROID
+    Debug.Log("PushNotificationDeletedCallback message: " + message);
+    PushNotification pushNotification = new PushNotification(message);
+    Debug.Log("Push Notification dismissed: " + pushNotification);  
+#endif
   }
 
   void PushNotificationReceivedRuntimeCallback(string message) {

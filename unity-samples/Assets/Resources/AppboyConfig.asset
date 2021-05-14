@@ -36,18 +36,19 @@ MonoBehaviour:
   androidFirebaseCloudMessagingSenderId: 901477453852
   androidHandlePushDeepLinksAutomatically: 1
   androidAdmRegistrationEnabled: 1
-  androidPushReceivedGameObjectName: AppboyCallback
+  androidPushReceivedGameObjectName: BrazeCallback
   androidPushReceivedCallbackMethodName: PushNotificationReceivedCallback
-  androidPushOpenedGameObjectName: AppboyCallback
+  androidPushOpenedGameObjectName: BrazeCallback
   androidPushOpenedCallbackMethodName: PushNotificationOpenedCallback
-  androidPushDeletedGameObjectName: AndroidPushDeletedGameObjectName
-  androidPushDeletedCallbackMethodName: AndroidPushDeletedCallbackMethodName
+  androidPushDeletedGameObjectName: BrazeCallback
+  androidPushDeletedCallbackMethodName: PushNotificationDeletedCallback
   androidPushNotificationHtmlRenderingEnabled: 1
   androidPushDefaultNotificationAccentColor: 0xFF001122
   androidPushDefaultNotificationChannelName: 
   androidPushDefaultNotificationChannelDescription: 
   androidPushSmallNotificationIcon: 
   androidPushLargeNotificationIcon: 
+  androidDelaySendingPushIntents: 1
   iOSInAppMessageGameObjectName: 
   iOSInAppMessageCallbackMethodName: 
   iOSDisplayInAppMessages: 0
