@@ -56,6 +56,10 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.RequestImmediateDataFlush();
   }
 
+  public void OnLaunchContentCardsButtonClick() {
+    Appboy.AppboyBinding.DisplayContentCards();
+  }
+
   // Not connecting this to the main menu as setting a push token like that
   // would break push on the device.  But leaving here in case this method needs
   // to be tested again in the future.

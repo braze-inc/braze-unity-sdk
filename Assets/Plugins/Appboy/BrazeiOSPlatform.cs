@@ -93,6 +93,9 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _setUserTwitterData(int twitterUserId, string twitterHandle, string name, string description, int followerCount, int followingCount, int tweetCount, string profileImageUrl);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setInAppMessageDisplayAction(int actionType);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _logInAppMessageClicked(string inAppMessageJSONString);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -130,6 +133,9 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _requestContentCardsRefreshFromCache();
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _displayContentCards();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _logContentCardsDisplayed();
@@ -299,6 +305,10 @@ public class BrazeiOSPlatform : BrazePlatform {
     _displayNextInAppMessage(withDelegate);
   }
 
+  public void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
+    _setInAppMessageDisplayAction((int)actionType);
+  }
+
   public void LogInAppMessageClicked(string inAppMessageJSONString) {
     _logInAppMessageClicked(inAppMessageJSONString);
   }
@@ -349,6 +359,10 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void RequestContentCardsRefreshFromCache() {
     _requestContentCardsRefreshFromCache();
+  }
+
+  public void DisplayContentCards() {
+    _displayContentCards();
   }
 
   public void LogContentCardsDisplayed() {

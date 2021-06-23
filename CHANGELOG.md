@@ -1,3 +1,15 @@
+## 3.4.0
+
+##### Added
+- Added the ability to change the display flow of In-App Messages directly from Unity code via `AppboyBinding.SetInAppMessageDisplayAction()`.
+  - See the `BrazeUnityInAppMessageDisplayActionType` enum.
+- Added the ability to open the default Content Cards UI via `DisplayContentCards()` on the binding.
+  - For Android, this requires the following dependencies:  
+    ```
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:+"
+    implementation "androidx.recyclerview:recyclerview:+"
+    ```
+
 ## 3.3.0
 
 ##### Breaking

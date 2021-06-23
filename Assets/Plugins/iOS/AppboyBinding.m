@@ -218,6 +218,10 @@ void _displayNextInAppMessage(bool withDelegate) {
   [[AppboyUnityManager sharedInstance] displayNextInAppMessageWithDelegate:withDelegate];
 }
 
+void _setInAppMessageDisplayAction(int actionType) {
+  [[AppboyUnityManager sharedInstance] setInAppMessageDisplayAction:actionType];
+}
+
 # pragma mark - News Feed analytics
 
 void _logCardImpression(const char* cardJSONString) {
@@ -254,6 +258,10 @@ void _logContentCardClicked(const char* cardJSONString) {
 
 void _logContentCardDismissed(const char* cardJSONString) {
   [[AppboyUnityManager sharedInstance] logContentCardDismissed:GetStringParam(cardJSONString)];
+}
+
+void _displayContentCards() {
+  [[AppboyUnityManager sharedInstance] displayContentCards];
 }
 
 void _logContentCardsDisplayed() {

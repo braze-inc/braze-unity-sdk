@@ -76,6 +76,26 @@ namespace Appboy {
     CONTENT_CARDS_UPDATED = 7
   }
 
+  public enum BrazeUnityInAppMessageDisplayActionType {
+    /// <summary>
+    /// Sets In-App Messages to display immediately when triggered.
+    /// </summary>
+    IAM_DISPLAY_NOW = 0,
+    /// <summary>
+    /// Sets In-App Messages to display at a later time and be saved in a stack.
+    /// </summary>
+    IAM_DISPLAY_LATER = 1,
+    /// <summary>
+    /// Sets In-App Messages to be discarded after being triggered.
+    /// </summary>
+    IAM_DISCARD = 2,
+    // TODO - Blocked by SDK-1596
+    // /// <summary>
+    // /// Requests that any In-App Message previously saved to a stack to be displayed immediately.
+    // /// </summary>
+    // REQUEST_IAM_DISPLAY = 3
+  }
+
   public delegate void PushPromptResponseReceived(bool granted);
   public delegate void PushTokenReceivedFromSystem(string token);
 
@@ -86,6 +106,8 @@ namespace Appboy {
           return new BrazeAndroidPlatform();
         #elif UNITY_IOS
           return new BrazeiOSPlatform();
+        #else
+          return null;
         #endif
       }
     }
@@ -596,6 +618,18 @@ namespace Appboy {
     public static void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {
       #if HAS_BRAZE_SDK
         mBinding.ConfigureListener(messageType, gameobject, method);
+      #endif 
+    }
+
+    public static void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetInAppMessageDisplayAction(actionType);
+      #endif 
+    }
+
+    public static void DisplayContentCards() {
+      #if HAS_BRAZE_SDK
+        mBinding.DisplayContentCards();
       #endif 
     }
   }

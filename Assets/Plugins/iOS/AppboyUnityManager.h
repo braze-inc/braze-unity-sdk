@@ -32,6 +32,16 @@ typedef NS_ENUM(NSInteger, ABKUnityMessageType) {
   ABKContentCardsUpdated = 7
 };
 
+/**
+ * These must correspond 1:1 to BrazeUnityInAppMessageDisplayActionType in AppboyBinding.cs.
+ */
+typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
+  ABKIAMDisplayNow = 0,
+  ABKIAMDisplayLater = 1,
+  ABKIAMDiscard = 2,
+  ABKIAMRequestIAMDisplay = 3
+};
+
 @interface AppboyUnityManager : NSObject <ABKInAppMessageControllerDelegate, UNUserNotificationCenterDelegate>
 
 @property (nonatomic,copy) NSDictionary *appboyUnityPlist;
@@ -51,6 +61,7 @@ typedef NS_ENUM(NSInteger, ABKUnityMessageType) {
 @property (nonatomic, copy) NSString *unityPushTokenReceivedFromSystemFunctionName;
 @property (nonatomic) BOOL sendInternalPushPermissionsPromptResponse;
 @property (nonatomic) BOOL sendPushTokenReceivedFromSystem;
+@property (nonatomic) ABKInAppMessageDisplayChoice displayAction;
 
 + (AppboyUnityManager *) sharedInstance;
 - (NSString *)getApiKeyFromUnity;
@@ -65,6 +76,7 @@ typedef NS_ENUM(NSInteger, ABKUnityMessageType) {
 - (void)logInAppMessageClicked:(NSString *)inAppMessageJSONString;
 - (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID;
 - (void)displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
+- (void)setInAppMessageDisplayAction:(int)actionType;
 
 // News Feed
 - (void)logCardImpression:(NSString *)cardJSONString;
@@ -78,6 +90,7 @@ typedef NS_ENUM(NSInteger, ABKUnityMessageType) {
 - (void)logContentCardDismissed:(NSString *)cardJSONString;
 - (void)requestContentCardsRefresh;
 - (void)requestContentCardsFromCache:(NSNotification *)notification;
+- (void)displayContentCards;
 
 /*!
  * @discussion Passes the device token to Braze. The caller is responsible for respecting

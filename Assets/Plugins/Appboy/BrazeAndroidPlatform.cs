@@ -474,6 +474,14 @@ public class BrazeAndroidPlatform : BrazePlatform {
   public void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {
     UnityConfigurationProvider.Call("configureListener", (int)messageType, gameobject, method);
   }
+
+  public void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
+    AppboyUnityActivity.Call("onNewUnityInAppMessageManagerAction", (int)actionType);
+  }
+
+  public void DisplayContentCards() {
+    AppboyUnityActivity.Call("launchContentCardsActivity");
+  }
 }
 
 #endif

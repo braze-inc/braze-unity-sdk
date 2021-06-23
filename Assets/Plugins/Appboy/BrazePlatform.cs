@@ -116,4 +116,6 @@ public interface BrazePlatform {
   void RequestImmediateDataFlush();
   void AddAlias(string alias, string label);
   void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method);
+  void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType);
+  void DisplayContentCards();
 }
