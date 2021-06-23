@@ -3,6 +3,8 @@
 #import <Appboy_iOS_SDK/ABKCard.h>
 #import <Appboy_iOS_SDK/ABKFacebookUser.h>
 #import <Appboy_iOS_SDK/ABKTwitterUser.h>
+#import <Appboy_iOS_SDK/ABKContentCardsViewController.h>
+#import <Appboy_iOS_SDK/ABKUIUtils.h>
 
 static NSString *const ABKInternalCallback = @"BrazeInternalCallback";
 static NSString *const ABKInternalPushPermissionsPromptResponse = @"onPushPromptResponseReceived";
@@ -29,6 +31,16 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
     sharedInstance = [[AppboyUnityManager alloc] init];
 
   return sharedInstance;
+}
+
+# pragma mark - Init
+
+- (instancetype)init {
+  self = [super init];
+  if (self) {
+    self.displayAction = ABKDisplayInAppMessageNow;
+  }
+  return self;
 }
 
 # pragma mark - Config
@@ -120,11 +132,37 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
 # pragma mark - In-app message display
 
 - (void)displayNextInAppMessageWithDelegate:(BOOL)withDelegate {
-  ABKInAppMessageController *delegate = nil;
+  id<ABKInAppMessageControllerDelegate> delegate = nil;
   if (withDelegate) {
     delegate = [Appboy sharedInstance].inAppMessageController.delegate;
   }
   [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:delegate];
+}
+
+- (void)setInAppMessageDisplayAction:(int)actionType {
+  [Appboy sharedInstance].inAppMessageController.delegate = self;
+  switch ((ABKUnityInAppMessageDisplayActionType)actionType) {
+    case ABKIAMDisplayNow:
+      NSLog(@"Setting in-app message display action to ABKDisplayInAppMessageNow.");
+      self.displayAction = ABKDisplayInAppMessageNow;
+      break;
+    case ABKIAMDisplayLater:
+      NSLog(@"Setting in-app message display action to ABKDisplayInAppMessageLater.");
+      self.displayAction = ABKDisplayInAppMessageLater;
+      break;
+    case ABKIAMDiscard:
+      NSLog(@"Setting in-app message display action to ABKIAMDiscard.");
+      self.displayAction = ABKDiscardInAppMessage;
+      break;
+    case ABKIAMRequestIAMDisplay:
+      // FIXME: Blocked by SDK-1596
+      NSLog(@"Requesting in-app message display (currently unimplemented).");
+      // [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:nil];
+      break;
+    default:
+      NSLog(@"Unknown in-app message display action type received.");
+      return;
+  }
 }
 
 # pragma mark - News Feed analytics
@@ -265,6 +303,15 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
     return;
   }
   [self unitySendMessageTo:self.unityContentCardsGameObjectName withMethod:self.unityContentCardsCallbackFunctionName withMessage:contentCardsString];
+}
+
+# pragma mark - Content Card UI
+
+- (void)displayContentCards {
+  ABKContentCardsViewController *contentCards = [[ABKContentCardsViewController alloc] init];
+  [ABKUIUtils.activeApplicationViewController presentViewController:contentCards
+                                                           animated:YES
+                                                         completion:nil];
 }
 
 # pragma mark - Push
@@ -493,17 +540,16 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
  */
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
   if (self.unityInAppMessageCallbackFunctionName == nil || self.unityInAppMessageGameObjectName == nil) {
-    NSLog(@"No properly configured game object for in-app messages. Returning ABKDisplayInAppMessageNow.",
-          self.unityInAppMessageGameObjectName);
-    return ABKDisplayInAppMessageNow;
+    NSLog(@"No properly configured game object for in-app messages. Using display action: %ld.", (long)self.displayAction);
+    return self.displayAction;
   }
 
   NSData *inAppMessageData = [inAppMessage serializeToData];
   NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
   [self unitySendMessageTo:self.unityInAppMessageGameObjectName withMethod:self.unityInAppMessageCallbackFunctionName withMessage:dataString];
   if ([self.appboyUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
-    NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Returning ABKDisplayInAppMessageNow.");
-    return ABKDisplayInAppMessageNow;
+    NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Using display action: %ld.", (long)self.displayAction);
+    return self.displayAction;
   }
   return ABKDiscardInAppMessage;
 }
