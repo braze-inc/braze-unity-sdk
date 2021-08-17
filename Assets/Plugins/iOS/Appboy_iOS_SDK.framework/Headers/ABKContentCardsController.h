@@ -5,7 +5,7 @@
  */
 
 /*!
- * When the content cards are updated, Appboy will post a notification through the NSNotificationCenter.
+ * When Content Cards are updated, Braze will post a notification through the NSNotificationCenter.
  * The name of the notification is the string constant referred to by ABKContentCardsProcessedNotification. The
  * userInfo dictionary associated with the notification will has one object, with key the same string
  * as ABKContentCardsProcessedIsSuccessfulKey, to indicate whether the update is successful or not.
@@ -45,12 +45,12 @@ extern NSString *const ABKContentCardsProcessedIsSuccessfulKey;
 @property (readonly, getter=getContentCards) NSArray *contentCards;
 
 /*!
- * The NSDate object that indicates the last time the contentCards property was updated from Appboy server.
+ * The NSDate object that indicates the last time the contentCards property was updated from Braze server.
  */
 @property (readonly, nullable) NSDate *lastUpdate;
 
 /*!
- * This method returns the number of currently active content cards which have not been viewed.
+ * Returns the count of unviewed cards, excluding control cards.
  * A "view" happens when a card becomes visible in the Content Cards view.  This differentiates
  * between cards which are off-screen in the scrolling view, and those which
  * are on-screen; when a card scrolls onto the screen, it's counted as viewed.
@@ -63,8 +63,8 @@ extern NSString *const ABKContentCardsProcessedIsSuccessfulKey;
 - (NSInteger)unviewedContentCardCount;
 
 /*!
- * This method returns the total number of currently active content cards. Cards are
- * counted only once even if they appear in multiple Content Cards views.
+ * Returns the count of available cards, including control cards.
+ * Cards are counted only once even if they appear in multiple Content Cards views.
  */
 - (NSInteger)contentCardCount;
 

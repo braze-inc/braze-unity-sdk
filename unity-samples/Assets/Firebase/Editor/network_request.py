@@ -30,16 +30,16 @@ import sys
 # pylint: disable=g-import-not-at-top
 # pylint: disable=g-importing-member
 try:
-  from httplib import HTTPSConnection
-  from httplib import HTTPConnection
-  from httplib import HTTPException
+  from six.moves.http_client import HTTPSConnection
+  from six.moves.http_client import HTTPConnection
+  from six.moves.http_client import HTTPException
 except ImportError:
   from http.client import HTTPSConnection
   from http.client import HTTPConnection
   from http.client import HTTPException
 
 try:
-  from urlparse import urlparse
+  from six.moves.urllib.parse import urlparse
 except ImportError:
   from urllib.parse import urlparse
 # pylint: enable=g-import-not-at-top
@@ -92,7 +92,10 @@ def unwrap_kwarg_namespace(func):
   # When we move to python 3, getfullargspec so that we can tell the
   # difference between args and kwargs -- then this could be used for functions
   # that have both args and kwargs
-  argspec = inspect.getargspec(func)
+  if 'getfullargspec' in dir(inspect):
+    argspec = inspect.getfullargspec(func)
+  else:
+    argspec = inspect.getargspec(func)  # Python 2 compatibility.
 
   def wrapped(argparse_namespace=None, **kwargs):
     """Take a Namespace object and map it to kwargs.

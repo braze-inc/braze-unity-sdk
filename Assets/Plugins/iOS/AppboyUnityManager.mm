@@ -46,13 +46,13 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
 # pragma mark - Config
 
 - (NSString *)getApiKeyFromUnity {
-  return self.appboyUnityPlist[ABKUnityApiKey];
+  return self.brazeUnityPlist[ABKUnityApiKey];
 }
 
 - (NSDictionary *)parsePlist {
-  NSDictionary* appboyUnityPlist = [[NSBundle mainBundle] infoDictionary][@"Appboy"][@"Unity"];
-  self.appboyUnityPlist = appboyUnityPlist;
-  return appboyUnityPlist;
+  NSDictionary* brazeUnityPlist = [[NSBundle mainBundle] infoDictionary][@"Braze"][@"Unity"];
+  self.brazeUnityPlist = brazeUnityPlist;
+  return brazeUnityPlist;
 }
 
 # pragma mark - Social Media
@@ -466,11 +466,11 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
 }
 
 - (void)setListenersFromPList {
-  [self addPushReceivedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushReceivedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushReceivedCallbackKey]];
-  [self addPushOpenedListenerWithObjectName:self.appboyUnityPlist[ABKUnityPushOpenedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityPushOpenedCallbackKey]];
-  [self addInAppMessageListenerWithObjectNameAndSetDelegate:self.appboyUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityInAppMessageCallbackKey]];
-  [self addContentCardsListenerWithObjectName:self.appboyUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityContentCardsCallbackKey]];
-  [self addFeedListenerWithObjectName:self.appboyUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.appboyUnityPlist[ABKUnityFeedCallbackKey]];
+  [self addPushReceivedListenerWithObjectName:self.brazeUnityPlist[ABKUnityPushReceivedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityPushReceivedCallbackKey]];
+  [self addPushOpenedListenerWithObjectName:self.brazeUnityPlist[ABKUnityPushOpenedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityPushOpenedCallbackKey]];
+  [self addInAppMessageListenerWithObjectNameAndSetDelegate:self.brazeUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityInAppMessageCallbackKey]];
+  [self addContentCardsListenerWithObjectName:self.brazeUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityContentCardsCallbackKey]];
+  [self addFeedListenerWithObjectName:self.brazeUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityFeedCallbackKey]];
 }
 
 - (void)addInAppMessageListenerWithObjectNameAndSetDelegate:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
@@ -527,7 +527,7 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
     completionHandler();
   }
 
-  if ([self.appboyUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
+  if ([self.brazeUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
     [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
     [self forwardNotification:response.notification.request.content.userInfo];
   }
@@ -547,7 +547,7 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
   NSData *inAppMessageData = [inAppMessage serializeToData];
   NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
   [self unitySendMessageTo:self.unityInAppMessageGameObjectName withMethod:self.unityInAppMessageCallbackFunctionName withMessage:dataString];
-  if ([self.appboyUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
+  if ([self.brazeUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
     NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Using display action: %ld.", (long)self.displayAction);
     return self.displayAction;
   }

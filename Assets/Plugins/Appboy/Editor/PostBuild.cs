@@ -93,6 +93,9 @@ namespace Appboy.Editor {
           project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "./Libraries");
           project.SetBuildProperty(target, "GCC_ENABLE_OBJC_EXCEPTIONS", "Yes");
 
+          // Note: Remove once Unity supports xcframeworks (SDK-1767).
+          project.SetBuildProperty(target, "VALIDATE_WORKSPACE", "Yes");
+
           // Add required frameworks
           // Note: Unity's documentation for PBXProject.AddFrameworkToProject says that the boolean parameter
           // should be true if required and false if optional, but actual behavior appears to be the exact opposite.
@@ -157,75 +160,81 @@ namespace Appboy.Editor {
       plist.ReadFromString(File.ReadAllText(plistPath));
       PlistElementDict rootDict = plist.root;
 
-      // Clear existing Appboy Unity dictionary
+      // Migrate to Braze Unity dictionary if needed
       if (rootDict["Appboy"] != null) {
-        rootDict["Appboy"]["Unity"] = null;
+        rootDict["Braze"] = rootDict["Appboy"];
+        rootDict["Appboy"] = null;
       }
 
-      // Add Appboy Unity keys to Plist
+      // Clear existing Braze Unity dictionary
+      if (rootDict["Braze"] != null) {
+        rootDict["Braze"]["Unity"] = null;
+      }
+
+      // Add Braze Unity keys to Plist
       if (AppboyConfig.IOSAutomatesIntegration) {
-        // The Appboy dictionary
-        PlistElementDict appboyDict = (rootDict["Appboy"] == null) ? rootDict.CreateDict("Appboy") : rootDict["Appboy"].AsDict();
-        // The Appboy Unity dictionary under the Appboy dictionary
-        PlistElementDict appboyUnityDict = appboyDict.CreateDict("Unity");
+        // The Braze dictionary
+        PlistElementDict brazeDict = (rootDict["Braze"] == null) ? rootDict.CreateDict("Braze") : rootDict["Braze"].AsDict();
+        // The Braze Unity dictionary under the Braze dictionary
+        PlistElementDict brazeUnityDict = brazeDict.CreateDict("Unity");
 
         // Add the iOS Endpoint to Plist
         if (string.IsNullOrEmpty(AppboyConfig.IOSEndpoint.Trim())) {
-          appboyDict.values.Remove(ABKEndpointKey);
+          brazeDict.values.Remove(ABKEndpointKey);
         } else {
-          appboyDict.SetString(ABKEndpointKey, AppboyConfig.IOSEndpoint.Trim());
+          brazeDict.SetString(ABKEndpointKey, AppboyConfig.IOSEndpoint.Trim());
         }
         if (string.IsNullOrEmpty(AppboyConfig.IOSLogLevel.Trim())) {
-          appboyDict.values.Remove(ABKLogLevelKey);
+          brazeDict.values.Remove(ABKLogLevelKey);
         } else {
-          appboyDict.SetString(ABKLogLevelKey, AppboyConfig.IOSLogLevel.Trim());
+          brazeDict.SetString(ABKLogLevelKey, AppboyConfig.IOSLogLevel.Trim());
         }
 
         // Add iOS automated integration build keys to Plist
         if (ValidateField(ABKUnityApiKey, AppboyConfig.IOSApiKey, "Appboy will not be initialized.")) {
-          appboyUnityDict.SetString(ABKUnityApiKey, AppboyConfig.IOSApiKey.Trim());
+          brazeUnityDict.SetString(ABKUnityApiKey, AppboyConfig.IOSApiKey.Trim());
         }
-        appboyUnityDict.SetBoolean(ABKUnityAutomaticPushIntegrationKey, AppboyConfig.IOSIntegratesPush);
-        appboyUnityDict.SetBoolean(ABKUnityDisableAutomaticPushRegistrationKey, AppboyConfig.IOSDisableAutomaticPushRegistration);
+        brazeUnityDict.SetBoolean(ABKUnityAutomaticPushIntegrationKey, AppboyConfig.IOSIntegratesPush);
+        brazeUnityDict.SetBoolean(ABKUnityDisableAutomaticPushRegistrationKey, AppboyConfig.IOSDisableAutomaticPushRegistration);
         if (AppboyConfig.IOSPushIsBackgroundEnabled) {
           PlistElementArray backgroundModes = (rootDict["UIBackgroundModes"] == null) ? rootDict.CreateArray("UIBackgroundModes") : rootDict["UIBackgroundModes"].AsArray();
           backgroundModes.AddString("remote-notification");
         }
-        appboyUnityDict.SetBoolean(ABKUnityDisableProvisionalAuthKey, AppboyConfig.IOSDisableProvisionalAuth);
+        brazeUnityDict.SetBoolean(ABKUnityDisableProvisionalAuthKey, AppboyConfig.IOSDisableProvisionalAuth);
 
         // Set push listeners
         if (ValidateListenerFields(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName,
           ABKUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName)) {
-          appboyUnityDict.SetString(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName.Trim());
-          appboyUnityDict.SetString(ABKUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName.Trim());
+          brazeUnityDict.SetString(ABKUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName.Trim());
+          brazeUnityDict.SetString(ABKUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName.Trim());
         }
 
         if (ValidateListenerFields(ABKUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName,
           ABKUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName)) {
-          appboyUnityDict.SetString(ABKUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName.Trim());
-          appboyUnityDict.SetString(ABKUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName.Trim());
+          brazeUnityDict.SetString(ABKUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName.Trim());
+          brazeUnityDict.SetString(ABKUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName.Trim());
         }
 
         // Set in-app message listener
         if (ValidateListenerFields(ABKUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName,
           ABKUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName)) {
-          appboyUnityDict.SetString(ABKUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName.Trim());
-          appboyUnityDict.SetString(ABKUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName.Trim());
-          appboyUnityDict.SetBoolean(ABKUnityHandleInAppMessageDisplayKey, AppboyConfig.IOSDisplayInAppMessages);
+          brazeUnityDict.SetString(ABKUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName.Trim());
+          brazeUnityDict.SetString(ABKUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName.Trim());
+          brazeUnityDict.SetBoolean(ABKUnityHandleInAppMessageDisplayKey, AppboyConfig.IOSDisplayInAppMessages);
         }
 
         // Set feed listener
         if (ValidateListenerFields(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName,
           ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName)) {
-          appboyUnityDict.SetString(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName.Trim());
-          appboyUnityDict.SetString(ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName.Trim());
+          brazeUnityDict.SetString(ABKUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName.Trim());
+          brazeUnityDict.SetString(ABKUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName.Trim());
         }
 
         // Set content card listener
         if (ValidateListenerFields(ABKUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName,
           ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName)) {
-          appboyUnityDict.SetString(ABKUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName.Trim());
-          appboyUnityDict.SetString(ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName.Trim());
+          brazeUnityDict.SetString(ABKUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName.Trim());
+          brazeUnityDict.SetString(ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName.Trim());
         }
       }
 

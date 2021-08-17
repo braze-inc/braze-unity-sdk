@@ -1,3 +1,11 @@
+## 3.5.0
+
+##### Breaking
+- Updated the Android plugin to use Braze Android SDK 15.0.0.
+
+##### Changed
+- Updated the native iOS bridge to [Braze iOS SDK 4.3.2](https://github.com/Appboy/appboy-ios-sdk/releases/tag/4.3.2).
+
 ## 3.4.0
 
 ##### Added

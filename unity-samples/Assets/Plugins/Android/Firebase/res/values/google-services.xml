@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
-  <string name="firebase_database_url" translatable="false">https://unity-sample-8e358.firebaseio.com</string>
-  <string name="gcm_defaultSenderId" translatable="false">1026849392724</string>
-  <string name="google_storage_bucket" translatable="false">unity-sample-8e358.appspot.com</string>
-  <string name="project_id" translatable="false">unity-sample-8e358</string>
-  <string name="google_api_key" translatable="false">AIzaSyCmlUmq4bF-z34JAMVRVWCC8U4tYZSSVwg</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCmlUmq4bF-z34JAMVRVWCC8U4tYZSSVwg</string>
-  <string name="google_app_id" translatable="false">1:1026849392724:android:3a4cdbda4ed5232a</string>
-  <string name="default_web_client_id" translatable="false">1026849392724-ocom6mnnshua58fnt4s9io921iqn860f.apps.googleusercontent.com</string>
+  <string name="firebase_database_url" translatable="false">https://androidgcmsender.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">901477453852</string>
+  <string name="google_storage_bucket" translatable="false">androidgcmsender.appspot.com</string>
+  <string name="project_id" translatable="false">androidgcmsender</string>
+  <string name="google_api_key" translatable="false">AIzaSyDYvseENe5UlXILj32yYFPhiUawZbG8Y40</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDYvseENe5UlXILj32yYFPhiUawZbG8Y40</string>
+  <string name="google_app_id" translatable="false">1:901477453852:android:05411feb1511b551</string>
+  <string name="default_web_client_id" translatable="false">901477453852-4k1e9ehf8s8pqne5hcesfek4voim2d67.apps.googleusercontent.com</string>
 </resources>

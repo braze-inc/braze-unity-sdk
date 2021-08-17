@@ -2,8 +2,8 @@
   <groupId>com.google.firebase</groupId>
   <artifactId>firebase-messaging-unity</artifactId>
   <versioning>
-    <release>6.9.0</release>
-    <versions><version>6.9.0</version></versions>
+    <release>8.1.0</release>
+    <versions><version>8.1.0</version></versions>
     <lastUpdated/>
   </versioning>
 </metadata>
