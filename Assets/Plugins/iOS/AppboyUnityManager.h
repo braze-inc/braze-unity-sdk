@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 
 @interface AppboyUnityManager : NSObject <ABKInAppMessageControllerDelegate, UNUserNotificationCenterDelegate>
 
-@property (nonatomic,copy) NSDictionary *appboyUnityPlist;
+@property (nonatomic,copy) NSDictionary *brazeUnityPlist;
 @property (nonatomic, copy) NSString *unityFeedGameObjectName;
 @property (nonatomic, copy) NSString *unityFeedCallbackFunctionName;
 @property (nonatomic, copy) NSString *unityContentCardsGameObjectName;
