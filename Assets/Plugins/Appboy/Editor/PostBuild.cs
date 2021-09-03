@@ -120,6 +120,10 @@ namespace Appboy.Editor {
             targets[0] // the main target
           );
         }
+
+        // Force add UserNotifications.framework to UnityFramework target
+        string unityFramework = project.GetUnityFrameworkTargetGuid();
+        project.AddFrameworkToProject(unityFramework, "UserNotifications.framework", false);
       }
 
       File.WriteAllText(projectPath, project.WriteToString());

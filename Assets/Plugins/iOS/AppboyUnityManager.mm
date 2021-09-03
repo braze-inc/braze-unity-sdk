@@ -1,4 +1,5 @@
 #import "AppboyUnityManager.h"
+#import <UserNotifications/UserNotifications.h>
 #import <Appboy_iOS_SDK/AppboyKit.h>
 #import <Appboy_iOS_SDK/ABKCard.h>
 #import <Appboy_iOS_SDK/ABKFacebookUser.h>

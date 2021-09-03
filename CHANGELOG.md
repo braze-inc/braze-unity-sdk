@@ -1,3 +1,8 @@
+## 3.5.1
+
+##### Fixed
+- Fixed an issue where simulator architectures were included in the iOS framework.
+
 ## 3.5.0
 
 ##### Breaking
