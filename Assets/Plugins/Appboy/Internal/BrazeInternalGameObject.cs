@@ -26,5 +26,10 @@ namespace Appboy.Internal {
       BrazeInternalComponent internalComponent = Instance.GetComponent<BrazeInternalComponent>();
       internalComponent.setPushTokenReceivedFromSystemDelegate(responseDelegate);
     }
+
+    public static void setInAppMessageListener(BrazeInAppMessageListener inAppMessageListener) {
+      BrazeInternalComponent internalComponent = Instance.GetComponent<BrazeInternalComponent>();
+      internalComponent.iamListener = inAppMessageListener;
+    }
   }
 }

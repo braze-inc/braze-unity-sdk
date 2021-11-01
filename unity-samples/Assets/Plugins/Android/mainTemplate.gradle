@@ -15,7 +15,6 @@
             url (unityProjectPath + "/Assets/Firebase/m2repository") // Assets/Firebase/Editor/AppDependencies.xml:22, Assets/Firebase/Editor/MessagingDependencies.xml:20
         }
         mavenLocal()
-        jcenter()
         mavenCentral()
     }
 }
@@ -33,9 +32,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:22.0.0' // Assets/Firebase/Editor/MessagingDependencies.xml:13
     implementation 'com.google.firebase:firebase-messaging-unity:8.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20
 // Android Resolver Dependencies End
-    implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
 **DEPS**}
 
 // Android Resolver Exclusions Start

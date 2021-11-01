@@ -46,7 +46,7 @@ void _requestGeofences(int latitude, int longitude) {
 }
 
 void _requestImmediateDataFlush() {
-  [[Appboy sharedInstance] flushDataAndProcessRequestQueue];
+  [[Appboy sharedInstance] requestImmediateDataFlush];
 }
 
 void _addAlias(const char* alias, const char* label) {
@@ -85,7 +85,7 @@ void _setUserDateOfBirth(int year, int month, int day) {
   [comps setMonth:month];
   [comps setYear:year];
   NSCalendar *gregorian = [[NSCalendar alloc]
-                           initWithCalendarIdentifier:NSGregorianCalendar];
+                           initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
   NSDate *date = [gregorian dateFromComponents:comps];
   [Appboy sharedInstance].user.dateOfBirth = date;
 }
@@ -171,6 +171,14 @@ void _setAttributionData(const char* network, const char* campaign,const char* a
   [[Appboy sharedInstance].user setAttributionData:attributionData];
 }
 
+void _addToSubscriptionGroup(const char* groupId) {
+  [[Appboy sharedInstance].user addToSubscriptionGroupWithGroupId:GetStringParam(groupId)];
+}
+
+void _removeFromSubscriptionGroup(const char* groupId) {
+  [[Appboy sharedInstance].user removeFromSubscriptionGroupWithGroupId:GetStringParam(groupId)];
+}
+
 # pragma mark - Social Media
 
 void _setUserFacebookData(const char*  facebookId, const char*  firstName, const char*  lastName, const char*  email,
@@ -214,12 +222,16 @@ void _logInAppMessageButtonClicked(const char* inAppMessageJSONString, int butto
 
 # pragma mark - In-app message display
 
-void _displayNextInAppMessage(bool withDelegate) {
-  [[AppboyUnityManager sharedInstance] displayNextInAppMessageWithDelegate:withDelegate];
+void _displayNextInAppMessage() {
+  [[AppboyUnityManager sharedInstance] displayNextInAppMessage];
 }
 
 void _setInAppMessageDisplayAction(int actionType) {
   [[AppboyUnityManager sharedInstance] setInAppMessageDisplayAction:actionType];
+}
+
+void _setInAppMessageDelegatesEnabled(bool enabled) {
+  [[AppboyUnityManager sharedInstance] setInAppMessageDelegatesEnabled:enabled];
 }
 
 # pragma mark - News Feed analytics

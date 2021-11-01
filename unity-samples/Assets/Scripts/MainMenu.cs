@@ -102,8 +102,10 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.LogPurchase("purchase with properties", "USD", 20.21m, 1, properties);
     Appboy.AppboyBinding.AddAlias("aliasHere", "labelHere");
     Debug.Log("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
-
     Appboy.AppboyBinding.ConfigureListener(Appboy.BrazeUnityMessageType.PUSH_RECEIVED, "BrazeCallback", "PushNotificationReceivedRuntimeCallback");
+    Appboy.AppboyBinding.AddToSubscriptionGroup("added subscription group");
+    Appboy.AppboyBinding.RemoveFromSubscriptionGroup("removed subscription group");
+    Appboy.AppboyBinding.DisplayNextInAppMessage();
   }
 
   void PushNotificationReceivedCallback(string message) {

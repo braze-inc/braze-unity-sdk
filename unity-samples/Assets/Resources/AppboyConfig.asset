@@ -28,9 +28,9 @@ MonoBehaviour:
   iOSDisableProvisionalAuth: 0
   iOSDisableAutomaticPushCapability: 0
   iOSPushIsBackgroundEnabled: 1
-  iOSPushReceivedGameObjectName: AppboyCallback
+  iOSPushReceivedGameObjectName: BrazeCallback
   iOSPushReceivedCallbackMethodName: PushNotificationReceivedCallbackForiOS
-  iOSPushOpenedGameObjectName: AppboyCallback
+  iOSPushOpenedGameObjectName: BrazeCallback
   iOSPushOpenedCallbackMethodName: PushNotificationOpenedCallbackForiOS
   androidFirebaseCloudMessagingRegistrationEnabled: 1
   androidFirebaseCloudMessagingSenderId: 901477453852

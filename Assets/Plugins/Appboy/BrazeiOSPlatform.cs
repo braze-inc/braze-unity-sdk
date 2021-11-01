@@ -141,7 +141,7 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _logContentCardsDisplayed();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _displayNextInAppMessage(bool withDelegate);
+  private static extern void _displayNextInAppMessage();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _wipeData();
@@ -178,6 +178,15 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _configureInternalListener(int messageType);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _addToSubscriptionGroup(string id);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _removeFromSubscriptionGroup(string id);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setInAppMessageDelegatesEnabled(bool enabled);
 
   public void LogCustomEvent(string eventName) {
     _logCustomEvent(eventName, null);
@@ -301,8 +310,20 @@ public class BrazeiOSPlatform : BrazePlatform {
     _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
   }
 
-  public void DisplayNextInAppMessage(bool withDelegate) {
-    _displayNextInAppMessage(withDelegate);
+  private BrazeInAppMessageListener _inAppMessageListener;
+  public BrazeInAppMessageListener inAppMessageListener {
+    get { return _inAppMessageListener; }
+    set { SetInAppMessageListener(value); }
+  }
+
+  private void SetInAppMessageListener(BrazeInAppMessageListener listener) {
+    _inAppMessageListener = listener;
+    _setInAppMessageDelegatesEnabled(listener != null);
+    BrazeInternalGameObject.setInAppMessageListener(listener);
+  }
+
+  public void DisplayNextInAppMessage() {
+    _displayNextInAppMessage();
   }
 
   public void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
@@ -429,6 +450,15 @@ public class BrazeiOSPlatform : BrazePlatform {
   public void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {
     _configureListener((int)messageType, gameobject, method);
   }
+
+  public void AddToSubscriptionGroup(string id) {
+    _addToSubscriptionGroup(id);
+  }
+
+  public void RemoveFromSubscriptionGroup(string id) {
+    _removeFromSubscriptionGroup(id);
+  }
+
 }
 
 #endif

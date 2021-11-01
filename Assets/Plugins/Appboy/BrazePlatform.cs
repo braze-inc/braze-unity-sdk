@@ -81,6 +81,7 @@ public interface BrazePlatform {
   void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null);
   void SetPushTokenReceivedFromSystemDelegate(PushTokenReceivedFromSystem tokenDelegate);
 
+  BrazeInAppMessageListener inAppMessageListener { get; set; }
   void LogInAppMessageClicked(string inAppMessageJSONString);
   void LogInAppMessageImpression(string inAppMessageJSONString);
   void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID);
@@ -117,5 +118,8 @@ public interface BrazePlatform {
   void AddAlias(string alias, string label);
   void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method);
   void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType);
+  void DisplayNextInAppMessage();
   void DisplayContentCards();
+  void AddToSubscriptionGroup(string id);
+  void RemoveFromSubscriptionGroup(string id);
 }
