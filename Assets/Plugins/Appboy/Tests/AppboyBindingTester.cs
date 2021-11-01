@@ -87,5 +87,26 @@ namespace Appboy {
         throw new ArgumentException("Could not parse content card JSON message.");
       }
     }
+
+    public static void InAppMessageBeforeDisplayed(IInAppMessage message) {
+      Debug.Log($"InAppMessage before displayed: {message}");
+    }
+
+    public static void InAppMessageDismissed(IInAppMessage message) {
+      Debug.Log($"InAppMessage dismissed: {message}");
+    }
+
+    public static void InAppMessageClicked(IInAppMessage message) {
+      Debug.Log($"InAppMessage clicked: {message}");
+    }
+
+    public static void InAppMessageButtonClicked(IInAppMessage message, InAppMessageButton button) {
+      Debug.Log($"InAppMessage button clicked: {message} {button}");
+    }
+
+    public static void InAppMessageHTMLClicked(IInAppMessage message, Uri uri) {
+      Debug.Log($"InAppMessage HTML clicked: {message} {uri}");
+    }
   }
+
 }

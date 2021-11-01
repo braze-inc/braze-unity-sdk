@@ -11,27 +11,36 @@ using UnityEngine;
 #if UNITY_ANDROID
 
 public class BrazeAndroidPlatform : BrazePlatform {
-  private static AndroidJavaObject appboyUnityActivity;
+  private static AndroidJavaObject brazeUnityActivity;
   private static AndroidJavaObject inAppMessageUtils;
   private static AndroidJavaObject unityConfigurationProvider;
 
-  public AndroidJavaObject AppboyUnityActivity {
+  public AndroidJavaObject BrazeUnityActivity {
     get {
       FlushAndroidPendingPushIntents();
-      if (appboyUnityActivity == null) {
+      if (brazeUnityActivity == null) {
         using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer")) {
-          appboyUnityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+          brazeUnityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
         }
       }
-      return appboyUnityActivity;
+      return brazeUnityActivity;
     }
   }
 
-  public AndroidJavaObject Appboy {
+  public AndroidJavaObject Braze {
     get {
       FlushAndroidPendingPushIntents();
-      using (var appboyClass = new AndroidJavaClass("com.appboy.Appboy")) {
-        return appboyClass.CallStatic<AndroidJavaObject>("getInstance", AppboyUnityActivity);
+      using (var brazeClass = new AndroidJavaClass("com.braze.Braze")) {
+        return brazeClass.CallStatic<AndroidJavaObject>("getInstance", BrazeUnityActivity);
+      }
+    }
+  }
+
+  public AndroidJavaObject BrazeInAppMessageManager {
+    get {
+      FlushAndroidPendingPushIntents();
+      using (var managerClass = new AndroidJavaClass("com.braze.ui.inappmessage.BrazeInAppMessageManager")) {
+        return managerClass.CallStatic<AndroidJavaObject>("getInstance");
       }
     }
   }
@@ -50,7 +59,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
     get {
       FlushAndroidPendingPushIntents();
       if (unityConfigurationProvider == null) {
-        unityConfigurationProvider = new AndroidJavaObject("com.appboy.unity.configuration.UnityConfigurationProvider", AppboyUnityActivity);
+        unityConfigurationProvider = new AndroidJavaObject("com.appboy.unity.configuration.UnityConfigurationProvider", BrazeUnityActivity);
       }
       return unityConfigurationProvider;
     }
@@ -58,7 +67,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   private AndroidJavaObject GetCurrentUser() {
     FlushAndroidPendingPushIntents();
-    return Appboy.Call<AndroidJavaObject>("getCurrentUser");
+    return Braze.Call<AndroidJavaObject>("getCurrentUser");
   }
 
   /// <summary>
@@ -71,48 +80,48 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void LogCustomEvent(string eventName) {
-    Appboy.Call("logCustomEvent", eventName);
+    Braze.Call("logCustomEvent", eventName);
   }
 
-  public static AndroidJavaObject ParsePropertiesToAppboyProperties(Dictionary<string, object> properties) {
-    AndroidJavaObject appboyProperties = new AndroidJavaObject("com.appboy.models.outgoing.AppboyProperties");
+  public static AndroidJavaObject ParsePropertiesToBrazeProperties(Dictionary<string, object> properties) {
+    AndroidJavaObject props = new AndroidJavaObject("com.braze.models.outgoing.BrazeProperties");
     if (properties != null && properties.Count > 0) {
       foreach (KeyValuePair<string, object> entry in properties) {
         if (entry.Value == null) {
           continue;
         }
 
-        // Public API only supports int/string/double/bool/DateTime.  Other values can't get mapped
-        // to Android AppboyProperty methods without casting.
+        // Public API only supports int/string/double/bool/DateTime. Other values can't get mapped
+        // to Android BrazeProperties methods without casting.
         if (entry.Value.GetType() == typeof(int) || entry.Value.GetType() == typeof(string) ||
             entry.Value.GetType() == typeof(double) || entry.Value.GetType() == typeof(bool)) {
-          appboyProperties.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value);
+          props.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value);
         } else {
-          appboyProperties.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value.ToString());
+          props.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value.ToString());
         }
       }
     }
-    return appboyProperties;
+    return props;
   }
 
   public void LogCustomEvent(string eventName, Dictionary<string, object> properties) {
-    AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
-    Appboy.Call("logCustomEvent", eventName, appboyProperties);
+    AndroidJavaObject brazeProperties = ParsePropertiesToBrazeProperties(properties);
+    Braze.Call("logCustomEvent", eventName, brazeProperties);
   }
 
   public void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
     var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
-    Appboy.Call("logPurchase", productId, currencyCode, javaPrice, quantity);
+    Braze.Call("logPurchase", productId, currencyCode, javaPrice, quantity);
   }
 
   public void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, object> properties) {
     var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
-    AndroidJavaObject appboyProperties = ParsePropertiesToAppboyProperties(properties);
-    Appboy.Call("logPurchase", productId, currencyCode, javaPrice, quantity, appboyProperties);
+    AndroidJavaObject brazeProperties = ParsePropertiesToBrazeProperties(properties);
+    Braze.Call("logPurchase", productId, currencyCode, javaPrice, quantity, brazeProperties);
   }
 
   public void ChangeUser(string userId) {
-    Appboy.Call("changeUser", userId);
+    Braze.Call("changeUser", userId);
   }
 
   public void SetUserFirstName(string firstName) {
@@ -357,7 +366,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void RegisterAppboyPushMessages(string registrationId) {
-    Appboy.Call("registerAppboyPushMessages", new object[] { registrationId });
+    Braze.Call("registerAppboyPushMessages", new object[] { registrationId });
   }
 
   /// <summary>
@@ -372,82 +381,94 @@ public class BrazeAndroidPlatform : BrazePlatform {
   /// </param>
   public void SetPushTokenReceivedFromSystemDelegate(PushTokenReceivedFromSystem tokenDelegate) {}
 
+  private BrazeInAppMessageListener _inAppMessageListener;
+  public BrazeInAppMessageListener inAppMessageListener {
+    get { return _inAppMessageListener; }
+    set { SetInAppMessageListener(value); }
+  }
+
+  private void SetInAppMessageListener(BrazeInAppMessageListener listener) {
+    _inAppMessageListener = listener;
+    BrazeUnityActivity.Call("setInAppMessageListener");
+    BrazeInternalGameObject.setInAppMessageListener(listener);
+  }
+
   public void LogInAppMessageClicked(string inAppMessageJSONString) {
-    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
     InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
   }
 
   public void LogInAppMessageImpression(string inAppMessageJSONString) {
-    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
     InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
   }
 
   public void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
-    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", appboyUnityActivity, inAppMessageJSONString);
+    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
     InAppMessageUtils.CallStatic("logInAppMessageButtonClick", inAppMessage, buttonID);
   }
 
   public void RequestFeedRefresh() {
-    Appboy.Call("requestFeedRefresh");
+    Braze.Call("requestFeedRefresh");
   }
 
   public void RequestFeedRefreshFromCache() {
-    Appboy.Call("requestFeedRefreshFromCache");
+    Braze.Call("requestFeedRefreshFromCache");
   }
 
   public void LogFeedDisplayed() {
-    Appboy.Call("logFeedDisplayed");
+    Braze.Call("logFeedDisplayed");
   }
 
   public void LogCardImpression(string cardId) {
-    Appboy.Call("logFeedCardImpression", cardId);
+    Braze.Call("logFeedCardImpression", cardId);
   }
 
   public void LogCardClicked(string cardId) {
-    Appboy.Call("logFeedCardClick", cardId);
+    Braze.Call("logFeedCardClick", cardId);
   }
 
   public void LogContentCardImpression(string contentCardString) {
-    var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
+    var contentCard = Braze.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
     contentCard.Call<bool>("logImpression");
   }
 
   public void LogContentCardClicked(string contentCardString) {
-    var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
+    var contentCard = Braze.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
     contentCard.Call<bool>("logClick");
   }
 
   public void LogContentCardDismissed(string contentCardString) {
-    var contentCard = Appboy.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
+    var contentCard = Braze.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
     contentCard.Call("setIsDismissed", true);
   }
 
   public void LogContentCardsDisplayed() {
-    Appboy.Call("logContentCardsDisplayed");
+    Braze.Call("logContentCardsDisplayed");
   }
 
   public void RequestContentCardsRefresh() {
-    Appboy.Call("requestContentCardsRefresh", false);
+    Braze.Call("requestContentCardsRefresh", false);
   }
 
   public void RequestContentCardsRefreshFromCache() {
-    Appboy.Call("requestContentCardsRefresh", true);
+    Braze.Call("requestContentCardsRefresh", true);
   }
 
   public void WipeData() {
-    Appboy.CallStatic("wipeData", appboyUnityActivity);
+    Braze.CallStatic("wipeData", brazeUnityActivity);
   }
 
   public void EnableSDK() {
-    Appboy.CallStatic("enableSdk", appboyUnityActivity);
+    Braze.CallStatic("enableSdk", brazeUnityActivity);
   }
 
   public void DisableSDK() {
-    Appboy.CallStatic("disableSdk", appboyUnityActivity);
+    Braze.CallStatic("disableSdk", brazeUnityActivity);
   }
 
   public string GetInstallTrackingId() {
-    return Appboy.Call<string>("getInstallTrackingId");
+    return Braze.Call<string>("getInstallTrackingId");
   }
 
   public void SetAttributionData(string network, string campaign, string adgroup, string creative) {
@@ -456,15 +477,15 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void RequestLocationInitialization() {
-    Appboy.Call("requestLocationInitialization");
+    Braze.Call("requestLocationInitialization");
   }
 
   public void RequestGeofences(decimal latitude, decimal longitude) {
-    Appboy.Call("requestGeofences", latitude, longitude);
+    Braze.Call("requestGeofences", latitude, longitude);
   }
 
   public void RequestImmediateDataFlush() {
-    Appboy.Call("requestImmediateDataFlush");
+    Braze.Call("requestImmediateDataFlush");
   }
 
   public void AddAlias(string alias, string label) {
@@ -476,11 +497,23 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
-    AppboyUnityActivity.Call("onNewUnityInAppMessageManagerAction", (int)actionType);
+    BrazeUnityActivity.Call("onNewUnityInAppMessageManagerAction", (int)actionType);
+  }
+
+  public void DisplayNextInAppMessage() {
+    BrazeInAppMessageManager.Call<bool>("requestDisplayInAppMessage");
   }
 
   public void DisplayContentCards() {
-    AppboyUnityActivity.Call("launchContentCardsActivity");
+    BrazeUnityActivity.Call("launchContentCardsActivity");
+  }
+
+  public void AddToSubscriptionGroup(string id) {
+    GetCurrentUser().Call<bool>("addToSubscriptionGroup", id);
+  }
+
+  public void RemoveFromSubscriptionGroup(string id) {
+    GetCurrentUser().Call<bool>("removeFromSubscriptionGroup", id);
   }
 }
 

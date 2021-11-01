@@ -11,6 +11,13 @@ static NSString *const ABKInternalCallback = @"BrazeInternalCallback";
 static NSString *const ABKInternalPushPermissionsPromptResponse = @"onPushPromptResponseReceived";
 static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenReceivedFromSystem";
 
+// In-app message UI
+static NSString *const ABKInternalIAMDisplay = @"beforeInAppMessageDisplayed";
+static NSString *const ABKInternalIAMDismissed = @"onInAppMessageDismissed";
+static NSString *const ABKInternalIAMClicked = @"onInAppMessageClicked";
+static NSString *const ABKInternalIAMButtonClicked = @"onInAppMessageButtonClicked";
+static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
+
 @interface ABKCard(proxy)
 - (NSMutableDictionary *)proxyForJson;
 @end
@@ -132,12 +139,11 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
 
 # pragma mark - In-app message display
 
-- (void)displayNextInAppMessageWithDelegate:(BOOL)withDelegate {
-  id<ABKInAppMessageControllerDelegate> delegate = nil;
-  if (withDelegate) {
-    delegate = [Appboy sharedInstance].inAppMessageController.delegate;
-  }
-  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:delegate];
+- (void)displayNextInAppMessage {
+  ABKInAppMessageDisplayChoice currentDisplayChoice = self.displayAction;
+  self.displayAction = ABKDisplayInAppMessageNow;
+  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessage];
+  self.displayAction = currentDisplayChoice;
 }
 
 - (void)setInAppMessageDisplayAction:(int)actionType {
@@ -163,6 +169,16 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
     default:
       NSLog(@"Unknown in-app message display action type received.");
       return;
+  }
+}
+
+- (void)setInAppMessageDelegatesEnabled:(BOOL)enabled {
+  id delegate = enabled ? self : nil;
+  [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController setInAppMessageUIDelegate:delegate];
+
+  // Controller delegate cannot be disabled as it may be currently used for other features.
+  if (enabled) {
+    [Appboy sharedInstance].inAppMessageController.delegate = self;
   }
 }
 
@@ -348,32 +364,25 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
 }
 
 - (void)registerForRemoteNotificationsWithProvisional:(BOOL)provisional {
-  UIUserNotificationType notificationSettingTypes = (UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound);
-  if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    center.delegate = self;
-    UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
-    if (@available(iOS 12.0, *)) {
-      if (provisional) {
-        options = options | UNAuthorizationOptionProvisional;
-      }
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+  center.delegate = self;
+  UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
+  if (@available(iOS 12.0, *)) {
+    if (provisional) {
+      options = options | UNAuthorizationOptionProvisional;
     }
-    [center requestAuthorizationWithOptions:options
-                          completionHandler:^(BOOL granted, NSError *_Nullable error) {
-                            [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
-                            if (self.unityPushPermissionsPromptResponseGameObjectName != nil && self.unityPushPermissionsPromptResponseFunctionName != nil) {
-                              [self unitySendMessageTo:self.unityPushPermissionsPromptResponseGameObjectName withMethod:self.unityPushPermissionsPromptResponseFunctionName withMessage:(granted ? @"true" : @"false")];
-                            }
-                            if (self.sendInternalPushPermissionsPromptResponse) {
-                              [self unitySendMessageTo:ABKInternalCallback withMethod:ABKInternalPushPermissionsPromptResponse withMessage:(granted ? @"true" : @"false")];
-                            }
-                          }];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-  } else {
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationSettingTypes categories:nil];
-    [[UIApplication sharedApplication] registerForRemoteNotifications];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
   }
+  [center requestAuthorizationWithOptions:options
+                        completionHandler:^(BOOL granted, NSError *_Nullable error) {
+    [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
+    if (self.unityPushPermissionsPromptResponseGameObjectName != nil && self.unityPushPermissionsPromptResponseFunctionName != nil) {
+      [self unitySendMessageTo:self.unityPushPermissionsPromptResponseGameObjectName withMethod:self.unityPushPermissionsPromptResponseFunctionName withMessage:(granted ? @"true" : @"false")];
+    }
+    if (self.sendInternalPushPermissionsPromptResponse) {
+      [self unitySendMessageTo:ABKInternalCallback withMethod:ABKInternalPushPermissionsPromptResponse withMessage:(granted ? @"true" : @"false")];
+    }
+  }];
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 - (void)forwardNotification:(NSDictionary *)notification {
@@ -540,19 +549,83 @@ static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenRec
  * @discussion Set on the shared Appboy instance when a game object is configured to receive in-app messages.
  */
 - (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
-  if (self.unityInAppMessageCallbackFunctionName == nil || self.unityInAppMessageGameObjectName == nil) {
-    NSLog(@"No properly configured game object for in-app messages. Using display action: %ld.", (long)self.displayAction);
-    return self.displayAction;
-  }
+  ABKInAppMessageDisplayChoice displayAction = self.displayAction;
 
   NSData *inAppMessageData = [inAppMessage serializeToData];
   NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
-  [self unitySendMessageTo:self.unityInAppMessageGameObjectName withMethod:self.unityInAppMessageCallbackFunctionName withMessage:dataString];
-  if ([self.brazeUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
-    NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Using display action: %ld.", (long)self.displayAction);
-    return self.displayAction;
+
+  if (self.unityInAppMessageCallbackFunctionName != nil && self.unityInAppMessageGameObjectName != nil) {
+    NSLog(@"Using configured game object for in-app message handing.");
+    [self unitySendMessageTo:self.unityInAppMessageGameObjectName
+                  withMethod:self.unityInAppMessageCallbackFunctionName
+                 withMessage:dataString];
+
+    if ([self.brazeUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
+      NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Using display action: %ld.", (long)self.displayAction);
+    } else {
+      displayAction = ABKDiscardInAppMessage;
+    }
   }
-  return ABKDiscardInAppMessage;
+
+  if (displayAction == ABKDisplayInAppMessageNow) {
+    [self unitySendMessageTo:ABKInternalCallback
+                  withMethod:ABKInternalIAMDisplay
+                 withMessage:dataString];
+  }
+
+  return displayAction;
+}
+
+# pragma mark - ABKInAppMessageUIDelegate
+
+- (void)onInAppMessageDismissed:(ABKInAppMessage *)inAppMessage {
+  NSData *data = [inAppMessage serializeToData];
+  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  [self unitySendMessageTo:ABKInternalCallback
+                withMethod:ABKInternalIAMDismissed
+               withMessage:dataString];
+}
+
+- (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
+  NSData *data = [inAppMessage serializeToData];
+  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  [self unitySendMessageTo:ABKInternalCallback
+                withMethod:ABKInternalIAMClicked
+               withMessage:dataString];
+  return NO;
+}
+
+- (BOOL)onInAppMessageButtonClicked:(ABKInAppMessageImmersive *)inAppMessage
+                             button:(ABKInAppMessageButton *)button {
+  NSData *data = [inAppMessage serializeToData];
+  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  NSInteger buttonId = button.buttonID;
+
+  NSData *argv = [NSJSONSerialization dataWithJSONObject:@[dataString, @(buttonId)]
+                                                 options:0
+                                                   error:nil];
+  NSString *argvString = [[NSString alloc] initWithData:argv encoding:NSUTF8StringEncoding];
+  [self unitySendMessageTo:ABKInternalCallback
+                withMethod:ABKInternalIAMButtonClicked
+               withMessage:argvString];
+  return NO;
+}
+
+- (BOOL)onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTMLBase *)inAppMessage
+                             clickedURL:(NSURL *)clickedURL
+                               buttonID:(NSString *)buttonId {
+  NSData *data = [inAppMessage serializeToData];
+  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  id url = clickedURL ? clickedURL.absoluteString : [NSNull null];
+
+  NSData *argv = [NSJSONSerialization dataWithJSONObject:@[dataString, url]
+                                                 options:0
+                                                   error:nil];
+  NSString *argvString = [[NSString alloc] initWithData:argv encoding:NSUTF8StringEncoding];
+  [self unitySendMessageTo:ABKInternalCallback
+                withMethod:ABKInternalIAMHTMLClicked
+               withMessage:argvString];
+  return NO;
 }
 
 # pragma mark - Internal Communication

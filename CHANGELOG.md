@@ -1,3 +1,19 @@
+## 3.6.0
+
+##### Breaking
+- Updated the Android plugin to use Braze Android SDK 16.0.0.
+  - This SDK version requires a dependency on Kotlin. This can be added to your `mainTemplate.gradle` file via `implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"`
+  - This SDK version has removed a dependency on the `appcompat` library.
+
+##### Added
+- Added `AppboyBinding.AddToSubscriptionGroup()` and `AppboyBinding.RemoveFromSubscriptionGroup()` to the binding.
+- Added the `DisplayNextInAppMessage()` method, available on both iOS and Android.
+- Added the ability to receive in-app messages UI events via `AppboyBinding.inAppMessageListener`. See `BrazeInAppMessageListener` for more information.
+
+##### Changed
+- Updated the native iOS bridge to [Braze iOS SDK 4.3.3](https://github.com/Appboy/appboy-ios-sdk/releases/tag/4.3.3).
+- Removed the iOS specific method `DisplayNextInAppMessage(bool withDelegate)`.
+
 ## 3.5.1
 
 ##### Fixed

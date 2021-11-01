@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <Appboy_iOS_SDK/AppboyKit.h>
+#import <Appboy_iOS_SDK/ABKInAppMessageUIDelegate.h>
 
 static NSString *const ABKUnityApiKey = @"ApiKey";
 static NSString *const ABKUnityAutomaticPushIntegrationKey = @"IntegratesPush";
@@ -42,7 +43,11 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
   ABKIAMRequestIAMDisplay = 3
 };
 
-@interface AppboyUnityManager : NSObject <ABKInAppMessageControllerDelegate, UNUserNotificationCenterDelegate>
+@interface AppboyUnityManager : NSObject <
+  ABKInAppMessageControllerDelegate,
+  ABKInAppMessageUIDelegate,
+  UNUserNotificationCenterDelegate
+>
 
 @property (nonatomic,copy) NSDictionary *brazeUnityPlist;
 @property (nonatomic, copy) NSString *unityFeedGameObjectName;
@@ -75,8 +80,9 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 - (void)logInAppMessageImpression:(NSString *)inAppMessageJSONString;
 - (void)logInAppMessageClicked:(NSString *)inAppMessageJSONString;
 - (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID;
-- (void)displayNextInAppMessageWithDelegate:(BOOL)withDelegate;
+- (void)displayNextInAppMessage;
 - (void)setInAppMessageDisplayAction:(int)actionType;
+- (void)setInAppMessageDelegatesEnabled:(BOOL)enabled;
 
 // News Feed
 - (void)logCardImpression:(NSString *)cardJSONString;

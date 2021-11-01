@@ -3,7 +3,7 @@
 Braze Unity SDK
 ==========
 
-This repository contains the the C# interface and native Unity functionality for the Unity plugins derived from the Braze Android and iOS SDKs. Since version 1.5.0, Braze's Unity plugins require Unity 5. Unity 4 users may integrate Braze Unity SDK release 1.4.0, but full Braze functionality will not be supported. See the CHANGELOG for more information.
+This repository contains the the C# interface and native Unity functionality for the Unity plugins derived from the Braze Android and iOS SDKs. Since version 1.5.0, Braze's Unity plugins require Unity 5. See the CHANGELOG for more information.
 
 ## Plugin Setup
 

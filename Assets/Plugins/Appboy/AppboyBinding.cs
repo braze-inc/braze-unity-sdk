@@ -83,32 +83,33 @@ namespace Appboy {
     IAM_DISPLAY_NOW = 0,
     /// <summary>
     /// Sets In-App Messages to display at a later time and be saved in a stack.
+    /// Call DisplayNextInAppMessage() once ready to display the message at the
+    /// top of the stack.
     /// </summary>
     IAM_DISPLAY_LATER = 1,
     /// <summary>
     /// Sets In-App Messages to be discarded after being triggered.
     /// </summary>
-    IAM_DISCARD = 2,
-    // TODO - Blocked by SDK-1596
-    // /// <summary>
-    // /// Requests that any In-App Message previously saved to a stack to be displayed immediately.
-    // /// </summary>
-    // REQUEST_IAM_DISPLAY = 3
+    IAM_DISCARD = 2
   }
 
   public delegate void PushPromptResponseReceived(bool granted);
   public delegate void PushTokenReceivedFromSystem(string token);
 
   public class AppboyBinding : MonoBehaviour {
+
+    private static BrazePlatform _mBinding;
     public static BrazePlatform mBinding {
-      get { 
+      get {
+        if (_mBinding != null) {
+          return _mBinding;
+        }
         #if UNITY_ANDROID
-          return new BrazeAndroidPlatform();
+          _mBinding = new BrazeAndroidPlatform();
         #elif UNITY_IOS
-          return new BrazeiOSPlatform();
-        #else
-          return null;
+          _mBinding = new BrazeiOSPlatform();
         #endif
+        return _mBinding;
       }
     }
 
@@ -618,12 +619,31 @@ namespace Appboy {
     public static void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method) {
       #if HAS_BRAZE_SDK
         mBinding.ConfigureListener(messageType, gameobject, method);
-      #endif 
+      #endif
     }
 
+    /// <summary>
+    /// Sets the default action taken by the Braze SDK when an In-App Message is
+    /// ready to be displayed.
+    /// </summary>
+    /// <param name="actionType">
+    /// The action taken.
+    /// </param>
     public static void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
       #if HAS_BRAZE_SDK
         mBinding.SetInAppMessageDisplayAction(actionType);
+      #endif 
+    }
+
+    /// <summary>
+    /// Displays the next available In-App Message in the In-App Messages stack.
+    ///
+    /// Use it alongside <see cref="SetInAppMessageDisplayAction"/> to customize
+    /// when an In-App Message is displayed.
+    /// </summary>
+    public static void DisplayNextInAppMessage() {
+      #if HAS_BRAZE_SDK
+        mBinding.DisplayNextInAppMessage();
       #endif 
     }
 
@@ -631,6 +651,55 @@ namespace Appboy {
       #if HAS_BRAZE_SDK
         mBinding.DisplayContentCards();
       #endif 
+    }
+
+    /// <summary>
+    /// Adds the user to the subscription group.
+    /// </summary>
+    /// <param name="subscriptionGroupId">
+    /// The subscription group ID that the user will be added to.
+    /// </param>
+    public static void AddToSubscriptionGroup(string id) {
+      #if HAS_BRAZE_SDK
+        mBinding.AddToSubscriptionGroup(id);
+      #endif 
+    }
+
+    /// <summary>
+    /// Removes the user from the subscription group.
+    /// </summary>
+    /// <param name="subscriptionGroupId">
+    /// The subscription group ID that the user will be removed from.
+    /// </param>
+    public static void RemoveFromSubscriptionGroup(string id) {
+      #if HAS_BRAZE_SDK
+        mBinding.RemoveFromSubscriptionGroup(id);
+      #endif 
+    }
+
+    /// <summary>
+    /// Set this value to a valid BrazeInAppMessageListener instance to 
+    /// register for in-app messages related UI events.
+    /// 
+    /// Using this listener alongside ABKInAppMessageUIDelegate and 
+    /// ABKInAppMessageControllerDelegate from the Braze iOS SDK is not 
+    /// supported.
+    /// </summary>
+    /// <seealso cref="BrazeInAppMessageListener">
+    /// <value>Listener for in-app messages UI events.</value>
+    public static BrazeInAppMessageListener inAppMessageListener {
+      get {
+        #if HAS_BRAZE_SDK
+          return mBinding.inAppMessageListener;
+        #else
+          return null; 
+        #endif
+      }
+      set {
+        #if HAS_BRAZE_SDK
+          mBinding.inAppMessageListener = value;
+        #endif
+      }
     }
   }
 }
