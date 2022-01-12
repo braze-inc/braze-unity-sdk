@@ -83,8 +83,9 @@ namespace Appboy.Editor {
       // Debugging
       cfg = AddIntegerKey(cfg, "com_appboy_logger_initial_log_level", AppboyConfig.AndroidLogLevel);
 
-      // SDK Flavor config. Not overridable
+      // SDK Flavor and Metadata config. Not overridable
       cfg = AddStringKey(cfg, "com_appboy_sdk_flavor", "UNITY");
+      cfg = AddStringSetKey(cfg, "com_braze_internal_sdk_metadata", "unity");
       cfg += "\n</resources>\n";
       return cfg;
     }
