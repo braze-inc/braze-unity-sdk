@@ -1,3 +1,12 @@
+## 3.7.0
+
+##### Breaking
+- Updated the Android plugin to use Braze Android SDK 18.0.0.
+  - This SDK version requires a dependency on Kotlin coroutines. This can be added to your `mainTemplate.gradle` file via `implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"`
+
+##### Fixed
+- Fixed an issue where `AppboyUnityPlayerActivity` could not be extended on Android.
+
 ## 3.6.0
 
 ##### Breaking

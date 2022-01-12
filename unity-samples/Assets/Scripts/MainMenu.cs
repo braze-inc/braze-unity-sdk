@@ -94,8 +94,10 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.SetCustomUserAttribute("knock knock", "who's there");
 
     Dictionary<string, object> properties = new Dictionary<string, object>();
-    properties.Add("key1", 2);
-    properties.Add("key 2", "second value");
+    properties.Add("key int", 2);
+    properties.Add("key string", "second value");
+    properties.Add("key bool", true);
+    properties.Add("key float", 20.2);
     Appboy.AppboyBinding.LogCustomEvent("union of unity uniters");
     Appboy.AppboyBinding.LogCustomEvent("custom event with properties", properties);
     Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);

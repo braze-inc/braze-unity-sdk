@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901477453852:android:05411feb1511b551",
+        "android_client_info": {
+          "package_name": "com.unity3d.player"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901477453852-4k1e9ehf8s8pqne5hcesfek4voim2d67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYvseENe5UlXILj32yYFPhiUawZbG8Y40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901477453852-4k1e9ehf8s8pqne5hcesfek4voim2d67.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

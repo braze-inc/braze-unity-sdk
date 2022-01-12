@@ -1,40 +1,40 @@
-// Android Resolver Repos Start
-([rootProject] + (rootProject.subprojects as List)).each {
-    ext {
-        it.setProperty("android.useAndroidX", true)
-        it.setProperty("android.enableJetifier", true)
-    }
-}
+// // Android Resolver Repos Start
+// ([rootProject] + (rootProject.subprojects as List)).each {
+//     ext {
+//         it.setProperty("android.useAndroidX", true)
+//         it.setProperty("android.enableJetifier", true)
+//     }
+// }
 ([rootProject] + (rootProject.subprojects as List)).each { project ->
     project.repositories {
-        def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
-        maven {
-            url "https://maven.google.com"
-        }
-        maven {
-            url (unityProjectPath + "/Assets/Firebase/m2repository") // Assets/Firebase/Editor/AppDependencies.xml:22, Assets/Firebase/Editor/MessagingDependencies.xml:20
-        }
+        google()
         mavenLocal()
         mavenCentral()
     }
 }
+
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath "com.google.gms:google-services:4.3.4"
+    }
+}
 // Android Resolver Repos End
 apply plugin: 'com.android.library'
+
 **APPLY_PLUGINS**
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 // Android Resolver Dependencies Start
-    implementation 'com.google.android.gms:play-services-base:17.6.0' // Assets/Firebase/Editor/AppDependencies.xml:17
-    implementation 'com.google.firebase:firebase-analytics:19.0.0' // Assets/Firebase/Editor/MessagingDependencies.xml:15
-    implementation 'com.google.firebase:firebase-app-unity:8.1.0' // Assets/Firebase/Editor/AppDependencies.xml:22
-    implementation 'com.google.firebase:firebase-common:20.0.0' // Assets/Firebase/Editor/AppDependencies.xml:13
-    implementation 'com.google.firebase:firebase-messaging:22.0.0' // Assets/Firebase/Editor/MessagingDependencies.xml:13
-    implementation 'com.google.firebase:firebase-messaging-unity:8.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
 // Android Resolver Dependencies End
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
 **DEPS**}
 
 // Android Resolver Exclusions Start
@@ -73,13 +73,6 @@ android {
         abortOnError false
     }
 
-    sourceSets {
-        main { 
-            def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
-            res.srcDirs += (unityProjectPath + '/Assets/Plugins/Android/Firebase/res/values/google-services.xml') 
-        } 
-    }
-
     aaptOptions {
         noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
@@ -88,3 +81,13 @@ android {
 **IL_CPP_BUILD_SETUP**
 **SOURCE_BUILD_SETUP**
 **EXTERNAL_SOURCES**
+
+apply plugin: 'com.google.gms.google-services'
+
+task copyGoogleServicesJson(type: Copy) {
+    def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
+    from unityProjectPath + '/Assets/google-services.json'
+    into projectDir
+}
+
+preBuild.dependsOn(copyGoogleServicesJson)

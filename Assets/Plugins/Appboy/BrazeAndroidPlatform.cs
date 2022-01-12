@@ -84,23 +84,9 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public static AndroidJavaObject ParsePropertiesToBrazeProperties(Dictionary<string, object> properties) {
-    AndroidJavaObject props = new AndroidJavaObject("com.braze.models.outgoing.BrazeProperties");
-    if (properties != null && properties.Count > 0) {
-      foreach (KeyValuePair<string, object> entry in properties) {
-        if (entry.Value == null) {
-          continue;
-        }
-
-        // Public API only supports int/string/double/bool/DateTime. Other values can't get mapped
-        // to Android BrazeProperties methods without casting.
-        if (entry.Value.GetType() == typeof(int) || entry.Value.GetType() == typeof(string) ||
-            entry.Value.GetType() == typeof(double) || entry.Value.GetType() == typeof(bool)) {
-          props.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value);
-        } else {
-          props.Call<AndroidJavaObject>("addProperty", entry.Key, entry.Value.ToString());
-        }
-      }
-    }
+    var jsonStr = Json.Serialize(properties);
+    AndroidJavaObject jsonObj = new AndroidJavaObject("org.json.JSONObject", jsonStr);
+    AndroidJavaObject props = new AndroidJavaObject("com.braze.models.outgoing.BrazeProperties", jsonObj);
     return props;
   }
 
