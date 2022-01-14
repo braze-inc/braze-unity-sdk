@@ -1,3 +1,8 @@
+## 3.7.1
+
+##### Changed
+- Updated the Android plugin to use Braze Android SDK 18.0.1.
+
 ## 3.7.0
 
 ##### Breaking
