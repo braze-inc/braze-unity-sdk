@@ -598,25 +598,23 @@ namespace Appboy.Utilities
                 this.builder.Append('\"');
             }
 
-            private void SerializeOther(object value)
-            {
-                if (value is float
-                    || value is int
+            void SerializeOther(object value) {
+                if (value is float) {
+                    builder.Append(((float) value).ToString(CultureInfo.InvariantCulture));
+                } else if (value is int
                     || value is uint
                     || value is long
-                    || value is double
                     || value is sbyte
                     || value is byte
                     || value is short
                     || value is ushort
-                    || value is ulong
-                    || value is decimal)
-                {
-                    this.builder.Append(value.ToString());
-                }
-                else
-                {
-                    this.SerializeString(value.ToString());
+                    || value is ulong) {
+                    builder.Append(value.ToString());
+                } else if (value is double
+                    || value is decimal) {
+                    builder.Append(Convert.ToDouble(value).ToString(CultureInfo.InvariantCulture));
+                } else {
+                    SerializeString(value.ToString());
                 }
             }
         }
