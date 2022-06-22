@@ -73,7 +73,12 @@ namespace Appboy {
     /// <summary>
     /// Sent when the SDK has an update for Content Cards.
     /// </summary>
-    CONTENT_CARDS_UPDATED = 7
+    CONTENT_CARDS_UPDATED = 7,
+
+    /// <summary>
+    /// Sent after an SDK Authentication error event.
+    /// </summary>
+    SDK_AUTHORIZATION_FAILED = 8
   }
 
   public enum BrazeUnityInAppMessageDisplayActionType {
@@ -163,9 +168,15 @@ namespace Appboy {
     /// method to optionally identify a user with a unique ID.
     /// </summary>
     /// <param name="userId"></param>
-    public static void ChangeUser(string userId) {
+    public static void ChangeUser(string userId, string sdkAuthSignature = null) {
       #if HAS_BRAZE_SDK
-        mBinding.ChangeUser(userId);
+        mBinding.ChangeUser(userId, sdkAuthSignature);
+      #endif  
+    }
+
+    public static void SetSdkAuthenticationSignature(string sdkAuthSignature) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetSdkAuthenticationSignature(sdkAuthSignature);
       #endif  
     }
 
@@ -253,12 +264,6 @@ namespace Appboy {
     public static void SetUserPhoneNumber(string phoneNumber) {
       #if HAS_BRAZE_SDK
         mBinding.SetUserPhoneNumber(phoneNumber);
-      #endif 
-    }
-
-    public static void SetUserAvatarImageURL(string imageURL) {
-      #if HAS_BRAZE_SDK
-        mBinding.SetUserAvatarImageURL(imageURL);
       #endif 
     }
 
@@ -362,6 +367,18 @@ namespace Appboy {
       #if HAS_BRAZE_SDK
         mBinding.setUserTwitterData(twitterUserId, twitterHandle, name, description, followerCount, followingCount, tweetCount, profileImageUrl);
       #endif 
+    }
+
+    public static void SetUserLastKnownLocation(
+      double latitude,
+      double longitude,
+      double? altitude = null,
+      double? accuracy = null,
+      double? verticalAccuracy = null
+    ) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetUserLastKnownLocation(latitude, longitude, altitude, accuracy, verticalAccuracy);
+      #endif
     }
 
     #if UNITY_ANDROID

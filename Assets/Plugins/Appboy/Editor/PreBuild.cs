@@ -35,56 +35,61 @@ namespace Appboy.Editor {
       string cfg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>";
 
       // Connection Info
-      cfg = AddStringKey(cfg, "com_appboy_api_key", AppboyConfig.AndroidApiKey);
-      cfg = AddStringKey(cfg, "com_appboy_custom_endpoint", AppboyConfig.AndroidEndpoint);
-      cfg = AddBooleanKey(cfg, "com_appboy_device_object_whitelisting_enabled", AppboyConfig.AndroidDeviceObjectWhitelistEnabled);
+      cfg = AddStringKey(cfg, "com_braze_api_key", AppboyConfig.AndroidApiKey);
+      cfg = AddStringKey(cfg, "com_braze_custom_endpoint", AppboyConfig.AndroidEndpoint);
+      cfg = AddBooleanKey(cfg, "com_braze_device_object_whitelisting_enabled", AppboyConfig.AndroidDeviceObjectWhitelistEnabled);
       if (AppboyConfig.AndroidDeviceObjectWhitelistEnabled) {
-        cfg = AddStringSetKey(cfg, "com_appboy_device_object_whitelist", AppboyConfig.AndroidDeviceObjectWhitelist);
+        cfg = AddStringSetKey(cfg, "com_braze_device_object_whitelist", AppboyConfig.AndroidDeviceObjectWhitelist);
       }
-      
+      cfg = AddBooleanKey(cfg, "com_braze_sdk_authentication_enabled", AppboyConfig.AndroidSdkAuthenticationEnabled);
+
       // Push notifications
-      cfg = AddBooleanKey(cfg, "com_appboy_firebase_cloud_messaging_registration_enabled", AppboyConfig.AndroidFirebaseCloudMessagingRegistrationEnabled);
-      cfg = AddStringKey(cfg, "com_appboy_firebase_cloud_messaging_sender_id", AppboyConfig.AndroidFirebaseCloudMessagingSenderId);
-      cfg = AddBooleanKey(cfg, "com_appboy_handle_push_deep_links_automatically", AppboyConfig.AndroidHandlePushDeepLinksAutomatically);
-      cfg = AddBooleanKey(cfg, "com_appboy_push_adm_messaging_registration_enabled", AppboyConfig.AndroidAdmRegistrationEnabled);
-      cfg = AddStringKey(cfg, "com_appboy_push_received_game_object_name", AppboyConfig.AndroidPushReceivedGameObjectName);
-      cfg = AddStringKey(cfg, "com_appboy_push_received_callback_method_name", AppboyConfig.AndroidPushReceivedCallbackMethodName);
-      cfg = AddStringKey(cfg, "com_appboy_push_opened_game_object_name", AppboyConfig.AndroidPushOpenedGameObjectName);
-      cfg = AddStringKey(cfg, "com_appboy_push_opened_callback_method_name", AppboyConfig.AndroidPushOpenedCallbackMethodName);
-      cfg = AddStringKey(cfg, "com_appboy_push_deleted_game_object_name", AppboyConfig.AndroidPushDeletedGameObjectName);
-      cfg = AddStringKey(cfg, "com_appboy_push_deleted_callback_method_name", AppboyConfig.AndroidPushDeletedCallbackMethodName);
-      cfg = AddBooleanKey(cfg, "com_appboy_push_notification_html_rendering_enabled", AppboyConfig.AndroidPushNotificationHtmlRenderingEnabled);
-      cfg = AddHexColorIntegerKey(cfg, "com_appboy_default_notification_accent_color", AppboyConfig.AndroidPushDefaultNotificationAccentColor);
-      cfg = AddStringKey(cfg, "com_appboy_default_notification_channel_name", AppboyConfig.AndroidPushDefaultNotificationChannelName);
-      cfg = AddStringKey(cfg, "com_appboy_default_notification_channel_description", AppboyConfig.AndroidPushDefaultNotificationChannelDescription);
-      cfg = AddDrawableKey(cfg, "com_appboy_push_small_notification_icon", AppboyConfig.AndroidPushSmallNotificationIcon);
-      cfg = AddDrawableKey(cfg, "com_appboy_push_large_notification_icon", AppboyConfig.AndroidPushLargeNotificationIcon);
+      cfg = AddBooleanKey(cfg, "com_braze_firebase_cloud_messaging_registration_enabled", AppboyConfig.AndroidFirebaseCloudMessagingRegistrationEnabled);
+      cfg = AddStringKey(cfg, "com_braze_firebase_cloud_messaging_sender_id", AppboyConfig.AndroidFirebaseCloudMessagingSenderId);
+      cfg = AddBooleanKey(cfg, "com_braze_handle_push_deep_links_automatically", AppboyConfig.AndroidHandlePushDeepLinksAutomatically);
+      cfg = AddBooleanKey(cfg, "com_braze_push_adm_messaging_registration_enabled", AppboyConfig.AndroidAdmRegistrationEnabled);
+      cfg = AddStringKey(cfg, "com_braze_push_received_game_object_name", AppboyConfig.AndroidPushReceivedGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_push_received_callback_method_name", AppboyConfig.AndroidPushReceivedCallbackMethodName);
+      cfg = AddStringKey(cfg, "com_braze_push_opened_game_object_name", AppboyConfig.AndroidPushOpenedGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_push_opened_callback_method_name", AppboyConfig.AndroidPushOpenedCallbackMethodName);
+      cfg = AddStringKey(cfg, "com_braze_push_deleted_game_object_name", AppboyConfig.AndroidPushDeletedGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_push_deleted_callback_method_name", AppboyConfig.AndroidPushDeletedCallbackMethodName);
+      cfg = AddBooleanKey(cfg, "com_braze_push_notification_html_rendering_enabled", AppboyConfig.AndroidPushNotificationHtmlRenderingEnabled);
+      cfg = AddHexColorIntegerKey(cfg, "com_braze_default_notification_accent_color", AppboyConfig.AndroidPushDefaultNotificationAccentColor);
+      cfg = AddStringKey(cfg, "com_braze_default_notification_channel_name", AppboyConfig.AndroidPushDefaultNotificationChannelName);
+      cfg = AddStringKey(cfg, "com_braze_default_notification_channel_description", AppboyConfig.AndroidPushDefaultNotificationChannelDescription);
+      cfg = AddDrawableKey(cfg, "com_braze_push_small_notification_icon", AppboyConfig.AndroidPushSmallNotificationIcon);
+      cfg = AddDrawableKey(cfg, "com_braze_push_large_notification_icon", AppboyConfig.AndroidPushLargeNotificationIcon);
       cfg = AddBooleanKey(cfg, "com_braze_delay_sending_push_intents", AppboyConfig.AndroidPushNotificationDelayedSendingEnabled);
 
       // In App Messages
-      cfg = AddStringKey(cfg, "com_appboy_inapp_listener_game_object_name", AppboyConfig.AndroidInAppMessageListenerGameObjectName);
-      cfg = AddStringKey(cfg, "com_appboy_inapp_listener_callback_method_name", AppboyConfig.AndroidInAppMessageListenerCallbackMethodName);
-      cfg = AddIntegerKey(cfg, "com_appboy_trigger_action_minimum_time_interval_seconds", AppboyConfig.AndroidTriggerActionMinimumTimeSeconds);
-      cfg = AddBooleanKey(cfg, "com_appboy_inapp_show_inapp_messages_automatically", AppboyConfig.AndroidDisplayInAppMessagesAutomatically);
+      cfg = AddStringKey(cfg, "com_braze_inapp_listener_game_object_name", AppboyConfig.AndroidInAppMessageListenerGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_inapp_listener_callback_method_name", AppboyConfig.AndroidInAppMessageListenerCallbackMethodName);
+      cfg = AddIntegerKey(cfg, "com_braze_trigger_action_minimum_time_interval_seconds", AppboyConfig.AndroidTriggerActionMinimumTimeSeconds);
+      cfg = AddBooleanKey(cfg, "com_braze_inapp_show_inapp_messages_automatically", AppboyConfig.AndroidDisplayInAppMessagesAutomatically);
 
       // Content Cards
-      cfg = AddStringKey(cfg, "com_appboy_content_cards_updated_listener_game_object_name", AppboyConfig.AndroidContentCardsUpdatedListenerGameObjectName);
-      cfg = AddStringKey(cfg, "com_appboy_content_cards_updated_listener_callback_method_name", AppboyConfig.AndroidContentCardsUpdatedListenerCallbackMethodName);
-      cfg = AddBooleanKey(cfg, "com_appboy_content_cards_unread_visual_indicator_enabled", AppboyConfig.AndroidContentCardsUnreadVisualIndicatorEnabled);
+      cfg = AddStringKey(cfg, "com_braze_content_cards_updated_listener_game_object_name", AppboyConfig.AndroidContentCardsUpdatedListenerGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_content_cards_updated_listener_callback_method_name", AppboyConfig.AndroidContentCardsUpdatedListenerCallbackMethodName);
+      cfg = AddBooleanKey(cfg, "com_braze_content_cards_unread_visual_indicator_enabled", AppboyConfig.AndroidContentCardsUnreadVisualIndicatorEnabled);
 
       // Session Handling
-      cfg = AddIntegerKey(cfg, "com_appboy_session_timeout", AppboyConfig.AndroidSessionTimeoutSeconds);
+      cfg = AddIntegerKey(cfg, "com_braze_session_timeout", AppboyConfig.AndroidSessionTimeoutSeconds);
 
       // Location
-      cfg = AddBooleanKey(cfg, "com_appboy_enable_location_collection", AppboyConfig.AndroidLocationCollectionEnabled);
-      cfg = AddBooleanKey(cfg, "com_appboy_geofences_enabled", AppboyConfig.AndroidGeofencesEnabled);
-      cfg = AddBooleanKey(cfg, "com_appboy_automatic_geofence_requests_enabled", AppboyConfig.AndroidAutomaticGeofenceRequestsEnabled);
+      cfg = AddBooleanKey(cfg, "com_braze_enable_location_collection", AppboyConfig.AndroidLocationCollectionEnabled);
+      cfg = AddBooleanKey(cfg, "com_braze_geofences_enabled", AppboyConfig.AndroidGeofencesEnabled);
+      cfg = AddBooleanKey(cfg, "com_braze_automatic_geofence_requests_enabled", AppboyConfig.AndroidAutomaticGeofenceRequestsEnabled);
 
       // Debugging
-      cfg = AddIntegerKey(cfg, "com_appboy_logger_initial_log_level", AppboyConfig.AndroidLogLevel);
+      cfg = AddIntegerKey(cfg, "com_braze_logger_initial_log_level", AppboyConfig.AndroidLogLevel);
+
+      // SDK Authentication
+      cfg = AddStringKey(cfg, "com_braze_sdk_authentication_failure_listener_game_object_name", AppboyConfig.AndroidSdkAuthenticationFailureGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_sdk_authentication_failure_listener_callback_method_name", AppboyConfig.AndroidSdkAuthenticationFailureCallbackMethodName);
 
       // SDK Flavor and Metadata config. Not overridable
-      cfg = AddStringKey(cfg, "com_appboy_sdk_flavor", "UNITY");
+      cfg = AddStringKey(cfg, "com_braze_sdk_flavor", "UNITY");
       cfg = AddStringSetKey(cfg, "com_braze_internal_sdk_metadata", "unity");
       cfg += "\n</resources>\n";
       return cfg;

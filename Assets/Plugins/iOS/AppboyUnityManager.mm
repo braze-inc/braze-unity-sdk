@@ -51,6 +51,36 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
   return self;
 }
 
+- (void)handleSdkAuthenticationError:(ABKSdkAuthenticationError *)errorEvent {
+  NSLog(@"Invalid SDK Authentication signature.");
+    
+  NSDictionary *sdkAuthFailDictionary = @{@"code" : [NSNumber numberWithInteger:errorEvent.code],
+                                        @"reason" : errorEvent.reason ?: @"",
+                                        @"userId" : errorEvent.userId ?: @"",
+                                     @"signature" : errorEvent.signature ?: @""
+  };
+  NSError *error;
+  NSData *sdkAuthFailData = [NSJSONSerialization dataWithJSONObject:sdkAuthFailDictionary
+                                                            options:0
+                                                              error:&error];
+  if (!sdkAuthFailData) {
+    NSLog(@"Error parsing SDK Authentication Failed Event to json: %@", error);
+    return;
+  }
+  NSString *sdkAuthFailedString = [[NSString alloc] initWithData:sdkAuthFailData encoding:NSUTF8StringEncoding];
+  if (sdkAuthFailedString == nil) {
+    NSLog(@"Error parsing SDK Authentication Failed json to string");
+    return;
+  }
+    
+  if (self.unitySdkAuthFailureGameObjectName != nil && self.unitySdkAuthFailureCallbackFunctionName != nil) {
+    NSLog(@"Using configured game object for SDK Authentication failure handing.");
+    [self unitySendMessageTo:self.unitySdkAuthFailureGameObjectName
+                  withMethod:self.unitySdkAuthFailureCallbackFunctionName
+                 withMessage:sdkAuthFailedString];
+  }
+}
+
 # pragma mark - Config
 
 - (NSString *)getApiKeyFromUnity {
@@ -469,6 +499,10 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
       NSLog(@"Setting Content Cards updated listener to object %@, method %@", gameobject, method);
       [self addContentCardsListenerWithObjectName:gameobject callbackMethodName:method];
       break;
+    case ABKSdkAuthFailed:
+      NSLog(@"Setting SDK Authentication Failure listener to object %@, method %@", gameobject, method);
+      [self addSdkAuthFailureListenerWithObjectName:gameobject callbackMethodName:method];
+      break;
     default:
       NSLog(@"Unknown message type received.");
       return;
@@ -481,6 +515,7 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
   [self addInAppMessageListenerWithObjectNameAndSetDelegate:self.brazeUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityInAppMessageCallbackKey]];
   [self addContentCardsListenerWithObjectName:self.brazeUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityContentCardsCallbackKey]];
   [self addFeedListenerWithObjectName:self.brazeUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityFeedCallbackKey]];
+  [self addSdkAuthFailureListenerWithObjectName:self.brazeUnityPlist[ABKUnitySdkAuthenticationFailureGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnitySdkAuthenticationFailureCallbackKey]];
 }
 
 - (void)addInAppMessageListenerWithObjectNameAndSetDelegate:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
@@ -495,6 +530,14 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
   if (gameObject != nil && callbackMethod != nil) {
     self.unityFeedGameObjectName = gameObject;
     self.unityFeedCallbackFunctionName = callbackMethod;
+  }
+}
+
+- (void)addSdkAuthFailureListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    [Appboy sharedInstance].sdkAuthenticationDelegate = self;
+    self.unitySdkAuthFailureGameObjectName = gameObject;
+    self.unitySdkAuthFailureCallbackFunctionName = callbackMethod;
   }
 }
 

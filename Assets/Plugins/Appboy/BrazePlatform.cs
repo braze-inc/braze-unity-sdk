@@ -24,8 +24,9 @@ public interface BrazePlatform {
     Dictionary<string, object> properties
   );
 
-  void ChangeUser(string userId);
-
+  void ChangeUser(string userId, string sdkAuthSignature = null);
+  void SetSdkAuthenticationSignature(string sdkAuthSignature);
+ 
   void SetUserFirstName(string firstName);
   void SetUserLastName(string lastName);
   void SetUserEmail(string email);
@@ -36,8 +37,7 @@ public interface BrazePlatform {
   void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType);
   void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType);
   void SetUserPhoneNumber(string phoneNumber);
-  void SetUserAvatarImageURL(string imageURL);
-
+  
   void SetCustomUserAttribute(string key, bool value);
   void SetCustomUserAttribute(string key, int value);
   void SetCustomUserAttribute(string key, float value);
@@ -71,6 +71,14 @@ public interface BrazePlatform {
     int? followingCount, 
     int? tweetCount, 
     string profileImageUrl
+  );
+
+  void SetUserLastKnownLocation(
+    double latitude,
+    double longitude,
+    double? altitude = null,
+    double? accuracy = null,
+    double? verticalAccuracy = null
   );
 
   #if UNITY_ANDROID

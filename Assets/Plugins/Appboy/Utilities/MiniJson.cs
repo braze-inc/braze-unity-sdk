@@ -431,10 +431,14 @@ namespace Appboy.Utilities
 
                 if (number.IndexOf('.') == -1)
                 {
-                    return long.Parse(number, numberFormat);
+                    long parsedInt;
+                    Int64.TryParse (number, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out parsedInt);
+                    return parsedInt;
                 }
 
-                return double.Parse(number, numberFormat);
+                double parsedDouble;
+                Double.TryParse (number, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out parsedDouble);
+                return parsedDouble;
             }
 
             private void EatWhitespace()
@@ -600,17 +604,23 @@ namespace Appboy.Utilities
 
             private void SerializeOther(object value)
             {
-                if (value is float
-                    || value is int
+                if (value is float)
+                {
+                    this.builder.Append(((float) value).ToString(CultureInfo.InvariantCulture));
+                } 
+                else if (value is double
+                    || value is decimal) 
+                {
+                    this.builder.Append(Convert.ToDouble(value).ToString(CultureInfo.InvariantCulture));
+                } 
+                else if (value is int
                     || value is uint
                     || value is long
-                    || value is double
                     || value is sbyte
                     || value is byte
                     || value is short
                     || value is ushort
-                    || value is ulong
-                    || value is decimal)
+                    || value is ulong)
                 {
                     this.builder.Append(value.ToString());
                 }

@@ -55,6 +55,13 @@ namespace Appboy.Editor {
         AppboyConfig.IOSApiKey = EditorGUILayout.TextField("Braze API Key", AppboyConfig.IOSApiKey);
         AppboyConfig.IOSEndpoint = EditorGUILayout.TextField("Braze SDK Endpoint", AppboyConfig.IOSEndpoint);
         EditorGUILayout.LabelField("If you are on the default Braze SDK Endpoint, you can leave this blank.", EditorStyles.wordWrappedMiniLabel);
+        AppboyConfig.IOSSdkAuthenticationEnabled = EditorGUILayout.ToggleLeft(" SDK Authentication Enabled", AppboyConfig.IOSSdkAuthenticationEnabled);
+        if (AppboyConfig.IOSSdkAuthenticationEnabled) {
+          EditorGUI.indentLevel++;
+          AppboyConfig.IOSSdkAuthenticationFailureGameObjectName = EditorGUILayout.TextField("SDK Authentication Failure Game Object Name", AppboyConfig.IOSSdkAuthenticationFailureGameObjectName);
+          AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName = EditorGUILayout.TextField("SDK Authentication Failure Callback Method Name", AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName);
+          EditorGUI.indentLevel--;
+        }
         EditorGUI.indentLevel--;
         EditorGUILayout.Separator();
 
@@ -226,7 +233,15 @@ namespace Appboy.Editor {
       AppboyConfig.AndroidApiKey = EditorGUILayout.TextField("Braze API Key", AppboyConfig.AndroidApiKey);
       AppboyConfig.AndroidEndpoint = EditorGUILayout.TextField("Braze SDK Endpoint", AppboyConfig.AndroidEndpoint);
       EditorGUILayout.LabelField("If you are on the default Braze SDK Endpoint, you can leave this blank.", EditorStyles.wordWrappedMiniLabel);
+      AppboyConfig.AndroidSdkAuthenticationEnabled = EditorGUILayout.ToggleLeft("SDK Authentication Enabled", AppboyConfig.AndroidSdkAuthenticationEnabled);
 
+      if (AppboyConfig.AndroidSdkAuthenticationEnabled) {
+        EditorGUI.indentLevel++;
+        AppboyConfig.AndroidSdkAuthenticationFailureGameObjectName = EditorGUILayout.TextField("SDK Authentication Failure Game Object Name", AppboyConfig.AndroidSdkAuthenticationFailureGameObjectName);
+        AppboyConfig.AndroidSdkAuthenticationFailureCallbackMethodName = EditorGUILayout.TextField("SDK Authentication Failure Callback Method Name", AppboyConfig.AndroidSdkAuthenticationFailureCallbackMethodName);
+        EditorGUI.indentLevel--;
+      }
+       
       androidShowDeviceObjectWhitelistSettings = EditorGUILayout.Foldout(androidShowDeviceObjectWhitelistSettings, "Device Object Whitelist");
       if (androidShowDeviceObjectWhitelistSettings) {
         EditorGUI.indentLevel++;

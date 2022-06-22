@@ -15,7 +15,10 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _logCustomEvent(string eventName, string properties);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _changeUser(string userId);
+  private static extern void _changeUser(string userId, string sdkAuthSignature);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setSdkAuthenticationSignature(string sdkAuthSignature);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _logPurchase(string productId, string currencyCode, string price, int quantity, string properties);
@@ -28,9 +31,6 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserPhoneNumber(string phoneNumber);
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _setUserAvatarImageURL(string imageURL);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserGender(int gender);
@@ -91,6 +91,12 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserTwitterData(int twitterUserId, string twitterHandle, string name, string description, int followerCount, int followingCount, int tweetCount, string profileImageUrl);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserLastKnownLocation(double latitude, double longitude, double altitude, double accuracy, double verticalAccuracy);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserLastKnownLocationSimple(double latitude, double longitude, double accuracy);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setInAppMessageDisplayAction(int actionType);
@@ -206,8 +212,12 @@ public class BrazeiOSPlatform : BrazePlatform {
     _logPurchase(productId, currencyCode, price.ToString(), quantity, propertiesString);
   }
 
-  public void ChangeUser(string userId) {
-    _changeUser(userId);
+  public void ChangeUser(string userId, string sdkAuthSignature) {
+    _changeUser(userId, sdkAuthSignature);
+  }
+
+  public void SetSdkAuthenticationSignature(string sdkAuthSignature) {
+    _setSdkAuthenticationSignature(sdkAuthSignature); 
   }
 
   public void SetUserFirstName(string firstName) {
@@ -248,10 +258,6 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void SetUserPhoneNumber(string phoneNumber) {
     _setUserPhoneNumber(phoneNumber);
-  }
-
-  public void SetUserAvatarImageURL(string imageURL) {
-    _setUserAvatarImageURL(imageURL);
   }
 
   public void SetCustomUserAttribute(string key, bool value) {
@@ -308,6 +314,24 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
     _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
+  }
+
+  public void SetUserLastKnownLocation(
+    double latitude,
+    double longitude,
+    double? altitude,
+    double? accuracy,
+    double? verticalAccuracy
+  ) {
+    var newAltitude = (altitude == null) ? 0.0 : (double)altitude;
+    var newAccuracy = (accuracy == null) ? 0.0 : (double)accuracy;
+    var newVerticalAccuracy = (verticalAccuracy == null) ? 0.0 : (double)verticalAccuracy;
+
+    if (altitude != null && (verticalAccuracy != null && verticalAccuracy > 0.0)) {
+      _setUserLastKnownLocation(latitude, longitude, newAltitude, newAccuracy, newVerticalAccuracy);
+    } else {
+      _setUserLastKnownLocationSimple(latitude, longitude, newAccuracy);
+    }
   }
 
   private BrazeInAppMessageListener _inAppMessageListener;
