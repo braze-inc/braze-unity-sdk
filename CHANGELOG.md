@@ -1,3 +1,23 @@
+## 3.8.0
+
+##### Breaking
+- Removed `AppboyBinding.SetUserAvatarImageURL()` from the binding.
+- `Utilities/MiniJson.cs` now uses `InvariantCulture` during serialization.
+- Updated the Android plugin to use [Braze Android SDK 21.0.0](https://github.com/Appboy/appboy-android-sdk/blob/master/CHANGELOG.md#2100)
+  - This SDK version relies on `implementation "androidx.recyclerview:recyclerview:1.2.1` or higher.
+
+##### Added
+- Added `AppboyBinding.SetUserLastKnownLocation()` to manually set the last known location for the user.
+- Added SDK Authentication Support.
+  - Added `AppboyBinding.SetSdkAuthenticationSignature(sdkAuthSignature)` to set the signature only.
+  - Added `AppboyBinding.ChangeUser(userId, sdkAuthSignature = null)` to optionally set the SDK Authentication signature when changing users.
+  - Added SDK Authentication under "Braze Configuration". There are separate configurations for iOS and Android. If you want to configure at runtime, use:
+    - `AppboyBinding.IOSSdkAuthenticationFailureGameObjectName`, `AppboyBinding.IOSSdkAuthenticationEnabled`, and `AppboyBinding.IOSSdkAuthenticationFailureCallbackMethodName` for iOS.
+    - `AppboyBinding.AndroidSdkAuthenticationEnabled`, `AppboyBinding.AndroidSdkAuthenticationFailureGameObjectName`, and `AppboyBinding.AndroidSdkAuthenticationFailureCallbackMethodName` for Android.
+
+##### Changed
+- Updated the iOS plugin to use Braze iOS SDK 4.4.3.
+
 ## 3.7.1
 
 ##### Changed

@@ -18,6 +18,7 @@ namespace Appboy.Editor {
 
     private const string ABKEndpointKey = "Endpoint";
     private const string ABKLogLevelKey = "LogLevel";
+    private const string ABKSdkAuthEnabledKey = "EnableSDKAuthentication";
     private const string ABKUnityApiKey = "ApiKey";
     private const string ABKUnityAutomaticPushIntegrationKey = "IntegratesPush";
     private const string ABKUnityDisableAutomaticPushRegistrationKey = "DisableAutomaticPushRegistration";
@@ -33,6 +34,8 @@ namespace Appboy.Editor {
     private const string ABKUnityContentCardsGameObjectKey = "ContentCardsGameObjectName";
     private const string ABKUnityContentCardsCallbackKey = "ContentCardsCallbackMethodName";
     private const string ABKUnityHandleInAppMessageDisplayKey = "DisplayInAppMessages";
+    private const string ABKUnitySdkAuthenticationFailureGameObjectKey = "SdkAuthFailureGameObjectName";
+    private const string ABKUnitySdkAuthenticationFailureCallbackKey = "SdkAuthFailureCallbackMethodName";
 
     [PostProcessBuildAttribute(1)]
     public static void OnPostprocessBuild(BuildTarget target, string path) {
@@ -193,6 +196,7 @@ namespace Appboy.Editor {
         } else {
           brazeDict.SetString(ABKLogLevelKey, AppboyConfig.IOSLogLevel.Trim());
         }
+        brazeDict.SetBoolean(ABKSdkAuthEnabledKey, AppboyConfig.IOSSdkAuthenticationEnabled);
 
         // Add iOS automated integration build keys to Plist
         if (ValidateField(ABKUnityApiKey, AppboyConfig.IOSApiKey, "Appboy will not be initialized.")) {
@@ -239,6 +243,13 @@ namespace Appboy.Editor {
           ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName)) {
           brazeUnityDict.SetString(ABKUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName.Trim());
           brazeUnityDict.SetString(ABKUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName.Trim());
+        }
+
+        // Set SDK Authentication Failure listener
+        if (ValidateListenerFields(ABKUnitySdkAuthenticationFailureGameObjectKey, AppboyConfig.IOSSdkAuthenticationFailureGameObjectName,
+          ABKUnitySdkAuthenticationFailureCallbackKey, AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName)) {
+          brazeUnityDict.SetString(ABKUnitySdkAuthenticationFailureGameObjectKey, AppboyConfig.IOSSdkAuthenticationFailureGameObjectName.Trim());
+          brazeUnityDict.SetString(ABKUnitySdkAuthenticationFailureCallbackKey, AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName.Trim());
         }
       }
 

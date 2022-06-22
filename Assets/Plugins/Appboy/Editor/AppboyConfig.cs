@@ -27,12 +27,24 @@ namespace Appboy.Editor {
     [SerializeField]
     private string iOSEndpoint = string.Empty;
     [SerializeField]
+    private bool iOSSdkAuthenticationEnabled = true;
+    [SerializeField]
+    private string iOSSdkAuthenticationFailedGameObjectName = string.Empty;
+    [SerializeField]
+    private string iOSSdkAuthenticationFailedCallbackMethodName = string.Empty;
+    [SerializeField]
     private string iOSLogLevel = string.Empty;
     // Android
     [SerializeField]
     private string androidApiKey = string.Empty;
     [SerializeField]
     private string androidEndpoint = string.Empty;
+    [SerializeField]
+    private bool androidSdkAuthenticationEnabled = true;
+    [SerializeField]
+    private string androidSdkAuthenticationFailedGameObjectName = string.Empty;
+    [SerializeField]
+    private string androidSdkAuthenticationFailedCallbackMethodName = string.Empty;
     [SerializeField]
     private string androidLogLevel = string.Empty;
     [SerializeField]
@@ -163,6 +175,21 @@ namespace Appboy.Editor {
       set { SetProperty(ref Instance.iOSEndpoint, value); }
     }
 
+    public static bool IOSSdkAuthenticationEnabled {
+      get { return Instance.iOSSdkAuthenticationEnabled; }
+      set { SetProperty(ref Instance.iOSSdkAuthenticationEnabled, value); }
+    }
+
+    public static string IOSSdkAuthenticationFailureGameObjectName {
+      get { return Instance.iOSSdkAuthenticationFailedGameObjectName; }
+      set { SetProperty(ref Instance.iOSSdkAuthenticationFailedGameObjectName, value); }
+    }
+
+    public static string IOSSdkAuthenticationFailureCallbackMethodName {
+      get { return Instance.iOSSdkAuthenticationFailedCallbackMethodName; }
+      set { SetProperty(ref Instance.iOSSdkAuthenticationFailedCallbackMethodName, value); }
+    }
+
     public static string IOSLogLevel {
       get { return Instance.iOSLogLevel; }
       set { SetProperty(ref Instance.iOSLogLevel, value); }
@@ -268,6 +295,21 @@ namespace Appboy.Editor {
     public static string AndroidEndpoint {
       get { return Instance.androidEndpoint; }
       set { SetProperty(ref Instance.androidEndpoint, value); }
+    }
+
+    public static bool AndroidSdkAuthenticationEnabled {
+      get { return Instance.androidSdkAuthenticationEnabled; }
+      set { SetProperty(ref Instance.androidSdkAuthenticationEnabled, value); }
+    }
+
+    public static string AndroidSdkAuthenticationFailureGameObjectName {
+      get { return Instance.androidSdkAuthenticationFailedGameObjectName; }
+      set { SetProperty(ref Instance.androidSdkAuthenticationFailedGameObjectName, value); }
+    }
+
+    public static string AndroidSdkAuthenticationFailureCallbackMethodName {
+      get { return Instance.androidSdkAuthenticationFailedCallbackMethodName; }
+      set { SetProperty(ref Instance.androidSdkAuthenticationFailedCallbackMethodName, value); }
     }
 
     public static string AndroidLogLevel {

@@ -92,6 +92,7 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.SetCustomUserAttribute("times laughed", -1);
     Appboy.AppboyBinding.SetCustomUserAttribute("grins cracked", 0.5F);
     Appboy.AppboyBinding.SetCustomUserAttribute("knock knock", "who's there");
+    Appboy.AppboyBinding.SetUserLastKnownLocation(37.4992819D, -97.4115505D);
 
     Dictionary<string, object> properties = new Dictionary<string, object>();
     properties.Add("key int", 2);

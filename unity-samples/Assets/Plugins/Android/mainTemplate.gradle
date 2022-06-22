@@ -32,9 +32,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:22.0.0'
 // Android Resolver Dependencies End
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
 **DEPS**}
 
 // Android Resolver Exclusions Start

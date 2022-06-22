@@ -12,7 +12,7 @@
   <application android:label="@string/app_name"
     android:icon="@drawable/app_icon">
     <amazon:enable-feature android:name="com.amazon.device.messaging" android:required="false"/>
-    <service android:name="com.braze.push.BrazeFirebaseMessagingService">
+    <service android:name="com.braze.push.BrazeFirebaseMessagingService" android:exported="false">
       <intent-filter>
         <action android:name="com.google.firebase.MESSAGING_EVENT" />
       </intent-filter>

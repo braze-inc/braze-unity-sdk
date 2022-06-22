@@ -7,8 +7,14 @@ char* convertNSStringToCString(const NSString* nsString);
 
 # pragma mark - Appboy
 
-void _changeUser(const char* userId) {
-  [[Appboy sharedInstance] changeUser:GetStringParam(userId)];
+void _changeUser(const char* userId, const char* sdkAuthSignature) {
+  NSString *signature = sdkAuthSignature != NULL ? GetStringParam(sdkAuthSignature) : nil;
+  [[Appboy sharedInstance] changeUser:GetStringParam(userId)
+                     sdkAuthSignature:signature];
+}
+
+void _setSdkAuthenticationSignature(const char* sdkAuthSignature) {
+  [[Appboy sharedInstance] setSdkAuthenticationSignature:GetStringParam(sdkAuthSignature)];
 }
 
 void _logCustomEvent(const char* eventName, const char* properties) {
@@ -65,10 +71,6 @@ void _setUserLastName(const char* lastName) {
 
 void _setUserPhoneNumber(const char* phoneNumber) {
   [Appboy sharedInstance].user.phone = GetStringParam(phoneNumber);
-}
-
-void _setUserAvatarImageURL(const char* imageURL) {
-  [Appboy sharedInstance].user.avatarImageURL = GetStringParam(imageURL);
 }
 
 void _setUserEmail(const char* email) {
@@ -177,6 +179,20 @@ void _addToSubscriptionGroup(const char* groupId) {
 
 void _removeFromSubscriptionGroup(const char* groupId) {
   [[Appboy sharedInstance].user removeFromSubscriptionGroupWithGroupId:GetStringParam(groupId)];
+}
+
+void _setUserLastKnownLocation(double latitude, double longitude, double altitude, double accuracy, double verticalAccuracy) {
+  [[Appboy sharedInstance].user setLastKnownLocationWithLatitude:latitude
+                                                       longitude:longitude
+                                              horizontalAccuracy:accuracy
+                                                        altitude:altitude
+                                                verticalAccuracy:verticalAccuracy];
+}
+
+void _setUserLastKnownLocationSimple(double latitude, double longitude, double accuracy) {
+    [[Appboy sharedInstance].user setLastKnownLocationWithLatitude:latitude
+                                                         longitude:longitude
+                                                horizontalAccuracy:accuracy];
 }
 
 # pragma mark - Social Media

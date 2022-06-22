@@ -25,5 +25,5 @@ To integrate Braze into your Android Unity application, complete our [Android Un
 To integrate Braze into your iOS Unity application, complete our [iOS Unity integration instructions][2].
 
 [1]: https://github.com/Appboy/appboy-unity-sdk/releases
-[2]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/ios/sdk_integration/
-[3]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/android/sdk_integration/
+[2]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/sdk_integration/ios/
+[3]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/sdk_integration/android/

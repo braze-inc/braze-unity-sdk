@@ -60,6 +60,7 @@
 #import "ABKPushUtils.h"
 #import "ABKSdkAuthenticationDelegate.h"
 #import "ABKSdkAuthenticationError.h"
+#import "ABKSdkMetadata.h"
 #import "ABKSDWebImageProxy.h"
 #import "ABKTextAnnouncementCard.h"
 #import "ABKTwitterUser.h"

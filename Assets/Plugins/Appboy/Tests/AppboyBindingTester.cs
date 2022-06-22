@@ -88,6 +88,10 @@ namespace Appboy {
       }
     }
 
+    void SdkAuthenticationFailureCallback(string message) {
+      Debug.Log("SdkAuthenticationFailureCallback: " + message);
+    }
+
     public static void InAppMessageBeforeDisplayed(IInAppMessage message) {
       Debug.Log($"InAppMessage before displayed: {message}");
     }

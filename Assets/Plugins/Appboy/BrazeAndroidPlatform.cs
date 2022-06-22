@@ -106,8 +106,12 @@ public class BrazeAndroidPlatform : BrazePlatform {
     Braze.Call("logPurchase", productId, currencyCode, javaPrice, quantity, brazeProperties);
   }
 
-  public void ChangeUser(string userId) {
-    Braze.Call("changeUser", userId);
+  public void ChangeUser(string userId, string sdkAuthSignature) {
+    Braze.Call("changeUser", userId, sdkAuthSignature);
+  }
+
+  public void SetSdkAuthenticationSignature(string sdkAuthSignature) {
+    Braze.Call("setSdkAuthenticationSignature", sdkAuthSignature);  
   }
 
   public void SetUserFirstName(string firstName) {
@@ -248,10 +252,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
     GetCurrentUser().Call<bool>("setPhoneNumber", phoneNumber);
   }
 
-  public void SetUserAvatarImageURL(string imageURL) {
-    GetCurrentUser().Call<bool>("setAvatarImageUrl", imageURL);
-  }
-
   public void SetCustomUserAttribute(string key, bool value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
@@ -345,6 +345,19 @@ public class BrazeAndroidPlatform : BrazePlatform {
       }
     );
     GetCurrentUser().Call<bool>("setTwitterData", twitterUser);
+  }
+
+  public void SetUserLastKnownLocation(
+    double latitude,
+    double longitude,
+    double? altitude,
+    double? accuracy,
+    double? verticalAccuracy
+  ) {
+    var altitudeJava = (altitude == null) ? null : new AndroidJavaObject("java.lang.Double", altitude);
+    var accuracyJava = (accuracy == null) ? null : new AndroidJavaObject("java.lang.Double", accuracy);
+
+    GetCurrentUser().Call("setLastKnownLocation", latitude, longitude, altitudeJava, accuracyJava);
   }
 
   public void RemoveFromCustomUserAttributeArray(string key, string value) {

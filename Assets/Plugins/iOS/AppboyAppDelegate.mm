@@ -26,6 +26,9 @@
         withLaunchOptions:launchOptions
         withAppboyOptions:@{ABKSDKFlavorKey: @(UNITY)}];
 
+  // Add default Unity metadata
+  [[Appboy sharedInstance] addSdkMetadata:@[ABKSdkMetadataUnity]];
+
   // Set listeners
   [[AppboyUnityManager sharedInstance] setListenersFromPList];
 

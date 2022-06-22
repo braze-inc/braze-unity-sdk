@@ -16,9 +16,15 @@ MonoBehaviour:
   androidAutomatesIntegration: 1
   ApiKey: ba91dbc3-3fc7-4b5c-afb3-c709f663bb53
   iOSEndpoint: sondheim.appboy.com
+  iOSSdkAuthenticationEnabled: 1
+  iOSSdkAuthenticationFailedGameObjectName: BrazeCallback
+  iOSSdkAuthenticationFailedCallbackMethodName: SdkAuthenticationFailureCallback
   iOSLogLevel: 0
   androidApiKey: 5a29c2d7-10af-4aa1-8f92-d0cff2e13d61
   androidEndpoint: sondheim.appboy.com
+  androidSdkAuthenticationEnabled: 1
+  androidSdkAuthenticationFailedGameObjectName: BrazeCallback
+  androidSdkAuthenticationFailedCallbackMethodName: SdkAuthenticationFailureCallback
   androidLogLevel: 0
   androidDeviceObjectWhitelist: RESOLUTION MODEL
   androidDeviceObjectWhitelistEnabled: 0

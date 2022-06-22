@@ -3,6 +3,7 @@
 #import <Appboy_iOS_SDK/ABKInAppMessageUIDelegate.h>
 
 static NSString *const ABKUnityApiKey = @"ApiKey";
+static NSString *const ABKUnitySdkAuthEnabledKey = @"ApiKey";
 static NSString *const ABKUnityAutomaticPushIntegrationKey = @"IntegratesPush";
 static NSString *const ABKUnityDisableAutomaticPushRegistrationKey = @"DisableAutomaticPushRegistration";
 static NSString *const ABKUnityDisableProvisionalAuthKey = @"DisableProvisionalAuth";
@@ -18,6 +19,9 @@ static NSString *const ABKUnityFeedCallbackKey = @"FeedCallbackMethodName";
 static NSString *const ABKUnityContentCardsGameObjectKey = @"ContentCardsGameObjectName";
 static NSString *const ABKUnityContentCardsCallbackKey = @"ContentCardsCallbackMethodName";
 static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMessages";
+static NSString *const ABKUnitySdkAuthenticationFailureGameObjectKey = @"SdkAuthFailureGameObjectName";
+static NSString *const ABKUnitySdkAuthenticationFailureCallbackKey = @"SdkAuthFailureCallbackMethodName";
+
 
 /**
  * These must correspond 1:1 to BrazeUnityMessageType in AppboyBinding.cs.
@@ -30,7 +34,8 @@ typedef NS_ENUM(NSInteger, ABKUnityMessageType) {
   ABKPushDeleted = 4,
   ABKInAppMessageReceived = 5,
   ABKNewsFeedUpdated = 6,
-  ABKContentCardsUpdated = 7
+  ABKContentCardsUpdated = 7,
+  ABKSdkAuthFailed = 8
 };
 
 /**
@@ -46,7 +51,8 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 @interface AppboyUnityManager : NSObject <
   ABKInAppMessageControllerDelegate,
   ABKInAppMessageUIDelegate,
-  UNUserNotificationCenterDelegate
+  UNUserNotificationCenterDelegate,
+  ABKSdkAuthenticationDelegate
 >
 
 @property (nonatomic,copy) NSDictionary *brazeUnityPlist;
@@ -64,6 +70,8 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 @property (nonatomic, copy) NSString *unityPushPermissionsPromptResponseFunctionName;
 @property (nonatomic, copy) NSString *unityPushTokenReceivedFromSystemGameObjectName;
 @property (nonatomic, copy) NSString *unityPushTokenReceivedFromSystemFunctionName;
+@property (nonatomic, copy) NSString *unitySdkAuthFailureGameObjectName;
+@property (nonatomic, copy) NSString *unitySdkAuthFailureCallbackFunctionName;
 @property (nonatomic) BOOL sendInternalPushPermissionsPromptResponse;
 @property (nonatomic) BOOL sendPushTokenReceivedFromSystem;
 @property (nonatomic) ABKInAppMessageDisplayChoice displayAction;
@@ -135,6 +143,8 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 - (void)addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void)addSdkAuthFailureListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+
 
 /*!
  * @discussion Passes the push notification data to Braze. The caller is responsible for respecting
@@ -149,5 +159,6 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 
 // Internal
 - (void)configureInternalListenerFor:(NSInteger)messageType;
+- (void)handleSdkAuthenticationError:(ABKSdkAuthenticationError *)errorEvent;
 
 @end
