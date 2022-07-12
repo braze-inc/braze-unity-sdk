@@ -1,3 +1,10 @@
+## 3.8.1
+
+##### Added
+- Added Assembly Definitions for the SDK.
+  - See [the Unity Asm Def docs](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html) for more information.
+  - Special thanks to @starikcetin!
+
 ## 3.8.0
 
 ##### Breaking
