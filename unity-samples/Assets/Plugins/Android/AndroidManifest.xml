@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.appboy.unity.AppboySample"
+          android:versionCode="1"
+          android:versionName="1.0">
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <application android:label="@string/app_name"
+    android:icon="@drawable/app_icon">
+    <amazon:enable-feature android:name="com.amazon.device.messaging" android:required="false"/>
+    <service android:name="com.braze.push.BrazeFirebaseMessagingService" android:exported="false">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+
+    <activity android:name="com.appboy.unity.AppboyUnityPlayerActivity" 
+      android:exported="true"
+      android:label="@string/app_name" 
+      android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" 
+      android:screenOrientation="sensor">
+      <meta-data android:name="android.app.lib_name" android:value="unity" />
+      <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <receiver android:name="com.appboy.unity.AppboyUnityPushBroadcastReceiver" android:exported="false" >
+      <intent-filter>
+        <action android:name="com.braze.push.intent.NOTIFICATION_RECEIVED" />
+        <action android:name="com.braze.push.intent.NOTIFICATION_OPENED" />
+        <action android:name="com.braze.push.intent.NOTIFICATION_DELETED" />
+      </intent-filter>
+    </receiver>
+    <service android:name="com.google.firebase.messaging.MessageForwardingService"
+          android:permission="android.permission.BIND_JOB_SERVICE"
+          android:exported="false" >
+    </service>
+  </application>
+</manifest>

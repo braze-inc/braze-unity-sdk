@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+    guid: efc303f32979b4fbcab6286ccd307510
+  - enabled: 1
+    path: Assets/_Scenes/ChangeUser.unity
+    guid: 2e7803b95bbbe45999ed72c5779359d5
+  - enabled: 1
+    path: Assets/_Scenes/LogCustomEvent.unity
+    guid: cc6e432aea266402983492e6980f6eca
+  - enabled: 1
+    path: Assets/_Scenes/LogPurchase.unity
+    guid: 8ce813cfef4ce44779284b5a4f6b9ac4
+  - enabled: 1
+    path: Assets/_Scenes/SetUserField.unity
+    guid: 385a4274d8c8c450aab7946c567221fa
+  - enabled: 1
+    path: Assets/_Scenes/CustomAttributesSetting.unity
+    guid: cc7f708df01bb4368a44c2232e46f783
+  - enabled: 1
+    path: Assets/_Scenes/SetCustomAttributes.unity
+    guid: 65101655a667a43a9b84b5295ff805d2
+  - enabled: 1
+    path: Assets/_Scenes/SetCustomAttributesArray.unity
+    guid: a8bc8f68fb22447509ac77391774e8b0
+  m_configObjects: {}

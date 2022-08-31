@@ -96,12 +96,12 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void LogPurchase(string productId, string currencyCode, decimal price, int quantity) {
-    var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
+    var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString(System.Globalization.CultureInfo.InvariantCulture));
     Braze.Call("logPurchase", productId, currencyCode, javaPrice, quantity);
   }
 
   public void LogPurchase(string productId, string currencyCode, decimal price, int quantity, Dictionary<string, object> properties) {
-    var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString());
+    var javaPrice = new AndroidJavaObject("java.math.BigDecimal", price.ToString(System.Globalization.CultureInfo.InvariantCulture));
     AndroidJavaObject brazeProperties = ParsePropertiesToBrazeProperties(properties);
     Braze.Call("logPurchase", productId, currencyCode, javaPrice, quantity, brazeProperties);
   }
@@ -368,10 +368,10 @@ public class BrazeAndroidPlatform : BrazePlatform {
     Braze.Call("registerAppboyPushMessages", new object[] { registrationId });
   }
 
-  /// <summary>
-  /// No-op on Android.
-  /// </summary>
-  public void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null) {}
+  public void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null) {
+    var brazePermissionUtils = new AndroidJavaClass("com.braze.support.PermissionUtils");
+    brazePermissionUtils.CallStatic("requestPushPermissionPrompt", BrazeUnityActivity);
+  }
 
   /// <summary>
   /// No-op on Android.

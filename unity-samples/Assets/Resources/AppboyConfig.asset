@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e53a81bfc8b41c48967f2a15ad4eac, type: 3}
+  m_Name: AppboyConfig
+  m_EditorClassIdentifier: 
+  iOSAutomatesIntegration: 1
+  androidAutomatesIntegration: 1
+  ApiKey: ba91dbc3-3fc7-4b5c-afb3-c709f663bb53
+  iOSEndpoint: sondheim.appboy.com
+  iOSSdkAuthenticationEnabled: 1
+  iOSSdkAuthenticationFailedGameObjectName: BrazeCallback
+  iOSSdkAuthenticationFailedCallbackMethodName: SdkAuthenticationFailureCallback
+  iOSLogLevel: 0
+  androidApiKey: 5a29c2d7-10af-4aa1-8f92-d0cff2e13d61
+  androidEndpoint: sondheim.appboy.com
+  androidSdkAuthenticationEnabled: 1
+  androidSdkAuthenticationFailedGameObjectName: BrazeCallback
+  androidSdkAuthenticationFailedCallbackMethodName: SdkAuthenticationFailureCallback
+  androidLogLevel: 0
+  androidDeviceObjectWhitelist: RESOLUTION MODEL
+  androidDeviceObjectWhitelistEnabled: 0
+  androidSessionTimeoutSeconds: 2
+  iOSIntegratesPush: 1
+  iOSDisableAutomaticPushRegistration: 0
+  iOSDisableProvisionalAuth: 0
+  iOSDisableAutomaticPushCapability: 0
+  iOSPushIsBackgroundEnabled: 1
+  iOSPushReceivedGameObjectName: BrazeCallback
+  iOSPushReceivedCallbackMethodName: PushNotificationReceivedCallbackForiOS
+  iOSPushOpenedGameObjectName: BrazeCallback
+  iOSPushOpenedCallbackMethodName: PushNotificationOpenedCallbackForiOS
+  androidFirebaseCloudMessagingRegistrationEnabled: 1
+  androidFirebaseCloudMessagingSenderId: 901477453852
+  androidHandlePushDeepLinksAutomatically: 1
+  androidAdmRegistrationEnabled: 1
+  androidPushReceivedGameObjectName: BrazeCallback
+  androidPushReceivedCallbackMethodName: PushNotificationReceivedCallback
+  androidPushOpenedGameObjectName: BrazeCallback
+  androidPushOpenedCallbackMethodName: PushNotificationOpenedCallback
+  androidPushDeletedGameObjectName: BrazeCallback
+  androidPushDeletedCallbackMethodName: PushNotificationDeletedCallback
+  androidPushNotificationHtmlRenderingEnabled: 1
+  androidPushDefaultNotificationAccentColor: 0xFF001122
+  androidPushDefaultNotificationChannelName: 
+  androidPushDefaultNotificationChannelDescription: 
+  androidPushSmallNotificationIcon: 
+  androidPushLargeNotificationIcon: 
+  androidDelaySendingPushIntents: 1
+  iOSInAppMessageGameObjectName: 
+  iOSInAppMessageCallbackMethodName: 
+  iOSDisplayInAppMessages: 0
+  androidInAppMessageListenerGameObjectName: AndroidInAppMessageListenerGameObjectName
+  androidInAppMessageListenerCallbackMethodName: AndroidInAppMessageListenerCallbackMethodName
+  androidTriggerActionMinimumTimeSeconds: 
+  androidDisplayInAppMessagesAutomatically: 1
+  iOSFeedGameObjectName: 
+  iOSFeedCallbackMethodName: 
+  iOSContentCardsGameObjectName: 
+  iOSContentCardsCallbackMethodName: 
+  androidContentCardsUpdatedListenerGameObjectName: AndroidContentCardsUpdatedListenerGameObjectName
+  androidContentCardsUpdatedListenerCallbackMethodName: AndroidContentCardsUpdatedListenerCallbackMethodName
+  androidContentCardsUnreadVisualIndicatorEnabled: 1
+  androidLocationCollectionEnabled: 1
+  androidGeofencesEnabled: 0
+  androidAutomaticGeofenceRequestsEnabled: 0
