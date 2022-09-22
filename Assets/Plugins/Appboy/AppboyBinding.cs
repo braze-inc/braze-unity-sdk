@@ -525,12 +525,6 @@ namespace Appboy {
       #endif 
     }
 
-    public static void LogContentCardsDisplayed() {
-      #if HAS_BRAZE_SDK
-        mBinding.LogContentCardsDisplayed();
-      #endif 
-    }
-
     public static void LogContentCardClicked(string contentCardString) {
       #if HAS_BRAZE_SDK
         mBinding.LogContentCardClicked(contentCardString);

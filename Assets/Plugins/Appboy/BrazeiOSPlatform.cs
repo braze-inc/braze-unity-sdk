@@ -144,9 +144,6 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _displayContentCards();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logContentCardsDisplayed();
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _displayNextInAppMessage();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -408,10 +405,6 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void DisplayContentCards() {
     _displayContentCards();
-  }
-
-  public void LogContentCardsDisplayed() {
-    _logContentCardsDisplayed();
   }
 
   public void WipeData() {

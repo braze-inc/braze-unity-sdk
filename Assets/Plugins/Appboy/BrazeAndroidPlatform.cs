@@ -442,10 +442,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
     contentCard.Call("setIsDismissed", true);
   }
 
-  public void LogContentCardsDisplayed() {
-    Braze.Call("logContentCardsDisplayed");
-  }
-
   public void RequestContentCardsRefresh() {
     Braze.Call("requestContentCardsRefresh", false);
   }

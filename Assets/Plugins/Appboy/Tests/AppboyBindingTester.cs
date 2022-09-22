@@ -65,7 +65,6 @@ namespace Appboy {
 
     void ContentCardsReceivedCallback(string message) {
       Debug.Log("ContentCardsReceivedCallback message: " + message);
-      AppboyBinding.LogContentCardsDisplayed();
       try {
         JSONClass json = (JSONClass)JSON.Parse(message);
         if (json["mContentCards"] != null) {

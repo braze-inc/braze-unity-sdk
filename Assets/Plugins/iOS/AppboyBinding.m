@@ -292,10 +292,6 @@ void _displayContentCards() {
   [[AppboyUnityManager sharedInstance] displayContentCards];
 }
 
-void _logContentCardsDisplayed() {
-  [[Appboy sharedInstance] logContentCardsDisplayed];
-}
-
 # pragma mark - Content Card refresh
 
 void _requestContentCardsRefresh() {

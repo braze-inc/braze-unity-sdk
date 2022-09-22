@@ -107,7 +107,6 @@ public interface BrazePlatform {
   #endif
   void RequestContentCardsRefresh();
   void RequestContentCardsRefreshFromCache();
-  void LogContentCardsDisplayed();
   void LogContentCardClicked(string contentCardString);
   void LogContentCardImpression(string contentCardString);
   void LogContentCardDismissed(string contentCardString);

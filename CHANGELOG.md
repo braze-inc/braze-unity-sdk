@@ -1,3 +1,8 @@
+## 3.10.0
+
+##### Fixed
+- Removed `AppboyBinding.LogContentCardsDisplayed()`.
+
 ## 3.9.0
 
 ##### Breaking
