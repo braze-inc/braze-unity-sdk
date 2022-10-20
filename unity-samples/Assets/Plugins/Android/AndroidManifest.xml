@@ -30,14 +30,6 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-
-    <receiver android:name="com.appboy.unity.AppboyUnityPushBroadcastReceiver" android:exported="false" >
-      <intent-filter>
-        <action android:name="com.braze.push.intent.NOTIFICATION_RECEIVED" />
-        <action android:name="com.braze.push.intent.NOTIFICATION_OPENED" />
-        <action android:name="com.braze.push.intent.NOTIFICATION_DELETED" />
-      </intent-filter>
-    </receiver>
     <service android:name="com.google.firebase.messaging.MessageForwardingService"
           android:permission="android.permission.BIND_JOB_SERVICE"
           android:exported="false" >

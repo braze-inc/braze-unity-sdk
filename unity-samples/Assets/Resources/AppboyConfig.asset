@@ -62,6 +62,8 @@ MonoBehaviour:
   androidInAppMessageListenerCallbackMethodName: AndroidInAppMessageListenerCallbackMethodName
   androidTriggerActionMinimumTimeSeconds: 
   androidDisplayInAppMessagesAutomatically: 1
+  androidSetInAppMessageManagerListenerAutomatically: 1
+  androidInitialInAppMessageOperation: 0
   iOSFeedGameObjectName: 
   iOSFeedCallbackMethodName: 
   iOSContentCardsGameObjectName: 

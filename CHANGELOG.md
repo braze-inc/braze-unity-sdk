@@ -1,3 +1,11 @@
+## 3.11.0
+
+##### Breaking
+- Updated the Android plugin to use Braze Android SDK 23.3.0.
+- Streamlined the integration required for handling push notifications on Android.
+  - References to `AppboyUnityPushBroadcastReceiver` must be removed from your `AndroidManifest.xml` file.
+  - Removed `binding.FlushAndroidPendingPushIntents()`.
+
 ## 3.10.0
 
 ##### Fixed

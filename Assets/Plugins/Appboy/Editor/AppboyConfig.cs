@@ -130,6 +130,10 @@ namespace Appboy.Editor {
     private string androidTriggerActionMinimumTimeSeconds = string.Empty;
     [SerializeField]
     private bool androidDisplayInAppMessagesAutomatically = true;
+    [SerializeField]
+    private bool androidSetInAppMessageManagerListenerAutomatically = true;
+    [SerializeField]
+    private int androidInitialInAppMessageOperation = 0;
 
     // News Feed
     [SerializeField]
@@ -433,6 +437,16 @@ namespace Appboy.Editor {
     public static bool AndroidDisplayInAppMessagesAutomatically {
       get { return Instance.androidDisplayInAppMessagesAutomatically; }
       set { SetProperty(ref Instance.androidDisplayInAppMessagesAutomatically, value); }
+    }
+ 
+    public static bool AndroidSetInAppMessageManagerListenerAutomatically {
+      get { return Instance.androidSetInAppMessageManagerListenerAutomatically; }
+      set { SetProperty(ref Instance.androidSetInAppMessageManagerListenerAutomatically, value); }
+    }
+
+    public static int AndroidInitialInAppMessageOperation {
+      get { return Instance.androidInitialInAppMessageOperation; }
+      set { SetProperty(ref Instance.androidInitialInAppMessageOperation, value); }
     }
 
     // Content Cards

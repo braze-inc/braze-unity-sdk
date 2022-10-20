@@ -8,13 +8,6 @@ using System.Text;
 
 public class MainMenu : MonoBehaviour {
 
-  void Start() {
-    #if UNITY_ANDROID
-      BrazeAndroidPlatform binding = (BrazeAndroidPlatform) Appboy.AppboyBinding.mBinding;
-      binding.FlushAndroidPendingPushIntents();
-    #endif
-  }
-
   public void OnChangeUserButtonClick() {
     SceneManager.LoadScene(Constants.ChangeUserScene);
   }
@@ -72,9 +65,12 @@ public class MainMenu : MonoBehaviour {
 #endif
   }
 
-  public void OnNullSocialDataTest() {
-    Appboy.AppboyBinding.setUserFacebookData(null, null, null, null, null, null, null, null, null);
-    Appboy.AppboyBinding.setUserTwitterData(null, null, null, null, null, null, null, null);
+  public void OnPromptUserForPushPermissions() {
+    Appboy.AppboyBinding.PromptUserForPushPermissions(false);
+  }
+
+  public void OnDisplayNextInAppMessage() {
+    Appboy.AppboyBinding.DisplayNextInAppMessage();
   }
 
   public void OnPresetUserDataClick() {
@@ -143,15 +139,15 @@ public class MainMenu : MonoBehaviour {
   }
 
   void PushNotificationReceivedRuntimeCallback(string message) {
-    Debug.Log("Runtime push received callback called " + message);   
+    Debug.Log("Runtime push received callback called " + message);
 
 #if UNITY_ANDROID
     Debug.Log("PushNotificationOpenedCallback message: " + message);
     PushNotification pushNotification = new PushNotification(message);
-    Debug.Log("Push Notification opened: " + pushNotification);  
+    Debug.Log("Push Notification received: " + pushNotification);  
 #elif UNITY_IOS
     ApplePushNotification pushNotification = new ApplePushNotification(message);
-    Debug.Log("Push opened Notification event: " + pushNotification);   
+    Debug.Log("Push received Notification event: " + pushNotification);   
 #endif  
   }
 }

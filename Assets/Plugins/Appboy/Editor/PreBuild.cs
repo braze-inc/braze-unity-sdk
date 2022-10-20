@@ -30,7 +30,7 @@ namespace Appboy.Editor {
       }
     }
 
-    // Generates the `appboy.xml` file contents
+    // Generates the `braze.xml` file contents
     private static string GenerateConfigFile() {
       string cfg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>";
 
@@ -67,6 +67,22 @@ namespace Appboy.Editor {
       cfg = AddStringKey(cfg, "com_braze_inapp_listener_callback_method_name", AppboyConfig.AndroidInAppMessageListenerCallbackMethodName);
       cfg = AddIntegerKey(cfg, "com_braze_trigger_action_minimum_time_interval_seconds", AppboyConfig.AndroidTriggerActionMinimumTimeSeconds);
       cfg = AddBooleanKey(cfg, "com_braze_inapp_show_inapp_messages_automatically", AppboyConfig.AndroidDisplayInAppMessagesAutomatically);
+      cfg = AddBooleanKey(cfg, "com_braze_inapp_auto_set_manager_listener_key", AppboyConfig.AndroidSetInAppMessageManagerListenerAutomatically);
+
+      string displayOperation = "DISPLAY_NOW";
+      // Corresponds to `ANDROID_IAM_OPERATIONS` in the config editor.
+      switch (AppboyConfig.AndroidInitialInAppMessageOperation) {
+        case 0:
+          displayOperation = "DISPLAY_NOW";
+          break;
+        case 1:
+          displayOperation = "DISPLAY_LATER";
+          break;
+        case 2:
+          displayOperation = "DISCARD";
+          break;
+      }
+      cfg = AddStringKey(cfg, "com_braze_inapp_initial_display_operation_key", displayOperation);
 
       // Content Cards
       cfg = AddStringKey(cfg, "com_braze_content_cards_updated_listener_game_object_name", AppboyConfig.AndroidContentCardsUpdatedListenerGameObjectName);

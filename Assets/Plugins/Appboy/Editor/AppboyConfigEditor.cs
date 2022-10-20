@@ -7,8 +7,11 @@ namespace Appboy.Editor {
     private AppboyConfig instance;
     private Vector2 scrollPosition;
     private GUILayoutOption[] buttonGuiStyle = new GUILayoutOption[] { GUILayout.ExpandWidth(true) };
+    // https://appboy.github.io/appboy-android-sdk/kdoc/braze-android-sdk/com.braze.ui.inappmessage/-in-app-message-operation/index.html
+    private string[] ANDROID_IAM_OPERATIONS = new string[] {"Display Now", "Display Later", "Discard"};
 
     // iOS fields
+    private bool iosShowAllSettings = true;
     private bool showPushOpenedListener = true;
     private bool showPushReceivedListener = true;
     private bool showInAppMessageListener = true;
@@ -16,6 +19,7 @@ namespace Appboy.Editor {
     private bool showContentCardsListener = true;
 
     // Android fields
+    private bool androidShowAllSettings = true;
     private bool androidShowDeviceObjectWhitelistSettings = false;
     private bool androidShowFirebasePushSettings = true;
     private bool androidShowADMPushSettings = false;
@@ -36,9 +40,15 @@ namespace Appboy.Editor {
       EditorGUIUtility.labelWidth = 400;
       scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
       EditorGUIUtility.fieldWidth = 800;
-      IOSBuildGUI();
+      iosShowAllSettings = EditorGUILayout.Foldout(iosShowAllSettings, "Show Braze iOS Settings");
+      if (iosShowAllSettings) {
+        IOSBuildGUI();
+      }
       EditorGUILayout.Separator();
-      AndroidBuildGUI();
+      androidShowAllSettings = EditorGUILayout.Foldout(androidShowAllSettings, "Show Braze Android Settings");
+      if (androidShowAllSettings) {
+        AndroidBuildGUI();
+      }
       EditorGUILayout.Separator();
       EditorGUILayout.EndScrollView();
     }
@@ -283,11 +293,12 @@ namespace Appboy.Editor {
       }
 
       AppboyConfig.AndroidContentCardsUnreadVisualIndicatorEnabled = EditorGUILayout.ToggleLeft("Unread Visual Indicator Enabled", AppboyConfig.AndroidContentCardsUnreadVisualIndicatorEnabled);
-      EditorGUILayout.LabelField(" Used with the default AppboyContentCardsFragment only.", EditorStyles.wordWrappedMiniLabel);
+      EditorGUILayout.LabelField(" Used with the default ContentCardsFragment only.", EditorStyles.wordWrappedMiniLabel);
     }
 
     private void AndroidBuildGUIInAppMessages() {
       AppboyConfig.AndroidDisplayInAppMessagesAutomatically = EditorGUILayout.ToggleLeft(" Automatically Display In-App Messages", AppboyConfig.AndroidDisplayInAppMessagesAutomatically);
+      AppboyConfig.AndroidSetInAppMessageManagerListenerAutomatically = EditorGUILayout.ToggleLeft(" Automatically Set In-App Message Manager Listener", AppboyConfig.AndroidSetInAppMessageManagerListenerAutomatically);
       androidShowInAppMessageListener = EditorGUILayout.Foldout(androidShowInAppMessageListener, "Set In App Message Listener");
       if (androidShowInAppMessageListener) {
         EditorGUI.indentLevel++;
@@ -295,7 +306,8 @@ namespace Appboy.Editor {
         AppboyConfig.AndroidInAppMessageListenerCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.AndroidInAppMessageListenerCallbackMethodName);
         EditorGUI.indentLevel--;
       }
-
+      
+      AppboyConfig.AndroidInitialInAppMessageOperation = EditorGUILayout.Popup("In App Message Manager Initial Display Operation", AppboyConfig.AndroidInitialInAppMessageOperation, ANDROID_IAM_OPERATIONS);
       AppboyConfig.AndroidTriggerActionMinimumTimeSeconds = EditorGUILayout.TextField("Trigger Action Minimum Time (seconds)", AppboyConfig.AndroidTriggerActionMinimumTimeSeconds);
     }
 

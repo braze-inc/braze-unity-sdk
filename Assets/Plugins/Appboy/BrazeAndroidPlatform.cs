@@ -17,7 +17,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public AndroidJavaObject BrazeUnityActivity {
     get {
-      FlushAndroidPendingPushIntents();
       if (brazeUnityActivity == null) {
         using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer")) {
           brazeUnityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
@@ -29,7 +28,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public AndroidJavaObject Braze {
     get {
-      FlushAndroidPendingPushIntents();
       using (var brazeClass = new AndroidJavaClass("com.braze.Braze")) {
         return brazeClass.CallStatic<AndroidJavaObject>("getInstance", BrazeUnityActivity);
       }
@@ -38,7 +36,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public AndroidJavaObject BrazeInAppMessageManager {
     get {
-      FlushAndroidPendingPushIntents();
       using (var managerClass = new AndroidJavaClass("com.braze.ui.inappmessage.BrazeInAppMessageManager")) {
         return managerClass.CallStatic<AndroidJavaObject>("getInstance");
       }
@@ -47,7 +44,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public AndroidJavaObject InAppMessageUtils {
     get {
-      FlushAndroidPendingPushIntents();
       if (inAppMessageUtils == null) {
         inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");
       }
@@ -57,7 +53,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public AndroidJavaObject UnityConfigurationProvider {
     get {
-      FlushAndroidPendingPushIntents();
       if (unityConfigurationProvider == null) {
         unityConfigurationProvider = new AndroidJavaObject("com.appboy.unity.configuration.UnityConfigurationProvider", BrazeUnityActivity);
       }
@@ -66,17 +61,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   private AndroidJavaObject GetCurrentUser() {
-    FlushAndroidPendingPushIntents();
     return Braze.Call<AndroidJavaObject>("getCurrentUser");
-  }
-
-  /// <summary>
-  /// Informs the push broadcast receiver to flush any pending push intents
-  /// </summary>
-  public void FlushAndroidPendingPushIntents() {
-    using (var receiverClass = new AndroidJavaClass("com.appboy.unity.AppboyUnityPushBroadcastReceiver")) {
-      receiverClass.CallStatic("onBindingInitialized");
-    }
   }
 
   public void LogCustomEvent(string eventName) {
@@ -496,7 +481,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void DisplayNextInAppMessage() {
-    BrazeInAppMessageManager.Call<bool>("requestDisplayInAppMessage");
+    BrazeUnityActivity.Call("requestDisplayInAppMessage");
   }
 
   public void DisplayContentCards() {
