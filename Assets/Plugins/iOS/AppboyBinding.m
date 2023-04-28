@@ -1,6 +1,6 @@
 #import "AppboyUnityManager.h"
 
-// Converts C style string to NSString
+/// Converts C style string to NSString
 #define GetStringParam( _x_ ) ( _x_ != NULL ) ? [NSString stringWithUTF8String:_x_] : [NSString stringWithUTF8String:""]
 
 char* convertNSStringToCString(const NSString* nsString);
@@ -9,12 +9,12 @@ char* convertNSStringToCString(const NSString* nsString);
 
 void _changeUser(const char* userId, const char* sdkAuthSignature) {
   NSString *signature = sdkAuthSignature != NULL ? GetStringParam(sdkAuthSignature) : nil;
-  [[Appboy sharedInstance] changeUser:GetStringParam(userId)
-                     sdkAuthSignature:signature];
+  [[AppboyUnityManager sharedInstance].braze changeUser:GetStringParam(userId)
+                                       sdkAuthSignature:signature];
 }
 
 void _setSdkAuthenticationSignature(const char* sdkAuthSignature) {
-  [[Appboy sharedInstance] setSdkAuthenticationSignature:GetStringParam(sdkAuthSignature)];
+  [[AppboyUnityManager sharedInstance].braze setSDKAuthenticationSignature:GetStringParam(sdkAuthSignature)];
 }
 
 void _logCustomEvent(const char* eventName, const char* properties) {
@@ -26,7 +26,8 @@ void _logCustomEvent(const char* eventName, const char* properties) {
                                                       options:NSJSONReadingMutableContainers
                                                         error:&jsonError];
   }
-  [[Appboy sharedInstance] logCustomEvent:GetStringParam(eventName) withProperties:eventProperties];
+  [[AppboyUnityManager sharedInstance].braze logCustomEvent:GetStringParam(eventName)
+                                                 properties:eventProperties];
 }
 
 void _logPurchase(const char* productId, const char* currencyCode, const char* price, int quantity, const char* properties) {
@@ -38,47 +39,69 @@ void _logPurchase(const char* productId, const char* currencyCode, const char* p
                                                          options:NSJSONReadingMutableContainers
                                                            error:&jsonError];
   }
-  [[Appboy sharedInstance] logPurchase:GetStringParam(productId)
-                            inCurrency:GetStringParam(currencyCode)
-                               atPrice:[NSDecimalNumber decimalNumberWithString:GetStringParam(price)]
-                          withQuantity:quantity
-                         andProperties:(NSDictionary *)purchaseProperties];
+  [[AppboyUnityManager sharedInstance].braze logPurchase:GetStringParam(productId)
+                                                currency:GetStringParam(currencyCode)
+                                                   price:[GetStringParam(price) doubleValue]
+                                                quantity:quantity
+                                              properties:(NSDictionary *)purchaseProperties];
 
 }
 
 void _requestGeofences(int latitude, int longitude) {
-  [[Appboy sharedInstance] requestGeofencesWithLongitude:longitude
-                                                latitude:latitude];
+  [[AppboyUnityManager sharedInstance].braze requestGeofencesWithLatitude:longitude
+                                                                longitude:latitude];
 }
 
 void _requestImmediateDataFlush() {
-  [[Appboy sharedInstance] requestImmediateDataFlush];
+  [[AppboyUnityManager sharedInstance].braze requestImmediateDataFlush];
 }
 
 void _addAlias(const char* alias, const char* label) {
-  [[Appboy sharedInstance].user addAlias:GetStringParam(alias) withLabel:GetStringParam(label)];
+  [[AppboyUnityManager sharedInstance].braze.user addAlias:GetStringParam(alias)
+                                                     label:GetStringParam(label)];
 }
 
-# pragma mark - ABKUser
+# pragma mark - Braze.User
 
 void _setUserFirstName(const char* firstName) {
-  [Appboy sharedInstance].user.firstName = GetStringParam(firstName);
+  [[AppboyUnityManager sharedInstance].braze.user setFirstName:GetStringParam(firstName)];
 }
 
 void _setUserLastName(const char* lastName) {
-  [Appboy sharedInstance].user.lastName = GetStringParam(lastName);
+  [[AppboyUnityManager sharedInstance].braze.user setLastName:GetStringParam(lastName)];
 }
 
 void _setUserPhoneNumber(const char* phoneNumber) {
-  [Appboy sharedInstance].user.phone = GetStringParam(phoneNumber);
+  [[AppboyUnityManager sharedInstance].braze.user setPhoneNumber:GetStringParam(phoneNumber)];
 }
 
 void _setUserEmail(const char* email) {
-  [Appboy sharedInstance].user.email = GetStringParam(email);
+  [[AppboyUnityManager sharedInstance].braze.user setEmail:GetStringParam(email)];
 }
 
 void _setUserGender(int gender) {
-  [[Appboy sharedInstance].user setGender:(ABKUserGenderType)gender];
+  BRZUserGender *userGender;
+  switch (gender) {
+    case 0:
+      userGender = BRZUserGender.male;
+      break;
+    case 1:
+      userGender = BRZUserGender.female;
+      break;
+    case 2:
+      userGender = BRZUserGender.other;
+      break;
+    case 3:
+      userGender = BRZUserGender.unknown;
+      break;
+    case 4:
+      userGender = BRZUserGender.notApplicable;
+      break;
+    case 5:
+      userGender = BRZUserGender.preferNotToSay;
+      break;
+  }
+  [[AppboyUnityManager sharedInstance].braze.user setGender:userGender];
 }
 
 void _setUserDateOfBirth(int year, int month, int day) {
@@ -89,137 +112,121 @@ void _setUserDateOfBirth(int year, int month, int day) {
   NSCalendar *gregorian = [[NSCalendar alloc]
                            initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
   NSDate *date = [gregorian dateFromComponents:comps];
-  [Appboy sharedInstance].user.dateOfBirth = date;
+  [[AppboyUnityManager sharedInstance].braze.user setDateOfBirth:date];
 }
 
 void _setUserCountry(const char* country) {
-  [Appboy sharedInstance].user.country = GetStringParam(country);
+  [[AppboyUnityManager sharedInstance].braze.user setCountry:GetStringParam(country)];
 }
 
 void _setUserHomeCity(const char* city) {
-  [Appboy sharedInstance].user.homeCity = GetStringParam(city);
+  [[AppboyUnityManager sharedInstance].braze.user setHomeCity:GetStringParam(city)];
 }
 
 void _setUserEmailNotificationSubscriptionType(int emailNotificationSubscriptionType) {
-  [[Appboy sharedInstance].user setEmailNotificationSubscriptionType:(ABKNotificationSubscriptionType)emailNotificationSubscriptionType];
+  [[AppboyUnityManager sharedInstance].braze.user setEmailSubscriptionState:(BRZUserSubscriptionState)emailNotificationSubscriptionType];
 }
 
 void _setUserPushNotificationSubscriptionType(int pushNotificationSubscriptionType) {
-  [[Appboy sharedInstance].user setPushNotificationSubscriptionType:(ABKNotificationSubscriptionType)pushNotificationSubscriptionType];
+  [[AppboyUnityManager sharedInstance].braze.user setPushNotificationSubscriptionState:(BRZUserSubscriptionState)pushNotificationSubscriptionType];
 }
 
 void _setCustomUserAttributeBool(const char* key, bool value) {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:GetStringParam(key) andBOOLValue:value];
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                  boolValue:value];
 }
 
 void _setCustomUserAttributeInt(const char* key, int value) {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:GetStringParam(key) andIntegerValue:value];
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                   intValue:value];
 }
 
 void _setCustomUserAttributeFloat(const char* key, float value) {
-  NSString *floatString = [NSString stringWithFormat:@"%f", value];
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:GetStringParam(key) andDoubleValue:[floatString doubleValue]];
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                doubleValue:(double)value];
 }
 
 void _setCustomUserAttributeString(const char* key, const char* value) {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:GetStringParam(key) andStringValue:GetStringParam(value)];
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                stringValue:GetStringParam(value)];
 }
 
 void _setCustomUserAttributeToNow(const char* key) {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:GetStringParam(key) andDateValue:[NSDate date]];
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                  dateValue:[NSDate date]];
 }
 
 void _setCustomUserAttributeToSecondsFromEpoch(const char* key, long seconds) {
-  [[Appboy sharedInstance].user setCustomAttributeWithKey:GetStringParam(key) andDateValue:[NSDate dateWithTimeIntervalSince1970:(NSTimeInterval)seconds]];
+  NSDate *date = [NSDate dateWithTimeIntervalSince1970:(NSTimeInterval)seconds];
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                  dateValue:date];
 }
 
 void _unsetCustomUserAttribute(const char* key) {
-  [[Appboy sharedInstance].user unsetCustomAttributeWithKey:GetStringParam(key)];
+  [[AppboyUnityManager sharedInstance].braze.user unsetCustomAttributeWithKey:GetStringParam(key)];
 }
 
 void _incrementCustomUserAttribute(const char* key, int incrementValue) {
-  [[Appboy sharedInstance].user incrementCustomUserAttribute:GetStringParam(key) by:incrementValue];
+  [[AppboyUnityManager sharedInstance].braze.user incrementCustomUserAttribute:GetStringParam(key)
+                                                                            by:incrementValue];
 }
 
 void _setCustomUserAttributeArray(const char* key, const char* array[], int size) {
   if (array == NULL || array == nil) {
-    [[Appboy sharedInstance].user setCustomAttributeArrayWithKey:GetStringParam(key) array:nil];
+    [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                             array:nil];
   } else if (size == 0) {
-    [[Appboy sharedInstance].user setCustomAttributeArrayWithKey:GetStringParam(key) array:[NSMutableArray arrayWithCapacity:1]];
+    [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                             array:[NSMutableArray arrayWithCapacity:1]];
   } else {
     NSMutableArray *customAttributeArray = [NSMutableArray arrayWithCapacity:size];
-    for (int i = 0; i < size; i ++) {
-      NSString *value = GetStringParam(array[i]);
-      [customAttributeArray addObject:value];
+    for (int i = 0; i < size; i++) {
+      [customAttributeArray addObject:GetStringParam(array[i])];
     }
-    [[Appboy sharedInstance].user setCustomAttributeArrayWithKey:GetStringParam(key) array:customAttributeArray];
+    [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                             array:customAttributeArray];
   }
 }
 
 void _addToCustomUserAttributeArray(const char* key, const char* value) {
-  [[Appboy sharedInstance].user addToCustomAttributeArrayWithKey:GetStringParam(key) value:GetStringParam(value)];
+  [[AppboyUnityManager sharedInstance].braze.user addToCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                             value:GetStringParam(value)];
 }
 
 void _removeFromCustomUserAttributeArray(const char* key, const char* value) {
-  [[Appboy sharedInstance].user removeFromCustomAttributeArrayWithKey:GetStringParam(key) value:GetStringParam(value)];
+  [[AppboyUnityManager sharedInstance].braze.user removeFromCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                                  value:GetStringParam(value)];
 }
 
 void _setAttributionData(const char* network, const char* campaign,const char* adgroup, const char* creative) {
-  ABKAttributionData *attributionData = [[ABKAttributionData alloc]
-                                         initWithNetwork:GetStringParam(network)
-                                         campaign:GetStringParam(campaign)
-                                         adGroup:GetStringParam(adgroup)
-                                         creative:GetStringParam(creative)];
-  [[Appboy sharedInstance].user setAttributionData:attributionData];
+  BRZUserAttributionData *attributionData =
+      [[BRZUserAttributionData alloc] initWithNetwork:GetStringParam(network)
+                                             campaign:GetStringParam(campaign)
+                                              adGroup:GetStringParam(adgroup)
+                                             creative:GetStringParam(creative)];
+  [[AppboyUnityManager sharedInstance].braze.user setAttributionData:attributionData];
 }
 
 void _addToSubscriptionGroup(const char* groupId) {
-  [[Appboy sharedInstance].user addToSubscriptionGroupWithGroupId:GetStringParam(groupId)];
+  [[AppboyUnityManager sharedInstance].braze.user addToSubscriptionGroupWithGroupId:GetStringParam(groupId)];
 }
 
 void _removeFromSubscriptionGroup(const char* groupId) {
-  [[Appboy sharedInstance].user removeFromSubscriptionGroupWithGroupId:GetStringParam(groupId)];
+  [[AppboyUnityManager sharedInstance].braze.user removeFromSubscriptionGroupWithGroupId:GetStringParam(groupId)];
 }
 
 void _setUserLastKnownLocation(double latitude, double longitude, double altitude, double accuracy, double verticalAccuracy) {
-  [[Appboy sharedInstance].user setLastKnownLocationWithLatitude:latitude
-                                                       longitude:longitude
-                                              horizontalAccuracy:accuracy
-                                                        altitude:altitude
-                                                verticalAccuracy:verticalAccuracy];
+  [[AppboyUnityManager sharedInstance].braze.user setLastKnownLocationWithLatitude:latitude
+                                                                         longitude:longitude
+                                                                          altitude:altitude
+                                                                horizontalAccuracy:accuracy
+                                                                  verticalAccuracy:verticalAccuracy];
 }
 
 void _setUserLastKnownLocationSimple(double latitude, double longitude, double accuracy) {
-    [[Appboy sharedInstance].user setLastKnownLocationWithLatitude:latitude
-                                                         longitude:longitude
-                                                horizontalAccuracy:accuracy];
-}
-
-# pragma mark - Social Media
-
-void _setUserFacebookData(const char*  facebookId, const char*  firstName, const char*  lastName, const char*  email,
-                          const char*  bio, const char*  cityName, int gender, int numberOfFriends, const char* birthday) {
-  [[AppboyUnityManager sharedInstance] setUserFacebookData:GetStringParam(facebookId)
-                                                 firstName:GetStringParam(firstName)
-                                                  lastName:GetStringParam(lastName)
-                                                     email:GetStringParam(email)
-                                                       bio:GetStringParam(bio)
-                                                  cityName:GetStringParam(cityName)
-                                                    gender:gender
-                                           numberOfFriends:numberOfFriends
-                                                  birthday:GetStringParam(birthday)];
-}
-
-void _setUserTwitterData(int twitterUserId, const char* twitterHandle, const char* name, const char* description, int followerCount,
-                         int followingCount, int tweetCount, const char* profileImageUrl) {
-  [[AppboyUnityManager sharedInstance] setUserTwitterData:twitterUserId
-                                            twitterHandle:GetStringParam(twitterHandle)
-                                                     name:GetStringParam(name)
-                                              description:GetStringParam(description)
-                                            followerCount:followerCount
-                                           followingCount:followingCount
-                                               tweetCount:tweetCount
-                                          profileImageUrl:GetStringParam(profileImageUrl)];
+  [[AppboyUnityManager sharedInstance].braze.user setLastKnownLocationWithLatitude:latitude
+                                                                         longitude:longitude
+                                                                horizontalAccuracy:accuracy];
 }
 
 # pragma mark - In-app message analytics
@@ -246,10 +253,6 @@ void _setInAppMessageDisplayAction(int actionType) {
   [[AppboyUnityManager sharedInstance] setInAppMessageDisplayAction:actionType];
 }
 
-void _setInAppMessageDelegatesEnabled(bool enabled) {
-  [[AppboyUnityManager sharedInstance] setInAppMessageDelegatesEnabled:enabled];
-}
-
 # pragma mark - News Feed analytics
 
 void _logCardImpression(const char* cardJSONString) {
@@ -261,7 +264,7 @@ void _logCardClicked(const char* cardJSONString) {
 }
 
 void _logFeedDisplayed() {
-  [[Appboy sharedInstance] logFeedDisplayed];
+  NSLog(@"Logging the News Feed displayed event is not needed on iOS.");
 }
 
 # pragma mark - News Feed refresh
@@ -305,15 +308,15 @@ void _requestContentCardsRefreshFromCache() {
 # pragma mark - Data management
 
 void _wipeData() {
-  [Appboy wipeDataAndDisableForAppRun];
+  [[AppboyUnityManager sharedInstance].braze wipeData];
 }
 
 void _enableSDK() {
-  [Appboy requestEnableSDKOnNextAppRun];
+  [AppboyUnityManager sharedInstance].braze.enabled = YES;
 }
 
 void _disableSDK() {
-  [Appboy disableSDK];
+  [AppboyUnityManager sharedInstance].braze.enabled = NO;
 }
 
 # pragma mark - Push
@@ -329,7 +332,7 @@ void _promptUserForPushPermissions(bool provisional) {
 # pragma mark - Device Id
 
 char* _getInstallTrackingId() {
-  NSString* deviceId = [[Appboy sharedInstance] getDeviceId];
+  NSString* deviceId = [AppboyUnityManager sharedInstance].braze.deviceId;
   return convertNSStringToCString(deviceId);
 }
 

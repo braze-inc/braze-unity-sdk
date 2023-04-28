@@ -14,7 +14,7 @@ namespace Appboy.Models {
 
     public string LaunchImage { get; set; }
 
-    public ApplePushNotificationAlert(JSONClass json) {
+    public ApplePushNotificationAlert(JSONObject json) {
       LocationArguments = new List<string>();
       foreach (var jsonNode in json["loc-args"].AsArray) {
         LocationArguments.Add(jsonNode.ToString());

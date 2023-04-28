@@ -9,7 +9,7 @@ namespace Appboy.Models.Cards {
 
     public string Domain { get; private set; }
 
-    public BannerCard(JSONClass json) : base(json) {
+    public BannerCard(JSONObject json) : base(json) {
       if (json["image"] == null) {
         throw new ArgumentException("Missing required field(s).");
       }

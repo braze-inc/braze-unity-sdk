@@ -19,14 +19,15 @@ namespace Appboy.Models {
         throw new ArgumentException("Message cannot be null or empty.", "message");
       }
       Cards = new List<Card>();
-      JSONClass json;
+      JSONObject json;
       try {
-        json = (JSONClass)JSON.Parse(message);
+        json = (JSONObject)JSON.Parse(message);
         if (json["mFeedCards"] != null) {
           JSONArray jsonArray = (JSONArray)JSON.Parse(json["mFeedCards"].ToString());
           Debug.Log(String.Format("Parsing News Feed card array of size {0}.", jsonArray.Count));
+
           for (int i = 0; i < jsonArray.Count; i++) {
-            JSONClass cardJson = jsonArray[i].AsObject;
+            JSONObject cardJson = jsonArray[i].AsObject;
             try {
               Debug.Log(String.Format("Parsing card with json: {0}", cardJson));
               Card card = Feed.CreateCardFromJson(cardJson);
@@ -45,7 +46,7 @@ namespace Appboy.Models {
       IsFromOfflineStorage = json["mFromOfflineStorage"].AsBool;
     }
 
-    private static Card CreateCardFromJson(JSONClass json) {
+    private static Card CreateCardFromJson(JSONObject json) {
       string type = json["type"];
       switch (type) {
         case "banner_image":

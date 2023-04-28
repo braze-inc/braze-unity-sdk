@@ -10,6 +10,10 @@ using System.Collections;
 namespace Appboy {
   public class AppboyBindingTester : MonoBehaviour {
 
+    // Change to `true` to automatically log clicks, button clicks,
+    // and impressions for in-app messages, content cards, and news feed cards.
+    bool automaticallyInteract = false;
+
     void Start() {
       Debug.Log("AppboyBindingTester starting with component name: " + this.name);
     }
@@ -18,6 +22,15 @@ namespace Appboy {
       Debug.Log("InAppMessageReceivedCallback message: " + message);
       IInAppMessage inApp = InAppMessageFactory.BuildInAppMessage(message);
       Debug.Log("In-app message received: " + inApp);
+      if (automaticallyInteract) {
+        Debug.Log("Logging IAM impression and click");
+        inApp.LogImpression();
+        inApp.LogClicked();
+        if (inApp is IInAppMessageImmersive) {
+          Debug.Log("Logging button click `0`");
+          ((IInAppMessageImmersive)inApp).LogButtonClicked(0);
+        }
+      }
     }
 
     void PromptUserForPushPermissionsCallback(string message) {
@@ -42,14 +55,14 @@ namespace Appboy {
 
     void PushNotificationReceivedCallbackForiOS(string message) {
       Debug.Log("Push received callback for iOS received: " + message);
-      JSONClass pushNotificationJson = (JSONClass)JSON.Parse(message);
+      JSONObject pushNotificationJson = (JSONObject)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push received message parsed into json: " + pushNotification);
     }
 
     void PushNotificationOpenedCallbackForiOS(string message) {
       Debug.Log("Push opened callback for iOS received: " + message);
-      JSONClass pushNotificationJson = (JSONClass)JSON.Parse(message);
+      JSONObject pushNotificationJson = (JSONObject)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push opened message parsed into json: " + pushNotification);
     }
@@ -57,26 +70,35 @@ namespace Appboy {
     void FeedReceivedCallback(string message) {
       Debug.Log("FeedReceivedCallback message: " + message);
       Feed feed = new Feed(message);
-      Debug.Log("Feed received: " + feed);
+      Debug.Log("News Feed received: " + feed);
       foreach (Card card in feed.Cards) {
-        Debug.Log("Card: " + card);
+        Debug.Log("News Feed card: " + card);
+        if (automaticallyInteract) {
+          Debug.Log("Logging NF card impression and click");
+          card.LogImpression();
+          card.LogClick();
+        }
       }
     }
 
     void ContentCardsReceivedCallback(string message) {
       Debug.Log("ContentCardsReceivedCallback message: " + message);
       try {
-        JSONClass json = (JSONClass)JSON.Parse(message);
+        JSONObject json = (JSONObject)JSON.Parse(message);
         if (json["mContentCards"] != null) {
           JSONArray jsonArray = (JSONArray)JSON.Parse(json["mContentCards"].ToString());
           Debug.Log(String.Format("Parsing Content Cards array of size {0}", jsonArray.Count));
+
           for (int i = 0; i < jsonArray.Count; i++) {
-            JSONClass cardJson = jsonArray[i].AsObject;
+            JSONObject cardJson = jsonArray[i].AsObject;
             try {
               ContentCard card = new ContentCard(cardJson);
-              Debug.Log(String.Format("Created card object for card: {0}", card));
-              card.LogImpression();
-              card.LogClick();
+              if (automaticallyInteract) {
+                Debug.Log("Logging CC card impression and click");
+                card.LogImpression();
+                card.LogClick();
+                // card.LogDismissed();
+              }
             } catch {
               Debug.Log(String.Format("Unable to create and log analytics for card {0}", cardJson));
             }

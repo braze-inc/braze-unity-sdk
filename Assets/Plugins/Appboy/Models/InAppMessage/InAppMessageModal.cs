@@ -6,7 +6,7 @@ namespace Appboy.Models.InAppMessage {
     public InAppMessageModal() {
     }
     
-    public InAppMessageModal(JSONClass json) : base(json) {
+    public InAppMessageModal(JSONObject json) : base(json) {
     }
   }
 }

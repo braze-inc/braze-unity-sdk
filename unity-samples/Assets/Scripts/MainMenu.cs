@@ -28,7 +28,8 @@ public class MainMenu : MonoBehaviour {
     SceneManager.LoadScene(Constants.CustomAttributesSettingScene);
   }
   
-  public void OnRequestInAppMessageButtonClick() {
+  public void OnRequestFeedsRefresh() {
+    Debug.Log("Requesting Content Card & News Feed refreshes (not from cache).");
     Appboy.AppboyBinding.RequestFeedRefresh();
     Appboy.AppboyBinding.RequestContentCardsRefresh();
   }
@@ -96,6 +97,7 @@ public class MainMenu : MonoBehaviour {
     properties.Add("key bool", true);
     properties.Add("key float", 20.2);
     Appboy.AppboyBinding.LogCustomEvent("union of unity uniters");
+    Appboy.AppboyBinding.LogCustomEvent("DeviceID: " + Appboy.AppboyBinding.GetInstallTrackingId());
     Appboy.AppboyBinding.LogCustomEvent("custom event with properties", properties);
     Appboy.AppboyBinding.LogPurchase("dune", "USD", 1984, 1);
     Appboy.AppboyBinding.LogPurchase("purchase with properties", "USD", 20.21m, 1, properties);

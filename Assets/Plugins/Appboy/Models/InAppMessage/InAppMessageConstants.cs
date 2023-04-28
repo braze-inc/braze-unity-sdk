@@ -38,13 +38,13 @@ namespace Appboy.Models.InAppMessage {
     public const string ButtonClickActionKey = "click_action";
     
     // Safe wrapper for JSON.Parse
-    public static JSONClass JSONObjectFromString(string JSONString) {
+    public static JSONObject JSONObjectFromString(string JSONString) {
       if (String.IsNullOrEmpty(JSONString)) {
         Debug.Log("JSON string was null or empty.");
       }
-      JSONClass json = null;
+      JSONObject json = null;
       try {
-        json = (JSONClass)JSON.Parse(JSONString);
+        json = (JSONObject)JSON.Parse(JSONString);
       } catch {
         Debug.Log(String.Format("Could not parse JSON {0}.", JSONString));
       }

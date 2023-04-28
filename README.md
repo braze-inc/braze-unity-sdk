@@ -1,4 +1,4 @@
-![Braze Logo](https://github.com/Appboy/appboy-unity-sdk/blob/master/braze-logo.png)
+![Braze Logo](https://github.com/braze-inc/braze-unity-sdk/blob/master/braze-logo.png)
 
 Braze Unity SDK
 ==========
@@ -24,6 +24,6 @@ To integrate Braze into your Android Unity application, complete our [Android Un
 
 To integrate Braze into your iOS Unity application, complete our [iOS Unity integration instructions][2].
 
-[1]: https://github.com/Appboy/appboy-unity-sdk/releases
+[1]: https://github.com/braze-inc/braze-unity-sdk/releases
 [2]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/sdk_integration/ios/
 [3]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/sdk_integration/android/

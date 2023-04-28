@@ -40,7 +40,7 @@ namespace Appboy.Models.Cards {
 
     public Dictionary<string, string> Extras { get; set; }
 
-    public ContentCard(JSONClass json) {
+    public ContentCard(JSONObject json) {
       if (json == null) {
         Debug.Log("Json was null.");
         throw new ArgumentNullException("json");
@@ -63,7 +63,7 @@ namespace Appboy.Models.Cards {
       UseWebView = json["uw"].AsBool;
 
       if (json["e"] != null) {
-        Extras = JsonUtils.JSONClassToDictionary(json["e"].AsObject);
+        Extras = JsonUtils.JSONObjectToDictionary(json["e"].AsObject);
       }
     }
 
@@ -90,6 +90,15 @@ namespace Appboy.Models.Cards {
         AppboyBinding.LogContentCardClicked(JsonString);
       } else {
         Debug.Log("No ID found. Not logging Content Card click.");
+      }
+    }
+
+    public void LogDismissed() {
+      if (!string.IsNullOrEmpty(ID)) {
+        Debug.Log("Logging Content Card dismissed.");
+        AppboyBinding.LogContentCardDismissed(JsonString);
+      } else {
+        Debug.Log("No ID found. Not logging Content Card dismissed.");
       }
     }
   }

@@ -1,6 +1,0 @@
-framework module Appboy_iOS_SDK {
-  umbrella header "Appboy-iOS-SDK-umbrella.h"
-
-  export *
-  module * { export * }
-}

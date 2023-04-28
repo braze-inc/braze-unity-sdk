@@ -87,12 +87,6 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _removeFromCustomUserAttributeArray(string key, string value);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, int gender, int numberOfFriends, string birthday);
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _setUserTwitterData(int twitterUserId, string twitterHandle, string name, string description, int followerCount, int followingCount, int tweetCount, string profileImageUrl);
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserLastKnownLocation(double latitude, double longitude, double altitude, double accuracy, double verticalAccuracy);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -187,9 +181,6 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _removeFromSubscriptionGroup(string id);
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _setInAppMessageDelegatesEnabled(bool enabled);
 
   public void LogCustomEvent(string eventName) {
     _logCustomEvent(eventName, null);
@@ -305,14 +296,6 @@ public class BrazeiOSPlatform : BrazePlatform {
     _removeFromCustomUserAttributeArray(key, value);
   }
 
-  public void setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {
-    _setUserFacebookData(facebookId, firstName, lastName, email, bio, cityName, gender == null ? -1 : (int)gender, numberOfFriends == null ? -1 : (int)numberOfFriends, birthday);
-  }
-
-  public void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
-    _setUserTwitterData(twitterUserId == null ? -1 : (int)twitterUserId, twitterHandle, name, description, followerCount == null ? -1 : (int)followerCount, followingCount == null ? -1 : (int)followingCount, tweetCount == null ? -1 : (int)tweetCount, profileImageUrl);
-  }
-
   public void SetUserLastKnownLocation(
     double latitude,
     double longitude,
@@ -339,7 +322,6 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   private void SetInAppMessageListener(BrazeInAppMessageListener listener) {
     _inAppMessageListener = listener;
-    _setInAppMessageDelegatesEnabled(listener != null);
     BrazeInternalGameObject.setInAppMessageListener(listener);
   }
 

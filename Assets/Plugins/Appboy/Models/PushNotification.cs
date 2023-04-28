@@ -17,9 +17,9 @@ namespace Appboy.Models {
         throw new ArgumentException("Message cannot be null or empty.", "message");
       }
       RawJsonString = message;
-      JSONClass json;
+      JSONObject json;
       try {
-        json = (JSONClass) JSON.Parse(message);
+        json = (JSONObject) JSON.Parse(message);
       } catch {
         throw new ArgumentException("Unable to parse json.");
       }
@@ -29,7 +29,7 @@ namespace Appboy.Models {
       AndroidNotificationId = SafeGetInt(json, "nid", -1);
       AndroidPushReceivedTimestamp = SafeGetLong(json, "appboy_push_received_timestamp", -1);
       if (json["extra"] != null) {
-        Extras = JsonUtils.JSONClassToDictionary((JSONClass) JSON.Parse(json["extra"]));
+        Extras = JsonUtils.JSONObjectToDictionary((JSONObject) JSON.Parse(json["extra"]));
       } else {
         Extras = new Dictionary<string, string>();
       }
@@ -40,7 +40,7 @@ namespace Appboy.Models {
                            Title, Content, CollectionUtils.DictionaryToString(Extras), AndroidNotificationId, AndroidPushReceivedTimestamp, Deeplink, RawJsonString);
     }
 
-    private string SafeGetString(JSONClass json, string key, string defaultValue) {
+    private string SafeGetString(JSONObject json, string key, string defaultValue) {
       if (json == null || key == null) {
         return defaultValue;
       }
@@ -51,24 +51,24 @@ namespace Appboy.Models {
       return defaultValue;
     }
 
-    private int SafeGetInt(JSONClass json, string key, int defaultValue) {
+    private int SafeGetInt(JSONObject json, string key, int defaultValue) {
       if (json == null || key == null) {
         return defaultValue;
       }
 
       if (json[key] != null) {
-        return Convert.ToInt32(json[key]);
+        return Convert.ToInt32((int)json[key]);
       }
       return defaultValue;
     }
 
-    private long SafeGetLong(JSONClass json, string key, long defaultValue) {
+    private long SafeGetLong(JSONObject json, string key, long defaultValue) {
       if (json == null || key == null) {
         return defaultValue;
       }
 
       if (json[key] != null) {
-        return Convert.ToInt64(json[key]);
+        return Convert.ToInt64((int)json[key]);
       }
       return defaultValue;
     }

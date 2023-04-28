@@ -15,13 +15,14 @@ MonoBehaviour:
   iOSAutomatesIntegration: 1
   androidAutomatesIntegration: 1
   ApiKey: ba91dbc3-3fc7-4b5c-afb3-c709f663bb53
-  iOSEndpoint: sondheim.appboy.com
+  iOSEndpoint: sondheim.braze.com
   iOSSdkAuthenticationEnabled: 1
   iOSSdkAuthenticationFailedGameObjectName: BrazeCallback
   iOSSdkAuthenticationFailedCallbackMethodName: SdkAuthenticationFailureCallback
   iOSLogLevel: 0
+  iOSImportDependencies: 0
   androidApiKey: 5a29c2d7-10af-4aa1-8f92-d0cff2e13d61
-  androidEndpoint: sondheim.appboy.com
+  androidEndpoint: sondheim.braze.com
   androidSdkAuthenticationEnabled: 1
   androidSdkAuthenticationFailedGameObjectName: BrazeCallback
   androidSdkAuthenticationFailedCallbackMethodName: SdkAuthenticationFailureCallback
@@ -55,19 +56,19 @@ MonoBehaviour:
   androidPushSmallNotificationIcon: 
   androidPushLargeNotificationIcon: 
   androidDelaySendingPushIntents: 1
-  iOSInAppMessageGameObjectName: 
-  iOSInAppMessageCallbackMethodName: 
-  iOSDisplayInAppMessages: 0
+  iOSInAppMessageGameObjectName: BrazeCallback
+  iOSInAppMessageCallbackMethodName: InAppMessageReceivedCallback
+  iOSDisplayInAppMessages: 1
   androidInAppMessageListenerGameObjectName: AndroidInAppMessageListenerGameObjectName
   androidInAppMessageListenerCallbackMethodName: AndroidInAppMessageListenerCallbackMethodName
   androidTriggerActionMinimumTimeSeconds: 
   androidDisplayInAppMessagesAutomatically: 1
   androidSetInAppMessageManagerListenerAutomatically: 1
   androidInitialInAppMessageOperation: 0
-  iOSFeedGameObjectName: 
-  iOSFeedCallbackMethodName: 
-  iOSContentCardsGameObjectName: 
-  iOSContentCardsCallbackMethodName: 
+  iOSFeedGameObjectName: BrazeCallback
+  iOSFeedCallbackMethodName: FeedReceivedCallback
+  iOSContentCardsGameObjectName: BrazeCallback
+  iOSContentCardsCallbackMethodName: ContentCardsReceivedCallback
   androidContentCardsUpdatedListenerGameObjectName: AndroidContentCardsUpdatedListenerGameObjectName
   androidContentCardsUpdatedListenerCallbackMethodName: AndroidContentCardsUpdatedListenerCallbackMethodName
   androidContentCardsUnreadVisualIndicatorEnabled: 1

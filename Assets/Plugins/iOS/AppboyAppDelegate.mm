@@ -1,8 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UnityAppController.h"
-#import <Appboy_iOS_SDK/AppboyKit.h>
 #import "AppboyUnityManager.h"
+
+@import BrazeKit;
+@import BrazeUI;
 
 @interface AppboyAppDelegate : UnityAppController
 
@@ -12,30 +14,26 @@
 
 @implementation AppboyAppDelegate : UnityAppController
 
+static Braze *_braze;
+
 # pragma mark - UIApplicationDelegate methods
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
   [super application:application didFinishLaunchingWithOptions:launchOptions];
   NSLog(@"AppboyAppDelegate called from application:didFinishLaunchingWithOptions:");
 
-  self.brazeUnityPlist = [[AppboyUnityManager sharedInstance] parsePlist];
-
-  // Initialize Braze
-  [Appboy startWithApiKey:[[AppboyUnityManager sharedInstance] getApiKeyFromUnity]
-            inApplication:application
-        withLaunchOptions:launchOptions
-        withAppboyOptions:@{ABKSDKFlavorKey: @(UNITY)}];
-
-  // Add default Unity metadata
-  [[Appboy sharedInstance] addSdkMetadata:@[ABKSdkMetadataUnity]];
+  BRZConfiguration *config = [[BRZConfiguration alloc] init];
+  config.triggerMinimumTimeInterval = 1;
+  Braze *braze = [AppboyUnityManager initBraze:config];
+  AppboyAppDelegate.braze = braze;
 
   // Set listeners
   [[AppboyUnityManager sharedInstance] setListenersFromPList];
 
   // Register for push notifications
-  if ([self.brazeUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue] &&
-      ![self.brazeUnityPlist[ABKUnityDisableAutomaticPushRegistrationKey] boolValue]) {
-    BOOL provisional = ![self.brazeUnityPlist[ABKUnityDisableProvisionalAuthKey] boolValue];
+  if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue] &&
+      ![self.brazeUnityPlist[BRZUnityDisableAutomaticPushRegistrationKey] boolValue]) {
+    BOOL provisional = ![self.brazeUnityPlist[BRZUnityDisableProvisionalAuthKey] boolValue];
     [[AppboyUnityManager sharedInstance] registerForRemoteNotificationsWithProvisional:provisional];
   }
 
@@ -47,7 +45,7 @@
     [super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
   }
   // Register device token with Braze
-  if ([self.brazeUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
+  if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
     NSLog(@"Automatic push integration enabled. Sending device token to Braze: %@", deviceToken);
     [[AppboyUnityManager sharedInstance] registerPushToken:deviceToken];
   } else{
@@ -64,13 +62,23 @@
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
 
   // Pass notification to Braze
-  if ([self.brazeUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
+  if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
     [[AppboyUnityManager sharedInstance] registerApplication:application
                                 didReceiveRemoteNotification:userInfo
                                       fetchCompletionHandler:completionHandler];
   } else {
     NSLog(@"Automatic push integration disabled. Not forwarding notification.");
   }
+}
+
+#pragma mark - Helpers
+
++ (Braze *)braze {
+  return _braze;
+}
+
++ (void)setBraze:(Braze *)braze {
+  _braze = braze;
 }
 
 @end

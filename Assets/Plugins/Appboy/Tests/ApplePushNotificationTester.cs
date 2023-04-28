@@ -18,7 +18,7 @@ public class ApplePushNotificationTester : MonoBehaviour {
     ""sound"" : ""pushNotificationSoundFile"",
     ""content-available"" : 3}";
     
-    JSONClass pushNotificationJson = (JSONClass)JSON.Parse(JSONString);
+    JSONObject pushNotificationJson = (JSONObject)JSON.Parse(JSONString);
     ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
     Debug.Log("Push Notification event(aps): " + pushNotification);
 
@@ -31,7 +31,7 @@ public class ApplePushNotificationTester : MonoBehaviour {
       + "\"levelTwoFloatKey\" : 213.356,"
       + "\"levelTwoDoubleKey\" : 23.1415926535897,"
       + "\"levelTwoArrayKey\" : [\"a level 3 string\", 33, 33.3335, {\"subsubkey\" : \"subsubdictionary\"}]}}}";
-    pushNotificationJson = (JSONClass)JSON.Parse(JSONString);
+    pushNotificationJson = (JSONObject)JSON.Parse(JSONString);
     pushNotification = new ApplePushNotification(pushNotificationJson);
 
     string ExtraString = "{";

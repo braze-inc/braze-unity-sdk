@@ -22,7 +22,7 @@ namespace Appboy.Models.Cards {
 
     public Dictionary<string, string> Extras { get; set; }
 
-    public Card(JSONClass json) {
+    public Card(JSONObject json) {
       if (json == null) {
         throw new ArgumentNullException("json");
       }
@@ -36,7 +36,7 @@ namespace Appboy.Models.Cards {
       Created = json["created"].AsInt;
       Updated = json["updated"].AsInt;
       if (json["extras"] != null) {
-        Extras = JsonUtils.JSONClassToDictionary(json["extras"].AsObject);
+        Extras = JsonUtils.JSONObjectToDictionary(json["extras"].AsObject);
       }
       Categories = new HashSet<CardCategory>();
       if (json["categories"] == null) {

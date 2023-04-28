@@ -21,16 +21,16 @@ namespace Appboy.Models {
     // https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW10
     public IDictionary<string, object> Extra { get; set; }
 
-    public ApplePushNotification(string jsonString) : this((JSONClass) JSON.Parse(jsonString)) {}
+    public ApplePushNotification(string jsonString) : this((JSONObject) JSON.Parse(jsonString)) {}
 
-    public ApplePushNotification(JSONClass json) {
+    public ApplePushNotification(JSONObject json) {
       Alert = new ApplePushNotificationAlert(json["alert"].AsObject);
       Badge = json["badge"].AsInt;
       Sound = json["sound"];
       ContentAvailable = json["content-available"].AsInt;
       Extra = new Dictionary<string, object>();
       JSONNode ExtraNode = json["extra"];
-      if (ExtraNode.GetType() == typeof(JSONClass)) {
+      if (ExtraNode.GetType() == typeof(JSONObject)) {
         foreach (KeyValuePair<string, JSONNode> KeyValuePairNode in ExtraNode.AsObject) {
           Extra.Add(KeyValuePairNode.Key, this.getJSONNodeValue(KeyValuePairNode.Value));
         }
@@ -68,7 +68,7 @@ namespace Appboy.Models {
         return nodeList;
       }
 
-      if (node.GetType() == typeof(JSONClass)) {
+      if (node.GetType() == typeof(JSONObject)) {
         IDictionary<string, object> nodeDictionary = new Dictionary<string, object>();
         foreach (KeyValuePair<string, JSONNode> kvp in node.AsObject) {
           nodeDictionary.Add(kvp.Key, this.getJSONNodeValue(kvp.Value));

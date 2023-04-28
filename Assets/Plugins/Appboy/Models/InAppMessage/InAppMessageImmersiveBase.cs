@@ -23,17 +23,17 @@ namespace Appboy.Models.InAppMessage {
     protected InAppMessageImmersiveBase() {
     }
 
-    public InAppMessageImmersiveBase(JSONClass json) : base(json) {
+    public InAppMessageImmersiveBase(JSONObject json) : base(json) {
       Header = json[InAppMessageConstants.HeaderKey];
-      HeaderTextColor = ColorUtils.HexToColor(json[InAppMessageConstants.HeaderTextColorKey]);
-      CloseButtonColor = ColorUtils.HexToColor(json[InAppMessageConstants.CloseButtonColorKey]);
+      HeaderTextColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.HeaderTextColorKey]);
+      CloseButtonColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.CloseButtonColorKey]);
 
       if (json[InAppMessageConstants.ButtonsKey] != null) {
         Buttons = new List<InAppMessageButton>();
         JSONArray jsonArray = (JSONArray)JSON.Parse(json[InAppMessageConstants.ButtonsKey].ToString());
         Debug.Log(String.Format("Parsing in-app message with {0} buttons", jsonArray.Count));
         for (int i = 0; i < jsonArray.Count; i++) {
-          JSONClass buttonJson = jsonArray[i].AsObject;
+          JSONObject buttonJson = jsonArray[i].AsObject;
           try {
             Debug.Log(String.Format("Button no. {0} json string is {1}", i, buttonJson));
             InAppMessageButton button = new InAppMessageButton(buttonJson);

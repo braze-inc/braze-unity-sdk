@@ -338,37 +338,6 @@ namespace Appboy {
       #endif 
     }
 
-    public static void setUserFacebookData(
-      string facebookId,
-      string firstName,
-      string lastName,
-      string email,
-      string bio,
-      string cityName,
-      Gender? gender,
-      int? numberOfFriends,
-      string birthday
-    ) {
-      #if HAS_BRAZE_SDK
-        mBinding.setUserFacebookData(facebookId, firstName, lastName, email, bio, cityName, gender, numberOfFriends, birthday);
-      #endif 
-    }
-
-    public static void setUserTwitterData(
-      int? twitterUserId, 
-      string twitterHandle, 
-      string name, 
-      string description, 
-      int? followerCount,
-      int? followingCount, 
-      int? tweetCount, 
-      string profileImageUrl
-    ) {
-      #if HAS_BRAZE_SDK
-        mBinding.setUserTwitterData(twitterUserId, twitterHandle, name, description, followerCount, followingCount, tweetCount, profileImageUrl);
-      #endif 
-    }
-
     public static void SetUserLastKnownLocation(
       double latitude,
       double longitude,
@@ -691,10 +660,6 @@ namespace Appboy {
     /// <summary>
     /// Set this value to a valid BrazeInAppMessageListener instance to 
     /// register for in-app messages related UI events.
-    /// 
-    /// Using this listener alongside ABKInAppMessageUIDelegate and 
-    /// ABKInAppMessageControllerDelegate from the Braze iOS SDK is not 
-    /// supported.
     /// </summary>
     /// <seealso cref="BrazeInAppMessageListener">
     /// <value>Listener for in-app messages UI events.</value>

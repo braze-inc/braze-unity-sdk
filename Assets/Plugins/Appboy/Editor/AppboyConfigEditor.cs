@@ -75,6 +75,13 @@ namespace Appboy.Editor {
         EditorGUI.indentLevel--;
         EditorGUILayout.Separator();
 
+        // Dependencies
+        EditorGUILayout.LabelField("Dependencies", EditorStyles.boldLabel);
+        EditorGUI.indentLevel++;
+        AppboyConfig.IOSImportDependencies = EditorGUILayout.ToggleLeft("Import SDWebImage dependency (GIF support)", AppboyConfig.IOSImportDependencies, EditorStyles.boldLabel);
+        EditorGUI.indentLevel--;
+        EditorGUILayout.Separator();
+
         // Push Notifications
         EditorGUILayout.BeginVertical();
         EditorGUILayout.LabelField("Push Notifications", EditorStyles.boldLabel);

@@ -60,14 +60,15 @@ namespace Appboy.Models.InAppMessage {
     protected InAppMessageBase() {
     }
     
-    public InAppMessageBase(JSONClass json) {
+    public InAppMessageBase(JSONObject json) {
       if (json == null) {
-        throw new ArgumentNullException("Received null JSONClass.");
+        throw new ArgumentNullException("Received null JSONObject.");
       }
       _jsonString = json.ToString();
+
       Message = json[InAppMessageConstants.MessageKey];
       if (json[InAppMessageConstants.ExtrasKey] != null) {
-        Extras = JsonUtils.JSONClassToDictionary(json[InAppMessageConstants.ExtrasKey].AsObject);
+        Extras = JsonUtils.JSONObjectToDictionary(json[InAppMessageConstants.ExtrasKey].AsObject);
       }
       InAppClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ClickActionKey], true, ClickAction.NEWS_FEED);
       URI = json[InAppMessageConstants.URIKey];
@@ -78,11 +79,11 @@ namespace Appboy.Models.InAppMessage {
       }
       InAppDismissType = (DismissType)EnumUtils.TryParse(typeof(DismissType), json[InAppMessageConstants.DismissTypeKey], true, DismissType.AUTO_DISMISS);
       Duration = json[InAppMessageConstants.DurationKey].AsInt;
-      BackgroundColor = ColorUtils.HexToColor(json[InAppMessageConstants.BackgroundColorKey]);
-      TextColor = ColorUtils.HexToColor(json[InAppMessageConstants.TextColorKey]);
+      BackgroundColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.BackgroundColorKey]);
+      TextColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.TextColorKey]);
       Icon = json[InAppMessageConstants.IconKey];
-      IconColor = ColorUtils.HexToColor(json[InAppMessageConstants.IconColorKey]);
-      IconBackgroundColor = ColorUtils.HexToColor(json[InAppMessageConstants.IconBackgroundColorKey]);
+      IconColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.IconColorKey]);
+      IconBackgroundColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.IconBackgroundColorKey]);
     }
     
     public void LogClicked() {

@@ -19,9 +19,9 @@ namespace Appboy.Models.InAppMessage {
     public InAppMessageSlideup() {
     }
 
-    public InAppMessageSlideup(JSONClass json) : base(json) {
+    public InAppMessageSlideup(JSONObject json) : base(json) {
       SlideupAnchor = (SlideFrom)EnumUtils.TryParse(typeof(SlideFrom), json[InAppMessageConstants.SlideFromKey], true, SlideFrom.BOTTOM);
-      ChevronColor = ColorUtils.HexToColor(json[InAppMessageConstants.CloseButtonColorKey]);
+      ChevronColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.CloseButtonColorKey]);
       HideChevron = json[InAppMessageConstants.HideChevronKey].AsBool;
     }
   }

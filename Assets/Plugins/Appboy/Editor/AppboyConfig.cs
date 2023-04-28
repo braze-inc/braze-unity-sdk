@@ -15,6 +15,8 @@ namespace Appboy.Editor {
 
     // Automate Unity integrations
     [SerializeField]
+    /// When disabled, it allows integrations that don't want to use the iOS macro
+    /// `IMPL_APP_CONTROLLER_SUBCLASS`, which is used in our sample's AppDelegate
     private bool iOSAutomatesIntegration = false;
     [SerializeField]
     private bool androidAutomatesIntegration = false;
@@ -34,6 +36,8 @@ namespace Appboy.Editor {
     private string iOSSdkAuthenticationFailedCallbackMethodName = string.Empty;
     [SerializeField]
     private string iOSLogLevel = string.Empty;
+    [SerializeField]
+    private bool iOSImportDependencies = false;
     // Android
     [SerializeField]
     private string androidApiKey = string.Empty;
@@ -197,6 +201,11 @@ namespace Appboy.Editor {
     public static string IOSLogLevel {
       get { return Instance.iOSLogLevel; }
       set { SetProperty(ref Instance.iOSLogLevel, value); }
+    }
+
+    public static bool IOSImportDependencies {
+      get { return Instance.iOSImportDependencies; }
+      set { SetProperty(ref Instance.iOSImportDependencies, value); }
     }
 
     // Push

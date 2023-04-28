@@ -1,3 +1,32 @@
+## 4.0.0
+
+#### Breaking
+- Updated the Android plugin to use [Braze Android SDK 25.0.0](https://github.com/braze-inc/braze-android-sdk/blob/master/CHANGELOG.md#2500)
+- Updates the native iOS bridge to use the new [Swift SDK version 6.0.0](https://github.com/braze-inc/braze-swift-sdk/blob/main/CHANGELOG.md#600).
+  - Replace any instances of `#import <Appboy_iOS_SDK/AppboyKit.h>` in your iOS native code with:
+  ```
+  @import BrazeKit;
+  @import BrazeUI; // Only needed if you use the UI in the file
+  ```
+  - Replace the prefix `ABK` with `BRZ` for any of the constants found in [AppboyUnityManager.h](https://github.com/braze-inc/braze-unity-sdk/blob/master/Assets/Plugins/iOS/AppboyUnityManager.h).
+  - Update your `AppDelegate` file with the code snippet below. Reference our [sample code here](https://github.com/braze-inc/braze-unity-sdk/blob/master/Assets/Plugins/iOS/AppboyAppDelegate.mm).
+  ```
+  BRZConfiguration *config = [[BRZConfiguration alloc] init];
+  Braze *braze = [AppboyUnityManager initBraze:config];
+  ```
+  - Reference [this Migration Guide](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide) and [this documentation](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit) for additional context around specific migration / integration steps.
+- Requires Unity version [2023.1.0a16](https://unity.com/releases/editor/alpha/2023.1.0a16) or newer.
+- The following changes have been made to `AppboyUnityManager.h`:
+  - Renames `addInAppMessageListenerWithObjectNameAndSetDelegate:callbackMethodName:` to `addInAppMessageListenerWithObjectName:callbackMethodName:`.
+  - Renames `ABKUnityMessageType` to `BRZUnityMessageType`.
+  - Removes `parsePlist` since it is implemented as a part of `initBraze:`.
+- Removes `setFacebookData` and `setTwitterData` from `AppboyBinding.cs`.
+- Removes the release asset `Appboy-nodeps.unitypackage` in favor of using the "Braze Configuration" option mentioned below.
+
+##### Added
+- Adds a configuration option under "Braze Configuration" which allows you to toggle between importing `SDWebImage` into your iOS application.
+  - If checked, the build process will automatically add [SDWebImage version 5.15.5](https://github.com/SDWebImage/SDWebImage/releases/tag/5.15.5) to your project. If unchecked, it will be omitted.
+
 ## 3.11.0
 
 ##### Breaking

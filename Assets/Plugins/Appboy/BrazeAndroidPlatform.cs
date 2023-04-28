@@ -45,7 +45,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   public AndroidJavaObject InAppMessageUtils {
     get {
       if (inAppMessageUtils == null) {
-        inAppMessageUtils = new AndroidJavaClass("com.appboy.unity.utils.InAppMessageUtils");
+        inAppMessageUtils = new AndroidJavaClass("com.braze.unity.utils.InAppMessageUtils");
       }
       return inAppMessageUtils;
     }
@@ -54,7 +54,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   public AndroidJavaObject UnityConfigurationProvider {
     get {
       if (unityConfigurationProvider == null) {
-        unityConfigurationProvider = new AndroidJavaObject("com.appboy.unity.configuration.UnityConfigurationProvider", BrazeUnityActivity);
+        unityConfigurationProvider = new AndroidJavaObject("com.braze.unity.configuration.UnityConfigurationProvider", BrazeUnityActivity);
       }
       return unityConfigurationProvider;
     }
@@ -112,7 +112,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void SetUserGender(Gender gender) {
-    using (var genderClass = new AndroidJavaClass("com.appboy.enums.Gender")) {
+    using (var genderClass = new AndroidJavaClass("com.braze.enums.Gender")) {
       switch (gender) {
         case Gender.Male:
           GetCurrentUser().Call<bool>("setGender", genderClass.GetStatic<AndroidJavaObject>("MALE"));
@@ -140,7 +140,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void SetUserDateOfBirth(int year, int month, int day) {
-    using (var monthClass = new AndroidJavaClass("com.appboy.enums.Month")) {
+    using (var monthClass = new AndroidJavaClass("com.braze.enums.Month")) {
       AndroidJavaObject monthObject;
       switch (month) {
         case 1:
@@ -196,7 +196,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType) {
-    using (var notificationTypeClass = new AndroidJavaClass("com.appboy.enums.NotificationSubscriptionType")) {
+    using (var notificationTypeClass = new AndroidJavaClass("com.braze.enums.NotificationSubscriptionType")) {
       switch (emailNotificationSubscriptionType) {
         case AppboyNotificationSubscriptionType.OPTED_IN:
           GetCurrentUser().Call<bool>("setEmailNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("OPTED_IN"));
@@ -215,7 +215,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType) {
-    using (var notificationTypeClass = new AndroidJavaClass("com.appboy.enums.NotificationSubscriptionType")) {
+    using (var notificationTypeClass = new AndroidJavaClass("com.braze.enums.NotificationSubscriptionType")) {
       switch (pushNotificationSubscriptionType) {
         case AppboyNotificationSubscriptionType.OPTED_IN:
           GetCurrentUser().Call<bool>("setPushNotificationSubscriptionType", notificationTypeClass.GetStatic<AndroidJavaObject>("OPTED_IN"));
@@ -279,57 +279,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public void AddToCustomUserAttributeArray(string key, string value) {
     GetCurrentUser().Call<bool>("addToCustomAttributeArray", key, value);
-  }
-
-  public void setUserFacebookData(string facebookId, string firstName, string lastName, string email, string bio, string cityName, Gender? gender, int? numberOfFriends, string birthday) {
-    var genderClass = new AndroidJavaClass("com.appboy.enums.Gender");
-    AndroidJavaObject genderEnum = null;
-    if (gender != null) {
-      switch (gender) {
-        case Gender.Male:
-        genderEnum = genderClass.GetStatic<AndroidJavaObject>("MALE");
-          break;
-        case Gender.Female:
-          genderEnum = genderClass.GetStatic<AndroidJavaObject>("FEMALE");
-          break;
-        default:
-          Debug.Log("Unknown gender received: " + gender);
-          break;
-      }
-    }
-
-    var facebookUser = new AndroidJavaObject("com.appboy.models.outgoing.FacebookUser", new object[]
-      {
-      facebookId,
-      firstName,
-      lastName,
-      email,
-      bio,
-      cityName,
-      genderEnum,
-      numberOfFriends == null ? null : new AndroidJavaObject("java.lang.Integer", numberOfFriends),
-      null,
-      birthday
-      }
-    );
-
-    GetCurrentUser().Call<bool>("setFacebookData", facebookUser);
-  }
-
-  public void setUserTwitterData(int? twitterUserId, string twitterHandle, string name, string description, int? followerCount, int? followingCount, int? tweetCount, string profileImageUrl) {
-    var twitterUser = new AndroidJavaObject("com.appboy.models.outgoing.TwitterUser", new object[]
-      {
-        twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", twitterUserId),
-        twitterHandle,
-        name,
-        description,
-        twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followerCount),
-        twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", followingCount),
-        twitterUserId == null ? null : new AndroidJavaObject("java.lang.Integer", tweetCount),
-        profileImageUrl
-      }
-    );
-    GetCurrentUser().Call<bool>("setTwitterData", twitterUser);
   }
 
   public void SetUserLastKnownLocation(
@@ -448,11 +397,11 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public string GetInstallTrackingId() {
-    return Braze.Call<string>("getInstallTrackingId");
+    return Braze.Call<string>("getDeviceId");
   }
 
   public void SetAttributionData(string network, string campaign, string adgroup, string creative) {
-    var attributionData = new AndroidJavaObject("com.appboy.models.outgoing.AttributionData", network, campaign, adgroup, creative);
+    var attributionData = new AndroidJavaObject("com.braze.models.outgoing.AttributionData", network, campaign, adgroup, creative);
     GetCurrentUser().Call<bool>("setAttributionData", attributionData);
   }
 

@@ -1,272 +1,287 @@
 #import "AppboyUnityManager.h"
 #import <UserNotifications/UserNotifications.h>
-#import <Appboy_iOS_SDK/AppboyKit.h>
-#import <Appboy_iOS_SDK/ABKCard.h>
-#import <Appboy_iOS_SDK/ABKFacebookUser.h>
-#import <Appboy_iOS_SDK/ABKTwitterUser.h>
-#import <Appboy_iOS_SDK/ABKContentCardsViewController.h>
-#import <Appboy_iOS_SDK/ABKUIUtils.h>
 
-static NSString *const ABKInternalCallback = @"BrazeInternalCallback";
-static NSString *const ABKInternalPushPermissionsPromptResponse = @"onPushPromptResponseReceived";
-static NSString *const ABKInternalPushTokenReceivedFromSystem = @"onPushTokenReceivedFromSystem";
+// Plist entry keys
+static NSString *const BRZBrazeKey = @"Braze";
+static NSString *const BRZUnityKey = @"Unity";
+static NSString *const BRZEndpointKey = @"Endpoint";
+static NSString *const BRZLogLevelKey = @"LogLevel";
+
+// Unity message keys
+static NSString *const BRZInternalCallback = @"BrazeInternalCallback";
+static NSString *const BRZInternalPushPermissionsPromptResponse = @"onPushPromptResponseReceived";
+static NSString *const BRZInternalPushTokenReceivedFromSystem = @"onPushTokenReceivedFromSystem";
 
 // In-app message UI
-static NSString *const ABKInternalIAMDisplay = @"beforeInAppMessageDisplayed";
-static NSString *const ABKInternalIAMDismissed = @"onInAppMessageDismissed";
-static NSString *const ABKInternalIAMClicked = @"onInAppMessageClicked";
-static NSString *const ABKInternalIAMButtonClicked = @"onInAppMessageButtonClicked";
-static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
-
-@interface ABKCard(proxy)
-- (NSMutableDictionary *)proxyForJson;
-@end
-
-@interface ABKInAppMessage(proxy)
-- (NSMutableDictionary *)proxyForJson;
-@end
-
-@interface AppboyUnityManager()
-+ (NSString *)hexStringFromNSData:(NSData *)data;
-@end
+static NSString *const BRZInternalIAMDisplay = @"beforeInAppMessageDisplayed";
+static NSString *const BRZInternalIAMDismissed = @"onInAppMessageDismissed";
+static NSString *const BRZInternalIAMClicked = @"onInAppMessageClicked";
+static NSString *const BRZInternalIAMButtonClicked = @"onInAppMessageButtonClicked";
+static NSString *const BRZInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
 
 @implementation AppboyUnityManager
 
-+ (AppboyUnityManager*)sharedInstance {
-  static AppboyUnityManager *sharedInstance = nil;
+AppboyUnityManager *sharedInstance;
+Braze* braze;
+NSDictionary *brazeUnityPlist;
 
-  if(!sharedInstance)
++ (AppboyUnityManager *)sharedInstance {
+  if (!sharedInstance) {
     sharedInstance = [[AppboyUnityManager alloc] init];
+    sharedInstance.brazeUnityPlist = brazeUnityPlist;
+  }
+
+  if (braze == nil) {
+    NSLog(@"\n"
+      "     ********************************************\n"
+      "     **             !! WARNING !!              **\n"
+      "     **   [AppboyUnityManager sharedInstance]  **\n"
+      "     **    called before `braze` instance was  **\n"
+      "     **     set. Please make sure you call     **\n"
+      "     **     [AppboyUnityManager initBraze]     **\n"
+      "     **  before accessing the sharedInstance.  **\n"
+      "     ********************************************\n");
+  } else {
+    sharedInstance.braze = braze;
+  }
 
   return sharedInstance;
 }
 
 # pragma mark - Init
 
++ (Braze *)initBraze:(BRZConfiguration *)configuration {
+  // Outer Braze dictionary
+  NSDictionary *brazePlist = [[NSBundle mainBundle] infoDictionary][BRZBrazeKey];
+  configuration.api.endpoint = brazePlist[BRZEndpointKey];
+  configuration.logger.level =
+      [AppboyUnityManager getLogLevelForInt:[brazePlist[BRZLogLevelKey] integerValue]];
+
+  // Inner Braze["Unity"] dictionary
+  brazeUnityPlist = brazePlist[BRZUnityKey];
+  configuration.api.key = brazeUnityPlist[BRZUnityApiKey];
+
+  // Additional config setup
+  [configuration.api addSDKMetadata:@[BRZSDKMetadata.unity]];
+  configuration.api.sdkFlavor = BRZSDKFlavorUnity;
+  if (brazePlist[BRZUnitySdkAuthEnabledKey]) {
+    configuration.api.sdkAuthentication = brazePlist[BRZUnitySdkAuthEnabledKey];
+  }
+
+  braze = [[Braze alloc] initWithConfiguration:configuration];
+  return braze;
+}
+
 - (instancetype)init {
   self = [super init];
   if (self) {
-    self.displayAction = ABKDisplayInAppMessageNow;
+    self.displayAction = BRZInAppMessageUIDisplayChoiceNow;
+
+    // Set in-app message UI
+    BrazeInAppMessageUI *inAppMessageUI = [[BrazeInAppMessageUI alloc] init];
+    inAppMessageUI.delegate = self;
+    braze.inAppMessagePresenter = inAppMessageUI;
+
+    // Set SDK Auth delegate in case it is enabled
+    braze.sdkAuthDelegate = self;
   }
   return self;
 }
 
-- (void)handleSdkAuthenticationError:(ABKSdkAuthenticationError *)errorEvent {
++ (BRZLoggerLevel)getLogLevelForInt:(NSInteger)integer {
+  switch (integer) {
+    case 0:
+    case 1:
+      return BRZLoggerLevelDebug;
+    case 2:
+      return BRZLoggerLevelInfo;
+    case 4:
+      return BRZLoggerLevelError;
+    case 8:
+      return BRZLoggerLevelDisabled;
+    default:
+      return BRZLoggerLevelDebug;
+  }
+}
+
+# pragma mark - SDK Authentication
+
+- (void)braze:(Braze * _Nonnull)braze
+  sdkAuthenticationFailedWithError:(BRZSDKAuthenticationError * _Nonnull)error {
   NSLog(@"Invalid SDK Authentication signature.");
-    
-  NSDictionary *sdkAuthFailDictionary = @{@"code" : [NSNumber numberWithInteger:errorEvent.code],
-                                        @"reason" : errorEvent.reason ?: @"",
-                                        @"userId" : errorEvent.userId ?: @"",
-                                     @"signature" : errorEvent.signature ?: @""
+
+  NSDictionary *sdkAuthFailDictionary = @{@"code" : [NSNumber numberWithInteger:error.code],
+                                        @"reason" : error.reason ?: @"",
+                                        @"userId" : error.userId ?: @"",
+                                     @"signature" : error.signature ?: @""
   };
-  NSError *error;
+  NSError *decodingError;
   NSData *sdkAuthFailData = [NSJSONSerialization dataWithJSONObject:sdkAuthFailDictionary
                                                             options:0
-                                                              error:&error];
-  if (!sdkAuthFailData) {
-    NSLog(@"Error parsing SDK Authentication Failed Event to json: %@", error);
+                                                              error:&decodingError];
+  if (!sdkAuthFailData || decodingError != nil) {
+    NSLog(@"Error parsing SDK Authentication Failed Event to json: %@", decodingError);
     return;
   }
-  NSString *sdkAuthFailedString = [[NSString alloc] initWithData:sdkAuthFailData encoding:NSUTF8StringEncoding];
+  NSString *sdkAuthFailedString = [[NSString alloc] initWithData:sdkAuthFailData
+                                                        encoding:NSUTF8StringEncoding];
   if (sdkAuthFailedString == nil) {
     NSLog(@"Error parsing SDK Authentication Failed json to string");
     return;
   }
-    
-  if (self.unitySdkAuthFailureGameObjectName != nil && self.unitySdkAuthFailureCallbackFunctionName != nil) {
-    NSLog(@"Using configured game object for SDK Authentication failure handing.");
+
+  if (self.unitySdkAuthFailureGameObjectName != nil
+      && self.unitySdkAuthFailureCallbackFunctionName != nil) {
+    NSLog(@"Using configured game object for SDK Authentication failure handling.");
     [self unitySendMessageTo:self.unitySdkAuthFailureGameObjectName
                   withMethod:self.unitySdkAuthFailureCallbackFunctionName
                  withMessage:sdkAuthFailedString];
+  } else {
+    NSLog(@"No game object is configured for SDK Authentication failure handling - Doing nothing.");
   }
 }
 
-# pragma mark - Config
-
-- (NSString *)getApiKeyFromUnity {
-  return self.brazeUnityPlist[ABKUnityApiKey];
-}
-
-- (NSDictionary *)parsePlist {
-  NSDictionary* brazeUnityPlist = [[NSBundle mainBundle] infoDictionary][@"Braze"][@"Unity"];
-  self.brazeUnityPlist = brazeUnityPlist;
-  return brazeUnityPlist;
-}
-
-# pragma mark - Social Media
-
-- (void)setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email bio:(NSString *)bio cityName:(NSString *)cityName  gender:(NSInteger)gender numberOfFriends:(NSInteger)numberOfFriends birthday:(NSString *)birthday {
-  NSMutableDictionary *facebookData = [NSMutableDictionary dictionary];
-  facebookData[@"id"] = facebookId;
-  facebookData[@"first_name"] = firstName;
-  facebookData[@"last_name"] = lastName;
-  facebookData[@"email"] = email;
-  facebookData[@"bio"] = bio;
-  facebookData[@"location"] = @{@"name":cityName};
-  if (gender >= 0) {
-    if (gender == ABKUserGenderMale) {
-      facebookData[@"gender"] = @"m";
-    }
-    if (gender == ABKUserGenderFemale) {
-      facebookData[@"gender"] = @"f";
-    }
-  }
-  if (numberOfFriends >= 0) {
-    facebookData[@"num_friends"] = @(numberOfFriends);
-  }
-  facebookData[@"birthday"] = birthday;
-  ABKFacebookUser *facebookUser = [[ABKFacebookUser alloc] initWithFacebookUserDictionary:facebookData numberOfFriends:numberOfFriends likes:nil];
-  [Appboy sharedInstance].user.facebookUser = facebookUser;
-}
-
-- (void)setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl {
-  ABKTwitterUser *twitterUser = [[ABKTwitterUser alloc] init];
-  twitterUser.userDescription = description;
-  if (twitterUserId > 0) {
-    twitterUser.twitterID = (long) twitterUserId;
-  }
-  twitterUser.twitterName = name;
-  twitterUser.profileImageUrl = profileImageUrl;
-  if (followingCount >= 0) {
-    twitterUser.friendsCount = followingCount;
-  }
-  if (followerCount >= 0) {
-    twitterUser.followersCount = followerCount;
-  }
-  twitterUser.screenName = twitterHandle;
-  if (tweetCount >= 0) {
-    twitterUser.statusesCount = tweetCount;
-  }
-  [Appboy sharedInstance].user.twitterUser = twitterUser;
-}
-
-# pragma mark - In-app message analytics
+# pragma mark - In-App Messages
 
 - (void)logInAppMessageImpression:(NSString *)inAppMessageJSONString {
-  ABKInAppMessage *inAppMessage = [[ABKInAppMessage alloc] init];
-  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessage];
-  [inAppMessage logInAppMessageImpression];
+  BRZInAppMessageRaw *inAppMessage = [self getInAppMessageFromString:inAppMessageJSONString
+                                                               braze:braze];
+  if (inAppMessage) {
+    [inAppMessage logImpressionUsing:braze];
+  }
 }
 
 - (void)logInAppMessageClicked:(NSString *)inAppMessageJSONString {
-  ABKInAppMessage *inAppMessage = [[ABKInAppMessage alloc] init];
-  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessage];
-  [inAppMessage logInAppMessageClicked];
+  BRZInAppMessageRaw *inAppMessage = [self getInAppMessageFromString:inAppMessageJSONString
+                                                               braze:braze];
+  if (inAppMessage) {
+    [inAppMessage logClickWithButtonId:nil using:braze];
+  }
 }
 
-- (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID {
-  ABKInAppMessageImmersive *inAppMessageImmersive = [[ABKInAppMessageImmersive alloc] init];
-  [self getInAppMessageFromString:inAppMessageJSONString withInAppMessage:inAppMessageImmersive];
-  [inAppMessageImmersive logInAppMessageClickedWithButtonID:buttonID];
+- (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString
+                        withButtonID:(NSInteger)buttonId {
+  BRZInAppMessageRaw *inAppMessage = [self getInAppMessageFromString:inAppMessageJSONString
+                                                               braze:braze];
+  if (inAppMessage) {
+    [inAppMessage logClickWithButtonId:[@(buttonId) stringValue] using:braze];
+  }
 }
 
-- (void)getInAppMessageFromString:(NSString *)inAppMessageJSONString withInAppMessage:(ABKInAppMessage *)inAppMessage {
+/// Returns the in-app message for the JSON string. If the JSON fails decoding, returns nil.
+- (BRZInAppMessageRaw *)getInAppMessageFromString:(NSString *)inAppMessageJSONString
+                                            braze:(Braze *)braze {
   NSData *inAppMessageData = [inAppMessageJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedInAppMessageDict = [NSJSONSerialization JSONObjectWithData:inAppMessageData options:NSJSONReadingMutableContainers error:&e];
-  [inAppMessage setValuesForKeysWithDictionary:deserializedInAppMessageDict];
+  BRZInAppMessageRaw *message = [BRZInAppMessageRaw decodingWithJson:inAppMessageData];
+  if (message) {
+    return message;
+  }
+  NSLog(@"Unable to parse in-app message from string: %@", inAppMessageJSONString);
+  return nil;
 }
-
-# pragma mark - In-app message display
 
 - (void)displayNextInAppMessage {
-  ABKInAppMessageDisplayChoice currentDisplayChoice = self.displayAction;
-  self.displayAction = ABKDisplayInAppMessageNow;
-  [[Appboy sharedInstance].inAppMessageController displayNextInAppMessage];
-  self.displayAction = currentDisplayChoice;
+   BRZInAppMessageUIDisplayChoice currentDisplayAction = self.displayAction;
+   self.displayAction = BRZInAppMessageUIDisplayChoiceNow;
+
+  // Downcast from protocol to class
+  [(BrazeInAppMessageUI *)braze.inAppMessagePresenter presentNext];
+   self.displayAction = currentDisplayAction;
 }
 
+/**
+ * @discussion Stores the display action for when a game object receives an in-app message.
+ */
 - (void)setInAppMessageDisplayAction:(int)actionType {
-  [Appboy sharedInstance].inAppMessageController.delegate = self;
-  switch ((ABKUnityInAppMessageDisplayActionType)actionType) {
-    case ABKIAMDisplayNow:
-      NSLog(@"Setting in-app message display action to ABKDisplayInAppMessageNow.");
-      self.displayAction = ABKDisplayInAppMessageNow;
-      break;
-    case ABKIAMDisplayLater:
-      NSLog(@"Setting in-app message display action to ABKDisplayInAppMessageLater.");
-      self.displayAction = ABKDisplayInAppMessageLater;
-      break;
-    case ABKIAMDiscard:
-      NSLog(@"Setting in-app message display action to ABKIAMDiscard.");
-      self.displayAction = ABKDiscardInAppMessage;
-      break;
-    case ABKIAMRequestIAMDisplay:
-      // FIXME: Blocked by SDK-1596
-      NSLog(@"Requesting in-app message display (currently unimplemented).");
-      // [[Appboy sharedInstance].inAppMessageController displayNextInAppMessageWithDelegate:nil];
-      break;
-    default:
-      NSLog(@"Unknown in-app message display action type received.");
-      return;
+  BRZInAppMessageUIDisplayChoice displayAction = (BRZInAppMessageUIDisplayChoice)actionType;
+  if (displayAction > BRZInAppMessageUIDisplayChoiceDiscard) {
+    NSLog(@"Unknown in-app message display action type received, value: %ld", (long)displayAction);
+    return;
   }
+
+  NSLog(@"Setting in-app message display action to: %ld", (long)displayAction);
+  self.displayAction = displayAction;
 }
 
-- (void)setInAppMessageDelegatesEnabled:(BOOL)enabled {
-  id delegate = enabled ? self : nil;
-  [[Appboy sharedInstance].inAppMessageController.inAppMessageUIController setInAppMessageUIDelegate:delegate];
-
-  // Controller delegate cannot be disabled as it may be currently used for other features.
-  if (enabled) {
-    [Appboy sharedInstance].inAppMessageController.delegate = self;
-  }
-}
-
-# pragma mark - News Feed analytics
+# pragma mark - News Feed
 
 - (void)logCardImpression:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKCard *card = [ABKCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logCardImpression];
+  BRZNewsFeedCard *newsFeedCard = [self getNewsFeedCardFromString:cardJSONString
+                                                            braze:braze];
+  if (newsFeedCard) {
+    [newsFeedCard logImpressionUsing:braze];
+  }
 }
 
 - (void)logCardClicked:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKCard *card = [ABKCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logCardClicked];
+  BRZNewsFeedCard *newsFeedCard = [self getNewsFeedCardFromString:cardJSONString
+                                                            braze:braze];
+  if (newsFeedCard) {
+    [newsFeedCard logClickUsing:braze];
+  }
 }
 
-# pragma mark - News Feed refresh
+/// Returns the news feed card for the JSON string. If the JSON fails decoding, returns nil.
+- (BRZNewsFeedCard *)getNewsFeedCardFromString:(NSString *)newsFeedCardJSONString
+                                         braze:(Braze *)braze {
+
+
+  NSData *newsFeedCardData = [newsFeedCardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  BRZNewsFeedCard *card = [BRZNewsFeedCard decodingWithJson:newsFeedCardData];
+  if (card) {
+    return card;
+  }
+  NSLog(@"Unable to parse News Feed card from string: %@", newsFeedCardJSONString);
+  return nil;
+}
 
 - (void)requestFeedRefresh {
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(requestFeedFromCache:)
-                                               name:ABKFeedUpdatedNotification
-                                             object:nil];
-  [[Appboy sharedInstance] requestFeedRefresh];
+  [braze.newsFeed requestRefreshWithCompletion:^(NSArray<BRZNewsFeedCard *> *_Nullable newCards,
+                                                 NSError *_Nullable refreshError) {
+    if (refreshError) {
+      NSLog(@"Content Card refresh error: %@", refreshError);
+      return;
+    }
+    [self sendMessageWithNewsFeedCards:newCards fromCache:NO];
+  }];
 }
 
 - (void)requestFeedFromCache:(NSNotification *)notification {
-  BOOL fromOfflineStorage = YES;
-  if (notification != nil) {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:ABKFeedUpdatedNotification object:nil];
-    fromOfflineStorage = NO;
-  }
+  [self sendMessageWithNewsFeedCards:braze.newsFeed.cards fromCache:YES];
+}
+
+/// Encodes the news feed cards and sends them via a Unity message
+- (void)sendMessageWithNewsFeedCards:(NSArray<BRZNewsFeedCard *> *)newsFeedCards
+                           fromCache:(BOOL)fromCache {
   if (self.unityFeedCallbackFunctionName == nil || self.unityFeedGameObjectName == nil) {
     NSLog(@"No properly configured game object. Not forwarding News Feed message.");
     return;
   }
 
-  NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
-  NSArray *cards = [[Appboy sharedInstance].feedController getCardsInCategories:ABKCardCategoryAll];
-  for (ABKCard *card in cards) {
-    NSMutableDictionary *cardDictionary = [card proxyForJson];
-    [cardsDictionaryArray addObject:cardDictionary];
+  NSMutableArray *cardsJSONArray = [NSMutableArray array];
+  for (BRZNewsFeedCard *card in newsFeedCards) {
+    NSData *cardData = [card json];
+    NSError *error;
+    NSDictionary *newsFeedCardJSON = [NSJSONSerialization JSONObjectWithData:cardData
+                                                                     options:NSJSONReadingMutableContainers
+                                                                       error:&error];
+    if (error != nil) {
+        NSLog(@"Error creating news feed card JSON: %@", error);
+    }
+    [cardsJSONArray addObject:newsFeedCardJSON];
   }
 
-  NSTimeInterval timestamp = [[Appboy sharedInstance].feedController.lastUpdate timeIntervalSince1970];
-  NSDictionary *feedDictionary = @{@"mFeedCards" : cardsDictionaryArray,
-                                   @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
-                                   @"mFromOfflineStorage" : [NSNumber numberWithBool:fromOfflineStorage]};
+  NSTimeInterval timestamp = [braze.newsFeed.lastUpdate timeIntervalSince1970];
+  NSDictionary *feedDictionary = @{
+    @"mFeedCards" : cardsJSONArray,
+    @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
+    @"mFromOfflineStorage" : [NSNumber numberWithBool:fromCache]
+  };
   NSError *error;
   NSData *feedData = [NSJSONSerialization dataWithJSONObject:feedDictionary
                                                      options:0
                                                        error:&error];
-  if (!feedData) {
+  if (!feedData || error != nil) {
     NSLog(@"Error parsing News Feed to json: %@", error);
     return;
   }
@@ -275,102 +290,135 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
     NSLog(@"Error parsing News Feed json to string");
     return;
   }
-  [self unitySendMessageTo:self.unityFeedGameObjectName withMethod:self.unityFeedCallbackFunctionName withMessage:feedString];
+  [self unitySendMessageTo:self.unityFeedGameObjectName
+                withMethod:self.unityFeedCallbackFunctionName
+               withMessage:feedString];
 }
 
-# pragma mark - Content Card analytics
+# pragma mark - Content Cards
 
 - (void)logContentCardImpression:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logContentCardImpression];
+  BRZContentCardRaw *contentCard = [self getContentCardFromString:cardJSONString
+                                                            braze:braze];
+  if (contentCard) {
+    [contentCard logImpressionUsing:braze];
+  }
 }
 
 - (void)logContentCardClicked:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logContentCardClicked];
+  BRZContentCardRaw *contentCard = [self getContentCardFromString:cardJSONString
+                                                            braze:braze];
+  if (contentCard) {
+    [contentCard logClickUsing:braze];
+  }
 }
 
 - (void)logContentCardDismissed:(NSString *)cardJSONString {
-  NSData *cardData = [cardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  NSError *e = nil;
-  id deserializedCardDict = [NSJSONSerialization JSONObjectWithData:cardData options:NSJSONReadingMutableContainers error:&e];
-  ABKContentCard *card = [ABKContentCard deserializeCardFromDictionary:deserializedCardDict];
-  [card logContentCardDismissed];
+  BRZContentCardRaw *contentCard = [self getContentCardFromString:cardJSONString
+                                                            braze:braze];
+  if (contentCard) {
+    [contentCard logDismissedUsing:braze];
+  }
 }
 
-# pragma mark - Content Card refresh
+/// Returns the content card for the JSON string. If the JSON fails decoding, returns nil.
+- (BRZContentCardRaw *)getContentCardFromString:(NSString *)contentCardJSONString
+                                          braze:(Braze *)braze {
+
+  NSData *contentCardData = [contentCardJSONString dataUsingEncoding:NSUTF8StringEncoding];
+  BRZContentCardRaw *card = [BRZContentCardRaw decodingWithJson:contentCardData];
+  if (card) {
+    return card;
+  }
+  NSLog(@"Unable to parse Content Card from string: %@", contentCardJSONString);
+  return nil;
+}
 
 - (void)requestContentCardsRefresh {
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(requestContentCardsFromCache:)
-                                               name:ABKContentCardsProcessedNotification
-                                             object:nil];
-  [[Appboy sharedInstance] requestContentCardsRefresh];
+  [braze.contentCards requestRefreshWithCompletion:^(NSArray<BRZContentCardRaw *> *_Nullable newCards,
+                                                     NSError *_Nullable refreshError) {
+    if (refreshError) {
+      NSLog(@"Content Card refresh error: %@", refreshError);
+      return;
+    }
+    [self sendMessageWithContentCards:newCards fromCache:NO];
+  }];
 }
 
 - (void)requestContentCardsFromCache:(NSNotification *)notification {
-  BOOL fromOfflineStorage = YES;
-  if (notification != nil) {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:ABKContentCardsProcessedNotification object:nil];
-    fromOfflineStorage = NO;
-  }
-  if (self.unityContentCardsCallbackFunctionName == nil || self.unityContentCardsGameObjectName == nil) {
+  [self sendMessageWithContentCards:braze.contentCards.cards fromCache:YES];
+}
+
+/// Encodes the content cards and sends them via a Unity message
+- (void)sendMessageWithContentCards:(NSArray<BRZContentCardRaw *> *)contentCards
+                          fromCache:(BOOL)fromCache {
+  if (self.unityContentCardsCallbackFunctionName == nil
+      || self.unityContentCardsGameObjectName == nil) {
     NSLog(@"No properly configured game object. Not forwarding Content Cards message.");
     return;
   }
 
-  NSMutableArray *cardsDictionaryArray = [NSMutableArray arrayWithCapacity:1];
-  NSArray *cards = [[Appboy sharedInstance].contentCardsController getContentCards];
-  for (ABKCard *card in cards) {
-    NSMutableDictionary *cardDictionary = [card proxyForJson];
-    [cardsDictionaryArray addObject:cardDictionary];
+  NSMutableArray *cardsJSONArray = [NSMutableArray array];
+  for (BRZContentCardRaw *card in contentCards) {
+    NSData *cardData = [card json];
+    NSError *error;
+    NSDictionary *cardJSON = [NSJSONSerialization JSONObjectWithData:cardData
+                                                             options:NSJSONReadingMutableContainers
+                                                               error:&error];
+    if (error != nil) {
+        NSLog(@"Error creating content card JSON: %@", error);
+    }
+    [cardsJSONArray addObject:cardJSON];
   }
 
-  NSTimeInterval timestamp = [[Appboy sharedInstance].contentCardsController.lastUpdate timeIntervalSince1970];
-  NSDictionary *contentCardsDictionary = @{@"mContentCards" : cardsDictionaryArray,
-                                   @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
-                                   @"mFromOfflineStorage" : [NSNumber numberWithBool:fromOfflineStorage]};
+  NSTimeInterval timestamp = [braze.contentCards.lastUpdate timeIntervalSince1970];
+  NSDictionary *contentCardsDictionary = @{
+    @"mContentCards" : cardsJSONArray,
+    @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
+    @"mFromOfflineStorage" : [NSNumber numberWithBool:fromCache]
+  };
   NSError *error;
   NSData *contentCardsData = [NSJSONSerialization dataWithJSONObject:contentCardsDictionary
                                                      options:0
                                                        error:&error];
-  if (!contentCardsData) {
+  if (!contentCardsData || error != nil) {
     NSLog(@"Error parsing Content Cards to json: %@", error);
     return;
   }
-  NSString *contentCardsString = [[NSString alloc] initWithData:contentCardsData encoding:NSUTF8StringEncoding];
+  NSString *contentCardsString = [[NSString alloc] initWithData:contentCardsData
+                                                       encoding:NSUTF8StringEncoding];
   if (contentCardsString == nil) {
     NSLog(@"Error parsing Content Cards json to string");
     return;
   }
-  [self unitySendMessageTo:self.unityContentCardsGameObjectName withMethod:self.unityContentCardsCallbackFunctionName withMessage:contentCardsString];
+  [self unitySendMessageTo:self.unityContentCardsGameObjectName
+                withMethod:self.unityContentCardsCallbackFunctionName
+               withMessage:contentCardsString];
 }
-
-# pragma mark - Content Card UI
 
 - (void)displayContentCards {
-  ABKContentCardsViewController *contentCards = [[ABKContentCardsViewController alloc] init];
-  [ABKUIUtils.activeApplicationViewController presentViewController:contentCards
-                                                           animated:YES
-                                                         completion:nil];
+  BRZContentCardUIModalViewController *contentCardsModal = [[BRZContentCardUIModalViewController alloc] initWithBraze:braze];
+  contentCardsModal.navigationItem.title = @"Content Cards";
+  UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+  UIViewController *mainViewController = keyWindow.rootViewController;
+  [mainViewController presentViewController:contentCardsModal animated:YES completion:nil];
 }
 
-# pragma mark - Push
+# pragma mark - Push Notifications
 
 - (void)registerPushToken:(NSData *)data {
-  [[Appboy sharedInstance] registerDeviceToken:data];
+  [braze.notifications registerDeviceToken:data];
+
   NSString *token = [AppboyUnityManager hexStringFromNSData:data];
   if (self.unityPushTokenReceivedFromSystemGameObjectName != nil && self.unityPushTokenReceivedFromSystemFunctionName != nil) {
-    [self unitySendMessageTo:self.unityPushTokenReceivedFromSystemGameObjectName withMethod:self.unityPushTokenReceivedFromSystemFunctionName withMessage:token];
+    [self unitySendMessageTo:self.unityPushTokenReceivedFromSystemGameObjectName
+                  withMethod:self.unityPushTokenReceivedFromSystemFunctionName
+                 withMessage:token];
   }
   if (self.sendPushTokenReceivedFromSystem) {
-    [self unitySendMessageTo:ABKInternalCallback withMethod:ABKInternalPushTokenReceivedFromSystem withMessage:token];
+    [self unitySendMessageTo:BRZInternalCallback
+                  withMethod:BRZInternalPushTokenReceivedFromSystem
+                 withMessage:token];
   }
 }
 
@@ -404,29 +452,33 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
   }
   [center requestAuthorizationWithOptions:options
                         completionHandler:^(BOOL granted, NSError *_Nullable error) {
-    [[Appboy sharedInstance] pushAuthorizationFromUserNotificationCenter:granted];
     if (self.unityPushPermissionsPromptResponseGameObjectName != nil && self.unityPushPermissionsPromptResponseFunctionName != nil) {
-      [self unitySendMessageTo:self.unityPushPermissionsPromptResponseGameObjectName withMethod:self.unityPushPermissionsPromptResponseFunctionName withMessage:(granted ? @"true" : @"false")];
+      [self unitySendMessageTo:self.unityPushPermissionsPromptResponseGameObjectName
+                    withMethod:self.unityPushPermissionsPromptResponseFunctionName
+                   withMessage:(granted ? @"true" : @"false")];
     }
     if (self.sendInternalPushPermissionsPromptResponse) {
-      [self unitySendMessageTo:ABKInternalCallback withMethod:ABKInternalPushPermissionsPromptResponse withMessage:(granted ? @"true" : @"false")];
+      [self unitySendMessageTo:BRZInternalCallback
+                    withMethod:BRZInternalPushPermissionsPromptResponse
+                   withMessage:(granted ? @"true" : @"false")];
     }
   }];
   [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
+/// Rearrange the notification dictionary and propogate it to any of the callbacks set in the Unity UI
 - (void)forwardNotification:(NSDictionary *)notification {
-  // generate a new dictionary that rearrange the notification elements
+  // Generate a new dictionary that rearrange the notification elements
   NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
 
-  // check if the object for key alert is a string; if it is, then convert it to a dictionary
+  // Check if the object for key alert is a string; if it is, then convert it to a dictionary
   id alert = [aps objectForKey:@"alert"];
   if ([alert isKindOfClass:[NSString class]]) {
     NSDictionary *alertDictionary = [NSDictionary dictionaryWithObject:alert forKey:@"body"];
     [aps setObject:alertDictionary forKey:@"alert"];
   }
 
-  // move all other dictionaries other than aps in payload to key extra in aps dictionary
+  // Move all other dictionaries other than aps in payload to key extra in aps dictionary
   NSMutableDictionary *extraDictionary = [NSMutableDictionary dictionaryWithDictionary:notification];
   [extraDictionary removeObjectForKey:@"aps"];
   if ([extraDictionary count] > 0) {
@@ -446,60 +498,67 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
 
   NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
+  // Send the notification data to the callback set in the Unity UI
   UIApplication *application = [UIApplication sharedApplication];
   if (application.applicationState == UIApplicationStateActive) {
     if (self.unityPushReceivedGameObjectName == nil || self.unityPushReceivedCallbackFunctionName == nil) {
       NSLog(@"No properly configured game object. Not forwarding push received message.");
       return;
     }
-    [self unitySendMessageTo:self.unityPushReceivedGameObjectName withMethod:self.unityPushReceivedCallbackFunctionName withMessage:dataString];
+    [self unitySendMessageTo:self.unityPushReceivedGameObjectName
+                  withMethod:self.unityPushReceivedCallbackFunctionName \
+                 withMessage:dataString];
   } else {
     if (self.unityPushOpenedGameObjectName == nil || self.unityPushOpenedCallbackFunctionName == nil) {
       NSLog(@"No properly configured game object. Not forwarding push opened message.");
       return;
     }
-    [self unitySendMessageTo:self.unityPushOpenedGameObjectName withMethod:self.unityPushOpenedCallbackFunctionName withMessage:dataString];
+    [self unitySendMessageTo:self.unityPushOpenedGameObjectName
+                  withMethod:self.unityPushOpenedCallbackFunctionName
+                 withMessage:dataString];
   }
 }
 
 # pragma mark - Gameobject callbacks
 
-- (void)configureListenerFor:(NSInteger)messageType withGameObject:(NSString *)gameobject withMethod:(NSString *)method {
-  switch ((ABKUnityMessageType)messageType) {
-    case ABKPushPermissionsPromptResponse:
+- (void)configureListenerFor:(NSInteger)messageType
+              withGameObject:(NSString *)gameobject
+                  withMethod:(NSString *)method {
+  switch ((BRZUnityMessageType)messageType) {
+    case BRZPushPermissionsPromptResponse:
       NSLog(@"Setting push permissions prompt response listener to object %@, method %@", gameobject, method);
       self.unityPushPermissionsPromptResponseGameObjectName = gameobject;
       self.unityPushPermissionsPromptResponseFunctionName = method;
       break;
-    case ABKPushTokenReceivedFromSystem:
+    case BRZPushTokenReceivedFromSystem:
       NSLog(@"Setting push token received from system listener to object %@, method %@", gameobject, method);
       self.unityPushTokenReceivedFromSystemGameObjectName = gameobject;
       self.unityPushTokenReceivedFromSystemFunctionName = method;
       break;
-    case ABKPushReceived:
+    case BRZPushReceived:
       NSLog(@"Setting push received listener to object %@, method %@", gameobject, method);
       [self addPushReceivedListenerWithObjectName:gameobject callbackMethodName:method];
       break;
-    case ABKPushOpened:
+    case BRZPushOpened:
       NSLog(@"Setting push opened listener to object %@, method %@", gameobject, method);
       [self addPushOpenedListenerWithObjectName:gameobject callbackMethodName:method];
       break;
-    case ABKPushDeleted:
-      NSLog(@"Push opened not supported.");
+    case BRZPushDeleted:
+      NSLog(@"Push deleted not supported.");
       break;
-    case ABKInAppMessageReceived:
+    case BRZInAppMessageReceived:
       NSLog(@"Setting in-app message received listener to object %@, method %@", gameobject, method);
-      [self addInAppMessageListenerWithObjectNameAndSetDelegate:gameobject callbackMethodName:method];
+      [self addInAppMessageListenerWithObjectName:gameobject callbackMethodName:method];
       break;
-    case ABKNewsFeedUpdated:
+    case BRZNewsFeedUpdated:
       NSLog(@"Setting News Feed updated listener to object %@, method %@", gameobject, method);
       [self addFeedListenerWithObjectName:gameobject callbackMethodName:method];
       break;
-    case ABKContentCardsUpdated:
+    case BRZContentCardsUpdated:
       NSLog(@"Setting Content Cards updated listener to object %@, method %@", gameobject, method);
       [self addContentCardsListenerWithObjectName:gameobject callbackMethodName:method];
       break;
-    case ABKSdkAuthFailed:
+    case BRZSDKAuthFailed:
       NSLog(@"Setting SDK Authentication Failure listener to object %@, method %@", gameobject, method);
       [self addSdkAuthFailureListenerWithObjectName:gameobject callbackMethodName:method];
       break;
@@ -510,17 +569,28 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
 }
 
 - (void)setListenersFromPList {
-  [self addPushReceivedListenerWithObjectName:self.brazeUnityPlist[ABKUnityPushReceivedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityPushReceivedCallbackKey]];
-  [self addPushOpenedListenerWithObjectName:self.brazeUnityPlist[ABKUnityPushOpenedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityPushOpenedCallbackKey]];
-  [self addInAppMessageListenerWithObjectNameAndSetDelegate:self.brazeUnityPlist[ABKUnityInAppMessageGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityInAppMessageCallbackKey]];
-  [self addContentCardsListenerWithObjectName:self.brazeUnityPlist[ABKUnityContentCardsGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityContentCardsCallbackKey]];
-  [self addFeedListenerWithObjectName:self.brazeUnityPlist[ABKUnityFeedGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnityFeedCallbackKey]];
-  [self addSdkAuthFailureListenerWithObjectName:self.brazeUnityPlist[ABKUnitySdkAuthenticationFailureGameObjectKey] callbackMethodName:self.brazeUnityPlist[ABKUnitySdkAuthenticationFailureCallbackKey]];
+  // Push
+  [self addPushReceivedListenerWithObjectName:self.brazeUnityPlist[BRZUnityPushReceivedGameObjectKey]
+                           callbackMethodName:self.brazeUnityPlist[BRZUnityPushReceivedCallbackKey]];
+  [self addPushOpenedListenerWithObjectName:self.brazeUnityPlist[BRZUnityPushOpenedGameObjectKey]
+                         callbackMethodName:self.brazeUnityPlist[BRZUnityPushOpenedCallbackKey]];
+
+  // In-app messages, Content Cards, News Feed
+  [self addInAppMessageListenerWithObjectName:self.brazeUnityPlist[BRZUnityInAppMessageGameObjectKey]
+                           callbackMethodName:self.brazeUnityPlist[BRZUnityInAppMessageCallbackKey]];
+  [self addContentCardsListenerWithObjectName:self.brazeUnityPlist[BRZUnityContentCardsGameObjectKey]
+                           callbackMethodName:self.brazeUnityPlist[BRZUnityContentCardsCallbackKey]];
+  [self addFeedListenerWithObjectName:self.brazeUnityPlist[BRZUnityFeedGameObjectKey]
+                   callbackMethodName:self.brazeUnityPlist[BRZUnityFeedCallbackKey]];
+
+  // SDK Auth
+  [self addSdkAuthFailureListenerWithObjectName:self.brazeUnityPlist[BRZUnitySdkAuthenticationFailureGameObjectKey]
+                             callbackMethodName:self.brazeUnityPlist[BRZUnitySdkAuthenticationFailureCallbackKey]];
 }
 
-- (void)addInAppMessageListenerWithObjectNameAndSetDelegate:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+- (void)addInAppMessageListenerWithObjectName:(NSString *)gameObject
+                           callbackMethodName:(NSString *)callbackMethod {
   if (gameObject != nil && callbackMethod != nil) {
-    [Appboy sharedInstance].inAppMessageController.delegate = [AppboyUnityManager sharedInstance];
     self.unityInAppMessageGameObjectName = gameObject;
     self.unityInAppMessageCallbackFunctionName = callbackMethod;
   }
@@ -535,7 +605,6 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
 
 - (void)addSdkAuthFailureListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
   if (gameObject != nil && callbackMethod != nil) {
-    [Appboy sharedInstance].sdkAuthenticationDelegate = self;
     self.unitySdkAuthFailureGameObjectName = gameObject;
     self.unitySdkAuthFailureCallbackFunctionName = callbackMethod;
   }
@@ -565,10 +634,11 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
 # pragma mark - UIApplicationDelegate
 
 - (void)registerApplication:(UIApplication *)application
-         didReceiveRemoteNotification:(NSDictionary *)notification
+         didReceiveRemoteNotification:(NSDictionary *)userInfo
          fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-  [[Appboy sharedInstance] registerApplication:application didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
-  [self forwardNotification:notification];
+  (void)[braze.notifications handleBackgroundNotificationWithUserInfo:userInfo
+                                               fetchCompletionHandler:completionHandler];
+  [self forwardNotification:userInfo];
 }
 
 # pragma mark - UNUserNotificationCenterDelegate
@@ -580,95 +650,115 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
     completionHandler();
   }
 
-  if ([self.brazeUnityPlist[ABKUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[Appboy sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+  if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
+    (void)[braze.notifications handleUserNotificationWithResponse:response
+                                            withCompletionHandler:completionHandler];
     [self forwardNotification:response.notification.request.content.userInfo];
   }
 }
 
-# pragma mark - ABKInAppMessageControllerDelegate
+# pragma mark - BrazeInAppMessageUIDelegate
 
 /**
- * @discussion Set on the shared Appboy instance when a game object is configured to receive in-app messages.
+ * Uses the stored displayAction to determine whether or not to display the received
+ * in-app message.
+ *
+ * If a callback function is set up for the game object, this also sends the in-app message
+ * JSON to the callback function.
  */
-- (ABKInAppMessageDisplayChoice)beforeInAppMessageDisplayed:(ABKInAppMessage *)inAppMessage {
-  ABKInAppMessageDisplayChoice displayAction = self.displayAction;
-
-  NSData *inAppMessageData = [inAppMessage serializeToData];
+- (enum BRZInAppMessageUIDisplayChoice)inAppMessage:(BrazeInAppMessageUI *)ui
+                            displayChoiceForMessage:(BRZInAppMessageRaw *)message {
+  BRZInAppMessageUIDisplayChoice displayAction = self.displayAction;
+  NSData *inAppMessageData = [message json];
   NSString *dataString = [[NSString alloc] initWithData:inAppMessageData encoding:NSUTF8StringEncoding];
 
   if (self.unityInAppMessageCallbackFunctionName != nil && self.unityInAppMessageGameObjectName != nil) {
-    NSLog(@"Using configured game object for in-app message handing.");
     [self unitySendMessageTo:self.unityInAppMessageGameObjectName
                   withMethod:self.unityInAppMessageCallbackFunctionName
-                 withMessage:dataString];
+                withMessage:dataString];
 
-    if ([self.brazeUnityPlist[ABKUnityHandleInAppMessageDisplayKey] boolValue]) {
+    if ([self.brazeUnityPlist[BRZUnityHandleInAppMessageDisplayKey] boolValue]) {
       NSLog(@"Braze configured to display in-app messages despite presence of game object listener. Using display action: %ld.", (long)self.displayAction);
     } else {
-      displayAction = ABKDiscardInAppMessage;
+      displayAction = BRZInAppMessageUIDisplayChoiceDiscard;
     }
   }
 
-  if (displayAction == ABKDisplayInAppMessageNow) {
-    [self unitySendMessageTo:ABKInternalCallback
-                  withMethod:ABKInternalIAMDisplay
-                 withMessage:dataString];
+  if (displayAction == BRZInAppMessageUIDisplayChoiceNow) {
+    [self unitySendMessageTo:BRZInternalCallback
+                  withMethod:BRZInternalIAMDisplay
+                withMessage:dataString];
   }
 
   return displayAction;
 }
 
-# pragma mark - ABKInAppMessageUIDelegate
-
-- (void)onInAppMessageDismissed:(ABKInAppMessage *)inAppMessage {
-  NSData *data = [inAppMessage serializeToData];
+- (void)inAppMessage:(BrazeInAppMessageUI *)ui
+         didDismiss:(BRZInAppMessageRaw *)message
+               view:(UIView *)view {
+  NSData *data = [message json];
   NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  [self unitySendMessageTo:ABKInternalCallback
-                withMethod:ABKInternalIAMDismissed
+  [self unitySendMessageTo:BRZInternalCallback
+                withMethod:BRZInternalIAMDismissed
                withMessage:dataString];
 }
 
-- (BOOL)onInAppMessageClicked:(ABKInAppMessage *)inAppMessage {
-  NSData *data = [inAppMessage serializeToData];
+/**
+ * Process the in-app message click for HTML or non-HTML in-app messages.
+ *
+ * Sends the in-app message JSON and other relevant info to the internal
+ * callback methods to be processed.
+ */
+- (BOOL)inAppMessage:(BrazeInAppMessageUI *)ui
+       shouldProcess:(enum BRZInAppMessageRawClickAction)clickAction
+                 url:(NSURL *)url
+            buttonId:(NSString *)buttonId
+             message:(BRZInAppMessageRaw *)message
+                view:(UIView *)view {
+  NSData *data = [message json];
   NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  [self unitySendMessageTo:ABKInternalCallback
-                withMethod:ABKInternalIAMClicked
-               withMessage:dataString];
-  return NO;
-}
 
-- (BOOL)onInAppMessageButtonClicked:(ABKInAppMessageImmersive *)inAppMessage
-                             button:(ABKInAppMessageButton *)button {
-  NSData *data = [inAppMessage serializeToData];
-  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  NSInteger buttonId = button.buttonID;
+  BOOL isHtmlMessage = message.type == BRZInAppMessageRawTypeHtml
+                       || message.type == BRZInAppMessageRawTypeHtmlFull;
 
-  NSData *argv = [NSJSONSerialization dataWithJSONObject:@[dataString, @(buttonId)]
-                                                 options:0
-                                                   error:nil];
-  NSString *argvString = [[NSString alloc] initWithData:argv encoding:NSUTF8StringEncoding];
-  [self unitySendMessageTo:ABKInternalCallback
-                withMethod:ABKInternalIAMButtonClicked
-               withMessage:argvString];
-  return NO;
-}
+  if (isHtmlMessage) {
+    // HTML click
+    id urlEncoded = url ? url.absoluteString : [NSNull null];
+    NSError *error = nil;
+    NSData *argv = [NSJSONSerialization dataWithJSONObject:@[dataString, urlEncoded]
+                                                   options:0
+                                                     error:&error];
+    if (error != nil) {
+      NSLog(@"Error serializing json for string: %@, error: %@", dataString, [error localizedDescription]);
+    }
+    NSString *argvString = [[NSString alloc] initWithData:argv encoding:NSUTF8StringEncoding];
+    [self unitySendMessageTo:BRZInternalCallback
+                  withMethod:BRZInternalIAMHTMLClicked
+                 withMessage:argvString];
 
-- (BOOL)onInAppMessageHTMLButtonClicked:(ABKInAppMessageHTMLBase *)inAppMessage
-                             clickedURL:(NSURL *)clickedURL
-                               buttonID:(NSString *)buttonId {
-  NSData *data = [inAppMessage serializeToData];
-  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  id url = clickedURL ? clickedURL.absoluteString : [NSNull null];
+  } else if (buttonId != nil) {
+    // Non-HTML button click
+    NSError *error = nil;
+    NSData *argv = [NSJSONSerialization dataWithJSONObject:@[dataString, buttonId]
+                                                   options:0
+                                                     error:&error];
+    if (error != nil) {
+      NSLog(@"Error serializing json for string: %@, error: %@", dataString, [error localizedDescription]);
+    }
+    NSString *argvString = [[NSString alloc] initWithData:argv encoding:NSUTF8StringEncoding];
 
-  NSData *argv = [NSJSONSerialization dataWithJSONObject:@[dataString, url]
-                                                 options:0
-                                                   error:nil];
-  NSString *argvString = [[NSString alloc] initWithData:argv encoding:NSUTF8StringEncoding];
-  [self unitySendMessageTo:ABKInternalCallback
-                withMethod:ABKInternalIAMHTMLClicked
-               withMessage:argvString];
-  return NO;
+    [self unitySendMessageTo:BRZInternalCallback
+                  withMethod:BRZInternalIAMButtonClicked
+                 withMessage:argvString];
+
+  } else {
+    // Non-HTML body click
+    [self unitySendMessageTo:BRZInternalCallback
+                  withMethod:BRZInternalIAMClicked
+                 withMessage:dataString];
+
+  }
+  return YES;
 }
 
 # pragma mark - Internal Communication
@@ -681,12 +771,12 @@ static NSString *const ABKInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
 }
 
 - (void)configureInternalListenerFor:(NSInteger)messageType {
-  switch ((ABKUnityMessageType)messageType) {
-    case ABKPushPermissionsPromptResponse:
+  switch ((BRZUnityMessageType)messageType) {
+    case BRZPushPermissionsPromptResponse:
       NSLog(@"Enabling internal push permissions prompt response listener.");
       self.sendInternalPushPermissionsPromptResponse = YES;
       break;
-    case ABKPushTokenReceivedFromSystem:
+    case BRZPushTokenReceivedFromSystem:
       NSLog(@"Enabling push token received from system listener.");
       self.sendPushTokenReceivedFromSystem = YES;
       break;

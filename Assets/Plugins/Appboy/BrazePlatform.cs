@@ -50,29 +50,6 @@ public interface BrazePlatform {
   void AddToCustomUserAttributeArray(string key, string value);
   void RemoveFromCustomUserAttributeArray(string key, string value);
 
-  void setUserFacebookData(
-    string facebookId,
-    string firstName,
-    string lastName,
-    string email,
-    string bio,
-    string cityName,
-    Gender? gender,
-    int? numberOfFriends,
-    string birthday
-  );
-
-  void setUserTwitterData(
-    int? twitterUserId, 
-    string twitterHandle, 
-    string name, 
-    string description, 
-    int? followerCount,
-    int? followingCount, 
-    int? tweetCount, 
-    string profileImageUrl
-  );
-
   void SetUserLastKnownLocation(
     double latitude,
     double longitude,

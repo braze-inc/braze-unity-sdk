@@ -17,7 +17,7 @@ namespace Appboy.Models.InAppMessage {
     /// An IInAppMessage instance populated by the serialized in-app message object.
     /// </returns>
     public static IInAppMessage BuildInAppMessage(string inAppMessageJSONString) {
-      JSONClass json = InAppMessageConstants.JSONObjectFromString(inAppMessageJSONString);
+      JSONObject json = InAppMessageConstants.JSONObjectFromString(inAppMessageJSONString);
       if (json != null) {
         InAppMessageType type = (InAppMessageType)EnumUtils.TryParse(typeof(InAppMessageType), json[InAppMessageConstants.TypeKey], true, InAppMessageType.SLIDEUP);
         switch (type) {

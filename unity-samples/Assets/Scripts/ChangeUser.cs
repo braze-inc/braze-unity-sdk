@@ -1,19 +1,14 @@
 ﻿using Appboy;
 using Appboy.Utilities;
 using System;
+using System.Collections;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using Utilities;
-using UnityEngine.Networking;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Collections;
-using System;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Networking;
 
 public class ChangeUser : MonoBehaviour {
 
@@ -47,7 +42,7 @@ public class ChangeUser : MonoBehaviour {
       Debug.Log("Error: " + request.error);
     } else {
       Debug.Log("Status Code: " + request.responseCode);
-      JSONClass json = (JSONClass) JSON.Parse(jsonResponse);
+      JSONObject json = (JSONObject) JSON.Parse(jsonResponse);
       var token = json["data"]["token"];
       Appboy.AppboyBinding.ChangeUser(userId, token);
       SceneManager.LoadScene(Constants.MainMenuScene);  

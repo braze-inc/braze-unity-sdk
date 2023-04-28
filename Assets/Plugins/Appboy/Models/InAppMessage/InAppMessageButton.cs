@@ -20,11 +20,11 @@ namespace Appboy.Models.InAppMessage {
     public InAppMessageButton() {
     }
     
-    public InAppMessageButton(JSONClass json) {
+    public InAppMessageButton(JSONObject json) {
       ButtonID = json[InAppMessageConstants.ButtonIDKey].AsInt;
       Text = json[InAppMessageConstants.ButtonTextKey];
-      TextColor = ColorUtils.HexToColor(json[InAppMessageConstants.ButtonTextColorKey]);
-      BackgroundColor = ColorUtils.HexToColor(json[InAppMessageConstants.ButtonBackgroundColorKey]);
+      TextColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.ButtonTextColorKey]);
+      BackgroundColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.ButtonBackgroundColorKey]);
       URI = json[InAppMessageConstants.ButtonURIKey];
       ButtonClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ButtonClickActionKey], true, ClickAction.NEWS_FEED);
       if (ButtonClickAction == ClickAction.URI && URI == null) {

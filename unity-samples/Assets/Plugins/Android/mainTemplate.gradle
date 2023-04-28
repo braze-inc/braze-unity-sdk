@@ -1,36 +1,9 @@
-// // Android Resolver Repos Start
-// ([rootProject] + (rootProject.subprojects as List)).each {
-//     ext {
-//         it.setProperty("android.useAndroidX", true)
-//         it.setProperty("android.enableJetifier", true)
-//     }
-// }
-([rootProject] + (rootProject.subprojects as List)).each { project ->
-    project.repositories {
-        google()
-        mavenLocal()
-        mavenCentral()
-    }
-}
-
-buildscript {
-    repositories {
-        google()
-    }
-    dependencies {
-        classpath "com.google.gms:google-services:4.3.4"
-    }
-}
-// Android Resolver Repos End
 apply plugin: 'com.android.library'
-
 **APPLY_PLUGINS**
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-// Android Resolver Dependencies Start
     implementation 'com.google.firebase:firebase-messaging:22.0.0'
-// Android Resolver Dependencies End
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.0"
@@ -38,18 +11,6 @@ dependencies {
     implementation 'androidx.core:core:1.7.0'
 **DEPS**}
 
-// Android Resolver Exclusions Start
-android {
-  packagingOptions {
-      exclude ('/lib/arm64-v8a/*' + '*')
-      exclude ('/lib/armeabi/*' + '*')
-      exclude ('/lib/mips/*' + '*')
-      exclude ('/lib/mips64/*' + '*')
-      exclude ('/lib/x86/*' + '*')
-      exclude ('/lib/x86_64/*' + '*')
-  }
-}
-// Android Resolver Exclusions End
 android {
     compileSdkVersion **APIVERSION**
     buildToolsVersion '**BUILDTOOLS**'
@@ -75,13 +36,26 @@ android {
     }
 
     aaptOptions {
-        noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }**PACKAGING_OPTIONS**
 }**REPOSITORIES**
 **IL_CPP_BUILD_SETUP**
 **SOURCE_BUILD_SETUP**
 **EXTERNAL_SOURCES**
+
+configurations {
+    compileClasspath
+}
+
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath "com.google.gms:google-services:4.3.4"
+    }
+}
 
 apply plugin: 'com.google.gms.google-services'
 

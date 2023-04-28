@@ -11,7 +11,7 @@ namespace Appboy.Models.Cards {
 
     public string Domain { get; private set; }
 
-    public TextAnnouncementCard(JSONClass json) : base(json) {
+    public TextAnnouncementCard(JSONObject json) : base(json) {
       if (json["title"] == null || json["description"] == null) {
         throw new ArgumentException("Missing required field(s).");
       }

@@ -1,88 +1,89 @@
 #import <Foundation/Foundation.h>
-#import <Appboy_iOS_SDK/AppboyKit.h>
-#import <Appboy_iOS_SDK/ABKInAppMessageUIDelegate.h>
+#import <UserNotifications/UserNotifications.h>
 
-static NSString *const ABKUnityApiKey = @"ApiKey";
-static NSString *const ABKUnitySdkAuthEnabledKey = @"ApiKey";
-static NSString *const ABKUnityAutomaticPushIntegrationKey = @"IntegratesPush";
-static NSString *const ABKUnityDisableAutomaticPushRegistrationKey = @"DisableAutomaticPushRegistration";
-static NSString *const ABKUnityDisableProvisionalAuthKey = @"DisableProvisionalAuth";
-static NSString *const ABKUnitySetPushListenerKey = @"SetPushListener";
-static NSString *const ABKUnityPushReceivedGameObjectKey = @"PushReceivedGameObjectName";
-static NSString *const ABKUnityPushReceivedCallbackKey = @"PushReceivedCallbackMethodName";
-static NSString *const ABKUnityPushOpenedGameObjectKey = @"PushOpenedGameObjectName";
-static NSString *const ABKUnityPushOpenedCallbackKey = @"PushOpenedCallbackMethodName";
-static NSString *const ABKUnityInAppMessageGameObjectKey = @"InAppMessageGameObjectName";
-static NSString *const ABKUnityInAppMessageCallbackKey = @"InAppMessageCallbackMethodName";
-static NSString *const ABKUnityFeedGameObjectKey = @"FeedGameObjectName";
-static NSString *const ABKUnityFeedCallbackKey = @"FeedCallbackMethodName";
-static NSString *const ABKUnityContentCardsGameObjectKey = @"ContentCardsGameObjectName";
-static NSString *const ABKUnityContentCardsCallbackKey = @"ContentCardsCallbackMethodName";
-static NSString *const ABKUnityHandleInAppMessageDisplayKey = @"DisplayInAppMessages";
-static NSString *const ABKUnitySdkAuthenticationFailureGameObjectKey = @"SdkAuthFailureGameObjectName";
-static NSString *const ABKUnitySdkAuthenticationFailureCallbackKey = @"SdkAuthFailureCallbackMethodName";
+@import BrazeKit;
+@import BrazeUI;
 
+static NSString *const BRZUnityApiKey = @"ApiKey";
+static NSString *const BRZUnitySdkAuthEnabledKey = @"EnableSDKAuthentication";
+static NSString *const BRZUnityAutomaticPushIntegrationKey = @"IntegratesPush";
+static NSString *const BRZUnityDisableAutomaticPushRegistrationKey = @"DisableAutomaticPushRegistration";
+static NSString *const BRZUnityDisableProvisionalAuthKey = @"DisableProvisionalAuth";
+static NSString *const BRZUnitySetPushListenerKey = @"SetPushListener";
+static NSString *const BRZUnityPushReceivedGameObjectKey = @"PushReceivedGameObjectName";
+static NSString *const BRZUnityPushReceivedCallbackKey = @"PushReceivedCallbackMethodName";
+static NSString *const BRZUnityPushOpenedGameObjectKey = @"PushOpenedGameObjectName";
+static NSString *const BRZUnityPushOpenedCallbackKey = @"PushOpenedCallbackMethodName";
+static NSString *const BRZUnityInAppMessageGameObjectKey = @"InAppMessageGameObjectName";
+static NSString *const BRZUnityInAppMessageCallbackKey = @"InAppMessageCallbackMethodName";
+static NSString *const BRZUnityFeedGameObjectKey = @"FeedGameObjectName";
+static NSString *const BRZUnityFeedCallbackKey = @"FeedCallbackMethodName";
+static NSString *const BRZUnityContentCardsGameObjectKey = @"ContentCardsGameObjectName";
+static NSString *const BRZUnityContentCardsCallbackKey = @"ContentCardsCallbackMethodName";
+static NSString *const BRZUnityHandleInAppMessageDisplayKey = @"DisplayInAppMessages";
+static NSString *const BRZUnitySdkAuthenticationFailureGameObjectKey = @"SdkAuthFailureGameObjectName";
+static NSString *const BRZUnitySdkAuthenticationFailureCallbackKey = @"SdkAuthFailureCallbackMethodName";
 
 /**
  * These must correspond 1:1 to BrazeUnityMessageType in AppboyBinding.cs.
  */
-typedef NS_ENUM(NSInteger, ABKUnityMessageType) {
-  ABKPushPermissionsPromptResponse = 0,
-  ABKPushTokenReceivedFromSystem = 1,
-  ABKPushReceived = 2,
-  ABKPushOpened = 3,
-  ABKPushDeleted = 4,
-  ABKInAppMessageReceived = 5,
-  ABKNewsFeedUpdated = 6,
-  ABKContentCardsUpdated = 7,
-  ABKSdkAuthFailed = 8
-};
-
-/**
- * These must correspond 1:1 to BrazeUnityInAppMessageDisplayActionType in AppboyBinding.cs.
- */
-typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
-  ABKIAMDisplayNow = 0,
-  ABKIAMDisplayLater = 1,
-  ABKIAMDiscard = 2,
-  ABKIAMRequestIAMDisplay = 3
+typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
+  BRZPushPermissionsPromptResponse = 0,
+  BRZPushTokenReceivedFromSystem = 1,
+  BRZPushReceived = 2,
+  BRZPushOpened = 3,
+  BRZPushDeleted = 4,
+  BRZInAppMessageReceived = 5,
+  BRZNewsFeedUpdated = 6,
+  BRZContentCardsUpdated = 7,
+  BRZSDKAuthFailed = 8
 };
 
 @interface AppboyUnityManager : NSObject <
-  ABKInAppMessageControllerDelegate,
-  ABKInAppMessageUIDelegate,
-  UNUserNotificationCenterDelegate,
-  ABKSdkAuthenticationDelegate
->
+                                    BrazeDelegate,
+                                    BrazeSDKAuthDelegate,
+                                    BrazeInAppMessageUIDelegate,
+                                    UNUserNotificationCenterDelegate>
 
-@property (nonatomic,copy) NSDictionary *brazeUnityPlist;
-@property (nonatomic, copy) NSString *unityFeedGameObjectName;
-@property (nonatomic, copy) NSString *unityFeedCallbackFunctionName;
-@property (nonatomic, copy) NSString *unityContentCardsGameObjectName;
-@property (nonatomic, copy) NSString *unityContentCardsCallbackFunctionName;
-@property (nonatomic, copy) NSString *unityInAppMessageGameObjectName;
-@property (nonatomic, copy) NSString *unityInAppMessageCallbackFunctionName;
-@property (nonatomic, copy) NSString *unityPushReceivedGameObjectName;
-@property (nonatomic, copy) NSString *unityPushReceivedCallbackFunctionName;
-@property (nonatomic, copy) NSString *unityPushOpenedGameObjectName;
-@property (nonatomic, copy) NSString *unityPushOpenedCallbackFunctionName;
-@property (nonatomic, copy) NSString *unityPushPermissionsPromptResponseGameObjectName;
-@property (nonatomic, copy) NSString *unityPushPermissionsPromptResponseFunctionName;
-@property (nonatomic, copy) NSString *unityPushTokenReceivedFromSystemGameObjectName;
-@property (nonatomic, copy) NSString *unityPushTokenReceivedFromSystemFunctionName;
-@property (nonatomic, copy) NSString *unitySdkAuthFailureGameObjectName;
-@property (nonatomic, copy) NSString *unitySdkAuthFailureCallbackFunctionName;
-@property (nonatomic) BOOL sendInternalPushPermissionsPromptResponse;
-@property (nonatomic) BOOL sendPushTokenReceivedFromSystem;
-@property (nonatomic) ABKInAppMessageDisplayChoice displayAction;
+@property(strong, nonatomic) Braze *braze;
+@property(nonatomic, copy) NSDictionary *brazeUnityPlist;
+@property(nonatomic) BRZInAppMessageUIDisplayChoice displayAction;
 
-+ (AppboyUnityManager *) sharedInstance;
-- (NSString *)getApiKeyFromUnity;
-- (NSDictionary *)parsePlist;
+@property(nonatomic, copy) NSString *unityFeedGameObjectName;
+@property(nonatomic, copy) NSString *unityFeedCallbackFunctionName;
+@property(nonatomic, copy) NSString *unityContentCardsGameObjectName;
+@property(nonatomic, copy) NSString *unityContentCardsCallbackFunctionName;
+@property(nonatomic, copy) NSString *unityInAppMessageGameObjectName;
+@property(nonatomic, copy) NSString *unityInAppMessageCallbackFunctionName;
+@property(nonatomic, copy) NSString *unityPushReceivedGameObjectName;
+@property(nonatomic, copy) NSString *unityPushReceivedCallbackFunctionName;
+@property(nonatomic, copy) NSString *unityPushOpenedGameObjectName;
+@property(nonatomic, copy) NSString *unityPushOpenedCallbackFunctionName;
+@property(nonatomic, copy) NSString *unityPushPermissionsPromptResponseGameObjectName;
+@property(nonatomic, copy) NSString *unityPushPermissionsPromptResponseFunctionName;
+@property(nonatomic, copy) NSString *unityPushTokenReceivedFromSystemGameObjectName;
+@property(nonatomic, copy) NSString *unityPushTokenReceivedFromSystemFunctionName;
+@property(nonatomic, copy) NSString *unitySdkAuthFailureGameObjectName;
+@property(nonatomic, copy) NSString *unitySdkAuthFailureCallbackFunctionName;
+@property(nonatomic) BOOL sendInternalPushPermissionsPromptResponse;
+@property(nonatomic) BOOL sendPushTokenReceivedFromSystem;
 
-// Social
-- (void)setUserFacebookData:(NSString *)facebookId firstName:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email bio:(NSString *)bio cityName:(NSString *)cityName gender:(NSInteger)gender numberOfFriends:(NSInteger)numberOfFriends birthday:(NSString *)birthday;
-- (void)setUserTwitterData:(NSInteger)twitterUserId twitterHandle:(NSString *)twitterHandle name:(NSString *)name description:(NSString *)description followerCount:(NSInteger)followerCount followingCount:(NSInteger)followingCount tweetCount:(NSInteger)tweetCount profileImageUrl:(NSString *)profileImageUrl;
+/*!
+ * The singleton to the Braze Unity plugin.
+ *
+ * - Important: You must call `initBraze` prior to accessing this singleton
+ */
++ (AppboyUnityManager *)sharedInstance;
+
+/*!
+ * Uses the `config` parameter to initialize a `braze` instance.
+ *
+ * The `Braze Configuration` settings in the Unity app's UI will always be used for apiKey,
+ * endpoint, and logLevel. All other fields already set in the `config` parameter will be respected.
+ *
+ * - Important: You must call this prior to accessing `[AppboyUnityManager sharedInstance]`
+ */
++ (Braze *)initBraze:(BRZConfiguration *)config;
 
 // In-app messages
 - (void)logInAppMessageImpression:(NSString *)inAppMessageJSONString;
@@ -90,7 +91,6 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
 - (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID;
 - (void)displayNextInAppMessage;
 - (void)setInAppMessageDisplayAction:(int)actionType;
-- (void)setInAppMessageDelegatesEnabled:(BOOL)enabled;
 
 // News Feed
 - (void)logCardImpression:(NSString *)cardJSONString;
@@ -110,7 +110,7 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
  * @discussion Passes the device token to Braze. The caller is responsible for respecting
  * automatic integration and automatic registration configuration as this method is unaware of Braze-specific configuration.
  *
- * Any Game object method configured for ABKUnityMessageType.ABKPushTokenReceivedFromSystem will be notified.
+ * Any Game object method configured for BRZUnityMessageType.BRZPushTokenReceivedFromSystem will be notified.
  *
  * @param deviceToken the device token
  */
@@ -120,7 +120,7 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
  * @discussion Passes the device token to Braze. The caller is responsible for respecting
  * automatic integration and automatic registration configuration as this method is unaware of Braze-specific configuration.
  *
- * Any Game object method configured for ABKUnityMessageType.ABKPushTokenReceivedFromSystem will be notified.
+ * Any Game object method configured for BRZUnityMessageType.BRZPushTokenReceivedFromSystem will be notified.
  *
  * @param deviceToken the device token
  */
@@ -131,34 +131,32 @@ typedef NS_ENUM(NSInteger, ABKUnityInAppMessageDisplayActionType) {
  * automatic integration and automatic registration configuration as this method is unaware of Braze-specific configuration.
  *
  * When the user responds to the request authorization permission prompt, any Game object method configured for
- * ABKUnityMessageType.ABKPushPermissionsPromptResponse will be notified.
+ * BRZUnityMessageType.BRZPushPermissionsPromptResponse will be notified.
  * @param provisional If set to true, on iOS 12 and above, provisional authorization will be requested.
  */
 - (void)registerForRemoteNotificationsWithProvisional:(BOOL)provisional;
 
 - (void)configureListenerFor:(NSInteger)messageType withGameObject:(NSString *)gameobject withMethod:(NSString *)method;
 - (void)setListenersFromPList;
-- (void)addInAppMessageListenerWithObjectNameAndSetDelegate:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
+- (void)addInAppMessageListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addSdkAuthFailureListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 
-
 /*!
  * @discussion Passes the push notification data to Braze. The caller is responsible for respecting
  * automatic integration and automatic registration configuration as this method is unaware of Braze-specific configuration.
  *
- * Any Game object method configured for ABKUnityMessageType.ABKPushReceived or ABKUnityMessageType.ABKPushOpened
+ * Any Game object method configured for BRZUnityMessageType.BRZPushReceived or BRZUnityMessageType.BRZPushOpened
  * will be notified as appropriate.
  *
  * @param deviceToken the device token
  */
-- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+- (void)registerApplication:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
 // Internal
 - (void)configureInternalListenerFor:(NSInteger)messageType;
-- (void)handleSdkAuthenticationError:(ABKSdkAuthenticationError *)errorEvent;
 
 @end

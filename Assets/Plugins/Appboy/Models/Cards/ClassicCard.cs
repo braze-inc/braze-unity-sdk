@@ -14,7 +14,7 @@ namespace Appboy.Models.Cards {
 
     public string Domain { get; private set; }
 
-    public ClassicCard(JSONClass json) : base(json) {
+    public ClassicCard(JSONObject json) : base(json) {
       if (json["description"] == null || json["image"] == null) {
         throw new ArgumentException("Missing required field(s).");
       }
