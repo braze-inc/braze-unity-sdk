@@ -14,10 +14,11 @@ Public/scripts/
 
 # Unity
 UnityPackageManager/
-/ProjectSettings
 /Packages
 /Temp
 /Library
+/UserSettings
+*.dwlt
 ## https://stackoverflow.com/a/57728803/3745724
 
 # Firebase
@@ -30,6 +31,7 @@ UnityPackageManager/
 /unity-package
 /Assets/Resources*
 /Assembly*csproj
+/Appboy*csproj
 /*sln
 
 # Scripts
@@ -49,8 +51,6 @@ unity-samples/build/
 # Unity won't append the built project if there isn't a Data and Libraries folders.
 unity-samples/iOS/Auto-Integrate-Sample/*
 unity-samples/iOS/Manual-Integrate-Sample/*
-!unity-samples/iOS/Auto-Integrate-Sample/fastlane/*
-!unity-samples/iOS/Manual-Integrate-Sample/fastlane/*
 !unity-samples/iOS/Manual-Integrate-Sample/Classes/UnityAppController.mm
 *.apk
 unity-samples/UnityPackageManager/
@@ -76,10 +76,6 @@ resultsIos.xml
 unity-samples/Assets/UnityTestTools/
 unity-samples/test-results/
 
-# Fastlane
-unity-samples/iOS/Roll-A-Ball-Ios/fastlane/README.md
-unity-samples/iOS/Roll-A-Ball-Ios/fastlane/report.xml
-
 # Visual Studio
 .vs/
 obj/
@@ -87,3 +83,4 @@ obj/
 .vsconfig
 
 obj.meta
+unity-samples/UserSettings/
