@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/SetCustomAttributesArray.unity
     guid: a8bc8f68fb22447509ac77391774e8b0
+  - enabled: 1
+    path: Assets/_Scenes/FeatureFlags.unity
+    guid: 4f4b792d184e44774a2bec2fb1ff7f23
   m_configObjects: {}

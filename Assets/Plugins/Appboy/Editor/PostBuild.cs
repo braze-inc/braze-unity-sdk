@@ -36,6 +36,8 @@ namespace Appboy.Editor {
     private const string BRZUnityHandleInAppMessageDisplayKey = "DisplayInAppMessages";
     private const string BRZUnitySdkAuthenticationFailureGameObjectKey = "SdkAuthFailureGameObjectName";
     private const string BRZUnitySdkAuthenticationFailureCallbackKey = "SdkAuthFailureCallbackMethodName";
+    private const string BRZUnityFeatureFlagsGameObjectKey = "FeatureFlagsGameObjectName";
+    private const string BRZUnityFeatureFlagsCallbackKey = "FeatureFlagsCallbackMethodName";
 
     [PostProcessBuildAttribute(1)]
     public static void OnPostprocessBuild(BuildTarget target, string path) {
@@ -75,7 +77,7 @@ namespace Appboy.Editor {
         project.AddFrameworkToProject(unityFramework, "UserNotifications.framework", false);
 
         // - Add packages via SPM to UnityFramework
-        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMajor("https://github.com/braze-inc/braze-swift-sdk/", "6.0.0");
+        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMajor("https://github.com/braze-inc/braze-swift-sdk/", "6.1.0");
         project.AddRemotePackageFrameworkToProject(unityFramework, "BrazeKit", brazeGUID, false);
         project.AddRemotePackageFrameworkToProject(unityFramework, "BrazeUI", brazeGUID, false);
 
@@ -173,20 +175,20 @@ namespace Appboy.Editor {
 
         // - Set push listeners
         if (ValidateListenerFields(BRZUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName,
-          BRZUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName)) {
+            BRZUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName)) {
           brazeUnityDict.SetString(BRZUnityPushReceivedGameObjectKey, AppboyConfig.IOSPushReceivedGameObjectName.Trim());
           brazeUnityDict.SetString(BRZUnityPushReceivedCallbackKey, AppboyConfig.IOSPushReceivedCallbackMethodName.Trim());
         }
 
         if (ValidateListenerFields(BRZUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName,
-          BRZUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName)) {
+            BRZUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName)) {
           brazeUnityDict.SetString(BRZUnityPushOpenedGameObjectKey, AppboyConfig.IOSPushOpenedGameObjectName.Trim());
           brazeUnityDict.SetString(BRZUnityPushOpenedCallbackKey, AppboyConfig.IOSPushOpenedCallbackMethodName.Trim());
         }
 
         // - Set in-app message listener
         if (ValidateListenerFields(BRZUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName,
-          BRZUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName)) {
+            BRZUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName)) {
           brazeUnityDict.SetString(BRZUnityInAppMessageGameObjectKey, AppboyConfig.IOSInAppMessageGameObjectName.Trim());
           brazeUnityDict.SetString(BRZUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName.Trim());
           brazeUnityDict.SetBoolean(BRZUnityHandleInAppMessageDisplayKey, AppboyConfig.IOSDisplayInAppMessages);
@@ -194,23 +196,30 @@ namespace Appboy.Editor {
 
         // - Set feed listener
         if (ValidateListenerFields(BRZUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName,
-          BRZUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName)) {
+            BRZUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName)) {
           brazeUnityDict.SetString(BRZUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName.Trim());
           brazeUnityDict.SetString(BRZUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName.Trim());
         }
 
         // - Set content card listener
         if (ValidateListenerFields(BRZUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName,
-          BRZUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName)) {
+            BRZUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName)) {
           brazeUnityDict.SetString(BRZUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName.Trim());
           brazeUnityDict.SetString(BRZUnityContentCardsCallbackKey, AppboyConfig.IOSContentCardsCallbackMethodName.Trim());
         }
 
         // - Set SDK Authentication Failure listener
         if (ValidateListenerFields(BRZUnitySdkAuthenticationFailureGameObjectKey, AppboyConfig.IOSSdkAuthenticationFailureGameObjectName,
-          BRZUnitySdkAuthenticationFailureCallbackKey, AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName)) {
+            BRZUnitySdkAuthenticationFailureCallbackKey, AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName)) {
           brazeUnityDict.SetString(BRZUnitySdkAuthenticationFailureGameObjectKey, AppboyConfig.IOSSdkAuthenticationFailureGameObjectName.Trim());
           brazeUnityDict.SetString(BRZUnitySdkAuthenticationFailureCallbackKey, AppboyConfig.IOSSdkAuthenticationFailureCallbackMethodName.Trim());
+        }
+
+        // - Set Feature Flags Listener
+        if (ValidateListenerFields(BRZUnityFeatureFlagsGameObjectKey, AppboyConfig.FeatureFlagsGameObjectName,
+            BRZUnityFeatureFlagsCallbackKey, AppboyConfig.FeatureFlagsCallbackMethodName)) {
+          brazeUnityDict.SetString(BRZUnityFeatureFlagsGameObjectKey, AppboyConfig.FeatureFlagsGameObjectName.Trim());
+          brazeUnityDict.SetString(BRZUnityFeatureFlagsCallbackKey, AppboyConfig.FeatureFlagsCallbackMethodName.Trim());
         }
       }
 

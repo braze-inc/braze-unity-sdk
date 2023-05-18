@@ -89,6 +89,10 @@ namespace Appboy.Editor {
       cfg = AddStringKey(cfg, "com_braze_content_cards_updated_listener_callback_method_name", AppboyConfig.AndroidContentCardsUpdatedListenerCallbackMethodName);
       cfg = AddBooleanKey(cfg, "com_braze_content_cards_unread_visual_indicator_enabled", AppboyConfig.AndroidContentCardsUnreadVisualIndicatorEnabled);
 
+      // Feature Flags
+      cfg = AddStringKey(cfg, "com_braze_feature_flags_updated_listener_game_object_name", AppboyConfig.FeatureFlagsGameObjectName);
+      cfg = AddStringKey(cfg, "com_braze_feature_flags_updated_listener_callback_method_name", AppboyConfig.FeatureFlagsCallbackMethodName);
+
       // Session Handling
       cfg = AddIntegerKey(cfg, "com_braze_session_timeout", AppboyConfig.AndroidSessionTimeoutSeconds);
 

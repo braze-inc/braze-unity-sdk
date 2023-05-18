@@ -1,3 +1,19 @@
+## 4.1.0
+
+##### Added
+- Added support for Feature Flags.
+  - `AppboyBinding.GetFeatureFlag(string id)` - Get a single Feature Flag.
+  - `AppboyBinding.GetAllFeatureFlags()` - Get all Feature Flags.
+  - `AppboyBinding.RefreshFeatureFlags()` - Request a refresh of Feature Flags.
+- Adds the ability to subscribe to Feature Flag updates.
+  - Set the values for `Game Object Name` and `Callback Method Name` under "Braze Configuration" > "Feature Flags" to the corresponding values in your application.
+- On `FeatureFlag` object, adds these APIs to get specific properties:
+  - `featureFlag.getStringProperty(string id)`
+  - `featureFlag.getIntegerProperty(string id)`
+  - `featureFlag.getDoubleProperty(string id)`
+  - `featureFlag.getBooleanProperty(string id)`
+- Updated the iOS plugin to use the [Braze Swift SDK 6.1.0](https://github.com/braze-inc/braze-swift-sdk/blob/main/CHANGELOG.md#610).
+
 ## 4.0.0
 
 #### Breaking
@@ -15,7 +31,7 @@
   Braze *braze = [AppboyUnityManager initBraze:config];
   ```
   - Reference [this Migration Guide](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide) and [this documentation](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit) for additional context around specific migration / integration steps.
-- Requires Unity version [2023.1.0a16](https://unity.com/releases/editor/alpha/2023.1.0a16) or newer.
+- Requires Unity version [2020.3.42](https://unity.com/releases/editor/whats-new/2020.3.42) or newer.
 - The following changes have been made to `AppboyUnityManager.h`:
   - Renames `addInAppMessageListenerWithObjectNameAndSetDelegate:callbackMethodName:` to `addInAppMessageListenerWithObjectName:callbackMethodName:`.
   - Renames `ABKUnityMessageType` to `BRZUnityMessageType`.

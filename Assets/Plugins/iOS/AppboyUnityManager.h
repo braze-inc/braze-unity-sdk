@@ -23,6 +23,8 @@ static NSString *const BRZUnityContentCardsCallbackKey = @"ContentCardsCallbackM
 static NSString *const BRZUnityHandleInAppMessageDisplayKey = @"DisplayInAppMessages";
 static NSString *const BRZUnitySdkAuthenticationFailureGameObjectKey = @"SdkAuthFailureGameObjectName";
 static NSString *const BRZUnitySdkAuthenticationFailureCallbackKey = @"SdkAuthFailureCallbackMethodName";
+static NSString *const BRZUnityFeatureFlagsGameObjectKey = @"FeatureFlagsGameObjectName";
+static NSString *const BRZUnityFeatureFlagsCallbackKey = @"FeatureFlagsCallbackMethodName";
 
 /**
  * These must correspond 1:1 to BrazeUnityMessageType in AppboyBinding.cs.
@@ -36,7 +38,8 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
   BRZInAppMessageReceived = 5,
   BRZNewsFeedUpdated = 6,
   BRZContentCardsUpdated = 7,
-  BRZSDKAuthFailed = 8
+  BRZSDKAuthFailed = 8,
+  BRZFeatureFlagsUpdated = 9
 };
 
 @interface AppboyUnityManager : NSObject <
@@ -63,6 +66,8 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 @property(nonatomic, copy) NSString *unityPushPermissionsPromptResponseFunctionName;
 @property(nonatomic, copy) NSString *unityPushTokenReceivedFromSystemGameObjectName;
 @property(nonatomic, copy) NSString *unityPushTokenReceivedFromSystemFunctionName;
+@property(nonatomic, copy) NSString *unityFeatureFlagsGameObjectName;
+@property(nonatomic, copy) NSString *unityFeatureFlagsCallbackFunctionName;
 @property(nonatomic, copy) NSString *unitySdkAuthFailureGameObjectName;
 @property(nonatomic, copy) NSString *unitySdkAuthFailureCallbackFunctionName;
 @property(nonatomic) BOOL sendInternalPushPermissionsPromptResponse;
@@ -105,6 +110,11 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 - (void)requestContentCardsRefresh;
 - (void)requestContentCardsFromCache:(NSNotification *)notification;
 - (void)displayContentCards;
+
+// Feature Flags
+- (void)refreshFeatureFlags;
+- (NSString *)getFeatureFlag:(NSString *)identifier;
+- (NSString *)getAllFeatureFlags;
 
 /*!
  * @discussion Passes the device token to Braze. The caller is responsible for respecting

@@ -78,7 +78,12 @@ namespace Appboy {
     /// <summary>
     /// Sent after an SDK Authentication error event.
     /// </summary>
-    SDK_AUTHORIZATION_FAILED = 8
+    SDK_AUTHORIZATION_FAILED = 8,
+
+    /// <summary>
+    /// Sent when the SDK has an update for Feature Flags.
+    /// </summary>
+    FEATURE_FLAGS_UPDATED = 9,
   }
 
   public enum BrazeUnityInAppMessageDisplayActionType {
@@ -676,6 +681,39 @@ namespace Appboy {
           mBinding.inAppMessageListener = value;
         #endif
       }
+    }
+
+    /// <summary>
+    /// Get a single Feature Flag.
+    /// </summary>
+    /// <value>Feature Flag</value>
+    public static FeatureFlag GetFeatureFlag(string id) {
+      #if HAS_BRAZE_SDK
+        return mBinding.GetFeatureFlag(id);
+      #else 
+        return null;
+      #endif 
+    }
+
+    /// <summary>
+    /// Get all Feature Flags.
+    /// </summary>
+    /// <value>List of FeatureFlag</value>
+    public static List<FeatureFlag> GetAllFeatureFlags() {
+      #if HAS_BRAZE_SDK
+        return mBinding.GetAllFeatureFlags();
+      #else 
+        return null;
+      #endif 
+    }
+
+    /// <summary>
+    /// Request of refresh of Feature Flags.
+    /// </summary>
+    public static void RefreshFeatureFlags() {
+      #if HAS_BRAZE_SDK
+        mBinding.RefreshFeatureFlags();
+      #endif
     }
   }
 }

@@ -54,6 +54,10 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.DisplayContentCards();
   }
 
+  public void OnFeatureFlagsButtonClick() {
+    SceneManager.LoadScene(Constants.FeatureFlagScene);
+  }
+
   // Not connecting this to the main menu as setting a push token like that
   // would break push on the device.  But leaving here in case this method needs
   // to be tested again in the future.

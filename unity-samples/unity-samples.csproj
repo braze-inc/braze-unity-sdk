@@ -342,6 +342,7 @@
     <Compile Include="Assets\Scripts\SetCustomAttributesArray.cs" />
     <Compile Include="Assets\Scripts\SetUserField.cs" />
     <Compile Include="Assets\Scripts\UnitySampleConstants.cs" />
+    <Compile Include="Assets\Scripts\FeatureFlags.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Firebase\Editor\AppDependencies.xml" />

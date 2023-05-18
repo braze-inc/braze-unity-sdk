@@ -10,6 +10,10 @@ namespace Appboy.Editor {
     // https://appboy.github.io/appboy-android-sdk/kdoc/braze-android-sdk/com.braze.ui.inappmessage/-in-app-message-operation/index.html
     private string[] ANDROID_IAM_OPERATIONS = new string[] {"Display Now", "Display Later", "Discard"};
 
+    // Cross-platform settings
+    private bool generalShowAllSettings = true;
+    private bool showFeatureFlagSettings = true;
+
     // iOS fields
     private bool iosShowAllSettings = true;
     private bool showPushOpenedListener = true;
@@ -40,17 +44,46 @@ namespace Appboy.Editor {
       EditorGUIUtility.labelWidth = 400;
       scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
       EditorGUIUtility.fieldWidth = 800;
+
+      // Cross-platform
+      generalShowAllSettings = EditorGUILayout.Foldout(generalShowAllSettings, "Show Braze General Settings");
+      if (generalShowAllSettings) {
+        GeneralBuildGUI();
+      }
+      EditorGUILayout.Separator();
+
+      // iOS
       iosShowAllSettings = EditorGUILayout.Foldout(iosShowAllSettings, "Show Braze iOS Settings");
       if (iosShowAllSettings) {
         IOSBuildGUI();
       }
       EditorGUILayout.Separator();
+
+      // Android
       androidShowAllSettings = EditorGUILayout.Foldout(androidShowAllSettings, "Show Braze Android Settings");
       if (androidShowAllSettings) {
         AndroidBuildGUI();
       }
       EditorGUILayout.Separator();
       EditorGUILayout.EndScrollView();
+    }
+
+
+    private void GeneralBuildGUI() {
+      EditorGUI.indentLevel++;
+      // Feature Flags
+      EditorGUILayout.LabelField("Feature Flags", EditorStyles.boldLabel);
+      EditorGUI.indentLevel++;
+      showFeatureFlagSettings = EditorGUILayout.Foldout(showFeatureFlagSettings, "Set Feature Flags Listener");
+      if (showFeatureFlagSettings) {
+        EditorGUI.indentLevel++;
+        AppboyConfig.FeatureFlagsGameObjectName = EditorGUILayout.TextField("Game Object Name", AppboyConfig.FeatureFlagsGameObjectName);
+        AppboyConfig.FeatureFlagsCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.FeatureFlagsCallbackMethodName);
+        EditorGUI.indentLevel--;
+      }
+      EditorGUI.indentLevel--;
+      EditorGUILayout.Separator();
+      EditorGUI.indentLevel--;
     }
 
     private void IOSBuildGUI() {

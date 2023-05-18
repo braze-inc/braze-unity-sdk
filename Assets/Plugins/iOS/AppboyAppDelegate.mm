@@ -16,7 +16,7 @@
 
 static Braze *_braze;
 
-# pragma mark - UIApplicationDelegate methods
+#pragma mark - UIApplicationDelegate methods
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
   [super application:application didFinishLaunchingWithOptions:launchOptions];

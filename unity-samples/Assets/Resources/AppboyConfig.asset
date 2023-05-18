@@ -72,6 +72,8 @@ MonoBehaviour:
   androidContentCardsUpdatedListenerGameObjectName: AndroidContentCardsUpdatedListenerGameObjectName
   androidContentCardsUpdatedListenerCallbackMethodName: AndroidContentCardsUpdatedListenerCallbackMethodName
   androidContentCardsUnreadVisualIndicatorEnabled: 1
+  featureFlagsGameObjectName: BrazeCallback
+  featureFlagsCallbackMethodName: FeatureFlagsReceivedCallback
   androidLocationCollectionEnabled: 1
   androidGeofencesEnabled: 0
   androidAutomaticGeofenceRequestsEnabled: 0

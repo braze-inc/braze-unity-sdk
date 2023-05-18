@@ -159,6 +159,13 @@ namespace Appboy.Editor {
     [SerializeField]
     private bool androidContentCardsUnreadVisualIndicatorEnabled = true;
 
+    // Feature Flags
+    // Cross-platform
+    [SerializeField]
+    private string featureFlagsGameObjectName = string.Empty;
+    [SerializeField]
+    private string featureFlagsCallbackMethodName = string.Empty;
+
     // Location
     // Android
     [SerializeField]
@@ -167,6 +174,16 @@ namespace Appboy.Editor {
     private bool androidGeofencesEnabled = false;
     [SerializeField]
     private bool androidAutomaticGeofenceRequestsEnabled = true;
+
+    public static string FeatureFlagsGameObjectName {
+      get { return Instance.featureFlagsGameObjectName; }
+      set { SetProperty(ref Instance.featureFlagsGameObjectName, value); }
+    }
+
+    public static string FeatureFlagsCallbackMethodName {
+      get { return Instance.featureFlagsCallbackMethodName; }
+      set { SetProperty(ref Instance.featureFlagsCallbackMethodName, value); }
+    }
 
     public static bool IOSAutomatesIntegration {
       get { return Instance.iOSAutomatesIntegration; }

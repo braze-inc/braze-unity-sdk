@@ -6,7 +6,7 @@ using Appboy.Utilities;
 namespace Appboy.Internal {
   public class BrazeInternalComponent : MonoBehaviour {
 
-    // Push
+    /*** Push Notifications ***/
 
     private PushPromptResponseReceived pushPromptResponseReceived;
     private PushTokenReceivedFromSystem pushTokenReceivedFromSystem;
@@ -31,7 +31,7 @@ namespace Appboy.Internal {
       }
     }
 
-    // In-app messages
+    /*** In-app messages ***/
 
     public BrazeInAppMessageListener iamListener;
 

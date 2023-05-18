@@ -5,7 +5,7 @@
 
 char* convertNSStringToCString(const NSString* nsString);
 
-# pragma mark - Appboy
+#pragma mark - Appboy
 
 void _changeUser(const char* userId, const char* sdkAuthSignature) {
   NSString *signature = sdkAuthSignature != NULL ? GetStringParam(sdkAuthSignature) : nil;
@@ -61,7 +61,7 @@ void _addAlias(const char* alias, const char* label) {
                                                      label:GetStringParam(label)];
 }
 
-# pragma mark - Braze.User
+#pragma mark - Braze.User
 
 void _setUserFirstName(const char* firstName) {
   [[AppboyUnityManager sharedInstance].braze.user setFirstName:GetStringParam(firstName)];
@@ -229,7 +229,7 @@ void _setUserLastKnownLocationSimple(double latitude, double longitude, double a
                                                                 horizontalAccuracy:accuracy];
 }
 
-# pragma mark - In-app message analytics
+#pragma mark - In-app messages
 
 void _logInAppMessageImpression(const char* inAppMessageJSONString) {
   [[AppboyUnityManager sharedInstance] logInAppMessageImpression:GetStringParam(inAppMessageJSONString)];
@@ -243,8 +243,6 @@ void _logInAppMessageButtonClicked(const char* inAppMessageJSONString, int butto
   [[AppboyUnityManager sharedInstance] logInAppMessageButtonClicked:GetStringParam(inAppMessageJSONString) withButtonID:buttonID];
 }
 
-# pragma mark - In-app message display
-
 void _displayNextInAppMessage() {
   [[AppboyUnityManager sharedInstance] displayNextInAppMessage];
 }
@@ -253,7 +251,7 @@ void _setInAppMessageDisplayAction(int actionType) {
   [[AppboyUnityManager sharedInstance] setInAppMessageDisplayAction:actionType];
 }
 
-# pragma mark - News Feed analytics
+#pragma mark - News Feed
 
 void _logCardImpression(const char* cardJSONString) {
   [[AppboyUnityManager sharedInstance] logCardImpression:GetStringParam(cardJSONString)];
@@ -267,8 +265,6 @@ void _logFeedDisplayed() {
   NSLog(@"Logging the News Feed displayed event is not needed on iOS.");
 }
 
-# pragma mark - News Feed refresh
-
 void _requestFeedRefresh() {
   [[AppboyUnityManager sharedInstance] requestFeedRefresh];
 }
@@ -277,7 +273,7 @@ void _requestFeedRefreshFromCache() {
   [[AppboyUnityManager sharedInstance] requestFeedFromCache:nil];
 }
 
-# pragma mark - Content Card analytics
+#pragma mark - Content Cards
 
 void _logContentCardImpression(const char* cardJSONString) {
   [[AppboyUnityManager sharedInstance] logContentCardImpression:GetStringParam(cardJSONString)];
@@ -295,8 +291,6 @@ void _displayContentCards() {
   [[AppboyUnityManager sharedInstance] displayContentCards];
 }
 
-# pragma mark - Content Card refresh
-
 void _requestContentCardsRefresh() {
   [[AppboyUnityManager sharedInstance] requestContentCardsRefresh];
 }
@@ -305,7 +299,25 @@ void _requestContentCardsRefreshFromCache() {
   [[AppboyUnityManager sharedInstance] requestContentCardsFromCache:nil];
 }
 
-# pragma mark - Data management
+#pragma mark - Feature Flags
+
+void _refreshFeatureFlags() {
+  [[AppboyUnityManager sharedInstance] refreshFeatureFlags];
+}
+
+// Return FeatureFlag in the form of a string, since `C` doesn't support objects
+char* _getFeatureFlag(char* id) {
+  NSString *flagStr = [[AppboyUnityManager sharedInstance] getFeatureFlag:GetStringParam(id)];
+  return convertNSStringToCString(flagStr);
+}
+
+// Return FeatureFlags in the form of a string, since `C` doesn't support objects
+char* _getAllFeatureFlags() {
+  NSString *flagStrArray = [[AppboyUnityManager sharedInstance] getAllFeatureFlags];
+  return convertNSStringToCString(flagStrArray);
+}
+
+#pragma mark - Data management
 
 void _wipeData() {
   [[AppboyUnityManager sharedInstance].braze wipeData];
@@ -319,7 +331,7 @@ void _disableSDK() {
   [AppboyUnityManager sharedInstance].braze.enabled = NO;
 }
 
-# pragma mark - Push
+#pragma mark - Push
 
 void _registerAppboyPushMessages(const char* tokenBase64) {
   [[AppboyUnityManager sharedInstance] registerPushTokenBase64:GetStringParam(tokenBase64)];
@@ -329,20 +341,20 @@ void _promptUserForPushPermissions(bool provisional) {
   [[AppboyUnityManager sharedInstance] registerForRemoteNotificationsWithProvisional:provisional];
 }
 
-# pragma mark - Device Id
+#pragma mark - Device Id
 
 char* _getInstallTrackingId() {
   NSString* deviceId = [AppboyUnityManager sharedInstance].braze.deviceId;
   return convertNSStringToCString(deviceId);
 }
 
-# pragma mark - Gameobject callbacks
+#pragma mark - Gameobject callbacks
 
 void _configureListener(int messageType, const char* gameobject, const char* method) {
   [[AppboyUnityManager sharedInstance] configureListenerFor:messageType withGameObject:GetStringParam(gameobject) withMethod:GetStringParam(method)];
 }
 
-# pragma mark - Internal
+#pragma mark - Internal
 
 char* convertNSStringToCString(const NSString* nsString) {
   if (nsString == NULL) {

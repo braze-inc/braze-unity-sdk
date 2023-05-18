@@ -9,15 +9,27 @@ static NSString *const BRZLogLevelKey = @"LogLevel";
 
 // Unity message keys
 static NSString *const BRZInternalCallback = @"BrazeInternalCallback";
+
+// - Push Notifications
 static NSString *const BRZInternalPushPermissionsPromptResponse = @"onPushPromptResponseReceived";
 static NSString *const BRZInternalPushTokenReceivedFromSystem = @"onPushTokenReceivedFromSystem";
 
-// In-app message UI
+// - In-app message UI keys
 static NSString *const BRZInternalIAMDisplay = @"beforeInAppMessageDisplayed";
 static NSString *const BRZInternalIAMDismissed = @"onInAppMessageDismissed";
 static NSString *const BRZInternalIAMClicked = @"onInAppMessageClicked";
 static NSString *const BRZInternalIAMButtonClicked = @"onInAppMessageButtonClicked";
 static NSString *const BRZInternalIAMHTMLClicked = @"onInAppMessageHTMLClicked";
+
+// - Feature Flags keys
+static NSString *const BRZInternalFeatureFlagsGet = @"getFeatureFlag";
+static NSString *const BRZInternalFeatureFlagsGetAll = @"getAllFeatureFlags";
+
+@interface AppboyUnityManager ()
+
+@property (strong, nonatomic) BRZCancellable *featureFlagsSubscription;
+
+@end
 
 @implementation AppboyUnityManager
 
@@ -48,7 +60,7 @@ NSDictionary *brazeUnityPlist;
   return sharedInstance;
 }
 
-# pragma mark - Init
+#pragma mark - Init
 
 + (Braze *)initBraze:(BRZConfiguration *)configuration {
   // Outer Braze dictionary
@@ -104,7 +116,7 @@ NSDictionary *brazeUnityPlist;
   }
 }
 
-# pragma mark - SDK Authentication
+#pragma mark - SDK Authentication
 
 - (void)braze:(Braze * _Nonnull)braze
   sdkAuthenticationFailedWithError:(BRZSDKAuthenticationError * _Nonnull)error {
@@ -141,7 +153,7 @@ NSDictionary *brazeUnityPlist;
   }
 }
 
-# pragma mark - In-App Messages
+#pragma mark - In-App Messages
 
 - (void)logInAppMessageImpression:(NSString *)inAppMessageJSONString {
   BRZInAppMessageRaw *inAppMessage = [self getInAppMessageFromString:inAppMessageJSONString
@@ -203,7 +215,7 @@ NSDictionary *brazeUnityPlist;
   self.displayAction = displayAction;
 }
 
-# pragma mark - News Feed
+#pragma mark - News Feed
 
 - (void)logCardImpression:(NSString *)cardJSONString {
   BRZNewsFeedCard *newsFeedCard = [self getNewsFeedCardFromString:cardJSONString
@@ -239,7 +251,7 @@ NSDictionary *brazeUnityPlist;
   [braze.newsFeed requestRefreshWithCompletion:^(NSArray<BRZNewsFeedCard *> *_Nullable newCards,
                                                  NSError *_Nullable refreshError) {
     if (refreshError) {
-      NSLog(@"Content Card refresh error: %@", refreshError);
+      NSLog(@"News Feed refresh error: %@", refreshError);
       return;
     }
     [self sendMessageWithNewsFeedCards:newCards fromCache:NO];
@@ -295,7 +307,7 @@ NSDictionary *brazeUnityPlist;
                withMessage:feedString];
 }
 
-# pragma mark - Content Cards
+#pragma mark - Content Cards
 
 - (void)logContentCardImpression:(NSString *)cardJSONString {
   BRZContentCardRaw *contentCard = [self getContentCardFromString:cardJSONString
@@ -404,7 +416,7 @@ NSDictionary *brazeUnityPlist;
   [mainViewController presentViewController:contentCardsModal animated:YES completion:nil];
 }
 
-# pragma mark - Push Notifications
+#pragma mark - Push Notifications
 
 - (void)registerPushToken:(NSData *)data {
   [braze.notifications registerDeviceToken:data];
@@ -519,7 +531,66 @@ NSDictionary *brazeUnityPlist;
   }
 }
 
-# pragma mark - Gameobject callbacks
+#pragma mark - Feature Flags
+
+- (void)refreshFeatureFlags {
+  [braze.featureFlags requestRefreshWithCompletion:^(NSArray<BRZFeatureFlag *> * _Nullable featureFlags,
+                                                     NSError * _Nullable refreshError) {
+    if (refreshError) {
+      NSLog(@"Feature Flags refresh error: %@", refreshError);
+      return;
+    }
+    [self sendMessageWithFeatureFlags:featureFlags];
+  }];
+}
+
+- (NSString *)getFeatureFlag:(NSString *)identifier {
+  BRZFeatureFlag *featureFlag = [braze.featureFlags featureFlagWithId:identifier];
+  NSData *data = [featureFlag json];
+  return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)getAllFeatureFlags {
+  return [self formattedFeatureFlags:braze.featureFlags.featureFlags];
+}
+
+/// Converts an array of FeatureFlag objects into a JSON representation of strings
+- (NSString *)formattedFeatureFlags:(NSArray<BRZFeatureFlag *> *)featureFlags {
+  NSMutableArray<NSString *> *featureFlagStrings = [NSMutableArray array];
+
+  // - Convert FeatureFlags into strings and put into an array
+  [featureFlags enumerateObjectsUsingBlock:^(BRZFeatureFlag *featureFlag, NSUInteger idx, BOOL *stop) {
+    NSData *data = [featureFlag json];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    [featureFlagStrings addObject:jsonString];
+  }];
+
+  // - Serialize array and then convert into a string to pass to Unity layer
+  NSError *error;
+  NSData *data = [NSJSONSerialization dataWithJSONObject:featureFlagStrings
+                                                 options:kNilOptions
+                                                   error:&error];
+  if (error != nil) {
+    NSLog(@"Error serializing json for featureFlags: %@, error: %@", featureFlags, [error localizedDescription]);
+  }
+
+  return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (void)sendMessageWithFeatureFlags:(NSArray<BRZFeatureFlag *> *)featureFlags {
+  if (self.unityFeatureFlagsGameObjectName == nil
+      || self.unityFeatureFlagsCallbackFunctionName == nil) {
+    NSLog(@"No properly configured game object. Not forwarding Feature Flags message.");
+    return;
+  }
+
+  NSString *dataString = [self formattedFeatureFlags:featureFlags];
+  [self unitySendMessageTo:self.unityFeatureFlagsGameObjectName
+                withMethod:self.unityFeatureFlagsCallbackFunctionName
+               withMessage:dataString];
+}
+
+#pragma mark - Gameobject callbacks
 
 - (void)configureListenerFor:(NSInteger)messageType
               withGameObject:(NSString *)gameobject
@@ -562,6 +633,10 @@ NSDictionary *brazeUnityPlist;
       NSLog(@"Setting SDK Authentication Failure listener to object %@, method %@", gameobject, method);
       [self addSdkAuthFailureListenerWithObjectName:gameobject callbackMethodName:method];
       break;
+    case BRZFeatureFlagsUpdated:
+      NSLog(@"Setting Feature Flags listener to object %@, method %@", gameobject, method);
+      [self addFeatureFlagsListenerWithObjectName:gameobject callbackMethodName:method];
+      break;
     default:
       NSLog(@"Unknown message type received.");
       return;
@@ -586,6 +661,10 @@ NSDictionary *brazeUnityPlist;
   // SDK Auth
   [self addSdkAuthFailureListenerWithObjectName:self.brazeUnityPlist[BRZUnitySdkAuthenticationFailureGameObjectKey]
                              callbackMethodName:self.brazeUnityPlist[BRZUnitySdkAuthenticationFailureCallbackKey]];
+
+  // Feature Flags
+  [self addFeatureFlagsListenerWithObjectName:self.brazeUnityPlist[BRZUnityFeatureFlagsGameObjectKey]
+                           callbackMethodName:self.brazeUnityPlist[BRZUnityFeatureFlagsCallbackKey]];
 }
 
 - (void)addInAppMessageListenerWithObjectName:(NSString *)gameObject
@@ -631,7 +710,18 @@ NSDictionary *brazeUnityPlist;
   }
 }
 
-# pragma mark - UIApplicationDelegate
+- (void)addFeatureFlagsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
+  if (gameObject != nil && callbackMethod != nil) {
+    self.unityFeatureFlagsGameObjectName = gameObject;
+    self.unityFeatureFlagsCallbackFunctionName = callbackMethod;
+
+    self.featureFlagsSubscription = [braze.featureFlags subscribeToUpdates:^(NSArray<BRZFeatureFlag *> * _Nonnull featureFlags) {
+      [self sendMessageWithFeatureFlags:featureFlags];
+    }];
+  }
+}
+
+#pragma mark - UIApplicationDelegate
 
 - (void)registerApplication:(UIApplication *)application
          didReceiveRemoteNotification:(NSDictionary *)userInfo
@@ -641,7 +731,7 @@ NSDictionary *brazeUnityPlist;
   [self forwardNotification:userInfo];
 }
 
-# pragma mark - UNUserNotificationCenterDelegate
+#pragma mark - UNUserNotificationCenterDelegate
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
          didReceiveNotificationResponse:(UNNotificationResponse *)response
@@ -657,7 +747,7 @@ NSDictionary *brazeUnityPlist;
   }
 }
 
-# pragma mark - BrazeInAppMessageUIDelegate
+#pragma mark - BrazeInAppMessageUIDelegate
 
 /**
  * Uses the stored displayAction to determine whether or not to display the received
@@ -761,7 +851,7 @@ NSDictionary *brazeUnityPlist;
   return YES;
 }
 
-# pragma mark - Internal Communication
+#pragma mark - Internal Communication
 
 - (void)unitySendMessageTo:(NSString *)gameObjectName withMethod:(NSString *)methodName withMessage:(NSString *)message {
   NSLog(@"Sending message to %@:%@.", gameObjectName, methodName);

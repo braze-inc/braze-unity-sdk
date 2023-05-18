@@ -113,6 +113,8 @@ namespace Appboy {
       Debug.Log("SdkAuthenticationFailureCallback: " + message);
     }
 
+    // - In-app message lifecycle
+
     public static void InAppMessageBeforeDisplayed(IInAppMessage message) {
       Debug.Log($"InAppMessage before displayed: {message}");
     }
@@ -131,6 +133,12 @@ namespace Appboy {
 
     public static void InAppMessageHTMLClicked(IInAppMessage message, Uri uri) {
       Debug.Log($"InAppMessage HTML clicked: {message} {uri}");
+    }
+
+    // - Feature Flags
+
+    void FeatureFlagsReceivedCallback(string message) {
+      Debug.Log("FeatureFlagsReceivedCallback message: " + message);
     }
   }
 

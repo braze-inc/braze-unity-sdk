@@ -11,6 +11,9 @@ using UnityEngine;
 #if UNITY_IOS
 
 public class BrazeiOSPlatform : BrazePlatform {
+
+  /***** Method Declarations to the binding layer in `C` *****/
+
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _logCustomEvent(string eventName, string properties);
 
@@ -181,6 +184,17 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _removeFromSubscriptionGroup(string id);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _refreshFeatureFlags();
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern string _getFeatureFlag(string id);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern string _getAllFeatureFlags();
+
+  /***** `BrazePlatform` method implementations *****/
 
   public void LogCustomEvent(string eventName) {
     _logCustomEvent(eventName, null);
@@ -456,6 +470,32 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void RemoveFromSubscriptionGroup(string id) {
     _removeFromSubscriptionGroup(id);
+  }
+
+  public void RefreshFeatureFlags() {
+    _refreshFeatureFlags();
+  }
+
+  public FeatureFlag GetFeatureFlag(string id) {
+    string jsonStr = _getFeatureFlag(id);
+    FeatureFlag flag = new FeatureFlag((JSONObject)JSON.Parse(jsonStr));
+    return flag;
+  }
+
+  public List<FeatureFlag> GetAllFeatureFlags() {
+    List<FeatureFlag> featureFlags = new List<FeatureFlag>();
+
+    // Receive a JSON array of strings from the iOS layer
+    string jsonStrArray = _getAllFeatureFlags();
+    JSONArray jsonArray = (JSONArray)JSON.Parse(jsonStrArray);
+
+    // Iterate through the array and convert the strings to FeatureFlag objects in C#
+    foreach (JSONString flagJsonStr in jsonArray) {
+      FeatureFlag flag = new FeatureFlag((JSONObject)JSON.Parse(flagJsonStr));
+      featureFlags.Add(flag);
+    }
+
+    return featureFlags;
   }
 
 }

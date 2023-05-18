@@ -444,6 +444,31 @@ public class BrazeAndroidPlatform : BrazePlatform {
   public void RemoveFromSubscriptionGroup(string id) {
     GetCurrentUser().Call<bool>("removeFromSubscriptionGroup", id);
   }
+
+  public void RefreshFeatureFlags() {
+    Braze.Call("refreshFeatureFlags");
+  }
+
+  public FeatureFlag GetFeatureFlag(string id) {
+    var javaFeatureFlag = Braze.Call<AndroidJavaObject>("getFeatureFlag", id);
+    var javaJsonObject = javaFeatureFlag.Call<AndroidJavaObject>("forJsonPut");
+    var javaString = javaJsonObject.Call<string>("toString");
+    return new FeatureFlag((JSONObject)JSON.Parse(javaString));
+  }
+
+  public List<FeatureFlag> GetAllFeatureFlags() {
+    List<FeatureFlag> returnList = new List<FeatureFlag>();
+    AndroidJavaObject javaFeatureFlagList = Braze.Call<AndroidJavaObject>("getAllFeatureFlags");
+    var listSize = javaFeatureFlagList.Call<int>("size");
+    for (int i = 0; i < listSize; i++) {
+      var javaFF = javaFeatureFlagList.Call<AndroidJavaObject>("get", i);
+      var javaJsonObject = javaFF.Call<AndroidJavaObject>("forJsonPut");
+      var javaString = javaJsonObject.Call<string>("toString");
+      var ff = new FeatureFlag((JSONObject)JSON.Parse(javaString));
+      returnList.Add(ff);
+    }
+    return returnList;
+  }
 }
 
 #endif
