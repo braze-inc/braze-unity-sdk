@@ -30,6 +30,9 @@ static Braze *_braze;
   // Set listeners
   [[AppboyUnityManager sharedInstance] setListenersFromPList];
 
+  // Store the braze settings (used in system push handlers)
+  self.brazeUnityPlist = [AppboyUnityManager sharedInstance].brazeUnityPlist;
+    
   // Register for push notifications
   if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue] &&
       ![self.brazeUnityPlist[BRZUnityDisableAutomaticPushRegistrationKey] boolValue]) {

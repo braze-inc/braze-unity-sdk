@@ -1,3 +1,8 @@
+## 4.1.1
+
+##### Fixed
+- Fixed the Braze iOS Push settings not being applied in the sample app code.
+
 ## 4.1.0
 
 ##### Added
@@ -18,6 +23,7 @@
 
 #### Breaking
 - Updated the Android plugin to use [Braze Android SDK 25.0.0](https://github.com/braze-inc/braze-android-sdk/blob/master/CHANGELOG.md#2500)
+  - Update `com.appboy.unity.AppboyUnityPlayerActivity` references to `com.braze.unity.BrazeUnityPlayerActivity`.
 - Updates the native iOS bridge to use the new [Swift SDK version 6.0.0](https://github.com/braze-inc/braze-swift-sdk/blob/main/CHANGELOG.md#600).
   - Replace any instances of `#import <Appboy_iOS_SDK/AppboyKit.h>` in your iOS native code with:
   ```
