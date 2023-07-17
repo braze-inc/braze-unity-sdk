@@ -1,3 +1,11 @@
+## 4.2.0
+
+#### Breaking
+- Updated the Android plugin to use [Braze Android SDK 26.2.0](https://github.com/braze-inc/braze-android-sdk/blob/master/CHANGELOG.md#2620)
+
+##### Fixed
+- Fixed an issue on Android where In-App Message events would not properly get forwarded to the Unity layer.
+
 ## 4.1.1
 
 ##### Fixed

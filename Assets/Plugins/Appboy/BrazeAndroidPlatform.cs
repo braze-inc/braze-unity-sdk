@@ -377,11 +377,11 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void RequestContentCardsRefresh() {
-    Braze.Call("requestContentCardsRefresh", false);
+    Braze.Call("requestContentCardsRefresh");
   }
 
   public void RequestContentCardsRefreshFromCache() {
-    Braze.Call("requestContentCardsRefresh", true);
+    Braze.Call("requestContentCardsRefreshFromCache");
   }
 
   public void WipeData() {

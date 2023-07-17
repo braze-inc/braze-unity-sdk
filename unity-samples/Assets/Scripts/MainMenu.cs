@@ -1,12 +1,24 @@
 ﻿using Appboy;
 using Appboy.Models;
+using Appboy.Models.InAppMessage;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
 using System.Collections.Generic;
 using System.Text;
+using System;
 
 public class MainMenu : MonoBehaviour {
+
+  private void Start() {
+    BrazeInAppMessageListener listener = new BrazeInAppMessageListener() {
+                                      OnInAppMessageButtonClicked = OnInAppMessageButtonClicked,
+                                      OnInAppMessageClicked       = OnInAppMessageClicked,
+                                      OnInAppMessageHTMLClicked   = OnInAppMessageHTMLClicked,
+                                      OnInAppMessageDismissed     = OnInAppMessageDismissed,
+                                  };
+    Appboy.AppboyBinding.inAppMessageListener = listener;
+  }
 
   public void OnChangeUserButtonClick() {
     SceneManager.LoadScene(Constants.ChangeUserScene);
@@ -76,6 +88,28 @@ public class MainMenu : MonoBehaviour {
 
   public void OnDisplayNextInAppMessage() {
     Appboy.AppboyBinding.DisplayNextInAppMessage();
+  }
+
+  public void OnPrintAllGameObjects() {
+    GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+    foreach(object gameObject in allObjects)
+      Debug.Log(gameObject + " is a GameObject.");
+  }
+
+  public void OnInAppMessageDismissed(IInAppMessage inAppMessage) {
+    Debug.Log($"OnInAppMessageDismissed: {inAppMessage.Message}");
+  }
+
+  public void OnInAppMessageHTMLClicked(IInAppMessage inAppMessage, Uri uri) {
+    Debug.Log($"OnInAppMessageHTMLClicked: {inAppMessage.Message} {uri.AbsoluteUri}");
+  }
+
+  public void OnInAppMessageClicked(IInAppMessage inAppMessage) {
+    Debug.Log($"OnInAppMessageClicked: {inAppMessage.Message}");
+  }
+
+  public void OnInAppMessageButtonClicked(IInAppMessage inAppMessage, InAppMessageButton inAppMessageButton) {
+    Debug.Log($" OnInAppMessageButtonClicked: {inAppMessage.Message} {inAppMessageButton}");
   }
 
   public void OnPresetUserDataClick() {

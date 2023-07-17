@@ -36,7 +36,9 @@ namespace Appboy.Internal {
     public BrazeInAppMessageListener iamListener;
 
     public void beforeInAppMessageDisplayed(string messageJSON) {
+      Debug.Log("BrazeInternalComponent.beforeInAppMessageDisplayed called with json: " + messageJSON);
       if (iamListener == null || iamListener.BeforeInAppMessageDisplayed == null) {
+        Debug.Log("BrazeInternalComponent.beforeInAppMessageDisplayed no-op on null listener");
         return; 
       }
 
@@ -45,7 +47,9 @@ namespace Appboy.Internal {
     }
 
     public void onInAppMessageDismissed(string messageJSON) {
+      Debug.Log("BrazeInternalComponent.onInAppMessageDismissed called with json: " + messageJSON);
       if (iamListener == null || iamListener.OnInAppMessageDismissed == null) {
+        Debug.Log("BrazeInternalComponent.onInAppMessageDismissed no-op on null listener");
         return;
       }
 
@@ -54,7 +58,9 @@ namespace Appboy.Internal {
     }
 
     public void onInAppMessageClicked(string messageJSON) {
+      Debug.Log("BrazeInternalComponent.onInAppMessageClicked called with json: " + messageJSON);
       if (iamListener == null || iamListener.OnInAppMessageClicked == null) {
+        Debug.Log("BrazeInternalComponent.onInAppMessageClicked no-op on null listener");
         return;
       }
 
@@ -63,7 +69,9 @@ namespace Appboy.Internal {
     }
 
     public void onInAppMessageButtonClicked(string argvJSON) {
+      Debug.Log("BrazeInternalComponent.onInAppMessageButtonClicked called with json: " + argvJSON);
       if (iamListener == null || iamListener.OnInAppMessageButtonClicked == null) {
+        Debug.Log("BrazeInternalComponent.onInAppMessageButtonClicked no-op on null listener");
         return;
       }
 
@@ -80,7 +88,9 @@ namespace Appboy.Internal {
     }
 
     public void onInAppMessageHTMLClicked(string argvJSON) {
+      Debug.Log("BrazeInternalComponent.onInAppMessageHTMLClicked called with json: " + argvJSON);
       if (iamListener == null || iamListener.OnInAppMessageHTMLClicked == null) {
+        Debug.Log("BrazeInternalComponent.onInAppMessageHTMLClicked no-op on null listener");
         return;
       }
 
@@ -95,6 +105,5 @@ namespace Appboy.Internal {
         Debug.Log("Received invalid in-app message data from native side.");
       }
     }
-
   }
 }
