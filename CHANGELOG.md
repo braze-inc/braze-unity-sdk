@@ -1,3 +1,10 @@
+## 4.3.0
+
+> Starting with this release, this SDK will use [Semantic Versioning](https://semver.org/).
+
+##### Changed
+- Updated the Android plugin to use Braze Android SDK 27.0.1.
+
 ## 4.2.0
 
 #### Breaking
