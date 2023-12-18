@@ -7,7 +7,7 @@ namespace Appboy.Editor {
     private AppboyConfig instance;
     private Vector2 scrollPosition;
     private GUILayoutOption[] buttonGuiStyle = new GUILayoutOption[] { GUILayout.ExpandWidth(true) };
-    // https://appboy.github.io/appboy-android-sdk/kdoc/braze-android-sdk/com.braze.ui.inappmessage/-in-app-message-operation/index.html
+    // https://braze-inc.github.io/braze-android-sdk/kdoc/braze-android-sdk/com.braze.ui.inappmessage/-in-app-message-operation/index.html
     private string[] ANDROID_IAM_OPERATIONS = new string[] {"Display Now", "Display Later", "Discard"};
 
     // Cross-platform settings
@@ -122,6 +122,7 @@ namespace Appboy.Editor {
         IOSBuildGUIPush();
         EditorGUI.indentLevel--;
         EditorGUILayout.Separator();
+        EditorGUILayout.EndVertical();
 
         // In-App Messages
         EditorGUILayout.LabelField("In-App Messages", EditorStyles.boldLabel);
@@ -301,7 +302,7 @@ namespace Appboy.Editor {
         GUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Space separated, capitalized DEVICE_KEY enum values.", EditorStyles.wordWrappedMiniLabel);
         if (GUILayout.Button("DEVICE_KEY enums", buttonGuiStyle)) {
-          Application.OpenURL("https://appboy.github.io/appboy-android-sdk/javadocs/com/appboy/enums/DeviceKey.html");
+          Application.OpenURL("https://braze-inc.github.io/braze-android-sdk/javadocs/com/appboy/enums/DeviceKey.html");
         }     
         GUILayout.EndHorizontal();   
         EditorGUI.indentLevel--;

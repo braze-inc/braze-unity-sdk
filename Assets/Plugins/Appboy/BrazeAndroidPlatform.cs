@@ -449,8 +449,11 @@ public class BrazeAndroidPlatform : BrazePlatform {
     Braze.Call("refreshFeatureFlags");
   }
 
-  public FeatureFlag GetFeatureFlag(string id) {
+  public FeatureFlag? GetFeatureFlag(string id) {
     var javaFeatureFlag = Braze.Call<AndroidJavaObject>("getFeatureFlag", id);
+    if (javaFeatureFlag == null) {
+      return null;
+    }
     var javaJsonObject = javaFeatureFlag.Call<AndroidJavaObject>("forJsonPut");
     var javaString = javaJsonObject.Call<string>("toString");
     return new FeatureFlag((JSONObject)JSON.Parse(javaString));

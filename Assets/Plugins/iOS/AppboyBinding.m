@@ -305,13 +305,13 @@ void _refreshFeatureFlags() {
   [[AppboyUnityManager sharedInstance] refreshFeatureFlags];
 }
 
-// Return FeatureFlag in the form of a string, since `C` doesn't support objects
+// Return Feature Flag in the form of a string, since `C` doesn't support objects
 char* _getFeatureFlag(char* id) {
   NSString *flagStr = [[AppboyUnityManager sharedInstance] getFeatureFlag:GetStringParam(id)];
   return convertNSStringToCString(flagStr);
 }
 
-// Return FeatureFlags in the form of a string, since `C` doesn't support objects
+// Return Feature Flags in the form of a string, since `C` doesn't support objects
 char* _getAllFeatureFlags() {
   NSString *flagStrArray = [[AppboyUnityManager sharedInstance] getAllFeatureFlags];
   return convertNSStringToCString(flagStrArray);

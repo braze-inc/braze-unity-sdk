@@ -107,6 +107,6 @@ public interface BrazePlatform {
   void AddToSubscriptionGroup(string id);
   void RemoveFromSubscriptionGroup(string id);
   void RefreshFeatureFlags();
-  FeatureFlag GetFeatureFlag(string id);
+  FeatureFlag? GetFeatureFlag(string id);
   List<FeatureFlag> GetAllFeatureFlags();
 }

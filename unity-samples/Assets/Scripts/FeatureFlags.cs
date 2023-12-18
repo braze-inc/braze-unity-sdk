@@ -47,6 +47,10 @@ public class FeatureFlags : MonoBehaviour {
 
   private async void getFeatureFlag(string ffId) {
     var ff = Appboy.AppboyBinding.GetFeatureFlag(ffId);
+    if (ff == null) {
+      Console.WriteLine(String.Format("No Feature Flag Found with ID: {0}", ffId));
+      return;
+    }
     Debug.Log(ff.ToString());
 
     // Print out each of the properties via convenience getter methods

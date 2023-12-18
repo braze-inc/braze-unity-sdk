@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
 
-@import BrazeKit;
-@import BrazeUI;
+#import <BrazeKit/BrazeKit-Swift.h>
+#import <BrazeUI/BrazeUI-Swift.h>
 
 static NSString *const BRZUnityApiKey = @"ApiKey";
 static NSString *const BRZUnitySdkAuthEnabledKey = @"EnableSDKAuthentication";

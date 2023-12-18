@@ -684,10 +684,10 @@ namespace Appboy {
     }
 
     /// <summary>
-    /// Get a single Feature Flag.
+    /// Get a single Feature Flag. If there is no Feature Flag with that ID, returns null.
     /// </summary>
     /// <value>Feature Flag</value>
-    public static FeatureFlag GetFeatureFlag(string id) {
+    public static FeatureFlag? GetFeatureFlag(string id) {
       #if HAS_BRAZE_SDK
         return mBinding.GetFeatureFlag(id);
       #else 

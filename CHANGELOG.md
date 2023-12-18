@@ -1,14 +1,29 @@
+## 5.0.0
+
+#### Breaking
+- Updated the native iOS bridge [from Braze Swift SDK 6.1.0 to 7.4.0](https://github.com/braze-inc/braze-swift-sdk/compare/6.1.0...7.3.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+  - The iOS repository link now points to the prebuilt dynamic XCFrameworks from this repo: `https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic`.
+- Updated the native Android bridge [from Braze Android SDK 27.0.1 to 29.0.1](https://github.com/braze-inc/braze-android-sdk/compare/v27.0.0...v29.0.1#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- `AppboyBinding.GetFeatureFlag(string id)` will now return `null` if the Feature Flag does not exist.
+- `FEATURE_FLAGS_UPDATED` will only trigger when a refresh request completes with success or failure, and upon initial subscription if there was previously cached data from the current session.
+
+##### Fixed
+- Fixed an issue introduced in `4.0.0` which prevented compilation on Xcode 14.3+.
+  - The additional `-fcxx-modules` flag under "Other C++ Flags" has been removed from the build process.
+  - The dependencies `BrazeKit` and `BrazeUI` now get directly linked to the main app's target, instead of being transitively linked via `UnityFramework`.
+- Changed the iOS plugin to automatically update up to the next minor version, instead of up to the next major version.
+
 ## 4.3.0
 
 > Starting with this release, this SDK will use [Semantic Versioning](https://semver.org/).
 
-##### Changed
-- Updated the Android plugin to use Braze Android SDK 27.0.1.
+##### Added
+- Updated the Android plugin to use [Braze Android SDK 27.0.1](https://github.com/braze-inc/braze-android-sdk/blob/master/CHANGELOG.md#2701).
 
 ## 4.2.0
 
 #### Breaking
-- Updated the Android plugin to use [Braze Android SDK 26.2.0](https://github.com/braze-inc/braze-android-sdk/blob/master/CHANGELOG.md#2620)
+- Updated the Android plugin to use [Braze Android SDK 26.2.0](https://github.com/braze-inc/braze-android-sdk/blob/master/CHANGELOG.md#2620).
 
 ##### Fixed
 - Fixed an issue on Android where In-App Message events would not properly get forwarded to the Unity layer.

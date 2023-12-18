@@ -9,12 +9,16 @@ using UnityEditor.iOS.Xcode;
 using UnityEditor.iOS.Xcode.Extensions;
 #endif
 
-namespace Appboy.Editor {
-  public class PostBuild {
+namespace Appboy.Editor
+{
+  public class PostBuild
+  {
 #if UNITY_IOS
     private const string AppboyAppDelegatePath = "Libraries/Plugins/iOS/AppboyAppDelegate.mm";
     private const string PlistSubpath = "/Info.plist";
     private const string MainTargetName = "Unity-iPhone";
+    private const string AppleDeveloperTeamID = "5GLZKGNWQ3";
+    private const string BrazeSampleAppBundleId = "com.appboy.unity.AppboySample";
 
     private const string BRZEndpointKey = "Endpoint";
     private const string BRZLogLevelKey = "LogLevel";
@@ -59,39 +63,50 @@ namespace Appboy.Editor {
         project.RemoveFile(appboyAppDelegateGuid);
 
       } else {
+        string mainTarget = project.GetUnityMainTargetGuid();
         if (AppboyConfig.IOSIntegratesPush && !AppboyConfig.IOSDisableAutomaticPushCapability) {
           AddPushEntitlement(
             path,
             project,
-            project.GetUnityMainTargetGuid()
+            mainTarget
           );
         }
 
-        // Disabled to run on Xcode 14+
-        project.SetBuildProperty(project.GetUnityMainTargetGuid(), "ENABLE_BITCODE", "NO");
+        // - Use Braze's Apple Developer Team ID only for the sample app
+        string releaseConfigGUID = project.BuildConfigByName(mainTarget, "Release");
+        string bundleId = project.GetBuildPropertyForConfig(releaseConfigGUID, "PRODUCT_BUNDLE_IDENTIFIER");
+        if (bundleId == BrazeSampleAppBundleId) {
+          PlayerSettings.iOS.appleDeveloperTeamID = AppleDeveloperTeamID;
+        }
+        PlayerSettings.iOS.appleEnableAutomaticSigning = true;
 
-        /****** Modifying `UnityFramework.framework` ******/
+        /****** Unity-iPhone (main target) ******/
+
+        // - Add packages via SPM
+        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "7.4.0");
+        project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeKit", brazeGUID, false);
+        project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeUI", brazeGUID, false);
+
+        if (AppboyConfig.IOSImportDependencies) {
+          // Third-party dependencies
+          string SDWebImageGUID = project.AddRemotePackageReferenceAtVersion("https://github.com/SDWebImage/SDWebImage/", "5.15.5");
+          project.AddRemotePackageFrameworkToProject(mainTarget, "SDWebImage", SDWebImageGUID, false);
+        }
+
+        // - Disabled to run on Xcode 14+
+        project.SetBuildProperty(mainTarget, "ENABLE_BITCODE", "NO");
+
+        /****** UnityFramework.framework ******/
+
         string unityFramework = project.GetUnityFrameworkTargetGuid();
 
         // - Add UserNotifications.framework
         project.AddFrameworkToProject(unityFramework, "UserNotifications.framework", false);
 
-        // - Add packages via SPM to UnityFramework
-        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMajor("https://github.com/braze-inc/braze-swift-sdk/", "6.1.0");
-        project.AddRemotePackageFrameworkToProject(unityFramework, "BrazeKit", brazeGUID, false);
-        project.AddRemotePackageFrameworkToProject(unityFramework, "BrazeUI", brazeGUID, false);
-
-        if (AppboyConfig.IOSImportDependencies) {
-          // Third-party dependencies
-          string SDWebImageGUID = project.AddRemotePackageReferenceAtVersion("https://github.com/SDWebImage/SDWebImage/", "5.15.5");
-          project.AddRemotePackageFrameworkToProject(unityFramework, "SDWebImage", SDWebImageGUID, false);
-        }
-
-        // - Update UnityFramework's build settings
+        // - Update main target's build settings
         project.SetBuildProperty(unityFramework, "CLANG_ENABLE_MODULES", "YES");
         project.SetBuildProperty(unityFramework, "ENABLE_BITCODE", "NO"); // Disabled to run on Xcode 14+
         project.AddBuildProperty(unityFramework, "OTHER_CPLUSPLUSFLAGS", "$(OTHER_CFLAGS)");
-        project.AddBuildProperty(unityFramework, "OTHER_CPLUSPLUSFLAGS", "-fcxx-modules");
       }
 
       File.WriteAllText(projectPath, project.WriteToString());

@@ -544,8 +544,12 @@ NSDictionary *brazeUnityPlist;
   }];
 }
 
+/// Returns the JSON string of the Feature Flag. If there is no Feature Flag with that ID, returns nil.
 - (NSString *)getFeatureFlag:(NSString *)identifier {
   BRZFeatureFlag *featureFlag = [braze.featureFlags featureFlagWithId:identifier];
+  if (!featureFlag) {
+    return nil;
+  }
   NSData *data = [featureFlag json];
   return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

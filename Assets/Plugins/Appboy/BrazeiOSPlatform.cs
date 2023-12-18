@@ -476,8 +476,11 @@ public class BrazeiOSPlatform : BrazePlatform {
     _refreshFeatureFlags();
   }
 
-  public FeatureFlag GetFeatureFlag(string id) {
+  public FeatureFlag? GetFeatureFlag(string id) {
     string jsonStr = _getFeatureFlag(id);
+    if (jsonStr == null) {
+      return null;
+    }
     FeatureFlag flag = new FeatureFlag((JSONObject)JSON.Parse(jsonStr));
     return flag;
   }

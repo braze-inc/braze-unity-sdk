@@ -3,8 +3,8 @@
 #import "UnityAppController.h"
 #import "AppboyUnityManager.h"
 
-@import BrazeKit;
-@import BrazeUI;
+#import <BrazeKit/BrazeKit-Swift.h>
+#import <BrazeUI/BrazeUI-Swift.h>
 
 @interface AppboyAppDelegate : UnityAppController
 
