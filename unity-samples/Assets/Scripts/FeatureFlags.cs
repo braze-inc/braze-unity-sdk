@@ -40,6 +40,11 @@ public class FeatureFlags : MonoBehaviour {
     Appboy.AppboyBinding.RefreshFeatureFlags();
   }
 
+  public void OnLogImpressionClicked() {
+    Console.WriteLine("Logging Impression for Feature Flag {0}", UserIDField.text);
+    Appboy.AppboyBinding.LogFeatureFlagImpression(UserIDField.text);
+  }
+
   public void OnCancelButtonClicked() {
     Debug.Log(String.Format(Constants.ChangeUserCancelLog));
     SceneManager.LoadScene(Constants.MainMenuScene);

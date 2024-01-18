@@ -115,6 +115,7 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 - (void)refreshFeatureFlags;
 - (NSString *)getFeatureFlag:(NSString *)identifier;
 - (NSString *)getAllFeatureFlags;
+- (void)logFeatureFlagImpression:(NSString *)identifier;
 
 /*!
  * @discussion Passes the device token to Braze. The caller is responsible for respecting

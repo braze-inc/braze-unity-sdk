@@ -42,6 +42,8 @@ public interface BrazePlatform {
   void SetCustomUserAttribute(string key, int value);
   void SetCustomUserAttribute(string key, float value);
   void SetCustomUserAttribute(string key, string value);
+  void SetCustomUserAttribute(string key, Dictionary<string, object> value, bool merge);
+  void SetCustomUserAttribute(string key, List<Dictionary<string, object>> value);
   void SetCustomUserAttributeToNow(string key);
   void SetCustomUserAttributeToSecondsFromEpoch(string key, long secondsFromEpoch);
   void UnsetCustomUserAttribute(string key);
@@ -109,4 +111,5 @@ public interface BrazePlatform {
   void RefreshFeatureFlags();
   FeatureFlag? GetFeatureFlag(string id);
   List<FeatureFlag> GetAllFeatureFlags();
+  void LogFeatureFlagImpression(string id);
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utilities;
+using System.Collections.Generic;
 
 public class SetCustomAttributes : MonoBehaviour {
 
@@ -16,6 +17,8 @@ public class SetCustomAttributes : MonoBehaviour {
   public InputField StringKeyField;
   public InputField StringValueField;
   public InputField DateKeyField;
+  public InputField NestedKeyField;  
+  public InputField MergeKeyField;
   public Text DateSecondLabel;
   public InputField DateSecondValueField;
   public Toggle DateNowToggle;
@@ -60,6 +63,39 @@ public class SetCustomAttributes : MonoBehaviour {
     if (UtilityMethods.textIsValid(StringKeyField.text) && UtilityMethods.textIsValid(StringValueField.text)) {
       Debug.Log(String.Format("Setting float custom attribute {0} to {1}", StringKeyField.text, StringValueField.text));
       Appboy.AppboyBinding.SetCustomUserAttribute(StringKeyField.text, StringValueField.text);
+    }
+  }
+
+  public void OnSetNestedButtonClick() {
+    Dictionary<string, object> nested = new Dictionary<string, object>();
+    nested.Add("key int", 2);
+    nested.Add("key string", "second value");
+    nested.Add("key bool", true);
+    nested.Add("key float", 20.2);
+    Dictionary<string, object> nestedNested = new Dictionary<string, object>();
+    nestedNested.Add("substring", "2nd level string");
+    nested.Add("key nested", nestedNested);
+
+    if (UtilityMethods.textIsValid(NestedKeyField.text)) {
+      Debug.Log(String.Format("Setting nested custom attribute {0} to nested structure", NestedKeyField.text));
+      Appboy.AppboyBinding.SetCustomUserAttribute(NestedKeyField.text, nested);
+    } else {
+      Debug.Log("Nested key not set");
+    }
+  }
+
+  public void OnSetNestedWithMergeButtonClick() {
+    Dictionary<string, object> nested = new Dictionary<string, object>();
+    nested.Add("merge key int", 2);
+    nested.Add("merge key string", "second value");
+    nested.Add("merge key bool", true);
+    nested.Add("merge key float", 20.2);
+
+    if (UtilityMethods.textIsValid(MergeKeyField.text)) {
+      Debug.Log(String.Format("Merging nested custom attribute {0} with nested structrure", MergeKeyField.text));
+      Appboy.AppboyBinding.SetCustomUserAttribute(MergeKeyField.text, nested, true);
+    } else {
+      Debug.Log("Merge key not set");
     }
   }
   

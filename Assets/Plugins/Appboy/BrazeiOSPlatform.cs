@@ -69,6 +69,12 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _setCustomUserAttributeString(string key, string val);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeObject(string key, string value, bool merge);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeObjectArray(string key, string[] value, int size);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setCustomUserAttributeToNow(string key);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -194,6 +200,9 @@ public class BrazeiOSPlatform : BrazePlatform {
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern string _getAllFeatureFlags();
 
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _logFeatureFlagImpression(string id);
+
   /***** `BrazePlatform` method implementations *****/
 
   public void LogCustomEvent(string eventName) {
@@ -276,6 +285,24 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void SetCustomUserAttribute(string key, string value) {
     _setCustomUserAttributeString(key, value);
+  }
+
+  public void SetCustomUserAttribute(string key, Dictionary<string, object> value, bool merge) {
+    if (value != null) {
+      var valueString = Json.Serialize(value);
+      _setCustomUserAttributeObject(key, valueString, merge);
+    }
+  }
+
+  public void SetCustomUserAttribute(string key, List<Dictionary<string, object>> value) {
+    if (value != null) {
+      List<string> objStringList = new List<string>();
+      foreach (Dictionary<string, object> obj in value) {
+        var objString = Json.Serialize(obj);
+        objStringList.Add(objString);
+      }
+      _setCustomUserAttributeObjectArray(key, objStringList.ToArray(), objStringList.Count);
+    }
   }
 
   public void SetCustomUserAttributeToNow(string key) {
@@ -499,6 +526,10 @@ public class BrazeiOSPlatform : BrazePlatform {
     }
 
     return featureFlags;
+  }
+
+  public void LogFeatureFlagImpression(string id) {
+    _logFeatureFlagImpression(id);
   }
 
 }

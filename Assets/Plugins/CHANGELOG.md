@@ -1,3 +1,14 @@
+## 5.1.0
+
+##### Added
+- Added support for custom user attributes to be nested objects.
+  - `AppboyBinding.SetCustomUserAttribute(string, Dictionary<string, object>);`
+  - `AppboyBinding.SetCustomUserAttribute(string, List<Dictionary<string, object>>);`
+  - You can specify that the Dictionary be merged with the existing value.
+    - `AppboyBinding.SetCustomUserAttribute(string, Dictionary<string, object>, bool merge);`
+  - See https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_attributes/nested_custom_attribute_support/ for more information.
+- Added `AppboyBinding.LogFeatureFlagImpression(string id)` to log a Feature Flag impression.
+
 ## 5.0.0
 
 #### Breaking

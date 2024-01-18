@@ -151,6 +151,31 @@ void _setCustomUserAttributeString(const char* key, const char* value) {
                                                                 stringValue:GetStringParam(value)];
 }
 
+void _setCustomUserAttributeObject(const char* key, const char* value, bool merge) {
+  NSMutableDictionary *customAttributeObject = [NSMutableDictionary dictionaryWithCapacity:1];
+  NSError *jsonError;
+  NSData *objectData = [GetStringParam(value) dataUsingEncoding:NSUTF8StringEncoding];
+  customAttributeObject = [NSJSONSerialization JSONObjectWithData:objectData
+                                                    options:NSJSONReadingMutableContainers
+                                                      error:&jsonError];
+  [[AppboyUnityManager sharedInstance].braze.user setNestedCustomAttributeDictionaryWithKey:GetStringParam(key) value:(customAttributeObject) merge:(merge)];
+}
+
+void _setCustomUserAttributeObjectArray(const char* key, const char* value[], int size) {
+  NSMutableArray *customAttributeObjectArray = [NSMutableArray arrayWithCapacity:size];
+  for (int i = 0; i < size; i++) {
+    NSMutableDictionary *customAttributeObject = [NSMutableDictionary dictionaryWithCapacity:1];
+    NSError *jsonError;
+    NSData *objectData = [GetStringParam(value[i]) dataUsingEncoding:NSUTF8StringEncoding];
+    customAttributeObject = [NSJSONSerialization JSONObjectWithData:objectData
+                                                      options:NSJSONReadingMutableContainers
+                                                        error:&jsonError];
+    [customAttributeObjectArray addObject:(customAttributeObject)];
+  }
+  [[AppboyUnityManager sharedInstance].braze.user setNestedCustomAttributeArrayWithKey:GetStringParam(key)
+                                                                                value:customAttributeObjectArray];
+}
+
 void _setCustomUserAttributeToNow(const char* key) {
   [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
                                                                   dateValue:[NSDate date]];
@@ -315,6 +340,10 @@ char* _getFeatureFlag(char* id) {
 char* _getAllFeatureFlags() {
   NSString *flagStrArray = [[AppboyUnityManager sharedInstance] getAllFeatureFlags];
   return convertNSStringToCString(flagStrArray);
+}
+
+void _logFeatureFlagImpression(char* id) {
+  [[AppboyUnityManager sharedInstance] logFeatureFlagImpression:GetStringParam(id)];
 }
 
 #pragma mark - Data management

@@ -296,6 +296,23 @@ namespace Appboy {
       #endif 
     }
 
+    // Overload
+    public static void SetCustomUserAttribute(string key, Dictionary<string, object> value) {
+      SetCustomUserAttribute(key, value, false);
+    }
+
+    public static void SetCustomUserAttribute(string key, Dictionary<string, object> value, bool merge) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetCustomUserAttribute(key, value, merge);
+      #endif
+    }
+
+    public static void SetCustomUserAttribute(string key, List<Dictionary<string, object>> value) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetCustomUserAttribute(key, value);
+      #endif
+    }
+
     public static void SetCustomUserAttributeToNow(string key) {
       #if HAS_BRAZE_SDK
         mBinding.SetCustomUserAttributeToNow(key);
@@ -713,6 +730,18 @@ namespace Appboy {
     public static void RefreshFeatureFlags() {
       #if HAS_BRAZE_SDK
         mBinding.RefreshFeatureFlags();
+      #endif
+    }
+
+    /// <summary>
+    /// Log Feature Flag impression.
+    /// </summary>
+    /// <param name="id">
+    /// The ID of the Feature Flag to log.
+    /// </param>
+    public static void LogFeatureFlagImpression(string id) {
+      #if HAS_BRAZE_SDK
+        mBinding.LogFeatureFlagImpression(id);
       #endif
     }
   }

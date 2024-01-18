@@ -558,6 +558,14 @@ NSDictionary *brazeUnityPlist;
   return [self formattedFeatureFlags:braze.featureFlags.featureFlags];
 }
 
+- (void)logFeatureFlagImpression:(NSString *)identifier {
+  BRZFeatureFlag *featureFlag = [braze.featureFlags featureFlagWithId:identifier];
+  if (featureFlag) {
+    [braze.featureFlags logFeatureFlagImpressionWithId:identifier];
+  }
+}
+
+
 /// Converts an array of FeatureFlag objects into a JSON representation of strings
 - (NSString *)formattedFeatureFlags:(NSArray<BRZFeatureFlag *> *)featureFlags {
   NSMutableArray<NSString *> *featureFlagStrings = [NSMutableArray array];

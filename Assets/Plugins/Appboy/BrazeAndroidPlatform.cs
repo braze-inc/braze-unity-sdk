@@ -75,6 +75,12 @@ public class BrazeAndroidPlatform : BrazePlatform {
     return props;
   }
 
+  public static AndroidJavaObject ParseDictionaryToJSONObject(Dictionary<string, object> properties) {
+    var jsonStr = Json.Serialize(properties);
+    AndroidJavaObject jsonObj = new AndroidJavaObject("org.json.JSONObject", jsonStr);
+    return jsonObj;
+  }
+
   public void LogCustomEvent(string eventName, Dictionary<string, object> properties) {
     AndroidJavaObject brazeProperties = ParsePropertiesToBrazeProperties(properties);
     Braze.Call("logCustomEvent", eventName, brazeProperties);
@@ -251,6 +257,24 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public void SetCustomUserAttribute(string key, string value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
+  }
+
+  public void SetCustomUserAttribute(string key, Dictionary<string, object> value, bool merge) {
+    if (value != null) {
+      AndroidJavaObject jsonObject = ParseDictionaryToJSONObject(value);
+      GetCurrentUser().Call<bool>("setCustomUserAttribute", key, jsonObject, merge);
+    }
+  }
+
+  public void SetCustomUserAttribute(string key, List<Dictionary<string, object>>  value) {
+    if (value != null) {
+      AndroidJavaObject jsonArray = new AndroidJavaObject("org.json.JSONArray");
+      foreach (Dictionary<string, object> dict in value) {
+        AndroidJavaObject jsonObject = ParseDictionaryToJSONObject(dict);
+        jsonArray.Call<AndroidJavaObject>("put", jsonObject);        
+      }
+      GetCurrentUser().Call<bool>("setCustomUserAttribute", key, jsonArray);
+    }
   }
 
   public void SetCustomUserAttributeToNow(string key) {
@@ -472,6 +496,11 @@ public class BrazeAndroidPlatform : BrazePlatform {
     }
     return returnList;
   }
+
+  public void LogFeatureFlagImpression(string id) {
+    Braze.Call("logFeatureFlagImpression", id);
+  }
+
 }
 
 #endif
