@@ -1,3 +1,10 @@
+## 5.2.0
+
+##### Added
+- Updated the native iOS bridge [from Braze Swift SDK 7.4.0 to 7.7.0](https://github.com/braze-inc/braze-swift-sdk/compare/7.4.0...7.7.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- Updated the version of `SDWebImage` from 5.15.5 to [5.19.0](https://github.com/SDWebImage/SDWebImage/releases/tag/5.19.0) when automatically importing via "Braze Configuration".
+  - This version of `SDWebImage` contains a Privacy Manifest file. See [Apple's documentation](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files) for more information.
+
 ## 5.1.0
 
 ##### Added
@@ -12,7 +19,7 @@
 ## 5.0.0
 
 #### Breaking
-- Updated the native iOS bridge [from Braze Swift SDK 6.1.0 to 7.4.0](https://github.com/braze-inc/braze-swift-sdk/compare/6.1.0...7.3.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- Updated the native iOS bridge [from Braze Swift SDK 6.1.0 to 7.4.0](https://github.com/braze-inc/braze-swift-sdk/compare/6.1.0...7.4.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
   - The iOS repository link now points to the prebuilt dynamic XCFrameworks from this repo: `https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic`.
 - Updated the native Android bridge [from Braze Android SDK 27.0.1 to 29.0.1](https://github.com/braze-inc/braze-android-sdk/compare/v27.0.0...v29.0.1#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
 - `AppboyBinding.GetFeatureFlag(string id)` will now return `null` if the Feature Flag does not exist.

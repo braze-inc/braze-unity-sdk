@@ -83,13 +83,13 @@ namespace Appboy.Editor
         /****** Unity-iPhone (main target) ******/
 
         // - Add packages via SPM
-        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "7.4.0");
+        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "7.7.0");
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeKit", brazeGUID, false);
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeUI", brazeGUID, false);
 
         if (AppboyConfig.IOSImportDependencies) {
           // Third-party dependencies
-          string SDWebImageGUID = project.AddRemotePackageReferenceAtVersion("https://github.com/SDWebImage/SDWebImage/", "5.15.5");
+          string SDWebImageGUID = project.AddRemotePackageReferenceAtVersion("https://github.com/SDWebImage/SDWebImage/", "5.19.0");
           project.AddRemotePackageFrameworkToProject(mainTarget, "SDWebImage", SDWebImageGUID, false);
         }
 
