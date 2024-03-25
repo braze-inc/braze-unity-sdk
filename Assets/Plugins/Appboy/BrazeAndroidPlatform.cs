@@ -45,7 +45,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   public AndroidJavaObject InAppMessageUtils {
     get {
       if (inAppMessageUtils == null) {
-        inAppMessageUtils = new AndroidJavaClass("com.braze.unity.utils.InAppMessageUtils");
+        inAppMessageUtils = new AndroidJavaObject("com.braze.unity.utils.InAppMessageUtils");
       }
       return inAppMessageUtils;
     }
@@ -351,18 +351,18 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void LogInAppMessageClicked(string inAppMessageJSONString) {
-    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
-    InAppMessageUtils.CallStatic("logInAppMessageClick", inAppMessage);
+    var inAppMessage = InAppMessageUtils.Call<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
+    InAppMessageUtils.Call("logInAppMessageClick", inAppMessage);
   }
 
   public void LogInAppMessageImpression(string inAppMessageJSONString) {
-    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
-    InAppMessageUtils.CallStatic("logInAppMessageImpression", inAppMessage);
+    var inAppMessage = InAppMessageUtils.Call<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
+    InAppMessageUtils.Call("logInAppMessageImpression", inAppMessage);
   }
 
   public void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
-    var inAppMessage = InAppMessageUtils.CallStatic<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
-    InAppMessageUtils.CallStatic("logInAppMessageButtonClick", inAppMessage, buttonID);
+    var inAppMessage = InAppMessageUtils.Call<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
+    InAppMessageUtils.Call("logInAppMessageButtonClick", inAppMessage, buttonID);
   }
 
   public void RequestFeedRefresh() {
@@ -397,7 +397,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
 
   public void LogContentCardDismissed(string contentCardString) {
     var contentCard = Braze.Call<AndroidJavaObject>("deserializeContentCard", contentCardString);
-    contentCard.Call("setIsDismissed", true);
+    contentCard.Call("setDismissed", true);
   }
 
   public void RequestContentCardsRefresh() {

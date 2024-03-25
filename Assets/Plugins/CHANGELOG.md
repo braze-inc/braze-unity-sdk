@@ -1,3 +1,8 @@
+## 5.2.1
+
+##### Fixed
+- Fixed an issue with calling `LogInAppMessageClicked()`, `LogInAppMessageImpression()`, `LogInAppMessageButtonClicked`, and `LogContentCardDismissed(card)` on Android.
+
 ## 5.2.0
 
 ##### Added

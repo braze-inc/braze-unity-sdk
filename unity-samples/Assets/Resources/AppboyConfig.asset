@@ -59,8 +59,8 @@ MonoBehaviour:
   iOSInAppMessageGameObjectName: BrazeCallback
   iOSInAppMessageCallbackMethodName: InAppMessageReceivedCallback
   iOSDisplayInAppMessages: 1
-  androidInAppMessageListenerGameObjectName: AndroidInAppMessageListenerGameObjectName
-  androidInAppMessageListenerCallbackMethodName: AndroidInAppMessageListenerCallbackMethodName
+  androidInAppMessageListenerGameObjectName: BrazeCallback
+  androidInAppMessageListenerCallbackMethodName: InAppMessageReceivedCallback
   androidTriggerActionMinimumTimeSeconds: 
   androidDisplayInAppMessagesAutomatically: 1
   androidSetInAppMessageManagerListenerAutomatically: 1
@@ -69,8 +69,8 @@ MonoBehaviour:
   iOSFeedCallbackMethodName: FeedReceivedCallback
   iOSContentCardsGameObjectName: BrazeCallback
   iOSContentCardsCallbackMethodName: ContentCardsReceivedCallback
-  androidContentCardsUpdatedListenerGameObjectName: AndroidContentCardsUpdatedListenerGameObjectName
-  androidContentCardsUpdatedListenerCallbackMethodName: AndroidContentCardsUpdatedListenerCallbackMethodName
+  androidContentCardsUpdatedListenerGameObjectName: BrazeCallback
+  androidContentCardsUpdatedListenerCallbackMethodName: ContentCardsReceivedCallback
   androidContentCardsUnreadVisualIndicatorEnabled: 1
   featureFlagsGameObjectName: BrazeCallback
   featureFlagsCallbackMethodName: FeatureFlagsReceivedCallback
