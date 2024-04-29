@@ -1,3 +1,5 @@
+⚠️ In version 4.0.0, we changed the iOS bridge from AppboyKit, which is written in Objective-C, to the new [Swift SDK](https://github.com/braze-inc/braze-swift-sdk). If you are upgrading from a version below 4.0.0 to a version above 4.0.0, please read [the instructions](https://github.com/braze-inc/braze-unity-sdk/blob/master/CHANGELOG.md#400) to ensure a smooth transition and backward compatibility.
+
 ## 5.2.1
 
 ##### Fixed
@@ -89,6 +91,7 @@
   BRZConfiguration *config = [[BRZConfiguration alloc] init];
   Braze *braze = [AppboyUnityManager initBraze:config];
   ```
+  - This migration requires re-identifying users. To do so, you must call the `changeUser` method on the Braze instance for non-anonymous users. You can read more about it [here](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide/#Re-identify-users).
   - Reference [this Migration Guide](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide) and [this documentation](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit) for additional context around specific migration / integration steps.
 - Requires Unity version [2020.3.42](https://unity.com/releases/editor/whats-new/2020.3.42) or newer.
 - The following changes have been made to `AppboyUnityManager.h`:
