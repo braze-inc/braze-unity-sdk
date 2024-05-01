@@ -8,7 +8,7 @@ namespace Appboy.Editor {
     private Vector2 scrollPosition;
     private GUILayoutOption[] buttonGuiStyle = new GUILayoutOption[] { GUILayout.ExpandWidth(true) };
     // https://braze-inc.github.io/braze-android-sdk/kdoc/braze-android-sdk/com.braze.ui.inappmessage/-in-app-message-operation/index.html
-    private string[] ANDROID_IAM_OPERATIONS = new string[] {"Display Now", "Display Later", "Discard"};
+    private string[] IAM_OPERATIONS = new string[] {"Display Now", "Display Later", "Discard"};
 
     // Cross-platform settings
     private bool generalShowAllSettings = true;
@@ -135,6 +135,7 @@ namespace Appboy.Editor {
           if (!String.IsNullOrEmpty(AppboyConfig.IOSInAppMessageGameObjectName.Trim()) && !String.IsNullOrEmpty(AppboyConfig.IOSInAppMessageCallbackMethodName.Trim())) {
             AppboyConfig.IOSDisplayInAppMessages = EditorGUILayout.ToggleLeft(" Braze Displays In-App Messages", AppboyConfig.IOSDisplayInAppMessages);
           }
+          AppboyConfig.IOSInitialInAppMessageOperation = EditorGUILayout.Popup("In App Message Manager Initial Display Operation", AppboyConfig.IOSInitialInAppMessageOperation, IAM_OPERATIONS);
           EditorGUI.indentLevel--;
         }
         EditorGUI.indentLevel--;
@@ -203,6 +204,9 @@ namespace Appboy.Editor {
 
       AppboyConfig.IOSPushIsBackgroundEnabled = EditorGUILayout.ToggleLeft(" Enable Background Push", AppboyConfig.IOSPushIsBackgroundEnabled);
       EditorGUILayout.LabelField("Allows the system to wake your app from suspension when a push notification arrives.", EditorStyles.wordWrappedMiniLabel);
+
+      AppboyConfig.IOSEntitlementsFilePath = EditorGUILayout.TextField("Entitlements File Path", AppboyConfig.IOSEntitlementsFilePath);
+      EditorGUILayout.LabelField("If you already have an entitlements file setup in your application, provide its file path relative to the root of the generated Xcode project here. Otherwise, leave this field empty.", EditorStyles.wordWrappedMiniLabel);
 
       showPushReceivedListener = EditorGUILayout.Foldout(showPushReceivedListener, "Set Push Received Listener");
       if (showPushReceivedListener) {
@@ -348,7 +352,7 @@ namespace Appboy.Editor {
         EditorGUI.indentLevel--;
       }
       
-      AppboyConfig.AndroidInitialInAppMessageOperation = EditorGUILayout.Popup("In App Message Manager Initial Display Operation", AppboyConfig.AndroidInitialInAppMessageOperation, ANDROID_IAM_OPERATIONS);
+      AppboyConfig.AndroidInitialInAppMessageOperation = EditorGUILayout.Popup("In App Message Manager Initial Display Operation", AppboyConfig.AndroidInitialInAppMessageOperation, IAM_OPERATIONS);
       AppboyConfig.AndroidTriggerActionMinimumTimeSeconds = EditorGUILayout.TextField("Trigger Action Minimum Time (seconds)", AppboyConfig.AndroidTriggerActionMinimumTimeSeconds);
     }
 

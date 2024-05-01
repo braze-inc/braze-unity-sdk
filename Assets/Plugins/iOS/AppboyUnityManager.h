@@ -16,6 +16,7 @@ static NSString *const BRZUnityPushOpenedGameObjectKey = @"PushOpenedGameObjectN
 static NSString *const BRZUnityPushOpenedCallbackKey = @"PushOpenedCallbackMethodName";
 static NSString *const BRZUnityInAppMessageGameObjectKey = @"InAppMessageGameObjectName";
 static NSString *const BRZUnityInAppMessageCallbackKey = @"InAppMessageCallbackMethodName";
+static NSString *const BRZUnityInAppMessageInitialOperation = @"InAppMessageInitialOperation";
 static NSString *const BRZUnityFeedGameObjectKey = @"FeedGameObjectName";
 static NSString *const BRZUnityFeedCallbackKey = @"FeedCallbackMethodName";
 static NSString *const BRZUnityContentCardsGameObjectKey = @"ContentCardsGameObjectName";

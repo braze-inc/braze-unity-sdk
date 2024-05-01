@@ -1,3 +1,18 @@
+⚠️ In version 4.0.0, we changed the iOS bridge from AppboyKit, which is written in Objective-C, to the new [Swift SDK](https://github.com/braze-inc/braze-swift-sdk). If you are upgrading from a version below 4.0.0 to a version above 4.0.0, please read [the instructions](https://github.com/braze-inc/braze-unity-sdk/blob/master/CHANGELOG.md#400) to ensure a smooth transition and backward compatibility.
+
+## 6.0.0
+
+##### Breaking
+- Updated the native iOS bridge [from Braze Swift SDK 7.7.0 to 9.0.0](https://github.com/braze-inc/braze-swift-sdk/compare/7.7.0...9.0.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- Updated the native Android bridge [from Braze Android SDK 29.0.1 to 30.3.0](https://github.com/braze-inc/braze-android-sdk/compare/v29.0.1...v30.3.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+
+##### Added
+- Added iOS _In App Message Manager Initial Display Operation_ configuration setting.
+  - This setting allows you to configure the initial display operation for in-app messages on iOS. For instance, set it to _Display Later_ to delay the initial display of in-app messages until after your game has finished loading, and use the `AppboyBinding.DisplayNextInAppMessage()` method to display it when ready.
+- Added the _Entitlements File Path_ configuration setting.
+  - This setting allows you to specify the path to an entitlements file to be used / modified by Braze in the Xcode project.
+  - If left blank, the default entitlements file will be used / created.
+
 ## 5.2.1
 
 ##### Fixed
@@ -89,6 +104,7 @@
   BRZConfiguration *config = [[BRZConfiguration alloc] init];
   Braze *braze = [AppboyUnityManager initBraze:config];
   ```
+  - This migration requires re-identifying users. To do so, you must call the `changeUser` method on the Braze instance for non-anonymous users. You can read more about it [here](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide/#Re-identify-users).
   - Reference [this Migration Guide](https://braze-inc.github.io/braze-swift-sdk/documentation/braze/appboy-migration-guide) and [this documentation](https://braze-inc.github.io/braze-swift-sdk/documentation/brazekit) for additional context around specific migration / integration steps.
 - Requires Unity version [2020.3.42](https://unity.com/releases/editor/whats-new/2020.3.42) or newer.
 - The following changes have been made to `AppboyUnityManager.h`:

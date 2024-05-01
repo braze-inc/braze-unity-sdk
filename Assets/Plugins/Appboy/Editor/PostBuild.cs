@@ -4,14 +4,19 @@ using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.Callbacks;
+using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
 using UnityEditor.iOS.Xcode;
 using UnityEditor.iOS.Xcode.Extensions;
 #endif
 
 namespace Appboy.Editor
 {
+#if UNITY_IOS
+  public class PostBuild: IPostprocessBuildWithReport
+#else
   public class PostBuild
+#endif
   {
 #if UNITY_IOS
     private const string AppboyAppDelegatePath = "Libraries/Plugins/iOS/AppboyAppDelegate.mm";
@@ -33,6 +38,7 @@ namespace Appboy.Editor
     private const string BRZUnityPushOpenedCallbackKey = "PushOpenedCallbackMethodName";
     private const string BRZUnityInAppMessageGameObjectKey = "InAppMessageGameObjectName";
     private const string BRZUnityInAppMessageCallbackKey = "InAppMessageCallbackMethodName";
+    private const string BRZUnityInAppMessageInitialOperation = "InAppMessageInitialOperation";
     private const string BRZUnityFeedGameObjectKey = "FeedGameObjectName";
     private const string BRZUnityFeedCallbackKey = "FeedCallbackMethodName";
     private const string BRZUnityContentCardsGameObjectKey = "ContentCardsGameObjectName";
@@ -43,11 +49,16 @@ namespace Appboy.Editor
     private const string BRZUnityFeatureFlagsGameObjectKey = "FeatureFlagsGameObjectName";
     private const string BRZUnityFeatureFlagsCallbackKey = "FeatureFlagsCallbackMethodName";
 
-    [PostProcessBuildAttribute(1)]
-    public static void OnPostprocessBuild(BuildTarget target, string path) {
-      if (target == BuildTarget.iOS) {
-        ModifyPlist(path + PlistSubpath);
-        ModifyProject(path);
+    public int callbackOrder 
+    { 
+      get { return 10000; } 
+    }
+
+    public void OnPostprocessBuild(BuildReport report)
+    {
+      if (report.summary.platform == BuildTarget.iOS) {
+        ModifyPlist(report.summary.outputPath + PlistSubpath);
+        ModifyProject(report.summary.outputPath);
       }
     }
 
@@ -64,6 +75,8 @@ namespace Appboy.Editor
 
       } else {
         string mainTarget = project.GetUnityMainTargetGuid();
+
+        // - Add Push entitlement
         if (AppboyConfig.IOSIntegratesPush && !AppboyConfig.IOSDisableAutomaticPushCapability) {
           AddPushEntitlement(
             path,
@@ -83,7 +96,7 @@ namespace Appboy.Editor
         /****** Unity-iPhone (main target) ******/
 
         // - Add packages via SPM
-        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "7.7.0");
+        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "9.0.0");
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeKit", brazeGUID, false);
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeUI", brazeGUID, false);
 
@@ -114,26 +127,16 @@ namespace Appboy.Editor
 
     /// Adds the Push entitlement to the host Unity iOS application
     private static void AddPushEntitlement(string path, PBXProject project, string target) {
-      var entitlements = new PlistDocument();
-
-      string entitlementsFilename = MainTargetName + ".entitlements";
-      string entitlementsRelativePath = MainTargetName + "/" + entitlementsFilename;
-      string entitlementsPath = path + "/" + entitlementsRelativePath;
-
-      if (File.Exists(entitlementsPath)) {
-        entitlements.ReadFromFile(entitlementsPath);
+      var entitlementsFilePath = AppboyConfig.IOSEntitlementsFilePath;
+      if (string.IsNullOrEmpty(entitlementsFilePath)) {
+        entitlementsFilePath = MainTargetName + ".entitlements";
       }
+      var projectCapabilityManager = new ProjectCapabilityManager(PBXProject.GetPBXProjectPath(path), entitlementsFilePath, null, target);
+      projectCapabilityManager.AddPushNotifications(true);
+      projectCapabilityManager.WriteToFile();
 
-      if (entitlements.root["aps-environment"] != null) {
-        return;
-      } else {
-        entitlements.root.SetString("aps-environment", "development");
-      }
-
-      project.AddFile(entitlementsRelativePath, entitlementsFilename);
-      entitlements.WriteToFile(entitlementsPath);
-
-      project.AddBuildProperty(target, "CODE_SIGN_ENTITLEMENTS", entitlementsRelativePath);
+      project.AddFile(entitlementsFilePath, Path.GetFileName(entitlementsFilePath));
+      project.AddBuildProperty(target, "CODE_SIGN_ENTITLEMENTS", entitlementsFilePath);
     }
 
     /// Based on the properties set in `BrazeConfiguration` in the Unity UI, inserts relevant values
@@ -208,6 +211,9 @@ namespace Appboy.Editor
           brazeUnityDict.SetString(BRZUnityInAppMessageCallbackKey, AppboyConfig.IOSInAppMessageCallbackMethodName.Trim());
           brazeUnityDict.SetBoolean(BRZUnityHandleInAppMessageDisplayKey, AppboyConfig.IOSDisplayInAppMessages);
         }
+
+        // - Set in-app message initial operation
+        brazeUnityDict.SetInteger(BRZUnityInAppMessageInitialOperation, AppboyConfig.IOSInitialInAppMessageOperation);
 
         // - Set feed listener
         if (ValidateListenerFields(BRZUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName,

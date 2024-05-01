@@ -87,7 +87,8 @@ NSDictionary *brazeUnityPlist;
 - (instancetype)init {
   self = [super init];
   if (self) {
-    self.displayAction = BRZInAppMessageUIDisplayChoiceNow;
+    // Set initial display action
+    self.displayAction = (BRZInAppMessageUIDisplayChoice)[brazeUnityPlist[BRZUnityInAppMessageInitialOperation] integerValue];
 
     // Set in-app message UI
     BrazeInAppMessageUI *inAppMessageUI = [[BrazeInAppMessageUI alloc] init];

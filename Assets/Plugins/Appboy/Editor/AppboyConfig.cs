@@ -74,6 +74,8 @@ namespace Appboy.Editor {
     [SerializeField]
     private bool iOSPushIsBackgroundEnabled = false;
     [SerializeField]
+    private string iOSEntitlementsFilePath = string.Empty;
+    [SerializeField]
     private string iOSPushReceivedGameObjectName = string.Empty;
     [SerializeField]
     private string iOSPushReceivedCallbackMethodName = string.Empty;
@@ -125,6 +127,8 @@ namespace Appboy.Editor {
     private string iOSInAppMessageCallbackMethodName = string.Empty;
     [SerializeField]
     private bool iOSDisplayInAppMessages = false;
+    [SerializeField]
+    private int iOSInitialInAppMessageOperation = 0;
     // Android
     [SerializeField]
     private string androidInAppMessageListenerGameObjectName = string.Empty;
@@ -271,6 +275,11 @@ namespace Appboy.Editor {
       set { SetProperty(ref Instance.iOSPushIsBackgroundEnabled, value); }
     }
 
+    public static string IOSEntitlementsFilePath {
+      get { return Instance.iOSEntitlementsFilePath; }
+      set { SetProperty(ref Instance.iOSEntitlementsFilePath, value); }
+    }
+
     // In-App Messages
     public static string IOSInAppMessageGameObjectName {
       get { return Instance.iOSInAppMessageGameObjectName; }
@@ -285,6 +294,11 @@ namespace Appboy.Editor {
     public static bool IOSDisplayInAppMessages {
       get { return Instance.iOSDisplayInAppMessages; }
       set { SetProperty(ref Instance.iOSDisplayInAppMessages, value); }
+    }
+
+    public static int IOSInitialInAppMessageOperation {
+      get { return Instance.iOSInitialInAppMessageOperation; }
+      set { SetProperty(ref Instance.iOSInitialInAppMessageOperation, value); }
     }
 
     // News Feed

@@ -59,6 +59,7 @@ MonoBehaviour:
   iOSInAppMessageGameObjectName: BrazeCallback
   iOSInAppMessageCallbackMethodName: InAppMessageReceivedCallback
   iOSDisplayInAppMessages: 1
+  iOSInitialInAppMessageOperation: 0
   androidInAppMessageListenerGameObjectName: BrazeCallback
   androidInAppMessageListenerCallbackMethodName: InAppMessageReceivedCallback
   androidTriggerActionMinimumTimeSeconds: 
