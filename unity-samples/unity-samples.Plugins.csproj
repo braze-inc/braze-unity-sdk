@@ -358,6 +358,8 @@
     <Compile Include="Assets\Plugins\Appboy\models\InAppMessage\InAppMessageType.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\PushNotification.cs" />
     <Compile Include="Assets\Plugins\Appboy\models\SlideFrom.cs" />
+    <Compile Include="Assets\Plugins\Appboy\models\TrackingProperty.cs" />
+    <Compile Include="Assets\Plugins\Appboy\models\TrackingPropertyAllowList.cs" />
     <Compile Include="Assets\Plugins\Appboy\Tests\AppboyBindingTester.cs" />
     <Compile Include="Assets\Plugins\Appboy\Tests\ApplePushNotificationTester.cs" />
     <Compile Include="Assets\Plugins\Appboy\Utilities\CollectionUtils.cs" />

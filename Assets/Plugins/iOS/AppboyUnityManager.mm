@@ -202,6 +202,10 @@ NSDictionary *brazeUnityPlist;
    self.displayAction = currentDisplayAction;
 }
 
+- (void)hideCurrentInAppMessage {
+  [(BrazeInAppMessageUI *)braze.inAppMessagePresenter dismiss];
+}
+
 /**
  * @discussion Stores the display action for when a game object receives an in-app message.
  */

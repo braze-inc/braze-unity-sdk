@@ -68,7 +68,7 @@ namespace Appboy.Models {
       }
 
       if (json[key] != null) {
-        return Convert.ToInt64((int)json[key]);
+        return Convert.ToInt64((ulong)json[key]);
       }
       return defaultValue;
     }

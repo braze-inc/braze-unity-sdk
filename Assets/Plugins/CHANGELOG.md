@@ -1,5 +1,34 @@
 ⚠️ In version 4.0.0, we changed the iOS bridge from AppboyKit, which is written in Objective-C, to the new [Swift SDK](https://github.com/braze-inc/braze-swift-sdk). If you are upgrading from a version below 4.0.0 to a version above 4.0.0, please read [the instructions](https://github.com/braze-inc/braze-unity-sdk/blob/master/CHANGELOG.md#400) to ensure a smooth transition and backward compatibility.
 
+## 7.0.0
+
+##### Breaking
+- Updated the native Android bridge [from Braze Android SDK 30.3.0 to 32.1.0](https://github.com/braze-inc/braze-android-sdk/compare/v30.3.0...v32.1.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- Updated the native iOS bridge [from Braze Swift SDK 9.0.0 to 10.1.0](https://github.com/braze-inc/braze-swift-sdk/compare/9.0.0...10.1.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+
+##### Fixed
+- Fixed an issue on Android where the `AndroidPushReceivedTimestamp` of a `PushNotification` was incorrectly translated from a `long` to an `int`. The value received by the C# layer is now the same as the value sent in the JSON.
+
+##### Added
+- On the `FeatureFlag` object, added these APIs to get specific properties:
+  - `featureFlag.GetTimestampProperty(string id)` for accessing Int Unix UTC millisecond timestamps as `long?`s.
+  - `featureFlag.GetJSONProperty(string id)` for accessing JSON objects as `JSONObject?` types.
+  - `featureFlag.GetImageProperty(string id)` for accessing image URLs as `string?`s.
+- Updated the following APIs to use Pascal case and deprecated the previous variant:
+  - `featureFlag.GetStringProperty(string id)`, replacing `getStringProperty`
+  - `featureFlag.GetIntegerProperty(string id)`, replacing `getIntegerProperty`
+  - `featureFlag.GetDoubleProperty(string id)`, replacing `getDoubleProperty`
+  - `featureFlag.GetBooleanProperty(string id)`, replacing `getBooleanProperty`
+- Added the method `AppboyBinding.SetUserLanguage(string)` for setting the language user attribute.
+- Added the method `AppboyBinding.SetAdTrackingEnabled(bool adTrackingEnabled, string googleAdvertisingId)` to set the `adTrackingEnabled` flag on iOS and both the `adTrackingEnabled` flag and the `Google Advertising ID` on Android.
+- Added support to modify the allow list for Braze tracking properties via the following C# properties and methods:
+  - `TrackingProperty` class
+  - `TrackingPropertyAllowList` class
+  - `AppboyBinding.UpdateTrackingPropertyAllowList(TrackingPropertyAllowList)` to modify the allow list for Braze tracking properties.
+  - For details, refer to the [Braze iOS Privacy Manifest documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/privacy_manifest).
+- Added the `InAppMessage.IsTestSend` property to indicate whether an in-app message was sent as a test send.
+- Added the method `AppboyBinding.HideCurrentInAppMessage()` to hide the visible in-app message, if applicable.
+
 ## 6.0.0
 
 ##### Breaking

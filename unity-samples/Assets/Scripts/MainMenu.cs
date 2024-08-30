@@ -96,6 +96,20 @@ public class MainMenu : MonoBehaviour {
       Debug.Log(gameObject + " is a GameObject.");
   }
 
+  public void OnSetAdTrackingEnabled() {
+    Appboy.AppboyBinding.SetAdTrackingEnabled(true, "sample-google-advertising-id");
+
+    var allowList = new TrackingPropertyAllowList {
+      Adding = new List<string> { TrackingProperty.FirstName, TrackingProperty.LastName },
+      Removing = new List<string> { TrackingProperty.DeviceData, TrackingProperty.Email },
+      AddingCustomEvents = new List<string> { "custom-event-1", "custom-event-2" },
+      RemovingCustomEvents = new List<string> { "custom-event-3", "custom-event-4" },
+      AddingCustomAttributes = new List<string> { "custom-attribute-1", "custom-attribute-2" },
+      RemovingCustomAttributes = new List<string> { "custom-attribute-3", "custom-attribute-4" }
+    };
+    Appboy.AppboyBinding.UpdateTrackingPropertyAllowList(allowList);
+  }
+
   public void OnInAppMessageDismissed(IInAppMessage inAppMessage) {
     Debug.Log($"OnInAppMessageDismissed: {inAppMessage.Message}");
   }
@@ -112,7 +126,7 @@ public class MainMenu : MonoBehaviour {
     Debug.Log($" OnInAppMessageButtonClicked: {inAppMessage.Message} {inAppMessageButton}");
   }
 
-  public void OnPresetUserDataClick() {
+  public void OnPerformPresetActionsButtonClick() {
     Appboy.AppboyBinding.SetUserFirstName("jared");
     Appboy.AppboyBinding.SetUserLastName("contreras");
     Appboy.AppboyBinding.SetUserGender(Gender.PreferNotToSay);
@@ -123,6 +137,7 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType.OPTED_IN);
     Appboy.AppboyBinding.SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType.SUBSCRIBED);
     Appboy.AppboyBinding.SetUserPhoneNumber("8675309");
+    Appboy.AppboyBinding.SetUserLanguage("it");
     Appboy.AppboyBinding.SetCustomUserAttribute("funny", false);
     Appboy.AppboyBinding.SetCustomUserAttribute("times laughed", -1);
     Appboy.AppboyBinding.SetCustomUserAttribute("grins cracked", 0.5F);
@@ -144,9 +159,11 @@ public class MainMenu : MonoBehaviour {
     Appboy.AppboyBinding.ConfigureListener(Appboy.BrazeUnityMessageType.PUSH_RECEIVED, "BrazeCallback", "PushNotificationReceivedRuntimeCallback");
     Appboy.AppboyBinding.AddToSubscriptionGroup("added subscription group");
     Appboy.AppboyBinding.RemoveFromSubscriptionGroup("removed subscription group");
-    Appboy.AppboyBinding.DisplayNextInAppMessage();
+    Appboy.AppboyBinding.HideCurrentInAppMessage();
     Appboy.AppboyBinding.PromptUserForPushPermissions(false);
   }
+
+  // - Push Notification Callbacks
 
   void PushNotificationReceivedCallback(string message) {
 #if UNITY_ANDROID

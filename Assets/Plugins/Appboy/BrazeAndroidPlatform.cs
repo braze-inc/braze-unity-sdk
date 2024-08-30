@@ -243,6 +243,10 @@ public class BrazeAndroidPlatform : BrazePlatform {
     GetCurrentUser().Call<bool>("setPhoneNumber", phoneNumber);
   }
 
+  public void SetUserLanguage(string language) {
+    GetCurrentUser().Call<bool>("setLanguage", language);
+  }
+
   public void SetCustomUserAttribute(string key, bool value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
@@ -424,6 +428,15 @@ public class BrazeAndroidPlatform : BrazePlatform {
     return Braze.Call<string>("getDeviceId");
   }
 
+  public void SetAdTrackingEnabled(bool adTrackingEnabled, string googleAdvertisingId) {
+    Braze.Call("setGoogleAdvertisingId", googleAdvertisingId, adTrackingEnabled);
+    Debug.Log("Setting adTrackingEnabled to: " + adTrackingEnabled + " with Google Advertising ID: " + googleAdvertisingId);
+  }
+
+  public void UpdateTrackingPropertyAllowList(TrackingPropertyAllowList allowList) {
+    // No-op on Android: iOS only feature.
+  }
+
   public void SetAttributionData(string network, string campaign, string adgroup, string creative) {
     var attributionData = new AndroidJavaObject("com.braze.models.outgoing.AttributionData", network, campaign, adgroup, creative);
     GetCurrentUser().Call<bool>("setAttributionData", attributionData);
@@ -457,6 +470,10 @@ public class BrazeAndroidPlatform : BrazePlatform {
     BrazeUnityActivity.Call("requestDisplayInAppMessage");
   }
 
+  public void HideCurrentInAppMessage() {
+    BrazeInAppMessageManager.Call("hideCurrentlyDisplayingInAppMessage", true);
+  }
+
   public void DisplayContentCards() {
     BrazeUnityActivity.Call("launchContentCardsActivity");
   }
@@ -473,7 +490,9 @@ public class BrazeAndroidPlatform : BrazePlatform {
     Braze.Call("refreshFeatureFlags");
   }
 
+#nullable enable
   public FeatureFlag? GetFeatureFlag(string id) {
+#nullable disable
     var javaFeatureFlag = Braze.Call<AndroidJavaObject>("getFeatureFlag", id);
     if (javaFeatureFlag == null) {
       return null;

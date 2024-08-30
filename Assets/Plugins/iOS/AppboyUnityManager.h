@@ -96,6 +96,7 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 - (void)logInAppMessageClicked:(NSString *)inAppMessageJSONString;
 - (void)logInAppMessageButtonClicked:(NSString *)inAppMessageJSONString withButtonID:(NSInteger)buttonID;
 - (void)displayNextInAppMessage;
+- (void)hideCurrentInAppMessage;
 - (void)setInAppMessageDisplayAction:(int)actionType;
 
 // News Feed

@@ -37,6 +37,7 @@ public interface BrazePlatform {
   void SetUserEmailNotificationSubscriptionType(AppboyNotificationSubscriptionType emailNotificationSubscriptionType);
   void SetUserPushNotificationSubscriptionType(AppboyNotificationSubscriptionType pushNotificationSubscriptionType);
   void SetUserPhoneNumber(string phoneNumber);
+  void SetUserLanguage(string language);
   
   void SetCustomUserAttribute(string key, bool value);
   void SetCustomUserAttribute(string key, int value);
@@ -95,6 +96,8 @@ public interface BrazePlatform {
   void DisableSDK();
 
   string GetInstallTrackingId();
+  void SetAdTrackingEnabled(bool adTrackingEnabled, string googleAdvertisingId);
+  void UpdateTrackingPropertyAllowList(TrackingPropertyAllowList allowList);
   void SetAttributionData(string network, string campaign, string adgroup, string creative);
 
   void RequestLocationInitialization();
@@ -105,11 +108,14 @@ public interface BrazePlatform {
   void ConfigureListener(BrazeUnityMessageType messageType, string gameobject, string method);
   void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType);
   void DisplayNextInAppMessage();
+  void HideCurrentInAppMessage();
   void DisplayContentCards();
   void AddToSubscriptionGroup(string id);
   void RemoveFromSubscriptionGroup(string id);
   void RefreshFeatureFlags();
+#nullable enable
   FeatureFlag? GetFeatureFlag(string id);
+#nullable disable
   List<FeatureFlag> GetAllFeatureFlags();
   void LogFeatureFlagImpression(string id);
 }

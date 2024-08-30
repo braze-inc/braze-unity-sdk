@@ -17,6 +17,7 @@ public class SetUserField : MonoBehaviour {
   public InputField CountryField;
   public InputField HomeCityField;
   public InputField PhoneField;
+  public InputField LanguageField;
   
   Gender gender;
   AppboyNotificationSubscriptionType emailSubscription = AppboyNotificationSubscriptionType.SUBSCRIBED;
@@ -29,9 +30,9 @@ public class SetUserField : MonoBehaviour {
   public void OnDoneButtonClick() {
     Debug.Log(String.Format("Setting User Fields: First name:{0}, Last name:{1}, Email:{2}, Gender:{3}, " +
                             "Date of birth:{4}/{5}/{6}, Country:{7}, Home city:{8}, Email subscription:{9}, " +
-                            "Push subscription:{10}, phone:{11}", FirstNameField.text, LastNameField.text, EmailField.text, 
+                            "Push subscription:{10}, phone:{11}, language:{12}", FirstNameField.text, LastNameField.text, EmailField.text, 
                             gender, BirthdayMonthField.text, BirthdayDayField.text, BirthdayYearField.text, 
-                            CountryField.text, HomeCityField.text, emailSubscription, pushSubscription, PhoneField.text));
+                            CountryField.text, HomeCityField.text, emailSubscription, pushSubscription, PhoneField.text, LanguageField.text));
     
     if (UtilityMethods.textIsValid(FirstNameField.text)) {
       Appboy.AppboyBinding.SetUserFirstName(FirstNameField.text);
@@ -63,6 +64,9 @@ public class SetUserField : MonoBehaviour {
     Appboy.AppboyBinding.SetUserPushNotificationSubscriptionType(pushSubscription);
     if (UtilityMethods.textIsValid(PhoneField.text)) {
       Appboy.AppboyBinding.SetUserPhoneNumber(PhoneField.text);
+    }
+    if (UtilityMethods.textIsValid(LanguageField.text)) {
+      Appboy.AppboyBinding.SetUserLanguage(LanguageField.text);
     }
     
     SceneManager.LoadScene(Constants.MainMenuScene);

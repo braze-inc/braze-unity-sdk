@@ -18,6 +18,7 @@ namespace Appboy.Models.InAppMessage {
     public const string IconColorKey = "icon_color";
     public const string IconBackgroundColorKey = "icon_bg_color";
     public const string TypeKey = "type";
+    public const string IsTestSendKey = "is_test_send";
     
     // In-app message immersive
     public const string HeaderKey = "header";

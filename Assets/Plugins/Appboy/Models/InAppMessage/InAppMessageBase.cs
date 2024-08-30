@@ -49,12 +49,15 @@ namespace Appboy.Models.InAppMessage {
         _duration = (value <= 0 ? DefaultDuration : value);
       }
     }
+
+    // Whether the in-app message is a test send.
+    public bool IsTestSend { get; }
     
     public override string ToString() {
       return String.Format("{0}: Message={1}, InAppClickAction={2}, URI={3}, InAppDismissType={4}, Duration={5}, Extras={6}, BackgroundColor={7}" +
-                           "TextColor={8}, Icon={9}, IconColor={10}, IconBackgroundColor={11}, ImageURI={12}", 
+                           "TextColor={8}, Icon={9}, IconColor={10}, IconBackgroundColor={11}, ImageURI={12}, IsTestSend={13}", 
                            this.GetType().Name, Message, InAppClickAction, URI, InAppDismissType, Duration, CollectionUtils.DictionaryToString(Extras),
-                           BackgroundColor, TextColor, Icon, IconColor, IconBackgroundColor, ImageURI);
+                           BackgroundColor, TextColor, Icon, IconColor, IconBackgroundColor, ImageURI, IsTestSend);
     }
     
     protected InAppMessageBase() {
@@ -84,6 +87,7 @@ namespace Appboy.Models.InAppMessage {
       Icon = json[InAppMessageConstants.IconKey];
       IconColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.IconColorKey]);
       IconBackgroundColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.IconBackgroundColorKey]);
+      IsTestSend = json[InAppMessageConstants.IsTestSendKey].AsBool;
     }
     
     public void LogClicked() {

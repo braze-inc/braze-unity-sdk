@@ -36,6 +36,9 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _setUserPhoneNumber(string phoneNumber);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setUserLanguage(string language);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setUserGender(int gender);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -150,6 +153,9 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _displayNextInAppMessage();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _hideCurrentInAppMessage();
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _wipeData();
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -169,6 +175,12 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern string _getInstallTrackingId();
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setAdTrackingEnabled(bool adTrackingEnabled, string googleAdvertisingId);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _updateTrackingPropertyAllowList(string allowList);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _registerAppboyPushMessages(string registrationTokenBase64);
@@ -271,6 +283,10 @@ public class BrazeiOSPlatform : BrazePlatform {
     _setUserPhoneNumber(phoneNumber);
   }
 
+  public void SetUserLanguage(string language) {
+    _setUserLanguage(language);
+  }
+
   public void SetCustomUserAttribute(string key, bool value) {
     _setCustomUserAttributeBool(key, value);
   }
@@ -370,6 +386,10 @@ public class BrazeiOSPlatform : BrazePlatform {
     _displayNextInAppMessage();
   }
 
+  public void HideCurrentInAppMessage() {
+    _hideCurrentInAppMessage();
+  }
+
   public void SetInAppMessageDisplayAction(BrazeUnityInAppMessageDisplayActionType actionType) {
     _setInAppMessageDisplayAction((int)actionType);
   }
@@ -446,6 +466,15 @@ public class BrazeiOSPlatform : BrazePlatform {
     return _getInstallTrackingId();
   }
 
+  public void SetAdTrackingEnabled(bool adTrackingEnabled, string googleAdvertisingId) {
+    _setAdTrackingEnabled(adTrackingEnabled, googleAdvertisingId);
+  }
+
+  public void UpdateTrackingPropertyAllowList(TrackingPropertyAllowList allowList) {
+    var allowListString = Json.Serialize(allowList.ToDictionary());
+    _updateTrackingPropertyAllowList(allowListString);
+  }
+
   public void SetAttributionData(string network, string campaign, string adgroup, string creative) {
     _setAttributionData(network, campaign, adgroup, creative);
   }
@@ -503,7 +532,9 @@ public class BrazeiOSPlatform : BrazePlatform {
     _refreshFeatureFlags();
   }
 
+#nullable enable
   public FeatureFlag? GetFeatureFlag(string id) {
+#nullable disable
     string jsonStr = _getFeatureFlag(id);
     if (jsonStr == null) {
       return null;

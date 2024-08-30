@@ -4,6 +4,34 @@
 #define GetStringParam( _x_ ) ( _x_ != NULL ) ? [NSString stringWithUTF8String:_x_] : [NSString stringWithUTF8String:""]
 
 char* convertNSStringToCString(const NSString* nsString);
+BRZTrackingProperty* convertTrackingProperty(const NSString* propertyString);
+NSDictionary<NSString *, BRZTrackingProperty *> *getTrackingPropertyMap() {
+    static NSDictionary<NSString *, BRZTrackingProperty *> *trackingPropertyMap = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        trackingPropertyMap = @{
+            @"all_custom_attributes": BRZTrackingProperty.allCustomAttributes,
+            @"all_custom_events": BRZTrackingProperty.allCustomEvents,
+            @"analytics_events": BRZTrackingProperty.analyticsEvents,
+            @"attribution_data": BRZTrackingProperty.attributionData,
+            @"country": BRZTrackingProperty.country,
+            @"dob": BRZTrackingProperty.dateOfBirth,
+            @"device_data": BRZTrackingProperty.deviceData,
+            @"email": BRZTrackingProperty.email,
+            @"email_subscription_state": BRZTrackingProperty.emailSubscriptionState,
+            @"everything": BRZTrackingProperty.everything,
+            @"first_name": BRZTrackingProperty.firstName,
+            @"gender": BRZTrackingProperty.gender,
+            @"home_city": BRZTrackingProperty.homeCity,
+            @"language": BRZTrackingProperty.language,
+            @"last_name": BRZTrackingProperty.lastName,
+            @"notification_subscription_state": BRZTrackingProperty.notificationSubscriptionState,
+            @"phone_number": BRZTrackingProperty.phoneNumber,
+            @"push_token": BRZTrackingProperty.pushToken
+        };
+    });
+    return trackingPropertyMap;
+}
 
 #pragma mark - Appboy
 
@@ -73,6 +101,10 @@ void _setUserLastName(const char* lastName) {
 
 void _setUserPhoneNumber(const char* phoneNumber) {
   [[AppboyUnityManager sharedInstance].braze.user setPhoneNumber:GetStringParam(phoneNumber)];
+}
+
+void _setUserLanguage(const char* language) {
+  [[AppboyUnityManager sharedInstance].braze.user setLanguage:GetStringParam(language)];
 }
 
 void _setUserEmail(const char* email) {
@@ -214,12 +246,12 @@ void _setCustomUserAttributeArray(const char* key, const char* array[], int size
 }
 
 void _addToCustomUserAttributeArray(const char* key, const char* value) {
-  [[AppboyUnityManager sharedInstance].braze.user addToCustomAttributeArrayWithKey:GetStringParam(key)
+  [[AppboyUnityManager sharedInstance].braze.user addToCustomAttributeStringArrayWithKey:GetStringParam(key)
                                                                              value:GetStringParam(value)];
 }
 
 void _removeFromCustomUserAttributeArray(const char* key, const char* value) {
-  [[AppboyUnityManager sharedInstance].braze.user removeFromCustomAttributeArrayWithKey:GetStringParam(key)
+  [[AppboyUnityManager sharedInstance].braze.user removeFromCustomAttributeStringArrayWithKey:GetStringParam(key)
                                                                                   value:GetStringParam(value)];
 }
 
@@ -270,6 +302,10 @@ void _logInAppMessageButtonClicked(const char* inAppMessageJSONString, int butto
 
 void _displayNextInAppMessage() {
   [[AppboyUnityManager sharedInstance] displayNextInAppMessage];
+}
+
+void _hideCurrentInAppMessage() {
+  [[AppboyUnityManager sharedInstance] hideCurrentInAppMessage];
 }
 
 void _setInAppMessageDisplayAction(int actionType) {
@@ -377,6 +413,98 @@ char* _getInstallTrackingId() {
   return convertNSStringToCString(deviceId);
 }
 
+#pragma mark - Privacy Tracking
+
+void _setAdTrackingEnabled(bool adTrackingEnabled, const char* googleAdvertisingId) {
+  // Ignore `googleAdvertisingId` - relevant only for Android.
+  [[[AppboyUnityManager sharedInstance] braze] setAdTrackingEnabled:adTrackingEnabled];
+  NSLog(@"Setting adTrackingEnabled to: %d", adTrackingEnabled);
+}
+
+void _updateTrackingPropertyAllowList(const char* allowListString) {
+  NSMutableDictionary *allowList = [NSMutableDictionary dictionaryWithCapacity:1];
+
+  if (allowListString != NULL && allowListString != nil) {
+    NSError *jsonError;
+    NSData *objectData = [GetStringParam(allowListString) dataUsingEncoding:NSUTF8StringEncoding];
+    allowList = [NSJSONSerialization JSONObjectWithData:objectData
+                                                options:NSJSONReadingMutableContainers
+                                                  error:&jsonError];
+    if (jsonError) {
+      NSLog(@"JSON deserialization error: %@", jsonError.localizedDescription);
+      return;
+    }
+  }
+
+  NSArray<NSString *> *adding = allowList[@"adding"];
+  NSArray<NSString *> *removing = allowList[@"removing"];
+  NSArray<NSString *> *addingCustomEvents = allowList[@"addingCustomEvents"];
+  NSArray<NSString *> *removingCustomEvents = allowList[@"removingCustomEvents"];
+  NSArray<NSString *> *addingCustomAttributes = allowList[@"addingCustomAttributes"];
+  NSArray<NSString *> *removingCustomAttributes = allowList[@"removingCustomAttributes"];
+
+  NSMutableSet<BRZTrackingProperty *> *addingSet = [NSMutableSet set];
+  NSMutableSet<BRZTrackingProperty *> *removingSet = [NSMutableSet set];
+  NSString *addingSetString = @"";
+  NSString *removingSetString = @"";
+
+  if (adding && adding.count > 0) {
+    for (NSString *propertyString in adding) {
+      BRZTrackingProperty *property = convertTrackingProperty(propertyString);
+      if (property) {
+        [addingSet addObject:property];
+        addingSetString = [addingSetString stringByAppendingString:[propertyString stringByAppendingString: @", "]];
+      }
+    }
+  }
+  if (removing && removing.count > 0) {
+    for (NSString *propertyString in removing) {
+      BRZTrackingProperty *property = convertTrackingProperty(propertyString);
+      if (property) {
+        [removingSet addObject:property];
+        removingSetString = [removingSetString stringByAppendingString:[propertyString stringByAppendingString: @", "]];
+      }
+    }
+  }
+
+  // Parse custom strings
+  if (addingCustomEvents && addingCustomEvents.count > 0) {
+    NSSet<NSString *> *customEvents = [NSSet setWithArray:addingCustomEvents];
+    BRZTrackingProperty *customEventProperty = [BRZTrackingProperty customEventWithEvents:customEvents];
+    if (customEventProperty) {
+      [addingSet addObject:customEventProperty];
+      addingSetString = [addingSetString stringByAppendingString:[[addingCustomEvents componentsJoinedByString:@", "] stringByAppendingString: @", "]];
+    }
+  }
+  if (removingCustomEvents && removingCustomEvents.count > 0) {
+    NSSet<NSString *> *customEvents = [NSSet setWithArray:removingCustomEvents];
+    BRZTrackingProperty *customEventProperty = [BRZTrackingProperty customAttributeWithAttributes:customEvents];
+    if (customEventProperty) {
+      [removingSet addObject:customEventProperty];
+      removingSetString = [removingSetString stringByAppendingString:[[removingCustomEvents componentsJoinedByString:@", "] stringByAppendingString: @", "]];
+    }
+  }
+  if (addingCustomAttributes && addingCustomAttributes.count > 0) {
+    NSSet<NSString *> *customAttributes = [NSSet setWithArray:addingCustomAttributes];
+    BRZTrackingProperty *customAttributeProperty = [BRZTrackingProperty customAttributeWithAttributes:customAttributes];
+    if (customAttributeProperty) {
+      [addingSet addObject:customAttributeProperty];
+      addingSetString = [addingSetString stringByAppendingString:[[addingCustomAttributes componentsJoinedByString:@", "] stringByAppendingString: @", "]];
+    }
+  }
+  if (removingCustomAttributes && removingCustomAttributes.count > 0) {
+    NSSet<NSString *> *customAttributes = [NSSet setWithArray:removingCustomAttributes];
+    BRZTrackingProperty *customAttributeProperty = [BRZTrackingProperty customAttributeWithAttributes:customAttributes];
+    if (customAttributeProperty) {
+      [removingSet addObject:customAttributeProperty];
+      removingSetString = [removingSetString stringByAppendingString:[[removingCustomAttributes componentsJoinedByString:@", "] stringByAppendingString: @", "]];
+    }
+  }
+
+  [[[AppboyUnityManager sharedInstance] braze] updateTrackingAllowListAdding:addingSet removing:removingSet];
+  NSLog(@"Updating tracking allow list by adding: %@ and removing: %@", addingSetString, removingSetString);
+}
+
 #pragma mark - Gameobject callbacks
 
 void _configureListener(int messageType, const char* gameobject, const char* method) {
@@ -399,4 +527,14 @@ char* convertNSStringToCString(const NSString* nsString) {
 
 void _configureInternalListener(int messageType) {
   [[AppboyUnityManager sharedInstance] configureInternalListenerFor:messageType];
+}
+
+BRZTrackingProperty* convertTrackingProperty(NSString *propertyString) {
+    BRZTrackingProperty *property = getTrackingPropertyMap()[propertyString];
+    if (property) {
+        return property;
+    } else {
+        NSLog(@"Invalid tracking property: %@", propertyString);
+        return nil;
+    }
 }

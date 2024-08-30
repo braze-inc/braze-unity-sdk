@@ -24,28 +24,9 @@ public class ChangeUser : MonoBehaviour {
     SceneManager.LoadScene(Constants.MainMenuScene);
   }
 
-  private async void getTokenSetAndExit(string userId) {
-    var request = new UnityWebRequest ("https://us-central1-jwt-responder.cloudfunctions.net/getToken", "POST");
-    byte[] bodyRaw = Encoding.UTF8.GetBytes("{\"data\": {\"user_id\": \"" + userId + "\"}}");
-    request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
-    request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-    request.SetRequestHeader("Content-Type", "application/json");
-    request.SetRequestHeader("Accept", "application/json");
-    var operation = request.SendWebRequest();
-
-    while (!operation.isDone) {
-      await Task.Yield();
-    }
-    var jsonResponse = request.downloadHandler.text;
-
-    if (request.error != null) {
-      Debug.Log("Error: " + request.error);
-    } else {
-      Debug.Log("Status Code: " + request.responseCode);
-      JSONObject json = (JSONObject) JSON.Parse(jsonResponse);
-      var token = json["data"]["token"];
-      Appboy.AppboyBinding.ChangeUser(userId, token);
-      SceneManager.LoadScene(Constants.MainMenuScene);  
-    }
+  private void getTokenSetAndExit(string userId) {
+    var token = "dummy_jwt_token";
+    Appboy.AppboyBinding.ChangeUser(userId, token);
+    SceneManager.LoadScene(Constants.MainMenuScene);
   }
 }

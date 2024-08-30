@@ -32,6 +32,9 @@ namespace Appboy.Models.InAppMessage {
     
     // The number of seconds that should elapse before the in-app message is automatically dismissed.
     int Duration { get; set; }
+
+    // Whether the in-app message is a test send.
+    bool IsTestSend { get; }
     
     void LogClicked();
     

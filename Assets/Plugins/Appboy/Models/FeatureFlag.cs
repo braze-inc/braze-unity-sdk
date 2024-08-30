@@ -20,6 +20,9 @@ namespace Appboy.Models {
       public int? intValue;
       public double? doubleValue;
       public bool? boolValue;
+      public long? timestampValue;
+      public JSONObject? jsonValue;
+      public string? imageValue;
     }
 
     /// <summary>
@@ -34,7 +37,7 @@ namespace Appboy.Models {
 
     /// <summary>
     /// A Diction of extra properties for this Feature Flag.
-    /// Entries can also be accessed with getStringProperty(), getIntegerProperty(), getDoubleProperty, getBooleanProperty()
+    /// Entries can also be accessed with GetStringProperty(), GetIntegerProperty(), GetDoubleProperty, GetBooleanProperty(), GetTimestampProperty(), GetJSONProperty(), GetImageProperty().
     /// </summary>
     public Dictionary<string, PropertyNode> Properties { get; set; }
 
@@ -63,6 +66,21 @@ namespace Appboy.Models {
             var propertyNode = new PropertyNode();
             propertyNode.type = "boolean";
             propertyNode.boolValue = entry.Value["value"].AsBool;
+            dictionary.Add(entry.Key, propertyNode);
+          } else if (type.Equals("datetime")) {
+            var propertyNode = new PropertyNode();
+            propertyNode.type = "datetime";
+            propertyNode.timestampValue = entry.Value["value"].AsLong;
+            dictionary.Add(entry.Key, propertyNode);
+          } else if (type.Equals("jsonobject")) {
+            var propertyNode = new PropertyNode();
+            propertyNode.type = "jsonobject";
+            propertyNode.jsonValue = entry.Value["value"].AsObject;
+            dictionary.Add(entry.Key, propertyNode);
+          } else if (type.Equals("image")) {
+            var propertyNode = new PropertyNode();
+            propertyNode.type = "image";
+            propertyNode.imageValue = entry.Value["value"];
             dictionary.Add(entry.Key, propertyNode);
           } else {
             Debug.Log("Key " + entry.Key + "  type " + type + " did not match any known type. Not adding.");
@@ -99,7 +117,7 @@ namespace Appboy.Models {
     ///<returns>
     /// The string value of the property. If the property does not exist, returns null.
     /// </returns>
-    public string? getStringProperty(string id) {
+    public string? GetStringProperty(string id) {
       if (Properties.ContainsKey(id)) {
         PropertyNode propNode = Properties[id];
         if (propNode != null && propNode.type.Equals("string")) {
@@ -107,6 +125,11 @@ namespace Appboy.Models {
         }
       }
       return null;
+    }
+
+    [Obsolete("Use GetStringProperty instead.")]
+    public string? getStringProperty(string id) {
+      return GetStringProperty(id);
     }
 
     /// <summary>
@@ -118,7 +141,7 @@ namespace Appboy.Models {
     ///<returns>
     /// The integer value of the property. If the property does not exist, returns null.
     /// </returns>
-    public int? getIntegerProperty(string id) {
+    public int? GetIntegerProperty(string id) {
       if (Properties.ContainsKey(id)) {
         PropertyNode propNode = Properties[id];
         if (propNode != null && propNode.type.Equals("number")) {
@@ -126,6 +149,11 @@ namespace Appboy.Models {
         }
       }
       return null;
+    }
+
+    [Obsolete("Use GetIntegerProperty instead.")]
+    public int? getIntegerProperty(string id) {
+      return GetIntegerProperty(id);
     }
 
     /// <summary>
@@ -137,7 +165,7 @@ namespace Appboy.Models {
     ///<returns>
     /// The double value of the property. If the property does not exist, returns null.
     /// </returns>
-    public double? getDoubleProperty(string id) {
+    public double? GetDoubleProperty(string id) {
       if (Properties.ContainsKey(id)) {
         PropertyNode propNode = Properties[id];
         if (propNode != null && propNode.type.Equals("number")) {
@@ -145,6 +173,11 @@ namespace Appboy.Models {
         }
       }
       return null;
+    }
+
+    [Obsolete("Use GetDoubleProperty instead.")]
+    public double? getDoubleProperty(string id) {
+      return GetDoubleProperty(id);
     }
 
     /// <summary>
@@ -156,11 +189,73 @@ namespace Appboy.Models {
     ///<returns>
     /// The boolean value of the property. If the property does not exist, returns null.
     /// </returns>
-    public bool? getBooleanProperty(string id) {
+    public bool? GetBooleanProperty(string id) {
       if (Properties.ContainsKey(id)) {
         PropertyNode propNode = Properties[id];
         if (propNode != null && propNode.type.Equals("boolean")) {
           return propNode.boolValue;
+        }
+      }
+      return null;
+    }
+
+    [Obsolete("Use GetBooleanProperty instead.")]
+    public bool? getBooleanProperty(string id) {
+      return GetBooleanProperty(id);
+    }
+
+    /// <summary>
+    /// Get a single property as a timestamp.
+    /// </summary>
+    /// <param name="id">
+    /// A string of the ID of the property to retrieve.
+    /// </param>
+    ///<returns>
+    /// The timestamp value of the property. If the property does not exist, returns null.
+    /// </returns>
+    public long? GetTimestampProperty(string id) {
+      if (Properties.ContainsKey(id)) {
+        PropertyNode propNode = Properties[id];
+        if (propNode != null && propNode.type.Equals("datetime")) {
+          return propNode.timestampValue;
+        }
+      }
+      return null;
+    }
+
+    /// <summary>
+    /// Get a single property as a JSON object.
+    /// </summary>
+    /// <param name="id">
+    /// A string of the ID of the property to retrieve.
+    /// </param>
+    ///<returns>
+    /// The JSON object value of the property. If the property does not exist, returns null.
+    /// </returns>
+    public JSONObject? GetJSONProperty(string id) {
+      if (Properties.ContainsKey(id)) {
+        PropertyNode propNode = Properties[id];
+        if (propNode != null && propNode.type.Equals("jsonobject")) {
+          return propNode.jsonValue;
+        }
+      }
+      return null;
+    }
+
+    /// <summary>
+    /// Get a single property as an image URL.
+    /// </summary>
+    /// <param name="id">
+    /// A string of the ID of the property to retrieve.
+    /// </param>
+    ///<returns>
+    /// The image URL value of the property. If the property does not exist, returns null.
+    /// </returns>
+    public string? GetImageProperty(string id) {
+      if (Properties.ContainsKey(id)) {
+        PropertyNode propNode = Properties[id];
+        if (propNode != null && propNode.type.Equals("image")) {
+          return propNode.imageValue;
         }
       }
       return null;
@@ -179,6 +274,15 @@ namespace Appboy.Models {
             break;
           case "boolean":
             stringBuilder.Append(String.Format("{0}=boolean->{1},", entry.Key, entry.Value.boolValue));
+            break;
+          case "datetime":
+            stringBuilder.Append(String.Format("{0}=datetime->{1},", entry.Key, entry.Value.timestampValue));
+            break;
+          case "jsonobject":
+            stringBuilder.Append(String.Format("{0}=jsonobject->{1},", entry.Key, entry.Value.jsonValue));
+            break;
+          case "image":
+            stringBuilder.Append(String.Format("{0}=image->{1},", entry.Key, entry.Value.imageValue));
             break;
         }
       }

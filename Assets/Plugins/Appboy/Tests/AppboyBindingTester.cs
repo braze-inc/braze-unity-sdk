@@ -53,6 +53,12 @@ namespace Appboy {
       Debug.Log("Push opened message parsed into json: " + pushNotification);
     }
 
+    void PushNotificationDeletedCallback(string message) {
+      Debug.Log("Push deleted callback for Android received: " + message);
+      PushNotification pushNotification = new PushNotification(message);
+      Debug.Log("Push deleted message parsed into json: " + pushNotification);
+    }
+
     void PushNotificationReceivedCallbackForiOS(string message) {
       Debug.Log("Push received callback for iOS received: " + message);
       JSONObject pushNotificationJson = (JSONObject)JSON.Parse(message);

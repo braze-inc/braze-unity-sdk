@@ -9,13 +9,8 @@ using Utilities;
 using UnityEngine.Networking;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Collections;
 using System.Collections.Generic;
-using System;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Networking;
 
 public class FeatureFlags : MonoBehaviour {
 
@@ -50,7 +45,7 @@ public class FeatureFlags : MonoBehaviour {
     SceneManager.LoadScene(Constants.MainMenuScene);
   }
 
-  private async void getFeatureFlag(string ffId) {
+  private void getFeatureFlag(string ffId) {
     var ff = Appboy.AppboyBinding.GetFeatureFlag(ffId);
     if (ff == null) {
       Console.WriteLine(String.Format("No Feature Flag Found with ID: {0}", ffId));
@@ -62,12 +57,18 @@ public class FeatureFlags : MonoBehaviour {
     foreach(var entry in ff.Properties) {
       var type = entry.Value.type;
       if (type.Equals("string")) {
-        Debug.Log($"- String property: {ff.getStringProperty(entry.Key)}, key: \"{entry.Key}\"");
+        Debug.Log($"- String property: {ff.GetStringProperty(entry.Key)}, key: \"{entry.Key}\"");
       } else if (type.Equals("number")) {
-        Debug.Log($"- Number property as integer: {ff.getIntegerProperty(entry.Key)}, key: \"{entry.Key}\"");
-        Debug.Log($"- Number property as double: {ff.getDoubleProperty(entry.Key)}, key: \"{entry.Key}\"");
+        Debug.Log($"- Number property as integer: {ff.GetIntegerProperty(entry.Key)}, key: \"{entry.Key}\"");
+        Debug.Log($"- Number property as double: {ff.GetDoubleProperty(entry.Key)}, key: \"{entry.Key}\"");
       } else if (type.Equals("boolean")) {
-        Debug.Log($"- Boolean property: {ff.getBooleanProperty(entry.Key)}, key: \"{entry.Key}\"");
+        Debug.Log($"- Boolean property: {ff.GetBooleanProperty(entry.Key)}, key: \"{entry.Key}\"");
+      } else if (type.Equals("datetime")) {
+        Debug.Log($"- Timestamp property: {ff.GetTimestampProperty(entry.Key)}, key: \"{entry.Key}\"");
+      } else if (type.Equals("jsonobject")) {
+        Debug.Log($"- JSON property: {ff.GetJSONProperty(entry.Key)}, key: \"{entry.Key}\"");
+      } else if (type.Equals("image")) {
+        Debug.Log($"- Image property: {ff.GetImageProperty(entry.Key)}, key: \"{entry.Key}\"");
       } else {
         Debug.Log("Skipping invalid type: " + type);
       }

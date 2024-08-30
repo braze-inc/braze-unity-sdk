@@ -272,6 +272,12 @@ namespace Appboy {
       #endif 
     }
 
+    public static void SetUserLanguage(string language) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetUserLanguage(language);
+      #endif 
+    }
+
     public static void SetCustomUserAttribute(string key, bool value) {
       #if HAS_BRAZE_SDK
         mBinding.SetCustomUserAttribute(key, value);
@@ -560,6 +566,38 @@ namespace Appboy {
       #endif 
     }
 
+    /// <summary>
+    /// This method informs Braze whether ad-tracking has been enabled for this device.
+    /// Note that the SDK does not automatically collect this data.
+    /// </summary>
+    /// <param name='adTrackingEnabled'>
+    /// Whether ad-tracking is enabled.
+    /// </param>
+    /// <param name='googleAdvertisingId'>
+    /// The Google Advertising ID. (Android-only)
+    /// </param>
+    public static void SetAdTrackingEnabled(bool adTrackingEnabled, string googleAdvertisingId) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetAdTrackingEnabled(adTrackingEnabled, googleAdvertisingId);
+      #endif
+    }
+
+    /// <summary>
+    /// This method updates the list of data types you wish to declare or remove as tracked user data.
+    /// For more details, refer to Braze's [Privacy Manifest documentation](https://www.braze.com/docs/developer_guide/platform_integration_guides/swift/privacy_manifest/).
+    ///
+    /// No-op on Android.
+    ///
+    /// </summary>
+    /// <param name='allowList'>
+    /// The list of tracking properties to update.
+    /// </param>
+    public static void UpdateTrackingPropertyAllowList(TrackingPropertyAllowList allowList) {
+      #if HAS_BRAZE_SDK
+        mBinding.UpdateTrackingPropertyAllowList(allowList);
+      #endif
+    }
+
     public static void SetAttributionData(string network, string campaign, string adgroup, string creative) {
       #if HAS_BRAZE_SDK
         mBinding.SetAttributionData(network, campaign, adgroup, creative);
@@ -649,6 +687,18 @@ namespace Appboy {
       #endif 
     }
 
+    /// <summary>
+    /// Hides the currently displayed in-app message, if applicable.
+    /// </summary>
+    public static void HideCurrentInAppMessage() {
+      #if HAS_BRAZE_SDK
+        mBinding.HideCurrentInAppMessage();
+      #endif
+    }
+
+    /// <summary>
+    /// Displays the Content Card feed.
+    /// </summary>
     public static void DisplayContentCards() {
       #if HAS_BRAZE_SDK
         mBinding.DisplayContentCards();
@@ -704,7 +754,9 @@ namespace Appboy {
     /// Get a single Feature Flag. If there is no Feature Flag with that ID, returns null.
     /// </summary>
     /// <value>Feature Flag</value>
+#nullable enable
     public static FeatureFlag? GetFeatureFlag(string id) {
+#nullable disable
       #if HAS_BRAZE_SDK
         return mBinding.GetFeatureFlag(id);
       #else 
