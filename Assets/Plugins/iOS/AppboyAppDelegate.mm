@@ -59,19 +59,65 @@ static Braze *_braze;
 - (void)application:(UIApplication *)application
          didReceiveRemoteNotification:(NSDictionary *)userInfo
          fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-  if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)]) {
-    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+
+    dispatch_group_t __block callbackGroup = dispatch_group_create();
+    NSMutableArray<NSNumber *> *__block fetchResults = [NSMutableArray array];
+    void (^localCompletionHandler)(UIBackgroundFetchResult) =
+        ^void(UIBackgroundFetchResult fetchResult) {
+          [fetchResults addObject:[NSNumber numberWithInt:(int)fetchResult]];
+          dispatch_group_leave(callbackGroup);
+        };
+
+
+    if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)]) {
+    dispatch_group_enter(callbackGroup);
+    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:localCompletionHandler];
   }
   NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
 
   // Pass notification to Braze
   if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[AppboyUnityManager sharedInstance] registerApplication:application
+      dispatch_group_enter(callbackGroup);
+      [[AppboyUnityManager sharedInstance] registerApplication:application
                                 didReceiveRemoteNotification:userInfo
-                                      fetchCompletionHandler:completionHandler];
+                                      fetchCompletionHandler:localCompletionHandler];
   } else {
     NSLog(@"Automatic push integration disabled. Not forwarding notification.");
   }
+    
+    dispatch_group_notify(callbackGroup, dispatch_get_main_queue(), ^() {
+      BOOL allFetchesFailed = YES;
+      BOOL anyFetchHasNewData = NO;
+
+      for (NSNumber *oneResult in fetchResults) {
+        UIBackgroundFetchResult result = (UIBackgroundFetchResult)oneResult.intValue;
+
+        switch (result) {
+          case UIBackgroundFetchResultNoData:
+            allFetchesFailed = NO;
+            break;
+          case UIBackgroundFetchResultNewData:
+            allFetchesFailed = NO;
+            anyFetchHasNewData = YES;
+            break;
+          case UIBackgroundFetchResultFailed:
+
+            break;
+        }
+      }
+
+      UIBackgroundFetchResult finalFetchResult = UIBackgroundFetchResultNoData;
+
+      if (allFetchesFailed) {
+        finalFetchResult = UIBackgroundFetchResultFailed;
+      } else if (anyFetchHasNewData) {
+        finalFetchResult = UIBackgroundFetchResultNewData;
+      } else {
+        finalFetchResult = UIBackgroundFetchResultNoData;
+      }
+
+      completionHandler(finalFetchResult);
+    });
 }
 
 #pragma mark - Helpers
