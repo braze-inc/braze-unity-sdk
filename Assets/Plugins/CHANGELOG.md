@@ -1,8 +1,22 @@
 ⚠️ In version 4.0.0, we changed the iOS bridge from AppboyKit, which is written in Objective-C, to the new [Swift SDK](https://github.com/braze-inc/braze-swift-sdk). If you are upgrading from a version below 4.0.0 to a version above 4.0.0, please read [the instructions](https://github.com/braze-inc/braze-unity-sdk/blob/master/CHANGELOG.md#400) to ensure a smooth transition and backward compatibility.
 
+## 8.0.0
+
+##### Breaking
+- Updated the native iOS bridge [from Braze Swift SDK 10.3.0 to 11.9.0](https://github.com/braze-inc/braze-swift-sdk/compare/10.3.0...11.9.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- Updated the native Android bridge [from Braze Android SDK 32.1.0 to 35.0.0](https://github.com/braze-inc/braze-android-sdk/compare/v32.1.0...v35.0.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+  - The minimum required Android SDK version is 25. See more details [here](https://github.com/braze-inc/braze-android-sdk?tab=readme-ov-file#version-information).
+
+##### Fixed
+- Fixed a crash on iOS due to the completion handler for silent / background push notification being executed multiple times when Unity was configured to process remote notifications in addition to the Braze plugin (`UNITY_USES_REMOTE_NOTIFICATIONS = 1`).
+- Fixed the _Push Received Listener_ getting mistakenly called when a push was opened on iOS. The _Push Opened Listener_ is now properly called instead.
+
+##### Added
+- Updated the version of `SDWebImage` from 5.19.0 to [5.19.7+](https://github.com/SDWebImage/SDWebImage/releases/tag/5.19.7) when automatically importing via "Braze Configuration".
+
 ## 7.1.0
 
-##### Changed
+##### Added
 - Updated the native iOS bridge [from Braze Swift SDK 10.1.0 to 10.3.0](https://github.com/braze-inc/braze-swift-sdk/compare/10.1.0...10.3.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
 
 ## 7.0.0

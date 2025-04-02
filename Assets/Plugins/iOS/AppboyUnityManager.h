@@ -145,7 +145,7 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
  *
  * When the user responds to the request authorization permission prompt, any Game object method configured for
  * BRZUnityMessageType.BRZPushPermissionsPromptResponse will be notified.
- * @param provisional If set to true, on iOS 12 and above, provisional authorization will be requested.
+ * @param provisional If set to true, provisional authorization will be requested.
  */
 - (void)registerForRemoteNotificationsWithProvisional:(BOOL)provisional;
 

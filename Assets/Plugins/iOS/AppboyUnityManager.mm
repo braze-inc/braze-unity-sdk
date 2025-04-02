@@ -28,6 +28,8 @@ static NSString *const BRZInternalFeatureFlagsGetAll = @"getAllFeatureFlags";
 @interface AppboyUnityManager ()
 
 @property (strong, nonatomic) BRZCancellable *featureFlagsSubscription;
+@property (strong, nonatomic) BRZCancellable *pushNotificationReceivedSubscription;
+@property (strong, nonatomic) BRZCancellable *pushNotificationOpenedSubscription;
 
 @end
 
@@ -72,6 +74,19 @@ NSDictionary *brazeUnityPlist;
   // Inner Braze["Unity"] dictionary
   brazeUnityPlist = brazePlist[BRZUnityKey];
   configuration.api.key = brazeUnityPlist[BRZUnityApiKey];
+
+  // Push automation setup
+  if ([brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue] &&
+      ![brazeUnityPlist[BRZUnityDisableAutomaticPushRegistrationKey] boolValue]) {
+    // Enable all push automations
+    configuration.push.automation =
+      [[BRZConfigurationPushAutomation alloc] initEnablingAllAutomations:YES];
+    
+    // Disable request authorization at launch.
+    // The Unity plugin supports a callback for push authorization that is not supported by push
+    // automation. Request authorization is handled directly by the plugin.
+    configuration.push.automation.requestAuthorizationAtLaunch = NO;
+  }
 
   // Additional config setup
   [configuration.api addSDKMetadata:@[BRZSDKMetadata.unity]];
@@ -424,9 +439,27 @@ NSDictionary *brazeUnityPlist;
 #pragma mark - Push Notifications
 
 - (void)registerPushToken:(NSData *)data {
-  [braze.notifications registerDeviceToken:data];
+  // Braze may have already registered the device token using push automation.
+  if (![braze.notifications.deviceToken isEqualToData:data]) {
+    [braze.notifications registerDeviceToken:data];
+  }
 
+  // Forward token to Unity
+  [self forwardPushToken:data];
+}
+
+- (void)registerPushTokenBase64:(NSString *)deviceTokenBase64 {
+  NSData *data = [[NSData alloc] initWithBase64EncodedString:deviceTokenBase64 options:0];
+  [self registerPushToken:data];
+}
+
+- (void)forwardPushToken:(NSData *)data {
   NSString *token = [AppboyUnityManager hexStringFromNSData:data];
+  if (token == nil) {
+    NSLog(@"Error converting push token to hex string.");
+    return;
+  }
+  
   if (self.unityPushTokenReceivedFromSystemGameObjectName != nil && self.unityPushTokenReceivedFromSystemFunctionName != nil) {
     [self unitySendMessageTo:self.unityPushTokenReceivedFromSystemGameObjectName
                   withMethod:self.unityPushTokenReceivedFromSystemFunctionName
@@ -437,11 +470,6 @@ NSDictionary *brazeUnityPlist;
                   withMethod:BRZInternalPushTokenReceivedFromSystem
                  withMessage:token];
   }
-}
-
-- (void)registerPushTokenBase64:(NSString *)deviceTokenBase64 {
-  NSData *data = [[NSData alloc] initWithBase64EncodedString:deviceTokenBase64 options:0];
-  [self registerPushToken:data];
 }
 
 + (NSString *)hexStringFromNSData:(NSData *)data {
@@ -459,14 +487,11 @@ NSDictionary *brazeUnityPlist;
 }
 
 - (void)registerForRemoteNotificationsWithProvisional:(BOOL)provisional {
-  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-  center.delegate = self;
   UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
-  if (@available(iOS 12.0, *)) {
-    if (provisional) {
-      options = options | UNAuthorizationOptionProvisional;
-    }
+  if (provisional) {
+    options = options | UNAuthorizationOptionProvisional;
   }
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
   [center requestAuthorizationWithOptions:options
                         completionHandler:^(BOOL granted, NSError *_Nullable error) {
     if (self.unityPushPermissionsPromptResponseGameObjectName != nil && self.unityPushPermissionsPromptResponseFunctionName != nil) {
@@ -483,10 +508,41 @@ NSDictionary *brazeUnityPlist;
   [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-/// Rearrange the notification dictionary and propogate it to any of the callbacks set in the Unity UI
-- (void)forwardNotification:(NSDictionary *)notification {
+- (void)forwardNotificationReceivedPayload:(BRZNotificationsPayload *)payload {
+  NSString *payloadString = [self formattedNotificationUserInfo:payload.userInfo];
+  if (payloadString == nil) {
+    NSLog(@"Unable to format push message for Unity. Not forwarding push received message.");
+    return;
+  }
+  
+  if (self.unityPushReceivedGameObjectName == nil || self.unityPushReceivedCallbackFunctionName == nil) {
+    NSLog(@"No properly configured game object. Not forwarding push received message.");
+    return;
+  }
+  [self unitySendMessageTo:self.unityPushReceivedGameObjectName
+                withMethod:self.unityPushReceivedCallbackFunctionName
+               withMessage:payloadString];
+}
+
+- (void)forwardNotificationOpenedPayload:(BRZNotificationsPayload *)payload {
+  NSString *payloadString = [self formattedNotificationUserInfo:payload.userInfo];
+  if (payloadString == nil) {
+    NSLog(@"Unable to format push message for Unity. Not forwarding push opened message.");
+    return;
+  }
+  
+  if (self.unityPushOpenedGameObjectName == nil || self.unityPushOpenedCallbackFunctionName == nil) {
+    NSLog(@"No properly configured game object. Not forwarding push opened message.");
+    return;
+  }
+  [self unitySendMessageTo:self.unityPushOpenedGameObjectName
+                withMethod:self.unityPushOpenedCallbackFunctionName
+               withMessage:payloadString];
+}
+
+- (NSString *)formattedNotificationUserInfo:(NSDictionary *)userInfo {
   // Generate a new dictionary that rearrange the notification elements
-  NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[notification objectForKey:@"aps"]];
+  NSMutableDictionary *aps = [NSMutableDictionary dictionaryWithDictionary:[userInfo objectForKey:@"aps"]];
 
   // Check if the object for key alert is a string; if it is, then convert it to a dictionary
   id alert = [aps objectForKey:@"alert"];
@@ -496,44 +552,23 @@ NSDictionary *brazeUnityPlist;
   }
 
   // Move all other dictionaries other than aps in payload to key extra in aps dictionary
-  NSMutableDictionary *extraDictionary = [NSMutableDictionary dictionaryWithDictionary:notification];
+  NSMutableDictionary *extraDictionary = [NSMutableDictionary dictionaryWithDictionary:userInfo];
   [extraDictionary removeObjectForKey:@"aps"];
   if ([extraDictionary count] > 0) {
     [aps setObject:extraDictionary forKey:@"extra"];
   }
 
   if (![NSJSONSerialization isValidJSONObject:aps]) {
-    NSLog(@"Invalid json received. Not forwarding push message.");
-    return;
+    return nil;
   }
 
   NSError *error = nil;
   NSData *data = [NSJSONSerialization dataWithJSONObject:aps options:0 error:&error];
   if (error != nil) {
-    NSLog(@"Error serializing json. Not forwarding push message: %@", [error localizedDescription]);
+    return nil;
   }
 
-  NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
-  // Send the notification data to the callback set in the Unity UI
-  UIApplication *application = [UIApplication sharedApplication];
-  if (application.applicationState == UIApplicationStateActive) {
-    if (self.unityPushReceivedGameObjectName == nil || self.unityPushReceivedCallbackFunctionName == nil) {
-      NSLog(@"No properly configured game object. Not forwarding push received message.");
-      return;
-    }
-    [self unitySendMessageTo:self.unityPushReceivedGameObjectName
-                  withMethod:self.unityPushReceivedCallbackFunctionName \
-                 withMessage:dataString];
-  } else {
-    if (self.unityPushOpenedGameObjectName == nil || self.unityPushOpenedCallbackFunctionName == nil) {
-      NSLog(@"No properly configured game object. Not forwarding push opened message.");
-      return;
-    }
-    [self unitySendMessageTo:self.unityPushOpenedGameObjectName
-                  withMethod:self.unityPushOpenedCallbackFunctionName
-                 withMessage:dataString];
-  }
+  return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 #pragma mark - Feature Flags
@@ -717,6 +752,13 @@ NSDictionary *brazeUnityPlist;
   if (gameObject != nil && callbackMethod != nil) {
     self.unityPushReceivedGameObjectName = gameObject;
     self.unityPushReceivedCallbackFunctionName = callbackMethod;
+    
+    __weak AppboyUnityManager *weakSelf = self;
+    self.pushNotificationReceivedSubscription =
+      [self.braze.notifications subscribeToUpdatesWithPayloadTypes:BRZNotificationsPayloadTypeFilter.received
+                                                            update:^(BRZNotificationsPayload * _Nonnull payload) {
+        [weakSelf forwardNotificationReceivedPayload:payload];
+      }];
   }
 }
 
@@ -724,6 +766,13 @@ NSDictionary *brazeUnityPlist;
   if (gameObject != nil && callbackMethod != nil) {
     self.unityPushOpenedGameObjectName = gameObject;
     self.unityPushOpenedCallbackFunctionName = callbackMethod;
+    
+    __weak AppboyUnityManager *weakSelf = self;
+    self.pushNotificationOpenedSubscription =
+      [self.braze.notifications subscribeToUpdatesWithPayloadTypes:BRZNotificationsPayloadTypeFilter.opened
+                                                            update:^(BRZNotificationsPayload * _Nonnull payload) {
+        [weakSelf forwardNotificationOpenedPayload:payload];
+      }];
   }
 }
 
@@ -732,8 +781,9 @@ NSDictionary *brazeUnityPlist;
     self.unityFeatureFlagsGameObjectName = gameObject;
     self.unityFeatureFlagsCallbackFunctionName = callbackMethod;
 
+    __weak AppboyUnityManager *weakSelf = self;
     self.featureFlagsSubscription = [braze.featureFlags subscribeToUpdates:^(NSArray<BRZFeatureFlag *> * _Nonnull featureFlags) {
-      [self sendMessageWithFeatureFlags:featureFlags];
+      [weakSelf sendMessageWithFeatureFlags:featureFlags];
     }];
   }
 }
@@ -745,23 +795,6 @@ NSDictionary *brazeUnityPlist;
          fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   (void)[braze.notifications handleBackgroundNotificationWithUserInfo:userInfo
                                                fetchCompletionHandler:completionHandler];
-  [self forwardNotification:userInfo];
-}
-
-#pragma mark - UNUserNotificationCenterDelegate
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center
-         didReceiveNotificationResponse:(UNNotificationResponse *)response
-         withCompletionHandler:(void (^)(void))completionHandler {
-  if (completionHandler) {
-    completionHandler();
-  }
-
-  if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
-    (void)[braze.notifications handleUserNotificationWithResponse:response
-                                            withCompletionHandler:completionHandler];
-    [self forwardNotification:response.notification.request.content.userInfo];
-  }
 }
 
 #pragma mark - BrazeInAppMessageUIDelegate

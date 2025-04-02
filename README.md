@@ -19,14 +19,9 @@ Before you can start using Braze in Unity scripts, you'll need to import the plu
   2. If you're not using any other plugins, all you have to do is copy the `Plugins` directory from this repo into the `Assets` folder of your Unity project.
   3. If you already have a `/<your-project>/Assets/Plugins` directory (probably because you're using another plugin already), copy `Plugins/Appboy/AppboyBinding.cs` into `/<your-project>/Assets/Plugins`. Then copy the contents of `Plugins/iOS` and `Plugins/Android` from this repo into `/<your-project>/Assets/Plugins/iOS` and `/<your-project>/Assets/Plugins/Android` respectively.
 
-## Android Setup
+## Integration Setup
 
-To integrate Braze into your Android Unity application, complete our [Android Unity integration instructions][3].
-
-## iOS Setup
-
-To integrate Braze into your iOS Unity application, complete our [iOS Unity integration instructions][2].
+To integrate Braze into your Unity application, complete our instructions for [Integrating the Braze Unity SDK][2].
 
 [1]: https://github.com/braze-inc/braze-unity-sdk/releases
-[2]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/sdk_integration/ios/
-[3]: https://www.braze.com/docs/developer_guide/platform_integration_guides/unity/sdk_integration/android/
+[2]: https://www.braze.com/docs/developer_guide/platforms/unity/sdk_integration

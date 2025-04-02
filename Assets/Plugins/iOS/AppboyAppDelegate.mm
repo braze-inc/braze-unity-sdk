@@ -50,27 +50,14 @@ static Braze *_braze;
   // Register device token with Braze
   if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
     NSLog(@"Automatic push integration enabled. Sending device token to Braze: %@", deviceToken);
+    // Even though the Swift SDK push automation automatically registers the device token, we still
+    // call `registerPushToken:` to ensure that the device token is forwarded to the Unity side.
+    // The Swift SDK push automation feature does not yet offer a subscription to the device token
+    // registration event which would allow us to avoid implementing
+    // `-application:didRegisterForRemoteNotificationsWithDeviceToken:` altogether.
     [[AppboyUnityManager sharedInstance] registerPushToken:deviceToken];
   } else{
     NSLog(@"Automatic push integration disabled. Ignoring device token %@", deviceToken);
-  }
-}
-
-- (void)application:(UIApplication *)application
-         didReceiveRemoteNotification:(NSDictionary *)userInfo
-         fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-  if ([UnityAppController instancesRespondToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)]) {
-    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-  }
-  NSLog(@"AppboyAppDelegate called from application:didReceiveRemoteNotification:fetchCompletionHandler:. UIApplicationState is %ld", (long)[[UIApplication sharedApplication] applicationState]);
-
-  // Pass notification to Braze
-  if ([self.brazeUnityPlist[BRZUnityAutomaticPushIntegrationKey] boolValue]) {
-    [[AppboyUnityManager sharedInstance] registerApplication:application
-                                didReceiveRemoteNotification:userInfo
-                                      fetchCompletionHandler:completionHandler];
-  } else {
-    NSLog(@"Automatic push integration disabled. Not forwarding notification.");
   }
 }
 
