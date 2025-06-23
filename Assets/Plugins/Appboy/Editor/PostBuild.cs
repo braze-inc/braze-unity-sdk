@@ -96,7 +96,7 @@ namespace Appboy.Editor
         /****** Unity-iPhone (main target) ******/
 
         // - Add packages via SPM
-        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "11.9.0");
+        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "12.0.0");
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeKit", brazeGUID, false);
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeUI", brazeGUID, false);
 

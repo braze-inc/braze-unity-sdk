@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="R3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/compile_only_not_namespaced_r_class_jar/release/R.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

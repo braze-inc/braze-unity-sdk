@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="base1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/module_bundle/debug/out/base.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
