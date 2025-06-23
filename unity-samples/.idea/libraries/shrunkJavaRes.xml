@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="shrunkJavaRes">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/shrunk_java_res/debug/shrunkJavaRes.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

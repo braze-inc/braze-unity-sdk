@@ -55,6 +55,7 @@ unity-samples/iOS/Manual-Integrate-Sample/*
 *.apk
 unity-samples/UnityPackageManager/
 unity-samples/Logs/
+unity-samples/.idea/
 
 # OS generated
 .DS_Store
