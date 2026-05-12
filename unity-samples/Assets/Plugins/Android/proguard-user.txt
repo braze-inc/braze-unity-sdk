@@ -1,1 +1,6 @@
 -keep class com.braze.** { *; }
+# Braze AARs are pre-compiled and reference Kotlin and kotlinx classes by their exact
+# names. These rules prevent R8 from renaming them in the final APK, which would break
+# the hardcoded references in the pre-built Braze bytecode.
+-keep class kotlin.coroutines.jvm.internal.** { *; }
+-keep class kotlinx.serialization.** { *; }

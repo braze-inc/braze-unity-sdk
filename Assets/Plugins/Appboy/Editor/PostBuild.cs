@@ -39,8 +39,6 @@ namespace Appboy.Editor
     private const string BRZUnityInAppMessageGameObjectKey = "InAppMessageGameObjectName";
     private const string BRZUnityInAppMessageCallbackKey = "InAppMessageCallbackMethodName";
     private const string BRZUnityInAppMessageInitialOperation = "InAppMessageInitialOperation";
-    private const string BRZUnityFeedGameObjectKey = "FeedGameObjectName";
-    private const string BRZUnityFeedCallbackKey = "FeedCallbackMethodName";
     private const string BRZUnityContentCardsGameObjectKey = "ContentCardsGameObjectName";
     private const string BRZUnityContentCardsCallbackKey = "ContentCardsCallbackMethodName";
     private const string BRZUnityHandleInAppMessageDisplayKey = "DisplayInAppMessages";
@@ -96,7 +94,7 @@ namespace Appboy.Editor
         /****** Unity-iPhone (main target) ******/
 
         // - Add packages via SPM
-        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "13.2.0");
+        string brazeGUID = project.AddRemotePackageReferenceAtVersionUpToNextMinor("https://github.com/braze-inc/braze-swift-sdk-prebuilt-dynamic", "14.1.0");
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeKit", brazeGUID, false);
         project.AddRemotePackageFrameworkToProject(mainTarget, "BrazeUI", brazeGUID, false);
 
@@ -214,13 +212,6 @@ namespace Appboy.Editor
 
         // - Set in-app message initial operation
         brazeUnityDict.SetInteger(BRZUnityInAppMessageInitialOperation, AppboyConfig.IOSInitialInAppMessageOperation);
-
-        // - Set feed listener
-        if (ValidateListenerFields(BRZUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName,
-            BRZUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName)) {
-          brazeUnityDict.SetString(BRZUnityFeedGameObjectKey, AppboyConfig.IOSFeedGameObjectName.Trim());
-          brazeUnityDict.SetString(BRZUnityFeedCallbackKey, AppboyConfig.IOSFeedCallbackMethodName.Trim());
-        }
 
         // - Set content card listener
         if (ValidateListenerFields(BRZUnityContentCardsGameObjectKey, AppboyConfig.IOSContentCardsGameObjectName,

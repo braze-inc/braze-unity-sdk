@@ -3,8 +3,10 @@
   <img width="480" alt="Braze Logo" src=".github/assets/logo-dark.png#gh-dark-mode-only" />
 </p>
 
-Braze Unity SDK
-==========
+# Braze Unity SDK [![latest](https://img.shields.io/github/v/tag/braze-inc/braze-unity-sdk?label=latest%20release&color=300266)](https://github.com/braze-inc/braze-unity-sdk/releases) 
+
+- [Braze User Guide](https://www.braze.com/docs/user_guide/introduction/ "Braze User Guide")
+- [Braze Developer Guide](https://www.braze.com/docs/developer_guide/sdk_integration/?sdktab=unity "Braze Developer Guide")
 
 This repository contains the the C# interface and native Unity functionality for the Unity plugins derived from the Braze Android and iOS SDKs. Since version 1.5.0, Braze's Unity plugins require Unity 5. See the CHANGELOG for more information.
 
@@ -24,4 +26,8 @@ Before you can start using Braze in Unity scripts, you'll need to import the plu
 To integrate Braze into your Unity application, complete our instructions for [Integrating the Braze Unity SDK][2].
 
 [1]: https://github.com/braze-inc/braze-unity-sdk/releases
-[2]: https://www.braze.com/docs/developer_guide/platforms/unity/sdk_integration
+[2]: https://www.braze.com/docs/developer_guide/sdk_integration?sdktab=unity
+
+## Contact
+
+If you have questions, please contact [support@braze.com](mailto:support@braze.com).

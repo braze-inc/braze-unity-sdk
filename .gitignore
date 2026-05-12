@@ -56,6 +56,9 @@ unity-samples/iOS/Manual-Integrate-Sample/*
 unity-samples/UnityPackageManager/
 unity-samples/Logs/
 unity-samples/.idea/
+.idea/
+*.backup
+*.backup.meta
 
 # OS generated
 .DS_Store
@@ -71,6 +74,13 @@ Thumbs.db
 *~
 
 # Tests
+TestResults/
+CodeCoverage/
+test_run_output.txt
+Assets/Tests/Editor
+Assets/Tests/Assets
+Assets/Tests/*.meta
+Assets/Tests.meta
 unity-samples/Assets/test-results/
 resultsAndroid.xml
 resultsIos.xml

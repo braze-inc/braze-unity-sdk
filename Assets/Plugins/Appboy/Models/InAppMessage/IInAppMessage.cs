@@ -40,7 +40,7 @@ namespace Appboy.Models.InAppMessage {
     
     void LogImpression();
     
-    // Use this method for ClickAction.NEWS_FEED or ClickAction.NONE
+    // Use this method for ClickAction.NONE
     bool SetInAppClickAction(ClickAction clickAction);
     
     // Use this method for ClickAction.URI

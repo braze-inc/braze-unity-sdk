@@ -1,4 +1,15 @@
-⚠️ In version 4.0.0, we changed the iOS bridge from AppboyKit, which is written in Objective-C, to the new [Swift SDK](https://github.com/braze-inc/braze-swift-sdk). If you are upgrading from a version below 4.0.0 to a version above 4.0.0, please read [the instructions](https://github.com/braze-inc/braze-unity-sdk/blob/master/CHANGELOG.md#400) to ensure a smooth transition and backward compatibility.
+## 11.0.0
+
+#### Breaking
+- Updated the native iOS bridge [from Braze Swift SDK 13.2.0 to 14.1.0](https://github.com/braze-inc/braze-swift-sdk/compare/13.2.0...14.1.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+- Updated the native Android bridge [from Braze Android SDK 36.0.0 to 42.2.0](https://github.com/braze-inc/braze-android-sdk/compare/v36.0.0...v42.2.0#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed).
+  - The minimum required Android SDK version is 23. See more details [here](https://github.com/braze-inc/braze-android-sdk?tab=readme-ov-file#version-information).
+- Updated the minimum required Unity version to Unity 6 ([6000.0.66f2](https://unity.com/releases/editor/whats-new/6000.0.66f2) or later).
+- Removed News Feed.
+  - Removed `RequestFeedRefresh()`, `RequestFeedRefreshFromCache()`, `LogFeedDisplayed()`, `LogCardImpression(string)`, `LogCardClicked(string)`.
+
+#### Fixed
+- Fixed `AppboyBinding.RegisterAppboyPushMessages(string)` throwing `NoSuchMethodError` on Android. See [#109](https://github.com/braze-inc/braze-unity-sdk/issues/109).
 
 ## 10.0.0
 

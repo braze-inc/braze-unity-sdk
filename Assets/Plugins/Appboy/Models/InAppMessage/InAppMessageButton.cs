@@ -26,7 +26,7 @@ namespace Appboy.Models.InAppMessage {
       TextColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.ButtonTextColorKey]);
       BackgroundColor = ColorUtils.HexToColor((int)json[InAppMessageConstants.ButtonBackgroundColorKey]);
       URI = json[InAppMessageConstants.ButtonURIKey];
-      ButtonClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ButtonClickActionKey], true, ClickAction.NEWS_FEED);
+      ButtonClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ButtonClickActionKey], true, ClickAction.NONE);
       if (ButtonClickAction == ClickAction.URI && URI == null) {
         Debug.Log("Required URI not present for URI click action type. Setting click action to NONE.");
         ButtonClickAction = ClickAction.NONE;

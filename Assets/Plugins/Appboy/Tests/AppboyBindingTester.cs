@@ -11,7 +11,7 @@ namespace Appboy {
   public class AppboyBindingTester : MonoBehaviour {
 
     // Change to `true` to automatically log clicks, button clicks,
-    // and impressions for in-app messages, content cards, and news feed cards.
+    // and impressions for in-app messages and content cards.
     bool automaticallyInteract = false;
 
     void Start() {
@@ -71,20 +71,6 @@ namespace Appboy {
       JSONObject pushNotificationJson = (JSONObject)JSON.Parse(message);
       ApplePushNotification pushNotification = new ApplePushNotification(pushNotificationJson);
       Debug.Log("Push opened message parsed into json: " + pushNotification);
-    }
-
-    void FeedReceivedCallback(string message) {
-      Debug.Log("FeedReceivedCallback message: " + message);
-      Feed feed = new Feed(message);
-      Debug.Log("News Feed received: " + feed);
-      foreach (Card card in feed.Cards) {
-        Debug.Log("News Feed card: " + card);
-        if (automaticallyInteract) {
-          Debug.Log("Logging NF card impression and click");
-          card.LogImpression();
-          card.LogClick();
-        }
-      }
     }
 
     void ContentCardsReceivedCallback(string message) {

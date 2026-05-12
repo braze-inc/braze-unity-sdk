@@ -143,12 +143,6 @@ namespace Appboy.Editor {
     [SerializeField]
     private int androidInitialInAppMessageOperation = 0;
 
-    // News Feed
-    [SerializeField]
-    private string iOSFeedGameObjectName = string.Empty;
-    [SerializeField]
-    private string iOSFeedCallbackMethodName = string.Empty;
-
     // Content Cards
     // iOS
     [SerializeField]
@@ -299,17 +293,6 @@ namespace Appboy.Editor {
     public static int IOSInitialInAppMessageOperation {
       get { return Instance.iOSInitialInAppMessageOperation; }
       set { SetProperty(ref Instance.iOSInitialInAppMessageOperation, value); }
-    }
-
-    // News Feed
-    public static string IOSFeedGameObjectName {
-      get { return Instance.iOSFeedGameObjectName; }
-      set { SetProperty(ref Instance.iOSFeedGameObjectName, value); }
-    }
-
-    public static string IOSFeedCallbackMethodName {
-      get { return Instance.iOSFeedCallbackMethodName; }
-      set { SetProperty(ref Instance.iOSFeedCallbackMethodName, value); }
     }
 
     // Content Cards

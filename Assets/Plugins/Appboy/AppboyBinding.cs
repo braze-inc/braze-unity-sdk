@@ -66,11 +66,6 @@ namespace Appboy {
     IN_APP_MESSAGE = 5,
 
     /// <summary>
-    /// Sent when the SDK has an update for the News Feed.
-    /// </summary>
-    NEWS_FEED_UPDATED = 6,
-
-    /// <summary>
     /// Sent when the SDK has an update for Content Cards.
     /// </summary>
     CONTENT_CARDS_UPDATED = 7,
@@ -461,54 +456,6 @@ namespace Appboy {
         mBinding.LogInAppMessageButtonClicked(inAppMessageJSONString, buttonID);
       #endif 
     }
-
-    public static void RequestFeedRefresh() {
-      #if HAS_BRAZE_SDK
-        mBinding.RequestFeedRefresh();
-      #endif 
-    }
-
-    public static void RequestFeedRefreshFromCache() {
-      #if HAS_BRAZE_SDK
-        mBinding.RequestFeedRefreshFromCache();
-      #endif 
-    }
-
-    public static void LogFeedDisplayed() {
-      #if HAS_BRAZE_SDK
-        mBinding.LogFeedDisplayed();
-      #endif 
-    }
-
-    #if UNITY_ANDROID
-
-      public static void LogCardImpression(string cardId) {
-        #if HAS_BRAZE_SDK
-          mBinding.LogCardImpression(cardId);
-        #endif 
-      }
-
-      public static void LogCardClicked(string cardId) {
-        #if HAS_BRAZE_SDK
-          mBinding.LogCardClicked(cardId);
-        #endif 
-      }
-
-    #elif UNITY_IOS
-
-      public static void LogCardImpression(string cardJSONString) {
-        #if HAS_BRAZE_SDK
-          mBinding.LogCardImpression(cardJSONString);
-        #endif 
-      }
-
-      public static void LogCardClicked(string cardJSONString) {
-        #if HAS_BRAZE_SDK
-          mBinding.LogCardClicked(cardJSONString);
-        #endif 
-      }
-
-    #endif
 
     public static void RequestContentCardsRefresh() {
       #if HAS_BRAZE_SDK

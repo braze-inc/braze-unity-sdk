@@ -1,4 +1,4 @@
-﻿using Appboy;
+using Appboy;
 using Appboy.Models;
 using Appboy.Models.InAppMessage;
 using UnityEngine;
@@ -41,8 +41,7 @@ public class MainMenu : MonoBehaviour {
   }
   
   public void OnRequestFeedsRefresh() {
-    Debug.Log("Requesting Content Card & News Feed refreshes (not from cache).");
-    Appboy.AppboyBinding.RequestFeedRefresh();
+    Debug.Log("Requesting Content Cards refresh (not from cache).");
     Appboy.AppboyBinding.RequestContentCardsRefresh();
   }
 
@@ -91,7 +90,7 @@ public class MainMenu : MonoBehaviour {
   }
 
   public void OnPrintAllGameObjects() {
-    GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+    GameObject[] allObjects = UnityEngine.Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
     foreach(object gameObject in allObjects)
       Debug.Log(gameObject + " is a GameObject.");
   }

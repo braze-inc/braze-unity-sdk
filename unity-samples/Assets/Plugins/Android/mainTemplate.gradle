@@ -1,29 +1,38 @@
 apply plugin: 'com.android.library'
+apply from: '../shared/keepUnitySymbols.gradle'
 **APPLY_PLUGINS**
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'com.google.firebase:firebase-messaging:25.0.2'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.0.20"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
+    // The Braze AARs are included as local files, so Gradle does not auto-resolve their
+    // Maven transitive dependencies. The versions below are kept in sync with the
+    // android-sdk-base POM by scripts/update_android.rb — do not edit manually.
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.2.20'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0"
     implementation 'androidx.core:core:1.6.0'
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
 **DEPS**}
 
 android {
-    compileSdkVersion **APIVERSION**
-    buildToolsVersion '**BUILDTOOLS**'
+    ndkPath "**NDKPATH**"
+    ndkVersion "**NDKVERSION**"
+    namespace '**NAMESPACE**'
+    compileSdk **APIVERSION**
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     defaultConfig {
-        minSdkVersion **MINSDKVERSION**
-        targetSdkVersion **TARGETSDKVERSION**
+        minSdk **MINSDKVERSION**
+        targetSdk **TARGETSDKVERSION**
         ndk {
+            debugSymbolLevel **DEBUGSYMBOLLEVEL**
             abiFilters **ABIFILTERS**
         }
         versionCode **VERSIONCODE**
@@ -31,11 +40,11 @@ android {
         consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
     }
 
-    lintOptions {
+    lint {
         abortOnError false
     }
 
-    aaptOptions {
+    androidResources {
         noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }**PACKAGING_OPTIONS**
@@ -43,10 +52,6 @@ android {
 **IL_CPP_BUILD_SETUP**
 **SOURCE_BUILD_SETUP**
 **EXTERNAL_SOURCES**
-
-configurations {
-    compileClasspath
-}
 
 buildscript {
     repositories {
@@ -67,3 +72,17 @@ task copyGoogleServicesJson(type: Copy) {
 }
 
 preBuild.dependsOn(copyGoogleServicesJson)
+
+// Gradle 8.x strict task validation: ':launcher:collect*Dependencies' reads from
+// libs/ inside unityLibrary's projectDir, which is the same directory
+// copyGoogleServicesJson writes to. Declare an explicit dependency to satisfy
+// Gradle's implicit dependency detection.
+gradle.projectsEvaluated {
+    rootProject.allprojects { proj ->
+        proj.tasks.configureEach { task ->
+            if (task.name.startsWith('collect') && task.name.endsWith('Dependencies')) {
+                task.dependsOn ':unityLibrary:copyGoogleServicesJson'
+            }
+        }
+    }
+}

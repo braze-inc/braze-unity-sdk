@@ -235,98 +235,6 @@ NSDictionary *brazeUnityPlist;
   self.displayAction = displayAction;
 }
 
-#pragma mark - News Feed
-
-- (void)logCardImpression:(NSString *)cardJSONString {
-  BRZNewsFeedCard *newsFeedCard = [self getNewsFeedCardFromString:cardJSONString
-                                                            braze:braze];
-  if (newsFeedCard) {
-    [newsFeedCard logImpressionUsing:braze];
-  }
-}
-
-- (void)logCardClicked:(NSString *)cardJSONString {
-  BRZNewsFeedCard *newsFeedCard = [self getNewsFeedCardFromString:cardJSONString
-                                                            braze:braze];
-  if (newsFeedCard) {
-    [newsFeedCard logClickUsing:braze];
-  }
-}
-
-/// Returns the news feed card for the JSON string. If the JSON fails decoding, returns nil.
-- (BRZNewsFeedCard *)getNewsFeedCardFromString:(NSString *)newsFeedCardJSONString
-                                         braze:(Braze *)braze {
-
-
-  NSData *newsFeedCardData = [newsFeedCardJSONString dataUsingEncoding:NSUTF8StringEncoding];
-  BRZNewsFeedCard *card = [BRZNewsFeedCard decodingWithJson:newsFeedCardData];
-  if (card) {
-    return card;
-  }
-  NSLog(@"Unable to parse News Feed card from string: %@", newsFeedCardJSONString);
-  return nil;
-}
-
-- (void)requestFeedRefresh {
-  [braze.newsFeed requestRefreshWithCompletion:^(NSArray<BRZNewsFeedCard *> *_Nullable newCards,
-                                                 NSError *_Nullable refreshError) {
-    if (refreshError) {
-      NSLog(@"News Feed refresh error: %@", refreshError);
-      return;
-    }
-    [self sendMessageWithNewsFeedCards:newCards fromCache:NO];
-  }];
-}
-
-- (void)requestFeedFromCache:(NSNotification *)notification {
-  [self sendMessageWithNewsFeedCards:braze.newsFeed.cards fromCache:YES];
-}
-
-/// Encodes the news feed cards and sends them via a Unity message
-- (void)sendMessageWithNewsFeedCards:(NSArray<BRZNewsFeedCard *> *)newsFeedCards
-                           fromCache:(BOOL)fromCache {
-  if (self.unityFeedCallbackFunctionName == nil || self.unityFeedGameObjectName == nil) {
-    NSLog(@"No properly configured game object. Not forwarding News Feed message.");
-    return;
-  }
-
-  NSMutableArray *cardsJSONArray = [NSMutableArray array];
-  for (BRZNewsFeedCard *card in newsFeedCards) {
-    NSData *cardData = [card json];
-    NSError *error;
-    NSDictionary *newsFeedCardJSON = [NSJSONSerialization JSONObjectWithData:cardData
-                                                                     options:NSJSONReadingMutableContainers
-                                                                       error:&error];
-    if (error != nil) {
-        NSLog(@"Error creating news feed card JSON: %@", error);
-    }
-    [cardsJSONArray addObject:newsFeedCardJSON];
-  }
-
-  NSTimeInterval timestamp = [braze.newsFeed.lastUpdate timeIntervalSince1970];
-  NSDictionary *feedDictionary = @{
-    @"mFeedCards" : cardsJSONArray,
-    @"mTimestamp" : [NSNumber numberWithDouble:timestamp],
-    @"mFromOfflineStorage" : [NSNumber numberWithBool:fromCache]
-  };
-  NSError *error;
-  NSData *feedData = [NSJSONSerialization dataWithJSONObject:feedDictionary
-                                                     options:0
-                                                       error:&error];
-  if (!feedData || error != nil) {
-    NSLog(@"Error parsing News Feed to json: %@", error);
-    return;
-  }
-  NSString *feedString = [[NSString alloc] initWithData:feedData encoding:NSUTF8StringEncoding];
-  if (feedString == nil) {
-    NSLog(@"Error parsing News Feed json to string");
-    return;
-  }
-  [self unitySendMessageTo:self.unityFeedGameObjectName
-                withMethod:self.unityFeedCallbackFunctionName
-               withMessage:feedString];
-}
-
 #pragma mark - Content Cards
 
 - (void)logContentCardImpression:(NSString *)cardJSONString {
@@ -673,10 +581,6 @@ NSDictionary *brazeUnityPlist;
       NSLog(@"Setting in-app message received listener to object %@, method %@", gameobject, method);
       [self addInAppMessageListenerWithObjectName:gameobject callbackMethodName:method];
       break;
-    case BRZNewsFeedUpdated:
-      NSLog(@"Setting News Feed updated listener to object %@, method %@", gameobject, method);
-      [self addFeedListenerWithObjectName:gameobject callbackMethodName:method];
-      break;
     case BRZContentCardsUpdated:
       NSLog(@"Setting Content Cards updated listener to object %@, method %@", gameobject, method);
       [self addContentCardsListenerWithObjectName:gameobject callbackMethodName:method];
@@ -702,13 +606,11 @@ NSDictionary *brazeUnityPlist;
   [self addPushOpenedListenerWithObjectName:self.brazeUnityPlist[BRZUnityPushOpenedGameObjectKey]
                          callbackMethodName:self.brazeUnityPlist[BRZUnityPushOpenedCallbackKey]];
 
-  // In-app messages, Content Cards, News Feed
+  // In-app messages, Content Cards
   [self addInAppMessageListenerWithObjectName:self.brazeUnityPlist[BRZUnityInAppMessageGameObjectKey]
                            callbackMethodName:self.brazeUnityPlist[BRZUnityInAppMessageCallbackKey]];
   [self addContentCardsListenerWithObjectName:self.brazeUnityPlist[BRZUnityContentCardsGameObjectKey]
                            callbackMethodName:self.brazeUnityPlist[BRZUnityContentCardsCallbackKey]];
-  [self addFeedListenerWithObjectName:self.brazeUnityPlist[BRZUnityFeedGameObjectKey]
-                   callbackMethodName:self.brazeUnityPlist[BRZUnityFeedCallbackKey]];
 
   // SDK Auth
   [self addSdkAuthFailureListenerWithObjectName:self.brazeUnityPlist[BRZUnitySdkAuthenticationFailureGameObjectKey]
@@ -724,13 +626,6 @@ NSDictionary *brazeUnityPlist;
   if (gameObject != nil && callbackMethod != nil) {
     self.unityInAppMessageGameObjectName = gameObject;
     self.unityInAppMessageCallbackFunctionName = callbackMethod;
-  }
-}
-
-- (void)addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod {
-  if (gameObject != nil && callbackMethod != nil) {
-    self.unityFeedGameObjectName = gameObject;
-    self.unityFeedCallbackFunctionName = callbackMethod;
   }
 }
 

@@ -1,4 +1,4 @@
-﻿using Appboy;
+using Appboy;
 using Appboy.Utilities;
 using System;
 using System.Collections;
@@ -73,7 +73,7 @@ namespace Appboy.Models.InAppMessage {
       if (json[InAppMessageConstants.ExtrasKey] != null) {
         Extras = JsonUtils.JSONObjectToDictionary(json[InAppMessageConstants.ExtrasKey].AsObject);
       }
-      InAppClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ClickActionKey], true, ClickAction.NEWS_FEED);
+      InAppClickAction = (ClickAction)EnumUtils.TryParse(typeof(ClickAction), json[InAppMessageConstants.ClickActionKey], true, ClickAction.NONE);
       URI = json[InAppMessageConstants.URIKey];
       ImageURI = json[InAppMessageConstants.ImageURLKey];
       if (InAppClickAction == ClickAction.URI && URI == null) {
@@ -108,7 +108,7 @@ namespace Appboy.Models.InAppMessage {
       }
     }
 
-    // Set InAppClickAction to be NEWS_FEED or NONE
+    // Set InAppClickAction to be NONE
     public bool SetInAppClickAction(ClickAction clickAction) {
       if (clickAction != ClickAction.URI) {
         InAppClickAction = clickAction;

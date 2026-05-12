@@ -66,8 +66,6 @@ MonoBehaviour:
   androidDisplayInAppMessagesAutomatically: 1
   androidSetInAppMessageManagerListenerAutomatically: 1
   androidInitialInAppMessageOperation: 0
-  iOSFeedGameObjectName: BrazeCallback
-  iOSFeedCallbackMethodName: FeedReceivedCallback
   iOSContentCardsGameObjectName: BrazeCallback
   iOSContentCardsCallbackMethodName: ContentCardsReceivedCallback
   androidContentCardsUpdatedListenerGameObjectName: BrazeCallback

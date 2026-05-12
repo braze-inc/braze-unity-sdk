@@ -1,0 +1,21 @@
+{
+    "name": "Appboy.Tests.Editor",
+    "rootNamespace": "Appboy",
+    "references": [
+        "GUID:04daa7abf8c09a14b88cac8335a5991f",
+        "GUID:3741a048b6e841942a548370758d5b36"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

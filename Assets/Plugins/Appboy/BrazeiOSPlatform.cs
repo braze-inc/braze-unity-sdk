@@ -117,21 +117,6 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _logInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logCardImpression(string cardJSONString);
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logCardClicked(string cardJSONString);
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _requestFeedRefresh();
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _requestFeedRefreshFromCache();
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
-  private static extern void _logFeedDisplayed();
-
-  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _logContentCardImpression(string cardJSONString);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -404,26 +389,6 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
     _logInAppMessageButtonClicked(inAppMessageJSONString, buttonID);
-  }
-
-  public void LogCardImpression(string cardJSONString) {
-    _logCardImpression(cardJSONString);
-  }
-
-  public void LogCardClicked(string cardJSONString) {
-    _logCardClicked(cardJSONString);
-  }
-
-  public void RequestFeedRefresh() {
-    _requestFeedRefresh();
-  }
-
-  public void RequestFeedRefreshFromCache() {
-    _requestFeedRefreshFromCache();
-  }
-
-  public void LogFeedDisplayed() {
-    _logFeedDisplayed();
   }
 
   public void LogContentCardImpression(string cardJSONString) {

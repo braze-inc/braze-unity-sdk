@@ -74,17 +74,6 @@ public interface BrazePlatform {
   void LogInAppMessageImpression(string inAppMessageJSONString);
   void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID);
 
-  void RequestFeedRefresh();
-  void RequestFeedRefreshFromCache();
-  void LogFeedDisplayed();
-
-  #if UNITY_ANDROID
-    void LogCardImpression(string cardId);
-    void LogCardClicked(string cardId);
-  #elif UNITY_IOS
-    void LogCardImpression(string cardJSONString);
-    void LogCardClicked(string cardJSONString);
-  #endif
   void RequestContentCardsRefresh();
   void RequestContentCardsRefreshFromCache();
   void LogContentCardClicked(string contentCardString);

@@ -19,7 +19,6 @@ namespace Appboy.Editor {
     private bool showPushOpenedListener = true;
     private bool showPushReceivedListener = true;
     private bool showInAppMessageListener = true;
-    private bool showFeedListener = true;
     private bool showContentCardsListener = true;
 
     // Android fields
@@ -136,19 +135,6 @@ namespace Appboy.Editor {
             AppboyConfig.IOSDisplayInAppMessages = EditorGUILayout.ToggleLeft(" Braze Displays In-App Messages", AppboyConfig.IOSDisplayInAppMessages);
           }
           AppboyConfig.IOSInitialInAppMessageOperation = EditorGUILayout.Popup("In App Message Manager Initial Display Operation", AppboyConfig.IOSInitialInAppMessageOperation, IAM_OPERATIONS);
-          EditorGUI.indentLevel--;
-        }
-        EditorGUI.indentLevel--;
-        EditorGUILayout.Separator();
-
-        // News Feed
-        EditorGUILayout.LabelField("News Feed", EditorStyles.boldLabel);
-        EditorGUI.indentLevel++;
-        showFeedListener = EditorGUILayout.Foldout(showFeedListener, "Set News Feed Listener");
-        if (showFeedListener) {
-          EditorGUI.indentLevel++;
-          AppboyConfig.IOSFeedGameObjectName = EditorGUILayout.TextField("Game Object Name", AppboyConfig.IOSFeedGameObjectName);
-          AppboyConfig.IOSFeedCallbackMethodName = EditorGUILayout.TextField("Callback Method Name", AppboyConfig.IOSFeedCallbackMethodName);
           EditorGUI.indentLevel--;
         }
         EditorGUI.indentLevel--;
