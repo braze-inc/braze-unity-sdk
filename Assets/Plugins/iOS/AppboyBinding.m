@@ -312,28 +312,6 @@ void _setInAppMessageDisplayAction(int actionType) {
   [[AppboyUnityManager sharedInstance] setInAppMessageDisplayAction:actionType];
 }
 
-#pragma mark - News Feed
-
-void _logCardImpression(const char* cardJSONString) {
-  [[AppboyUnityManager sharedInstance] logCardImpression:GetStringParam(cardJSONString)];
-}
-
-void _logCardClicked(const char* cardJSONString) {
-  [[AppboyUnityManager sharedInstance] logCardClicked:GetStringParam(cardJSONString)];
-}
-
-void _logFeedDisplayed() {
-  NSLog(@"Logging the News Feed displayed event is not needed on iOS.");
-}
-
-void _requestFeedRefresh() {
-  [[AppboyUnityManager sharedInstance] requestFeedRefresh];
-}
-
-void _requestFeedRefreshFromCache() {
-  [[AppboyUnityManager sharedInstance] requestFeedFromCache:nil];
-}
-
 #pragma mark - Content Cards
 
 void _logContentCardImpression(const char* cardJSONString) {

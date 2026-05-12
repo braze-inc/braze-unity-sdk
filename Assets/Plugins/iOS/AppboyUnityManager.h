@@ -17,8 +17,6 @@ static NSString *const BRZUnityPushOpenedCallbackKey = @"PushOpenedCallbackMetho
 static NSString *const BRZUnityInAppMessageGameObjectKey = @"InAppMessageGameObjectName";
 static NSString *const BRZUnityInAppMessageCallbackKey = @"InAppMessageCallbackMethodName";
 static NSString *const BRZUnityInAppMessageInitialOperation = @"InAppMessageInitialOperation";
-static NSString *const BRZUnityFeedGameObjectKey = @"FeedGameObjectName";
-static NSString *const BRZUnityFeedCallbackKey = @"FeedCallbackMethodName";
 static NSString *const BRZUnityContentCardsGameObjectKey = @"ContentCardsGameObjectName";
 static NSString *const BRZUnityContentCardsCallbackKey = @"ContentCardsCallbackMethodName";
 static NSString *const BRZUnityHandleInAppMessageDisplayKey = @"DisplayInAppMessages";
@@ -37,7 +35,6 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
   BRZPushOpened = 3,
   BRZPushDeleted = 4,
   BRZInAppMessageReceived = 5,
-  BRZNewsFeedUpdated = 6,
   BRZContentCardsUpdated = 7,
   BRZSDKAuthFailed = 8,
   BRZFeatureFlagsUpdated = 9
@@ -53,8 +50,6 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 @property(nonatomic, copy) NSDictionary *brazeUnityPlist;
 @property(nonatomic) BRZInAppMessageUIDisplayChoice displayAction;
 
-@property(nonatomic, copy) NSString *unityFeedGameObjectName;
-@property(nonatomic, copy) NSString *unityFeedCallbackFunctionName;
 @property(nonatomic, copy) NSString *unityContentCardsGameObjectName;
 @property(nonatomic, copy) NSString *unityContentCardsCallbackFunctionName;
 @property(nonatomic, copy) NSString *unityInAppMessageGameObjectName;
@@ -98,12 +93,6 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 - (void)displayNextInAppMessage;
 - (void)hideCurrentInAppMessage;
 - (void)setInAppMessageDisplayAction:(int)actionType;
-
-// News Feed
-- (void)logCardImpression:(NSString *)cardJSONString;
-- (void)logCardClicked:(NSString *)cardJSONString;
-- (void)requestFeedRefresh;
-- (void)requestFeedFromCache:(NSNotification *)notification;
 
 // Content Cards
 - (void)logContentCardImpression:(NSString *)cardJSONString;
@@ -152,7 +141,6 @@ typedef NS_ENUM(NSInteger, BRZUnityMessageType) {
 - (void)configureListenerFor:(NSInteger)messageType withGameObject:(NSString *)gameobject withMethod:(NSString *)method;
 - (void)setListenersFromPList;
 - (void)addInAppMessageListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
-- (void)addFeedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addContentCardsListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addPushReceivedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;
 - (void)addPushOpenedListenerWithObjectName:(NSString *)gameObject callbackMethodName:(NSString *)callbackMethod;

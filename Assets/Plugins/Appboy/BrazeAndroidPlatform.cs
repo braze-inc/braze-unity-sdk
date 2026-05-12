@@ -327,7 +327,7 @@ public class BrazeAndroidPlatform : BrazePlatform {
   }
 
   public void RegisterAppboyPushMessages(string registrationId) {
-    Braze.Call("registerAppboyPushMessages", new object[] { registrationId });
+    Braze.Call("setRegisteredPushToken", new object[] { registrationId });
   }
 
   public void PromptUserForPushPermissions(bool provisional, PushPromptResponseReceived reponseDelegate = null) {
@@ -367,26 +367,6 @@ public class BrazeAndroidPlatform : BrazePlatform {
   public void LogInAppMessageButtonClicked(string inAppMessageJSONString, int buttonID) {
     var inAppMessage = InAppMessageUtils.Call<AndroidJavaObject>("inAppMessageFromString", brazeUnityActivity, inAppMessageJSONString);
     InAppMessageUtils.Call("logInAppMessageButtonClick", inAppMessage, buttonID);
-  }
-
-  public void RequestFeedRefresh() {
-    Braze.Call("requestFeedRefresh");
-  }
-
-  public void RequestFeedRefreshFromCache() {
-    Braze.Call("requestFeedRefreshFromCache");
-  }
-
-  public void LogFeedDisplayed() {
-    Braze.Call("logFeedDisplayed");
-  }
-
-  public void LogCardImpression(string cardId) {
-    Braze.Call("logFeedCardImpression", cardId);
-  }
-
-  public void LogCardClicked(string cardId) {
-    Braze.Call("logFeedCardClick", cardId);
   }
 
   public void LogContentCardImpression(string contentCardString) {
