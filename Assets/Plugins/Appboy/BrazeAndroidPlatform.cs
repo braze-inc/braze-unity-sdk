@@ -259,6 +259,10 @@ public class BrazeAndroidPlatform : BrazePlatform {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }
 
+  public void SetCustomUserAttribute(string key, double value) {
+    GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
+  }
+
   public void SetCustomUserAttribute(string key, string value) {
     GetCurrentUser().Call<bool>("setCustomUserAttribute", key, value);
   }

@@ -178,6 +178,11 @@ void _setCustomUserAttributeFloat(const char* key, float value) {
                                                                 doubleValue:(double)value];
 }
 
+void _setCustomUserAttributeDouble(const char* key, double value) {
+  [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
+                                                                   doubleValue:value];
+}
+
 void _setCustomUserAttributeString(const char* key, const char* value) {
   [[AppboyUnityManager sharedInstance].braze.user setCustomAttributeWithKey:GetStringParam(key)
                                                                 stringValue:GetStringParam(value)];

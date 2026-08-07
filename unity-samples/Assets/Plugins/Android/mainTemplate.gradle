@@ -4,7 +4,7 @@ apply from: '../shared/keepUnitySymbols.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.firebase:firebase-messaging:25.0.2'
+    implementation 'com.google.firebase:firebase-messaging:25.1.1'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     // The Braze AARs are included as local files, so Gradle does not auto-resolve their
@@ -13,8 +13,8 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.2.20'
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0"
-    implementation 'androidx.core:core:1.6.0'
-    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    implementation 'androidx.core:core:1.16.0'
+    implementation 'androidx.datastore:datastore-preferences:1.1.7'
 **DEPS**}
 
 android {
@@ -59,7 +59,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.google.gms:google-services:4.3.4"
+        classpath "com.google.gms:google-services:4.5.0"
     }
 }
 
