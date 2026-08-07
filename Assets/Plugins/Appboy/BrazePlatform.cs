@@ -42,6 +42,7 @@ public interface BrazePlatform {
   void SetCustomUserAttribute(string key, bool value);
   void SetCustomUserAttribute(string key, int value);
   void SetCustomUserAttribute(string key, float value);
+  void SetCustomUserAttribute(string key, double value);
   void SetCustomUserAttribute(string key, string value);
   void SetCustomUserAttribute(string key, Dictionary<string, object> value, bool merge);
   void SetCustomUserAttribute(string key, List<Dictionary<string, object>> value);

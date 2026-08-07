@@ -69,6 +69,9 @@ public class BrazeiOSPlatform : BrazePlatform {
   private static extern void _setCustomUserAttributeFloat(string key, float val);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
+  private static extern void _setCustomUserAttributeDouble(string key, double val);
+
+  [System.Runtime.InteropServices.DllImport("__Internal")]
   private static extern void _setCustomUserAttributeString(string key, string val);
 
   [System.Runtime.InteropServices.DllImport("__Internal")]
@@ -282,6 +285,10 @@ public class BrazeiOSPlatform : BrazePlatform {
 
   public void SetCustomUserAttribute(string key, float value) {
     _setCustomUserAttributeFloat(key, value);
+  }
+
+  public void SetCustomUserAttribute(string key, double value) {
+    _setCustomUserAttributeDouble(key, value);
   }
 
   public void SetCustomUserAttribute(string key, string value) {

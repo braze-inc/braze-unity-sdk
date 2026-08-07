@@ -291,6 +291,12 @@ namespace Appboy {
       #endif 
     }
 
+    public static void SetCustomUserAttribute(string key, double value) {
+      #if HAS_BRAZE_SDK
+        mBinding.SetCustomUserAttribute(key, value);
+      #endif 
+    }
+
     public static void SetCustomUserAttribute(string key, string value) {
       #if HAS_BRAZE_SDK
         mBinding.SetCustomUserAttribute(key, value);
